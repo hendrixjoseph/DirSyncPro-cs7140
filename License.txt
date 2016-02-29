@@ -1,0 +1,4 @@
+DirSync Pro License
+Please read help/license.html (inside the jar) for the license terms and conditions
+The license is shown at the very first time when you start the program. 
+Afterwards you can always view the license via the Menu -> Help -> License.
