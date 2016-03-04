@@ -7,7 +7,7 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -16,7 +16,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 package dirsyncpro.sync;
 
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
@@ -40,23 +39,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RealtimeListener {
-	
+
     private final WatchService watcher;
-    private final Map<WatchKey,Path> keys;
+    private final Map<WatchKey, Path> keys;
     private RealtimeChangeListener mListener = new RealtimeChangeListener() {
-		@Override
-		public void change(WatchEvent<Path> e) {
-		}
-	};
-	
-	public RealtimeListener(String dir) throws IOException
-	{
-	    this.watcher = FileSystems.getDefault().newWatchService();
-	    this.keys = new HashMap<WatchKey,Path>();
-	    
-	    registerAll(Paths.get(dir));
-	}
-	
+        @Override
+        public void change(WatchEvent<Path> e) {
+        }
+    };
+
+    public RealtimeListener(String dir) throws IOException {
+        this.watcher = FileSystems.getDefault().newWatchService();
+        this.keys = new HashMap<WatchKey, Path>();
+
+        registerAll(Paths.get(dir));
+    }
+
     /**
      * Register the given directory with the WatchService
      */
@@ -74,39 +72,40 @@ public class RealtimeListener {
         Files.walkFileTree(start, new SimpleFileVisitor<Path>() {
             @Override
             public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs)
-                throws IOException
-            {
+                    throws IOException {
                 register(dir);
                 return FileVisitResult.CONTINUE;
             }
         });
     }
 
-	
     /**
      * Process all events for keys queued to the watcher
      */
     private Thread t = null;
-    public void stop(){
-    	if (t != null && t.isAlive() && !t.isInterrupted())
-    		t.interrupt();
-    	
-    	//close the watcher to release resource
-    	try {
-			watcher.close();
-		} catch (IOException e) {
-		}
+
+    public void stop() {
+        if (t != null && t.isAlive() && !t.isInterrupted()) {
+            t.interrupt();
+        }
+
+        //close the watcher to release resource
+        try {
+            watcher.close();
+        } catch (IOException e) {
+        }
     }
-    
+
     public void start() {
-    	t  = new Thread(new Runnable() {
-    		@Override
-    		public void run() {
-    			startInternal();
-    		}
-    	});
-    	t.start();
+        t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                startInternal();
+            }
+        });
+        t.start();
     }
+
     public void startInternal() {
         for (;;) {
             // wait for key to be signalled
@@ -116,9 +115,9 @@ public class RealtimeListener {
             } catch (InterruptedException x) {
                 return;
             } catch (ClosedWatchServiceException e) {
-            	//if watcher was closed in stop() method
-				return;
-			}
+                //if watcher was closed in stop() method
+                return;
+            }
 
             Path dir = keys.get(key);
             if (dir == null) {
@@ -126,7 +125,7 @@ public class RealtimeListener {
                 continue;
             }
 
-            for (WatchEvent<?> event: key.pollEvents()) {
+            for (WatchEvent<?> event : key.pollEvents()) {
                 WatchEvent.Kind kind = event.kind();
 
                 // TBD - provide example of how OVERFLOW event is handled
@@ -169,24 +168,22 @@ public class RealtimeListener {
             }
         }
     }
-    
-    public static interface RealtimeChangeListener
-    {
-    	public void change(WatchEvent<Path> e);
+
+    public static interface RealtimeChangeListener {
+
+        public void change(WatchEvent<Path> e);
     }
-    
-    public void setChangeListener(RealtimeChangeListener l)
-    {
-    	mListener = l;
+
+    public void setChangeListener(RealtimeChangeListener l) {
+        mListener = l;
     }
-    
-    public RealtimeChangeListener getChangeListener()
-    {
-    	return mListener;
+
+    public RealtimeChangeListener getChangeListener() {
+        return mListener;
     }
-    
+
     @SuppressWarnings("unchecked")
     static <T> WatchEvent<T> cast(WatchEvent<?> event) {
-        return (WatchEvent<T>)event;
+        return (WatchEvent<T>) event;
     }
 }

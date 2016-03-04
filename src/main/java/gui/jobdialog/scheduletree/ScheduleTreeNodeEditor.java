@@ -7,7 +7,7 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -16,7 +16,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 package dirsyncpro.gui.jobdialog.scheduletree;
 
 import java.awt.Component;
@@ -44,59 +43,59 @@ import dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleWeekly;
 
 public class ScheduleTreeNodeEditor extends AbstractCellEditor implements TreeCellEditor {
 
-	ScheduleTreeCellRenderer scheduleTreeCellrenderer = new ScheduleTreeCellRenderer();
+    ScheduleTreeCellRenderer scheduleTreeCellrenderer = new ScheduleTreeCellRenderer();
 
-	ChangeEvent changeEvent = null;
+    ChangeEvent changeEvent = null;
 
-	JTree tree;
+    JTree tree;
 
-	public ScheduleTreeNodeEditor(JTree t) {
-		tree = t;
-	}
+    public ScheduleTreeNodeEditor(JTree t) {
+        tree = t;
+    }
 
-	public Object getCellEditorValue() {
-		//dummy
-		return null;
-	}
+    public Object getCellEditorValue() {
+        //dummy
+        return null;
+    }
 
-	public boolean isCellEditable(EventObject event) {
-		boolean editable = false;
-		if (event instanceof MouseEvent) {
-			MouseEvent mouseEvent = (MouseEvent) event;
-			TreePath selectedPath = tree.getPathForLocation(mouseEvent.getX(), mouseEvent.getY());
-			if (selectedPath != null) {
-				Object node = selectedPath.getLastPathComponent();
-				if ((node != null) && (node instanceof DefaultMutableTreeNode)) {
-					DefaultMutableTreeNode mutableNode = (DefaultMutableTreeNode) node;
-					Schedule schedule = ((ScheduleTree) mutableNode).schedule;
-					boolean enabled = (schedule instanceof ScheduleOnce) || (schedule instanceof ScheduleMinutely) || (schedule instanceof ScheduleHourly) || (schedule instanceof ScheduleDaily) || (schedule instanceof ScheduleWeekly) || (schedule instanceof ScheduleMonthly);  
-					DirSyncPro.getGui().getJobDialog().enableEditRemoveScheduleButtons(enabled);
-					if (mouseEvent.getClickCount() == 2 && !((ScheduleTree) mutableNode).isRoot()){
-						DirSyncPro.getGui().getJobDialog().openEditScheduleDialog();
-					}
-					editable |= (((ScheduleTree) mutableNode).isRoot());
-				}
-			}
-		}
-		return editable;
-	}
+    public boolean isCellEditable(EventObject event) {
+        boolean editable = false;
+        if (event instanceof MouseEvent) {
+            MouseEvent mouseEvent = (MouseEvent) event;
+            TreePath selectedPath = tree.getPathForLocation(mouseEvent.getX(), mouseEvent.getY());
+            if (selectedPath != null) {
+                Object node = selectedPath.getLastPathComponent();
+                if ((node != null) && (node instanceof DefaultMutableTreeNode)) {
+                    DefaultMutableTreeNode mutableNode = (DefaultMutableTreeNode) node;
+                    Schedule schedule = ((ScheduleTree) mutableNode).schedule;
+                    boolean enabled = (schedule instanceof ScheduleOnce) || (schedule instanceof ScheduleMinutely) || (schedule instanceof ScheduleHourly) || (schedule instanceof ScheduleDaily) || (schedule instanceof ScheduleWeekly) || (schedule instanceof ScheduleMonthly);
+                    DirSyncPro.getGui().getJobDialog().enableEditRemoveScheduleButtons(enabled);
+                    if (mouseEvent.getClickCount() == 2 && !((ScheduleTree) mutableNode).isRoot()) {
+                        DirSyncPro.getGui().getJobDialog().openEditScheduleDialog();
+                    }
+                    editable |= (((ScheduleTree) mutableNode).isRoot());
+                }
+            }
+        }
+        return editable;
+    }
 
-	public Component getTreeCellEditorComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row) {
+    public Component getTreeCellEditorComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row) {
 
-		Component editorComponent = scheduleTreeCellrenderer.getTreeCellRendererComponent(tree, value, true, expanded, leaf, row, true);
+        Component editorComponent = scheduleTreeCellrenderer.getTreeCellRendererComponent(tree, value, true, expanded, leaf, row, true);
 
-		ItemListener itemListener = new ItemListener() {
-			public void itemStateChanged(ItemEvent itemEvent) {
-				if (stopCellEditing()) {
-					fireEditingStopped();
-				}
-			}
-		};
-		
-		if (editorComponent instanceof JCheckBox) {
-			((JCheckBox) editorComponent).addItemListener(itemListener);
-		}
+        ItemListener itemListener = new ItemListener() {
+            public void itemStateChanged(ItemEvent itemEvent) {
+                if (stopCellEditing()) {
+                    fireEditingStopped();
+                }
+            }
+        };
 
-		return editorComponent;
-	}
+        if (editorComponent instanceof JCheckBox) {
+            ((JCheckBox) editorComponent).addItemListener(itemListener);
+        }
+
+        return editorComponent;
+    }
 }

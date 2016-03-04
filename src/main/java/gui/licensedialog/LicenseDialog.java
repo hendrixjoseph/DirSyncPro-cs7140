@@ -18,7 +18,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 package dirsyncpro.gui.licensedialog;
 
 import java.io.BufferedReader;
@@ -37,47 +36,47 @@ import dirsyncpro.tools.GuiTools;
  */
 @SuppressWarnings("unused")
 public class LicenseDialog extends LicenseDialogObjects {
-	private static final long serialVersionUID = 1L;
-	protected boolean licenseAccepted;
 
-	public LicenseDialog (JFrame frame){
-		super(frame);
-	}
+    private static final long serialVersionUID = 1L;
+    protected boolean licenseAccepted;
 
+    public LicenseDialog(JFrame frame) {
+        super(frame);
+    }
 
-	protected void licenseAccepted(){
-		licenseAccepted = true;
-		DirSyncPro.setLicenseAccepted();
-		setVisible(false);
-	}
+    protected void licenseAccepted() {
+        licenseAccepted = true;
+        DirSyncPro.setLicenseAccepted();
+        setVisible(false);
+    }
 
-	protected void licenseNotAccepted(){
-		// we are in gui
-		if (DirSyncPro.getGui() != null){
-			DirSyncPro.getGui().removeTrayIcon();
-		}
-		System.exit(0);
-	}
+    protected void licenseNotAccepted() {
+        // we are in gui
+        if (DirSyncPro.getGui() != null) {
+            DirSyncPro.getGui().removeTrayIcon();
+        }
+        System.exit(0);
+    }
 
-	public void openLicenseDialog(){
-		String licenseText = "";
-		try {
-			InputStream is = getClass().getResourceAsStream("/License.txt");
-			BufferedReader br = new BufferedReader(new InputStreamReader(is));
+    public void openLicenseDialog() {
+        String licenseText = "";
+        try {
+            InputStream is = getClass().getResourceAsStream("/License.txt");
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
-			String line;
-			while ((line = br.readLine()) != null) {
-				licenseText += line + "\n";
-			}
-	}catch (Exception e){
-			System.out.println("Unable to show the License. Please read License.txt.");
-			e.printStackTrace();
+            String line;
+            while ((line = br.readLine()) != null) {
+                licenseText += line + "\n";
+            }
+        } catch (Exception e) {
+            System.out.println("Unable to show the License. Please read License.txt.");
+            e.printStackTrace();
 //			System.exit(1);
-                        return;
-		}
+            return;
+        }
 
-		licenceTextArea.setText(licenseText);
+        licenceTextArea.setText(licenseText);
 
-		GuiTools.openDialog(this);
-	}
+        GuiTools.openDialog(this);
+    }
 }
