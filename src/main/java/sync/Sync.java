@@ -7,7 +7,7 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -34,7 +34,6 @@ import dirsyncpro.Const.LogLevel;
 import dirsyncpro.Const.SyncPairStatus;
 import dirsyncpro.DirSyncPro;
 import dirsyncpro.exceptions.IncompleteConfigurationException;
-import dirsyncpro.exceptions.WarningException;
 import dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleEngine;
 import dirsyncpro.gui.mainframe.MainFrame;
 import dirsyncpro.job.Job;
@@ -44,10 +43,11 @@ import dirsyncpro.tools.WildcardTools;
 import dirsyncpro.xml.ConfigConverter;
 import dirsyncpro.xml.XmlReader;
 import dirsyncpro.xml.XmlWriter;
+import java.io.FileNotFoundException;
 
 /**
  * Represents the synchronization.
- * 
+ *
  * @author F. Gerbig, O. Givi (info@dirsyncpro.org)
  */
 public class Sync{
@@ -91,7 +91,7 @@ public class Sync{
 	}
 
 	private String syncSessionName;
-	
+
 	/** The directory definitions of the synchronization */
 	private Vector<Job> jobs = new Vector<Job>();
 
@@ -107,18 +107,18 @@ public class Sync{
 
 	private Log log;
 	private LogLevel logLevel;
-	
+
 	private boolean optionsChanged = false;
 	private boolean alreadyAnalyzed = false;
-	
+
 	private SyncQ syncQ;
 	private ScheduleEngine scheduleEngine;
-	
+
 	/**
 	 * Initializes a new synchronization.
 	 */
 	public Sync() {
-		
+
 		jobs = new Vector<Job>();
 		syncQ = new SyncQ();
 		scheduleEngine = new ScheduleEngine();
@@ -131,7 +131,7 @@ public class Sync{
 		if (DirSyncPro.isGuiMode()){
 			DirSyncPro.getGui().updateJobsTree();
 		}
-		
+
 		this.syncSessionName = Const.DEFAULT_SYNC_SESSION_NAME;
 		setUpLogFile(DirSyncPro.isJobsetLogEnabled());
 		this.logLevel = DirSyncPro.getLogLevel();
@@ -159,7 +159,7 @@ public class Sync{
 			}
 		}
 	}
-	
+
 	public void appendJobs(String filename) throws Exception{
 		checkConfigConvertable(filename);
 		XmlReader xmlReader = new XmlReader(filename);
@@ -170,14 +170,14 @@ public class Sync{
 			}
 		}
 	}
-	
+
 	public void saveEnabled(String xmlfilename) throws Exception {
 		new XmlWriter(xmlfilename, log.getFilename(), this.getEnabledJobs());
 	}
-	
+
 	/**
 	 * Loads a configuration.
-	 * 
+	 *
 	 * @param filename
 	 *            The name of the file.
 	 * @throws Exception
@@ -188,7 +188,7 @@ public class Sync{
 
 		this.syncSessionName = filename.replace("." + Const.SYNC_FILE_EXTENSION, "");
 		this.log = new Log(xmlReader.getLogFileName(), null);
-		this.jobs = xmlReader.getJobs();	
+		this.jobs = xmlReader.getJobs();
 		for (Object j : this.jobs){
 			if (j instanceof Job){
 				((Job)j).restartRealtimeListeners();
@@ -198,7 +198,7 @@ public class Sync{
 
 	/**
 	 * Saves a configuration.
-	 * 
+	 *
 	 * @param filename
 	 *            The name of the file.
 	 * @throws Exception
@@ -228,33 +228,33 @@ public class Sync{
 		if (syncDate != null){
 			elapsed = ((new Date()).getTime() - syncDate.getTime());
 		}
-		
+
 		String timeStr = "";
 		if (elapsed < 3600000){
 			timeStr = (new SimpleDateFormat("mm:ss")).format(new Date(elapsed));
 		} else{
 			timeStr = (new SimpleDateFormat("HH:mm:ss")).format(new Date(elapsed));
 		}
-		
+
 		long totalTime = 0;
 		if (f > 0){
 			totalTime = (long) (elapsed / f);
 		}
 
-		String totalTimeStr = "";	
+		String totalTimeStr = "";
 		if (totalTime < 3600000){
 			totalTimeStr = (new SimpleDateFormat("mm:ss")).format(new Date(totalTime));
 		} else{
 			totalTimeStr = (new SimpleDateFormat("HH:mm:ss")).format(new Date(totalTime));
 		}
-		
+
 		if (totalTime > 0 && elapsed > 60000){
 			timeStr += " / " + totalTimeStr;
 		}
-		
+
 		return timeStr;
 	}
-	
+
 	private void printConfiguration(){
 		log.printExcessive("Synchronization configuration:", Const.IconKey.Info);
 		String syncLogFilename = "";
@@ -262,11 +262,11 @@ public class Sync{
 		syncLogFilename = WildcardTools.replaceDateWildcards(log.getFilename(), syncDate);
 		syncLogFilename = WildcardTools.replaceUserWildcards(syncLogFilename);
 		log.printExcessive("  Logfile: \"" + syncLogFilename + "\"", Const.IconKey.Info);
-		
+
 		log.printExcessive("Number of jobs to synchronize: " + getNumberOfEnabledJobs(), Const.IconKey.Info);
 	}
-	
-	
+
+
 	private Job replaceWildCards(Job job){
 		String globalLogFilename = "";
 		globalLogFilename = WildcardTools.replaceDateWildcards(log.getPath(), syncDate);
@@ -274,11 +274,11 @@ public class Sync{
 
 		// replace wildcards in source directories
 		job.setSrc(WildcardTools.replaceUserWildcards(job.getDirA()));
-		
+
 		// replace wildcards in destination directories
-		job.setDst(WildcardTools.replaceDateWildcards(job.getDirB(), syncDate)); 
-		job.setDst(WildcardTools.replaceTimeWildcards(job.getDirB(), syncDate)); 
-		job.setDst(WildcardTools.replaceUserWildcards(job.getDirB())); 
+		job.setDst(WildcardTools.replaceDateWildcards(job.getDirB(), syncDate));
+		job.setDst(WildcardTools.replaceTimeWildcards(job.getDirB(), syncDate));
+		job.setDst(WildcardTools.replaceUserWildcards(job.getDirB()));
 
 		// replace date, time, and user wildcards in log file
 		String logFilename = WildcardTools.replaceDateWildcards(job.getLog().getPath(), syncDate);
@@ -289,14 +289,14 @@ public class Sync{
 		job.getLog().setFile(logFilename);
 		return job;
 	}
-	
+
 	/**
 	 * Analyzes all jobs one by one.
 	 */
 	public void analyze() {
 		analyze(jobs);
 	}
-	
+
 	/**
 	 * Analyzes the given jobs one by one.
 	 */
@@ -319,7 +319,7 @@ public class Sync{
 			log.printMinimal("Started analyzing.", Const.IconKey.Info);
 
 			printConfiguration();
-			
+
 			if (DirSyncPro.isGuiMode()) {
 				DirSyncPro.getGui().registerProgressBars(0, js.size() * 100, 0, "", false, -1, -1, "", false);
 			}
@@ -345,7 +345,7 @@ public class Sync{
 					dirCounter++;
 
 					replaceWildCards(job);
-					
+
 					// set the syncQ only for the original dir profile. This costs less memory.
 					//jobOrg.analyze();
 					job.analyze();
@@ -417,7 +417,7 @@ public class Sync{
 				DirSyncPro.getGui().setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 				DirSyncPro.getGui().getScreenUpdater().stopUpdating();
 				//catch up the last values of the progess bars
-				//DirSyncPro.getGui().autoResizeSyncQColumns(); //runs once now in MainFrame construct. //TODO delete after a while? 
+				//DirSyncPro.getGui().autoResizeSyncQColumns(); //runs once now in MainFrame construct. //TODO delete after a while?
 				DirSyncPro.getGui().registerProgressBars(1, 1, 0, "", false, 1, 1, null, false);
 				DirSyncPro.getGui().updateGUIEDT(true);
 				DirSyncPro.getGui().updateTitle();
@@ -432,22 +432,22 @@ public class Sync{
 	public void synchronize(){
 		synchronize(jobs);
 	}
-	
+
 	/**
 	 * Synchronizes the Sync and eventually analyzes the given jobs
 	 */
 	public void synchronize(Vector<Job> js) {
-		
+
 		if (!alreadyAnalyzed || syncQ.isSynced()){
 			analyze(js);
 		}
-	
+
 		if (isStopping()) {
 			// syncQ is done.
 			syncQ.setSynced(true);
 			return;
-		} 
-		
+		}
+
 		setState(Sync.START);
 
 		try {
@@ -463,11 +463,11 @@ public class Sync{
 			log.printMinimal("Started synchronization.", Const.IconKey.Info);
 
 			printConfiguration();
-			
+
 			for (int i=0; i<syncQ.size(); i++){
 				SyncPair sp = syncQ.get(i);
 				SyncPairStatus sps = sp.getSyncPairStatus();
-				
+
 				if (DirSyncPro.isGuiMode()) {
 					sleepOnPause();
 					if (isStopping()) {
@@ -477,14 +477,14 @@ public class Sync{
 					}
 				}
 
-				if (sp.isSynced()){ 
+				if (sp.isSynced()){
 					break;
 				}
 		    	if (DirSyncPro.isGuiMode()){
 //					DirSyncPro.getGui().registerProgressBarsEDT(i+1, syncQ.size(), 0, "Synchonizing items in the sync Q...", false, -1, -1, "", false);
 					DirSyncPro.getGui().registerProgressBars(i*100, syncQ.size() * 100, 0, "", false, -1, -1, "", false);
 				}
-				
+
 				//DirAIsRedundant, FileAIsRedundant, DirBIsRedundant, FileBIsRedundant
 				if (getError() == SyncError.ErrorThisJob) {
 					getLog().printMinimal("Skipping 'Delete Files' and 'Delete Dirs' because of errors while synchronizing this directory.", IconKey.Error);
@@ -497,7 +497,7 @@ public class Sync{
 								if (sp.getJob().isSyncDirTimeStamps()){
 									try{
 										FileTools.copyParentTimestamp(sp.getFileB(), sp.getFileA());
-									}catch (WarningException e){
+									}catch (FileNotFoundException e){
 										getLog().printModerate(e.getMessage(), IconKey.Warning);
 									}
 								}
@@ -506,7 +506,7 @@ public class Sync{
 								setError(SyncError.Warning);
 							}
 						}
-					
+
 						if (sps.equals(SyncPairStatus.DirBIsRedundant) || sps.equals(SyncPairStatus.FileBIsRedundant)){
 							if (!sp.getFileB().exists() || FileTools.deleteRecursive(sp.getFileB(), sp.getJob().getDirB(), sp.getJob().getHowManyBackups(), sp.getJob().getBackupDir(), sp.getJob().isOverrideReadOnly())) {
 								getLog().printModerate("Deleted:" + sp.getFileB().getAbsolutePath(), IconKey.Deleted);
@@ -514,7 +514,7 @@ public class Sync{
 								if (sp.getJob().isSyncDirTimeStamps()){
 									try{
 										FileTools.copyParentTimestamp(sp.getFileA(), sp.getFileB());
-									}catch (WarningException e){
+									}catch (FileNotFoundException e){
 										getLog().printModerate(e.getMessage(), IconKey.Warning);
 									}
 								}
@@ -523,7 +523,7 @@ public class Sync{
 								setError(SyncError.Warning);
 							}
 						}
-					} catch (WarningException we){
+					} catch (FileNotFoundException we){
 						getLog().printMinimal("Warning: " + we.getMessage(), IconKey.Warning);
 						setError(SyncError.Warning);
 					}
@@ -544,32 +544,32 @@ public class Sync{
 					}
 					try{
 						FileTools.copy(
-								new File(sp.getFileA().getAbsoluteFile() + "." + Const.DIR_A_RENAME_FILE_EXTENSION), 
-								new File(sp.getFileB().getAbsoluteFile() + "." + Const.DIR_A_RENAME_FILE_EXTENSION), 
+								new File(sp.getFileA().getAbsoluteFile() + "." + Const.DIR_A_RENAME_FILE_EXTENSION),
+								new File(sp.getFileB().getAbsoluteFile() + "." + Const.DIR_A_RENAME_FILE_EXTENSION),
 								sp.getJob().getDirB(), sp.getJob().getHowManyBackups(), sp.getJob().getBackupDir(), sp.getJob().isVerify(), sp.getJob().isWriteTimestampBack(), sp.getJob().isSyncDirTimeStamps(), sp.getJob().isPreserveDOSAttributes(), sp.getJob().isPreservePOSIXFilePermissions(), sp.getJob().isPreservePOSIXFileOwnership(), sp.getJob().isOverrideReadOnly());
 						getLog().printModerate("Copied: " + sp.getFileA().getAbsoluteFile() + "." + Const.DIR_A_RENAME_FILE_EXTENSION, IconKey.File);
 						FileTools.copy(
-								new File(sp.getFileB().getAbsoluteFile() + "." + Const.DIR_B_RENAME_FILE_EXTENSION), 
-								new File(sp.getFileA().getAbsoluteFile() + "." + Const.DIR_B_RENAME_FILE_EXTENSION), 
+								new File(sp.getFileB().getAbsoluteFile() + "." + Const.DIR_B_RENAME_FILE_EXTENSION),
+								new File(sp.getFileA().getAbsoluteFile() + "." + Const.DIR_B_RENAME_FILE_EXTENSION),
 								sp.getJob().getDirA(), sp.getJob().getHowManyBackups(), sp.getJob().getBackupDir(), sp.getJob().isVerify(), sp.getJob().isWriteTimestampBack(), sp.getJob().isSyncDirTimeStamps(), sp.getJob().isPreserveDOSAttributes(), sp.getJob().isPreservePOSIXFilePermissions(), sp.getJob().isPreservePOSIXFileOwnership(), sp.getJob().isOverrideReadOnly());
 						getLog().printModerate("Copied: " + sp.getFileB().getAbsoluteFile() + "." + Const.DIR_A_RENAME_FILE_EXTENSION, IconKey.File);
 						sp.setSynced();
-					} catch (WarningException we){
+					} catch (FileNotFoundException we){
 						getLog().printMinimal("Warning: " + we.getMessage(), IconKey.Warning);
 						setError(SyncError.Warning);
 					}
 				}
-				
+
 				//MonodirConflict copy source: happens in copy
-				
+
 				//Conflict Warn/Skip
 				// Do nothing
-				
+
 				//DirAIsModified, DirBIsModified
 				if (sps.equals(SyncPairStatus.DirAIsModified)){
 					try{
 						FileTools.copyTimestamp(sp.getFileA().toPath(), sp.getFileB().toPath());
-					}catch (WarningException e){
+					}catch (FileNotFoundException e){
 						getLog().printModerate(e.getMessage(), IconKey.Warning);
 					}
 					sp.setSynced();
@@ -577,14 +577,14 @@ public class Sync{
 				if (sps.equals(SyncPairStatus.DirBIsModified)){
 					try{
 						FileTools.copyTimestamp(sp.getFileB().toPath(), sp.getFileA().toPath());
-					}catch (WarningException e){
+					}catch (FileNotFoundException e){
 						getLog().printModerate(e.getMessage(), IconKey.Warning);
 					}
 					sp.setSynced();
 				}
-				
+
 				//DirAIsNew, DirBIsNew, DirAIsCopyAll, DirBIsCopyAll
-				if (sps.equals(SyncPairStatus.DirAIsNew) || sps.equals(SyncPairStatus.DirACopyForced)){  
+				if (sps.equals(SyncPairStatus.DirAIsNew) || sps.equals(SyncPairStatus.DirACopyForced)){
 					File f = sp.getFileB();
 					if (f.exists()){
 						sp.setSynced();
@@ -597,7 +597,7 @@ public class Sync{
 								try{
 									FileTools.copyTimestamp(sp.getFileA().toPath(), sp.getFileB().toPath());
 									FileTools.copyParentTimestamp(sp.getFileA(), sp.getFileB());
-								}catch (WarningException e){
+								}catch (FileNotFoundException e){
 									getLog().printModerate(e.getMessage(), IconKey.Warning);
 								}
 							}
@@ -620,7 +620,7 @@ public class Sync{
 								try{
 									FileTools.copyTimestamp(sp.getFileB().toPath(), sp.getFileA().toPath());
 									FileTools.copyParentTimestamp(sp.getFileB(), sp.getFileA());
-								}catch (WarningException e){
+								}catch (FileNotFoundException e){
 									getLog().printModerate(e.getMessage(), IconKey.Warning);
 								}
 							}
@@ -634,21 +634,21 @@ public class Sync{
 				//FileAIsNew, FileAIsModified, FileAIsLarger, FileAIsLargerAndModified, FileAIsCopyAll
 				//FileBIsNew, FileBIsModified, FileBIsLarger, FileBIsLargerAndModified, FileBIsCopyAll
 				try{
-					if (sps.equals(SyncPairStatus.FileAIsNew) || sps.equals(SyncPairStatus.FileAIsModified) || sps.equals(SyncPairStatus.FileAIsLarger) || sps.equals(SyncPairStatus.FileAIsLargerAndModified) || sps.equals(SyncPairStatus.FileACopyForced) || sps.equals(SyncPairStatus.ConflictResolutionCopySourceA)){  
+					if (sps.equals(SyncPairStatus.FileAIsNew) || sps.equals(SyncPairStatus.FileAIsModified) || sps.equals(SyncPairStatus.FileAIsLarger) || sps.equals(SyncPairStatus.FileAIsLargerAndModified) || sps.equals(SyncPairStatus.FileACopyForced) || sps.equals(SyncPairStatus.ConflictResolutionCopySourceA)){
 						//File f = replacePath(sp.getFileA(), new File(dirA), new File(dirB));
 						File f = sp.getFileB();
 						FileTools.copy(sp.getFileA(), f, sp.getJob().getDirB(), sp.getJob().getHowManyBackups(), sp.getJob().getBackupDir(), sp.getJob().isVerify(), sp.getJob().isWriteTimestampBack(), sp.getJob().isSyncDirTimeStamps(), sp.getJob().isPreserveDOSAttributes(), sp.getJob().isPreservePOSIXFilePermissions(), sp.getJob().isPreservePOSIXFileOwnership(), sp.getJob().isOverrideReadOnly());
 						getLog().printModerate("Copied: " + sp.getFileA().getAbsoluteFile(), IconKey.File);
 						sp.setSynced();
 					}
-					if (sps.equals(SyncPairStatus.FileBIsNew) || sps.equals(SyncPairStatus.FileBIsModified) || sps.equals(SyncPairStatus.FileBIsLarger) || sps.equals(SyncPairStatus.FileBIsLargerAndModified) || sps.equals(SyncPairStatus.FileBCopyForced) || sps.equals(SyncPairStatus.ConflictResolutionCopySourceB)){  
+					if (sps.equals(SyncPairStatus.FileBIsNew) || sps.equals(SyncPairStatus.FileBIsModified) || sps.equals(SyncPairStatus.FileBIsLarger) || sps.equals(SyncPairStatus.FileBIsLargerAndModified) || sps.equals(SyncPairStatus.FileBCopyForced) || sps.equals(SyncPairStatus.ConflictResolutionCopySourceB)){
 						//File f = replacePath(sp.getFileB(), new File(dirB), new File(dirA));
 						File f = sp.getFileA();
 						FileTools.copy(sp.getFileB(), f, sp.getJob().getDirA(), sp.getJob().getHowManyBackups(), sp.getJob().getBackupDir(), sp.getJob().isVerify(), sp.getJob().isWriteTimestampBack(), sp.getJob().isSyncDirTimeStamps(), sp.getJob().isPreserveDOSAttributes(), sp.getJob().isPreservePOSIXFilePermissions(), sp.getJob().isPreservePOSIXFileOwnership(), sp.getJob().isOverrideReadOnly());
 						getLog().printModerate("Copied: " + sp.getFileB().getAbsoluteFile(), IconKey.File);
 						sp.setSynced();
 					}
-				} catch (WarningException we){
+				} catch (FileNotFoundException we){
 					getLog().printMinimal("Warning: " + we.getMessage(), IconKey.Warning);
 					setError(SyncError.Warning);
 				}
@@ -688,7 +688,7 @@ public class Sync{
 					log.printMinimal("Finished synchronization", IconKey.Info);
 			}
 
-			
+
 			// quit if "/quit" specified as command line option
 			if (DirSyncPro.isOption_quit()) {
 				System.exit(error.getExitCode());
@@ -750,14 +750,14 @@ public class Sync{
 
 			if (DirSyncPro.isGuiMode()) {
 				DirSyncPro.displayError(
-						"Out of memory Error!\n\n" + 
+						"Out of memory Error!\n\n" +
 						"Java (JRE) may have been started with low memroy.\n" +
 						"Please restart DirSync Pro using the DirSyncPro.exe executable (MS \n" +
 						"Windows) or by using -Xmx512M flag (java -Xmx512M -jar dirsyncpro.jar)\n" +
 						"to allocate more memroy for DirSync Pro.\n\n" +
 						"If this problem keeps happening, please try to reproduce the error and to\n" +
 						"find out which specific action triggers it; then send a description of\n" +
-						"this error and the debug information to: " + Const.EMAIL + 
+						"this error and the debug information to: " + Const.EMAIL +
 						"\n\nThanks in advance!\n\n" +
 						"DirSync Pro will quit now!");
 			}
@@ -765,7 +765,7 @@ public class Sync{
 		e.printStackTrace(System.err);
 		System.exit(SyncError.ErrorFatal.getExitCode());
 	}
-	
+
 	private void fatalErrorOccured(Throwable e){
 		if (log != null) {
 			log.printMinimal("A fatal error occured; the program will write debug info to the global log file (if enabled) and exit.", IconKey.Error);
@@ -790,26 +790,26 @@ public class Sync{
 
 			if (DirSyncPro.isGuiMode()) {
 				DirSyncPro.displayError(
-						"A fatal error occured:\n" + e + ".\n\n" + 
-						"The program will write debug information to the global log file (if enabled) and exit.\n\n"	+ 
-						"Please try to reproduce the error and to find out which specific action triggers it;\n" + 
-						"then send a description of this error and the debug information to:\n" + Const.EMAIL + 
+						"A fatal error occured:\n" + e + ".\n\n" +
+						"The program will write debug information to the global log file (if enabled) and exit.\n\n"	+
+						"Please try to reproduce the error and to find out which specific action triggers it;\n" +
+						"then send a description of this error and the debug information to:\n" + Const.EMAIL +
 						"\n\nThanks in advance!");
 			}
 		}
 		e.printStackTrace(System.err);
 		System.exit(SyncError.ErrorFatal.getExitCode());
 	}
-	
+
 	private void checkAndSyncParentDirs(SyncPair sp){
 		if (sp.getJob().isSyncDirTimeStamps()){
-			
+
 		}
 	}
-	
+
 	/**
 	 * Checks if the mode if the synchronization is analyze.
-	 * 
+	 *
 	 * @return <code>true</code> if the synchronization is in analyze mode,
 	 *         <code>false</code> otherwise.
 	 */
@@ -842,7 +842,7 @@ public class Sync{
 	/**
 	 * Checks if DirSyncPro is stopping, i.e. if <code>syncState</code> is set to
 	 * <code>STOPPING</code>.
-	 * 
+	 *
 	 * @return <code>true</code> if DirSyncPro is stopping.
 	 */
 	public boolean isStopping() {
@@ -886,7 +886,7 @@ public class Sync{
 
 	/**
 	 * Counts the number of enables directory definitions.
-	 * 
+	 *
 	 * @return The number of enables directory definitions.
 	 */
 	public int getNumberOfEnabledJobs() {
@@ -901,7 +901,7 @@ public class Sync{
 
 	/**
 	 * Set the enables status of all directory definitions to the given value.
-	 * 
+	 *
 	 * @param enabled
 	 *            The value to set in all directory definitions.
 	 */
@@ -927,7 +927,7 @@ public class Sync{
 	 * Returns the next postfix numbering index for a new/copied directory
 	 * @param s
 	 * 			The string after which the postfix string should be searched
-	 * @return the next postfix integer index 
+	 * @return the next postfix integer index
 	 */
 	public int getNextJobPostfixStringIndex(String s){
 		int max = 1;
@@ -944,11 +944,11 @@ public class Sync{
 		}
 		return max;
 	}
-	
+
 	/**
 	 * Copy the options of the given job definitions to ALL job
 	 * definitions (including itself).
-	 * 
+	 *
 	 * @param jobWithOptions
 	 *            The directory definition with the options to copy.
 	 */
@@ -961,7 +961,7 @@ public class Sync{
 	/**
 	 * Copy the options of the given job definitions to all ENABLED
 	 * job definitions (including itself).
-	 * 
+	 *
 	 * @param jobWithOptions
 	 *            The directory definition with the options to copy.
 	 */
@@ -995,7 +995,7 @@ public class Sync{
 			return -1;
 		}
 	}
-	
+
 	/**
 	 * @return Returns the enabled jobs.
 	 */
@@ -1012,7 +1012,7 @@ public class Sync{
 	public Log getLog(){
 		return log;
 	}
-	
+
 	/**
 	 * @param withFile: wheher to setup a log file or no log file
 	 */
@@ -1039,7 +1039,7 @@ public class Sync{
 	public SyncQ getSyncQ() {
 		return syncQ;
 	}
-	
+
 	/**
 	 * clear the syncQ
 	 */

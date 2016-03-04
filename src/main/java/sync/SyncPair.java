@@ -6,7 +6,7 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -24,25 +24,17 @@ import javax.swing.Icon;
 import javax.swing.filechooser.FileSystemView;
 
 import dirsyncpro.Const;
-import dirsyncpro.DirSyncPro;
-import dirsyncpro.Const.IconKey;
-import dirsyncpro.Const.SyncConflictResolutionMode;
-import dirsyncpro.Const.SyncMode;
 import dirsyncpro.Const.SyncPairStatus;
-import dirsyncpro.exceptions.WarningException;
 import dirsyncpro.job.Job;
-import dirsyncpro.sync.Sync.SyncError;
-import dirsyncpro.tools.FileTools;
-import dirsyncpro.tools.TextFormatTool;
 
 /**
  * Represents a file pair to synchronize.
- * 
+ *
  * @author O. Givi (info@dirsyncpro.org)
  */
 
 public class SyncPair{
-	
+
 	private File fileA;
 	private long dateA;
 	private long sizeA;
@@ -56,8 +48,8 @@ public class SyncPair{
 	private Const.SyncPairStatus syncPairStatus;
 	private boolean synced;
 	private Job job;
-	private Icon icon = null; 
-	
+	private Icon icon = null;
+
 	public SyncPair(File a, File b, boolean fAEx, boolean fBEx, boolean fAD, boolean fBD, long fADate, long fBDate, long fAS, long fBS, SyncPairStatus sps, boolean ab, Job j){
 		fileA = a;
 		fileB = b;
@@ -114,7 +106,7 @@ public class SyncPair{
 	public void setFileB(File fileB) {
 		this.fileB = fileB;
 	}
-	
+
 	public void setSynced(){
 		this.synced = true;
 		switch(syncPairStatus){
@@ -161,9 +153,9 @@ public class SyncPair{
 			sizeB = (fileBExists ? fileB.length(): 0);
 			break;
 		}
-			
+
 	}
-	
+
 	public boolean isSynced(){
 		return synced;
 	}
@@ -198,7 +190,7 @@ public class SyncPair{
 	public void setJob(Job job) {
 		this.job = job;
 	}
-	
+
 	public long getDateA() {
 		return dateA;
 	}
@@ -230,5 +222,5 @@ public class SyncPair{
 	public void setFileBExists(boolean fileBExists) {
 		this.fileBExists = fileBExists;
 	}
-	
+
 }

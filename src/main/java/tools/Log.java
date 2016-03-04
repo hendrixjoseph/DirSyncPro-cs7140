@@ -1,15 +1,15 @@
 /*
  * Log.java
- * 
+ *
  * Copyright (C) 2008-2011 O. Givi (info@dirsyncpro.org)
  * Copyright (C) 2003, 2005-2008 F. Gerbig
- * Copyright (C) 2002 E. Gerber  
- * 
+ * Copyright (C) 2002 E. Gerber
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -32,16 +32,15 @@ import dirsyncpro.Const;
 import dirsyncpro.Const.IconKey;
 import dirsyncpro.Const.LogLevel;
 import dirsyncpro.DirSyncPro;
-import dirsyncpro.exceptions.ErrorException;
 import dirsyncpro.exceptions.IncompleteConfigurationException;
-import dirsyncpro.exceptions.WarningException;
 import dirsyncpro.job.Job;
 import dirsyncpro.message.Message;
 import dirsyncpro.message.MessageQ;
+import java.io.FileNotFoundException;
 
 /**
  * Represents a log file. Contains methods to create or continue a log file.
- * 
+ *
  * @author E. Gerber , F. Gerbig, O. Givi (info@dirsyncpro.org)
  */
 public class Log {
@@ -63,10 +62,10 @@ public class Log {
 	private void printError(String message) {
 		print(new Message(message, IconKey.Error, Const.LogLevel.Minimal));
 	}
-	
+
 	/**
 	 * Initialize a new Log.
-	 * 
+	 *
 	 * @param filename
 	 *            The filename of this log.
 	 * @throws IncompleteConfigurationException
@@ -82,7 +81,7 @@ public class Log {
 			this.disable();
 			return;
 		}
-		
+
 		if (!filename.contains(File.separator)){
 			filename = DirSyncPro.getLogsPath(true) + filename;
 		}
@@ -90,7 +89,7 @@ public class Log {
 		if (file != null && file.getPath().equals(filename)){
 			return;
 		}
-		
+
 		if (filename.contains("<") && filename.contains(">")){
 			wildCardedFileName = filename;
 			filename = WildcardTools.replaceDateWildcards(filename, new Date());
@@ -102,31 +101,31 @@ public class Log {
 		}else{
 			wildCardedFileName = "";
 		}
-		
+
 		if (!filename.contains(File.separator) && !DirSyncPro.getLogsPath(false).equals("")){
 			filename = DirSyncPro.getLogsPath(true) + filename;
 		}
-		
+
 		try {
 			file = new File(filename);
 
 			if (!file.exists()) {
 				if (file.getParentFile() != null) {
-					file.getParentFile().mkdirs(); 
+					file.getParentFile().mkdirs();
 				}
 				if (!file.createNewFile()) {
-					throw new ErrorException("Cannot create logfile '" + file.getAbsolutePath() + "'!");
+					throw new FileNotFoundException("Cannot create logfile '" + file.getAbsolutePath() + "'!");
 				}
 			}
 
 			if (!file.canWrite()) {
-				throw new ErrorException("Cannot write to logfile '" + file.getAbsolutePath() + "'!");
+				throw new FileNotFoundException("Cannot write to logfile '" + file.getAbsolutePath() + "'!");
 			}
 
 			if (!file.isFile()) {
-				throw new ErrorException("Logfile '" + file.getAbsolutePath() + "' isn't a file!");
+				throw new FileNotFoundException("Logfile '" + file.getAbsolutePath() + "' isn't a file!");
 			}
-				
+
 			// close the buffer if already exists to free the file
 			if (out != null){
 				out.close();
@@ -145,15 +144,13 @@ public class Log {
 			writeLog(new Message("*****************************************", null, null));
 		}catch (IOException e) {
 			DirSyncPro.displayError("Log file '" + filename + "' could not be created.");
-		}catch (ErrorException e){
-			DirSyncPro.displayError(e.getMessage());
 		}
 	}
-	
+
 	private boolean printThisMessage(Message message){
 		LogLevel currentLogLevel = DirSyncPro.getSync().getLogLevel();
 		LogLevel messageLogLevel  = message.getLoglevel();
-		
+
 		return
 				messageLogLevel.compareTo(currentLogLevel) <= 0;
 //		(
@@ -172,7 +169,7 @@ public class Log {
 //				(messageLogLevel.equals(LogLevel.Minimal) || messageLogLevel.equals(LogLevel.Moderate) || messageLogLevel.equals(LogLevel.Excessive))
 //		);
 	}
-	
+
 	private void writeLog(Message m){
 		try {
 			if (isEnabled()){
@@ -183,41 +180,41 @@ public class Log {
 			throw new Error(e);
 		}
 	}
-	
-	/** 
+
+	/**
 	 * Prints a string with Minimal LogLevel
 	 * @param s the string to print
 	 */
 	public void printMinimal(String s, IconKey i){
 		print(new Message(s, i, LogLevel.Minimal));
 	}
-	
-	/** 
+
+	/**
 	 * Prints a string with Moderate LogLevel
 	 * @param s the string to print
 	 */
 	public void printModerate(String s, IconKey i){
-		print(new Message(s, i, LogLevel.Moderate)); 
+		print(new Message(s, i, LogLevel.Moderate));
 	}
 
-	/** 
+	/**
 	 * Prints a string with Excessive LogLevel
 	 * @param s the string to print
 	 */
 	public void printExcessive(String s, IconKey i){
-		print(new Message(s, i, LogLevel.Excessive)); 
+		print(new Message(s, i, LogLevel.Excessive));
 	}
 
 	protected void addToMessageQ(Message message){
 		messages.add(message);
 		messageQUpdated = true;
 	}
-	
+
 	/** prints a message to the log */
 	private void print(Message message) {
-		
+
 		boolean printable = printThisMessage(message);
-		Log jsLog = DirSyncPro.getSync().getLog(); 
+		Log jsLog = DirSyncPro.getSync().getLog();
 		Log dspLog = DirSyncPro.getLog();
 
 		boolean isJsLog = this.equals(jsLog);
@@ -237,20 +234,20 @@ public class Log {
 				// Also write to Jobset Log and DSP Log
 				dspLog.writeLog(message);
 			}
-			
+
 			//for the message table
 			jsLog.addToMessageQ(message);
-			
+
 			// echo to console only if no gui selected
 			if (DirSyncPro.isOption_noGui()) {
 				System.out.println(message);
 			}
-		}				
+		}
 	}
 
 	/**
 	 * Close the log on garbage collection.
-	 * 
+	 *
 	 * @throws Throwable
 	 */
 	protected void finalize() throws Throwable {
@@ -315,14 +312,14 @@ public class Log {
 	public boolean isEnabled(){
 		return (file != null);
 	}
-	
+
 	/**
 	 * @return the messages
 	 */
 	public MessageQ getMessages() {
 		return messages;
 	}
-	
+
 	/**
 	 * Cleans the messagesQ
 	 */
@@ -330,7 +327,7 @@ public class Log {
 		messages = new MessageQ();
 		messageQUpdated = true;
 	}
-	
+
 	public void setPath(String path){
 		if (isEnabled()){
 			String filename = getFilename();
