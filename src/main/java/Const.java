@@ -84,7 +84,7 @@ public class Const {
         private String prString;
         private String prDefault;
 
-        private Properties(String prst, String dflt) {
+        Properties(String prst, String dflt) {
             prString = prst;
             prDefault = dflt;
         }
@@ -108,11 +108,11 @@ public class Const {
 
     public enum WeekDays {
         Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
-    };
+    }
 
     public enum Months {
         January, February, March, April, May, June, July, August, September, October, November, December
-    };
+    }
 
     public static final Date NonDate = new Date(0);
 
@@ -140,7 +140,7 @@ public class Const {
         ABCustom("Synchronize A -> B (custom)", "/icons/syncModeAB16x16.png"),
         BACustom("Synchronize B -> A (custom)", "/icons/syncModeBA16x16.png");
 
-        private SyncMode(String name, String iconFile) {
+        SyncMode(String name, String iconFile) {
             this.name = name;
             this.icon = new ImageIcon(Const.class.getResource(iconFile));
             this.literal = super.toString();
@@ -187,14 +187,15 @@ public class Const {
         public boolean isBI() {
             return (this.equals(BIMirror) || this.equals(BICustom));
         }
-    };
+    }
 
     /**
      * Compare Mode
      */
     public enum CompareMode {
         CompareFileSizesDates, CompareFileSizesDatesMetaData, CompareFileContents
-    };
+    }
+
     public static final CompareMode COMPARE_MODE_DEFAULT = CompareMode.CompareFileSizesDates;
 
     /**
@@ -210,7 +211,7 @@ public class Const {
         DeleteDirs("Delete unnecessary dirs after synchronization"),
         ConflictFiles("Conflict files"); //
 
-        private CopyMode(String name) {
+        CopyMode(String name) {
             this.name = name;
         }
         private String name;
@@ -219,7 +220,7 @@ public class Const {
         public String toString() {
             return name;
         }
-    };
+    }
 
     public enum SymLinkMode {
         SkipSymLinks("Skip symbolic links"),
@@ -229,7 +230,7 @@ public class Const {
         private String name;
         private String literal;
 
-        private SymLinkMode(String name) {
+        SymLinkMode(String name) {
             this.name = name;
             this.literal = super.toString();
         }
@@ -284,7 +285,7 @@ public class Const {
         private boolean isDirOperation;
         private boolean ab;
 
-        private SyncPairStatus(boolean isFO, boolean isDO, boolean isAB, String name, String iconFile, Color c) {
+        SyncPairStatus(boolean isFO, boolean isDO, boolean isAB, String name, String iconFile, Color c) {
             this.isFileOperation = isFO;
             this.isDirOperation = isDO;
             this.ab = isAB;
@@ -343,7 +344,7 @@ public class Const {
         public boolean isDirOperation() {
             return isDirOperation;
         }
-    };
+    }
 
     /**
      * Default include/excludes
@@ -359,7 +360,8 @@ public class Const {
      */
     public enum SyncConflictResolutionMode {
         CopyModified, CopyLarger, CopyLargerAndModified, CopyRenamed, WarnUser, Skip, CopySource
-    };
+    }
+
     public static final SyncConflictResolutionMode BIDIR_SYNC_CONFLICT_RESOLUTION_MODE_DEFAULT = SyncConflictResolutionMode.CopyModified;
     public static final SyncConflictResolutionMode MONODIR_SYNC_CONFLICT_RESOLUTION_MODE_DEFAULT = SyncConflictResolutionMode.WarnUser;
 
@@ -368,7 +370,7 @@ public class Const {
      */
     public enum LogLevel {
         Minimal, Moderate, Excessive
-    };
+    }
 
     public enum FileType {
         DSC("dsc", "DirSync Pro config file"),
@@ -378,7 +380,7 @@ public class Const {
         private String extension;
         private String description;
 
-        private FileType(String ext, String descr) {
+        FileType(String ext, String descr) {
             this.extension = ext;
             this.description = descr;
         }
@@ -519,7 +521,7 @@ public class Const {
      */
     public enum Display {
         ALL, COPY_NEW, COPY_MODIFIED, DELETED, ERROR
-    };
+    }
 
     /**
      * The default name for the backup folder.
@@ -558,7 +560,7 @@ public class Const {
         private Icon icon;
         private Color color;
 
-        private IconKey(String iconFile, Color c) {
+        IconKey(String iconFile, Color c) {
             this.icon = new ImageIcon(Const.class.getResource(iconFile));
             this.color = c;
         }
@@ -578,5 +580,5 @@ public class Const {
                 return File;
             }
         }
-    };
+    }
 }

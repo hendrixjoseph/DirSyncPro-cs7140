@@ -46,7 +46,6 @@ import dirsyncpro.exceptions.IncompleteConfigurationException;
 import dirsyncpro.gui.jobdialog.filtertree.filter.Filter;
 import dirsyncpro.gui.jobdialog.filtertree.filter.FilterByPattern;
 import dirsyncpro.gui.jobdialog.filtertree.filter.FilterSet;
-import dirsyncpro.gui.jobdialog.scheduletree.schedule.Schedule;
 import dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleEngine;
 import dirsyncpro.sync.RealtimeListener;
 import dirsyncpro.sync.Sync;
@@ -777,9 +776,10 @@ public class Job extends JobObject implements Cloneable {
      *
      * @return a clone of this instance.
      * @exception CloneNotSupportedException if the object's class does not
-     * support the <code>Cloneable</code> interface.
+     * support the {@code Cloneable} interface.
      * @see java.lang.Cloneable
      */
+    @Override
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
@@ -833,6 +833,7 @@ public class Job extends JobObject implements Cloneable {
         final Job j = this;
         //schedule next syncronization once any change appears
         RealtimeListener.RealtimeChangeListener changeListener = new RealtimeListener.RealtimeChangeListener() {
+            @Override
             public void change(WatchEvent<Path> we) {
                 ScheduleEngine.getRealtimeInstance().scheduleRealtime(j, syncRealtimeDelay * 1000);
             }

@@ -25,7 +25,6 @@ package dirsyncpro.gui.shutdowndialog;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
-import dirsyncpro.Const;
 import dirsyncpro.DirSyncPro;
 import dirsyncpro.tools.GuiTools;
 
@@ -78,6 +77,7 @@ public abstract class ShutDownDialogObjects extends javax.swing.JDialog {
         cancelButton.setText("Cancel");
         cancelButton.setAlignmentX(0.5F);
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtoncancelActionPerformed(evt);
             }

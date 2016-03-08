@@ -93,7 +93,7 @@ public class FilterSet implements Cloneable {
      * @return whether this job has exclude file pattern filters
      */
     public boolean hasExcludeFilters() {
-        return excludeFilters.size() > 0;
+        return !excludeFilters.isEmpty();
     }
 
     public boolean matchesAnyIncludeFilter(Path path) {

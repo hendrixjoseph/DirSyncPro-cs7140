@@ -29,7 +29,7 @@ public class FilterByPattern extends Filter {
 
     public enum FilterPatternType {
         File, Directory
-    };
+    }
 
     private String pattern = "";
     private FilterPatternType patternType;
@@ -73,20 +73,19 @@ public class FilterByPattern extends Filter {
      *
      * @param a The string to compare.
      *
-     * @return <code>true</code> if the strings match, <code>false</code>
+     * @return <code>true</code> if the strings match, {@code false}
      * otherwise.
      */
     private boolean matchDependingOnOS(String a) {
         String patternToMatch = pattern;
-        String stringToMatch = a;
 
         if (!regExp) {
             patternToMatch = this.getRegEx();
         }
         if (Const.OS_IS_WINDOWS) {
-            return Pattern.compile(patternToMatch, Pattern.CASE_INSENSITIVE).matcher(stringToMatch).matches();
+            return Pattern.compile(patternToMatch, Pattern.CASE_INSENSITIVE).matcher(a).matches();
         } else {
-            return Pattern.compile(patternToMatch).matcher(stringToMatch).matches();
+            return Pattern.compile(patternToMatch).matcher(a).matches();
         }
     }
 

@@ -35,16 +35,19 @@ public class JobsTreeModel extends DefaultTreeModel {
     }
 
     // the root of the tree
+    @Override
     public Object getRoot() {
         return jobTree;
     }
 
     // number of a node's childeren
+    @Override
     public int getChildCount(Object parent) {
         return ((JobTree) parent).getChildCount();
     }
 
     // child's position in its parent node
+    @Override
     public int getIndexOfChild(Object parent, Object child) {
         for (int i = 0; i < getChildCount(parent); i++) {
             if (getChild(parent, i).equals(child)) {
@@ -55,16 +58,19 @@ public class JobsTreeModel extends DefaultTreeModel {
     }
 
     // get the indexth child of the parent
+    @Override
     public Object getChild(Object nodeObject, int index) {
         return ((JobTree) nodeObject).getChildAt(index);
     }
 
     // is it leaf?
+    @Override
     public boolean isLeaf(Object node) {
         return (((JobTree) node).isLeaf());
     }
 
     // value changed
+    @Override
     public void valueForPathChanged(TreePath path, Object newvalue) {
     }
 

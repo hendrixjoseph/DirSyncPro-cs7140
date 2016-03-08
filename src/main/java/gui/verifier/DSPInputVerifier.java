@@ -55,6 +55,7 @@ public class DSPInputVerifier extends InputVerifier implements KeyListener, Mous
         popup.setFocusableWindowState(false);
     }
 
+    @Override
     public boolean verify(JComponent component) {
         return true;
     }
@@ -75,33 +76,41 @@ public class DSPInputVerifier extends InputVerifier implements KeyListener, Mous
         return errorStr;
     }
 
+    @Override
     public void keyPressed(KeyEvent e) {
         popup.setVisible(false);
         setOriginalColor(((JTextField) e.getComponent()));
     }
 
+    @Override
     public void keyTyped(KeyEvent e) {
     }
 
+    @Override
     public void keyReleased(KeyEvent e) {
     }
 
+    @Override
     public void mouseClicked(MouseEvent e) {
         popup.setVisible(false);
         setOriginalColor(((JTextField) e.getComponent()));
     }
 
+    @Override
     public void mouseEntered(MouseEvent e) {
     }
 
+    @Override
     public void mouseExited(MouseEvent e) {
     }
 
+    @Override
     public void mousePressed(MouseEvent e) {
         popup.setVisible(false);
         setOriginalColor(((JTextField) e.getComponent()));
     }
 
+    @Override
     public void mouseReleased(MouseEvent e) {
     }
 }

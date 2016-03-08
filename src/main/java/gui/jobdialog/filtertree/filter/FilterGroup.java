@@ -33,7 +33,6 @@ public class FilterGroup extends Filter {
     }
 
     public String toString() {
-        String s = super.toString();
-        return s;
+        return super.toString();
     }
 }

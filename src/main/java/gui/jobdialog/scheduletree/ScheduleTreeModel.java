@@ -35,16 +35,19 @@ public class ScheduleTreeModel extends DefaultTreeModel {
     }
 
     // the root of the tree
+    @Override
     public Object getRoot() {
         return scheduleTree;
     }
 
     // number of a node's childeren
+    @Override
     public int getChildCount(Object parent) {
         return ((ScheduleTree) parent).getChildCount();
     }
 
     // child's position in its parent node
+    @Override
     public int getIndexOfChild(Object parent, Object child) {
         for (int i = 0; i < getChildCount(parent); i++) {
             if (getChild(parent, i).equals(child)) {
@@ -55,16 +58,19 @@ public class ScheduleTreeModel extends DefaultTreeModel {
     }
 
     // get the indexth child of the parent
+    @Override
     public Object getChild(Object nodeObject, int index) {
         return ((ScheduleTree) nodeObject).getChildAt(index);
     }
 
     // is it leaf?
+    @Override
     public boolean isLeaf(Object node) {
         return (((ScheduleTree) node).isLeaf());
     }
 
     // value changed
+    @Override
     public void valueForPathChanged(TreePath path, Object newvalue) {
     }
 

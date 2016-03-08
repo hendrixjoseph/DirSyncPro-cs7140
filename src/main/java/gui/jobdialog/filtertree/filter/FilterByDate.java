@@ -32,11 +32,11 @@ public class FilterByDate extends Filter {
 
     public enum FilterDateType {
         EarlierThan, ExactlyOn, LaterThan
-    };
+    }
 
     public enum FilterDateMode {
         SpecificTime, TimeUnit
-    };
+    }
 
     public enum FilterTimeUnitType {
         Hours(Calendar.HOUR),
@@ -44,7 +44,7 @@ public class FilterByDate extends Filter {
         Weeks(Calendar.WEEK_OF_YEAR),
         Months(Calendar.MONTH);
 
-        private FilterTimeUnitType(int value) {
+        FilterTimeUnitType(int value) {
             this.value = value;
         }
 
@@ -53,7 +53,7 @@ public class FilterByDate extends Filter {
         public int getValue() {
             return value;
         }
-    };
+    }
 
     private FilterDateMode filterDateMode;
     private Date date;

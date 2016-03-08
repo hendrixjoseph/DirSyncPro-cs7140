@@ -386,7 +386,7 @@ public class XmlWriter {
     }
 
     private void write(String s) throws IOException {
-        out.write(s.toString().getBytes("UTF-8"));
+        out.write(s.getBytes("UTF-8"));
     }
 
     private void writeln() throws IOException {

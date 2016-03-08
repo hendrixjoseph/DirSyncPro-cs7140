@@ -18,7 +18,6 @@
  */
 package dirsyncpro.gui.mainframe.jobtree;
 
-import java.awt.Color;
 import java.util.Enumeration;
 
 import javax.swing.Icon;
@@ -76,10 +75,11 @@ public class JobTree extends DefaultMutableTreeNode {
             return icon;
         }
 
-        private Type(String iconFile) {
+        Type(String iconFile) {
             this.icon = new ImageIcon(Const.class.getResource(iconFile));
         }
-    };
+    }
+
     public Type type;
     public Object value;
     public JobTree parent;

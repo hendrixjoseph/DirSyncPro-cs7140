@@ -25,6 +25,7 @@ import javax.swing.JTabbedPane;
 
 public class MyJTabbedPane extends JTabbedPane {
 
+    @Override
     public void setSelectedIndex(int index) {
         Component component = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
 

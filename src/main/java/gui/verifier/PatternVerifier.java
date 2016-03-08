@@ -46,10 +46,10 @@ public class PatternVerifier extends DSPInputVerifier implements KeyListener, Mo
         boolean regExp = DirSyncPro.getGui().getJobDialog().getFilterDialog().isPatternRegularExpression();
         if (!regExp) {
             eStr = "Pattern is empty or contains '\\'!";
-            valid = !field.getText().contains("\\") && field.getText().length() != 0;
+            valid = !field.getText().contains("\\") && !field.getText().isEmpty();
         } else {
             eStr = "Regular Expression is empty or invalid!";
-            valid = field.getText().length() != 0;
+            valid = !field.getText().isEmpty();
             try {
                 Pattern.compile(field.getText());
             } catch (PatternSyntaxException e) {

@@ -50,7 +50,7 @@ public class ShutDownDialog extends ShutDownDialogObjects {
                 DirSyncPro.shutDownSystem();
             }
         }
-    };
+    }
 
     TimerTask task = new CountDownTask();
 

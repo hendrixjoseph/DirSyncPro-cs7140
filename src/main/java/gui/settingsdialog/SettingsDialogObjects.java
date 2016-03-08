@@ -25,7 +25,6 @@ package dirsyncpro.gui.settingsdialog;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
-import dirsyncpro.Const;
 import dirsyncpro.DirSyncPro;
 import dirsyncpro.tools.GuiTools;
 
@@ -195,6 +194,7 @@ public abstract class SettingsDialogObjects extends javax.swing.JDialog {
         configPathBrowseButton.setToolTipText("Browse for the jobset file path");
         configPathBrowseButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         configPathBrowseButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 configPathBrowseButtonActionPerformed(evt);
             }
@@ -225,6 +225,7 @@ public abstract class SettingsDialogObjects extends javax.swing.JDialog {
         configPathInlineCheckBox.setMinimumSize(null);
         configPathInlineCheckBox.setPreferredSize(null);
         configPathInlineCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 configPathInlineCheckBoxActionPerformed(evt);
             }
@@ -300,6 +301,7 @@ public abstract class SettingsDialogObjects extends javax.swing.JDialog {
         checkForUpdateButton1.setToolTipText("Check for program updates now.");
         checkForUpdateButton1.setAlignmentX(0.5F);
         checkForUpdateButton1.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkForUpdateButton1ActionPerformed(evt);
             }
@@ -474,6 +476,7 @@ public abstract class SettingsDialogObjects extends javax.swing.JDialog {
         singleClickSystemTrayCheckBox.setMinimumSize(null);
         singleClickSystemTrayCheckBox.setPreferredSize(null);
         singleClickSystemTrayCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 singleClickSystemTrayCheckBoxActionPerformed(evt);
             }
@@ -579,6 +582,7 @@ public abstract class SettingsDialogObjects extends javax.swing.JDialog {
         defaultShutDownCommand.setToolTipText("Browse for the jobset file path");
         defaultShutDownCommand.setMargin(new java.awt.Insets(2, 2, 2, 2));
         defaultShutDownCommand.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 defaultShutDownCommandActionPerformed(evt);
             }
@@ -704,6 +708,7 @@ public abstract class SettingsDialogObjects extends javax.swing.JDialog {
         logsPathInlineCheckBox.setMinimumSize(null);
         logsPathInlineCheckBox.setPreferredSize(null);
         logsPathInlineCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logsPathInlineCheckBoxActionPerformed(evt);
             }
@@ -737,11 +742,13 @@ public abstract class SettingsDialogObjects extends javax.swing.JDialog {
         logsPathBrowseButton.setToolTipText("Browse for the log file path");
         logsPathBrowseButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         logsPathBrowseButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logsPathBrowseButtonMouseClicked(evt);
             }
         });
         logsPathBrowseButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logsPathBrowseButtonActionPerformed(evt);
             }
@@ -789,6 +796,7 @@ public abstract class SettingsDialogObjects extends javax.swing.JDialog {
         enableGlobalLogCheckBox.setMinimumSize(null);
         enableGlobalLogCheckBox.setPreferredSize(null);
         enableGlobalLogCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enableGlobalLogCheckBoxActionPerformed(evt);
             }
@@ -813,6 +821,7 @@ public abstract class SettingsDialogObjects extends javax.swing.JDialog {
         enableJobsetLogCheckBox.setMinimumSize(null);
         enableJobsetLogCheckBox.setPreferredSize(null);
         enableJobsetLogCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enableJobsetLogCheckBoxActionPerformed(evt);
             }
@@ -853,6 +862,7 @@ public abstract class SettingsDialogObjects extends javax.swing.JDialog {
         okButton.setMinimumSize(null);
         okButton.setPreferredSize(null);
         okButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okButtonActionPerformed(evt);
             }
@@ -866,6 +876,7 @@ public abstract class SettingsDialogObjects extends javax.swing.JDialog {
         cancelButton.setMinimumSize(null);
         cancelButton.setPreferredSize(null);
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtoncancelActionPerformed(evt);
             }

@@ -43,7 +43,7 @@ public class DSPFileFilter extends FileFilter {
      * Returns if the given File shall be shown in a file chooser.
      *
      * @param f The File in question.
-     * @return <code>true</code> if the file shall be shown, <code>false</code>
+     * @return <code>true</code> if the file shall be shown, {@code false}
      * else.
      */
     @Override

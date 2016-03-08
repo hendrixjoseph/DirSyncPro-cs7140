@@ -36,13 +36,15 @@ public class MessagesTableModel extends AbstractTableModel {
     /**
      * @see TableModel#getColumnName()
      */
+    @Override
     public String getColumnName(int col) {
-        return columnNames[col].toString();
+        return columnNames[col];
     }
 
     /**
      * @see TableModel#getColumnCount()
      */
+    @Override
     public final int getColumnCount() {
         return 2;
     }
@@ -50,6 +52,7 @@ public class MessagesTableModel extends AbstractTableModel {
     /**
      * @see TableModel#getRowCount()
      */
+    @Override
     public final int getRowCount() {
         if (DirSyncPro.getSync() != null && DirSyncPro.getSync().getLog().getMessages() != null) {
             return DirSyncPro.getSync().getLog().getMessages().viewSize();
@@ -61,6 +64,7 @@ public class MessagesTableModel extends AbstractTableModel {
     /**
      * @see TableModel#isCellEditable(int, int)
      */
+    @Override
     public boolean isCellEditable(int rowIndex, int columnIndex) {
         return false;
     }
@@ -68,6 +72,7 @@ public class MessagesTableModel extends AbstractTableModel {
     /**
      * @see TableModel#getValueAt(int, int)
      */
+    @Override
     public final Object getValueAt(int row, int column) {
         if (row < 0 || row >= getRowCount() || column < 0 || column >= getColumnCount()) {
             return null;
@@ -90,6 +95,7 @@ public class MessagesTableModel extends AbstractTableModel {
     /**
      * @see TableModel#getColumnClass(int)
      */
+    @Override
     public final Class<?> getColumnClass(int column) {
         return String.class;
     }

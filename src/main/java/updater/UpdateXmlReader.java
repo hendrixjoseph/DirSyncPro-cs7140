@@ -106,12 +106,13 @@ public class UpdateXmlReader extends DefaultHandler {
      * @param atts The XML elements attributes.
      * @throws SAXException
      */
+    @Override
     public void startElement(String namespaceURI, String localname,
-            String qName, Attributes atts) throws SAXException {
+                             String qName, Attributes atts) throws SAXException {
 
         if (qName.equals(TAGRoot)) {
 
-            updateable = Boolean.valueOf(atts.getValue(ATTRUpdateable)).booleanValue();
+            updateable = Boolean.valueOf(atts.getValue(ATTRUpdateable));
             newVersion = String.valueOf(atts.getValue(ATTRVersion));
             updateURL = String.valueOf(atts.getValue(ATTRUrl));
             changes = String.valueOf(atts.getValue(ATTRChanges));
@@ -121,7 +122,7 @@ public class UpdateXmlReader extends DefaultHandler {
 
     /**
      *
-     * @return <code>boolean</code> if contacting the update server has
+     * @return {@code boolean} if contacting the update server has
      * succeeded.
      */
     public boolean contacted() {

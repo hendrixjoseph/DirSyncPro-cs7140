@@ -34,6 +34,7 @@ public class MessagesTableCellRenderer implements TableCellRenderer {
     public MessagesTableCellRenderer() {
     }
 
+    @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         if (row >= DirSyncPro.getSync().getLog().getMessages().viewSize() || row < 0) {
             return null;

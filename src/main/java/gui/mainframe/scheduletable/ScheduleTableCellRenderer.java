@@ -35,6 +35,7 @@ public class ScheduleTableCellRenderer implements TableCellRenderer {
     public ScheduleTableCellRenderer() {
     }
 
+    @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         if (row >= DirSyncPro.getSync().getScheduleEngine().getScheduleQ().size() || row < 0) {
             return null;

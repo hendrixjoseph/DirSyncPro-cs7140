@@ -57,15 +57,15 @@ public class FilterByFilePermissions extends Filter {
         filePermissions = posixFileAttributes.permissions();
         filterPermissions = convertToPosixFilePermission(permissionValue);
 
-        return (!(filterPermissions.contains(PosixFilePermission.OWNER_READ) ^ filePermissions.contains(PosixFilePermission.OWNER_READ))
-                && !(filterPermissions.contains(PosixFilePermission.OWNER_WRITE) ^ filePermissions.contains(PosixFilePermission.OWNER_WRITE))
-                && !(filterPermissions.contains(PosixFilePermission.OWNER_EXECUTE) ^ filePermissions.contains(PosixFilePermission.OWNER_EXECUTE))
-                && !(filterPermissions.contains(PosixFilePermission.GROUP_READ) ^ filePermissions.contains(PosixFilePermission.GROUP_READ))
-                && !(filterPermissions.contains(PosixFilePermission.GROUP_WRITE) ^ filePermissions.contains(PosixFilePermission.GROUP_WRITE))
-                && !(filterPermissions.contains(PosixFilePermission.GROUP_EXECUTE) ^ filePermissions.contains(PosixFilePermission.GROUP_EXECUTE))
-                && !(filterPermissions.contains(PosixFilePermission.OTHERS_READ) ^ filePermissions.contains(PosixFilePermission.OTHERS_READ))
-                && !(filterPermissions.contains(PosixFilePermission.OTHERS_WRITE) ^ filePermissions.contains(PosixFilePermission.OTHERS_WRITE))
-                && !(filterPermissions.contains(PosixFilePermission.OTHERS_EXECUTE) ^ filePermissions.contains(PosixFilePermission.OTHERS_EXECUTE)));
+        return (filterPermissions.contains(PosixFilePermission.OWNER_READ) == filePermissions.contains(PosixFilePermission.OWNER_READ)
+                && filterPermissions.contains(PosixFilePermission.OWNER_WRITE) == filePermissions.contains(PosixFilePermission.OWNER_WRITE)
+                && filterPermissions.contains(PosixFilePermission.OWNER_EXECUTE) == filePermissions.contains(PosixFilePermission.OWNER_EXECUTE)
+                && filterPermissions.contains(PosixFilePermission.GROUP_READ) == filePermissions.contains(PosixFilePermission.GROUP_READ)
+                && filterPermissions.contains(PosixFilePermission.GROUP_WRITE) == filePermissions.contains(PosixFilePermission.GROUP_WRITE)
+                && filterPermissions.contains(PosixFilePermission.GROUP_EXECUTE) == filePermissions.contains(PosixFilePermission.GROUP_EXECUTE)
+                && filterPermissions.contains(PosixFilePermission.OTHERS_READ) == filePermissions.contains(PosixFilePermission.OTHERS_READ)
+                && filterPermissions.contains(PosixFilePermission.OTHERS_WRITE) == filePermissions.contains(PosixFilePermission.OTHERS_WRITE)
+                && filterPermissions.contains(PosixFilePermission.OTHERS_EXECUTE) == filePermissions.contains(PosixFilePermission.OTHERS_EXECUTE));
     }
 
     private Set<PosixFilePermission> convertToPosixFilePermission(int permsValue) {
@@ -172,7 +172,7 @@ public class FilterByFilePermissions extends Filter {
     @Override
     public int compareTo(Filter s) {
         if (s instanceof FilterByFilePermissions) {
-            return (new Integer(permissionValue)).compareTo(new Integer(((FilterByFilePermissions) s).getPermissionValue()));
+            return (new Integer(permissionValue)).compareTo(((FilterByFilePermissions) s).getPermissionValue());
         } else {
             return super.compareTo(s);
         }

@@ -73,7 +73,7 @@ public class ConfigConverter {
         //due to custom bi mode as of 1.46
         D55("syncMode=\"BI\"", "syncMode=\"" + Const.SyncMode.BIMirror.getLiteral() + "\""),;
 
-        private Deprecated(String from, String to) {
+        Deprecated(String from, String to) {
             this.from = from;
             this.to = to;
             this.literal = super.toString();
@@ -90,7 +90,7 @@ public class ConfigConverter {
         public String getTo() {
             return to;
         }
-    };
+    }
 
     // no instance allowd
     private ConfigConverter() {
@@ -153,7 +153,7 @@ public class ConfigConverter {
             for (String fileDir : new String[]{"File", "Dir"}) {
                 m = Pattern.compile("(.+)( " + action + "" + fileDir + "s=\")(.*?)\"(.+)", Pattern.MULTILINE | Pattern.DOTALL).matcher(output);
                 if (m.find()) {
-                    if (m.group(3).length() > 0) {
+                    if (!m.group(3).isEmpty()) {
                         output = m.group(1) + m.group(4);
                         String[] patterns = m.group(3).split(";");
                         for (String pattern : patterns) {
@@ -169,7 +169,7 @@ public class ConfigConverter {
                 m = Pattern.compile("(.+)( " + action + "FileSize" + fileSizeType + "=\")(.*?)\"(.+)", Pattern.MULTILINE | Pattern.DOTALL).matcher(output);
                 if (m.find()) {
                     if (!m.group(3).equals("-1")) {
-                        output = m.group(1) + m.group(4) + "   <filter type=\"ByFileSize\" action=\"" + Character.toUpperCase(action.charAt(0)) + action.substring(1) + "\" fileSizeType=\"" + fileSizeType + "\" fileSizeValue=\"" + m.group(3) + "\"/>\n";;
+                        output = m.group(1) + m.group(4) + "   <filter type=\"ByFileSize\" action=\"" + Character.toUpperCase(action.charAt(0)) + action.substring(1) + "\" fileSizeType=\"" + fileSizeType + "\" fileSizeValue=\"" + m.group(3) + "\"/>\n";
                     } else {
                         output = m.group(1) + m.group(4);
                     }

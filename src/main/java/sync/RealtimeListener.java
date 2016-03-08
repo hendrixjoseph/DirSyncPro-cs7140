@@ -112,10 +112,7 @@ public class RealtimeListener {
             WatchKey key;
             try {
                 key = watcher.take();
-            } catch (InterruptedException x) {
-                return;
-            } catch (ClosedWatchServiceException e) {
-                //if watcher was closed in stop() method
+            } catch (InterruptedException | ClosedWatchServiceException x) {
                 return;
             }
 
@@ -169,9 +166,9 @@ public class RealtimeListener {
         }
     }
 
-    public static interface RealtimeChangeListener {
+    public interface RealtimeChangeListener {
 
-        public void change(WatchEvent<Path> e);
+        void change(WatchEvent<Path> e);
     }
 
     public void setChangeListener(RealtimeChangeListener l) {

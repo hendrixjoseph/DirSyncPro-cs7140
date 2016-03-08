@@ -91,7 +91,7 @@ public class Sync {
 
         private int exitCode;
 
-        private SyncError(int ec) {
+        SyncError(int ec) {
             exitCode = ec;
         }
 
@@ -811,8 +811,8 @@ public class Sync {
     /**
      * Checks if the mode if the synchronization is analyze.
      *
-     * @return <code>true</code> if the synchronization is in analyze mode,
-     * <code>false</code> otherwise.
+     * @return {@code true} if the synchronization is in analyze mode,
+     * {@code false} otherwise.
      */
     public boolean isAnalyze() {
         return (mode == ANALYZE);
@@ -840,10 +840,10 @@ public class Sync {
     }
 
     /**
-     * Checks if DirSyncPro is stopping, i.e. if <code>syncState</code> is set
-     * to <code>STOPPING</code>.
+     * Checks if DirSyncPro is stopping, i.e. if {@code syncState} is set
+     * to {@code STOPPING}.
      *
-     * @return <code>true</code> if DirSyncPro is stopping.
+     * @return {@code true} if DirSyncPro is stopping.
      */
     public boolean isStopping() {
         return state == STOPPING;
@@ -857,7 +857,7 @@ public class Sync {
     }
 
     /**
-     * Sleeps if <code>syncState</code> is pause.
+     * Sleeps if {@code syncState} is pause.
      */
     public void sleepOnPause() {
         while (getState() == PAUSE) {

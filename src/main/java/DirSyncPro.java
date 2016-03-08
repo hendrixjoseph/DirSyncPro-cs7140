@@ -279,8 +279,8 @@ public class DirSyncPro {
     /**
      * Returns whether the progam is in GUI mode.
      *
-     * @return boolean <code>true</code> if the program is in GUI mode,
-     * <code>false</code> else.
+     * @return boolean {@code true} if the program is in GUI mode,
+     * {@code false} else.
      */
     public static boolean isGuiMode() {
         return !((option_noGui) || (gui == null));
@@ -373,7 +373,7 @@ public class DirSyncPro {
     /**
      * Set the quit option.
      *
-     * @param option_quit If set to <code>true</code> the program will quit
+     * @param option_quit If set to {@code true} the program will quit
      * after the current operation.
      */
     public static void setOption_quit(boolean option_quit) {
@@ -383,7 +383,7 @@ public class DirSyncPro {
     /**
      * Get the setting of the quit option.
      *
-     * @return <code>true</code> if the option is enabled, <code>false</code>
+     * @return <code>true</code> if the option is enabled, {@code false}
      * otherwise.
      */
     public static boolean isOption_quit() {
@@ -393,7 +393,7 @@ public class DirSyncPro {
     /**
      * Get the setting of the iconify option.
      *
-     * @return <code>true</code> if the option is enabled, <code>false</code>
+     * @return <code>true</code> if the option is enabled, {@code false}
      * otherwise.
      */
     public static boolean isOption_iconify() {
@@ -403,7 +403,7 @@ public class DirSyncPro {
     /**
      * Get the setting of the analyze option.
      *
-     * @return <code>true</code> if the option is enabled, <code>false</code>
+     * @return <code>true</code> if the option is enabled, {@code false}
      * otherwise.
      */
     public static boolean isOption_analyze() {
@@ -518,12 +518,12 @@ public class DirSyncPro {
         String path = System.getProperty("dirsyncpro.home", "");
         path = path.replace("\"", "");
         // TODO: log is not initialized so null pointer exception occurs. Perhaps file-less log + flushing messages when the log file is set.
-        if (path.length() > 0 && FileTools.directoryIsWritable(path)) {
+        if (!path.isEmpty() && FileTools.directoryIsWritable(path)) {
             //log.printExcessive("'dirsyncpro.home' property is set and the corresponding directory is wriable.", Const.IconKey.Info);
             homePath = path;
             homePathSet = true;
         } else {
-            if (path.length() > 0 && !FileTools.directoryIsWritable(path)) {
+            if (!path.isEmpty() && !FileTools.directoryIsWritable(path)) {
                 //log.printMinimal("'dirsyncpro.home' property is set but the corresponding directory is not wriable!", Const.IconKey.Warning);
                 //log.printMinimal("Trying the program folder...", Const.IconKey.Warning);
             }

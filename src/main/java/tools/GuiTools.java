@@ -56,7 +56,7 @@ public class GuiTools {
         public EditorKit getEditorKit() {
             return editorKit;
         }
-    };
+    }
 
     private static EditorKit editorKit = (new MyStyleSheet()).getEditorKit();
 

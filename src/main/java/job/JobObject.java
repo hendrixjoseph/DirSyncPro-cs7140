@@ -132,8 +132,8 @@ public abstract class JobObject {
     /**
      * Returns if all files are copied.
      *
-     * @return <code>true</code> if all files are copied, else
-     * <code>false</code>.
+     * @return {@code true} if all files are copied, else
+     * {@code false}.
      */
     public boolean isCopyAll() {
         return copyAll;
@@ -142,8 +142,8 @@ public abstract class JobObject {
     /**
      * Returns if only larger files are copied.
      *
-     * @return <code>true</code> if only larger files are copied, else
-     * <code>false</code>.
+     * @return {@code true} if only larger files are copied, else
+     * {@code false}.
      */
     public boolean isCopyLarger() {
         return copyLarger;
@@ -152,8 +152,8 @@ public abstract class JobObject {
     /**
      * Returns if only files are copied that are larger <b>and </b> modified.
      *
-     * @return <code>true</code> if only are copied that are larger <b>and
-     * </b> modified, else <code>false</code>.
+     * @return {@code true} if only are copied that are larger <b>and
+     * </b> modified, else {@code false}.
      */
     public boolean isCopyLargerModified() {
         return copyLargerModified;
@@ -162,8 +162,8 @@ public abstract class JobObject {
     /**
      * Returns if only modified files are copied.
      *
-     * @return <code>true</code> if only modified files are copied, else
-     * <code>false</code>.
+     * @return {@code true} if only modified files are copied, else
+     * {@code false}.
      */
     public boolean isCopyModified() {
         return copyModified;
@@ -173,8 +173,8 @@ public abstract class JobObject {
      * Returns if only new files (files not existing in the destination
      * directory) are copied.
      *
-     * @return <code>true</code> if only new files are copied, else
-     * <code>false</code>.
+     * @return {@code true} if only new files are copied, else
+     * {@code false}.
      */
     public boolean isCopyNew() {
         return copyNew;
@@ -184,8 +184,8 @@ public abstract class JobObject {
      * Returns if directories deleted in the source directory are deleted in the
      * destination directory.
      *
-     * @return <code>true</code> if directories deleted in the source directory
-     * are deleted in the destination directory, else <code>false</code>.
+     * @return {@code true} if directories deleted in the source directory
+     * are deleted in the destination directory, else {@code false}.
      */
     public boolean isDelDirs() {
         return deleteDirs;
@@ -195,8 +195,8 @@ public abstract class JobObject {
      * Returns if files deleted in the source directory are deleted in the
      * destination directory.
      *
-     * @return <code>true</code> if files deleted in the source directory are
-     * deleted in the destination directory, else <code>false</code>.
+     * @return {@code true} if files deleted in the source directory are
+     * deleted in the destination directory, else {@code false}.
      */
     public boolean isDelFiles() {
         return deleteFiles;
@@ -205,7 +205,7 @@ public abstract class JobObject {
     /**
      * Get how man files of a changed or deleted file should be kept.
      *
-     * @return number of backups to keep (<code>0</code> means none).
+     * @return number of backups to keep ({@code 0} means none).
      */
     public int getHowManyBackups() {
         return howManyBackups;
@@ -214,7 +214,7 @@ public abstract class JobObject {
     /**
      * Determines whether this directory is enabled.
      *
-     * @return <code>true</code> if the component is enabled, <code>false</code>
+     * @return <code>true</code> if the component is enabled, {@code false}
      * otherwise.
      */
     public boolean isEnabled() {
@@ -224,7 +224,7 @@ public abstract class JobObject {
     /**
      * Returns if the dirsyncpro is done with verify.
      *
-     * @return <code>true</code> if verify is enabled.
+     * @return {@code true} if verify is enabled.
      */
     public boolean isVerify() {
         return verify;
@@ -233,8 +233,8 @@ public abstract class JobObject {
     /**
      * Returns if the dirsyncpro is done with subfolders.
      *
-     * @return <code>true</code> if the job is recursive, else
-     * <code>false</code>.
+     * @return {@code true} if the job is recursive, else
+     * {@code false}.
      */
     public boolean isRecursive() {
         return recursive;
@@ -243,7 +243,7 @@ public abstract class JobObject {
     /**
      * Sets whether all files are copied.
      *
-     * @param copyAll <code>true</code> if all files are copied.
+     * @param copyAll {@code true} if all files are copied.
      */
     public void setCopyAll(boolean copyAll) {
         this.copyAll = copyAll;
@@ -252,7 +252,7 @@ public abstract class JobObject {
     /**
      * Sets whether only larger files are copied.
      *
-     * @param copyLarger <code>true</code> if only larger files are copied.
+     * @param copyLarger {@code true} if only larger files are copied.
      */
     public void setCopyLarger(boolean copyLarger) {
         this.copyLarger = copyLarger;
@@ -261,7 +261,7 @@ public abstract class JobObject {
     /**
      * Sets whether only files are copied that are larger <b>and </b> modified.
      *
-     * @param copyLargerModified <code>true</code> if only files are copied that
+     * @param copyLargerModified {@code true} if only files are copied that
      * are larger
      * <b>and </b> modified.
      */
@@ -272,7 +272,7 @@ public abstract class JobObject {
     /**
      * Sets whether only modified files are copied.
      *
-     * @param copyModified <code>true</code> if only modified files are copied.
+     * @param copyModified {@code true} if only modified files are copied.
      */
     public void setCopyModified(boolean copyModified) {
         this.copyModified = copyModified;
@@ -282,7 +282,7 @@ public abstract class JobObject {
      * Sets whether only new files (files not existing in the destination
      * directory) are copied.
      *
-     * @param copyNew <code>true</code> if only new files are copied.
+     * @param copyNew {@code true} if only new files are copied.
      */
     public void setCopyNew(boolean copyNew) {
         this.copyNew = copyNew;
@@ -292,7 +292,7 @@ public abstract class JobObject {
      * Sets whether directories deleted in the source directory are deleted in
      * the destination directory.
      *
-     * @param delDirs <code>true</code> if directories deleted in the source
+     * @param delDirs {@code true} if directories deleted in the source
      * directory are deleted in the destination directory.
      */
     public void setDelDirs(boolean delDirs) {
@@ -303,7 +303,7 @@ public abstract class JobObject {
      * Sets whether files deleted in the source directory are deleted in the
      * destination directory.
      *
-     * @param delFiles <code>true</code> if files deleted in the source
+     * @param delFiles {@code true} if files deleted in the source
      * directory are deleted in the destination directory.
      */
     public void setDelFiles(boolean delFiles) {
@@ -332,7 +332,7 @@ public abstract class JobObject {
      * Enables or disables this directory, depending on the value of the
      * parameter enabled.
      *
-     * @param enabled If <code>true</code>, this component is enabled; otherwise
+     * @param enabled If {@code true}, this component is enabled; otherwise
      * this component is disabled.
      */
     public void setEnabled(boolean enabled) {
@@ -361,7 +361,7 @@ public abstract class JobObject {
      * Sets whether copied files should be verified.
      *
      * @param b Whether copied files should be verified. Set to
-     * <code>true</code> to enable verify.
+     * {@code true} to enable verify.
      */
     public void setVerify(boolean b) {
         verify = b;
@@ -371,7 +371,7 @@ public abstract class JobObject {
      * Sets whether the dirsyncpro is done with subfolders.
      *
      * @param recursive Whether the dirsyncpro is done with subfolders.
-     * <code>true</code> if the synchroize is done with subfolders.
+     * {@code true} if the synchroize is done with subfolders.
      */
     public void setRecursive(boolean recursive) {
         this.recursive = recursive;
@@ -553,7 +553,7 @@ public abstract class JobObject {
      * @return boolean, whether this job has schedules
      */
     public boolean HasSchedules() {
-        return (schedules.size() > 0);
+        return (!schedules.isEmpty());
     }
 
     /**

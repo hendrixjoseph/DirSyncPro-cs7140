@@ -68,7 +68,7 @@ public class ProgressApproximator {
     }
 
     //array with approximation objects for file sizes 1, 10, 100, 1000, ..., 10^19 bytes
-    private Approximation approx[] = new Approximation[20];
+    private Approximation[] approx = new Approximation[20];
     //size of current file
     private double curFileSize = 1;
     //best approximation value for current file
@@ -134,7 +134,6 @@ public class ProgressApproximator {
                 if (approx[lower].hasApprox()) {
                     dividend += approx[lower].getApprox() * dividendInc;
                     divisor += dividendInc;
-                    continue;
                 }
             }
         }

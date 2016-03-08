@@ -21,7 +21,6 @@ package dirsyncpro.gui.mainframe.syncqtable;
 import java.awt.Component;
 import java.io.File;
 
-import javax.swing.Icon;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.UIManager;
@@ -39,6 +38,7 @@ public class SyncQTableCellRenderer implements TableCellRenderer {
     public SyncQTableCellRenderer() {
     }
 
+    @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         int size = DirSyncPro.getSync().getSyncQ().viewSize();
         if (row >= size || row < 0) {

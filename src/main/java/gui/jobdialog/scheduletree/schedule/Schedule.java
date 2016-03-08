@@ -43,10 +43,10 @@ public class Schedule implements Comparable<Schedule> {
             return icon;
         }
 
-        private Type(String iconFile) {
+        Type(String iconFile) {
             this.icon = new ImageIcon(Const.class.getResource(iconFile));
         }
-    };
+    }
 
     protected Type type;
     protected Date timeFrameFrom = Const.NonDate;

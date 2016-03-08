@@ -45,10 +45,10 @@ public class Filter implements Comparable<Filter>, Cloneable {
             return icon;
         }
 
-        private Type(String iconFile) {
+        Type(String iconFile) {
             this.icon = new ImageIcon(Const.class.getResource(iconFile));
         }
-    };
+    }
 
     public enum Action {
         Include("/icons/includeFile.png"),
@@ -60,7 +60,7 @@ public class Filter implements Comparable<Filter>, Cloneable {
             return icon;
         }
 
-        private Action(String iconFile) {
+        Action(String iconFile) {
             this.icon = new ImageIcon(Const.class.getResource(iconFile));
         }
     }

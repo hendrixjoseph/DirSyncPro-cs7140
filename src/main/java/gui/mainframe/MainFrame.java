@@ -292,9 +292,6 @@ public class MainFrame extends MainFrameObjects {
         if (fileChooser.showOpenDialog(this) == javax.swing.JFileChooser.APPROVE_OPTION) {
             try {
                 DirSyncPro.getSync().appendJobs(fileChooser.getSelectedFile().getPath());
-            } catch (IllegalArgumentException e) {
-                DirSyncPro.displayError("Error while appending jobset '" + filename + "'.");
-                e.printStackTrace();
             } catch (Exception e) {
                 DirSyncPro.displayError("Error while appending jobset '" + filename + "'.");
                 e.printStackTrace();
@@ -390,9 +387,6 @@ public class MainFrame extends MainFrameObjects {
                 DirSyncPro.addLastLoadedConfig(currentConfig);
                 loadOpenRecentSubMenu();
             }
-        } catch (IllegalArgumentException e) {
-            DirSyncPro.displayError("Error while loading configuration '" + file.getAbsolutePath() + "'.");
-            e.printStackTrace();
         } catch (Exception e) {
             DirSyncPro.displayError("Error while loading configuration '" + file.getAbsolutePath() + "'.");
             e.printStackTrace();
@@ -741,6 +735,7 @@ public class MainFrame extends MainFrameObjects {
                 }
 
                 menuItem.addActionListener(new ActionListener() {
+                    @Override
                     public void actionPerformed(ActionEvent e) {
                         job.setEnabled(!job.isEnabled()); // toggle enable
                         updateJobsTree();
@@ -753,6 +748,7 @@ public class MainFrame extends MainFrameObjects {
                 menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/edit.png")));
 
                 menuItem.addActionListener(new ActionListener() {
+                    @Override
                     public void actionPerformed(ActionEvent e) {
                         openEditJobDialog();
                     }
@@ -764,6 +760,7 @@ public class MainFrame extends MainFrameObjects {
                 menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirUp.png")));
 
                 menuItem.addActionListener(new ActionListener() {
+                    @Override
                     public void actionPerformed(ActionEvent e) {
                         upwardeJob();
                     }
@@ -775,6 +772,7 @@ public class MainFrame extends MainFrameObjects {
                 menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirDown.png")));
 
                 menuItem.addActionListener(new ActionListener() {
+                    @Override
                     public void actionPerformed(ActionEvent e) {
                         downwardJob();
                     }
@@ -786,6 +784,7 @@ public class MainFrame extends MainFrameObjects {
                 menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyAll.png")));
 
                 menuItem.addActionListener(new ActionListener() {
+                    @Override
                     public void actionPerformed(ActionEvent e) {
                         copyJob();
                     }
@@ -797,6 +796,7 @@ public class MainFrame extends MainFrameObjects {
                 menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/deleteFile.png")));
 
                 menuItem.addActionListener(new ActionListener() {
+                    @Override
                     public void actionPerformed(ActionEvent e) {
                         removeJob();
                     }
@@ -809,6 +809,7 @@ public class MainFrame extends MainFrameObjects {
                 menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/preview.png")));
 
                 menuItem.addActionListener(new ActionListener() {
+                    @Override
                     public void actionPerformed(ActionEvent e) {
                         analyze(new Vector<Job>() {
                             {
@@ -824,6 +825,7 @@ public class MainFrame extends MainFrameObjects {
                 menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/start.png")));
 
                 menuItem.addActionListener(new ActionListener() {
+                    @Override
                     public void actionPerformed(ActionEvent e) {
                         synchronize(new Vector<Job>() {
                             {
@@ -872,6 +874,7 @@ public class MainFrame extends MainFrameObjects {
             //remove this
             menuItem = new JMenuItem("Remove this from Q");
             menuItem.addActionListener(new ActionListener() {
+                @Override
                 public void actionPerformed(ActionEvent e) {
                     DirSyncPro.getSync().getSyncQ().delete(sp);
                     syncQTable.clearSelection();
@@ -886,6 +889,7 @@ public class MainFrame extends MainFrameObjects {
             //remove all
             menuItem = new JMenuItem("Remove all of this mode from Q");
             menuItem.addActionListener(new ActionListener() {
+                @Override
                 public void actionPerformed(ActionEvent e) {
                     DirSyncPro.getSync().getSyncQ().deleteAllOfKind(sp);
                     syncQTable.clearSelection();
@@ -900,6 +904,7 @@ public class MainFrame extends MainFrameObjects {
             //remove selected
             menuItem = new JMenuItem("Remove all selected from Q");
             menuItem.addActionListener(new ActionListener() {
+                @Override
                 public void actionPerformed(ActionEvent e) {
                     int[] rows = syncQTable.getSelectedRows();
                     ArrayList<SyncPair> syncPairs = new ArrayList<SyncPair>();
@@ -945,6 +950,7 @@ public class MainFrame extends MainFrameObjects {
                     for (final SyncPairStatus sps : spsArray) {
                         menuItem = new JMenuItem(sps.toString());
                         menuItem.addActionListener(new ActionListener() {
+                            @Override
                             public void actionPerformed(ActionEvent e) {
                                 DirSyncPro.getSync().getSyncQ().change(sp, sps);
                                 DirSyncPro.getSync().getSyncQ().syncFilter();
@@ -971,6 +977,7 @@ public class MainFrame extends MainFrameObjects {
                     for (final SyncPairStatus sps : spsArray) {
                         menuItem = new JMenuItem(sps.toString());
                         menuItem.addActionListener(new ActionListener() {
+                            @Override
                             public void actionPerformed(ActionEvent e) {
                                 DirSyncPro.getSync().getSyncQ().changeAll(sp, sps);
                                 DirSyncPro.getSync().getSyncQ().syncFilter();
@@ -993,6 +1000,7 @@ public class MainFrame extends MainFrameObjects {
                     for (final SyncPairStatus sps : spsArray) {
                         menuItem = new JMenuItem(sps.toString());
                         menuItem.addActionListener(new ActionListener() {
+                            @Override
                             public void actionPerformed(ActionEvent e) {
                                 int[] rows = syncQTable.getSelectedRows();
                                 ArrayList<SyncPair> syncPairs = new ArrayList<SyncPair>();
@@ -1039,6 +1047,7 @@ public class MainFrame extends MainFrameObjects {
                         if (file.isDirectory()) {
                             menuItem = new JMenuItem("Open folder");
                             menuItem.addActionListener(new ActionListener() {
+                                @Override
                                 public void actionPerformed(ActionEvent e) {
                                     try {
                                         DesktopTools.launchFile(f.getPath());
@@ -1052,6 +1061,7 @@ public class MainFrame extends MainFrameObjects {
                         } else if (file.isFile()) {
                             menuItem = new JMenuItem("Open");
                             menuItem.addActionListener(new ActionListener() {
+                                @Override
                                 public void actionPerformed(ActionEvent e) {
                                     try {
                                         DesktopTools.launchFile(f.getPath());
@@ -1065,6 +1075,7 @@ public class MainFrame extends MainFrameObjects {
 
                             menuItem = new JMenuItem("Open parent folder");
                             menuItem.addActionListener(new ActionListener() {
+                                @Override
                                 public void actionPerformed(ActionEvent e) {
                                     try {
                                         DesktopTools.launchFile(f.getParentFile().getPath());
@@ -1088,6 +1099,7 @@ public class MainFrame extends MainFrameObjects {
                         final String filename = f.getName();
                         menuItem = new JMenuItem("Pattern: " + filename);
                         menuItem.addActionListener(new ActionListener() {
+                            @Override
                             public void actionPerformed(ActionEvent e) {
                                 FilterByPattern filter = new FilterByPattern(sp.getJob(), Filter.Action.Exclude);
                                 filter.setPattern(filename);
@@ -1104,6 +1116,7 @@ public class MainFrame extends MainFrameObjects {
                             final String extension = "*" + filename.substring(filename.lastIndexOf("."), filename.length());
                             menuItem = new JMenuItem("Extension: " + extension);
                             menuItem.addActionListener(new ActionListener() {
+                                @Override
                                 public void actionPerformed(ActionEvent e) {
                                     FilterByPattern filter = new FilterByPattern(sp.getJob(), Filter.Action.Exclude);
                                     filter.setPattern(extension);
@@ -1127,6 +1140,7 @@ public class MainFrame extends MainFrameObjects {
 
                         menuItem = new JMenuItem("File is edited earlier than " + TextFormatTool.getLastModifiedLong(f));
                         menuItem.addActionListener(new ActionListener() {
+                            @Override
                             public void actionPerformed(ActionEvent e) {
                                 FilterByDate filter = new FilterByDate(sp.getJob(), Filter.Action.Exclude);
                                 filter.setDate(new Date(f.lastModified()));
@@ -1139,6 +1153,7 @@ public class MainFrame extends MainFrameObjects {
 
                         menuItem = new JMenuItem("File is edited exactly on " + TextFormatTool.getLastModifiedLong(f));
                         menuItem.addActionListener(new ActionListener() {
+                            @Override
                             public void actionPerformed(ActionEvent e) {
                                 FilterByDate filter = new FilterByDate(sp.getJob(), Filter.Action.Exclude);
                                 filter.setDate(new Date(f.lastModified()));
@@ -1151,6 +1166,7 @@ public class MainFrame extends MainFrameObjects {
 
                         menuItem = new JMenuItem("File is edited later than " + TextFormatTool.getLastModifiedLong(f));
                         menuItem.addActionListener(new ActionListener() {
+                            @Override
                             public void actionPerformed(ActionEvent e) {
                                 FilterByDate filter = new FilterByDate(sp.getJob(), Filter.Action.Exclude);
                                 filter.setDate(new Date(f.lastModified()));
@@ -1173,6 +1189,7 @@ public class MainFrame extends MainFrameObjects {
                         final long fileSize = f.length();
                         menuItem = new JMenuItem("File Size < " + fileSize + " bytes");
                         menuItem.addActionListener(new ActionListener() {
+                            @Override
                             public void actionPerformed(ActionEvent e) {
                                 FilterByFileSize filter = new FilterByFileSize(sp.getJob(), Filter.Action.Exclude);
                                 filter.setValue(fileSize);
@@ -1185,6 +1202,7 @@ public class MainFrame extends MainFrameObjects {
 
                         menuItem = new JMenuItem("File Size = " + fileSize + " bytes");
                         menuItem.addActionListener(new ActionListener() {
+                            @Override
                             public void actionPerformed(ActionEvent e) {
                                 FilterByFileSize filter = new FilterByFileSize(sp.getJob(), Filter.Action.Exclude);
                                 filter.setValue(fileSize);
@@ -1197,6 +1215,7 @@ public class MainFrame extends MainFrameObjects {
 
                         menuItem = new JMenuItem("File Size > " + fileSize + " bytes");
                         menuItem.addActionListener(new ActionListener() {
+                            @Override
                             public void actionPerformed(ActionEvent e) {
                                 FilterByFileSize filter = new FilterByFileSize(sp.getJob(), Filter.Action.Exclude);
                                 filter.setValue(fileSize);
@@ -1264,6 +1283,7 @@ public class MainFrame extends MainFrameObjects {
 
     public void updateJobsTree() {
         Runnable r = new Runnable() {
+            @Override
             public void run() {
                 int[] rows = {1};
                 if (jobsTree.getSelectionRows() != null && jobsTree.getSelectionRows().length > 0) {
@@ -1278,6 +1298,7 @@ public class MainFrame extends MainFrameObjects {
 
     public void updateJobsTree(final int row) {
         Runnable r = new Runnable() {
+            @Override
             public void run() {
                 ((JobsTreeModel) jobsTree.getModel()).reload(getJobTree());
                 jobsTree.setSelectionRow(row);
@@ -1533,6 +1554,7 @@ public class MainFrame extends MainFrameObjects {
         }
 
         syncProcess = new SwingWorker<Void, Void>() {
+            @Override
             protected Void doInBackground() {
                 setToSyncQTab();
                 setGuiEnabled(false);
@@ -1557,6 +1579,7 @@ public class MainFrame extends MainFrameObjects {
         }
 
         syncProcess = new SwingWorker<Void, Void>() {
+            @Override
             protected Void doInBackground() {
                 // switch to output pane
                 setToSyncQTab();
@@ -1581,7 +1604,7 @@ public class MainFrame extends MainFrameObjects {
     /**
      * Check if the GUI is enabled.
      *
-     * @return <code>true</code> if the GUI is enabled, <code>false</code>
+     * @return <code>true</code> if the GUI is enabled, {@code false}
      * otherwise.
      */
     public boolean isGuiEnabled() {
@@ -1687,7 +1710,6 @@ public class MainFrame extends MainFrameObjects {
         if (DirSyncPro.getSync().getState() == Sync.PAUSE) {
             DirSyncPro.getSync().setState(Sync.START);
             pauseButton.setSelected(false);
-            return;
         }
     }
 
@@ -1966,6 +1988,7 @@ public class MainFrame extends MainFrameObjects {
                 updateGUI();
             } else {
                 Runnable r = new Runnable() {
+                    @Override
                     public void run() {
                         updateGUI();
                     }
@@ -1994,6 +2017,7 @@ public class MainFrame extends MainFrameObjects {
                 updateGUI();
             } else {
                 Runnable r = new Runnable() {
+                    @Override
                     public void run() {
                         updateGUI();
                     }

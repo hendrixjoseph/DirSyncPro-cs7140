@@ -75,7 +75,7 @@ public class ScheduleEngine {
     }
 
     public void runSchedulesPeriodically() {
-        if (scheduleQ != null && scheduleQ.size() > 0 && DirSyncPro.getSync().getState() == Sync.STOP) {
+        if (scheduleQ != null && !scheduleQ.isEmpty() && DirSyncPro.getSync().getState() == Sync.STOP) {
             Schedule sched = scheduleQ.get(0);
             Date now = new Date();
             if (sched.getNextEvent().compareTo(now) <= 0) {
@@ -107,7 +107,7 @@ public class ScheduleEngine {
         };
 
         initSchedules();
-        if (scheduleQ.size() > 0) {
+        if (!scheduleQ.isEmpty()) {
             Date now = new Date();
             long period = 60 * 1000; //every minute
             timer = new Timer();
@@ -177,7 +177,7 @@ public class ScheduleEngine {
                 //d.setTime(d.getTime() + delay);
                 if (now.getTime() > d.getTime()) {
                     realtimeSchedule.put(j, now);
-                    ;//System.out.println("Already scheduled for " + d + ". Extending to " + now);
+                    //System.out.println("Already scheduled for " + d + ". Extending to " + now);
                 } else
 					;//System.out.println("Previously scheduled for " + d + " is later than " + now);
                 return;
@@ -203,7 +203,7 @@ public class ScheduleEngine {
                 //if there is more recent request - reschedule synchronization to it's time
                 if (recentSyncDate.getTime() > scheduledExecutionTime()) {
                     timer.schedule(new TimerTaskRealtime(), recentSyncDate);
-                    ;//System.out.println("Rescheduled from " + new Date(scheduledExecutionTime()) + " to " + recentSyncDate);
+                    //System.out.println("Rescheduled from " + new Date(scheduledExecutionTime()) + " to " + recentSyncDate);
                     return;
                 }
 
@@ -222,7 +222,7 @@ public class ScheduleEngine {
                 }
                 // === 3 ===
                 //do synchronization now and schedule another if needed
-                ;//System.out.println("Running at " + new Date(scheduledExecutionTime()));
+                //System.out.println("Running at " + new Date(scheduledExecutionTime()));
                 DirSyncPro.getSync().synchronize(new Vector<Job>() {
                     {
                         add(j);
@@ -233,15 +233,15 @@ public class ScheduleEngine {
                     recentSyncDate = realtimeSchedule.get(j);
                     //if date was changed during synchronization - reschedule another task
                     if (recentSyncDate.getTime() > scheduledExecutionTime()) {
-                        ;//System.out.println("Rescheduling to " + recentSyncDate);
+                        //System.out.println("Rescheduling to " + recentSyncDate);
                         timer.schedule(new TimerTaskRealtime(), recentSyncDate);
                     } //otherwise if no sync is required then remove schedule
                     else {
                         realtimeSchedule.remove(j);
-                        ;//System.out.println("Removed schedule at " + new Date(scheduledExecutionTime()));
+                        //System.out.println("Removed schedule at " + new Date(scheduledExecutionTime()));
                     }
                 }
-                ;//System.out.println("Finished running");
+                //System.out.println("Finished running");
             }
 
         }

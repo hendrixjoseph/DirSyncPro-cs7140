@@ -272,9 +272,11 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         setIconImage(new ImageIcon(getClass().getResource("/icons/DirSyncPro64x64.png")).getImage());
         setMinimumSize(new java.awt.Dimension(600, 400));
         addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
+            @Override
             public void windowIconified(java.awt.event.WindowEvent evt) {
                 formWindowIconified(evt);
             }
@@ -290,6 +292,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         newButton.setOpaque(false);
         newButton.setPreferredSize(new java.awt.Dimension(30, 30));
         newButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newButtonnewConfigActionPerformed(evt);
             }
@@ -304,6 +307,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         openButton.setOpaque(false);
         openButton.setPreferredSize(new java.awt.Dimension(30, 30));
         openButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openButtonopenConfigActionPerformed(evt);
             }
@@ -318,6 +322,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         saveButton.setOpaque(false);
         saveButton.setPreferredSize(new java.awt.Dimension(30, 30));
         saveButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonsaveConfigActionPerformed(evt);
             }
@@ -335,6 +340,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         saveAsButton.setPreferredSize(new java.awt.Dimension(30, 30));
         saveAsButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         saveAsButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveAsButtonsaveConfigActionPerformed(evt);
             }
@@ -355,6 +361,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         analyzeButton.setOpaque(false);
         analyzeButton.setPreferredSize(new java.awt.Dimension(30, 30));
         analyzeButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 analyzeButtonpreviewStartActionPerformed(evt);
             }
@@ -369,6 +376,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         synchronizeButton.setOpaque(false);
         synchronizeButton.setPreferredSize(new java.awt.Dimension(30, 30));
         synchronizeButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 synchronizeButtonsynchronizationStartActionPerformed(evt);
             }
@@ -382,6 +390,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         pauseButton.setMinimumSize(new java.awt.Dimension(30, 30));
         pauseButton.setPreferredSize(new java.awt.Dimension(30, 30));
         pauseButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pauseButtonsynchronizationPauseActionPerformed(evt);
             }
@@ -396,6 +405,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         stopButton.setOpaque(false);
         stopButton.setPreferredSize(new java.awt.Dimension(30, 30));
         stopButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 stopButtonsynchronizationStopActionPerformed(evt);
             }
@@ -413,6 +423,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         shutDownButton.setPreferredSize(new java.awt.Dimension(30, 30));
         shutDownButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         shutDownButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 shutDownButtonsynchronizationStopActionPerformed(evt);
             }
@@ -435,6 +446,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         scheduleStartButton.setPreferredSize(new java.awt.Dimension(30, 30));
         scheduleStartButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         scheduleStartButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 scheduleStartButtonsynchronizationStartActionPerformed(evt);
             }
@@ -451,6 +463,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         scheduleStopButton.setPreferredSize(new java.awt.Dimension(30, 30));
         scheduleStopButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         scheduleStopButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 scheduleStopButtonsynchronizationStartActionPerformed(evt);
             }
@@ -471,6 +484,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         aboutButton.setOpaque(false);
         aboutButton.setPreferredSize(new java.awt.Dimension(30, 30));
         aboutButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aboutButtonaboutActionPerformed(evt);
             }
@@ -485,6 +499,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         contentsButton.setOpaque(false);
         contentsButton.setPreferredSize(new java.awt.Dimension(30, 30));
         contentsButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contentsButtoncontentsActionPerformed(evt);
             }
@@ -501,6 +516,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         donateButton.setPreferredSize(new java.awt.Dimension(30, 30));
         donateButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         donateButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 donateButtoncontentsActionPerformed(evt);
             }
@@ -514,6 +530,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         tabbedPane.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
         tabbedPane.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tabbedPaneMouseClicked(evt);
             }
@@ -535,6 +552,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobEnableAllButton.setMinimumSize(null);
         jobEnableAllButton.setPreferredSize(null);
         jobEnableAllButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jobEnableAllButtonenableAllDirsActionPerformed(evt);
             }
@@ -556,6 +574,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobDisableAllButton.setMinimumSize(null);
         jobDisableAllButton.setPreferredSize(null);
         jobDisableAllButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jobDisableAllButtondisableAllDirsActionPerformed(evt);
             }
@@ -577,6 +596,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobDownButton.setMinimumSize(null);
         jobDownButton.setPreferredSize(null);
         jobDownButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jobDownButtonlistDownActionPerformed(evt);
             }
@@ -594,6 +614,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobUpButton.setIconTextGap(2);
         jobUpButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jobUpButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jobUpButtonlistUpActionPerformed(evt);
             }
@@ -614,6 +635,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobAddButton.setMinimumSize(null);
         jobAddButton.setPreferredSize(null);
         jobAddButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jobAddButtonlistAddActionPerformed(evt);
             }
@@ -631,6 +653,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobEditButton.setIconTextGap(2);
         jobEditButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jobEditButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jobEditButtonlistAddActionPerformed(evt);
             }
@@ -651,6 +674,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobCopyButton.setMinimumSize(null);
         jobCopyButton.setPreferredSize(null);
         jobCopyButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jobCopyButtonlistCopyActionPerformed(evt);
             }
@@ -671,6 +695,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobRemoveButton.setMinimumSize(null);
         jobRemoveButton.setPreferredSize(null);
         jobRemoveButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jobRemoveButtonlistRemoveActionPerformed(evt);
             }
@@ -698,6 +723,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobExpandOneLevelButton.setMinimumSize(null);
         jobExpandOneLevelButton.setPreferredSize(null);
         jobExpandOneLevelButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jobExpandOneLevelButtonenableAllDirsActionPerformed(evt);
             }
@@ -719,6 +745,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobCollapseAllButton.setMinimumSize(null);
         jobCollapseAllButton.setPreferredSize(null);
         jobCollapseAllButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jobCollapseAllButtondisableAllDirsActionPerformed(evt);
             }
@@ -739,12 +766,15 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobsTree.setCellRenderer(new JobsTreeCellRenderer());
         jobsTree.setEditable(true);
         jobsTree.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jobsTreeMouseClicked(evt);
             }
+            @Override
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jobsTreeMousePressed(evt);
             }
+            @Override
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 jobsTreeMouseReleased(evt);
             }
@@ -765,6 +795,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQPanel.setLayout(new java.awt.GridBagLayout());
 
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTabbedPane1MouseClicked(evt);
             }
@@ -1121,6 +1152,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         syncQViewFilterNewFilesCheckBox.setToolTipText("Synchronize all files and dirs.");
         syncQViewFilterNewFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQViewFilterNewFilesCheckBoxdirEventActionPerformed(evt);
             }
@@ -1145,6 +1177,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterLargerFilesCheckBox.setMinimumSize(null);
         syncQViewFilterLargerFilesCheckBox.setPreferredSize(null);
         syncQViewFilterLargerFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQViewFilterLargerFilesCheckBoxdirEventActionPerformed(evt);
             }
@@ -1169,6 +1202,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterDeletedFilesCheckBox.setMinimumSize(null);
         syncQViewFilterDeletedFilesCheckBox.setPreferredSize(null);
         syncQViewFilterDeletedFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQViewFilterDeletedFilesCheckBoxdirEventActionPerformed(evt);
             }
@@ -1193,6 +1227,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterModifiedFilesCheckBox.setMinimumSize(null);
         syncQViewFilterModifiedFilesCheckBox.setPreferredSize(null);
         syncQViewFilterModifiedFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQViewFilterModifiedFilesCheckBoxdirEventActionPerformed(evt);
             }
@@ -1217,6 +1252,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterLargerAndModifiedFilesCheckBox.setMinimumSize(null);
         syncQViewFilterLargerAndModifiedFilesCheckBox.setPreferredSize(null);
         syncQViewFilterLargerAndModifiedFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQViewFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed(evt);
             }
@@ -1241,6 +1277,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterDeletedDirsCheckBox.setMinimumSize(null);
         syncQViewFilterDeletedDirsCheckBox.setPreferredSize(null);
         syncQViewFilterDeletedDirsCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQViewFilterDeletedDirsCheckBoxdirEventActionPerformed(evt);
             }
@@ -1265,6 +1302,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterConflictFilesCheckBox.setMinimumSize(null);
         syncQViewFilterConflictFilesCheckBox.setPreferredSize(null);
         syncQViewFilterConflictFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQViewFilterConflictFilesCheckBoxdirEventActionPerformed(evt);
             }
@@ -1297,6 +1335,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterResetButton.setAlignmentX(0.5F);
         syncQViewFilterResetButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         syncQViewFilterResetButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQViewFilterResetButtonActionPerformed(evt);
             }
@@ -1309,6 +1348,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterOKButton.setAlignmentX(0.5F);
         syncQViewFilterOKButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         syncQViewFilterOKButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQViewFilterOKButtonActionPerformed(evt);
             }
@@ -1341,6 +1381,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         syncQSyncFilterNewFilesCheckBox.setToolTipText("Synchronize all files and dirs.");
         syncQSyncFilterNewFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQSyncFilterNewFilesCheckBoxdirEventActionPerformed(evt);
             }
@@ -1363,6 +1404,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterLargerFilesCheckBox.setMinimumSize(null);
         syncQSyncFilterLargerFilesCheckBox.setPreferredSize(null);
         syncQSyncFilterLargerFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQSyncFilterLargerFilesCheckBoxdirEventActionPerformed(evt);
             }
@@ -1387,6 +1429,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterDeletedFilesCheckBox.setMinimumSize(null);
         syncQSyncFilterDeletedFilesCheckBox.setPreferredSize(null);
         syncQSyncFilterDeletedFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQSyncFilterDeletedFilesCheckBoxdirEventActionPerformed(evt);
             }
@@ -1411,6 +1454,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterModifiedFilesCheckBox.setMinimumSize(null);
         syncQSyncFilterModifiedFilesCheckBox.setPreferredSize(null);
         syncQSyncFilterModifiedFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQSyncFilterModifiedFilesCheckBoxdirEventActionPerformed(evt);
             }
@@ -1435,6 +1479,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterLargerAndModifiedFilesCheckBox.setMinimumSize(null);
         syncQSyncFilterLargerAndModifiedFilesCheckBox.setPreferredSize(null);
         syncQSyncFilterLargerAndModifiedFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQSyncFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed(evt);
             }
@@ -1459,6 +1504,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterDeletedDirsCheckBox.setMinimumSize(null);
         syncQSyncFilterDeletedDirsCheckBox.setPreferredSize(null);
         syncQSyncFilterDeletedDirsCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQSyncFilterDeletedDirsCheckBoxdirEventActionPerformed(evt);
             }
@@ -1483,6 +1529,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterConflictFilesCheckBox.setMinimumSize(null);
         syncQSyncFilterConflictFilesCheckBox.setPreferredSize(null);
         syncQSyncFilterConflictFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQSyncFilterConflictFilesCheckBoxdirEventActionPerformed(evt);
             }
@@ -1515,6 +1562,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterResetButton.setAlignmentX(0.5F);
         syncQSyncFilterResetButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         syncQSyncFilterResetButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQSyncFilterResetButtonActionPerformed(evt);
             }
@@ -1527,6 +1575,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterOKButton.setAlignmentX(0.5F);
         syncQSyncFilterOKButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         syncQSyncFilterOKButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 syncQSyncFilterOKButtonActionPerformed(evt);
             }
@@ -1561,12 +1610,15 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQTable.setIntercellSpacing(new java.awt.Dimension(3, 1));
         syncQTable.getTableHeader().setReorderingAllowed(false);
         syncQTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 syncQTableMouseClicked(evt);
             }
+            @Override
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 syncQTableMousePressed(evt);
             }
+            @Override
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 syncQTableMouseReleased(evt);
             }
@@ -1694,6 +1746,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         messagesViewFilterInfosCheckBox.setToolTipText("Synchronize all files and dirs.");
         messagesViewFilterInfosCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 messagesViewFilterInfosCheckBoxdirEventActionPerformed(evt);
             }
@@ -1716,6 +1769,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterErrorsCheckBox.setMinimumSize(null);
         messagesViewFilterErrorsCheckBox.setPreferredSize(null);
         messagesViewFilterErrorsCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 messagesViewFilterErrorsCheckBoxdirEventActionPerformed(evt);
             }
@@ -1739,6 +1793,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterWarningsCheckBox.setMinimumSize(null);
         messagesViewFilterWarningsCheckBox.setPreferredSize(null);
         messagesViewFilterWarningsCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 messagesViewFilterWarningsCheckBoxdirEventActionPerformed(evt);
             }
@@ -1762,6 +1817,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterFileOperationsCheckBox.setMinimumSize(null);
         messagesViewFilterFileOperationsCheckBox.setPreferredSize(null);
         messagesViewFilterFileOperationsCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 messagesViewFilterFileOperationsCheckBoxdirEventActionPerformed(evt);
             }
@@ -1793,6 +1849,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterResetButton.setAlignmentX(0.5F);
         messagesViewFilterResetButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         messagesViewFilterResetButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 messagesViewFilterResetButtonActionPerformed(evt);
             }
@@ -1805,6 +1862,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterOKButton.setAlignmentX(0.5F);
         messagesViewFilterOKButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         messagesViewFilterOKButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 messagesViewFilterOKButtonActionPerformed(evt);
             }
@@ -1817,6 +1875,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesCleanButton.setAlignmentX(0.5F);
         messagesCleanButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         messagesCleanButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 messagesCleanButtonActionPerformed(evt);
             }
@@ -1935,6 +1994,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         newMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileNew.png"))); // NOI18N
         newMenuItem.setText("New");
         newMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newMenuItemnewConfigActionPerformed(evt);
             }
@@ -1945,6 +2005,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         openMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileOpen.png"))); // NOI18N
         openMenuItem.setText("Open");
         openMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openMenuItemopenConfigActionPerformed(evt);
             }
@@ -1958,6 +2019,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         appendMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileOpen.png"))); // NOI18N
         appendMenuItem.setText("Append");
         appendMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 appendMenuItemopenConfigActionPerformed(evt);
             }
@@ -1969,6 +2031,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         saveMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileSave.png"))); // NOI18N
         saveMenuItem.setText("Save");
         saveMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveMenuItemsaveConfigActionPerformed(evt);
             }
@@ -1979,6 +2042,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         saveAsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileSaveAs.png"))); // NOI18N
         saveAsMenuItem.setText("Save As");
         saveAsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveAsMenuItemsaveConfigActionPerformed(evt);
             }
@@ -1988,6 +2052,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         saveEnabledAsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileSaveAs.png"))); // NOI18N
         saveEnabledAsMenuItem.setText("Save enabled jobs As");
         saveEnabledAsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveEnabledAsMenuItemsaveConfigActionPerformed(evt);
             }
@@ -1999,6 +2064,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         quitMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/quit.png"))); // NOI18N
         quitMenuItem.setText("Quit");
         quitMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quitMenuItemquitActionPerformed(evt);
             }
@@ -2012,6 +2078,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         analyzeMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/preview.png"))); // NOI18N
         analyzeMenuItem.setText("Analyze");
         analyzeMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 analyzeMenuItempreviewStartActionPerformed(evt);
             }
@@ -2021,6 +2088,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         synchronizeMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/start.png"))); // NOI18N
         synchronizeMenuItem.setText("Synchronize");
         synchronizeMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 synchronizeMenuItemsynchronizationStartActionPerformed(evt);
             }
@@ -2030,6 +2098,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         pauseMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/pause.png"))); // NOI18N
         pauseMenuItem.setText("Pause");
         pauseMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pauseMenuItemsynchronizationStopActionPerformed(evt);
             }
@@ -2039,6 +2108,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         stopMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/stop.png"))); // NOI18N
         stopMenuItem.setText("Stop");
         stopMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 stopMenuItemsynchronizationStopActionPerformed(evt);
             }
@@ -2048,6 +2118,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         shutDownMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/exit16x16.png"))); // NOI18N
         shutDownMenuItem.setText("Shut down after sync");
         shutDownMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 shutDownMenuItemsynchronizationStopActionPerformed(evt);
             }
@@ -2058,6 +2129,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         startScheduledTasksMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/startSchedule.png"))); // NOI18N
         startScheduledTasksMenuItem.setText("Start Schedule Engine");
         startScheduledTasksMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startScheduledTasksMenuItemsynchronizationStartActionPerformed(evt);
             }
@@ -2067,6 +2139,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         stopScheduledTasksMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/stopSchedule.png"))); // NOI18N
         stopScheduledTasksMenuItem.setText("Stop Schedule Engine");
         stopScheduledTasksMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 stopScheduledTasksMenuItemsynchronizationStartActionPerformed(evt);
             }
@@ -2080,6 +2153,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         swapSrcDstMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/swapSrcDst.png"))); // NOI18N
         swapSrcDstMenuItem.setText("Swap all source and destination directories");
         swapSrcDstMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 swapSrcDstMenuItemtoolsSwapSrcDstActionPerformed(evt);
             }
@@ -2089,6 +2163,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         cmdMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/terminal.png"))); // NOI18N
         cmdMenuItem.setText("Generate command line");
         cmdMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdMenuItemOptionsActionPerformed(evt);
             }
@@ -2098,6 +2173,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         optionsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_config.png"))); // NOI18N
         optionsMenuItem.setText("Options");
         optionsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 optionsMenuItemOptionsActionPerformed(evt);
             }
@@ -2112,6 +2188,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         contentsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/contents.png"))); // NOI18N
         contentsMenuItem.setText("Help contents");
         contentsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contentsMenuItemcontentsActionPerformed(evt);
             }
@@ -2122,6 +2199,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         donateMenuItem.setText("Make a donation!");
         donateMenuItem.setToolTipText("<html>If this program is good for your purpose please consider a donation <br />as less as you would like as a gesture to encourage us developing this program.<br />Click this menu item to go to the SourceForge donation page.<br /><br />Thank you!</html>");
         donateMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 donateMenuItemcontentsActionPerformed(evt);
             }
@@ -2132,6 +2210,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         updateMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/update16x16.png"))); // NOI18N
         updateMenuItem.setText("Check for updates");
         updateMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateMenuItemaboutActionPerformed(evt);
             }
@@ -2142,6 +2221,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         aboutMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/about.png"))); // NOI18N
         aboutMenuItem.setText("About");
         aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aboutMenuItemaboutActionPerformed(evt);
             }

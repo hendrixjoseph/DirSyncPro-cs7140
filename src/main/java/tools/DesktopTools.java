@@ -60,7 +60,7 @@ public class DesktopTools {
      * @param filePath Path to the file
      */
     public static void launchFile(String filePath) {
-        if (!Desktop.isDesktopSupported() || filePath == null || filePath.trim().length() == 0) {
+        if (!Desktop.isDesktopSupported() || filePath == null || filePath.trim().isEmpty()) {
             return;
         }
         try {

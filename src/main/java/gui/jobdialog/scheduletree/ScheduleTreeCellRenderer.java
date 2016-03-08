@@ -31,6 +31,7 @@ public class ScheduleTreeCellRenderer extends JCheckBox implements TreeCellRende
         super();
     }
 
+    @Override
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean isSelected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
 
         //super.getTreeCellRendererComponent(tree, value, isSelected, expanded, leaf, row, hasFocus);

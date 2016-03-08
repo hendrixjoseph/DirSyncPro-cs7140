@@ -47,11 +47,13 @@ public class JobsTreeNodeEditor extends AbstractCellEditor implements TreeCellEd
         tree = t;
     }
 
+    @Override
     public Object getCellEditorValue() {
         //dummy
         return null;
     }
 
+    @Override
     public boolean isCellEditable(EventObject event) {
         if (event instanceof MouseEvent) {
             MouseEvent mouseEvent = (MouseEvent) event;
@@ -80,11 +82,13 @@ public class JobsTreeNodeEditor extends AbstractCellEditor implements TreeCellEd
         return true;
     }
 
+    @Override
     public Component getTreeCellEditorComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row) {
 
         Component editorComponent = jobsTreeCellrenderer.getTreeCellRendererComponent(tree, value, true, expanded, leaf, row, true);
 
         ItemListener itemListener = new ItemListener() {
+            @Override
             public void itemStateChanged(ItemEvent itemEvent) {
                 if (stopCellEditing()) {
                     fireEditingStopped();

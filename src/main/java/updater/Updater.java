@@ -103,7 +103,7 @@ public class Updater {
 
     /**
      *
-     * @return <code>String</code> the URL from which the update is to be
+     * @return {@code String} the URL from which the update is to be
      * downloaded.
      */
     public String getUpdateURL() {
@@ -112,7 +112,7 @@ public class Updater {
 
     /**
      *
-     * @return <code>String</code> the new version which is available for
+     * @return {@code String} the new version which is available for
      * download
      */
     public String getNewVersion() {
@@ -121,7 +121,7 @@ public class Updater {
 
     /**
      *
-     * @return <code>String</code> the major changes in this update
+     * @return {@code String} the major changes in this update
      */
     public String getChangelogURL() {
         String s = uxmlr.getChangeLogURL();
@@ -130,7 +130,7 @@ public class Updater {
 
     /**
      *
-     * @return <code>boolean</code> whether there is a new update available
+     * @return {@code boolean} whether there is a new update available
      */
     public boolean isUpdateable() {
         return uxmlr.isUpdateable();
@@ -138,7 +138,7 @@ public class Updater {
 
     /**
      *
-     * @return <code>boolean</code> if contacting the update server has
+     * @return {@code boolean} if contacting the update server has
      * succeeded.
      */
     public boolean contacted() {

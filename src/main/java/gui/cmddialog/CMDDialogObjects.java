@@ -117,6 +117,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdAddSyncCheckBox.setMinimumSize(null);
         cmdAddSyncCheckBox.setPreferredSize(null);
         cmdAddSyncCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAddSyncCheckBoxActionPerformed(evt);
             }
@@ -162,6 +163,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdAddAnalyzeCheckBox.setMinimumSize(null);
         cmdAddAnalyzeCheckBox.setPreferredSize(null);
         cmdAddAnalyzeCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAddAnalyzeCheckBoxActionPerformed(evt);
             }
@@ -206,6 +208,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdAddNoGuiCheckBox.setMinimumSize(null);
         cmdAddNoGuiCheckBox.setPreferredSize(null);
         cmdAddNoGuiCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAddNoGuiCheckBoxActionPerformed(evt);
             }
@@ -249,6 +252,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdAddQuitCheckBox.setMinimumSize(null);
         cmdAddQuitCheckBox.setPreferredSize(null);
         cmdAddQuitCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAddQuitCheckBoxActionPerformed(evt);
             }
@@ -293,6 +297,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdAddScheduleCheckBox.setMinimumSize(null);
         cmdAddScheduleCheckBox.setPreferredSize(null);
         cmdAddScheduleCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAddScheduleCheckBoxActionPerformed(evt);
             }
@@ -337,6 +342,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdAddIconifyCheckBox.setMinimumSize(null);
         cmdAddIconifyCheckBox.setPreferredSize(null);
         cmdAddIconifyCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAddIconifyCheckBoxActionPerformed(evt);
             }
@@ -411,6 +417,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdCloseButton.setText("Close");
         cmdCloseButton.setAlignmentX(0.5F);
         cmdCloseButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdCloseButtoncancelActionPerformed(evt);
             }
@@ -421,6 +428,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdCopyToClipboardButton.setText("Copy to clipboard");
         cmdCopyToClipboardButton.setAlignmentX(0.5F);
         cmdCopyToClipboardButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdCopyToClipboardButtonActionPerformed(evt);
             }
@@ -431,6 +439,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdSaveBatchButton.setText("Save to batch file");
         cmdSaveBatchButton.setAlignmentX(0.5F);
         cmdSaveBatchButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdSaveBatchButtonActionPerformed(evt);
             }

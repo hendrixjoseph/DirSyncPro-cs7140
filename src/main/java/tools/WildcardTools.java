@@ -151,9 +151,9 @@ public class WildcardTools {
      * Generic "replace all" method replacing all occurences of &lt;what&gt; in
      * &lt;where&gt; with &lt;withWhat&gt;.
      *
-     * @param where The <code>String</code> to change.
-     * @param what The <code>String</code> to replace.
-     * @param withWhat The <code>String</code> to replace with.
+     * @param where The {@code String} to change.
+     * @param what The {@code String} to replace.
+     * @param withWhat The {@code String} to replace with.
      * @return The string with all occurences of &lt;what&gt; replaced by
      * &lt;withWhat&gt;.
      */

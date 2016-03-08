@@ -50,7 +50,7 @@ public class FilterByPath extends Filter {
      * @param a The first string.
      * @param b The second string.
      *
-     * @return <code>true</code> if the strings match, <code>false</code>
+     * @return <code>true</code> if the strings match, {@code false}
      * otherwise.
      */
     private boolean matchDependingOnOS(String a, String b) {

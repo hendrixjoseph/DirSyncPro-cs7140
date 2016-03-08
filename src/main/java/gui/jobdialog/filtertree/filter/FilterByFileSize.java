@@ -27,7 +27,7 @@ public class FilterByFileSize extends Filter {
 
     public enum FilterFileSizeType {
         SmallerThan, Exactly, LargerThan
-    };
+    }
 
     private long value = 0;
     private FilterFileSizeType fileSizeType;
@@ -85,7 +85,7 @@ public class FilterByFileSize extends Filter {
     public int compareTo(Filter s) {
         if (s instanceof FilterByFileSize) {
             if (fileSizeType == ((FilterByFileSize) s).getFileSizeType()) {
-                return (new Long(value)).compareTo(new Long(((FilterByFileSize) s).getValue()));
+                return (new Long(value)).compareTo(((FilterByFileSize) s).getValue());
             } else {
                 return fileSizeType.compareTo(((FilterByFileSize) s).getFileSizeType());
             }

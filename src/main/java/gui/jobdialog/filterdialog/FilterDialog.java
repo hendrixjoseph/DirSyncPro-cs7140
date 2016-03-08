@@ -62,7 +62,8 @@ public class FilterDialog extends FilterDialogObjects {
 
     private enum FilterTabs {
         ByPattern, BySize, ByDate, ByPath, ByFileAttribute, ByGroup, ByFilePermission
-    };
+    }
+
     private Filter filter;
 
     public FilterDialog(JDialog dialog) {

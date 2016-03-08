@@ -27,14 +27,14 @@ package dirsyncpro.exceptions;
 public class IncompleteConfigurationException extends Exception {
 
     /**
-     * Initializes a new <code>InclompleteConfigurationException</code>.
+     * Initializes a new {@code InclompleteConfigurationException}.
      */
     public IncompleteConfigurationException() {
         super();
     }
 
     /**
-     * Initializes a new <code>InclompleteConfigurationException</code>.
+     * Initializes a new {@code InclompleteConfigurationException}.
      *
      * @param message
      */
@@ -43,7 +43,7 @@ public class IncompleteConfigurationException extends Exception {
     }
 
     /**
-     * Initializes a new <code>InclompleteConfigurationException</code>.
+     * Initializes a new {@code InclompleteConfigurationException}.
      *
      * @param cause
      */
@@ -52,7 +52,7 @@ public class IncompleteConfigurationException extends Exception {
     }
 
     /**
-     * Initializes a new <code>InclompleteConfigurationException</code>.
+     * Initializes a new {@code InclompleteConfigurationException}.
      *
      * @param message
      * @param cause

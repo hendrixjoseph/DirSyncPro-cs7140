@@ -25,7 +25,6 @@ package dirsyncpro.gui.licensedialog;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
-import dirsyncpro.Const;
 import dirsyncpro.DirSyncPro;
 import dirsyncpro.tools.GuiTools;
 import java.awt.Font;
@@ -118,6 +117,7 @@ public abstract class LicenseDialogObjects extends javax.swing.JDialog {
         licenseOkButton.setText("I Accept");
         licenseOkButton.setAlignmentX(0.5F);
         licenseOkButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 licenseOkButtonActionPerformed(evt);
             }
@@ -128,6 +128,7 @@ public abstract class LicenseDialogObjects extends javax.swing.JDialog {
         licenseCancelButton.setText("I Don't Accept");
         licenseCancelButton.setAlignmentX(0.5F);
         licenseCancelButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 licenseCancelButtoncancelActionPerformed(evt);
             }

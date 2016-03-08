@@ -96,16 +96,16 @@ public class FilterByFileAttribute extends Filter {
     public String toString() {
         String s = "";
         s += " Files with the DOS attributes:";
-        if (this.readOnly != false) {
+        if (this.readOnly) {
             s += " read-only";
         }
-        if (this.hidden != false) {
+        if (this.hidden) {
             s += " hidden";
         }
-        if (this.system != false) {
+        if (this.system) {
             s += " system";
         }
-        if (this.archive != false) {
+        if (this.archive) {
             s += " archive";
         }
         return s;

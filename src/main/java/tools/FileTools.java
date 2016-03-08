@@ -59,7 +59,7 @@ import java.io.FileNotFoundException;
  */
 public class FileTools {
 
-    private static final int BUFFER_SIZE = 1 * 1024 * 1024;
+    private static final int BUFFER_SIZE = 1024 * 1024;
 
     // a buffer for the copy method
     private static byte[] buffers = new byte[BUFFER_SIZE];
@@ -77,8 +77,8 @@ public class FileTools {
      * @param date The given date.
      * @param gran Granularity
      * @param idlsgran whether to ignore the daylight saving granularity
-     * @return int <code>1</code> if the file is newer than the date,
-     * <code>0</code> if the file is modified on date, <code>-1</code> if the
+     * @return int {@code 1} if the file is newer than the date,
+     * <code>0</code> if the file is modified on date, {@code -1} if the
      * date is newer.
      */
     public static int cmpFileDatesInMinutes(File file, Date date) {
@@ -105,10 +105,10 @@ public class FileTools {
      * @param dst The destination file.
      * @param gran Granularity
      * @param idlsgran whether to ignore the daylight saving granularity
-     * @return int <code>-1</code> if the first file is newer than the second
-     * one; int <code>0</code> if the modification times are the same; int
-     * <code>1</code> if the second file is newer than the first one. If the
-     * second file doesn't exist <code>-1</code> is returned.
+     * @return int {@code -1} if the first file is newer than the second
+     * one; int {@code 0} if the modification times are the same; int
+     * {@code 1} if the second file is newer than the first one. If the
+     * second file doesn't exist {@code -1} is returned.
      */
     public static int cmpFileDates(File src, File dst, int gran, boolean idlsgran) {
         long srcLastModified, dstLastModified, diff, offset;
@@ -142,9 +142,9 @@ public class FileTools {
      *
      * @param src The source file.
      * @param dst The destination file.
-     * @return int <code>-1</code> if the first file is smaller than the second
-     * one or the second file doesn't exist, <code>0</code> if the sizes are the
-     * same, <code>1</code> if the first file is larger than the second one.
+     * @return int {@code -1} if the first file is smaller than the second
+     * one or the second file doesn't exist, {@code 0} if the sizes are the
+     * same, {@code 1} if the first file is larger than the second one.
      */
     public static int cmpFileSizes(File src, File dst) {
         if (!dst.exists()) {
@@ -166,9 +166,9 @@ public class FileTools {
      *
      * @param src The source file.
      * @param dst The destination file.
-     * @return int <code>1</code> there are differences in file attributes
-     * between the files <code>0</code> both files have the same attributes
-     * <code>-1</code> second file does not exist.
+     * @return int {@code 1} there are differences in file attributes
+     * between the files {@code 0} both files have the same attributes
+     * {@code -1} second file does not exist.
      */
     public static int cmpFileAttributes(File src, File dst) {
         if (!dst.exists()) {
@@ -370,7 +370,7 @@ public class FileTools {
      *
      * @param srcFile The source file to compare.
      * @param dstFile The destination file to compare.
-     * @return <code>true</code> if the checksums match.
+     * @return {@code true} if the checksums match.
      */
     public static boolean checksumIdentical(File srcFile, File dstFile) throws FileNotFoundException {
         return checksum(srcFile) == checksum(dstFile);
@@ -439,8 +439,8 @@ public class FileTools {
      * @param dst The path to the destination directory.
      * @param howManyBackups The number of backups to keep.
      * @param backupDir the directory in which the backups are made
-     * @return <code>true</code> if the deletion could be completed,
-     * <code>false</code> if an error occoured.
+     * @return {@code true} if the deletion could be completed,
+     * {@code false} if an error occoured.
      * @throws FileNotFoundException
      * @throws FileNotFoundException
      *
@@ -462,8 +462,8 @@ public class FileTools {
      * @param dst The path to the destination directory.
      * @param howManyBackups The number of backups to keep.
      * @param backupDir the directory in which the backups are made
-     * @return <code>true</code> if the deletion could be completed,
-     * <code>false</code> if an error occoured.
+     * @return {@code true} if the deletion could be completed,
+     * {@code false} if an error occoured.
      * @throws FileNotFoundException
      * @throws FileNotFoundException
      */
@@ -684,8 +684,7 @@ public class FileTools {
         // MS Windows ? [ ] / \ = + < > : ; " , *
         // Mac :
         // Linux /
-        String s = filename.replaceAll("[\\?\\/\\\\=\\+\\*<>:;\\\",\\[\\]]", "_");
-        return s;
+        return filename.replaceAll("[\\?\\/\\\\=\\+\\*<>:;\\\",\\[\\]]", "_");
     }
 
     /**

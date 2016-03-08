@@ -85,6 +85,7 @@ public class SettingsDialog extends SettingsDialogObjects {
     protected void applyApplicationSettings() {
         // global log will be initialised by start()
         Runnable r = new Runnable() {
+            @Override
             public void run() {
                 setGeneral();
                 setView();

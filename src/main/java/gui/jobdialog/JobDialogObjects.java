@@ -465,6 +465,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirDstChangeButton.setIconTextGap(2);
         dirDstChangeButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         dirDstChangeButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dirDstChangeButtonbrowseDstActionPerformed(evt);
             }
@@ -481,6 +482,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirSrcChangeButton.setIconTextGap(2);
         dirSrcChangeButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         dirSrcChangeButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dirSrcChangeButtonbrowseSrcActionPerformed(evt);
             }
@@ -545,6 +547,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         swapButton.setText("Swap");
         swapButton.setAlignmentX(0.5F);
         swapButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 swapButtonActionPerformed(evt);
             }
@@ -601,6 +604,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
 
         syncModeComboBox.setMaximumRowCount(Const.SyncMode.values().length);
         syncModeComboBox.addItemListener(new java.awt.event.ItemListener() {
+            @Override
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 syncModeComboBoxItemStateChanged(evt);
             }
@@ -659,6 +663,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         compareFileSizesDatesRadioButton.setMinimumSize(null);
         compareFileSizesDatesRadioButton.setPreferredSize(null);
         compareFileSizesDatesRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 compareFileSizesDatesRadioButtonActionPerformed(evt);
             }
@@ -683,6 +688,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         compareFileSizesDatesMetaDataRadioButton.setMinimumSize(null);
         compareFileSizesDatesMetaDataRadioButton.setPreferredSize(null);
         compareFileSizesDatesMetaDataRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 compareFileSizesDatesMetaDataRadioButtonActionPerformed(evt);
             }
@@ -707,6 +713,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         compareFileContentsRadioButton.setMinimumSize(null);
         compareFileContentsRadioButton.setPreferredSize(null);
         compareFileContentsRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 compareFileContentsRadioButtonActionPerformed(evt);
             }
@@ -752,6 +759,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyAllCheckBox.setMinimumSize(null);
         dirCopyAllCheckBox.setPreferredSize(null);
         dirCopyAllCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dirCopyAllCheckBoxdirEventActionPerformed(evt);
             }
@@ -771,6 +779,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyNewCheckBox.setMinimumSize(null);
         dirCopyNewCheckBox.setPreferredSize(null);
         dirCopyNewCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dirCopyNewCheckBoxdirEventActionPerformed(evt);
             }
@@ -793,6 +802,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyLargerCheckBox.setMinimumSize(null);
         dirCopyLargerCheckBox.setPreferredSize(null);
         dirCopyLargerCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dirCopyLargerCheckBoxdirEventActionPerformed(evt);
             }
@@ -815,6 +825,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyModifiedCheckBox.setMinimumSize(null);
         dirCopyModifiedCheckBox.setPreferredSize(null);
         dirCopyModifiedCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dirCopyModifiedCheckBoxdirEventActionPerformed(evt);
             }
@@ -837,6 +848,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyLargerModifiedCheckBox.setMinimumSize(null);
         dirCopyLargerModifiedCheckBox.setPreferredSize(null);
         dirCopyLargerModifiedCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dirCopyLargerModifiedCheckBoxdirEventActionPerformed(evt);
             }
@@ -1150,6 +1162,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         addFilterButton.setIconTextGap(2);
         addFilterButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         addFilterButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addFilterButtonlistAddActionPerformed(evt);
             }
@@ -1167,6 +1180,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         editFilterButton.setIconTextGap(2);
         editFilterButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         editFilterButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editFilterButtonlistAddActionPerformed(evt);
             }
@@ -1187,6 +1201,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         removeFilterButton.setMinimumSize(null);
         removeFilterButton.setPreferredSize(null);
         removeFilterButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeFilterButtonlistRemoveActionPerformed(evt);
             }
@@ -1213,6 +1228,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         filtersExpandAllButton.setMaximumSize(null);
         filtersExpandAllButton.setPreferredSize(new java.awt.Dimension(70, 17));
         filtersExpandAllButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtersExpandAllButtonenableAllDirsActionPerformed(evt);
             }
@@ -1233,6 +1249,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         filtersCollapseAllButton.setMaximumSize(null);
         filtersCollapseAllButton.setPreferredSize(new java.awt.Dimension(70, 17));
         filtersCollapseAllButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtersCollapseAllButtondisableAllDirsActionPerformed(evt);
             }
@@ -1490,6 +1507,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirBackupDirChangeButton.setIconTextGap(2);
         dirBackupDirChangeButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         dirBackupDirChangeButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dirBackupDirChangeButtonbrowseSrcActionPerformed(evt);
             }
@@ -1598,6 +1616,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirLogBrowseButton.setIconTextGap(2);
         dirLogBrowseButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         dirLogBrowseButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dirLogBrowseButtonbrowseSrcActionPerformed(evt);
             }
@@ -1616,6 +1635,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirEnableLoggingCheckBox.setMinimumSize(null);
         dirEnableLoggingCheckBox.setPreferredSize(null);
         dirEnableLoggingCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dirEnableLoggingCheckBoxdirEventActionPerformed(evt);
             }
@@ -1654,12 +1674,15 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         scheduleTree.setCellRenderer(new ScheduleTreeCellRenderer());
         scheduleTree.setEditable(true);
         scheduleTree.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 scheduleTreeMouseClicked(evt);
             }
+            @Override
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 scheduleTreeMousePressed(evt);
             }
+            @Override
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 scheduleTreeMouseReleased(evt);
             }
@@ -1702,6 +1725,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         addScheduleButton.setIconTextGap(2);
         addScheduleButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         addScheduleButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addScheduleButtonlistAddActionPerformed(evt);
             }
@@ -1719,6 +1743,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         editScheduleButton.setIconTextGap(2);
         editScheduleButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         editScheduleButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editScheduleButtonlistAddActionPerformed(evt);
             }
@@ -1739,6 +1764,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         removeScheduleButton.setMinimumSize(null);
         removeScheduleButton.setPreferredSize(null);
         removeScheduleButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeScheduleButtonlistRemoveActionPerformed(evt);
             }
@@ -1765,6 +1791,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         scheduleExpandAllButton.setMaximumSize(null);
         scheduleExpandAllButton.setPreferredSize(new java.awt.Dimension(70, 17));
         scheduleExpandAllButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 scheduleExpandAllButtonenableAllDirsActionPerformed(evt);
             }
@@ -1785,6 +1812,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         scheduleCollapseAllButton.setMaximumSize(null);
         scheduleCollapseAllButton.setPreferredSize(new java.awt.Dimension(70, 17));
         scheduleCollapseAllButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 scheduleCollapseAllButtondisableAllDirsActionPerformed(evt);
             }
@@ -1820,22 +1848,27 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirTimestampDiffField.setMaximumSize(null);
         dirTimestampDiffField.setMinimumSize(new java.awt.Dimension(10, 20));
         dirTimestampDiffField.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dirTimestampDiffFieldActionPerformed(evt);
             }
         });
         dirTimestampDiffField.addFocusListener(new java.awt.event.FocusAdapter() {
+            @Override
             public void focusLost(java.awt.event.FocusEvent evt) {
                 dirTimestampDiffFieldFocusLost(evt);
             }
         });
         dirTimestampDiffField.addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 dirTimestampDiffFieldEventKey(evt);
             }
+            @Override
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 dirTimestampDiffFieldEventKey(evt);
             }
+            @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 dirTimestampDiffFieldEventKey(evt);
             }
@@ -1862,6 +1895,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirTimestampWriteBackCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         dirTimestampWriteBackCheckBox.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         dirTimestampWriteBackCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dirTimestampWriteBackCheckBoxActionPerformed(evt);
             }
@@ -1900,6 +1934,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirTimestampSyncCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         dirTimestampSyncCheckBox.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         dirTimestampSyncCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dirTimestampSyncCheckBoxActionPerformed(evt);
             }
@@ -1929,6 +1964,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         ignoreDaylightSavingTimeCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         ignoreDaylightSavingTimeCheckBox.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         ignoreDaylightSavingTimeCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ignoreDaylightSavingTimeCheckBoxActionPerformed(evt);
             }
@@ -2201,22 +2237,27 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         realtimeSyncDelayField.setMaximumSize(null);
         realtimeSyncDelayField.setMinimumSize(new java.awt.Dimension(10, 20));
         realtimeSyncDelayField.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 realtimeSyncDelayFieldActionPerformed(evt);
             }
         });
         realtimeSyncDelayField.addFocusListener(new java.awt.event.FocusAdapter() {
+            @Override
             public void focusLost(java.awt.event.FocusEvent evt) {
                 realtimeSyncDelayFieldFocusLost(evt);
             }
         });
         realtimeSyncDelayField.addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 realtimeSyncDelayFieldEventKey1(evt);
             }
+            @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 realtimeSyncDelayFieldEventKey2(evt);
             }
+            @Override
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 realtimeSyncDelayFieldEventKey(evt);
             }
@@ -2253,6 +2294,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         realtimeSyncCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         realtimeSyncCheckBox.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         realtimeSyncCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 realtimeSyncCheckBoxActionPerformed(evt);
             }
@@ -2282,6 +2324,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         realtimeSyncOnStartCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         realtimeSyncOnStartCheckBox.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         realtimeSyncOnStartCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 realtimeSyncOnStartCheckBoxActionPerformed(evt);
             }
@@ -2324,6 +2367,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         copySettingsToAllJobsGoButton.setText("Go");
         copySettingsToAllJobsGoButton.setAlignmentX(0.5F);
         copySettingsToAllJobsGoButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 copySettingsToAllJobsGoButtonActionPerformed(evt);
             }
@@ -2342,6 +2386,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         resetJobSettingsGoButton.setText("Go");
         resetJobSettingsGoButton.setAlignmentX(0.5F);
         resetJobSettingsGoButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetJobSettingsGoButtonActionPerformed(evt);
             }
@@ -2363,6 +2408,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         copySettingsToEnabledJobsGoButton.setText("Go");
         copySettingsToEnabledJobsGoButton.setAlignmentX(0.5F);
         copySettingsToEnabledJobsGoButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 copySettingsToEnabledJobsGoButtonActionPerformed(evt);
             }
@@ -2430,6 +2476,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         jobOKButton.setMinimumSize(null);
         jobOKButton.setPreferredSize(null);
         jobOKButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jobOKButtonActionPerformed(evt);
             }
@@ -2443,6 +2490,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         jobCancelButton.setMinimumSize(null);
         jobCancelButton.setPreferredSize(null);
         jobCancelButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jobCancelButtoncancelActionPerformed(evt);
             }

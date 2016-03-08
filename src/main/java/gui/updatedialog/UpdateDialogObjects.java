@@ -27,7 +27,6 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
-import dirsyncpro.Const;
 import dirsyncpro.DirSyncPro;
 import dirsyncpro.tools.GuiTools;
 
@@ -89,6 +88,7 @@ public abstract class UpdateDialogObjects extends javax.swing.JDialog {
         gotodownloadsButton.setAlignmentX(0.5F);
         gotodownloadsButton.setPreferredSize(null);
         gotodownloadsButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gotodownloadsButtonActionPerformed(evt);
             }
@@ -100,6 +100,7 @@ public abstract class UpdateDialogObjects extends javax.swing.JDialog {
         notNowButton.setAlignmentX(0.5F);
         notNowButton.setPreferredSize(null);
         notNowButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 notNowButtoncancelActionPerformed(evt);
             }
@@ -160,12 +161,15 @@ public abstract class UpdateDialogObjects extends javax.swing.JDialog {
         downloadURL.setText("<html><u>http://www.dirsyncpro.org</u></html>");
         downloadURL.setPreferredSize(null);
         downloadURL.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 downloadURLMouseClicked(evt);
             }
+            @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 downloadURLMouseEntered(evt);
             }
+            @Override
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 downloadURLMouseExited(evt);
             }
@@ -218,12 +222,15 @@ public abstract class UpdateDialogObjects extends javax.swing.JDialog {
         changelogURL.setForeground(new java.awt.Color(0, 51, 255));
         changelogURL.setText("<html><u>http://www.dirsyncpro.org</u></html>");
         changelogURL.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 changelogURLMouseClicked(evt);
             }
+            @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 changelogURLMouseEntered(evt);
             }
+            @Override
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 changelogURLMouseExited(evt);
             }

@@ -53,11 +53,13 @@ public class ScheduleTreeNodeEditor extends AbstractCellEditor implements TreeCe
         tree = t;
     }
 
+    @Override
     public Object getCellEditorValue() {
         //dummy
         return null;
     }
 
+    @Override
     public boolean isCellEditable(EventObject event) {
         boolean editable = false;
         if (event instanceof MouseEvent) {
@@ -80,11 +82,13 @@ public class ScheduleTreeNodeEditor extends AbstractCellEditor implements TreeCe
         return editable;
     }
 
+    @Override
     public Component getTreeCellEditorComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row) {
 
         Component editorComponent = scheduleTreeCellrenderer.getTreeCellRendererComponent(tree, value, true, expanded, leaf, row, true);
 
         ItemListener itemListener = new ItemListener() {
+            @Override
             public void itemStateChanged(ItemEvent itemEvent) {
                 if (stopCellEditing()) {
                     fireEditingStopped();

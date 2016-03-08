@@ -253,6 +253,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
 
         filtersTabbedPane.setMaximumSize(null);
         filtersTabbedPane.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 filtersTabbedPaneMouseClicked(evt);
             }
@@ -287,6 +288,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByPatternRadioButton.setMinimumSize(null);
         filtersByPatternRadioButton.setPreferredSize(null);
         filtersByPatternRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtersByPatternRadioButtonActionPerformed(evt);
             }
@@ -311,6 +313,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByFileSizeRadioButton.setMinimumSize(null);
         filtersByFileSizeRadioButton.setPreferredSize(null);
         filtersByFileSizeRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtersByFileSizeRadioButtonActionPerformed(evt);
             }
@@ -335,6 +338,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByPathRadioButton.setMinimumSize(null);
         filtersByPathRadioButton.setPreferredSize(null);
         filtersByPathRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtersByPathRadioButtonActionPerformed(evt);
             }
@@ -359,6 +363,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByFileAttributeRadioButton.setMinimumSize(null);
         filtersByFileAttributeRadioButton.setPreferredSize(null);
         filtersByFileAttributeRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtersByFileAttributeRadioButtonActionPerformed(evt);
             }
@@ -383,6 +388,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByFileOwnershipRadioButton.setMinimumSize(null);
         filtersByFileOwnershipRadioButton.setPreferredSize(null);
         filtersByFileOwnershipRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtersByFileOwnershipRadioButtonActionPerformed(evt);
             }
@@ -407,6 +413,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByFilePermissionsRadioButton.setMinimumSize(null);
         filtersByFilePermissionsRadioButton.setPreferredSize(null);
         filtersByFilePermissionsRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtersByFilePermissionsRadioButtonActionPerformed(evt);
             }
@@ -431,6 +438,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByDateRadioButton.setMinimumSize(null);
         filtersByDateRadioButton.setPreferredSize(null);
         filtersByDateRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtersByDateRadioButtonActionPerformed(evt);
             }
@@ -655,6 +663,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersRegularExpressionCheckBox.setMinimumSize(null);
         filtersRegularExpressionCheckBox.setPreferredSize(null);
         filtersRegularExpressionCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtersRegularExpressionCheckBoxActionPerformed(evt);
             }
@@ -901,6 +910,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersDateModeSpecificTimeRadioButton.setMinimumSize(null);
         filtersDateModeSpecificTimeRadioButton.setPreferredSize(null);
         filtersDateModeSpecificTimeRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtersDateModeSpecificTimeRadioButtonActionPerformed(evt);
             }
@@ -925,6 +935,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersDateModeTimeUnitRadioButton.setMinimumSize(null);
         filtersDateModeTimeUnitRadioButton.setPreferredSize(null);
         filtersDateModeTimeUnitRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtersDateModeTimeUnitRadioButtonActionPerformed(evt);
             }
@@ -948,6 +959,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersDateTextField.setInputVerifier(new DateTimeVerifier(this, filtersDateTextField));
         filtersDateTextField.setMinimumSize(new java.awt.Dimension(96, 20));
         filtersDateTextField.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ffiltersDateTextFieldActionPerformed(evt);
             }
@@ -988,6 +1000,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersDateTimeUnitField.setMinimumSize(new java.awt.Dimension(40, 20));
         filtersDateTimeUnitField.setName(""); // NOI18N
         filtersDateTimeUnitField.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ffiltersDateTimeUnitFieldActionPerformed(evt);
             }
@@ -1088,6 +1101,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         pathFilterBrowseButton.setIconTextGap(2);
         pathFilterBrowseButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         pathFilterBrowseButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pathFilterBrowseButtonbrowseSrcActionPerformed(evt);
             }
@@ -1400,6 +1414,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterURCheckBox.setMinimumSize(null);
         filtersPermissionFilterURCheckBox.setPreferredSize(null);
         filtersPermissionFilterURCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 permissionFilterCheckBoxActionPerformed(evt);
             }
@@ -1413,6 +1428,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterUWCheckBox.setMinimumSize(null);
         filtersPermissionFilterUWCheckBox.setPreferredSize(null);
         filtersPermissionFilterUWCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 permissionFilterCheckBoxActionPerformed(evt);
             }
@@ -1426,6 +1442,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterUXCheckBox.setMinimumSize(null);
         filtersPermissionFilterUXCheckBox.setPreferredSize(null);
         filtersPermissionFilterUXCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 permissionFilterCheckBoxActionPerformed(evt);
             }
@@ -1439,6 +1456,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterGRCheckBox.setMinimumSize(null);
         filtersPermissionFilterGRCheckBox.setPreferredSize(null);
         filtersPermissionFilterGRCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 permissionFilterCheckBoxActionPerformed(evt);
             }
@@ -1452,6 +1470,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterGWCheckBox.setMinimumSize(null);
         filtersPermissionFilterGWCheckBox.setPreferredSize(null);
         filtersPermissionFilterGWCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 permissionFilterCheckBoxActionPerformed(evt);
             }
@@ -1465,6 +1484,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterGXCheckBox.setMinimumSize(null);
         filtersPermissionFilterGXCheckBox.setPreferredSize(null);
         filtersPermissionFilterGXCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 permissionFilterCheckBoxActionPerformed(evt);
             }
@@ -1478,6 +1498,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterORCheckBox.setMinimumSize(null);
         filtersPermissionFilterORCheckBox.setPreferredSize(null);
         filtersPermissionFilterORCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 permissionFilterCheckBoxActionPerformed(evt);
             }
@@ -1491,6 +1512,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterOWCheckBox.setMinimumSize(null);
         filtersPermissionFilterOWCheckBox.setPreferredSize(null);
         filtersPermissionFilterOWCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 permissionFilterCheckBoxActionPerformed(evt);
             }
@@ -1504,6 +1526,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterOXCheckBox.setMinimumSize(null);
         filtersPermissionFilterOXCheckBox.setPreferredSize(null);
         filtersPermissionFilterOXCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 permissionFilterCheckBoxActionPerformed(evt);
             }
@@ -1527,9 +1550,11 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterField.setMinimumSize(new java.awt.Dimension(3, 20));
         filtersPermissionFilterField.setPreferredSize(new java.awt.Dimension(40, 20));
         filtersPermissionFilterField.addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 filtersPermissionFilterFieldKeyPressed(evt);
             }
+            @Override
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 filtersPermissionFilterFieldKeyReleased(evt);
             }
@@ -1595,6 +1620,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersOKButton.setMinimumSize(null);
         filtersOKButton.setPreferredSize(null);
         filtersOKButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtersOKButtonActionPerformed(evt);
             }
@@ -1608,6 +1634,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersCancelButton.setMinimumSize(null);
         filtersCancelButton.setPreferredSize(null);
         filtersCancelButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filtersCancelButtoncancelActionPerformed(evt);
             }
