@@ -50,7 +50,7 @@ public class RealtimeListener {
 
     public RealtimeListener(String dir) throws IOException {
         this.watcher = FileSystems.getDefault().newWatchService();
-        this.keys = new HashMap<WatchKey, Path>();
+        this.keys = new HashMap<>();
 
         registerAll(Paths.get(dir));
     }

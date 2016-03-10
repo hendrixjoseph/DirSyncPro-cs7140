@@ -1669,11 +1669,7 @@ private void filtersByFileSizeRadioButtonActionPerformed(java.awt.event.ActionEv
     filterEvent();
 }//GEN-LAST:event_filtersByFileSizeRadioButtonActionPerformed
 
-private void openRecentMenuItemopenConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openRecentMenuItemopenConfigActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_openRecentMenuItemopenConfigActionPerformed
-
-private void pathFilterBrowseButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pathFilterBrowseButtonbrowseSrcActionPerformed
+    private void pathFilterBrowseButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pathFilterBrowseButtonbrowseSrcActionPerformed
     GuiTools.browseFileAndFolder(this, filtersPathFilterField);
 }//GEN-LAST:event_pathFilterBrowseButtonbrowseSrcActionPerformed
 

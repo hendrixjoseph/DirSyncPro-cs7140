@@ -159,7 +159,7 @@ public class JobDialog extends JobDialogObjects {
         dirSrcField.setText(job.getDirA());
         dirDstField.setText(job.getDirB());
 
-        if (job.getSyncMode() != (Const.SyncMode) syncModeComboBox.getSelectedItem()) {
+        if (job.getSyncMode() != syncModeComboBox.getSelectedItem()) {
             syncModeComboBox.setSelectedItem(job.getSyncMode());
         }
 

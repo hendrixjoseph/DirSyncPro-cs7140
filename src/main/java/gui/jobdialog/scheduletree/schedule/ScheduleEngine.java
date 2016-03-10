@@ -81,7 +81,7 @@ public class ScheduleEngine {
             if (sched.getNextEvent().compareTo(now) <= 0) {
                 synchronizingSchedule = sched;
                 scheduleQUpdated.set(true);
-                Vector<Job> v = new Vector<Job>();
+                Vector<Job> v = new Vector<>();
                 v.add(sched.getJob());
                 DirSyncPro.getSync().getLog().printMinimal("Synchronizing job '" + sched.getJob().getName() + "' (scheduled: " + sched.toString().replace("Next event", "Event") + ")", IconKey.Info);
                 DirSyncPro.getSync().synchronize(v);
@@ -159,7 +159,7 @@ public class ScheduleEngine {
     //job - job to be syncronized, Date - date, when synchronization needs to be done
     //Empty record for job means that it need another task to be created
     //if record exists then it need to be updated with a new date and rscheduled after current task completes
-    private HashMap<Job, Date> realtimeSchedule = new HashMap<Job, Date>();
+    private HashMap<Job, Date> realtimeSchedule = new HashMap<>();
     private static ScheduleEngine realtimeInstance = new ScheduleEngine();
 
     public static ScheduleEngine getRealtimeInstance() {

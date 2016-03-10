@@ -124,7 +124,7 @@ public class DirSyncPro {
                 }
             }
         }
-        return (String[]) options.toArray(new String[options.size()]);
+        return options.toArray(new String[options.size()]);
     }
 
     /**
@@ -383,7 +383,7 @@ public class DirSyncPro {
     /**
      * Get the setting of the quit option.
      *
-     * @return <code>true</code> if the option is enabled, {@code false}
+     * @return {@code true} if the option is enabled, {@code false}
      * otherwise.
      */
     public static boolean isOption_quit() {
@@ -393,7 +393,7 @@ public class DirSyncPro {
     /**
      * Get the setting of the iconify option.
      *
-     * @return <code>true</code> if the option is enabled, {@code false}
+     * @return {@code true} if the option is enabled, {@code false}
      * otherwise.
      */
     public static boolean isOption_iconify() {
@@ -403,7 +403,7 @@ public class DirSyncPro {
     /**
      * Get the setting of the analyze option.
      *
-     * @return <code>true</code> if the option is enabled, {@code false}
+     * @return {@code true} if the option is enabled, {@code false}
      * otherwise.
      */
     public static boolean isOption_analyze() {
@@ -767,7 +767,7 @@ public class DirSyncPro {
             toSave.remove(toSave.size() - 1);
         }
         toSave.add(0, file);
-        setLastLoadedConfigs((File[]) toSave.toArray(new File[toSave.size()]));
+        setLastLoadedConfigs(toSave.toArray(new File[toSave.size()]));
     }
 
     public static File[] getLastLoadedConfigs() {
@@ -780,7 +780,7 @@ public class DirSyncPro {
                 configFiles.add(f);
             }
         }
-        return (File[]) configFiles.toArray(new File[configFiles.size()]);
+        return configFiles.toArray(new File[configFiles.size()]);
     }
 
     private static void setLastLoadedConfigs(File[] configFiles) {

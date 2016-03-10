@@ -214,7 +214,7 @@ public abstract class JobObject {
     /**
      * Determines whether this directory is enabled.
      *
-     * @return <code>true</code> if the component is enabled, {@code false}
+     * @return {@code true} if the component is enabled, {@code false}
      * otherwise.
      */
     public boolean isEnabled() {

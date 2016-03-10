@@ -27,7 +27,7 @@ import javax.swing.tree.TreePath;
 public class ScheduleTreeModel extends DefaultTreeModel {
 
     private ScheduleTree scheduleTree;
-    private Vector<TreeModelListener> treeModelListeners = new Vector<TreeModelListener>();
+    private Vector<TreeModelListener> treeModelListeners = new Vector<>();
 
     public ScheduleTreeModel(ScheduleTree st) {
         super(st);

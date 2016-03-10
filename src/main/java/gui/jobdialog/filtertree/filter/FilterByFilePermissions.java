@@ -69,7 +69,7 @@ public class FilterByFilePermissions extends Filter {
     }
 
     private Set<PosixFilePermission> convertToPosixFilePermission(int permsValue) {
-        Set<PosixFilePermission> perms = new HashSet<PosixFilePermission>();
+        Set<PosixFilePermission> perms = new HashSet<>();
         if ((permsValue & 0400) > 0) {
             perms.add(PosixFilePermission.OWNER_READ);
         }

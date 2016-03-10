@@ -40,7 +40,7 @@ public class DateTool {
      * @param gran Granularity
      * @param idlsgran whether to ignore the daylight saving granularity
      * @return int {@code -1} if the first file is newer than the second
-     * one; int <code>0</code> if the dates are the same; int {@code 1} if
+     * one; int {@code 0} if the dates are the same; int {@code 1} if
      * the second date is newer than the first one.
      */
     public static int cmpDates(long fAD, long fBD, int gran, boolean idlsgran) {

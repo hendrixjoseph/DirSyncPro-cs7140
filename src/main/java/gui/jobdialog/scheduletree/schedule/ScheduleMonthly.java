@@ -38,7 +38,7 @@ public class ScheduleMonthly extends Schedule {
     public ScheduleMonthly(Job j) {
         type = Schedule.Type.Monthly;
         job = j;
-        months = new HashMap<Months, Boolean>();
+        months = new HashMap<>();
         months.put(Months.January, false);
         months.put(Months.February, false);
         months.put(Months.March, false);

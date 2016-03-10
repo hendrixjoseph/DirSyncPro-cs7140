@@ -73,7 +73,7 @@ public class FilterByPattern extends Filter {
      *
      * @param a The string to compare.
      *
-     * @return <code>true</code> if the strings match, {@code false}
+     * @return {@code true} if the strings match, {@code false}
      * otherwise.
      */
     private boolean matchDependingOnOS(String a) {

@@ -27,7 +27,7 @@ import javax.swing.tree.TreePath;
 public class JobsTreeModel extends DefaultTreeModel {
 
     private JobTree jobTree;
-    private Vector<TreeModelListener> treeModelListeners = new Vector<TreeModelListener>();
+    private Vector<TreeModelListener> treeModelListeners = new Vector<>();
 
     public JobsTreeModel(JobTree jt) {
         super(jt);

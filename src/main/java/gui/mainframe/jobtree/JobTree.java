@@ -328,7 +328,7 @@ public class JobTree extends DefaultMutableTreeNode {
         } else if (type == Type.Filters) {
             return "<html><b>Filters:</b>" + (((Job) value).getFilterSet().hasFilters() ? " has filters" : "has no filters") + "</html>";
         } else if (type.toString().matches("FilterBy.+")) {
-            return "<html><b>Filter: </b>" + ((Filter) value).getAction() + " " + ((Filter) value).toString() + "</html>";
+            return "<html><b>Filter: </b>" + ((Filter) value).getAction() + " " + value.toString() + "</html>";
         } else if (type == Type.Log) {
             String filename = ((Job) value).getLog().getFilename();
             return "<html><b>Job log: </b>" + (filename.equals("") ? "None" : "'" + filename + "'") + "</html>";

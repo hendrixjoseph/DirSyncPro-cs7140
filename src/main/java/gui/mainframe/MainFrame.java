@@ -907,7 +907,7 @@ public class MainFrame extends MainFrameObjects {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     int[] rows = syncQTable.getSelectedRows();
-                    ArrayList<SyncPair> syncPairs = new ArrayList<SyncPair>();
+                    ArrayList<SyncPair> syncPairs = new ArrayList<>();
                     for (int row : rows) {
                         syncPairs.add(DirSyncPro.getSync().getSyncQ().get(row));
                     }
@@ -931,7 +931,7 @@ public class MainFrame extends MainFrameObjects {
                     submenu.setText("Change to:");
                     submenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncModeBI16x16.png")));
                     popupMenu.add(submenu);
-                    ArrayList<SyncPairStatus> spsArray = new ArrayList<SyncPairStatus>();
+                    ArrayList<SyncPairStatus> spsArray = new ArrayList<>();
                     if (sp.getFileA().isFile() || sp.getFileB().isFile()) {
                         if (sp.getFileA().exists()) {
                             spsArray.addAll(Arrays.asList(SyncPairStatus.FileACopyForced, SyncPairStatus.FileAIsRedundant));
@@ -968,7 +968,7 @@ public class MainFrame extends MainFrameObjects {
                     submenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncModeBI16x16.png")));
                     popupMenu.add(submenu);
                     job = sp.getJob();
-                    spsArray = new ArrayList<SyncPairStatus>();
+                    spsArray = new ArrayList<>();
                     if (sp.getSyncPairStatus().isFileOperation()) {
                         spsArray.addAll(Arrays.asList(SyncPairStatus.FileACopyForced, SyncPairStatus.FileBCopyForced, SyncPairStatus.FileBIsRedundant, SyncPairStatus.FileAIsRedundant));
                     } else {
@@ -995,7 +995,7 @@ public class MainFrame extends MainFrameObjects {
                     submenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/syncModeBI16x16.png")));
                     popupMenu.add(submenu);
                     job = sp.getJob();
-                    spsArray = new ArrayList<SyncPairStatus>();
+                    spsArray = new ArrayList<>();
                     spsArray.addAll(Arrays.asList(SyncPairStatus.FileDirACopyForced, SyncPairStatus.FileDirBCopyForced, SyncPairStatus.FileDirBIsRedundant, SyncPairStatus.FileDirAIsRedundant));
                     for (final SyncPairStatus sps : spsArray) {
                         menuItem = new JMenuItem(sps.toString());
@@ -1003,7 +1003,7 @@ public class MainFrame extends MainFrameObjects {
                             @Override
                             public void actionPerformed(ActionEvent e) {
                                 int[] rows = syncQTable.getSelectedRows();
-                                ArrayList<SyncPair> syncPairs = new ArrayList<SyncPair>();
+                                ArrayList<SyncPair> syncPairs = new ArrayList<>();
                                 for (int row : rows) {
                                     syncPairs.add(DirSyncPro.getSync().getSyncQ().get(row));
                                 }
@@ -1314,7 +1314,7 @@ public class MainFrame extends MainFrameObjects {
             Job job = (Job) node.getUserObject();
             int i = DirSyncPro.getSync().getIndexOfJobInJobList(job);
             if (DirSyncPro.getSync().getJobs().size() > 1 && i < DirSyncPro.getSync().getJobs().size() - 1) {
-                job = (Job) DirSyncPro.getSync().getJobs().remove(i);
+                job = DirSyncPro.getSync().getJobs().remove(i);
                 i++;
                 DirSyncPro.getSync().getJobs().insertElementAt(job, i);
                 updateJobsTree(row + 1);
@@ -1329,7 +1329,7 @@ public class MainFrame extends MainFrameObjects {
             Job job = (Job) node.getUserObject();
             int i = DirSyncPro.getSync().getIndexOfJobInJobList(job);
             if (i > 0) {
-                job = (Job) DirSyncPro.getSync().getJobs().remove(i);
+                job = DirSyncPro.getSync().getJobs().remove(i);
                 i--;
                 DirSyncPro.getSync().getJobs().insertElementAt(job, i);
                 updateJobsTree(row - 1);
@@ -1604,7 +1604,7 @@ public class MainFrame extends MainFrameObjects {
     /**
      * Check if the GUI is enabled.
      *
-     * @return <code>true</code> if the GUI is enabled, {@code false}
+     * @return {@code true} if the GUI is enabled, {@code false}
      * otherwise.
      */
     public boolean isGuiEnabled() {

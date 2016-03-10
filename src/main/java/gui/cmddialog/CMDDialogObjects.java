@@ -456,11 +456,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-private void openRecentMenuItemopenConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openRecentMenuItemopenConfigActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_openRecentMenuItemopenConfigActionPerformed
-
-private void cmdAddSyncCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAddSyncCheckBoxActionPerformed
+    private void cmdAddSyncCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAddSyncCheckBoxActionPerformed
     cmdUpdateCommandField();
 }//GEN-LAST:event_cmdAddSyncCheckBoxActionPerformed
 

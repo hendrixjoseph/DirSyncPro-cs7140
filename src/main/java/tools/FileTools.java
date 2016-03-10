@@ -78,7 +78,7 @@ public class FileTools {
      * @param gran Granularity
      * @param idlsgran whether to ignore the daylight saving granularity
      * @return int {@code 1} if the file is newer than the date,
-     * <code>0</code> if the file is modified on date, {@code -1} if the
+     * {@code 0} if the file is modified on date, {@code -1} if the
      * date is newer.
      */
     public static int cmpFileDatesInMinutes(File file, Date date) {

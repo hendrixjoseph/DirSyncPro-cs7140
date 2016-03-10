@@ -26,7 +26,7 @@ public class MessageQ {
      * initializes the viewFilterMode to defaults
      */
     public void initMessageQViewFilter() {
-        viewFilterMode = new HashMap<IconKey, Boolean>();
+        viewFilterMode = new HashMap<>();
         viewFilterMode.put(IconKey.Info, true);
         viewFilterMode.put(IconKey.Warning, true);
         viewFilterMode.put(IconKey.Error, true);

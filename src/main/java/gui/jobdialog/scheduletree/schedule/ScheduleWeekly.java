@@ -38,7 +38,7 @@ public class ScheduleWeekly extends Schedule {
     public ScheduleWeekly(Job j) {
         type = Schedule.Type.Weekly;
         job = j;
-        days = new HashMap<WeekDays, Boolean>();
+        days = new HashMap<>();
         days.put(WeekDays.Sunday, false);
         days.put(WeekDays.Monday, false);
         days.put(WeekDays.Tuesday, false);
