@@ -401,7 +401,7 @@ public class Const {
     public static final String LOG_FILE_EXTENSION = "log";
 
     /**
-     * The DirA & DirB file extension for conflicting modified/larger files in
+     * The DirA &amp; DirB file extension for conflicting modified/larger files in
      * bidirectional sync.
      */
     public static final String DIR_A_RENAME_FILE_EXTENSION = "DirA";

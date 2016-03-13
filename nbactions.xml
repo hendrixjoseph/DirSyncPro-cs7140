@@ -50,4 +50,11 @@
                 <exec.executable>java</exec.executable>
             </properties>
         </action>
+        <action>
+            <actionName>CUSTOM-site</actionName>
+            <displayName>site</displayName>
+            <goals>
+                <goal>site</goal>
+            </goals>
+        </action>
     </actions>
