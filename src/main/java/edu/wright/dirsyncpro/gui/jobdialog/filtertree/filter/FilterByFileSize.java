@@ -43,6 +43,7 @@ public class FilterByFileSize extends Filter {
         fileSizeType = fst;
     }
 
+    @Override
     public boolean matches(Path path) {
         File f = path.toFile();
         return (f.isFile()

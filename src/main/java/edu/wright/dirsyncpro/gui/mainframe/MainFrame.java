@@ -299,6 +299,7 @@ public class MainFrame extends MainFrameObjects {
         }
     }
 
+    @Override
     protected void saveEnabledJobs() {
         String filename = "";
 
@@ -335,6 +336,7 @@ public class MainFrame extends MainFrameObjects {
 
     }
 
+    @Override
     protected void openConfig() {
         String filename = "";
 
@@ -393,6 +395,7 @@ public class MainFrame extends MainFrameObjects {
         }
     }
 
+    @Override
     protected void saveConfig() {
         if (currentConfig != null && currentConfigAlreadyAccessed) {
             String filename = currentConfig.getPath();
@@ -408,6 +411,7 @@ public class MainFrame extends MainFrameObjects {
         DirSyncPro.getSync().setOptionsChanged(false);
     }
 
+    @Override
     protected void saveAsConfig() {
         String filename = "";
         String logfilename = "";
@@ -464,6 +468,7 @@ public class MainFrame extends MainFrameObjects {
         }
     }
 
+    @Override
     protected void syncQViewFilterChanged(boolean reset) {
         if (reset) {
             if (DirSyncPro.getSync().getSyncQ() != null) {
@@ -492,6 +497,7 @@ public class MainFrame extends MainFrameObjects {
         u.openChangelogURLinBrowser();
     }
 
+    @Override
     protected void cleanLog() {
         if (JOptionPane.showConfirmDialog(this, "All current messages will be deleted. Continue?", "Delete all messages?", JOptionPane.OK_CANCEL_OPTION) == 0) {
             DirSyncPro.getSync().getLog().cleanMessages();
@@ -500,6 +506,7 @@ public class MainFrame extends MainFrameObjects {
         }
     }
 
+    @Override
     protected void messagesQViewFilterChanged(boolean reset) {
         if (reset) {
             DirSyncPro.getSync().getLog().getMessages().initMessageQViewFilter();
@@ -516,6 +523,7 @@ public class MainFrame extends MainFrameObjects {
         messagesTable.repaint();
     }
 
+    @Override
     protected void syncQSyncFilterChanged(boolean reset) {
         if (reset) {
             DirSyncPro.getSync().getSyncQ().initSyncQSyncFilter();
@@ -599,11 +607,12 @@ public class MainFrame extends MainFrameObjects {
 
     private void enableJPanel(JPanel panel, boolean enabled) {
         Component[] components = panel.getComponents();
-        for (int i = 0; i < components.length; i++) {
-            components[i].setEnabled(enabled);
+        for (Component component : components) {
+            component.setEnabled(enabled);
         }
     }
 
+    @Override
     protected void toolsSwapSrcDst() {
         if (JOptionPane.showConfirmDialog(this, "Are you sure you want to swap all the source and destination directories?", "Swap All source and destination directories", JOptionPane.YES_NO_OPTION) == 0) {
             DirSyncPro.getSync().swapSrcDst();
@@ -616,15 +625,18 @@ public class MainFrame extends MainFrameObjects {
         u.openDownloadURLinBrowser();
     }
 
+    @Override
     protected void optionsOptionsMenuItemClicked() {
         settingsDialog.initApplicationSettingDialog();
         GuiTools.openDialog(settingsDialog);
     }
 
+    @Override
     protected void disableAllDirs() {
         enableAllDirs(false);
     }
 
+    @Override
     protected void enableAllDirs() {
         enableAllDirs(true);
     }
@@ -632,6 +644,7 @@ public class MainFrame extends MainFrameObjects {
     /**
      * Start Scheduler.
      */
+    @Override
     public void schedulerStart() {
         DirSyncPro.getSync().getScheduleEngine().startScheduler();
 
@@ -646,6 +659,7 @@ public class MainFrame extends MainFrameObjects {
     /**
      * Start Scheduler.
      */
+    @Override
     public void schedulerStop() {
         if (DirSyncPro.getSync().getScheduleEngine().isRunning()) {
             DirSyncPro.getSync().getScheduleEngine().stopScheduler();
@@ -661,6 +675,7 @@ public class MainFrame extends MainFrameObjects {
     /**
      * Start Analyze.
      */
+    @Override
     public void analyzeStart() {
         DirSyncPro.getSync().setMode(Sync.ANALYZE);
         analyze(null);
@@ -669,6 +684,7 @@ public class MainFrame extends MainFrameObjects {
     /**
      * Starts a synchronization.
      */
+    @Override
     public void synchronizationStart() {
         DirSyncPro.getSync().setMode(Sync.SYNCHRONIZATION);
         synchronize(null);
@@ -681,6 +697,7 @@ public class MainFrame extends MainFrameObjects {
         }
     }
 
+    @Override
     protected void contents() {
         File manual = new File(DirSyncPro.getProgramPath() + File.separator + Const.manualFilename);
         if (!manual.exists()) {
@@ -702,11 +719,13 @@ public class MainFrame extends MainFrameObjects {
      * syncQ.addAll(dir.getSyncQueue()); } DirSyncPro.getSync().setSyncQ(syncQ);
      * }
      */
+    @Override
     protected void syncQDirSelected() {
         //accumulateSyncQ();
         DirSyncPro.getGui().updateSyncQInGUI();
     }
 
+    @Override
     protected void jobsTreeMouseHandler(MouseEvent evt) {
         // Do nothing if GUI is disabled
         if (!DirSyncPro.getGui().isGuiEnabled()) {
@@ -845,6 +864,7 @@ public class MainFrame extends MainFrameObjects {
         }
     }
 
+    @Override
     protected void syncQMouseHandler(MouseEvent evt) {
         // Do nothing if GUI is disabled
         if (!DirSyncPro.getGui().isGuiEnabled()) {
@@ -1243,6 +1263,7 @@ public class MainFrame extends MainFrameObjects {
 
     }
 
+    @Override
     public JobTree getJobTree() {
         JobTree jobTree = new JobTree(JobTree.Type.Root, "Jobset", null);
         for (Job job : DirSyncPro.getSync().getJobs()) {
@@ -1307,6 +1328,7 @@ public class MainFrame extends MainFrameObjects {
         SwingUtilities.invokeLater(r);
     }
 
+    @Override
     protected void downwardJob() {
         DefaultMutableTreeNode node = (DefaultMutableTreeNode) jobsTree.getLastSelectedPathComponent();
         if (node != null && node.getLevel() == 1) {
@@ -1322,6 +1344,7 @@ public class MainFrame extends MainFrameObjects {
         }
     }
 
+    @Override
     protected void upwardeJob() {
         DefaultMutableTreeNode node = (DefaultMutableTreeNode) jobsTree.getLastSelectedPathComponent();
         if (node != null && node.getLevel() == 1) {
@@ -1337,6 +1360,7 @@ public class MainFrame extends MainFrameObjects {
         }
     }
 
+    @Override
     protected void removeJob() {
         if (JOptionPane.showConfirmDialog(this, "Are you sure removing the selected job?", "Remove selected job?", JOptionPane.YES_NO_OPTION) == 0) {
             DefaultMutableTreeNode node = (DefaultMutableTreeNode) jobsTree.getLastSelectedPathComponent();
@@ -1354,6 +1378,7 @@ public class MainFrame extends MainFrameObjects {
         }
     }
 
+    @Override
     protected void copyJob() {
         DefaultMutableTreeNode node = (DefaultMutableTreeNode) jobsTree.getLastSelectedPathComponent();
         if (node != null && node.getLevel() == 1) {
@@ -1386,6 +1411,7 @@ public class MainFrame extends MainFrameObjects {
         }
     }
 
+    @Override
     public void openEditJobDialog() {
         Job job;
         JobTree jobTreeNode = getSelectedJobTreeNode();
@@ -1459,6 +1485,7 @@ public class MainFrame extends MainFrameObjects {
         GuiTools.openDialog(jobDialog);
     }
 
+    @Override
     protected void addJob() {
         Job job = new Job(true);
         job.setName(Const.DEFAULT_JOBSET_NAME + " " + DirSyncPro.getSync().getNextJobPostfixStringIndex(Const.DEFAULT_JOBSET_NAME + " "));
@@ -1469,6 +1496,7 @@ public class MainFrame extends MainFrameObjects {
         GuiTools.openDialog(jobDialog);
     }
 
+    @Override
     protected void donate() {
         String url = Const.DONATEURL;
         try {
@@ -1480,6 +1508,7 @@ public class MainFrame extends MainFrameObjects {
         }
     }
 
+    @Override
     protected void about() {
         String about = Const.COPYRIGHT + "\n\n" + Const.MESSAGE;
         javax.swing.JOptionPane.showMessageDialog(this, about, Const.PROGRAM,
@@ -1487,6 +1516,7 @@ public class MainFrame extends MainFrameObjects {
                 new javax.swing.ImageIcon(getClass().getResource("/icons/DirSyncPro64x64.png")));
     }
 
+    @Override
     public void quit() {
         if (DirSyncPro.getSync().getState() == Sync.STOP) {
             if (reallyQuit()) {
@@ -1533,10 +1563,12 @@ public class MainFrame extends MainFrameObjects {
                 && (!DirSyncPro.getSync().getScheduleEngine().isRunning() || (DirSyncPro.getSync().getScheduleEngine().isRunning() && JOptionPane.showConfirmDialog(this, "Schedule Engine is running!\nOK to proceed?", "Schedule Engine running", JOptionPane.OK_CANCEL_OPTION) == 0)));
     }
 
+    @Override
     public void exitForm() {
         quit();
     }
 
+    @Override
     public void iconifyForm() {
         if (DirSyncPro.isMinimizeToSystemTray() && dirSyncProTray != null && dirSyncProTray.isInitialized()) {
             this.setVisible(false);
@@ -1694,6 +1726,7 @@ public class MainFrame extends MainFrameObjects {
 //		}
     }
 
+    @Override
     protected void pause() {
         if (DirSyncPro.getSync().getState() == Sync.STOP
                 || DirSyncPro.getSync().getState() == Sync.STOPPING) {
@@ -1713,6 +1746,7 @@ public class MainFrame extends MainFrameObjects {
         }
     }
 
+    @Override
     protected void stop() {
         pauseButton.setSelected(false);
 
@@ -2113,6 +2147,7 @@ public class MainFrame extends MainFrameObjects {
         return currentConfig;
     }
 
+    @Override
     public JobDialog getJobDialog() {
         return jobDialog;
     }
@@ -2206,6 +2241,7 @@ public class MainFrame extends MainFrameObjects {
         JOptionPane.showMessageDialog(this, "This feature is not implementented in this beta version.\nIt will probably be implemented in the next upcoming (beta) version.", "Not implemented yet", JOptionPane.INFORMATION_MESSAGE);
     }
 
+    @Override
     protected void cmdMenuItemClicked() {
         cmdDialog.initCMDDialog();
         GuiTools.openDialog(cmdDialog);

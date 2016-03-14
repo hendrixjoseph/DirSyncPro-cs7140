@@ -71,6 +71,7 @@ public class ScheduleDaily extends Schedule {
     /**
      * Calculates and sets the next upcoming event date.
      */
+    @Override
     public void calculateNextEvent() {
         if (time != null && interval > 0 && calculateNextEventAllowed()) {
             Date candidNextEvent = null;

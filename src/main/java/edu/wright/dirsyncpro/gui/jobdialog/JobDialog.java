@@ -938,8 +938,8 @@ public class JobDialog extends JobDialogObjects {
     @Override
     public FiltersTree getFiltersTree() {
         FiltersTree filtersTree = new FiltersTree(null, null); //root
-        FiltersTree includes = new FiltersTree((Filter) new FilterGroup(null, Filter.Action.Include), filtersTree);
-        FiltersTree excludes = new FiltersTree((Filter) new FilterGroup(null, Filter.Action.Exclude), filtersTree);
+        FiltersTree includes = new FiltersTree(new FilterGroup(null, Filter.Action.Include), filtersTree);
+        FiltersTree excludes = new FiltersTree(new FilterGroup(null, Filter.Action.Exclude), filtersTree);
         if (filters != null) {
             for (Filter f : filters) {
                 if (f.getAction() == Filter.Action.Include) {

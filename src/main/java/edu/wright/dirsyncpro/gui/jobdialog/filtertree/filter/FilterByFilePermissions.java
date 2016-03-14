@@ -42,6 +42,7 @@ public class FilterByFilePermissions extends Filter {
         permissionValue = Integer.parseInt(octalValue, 8);
     }
 
+    @Override
     public boolean matches(Path path) {
 
         PosixFileAttributes posixFileAttributes = null;

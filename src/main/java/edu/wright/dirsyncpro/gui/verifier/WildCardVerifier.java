@@ -34,6 +34,7 @@ public class WildCardVerifier extends DSPInputVerifier implements KeyListener, M
         super(parentDialog, component, "Wildcard format error!");
     }
 
+    @Override
     public boolean verify(JComponent component) {
         JTextField field = (JTextField) component;
         String text = field.getText();

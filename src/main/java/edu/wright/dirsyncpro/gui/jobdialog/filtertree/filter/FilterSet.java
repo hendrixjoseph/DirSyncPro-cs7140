@@ -23,8 +23,8 @@ import java.util.Vector;
 
 public class FilterSet implements Cloneable {
 
-    protected Vector<Filter> includeFilters = new Vector<Filter>();
-    protected Vector<Filter> excludeFilters = new Vector<Filter>();
+    protected Vector<Filter> includeFilters = new Vector<>();
+    protected Vector<Filter> excludeFilters = new Vector<>();
 
     /**
      * Addsthe filter in the filter array list.
@@ -66,7 +66,7 @@ public class FilterSet implements Cloneable {
      * @return the filters array list
      */
     public Vector<Filter> getFilters() {
-        Vector<Filter> allFilters = new Vector<Filter>();
+        Vector<Filter> allFilters = new Vector<>();
         for (Filter filt : includeFilters) {
             allFilters.add((Filter) filt.clone());
         }
@@ -80,8 +80,8 @@ public class FilterSet implements Cloneable {
      * @param filters the filters to set
      */
     public void setFilters(Vector<Filter> filters) {
-        includeFilters = new Vector<Filter>();
-        excludeFilters = new Vector<Filter>();
+        includeFilters = new Vector<>();
+        excludeFilters = new Vector<>();
 
         for (Filter filt : filters) {
             this.addFilter(filt);

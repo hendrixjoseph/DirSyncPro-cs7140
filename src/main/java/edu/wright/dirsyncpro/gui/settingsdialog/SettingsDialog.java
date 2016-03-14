@@ -46,6 +46,7 @@ public class SettingsDialog extends SettingsDialogObjects {
         super(frame);
     }
 
+    @Override
     protected void logsPathCheckboxClicked() {
         boolean b = !logsPathInlineCheckBox.isSelected();
         logsPathField.setEnabled(b);
@@ -53,6 +54,7 @@ public class SettingsDialog extends SettingsDialogObjects {
         logsPathLabel.setEnabled(b);
     }
 
+    @Override
     protected void configPathCheckboxClicked() {
         boolean b = !configPathInlineCheckBox.isSelected();
         configPathField.setEnabled(b);
@@ -60,11 +62,13 @@ public class SettingsDialog extends SettingsDialogObjects {
         configPathLabel.setEnabled(b);
     }
 
+    @Override
     protected void browseConfigPath() {
         GuiTools.browseFolder(this, configPathField);
         DirSyncPro.setConfigPath(configPathField.getText());
     }
 
+    @Override
     protected void browseSettingsLogPath() {
         try {
             JFileChooser fileChooser = new JFileChooser();
@@ -82,6 +86,7 @@ public class SettingsDialog extends SettingsDialogObjects {
         }
     }
 
+    @Override
     protected void applyApplicationSettings() {
         // global log will be initialised by start()
         Runnable r = new Runnable() {
@@ -220,14 +225,17 @@ public class SettingsDialog extends SettingsDialogObjects {
         }
     }
 
+    @Override
     protected void checkForUpdate(boolean b) {
         DirSyncPro.getGui().getUpdateDialog().checkForUpdate(b, this);
     }
 
+    @Override
     protected void exitForm() {
         DirSyncPro.getGui().exitForm();
     }
 
+    @Override
     protected void iconifyForm() {
         DirSyncPro.getGui().iconifyForm();
     }
@@ -269,6 +277,7 @@ public class SettingsDialog extends SettingsDialogObjects {
         }
     }
 
+    @Override
     protected void setDefaultShutDownCommandField() {
         shutDownCommandField.setText(Const.Properties.ShutDownCommand.getDefault());
     }

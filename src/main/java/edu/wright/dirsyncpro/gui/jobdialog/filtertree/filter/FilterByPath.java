@@ -38,6 +38,7 @@ public class FilterByPath extends Filter {
         pathStr = path;
     }
 
+    @Override
     public boolean matches(Path path) {
         return (path.compareTo(Paths.get(pathStr)) == 0);
     }

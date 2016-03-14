@@ -284,6 +284,7 @@ public class ScheduleMonthly extends Schedule {
     /**
      * Calculates and sets the next upcoming event date.
      */
+    @Override
     public void calculateNextEvent() {
         if (!isJanuary() && !isFebruary() && !isMarch() && !isApril() && !isMay() && !isJune() && !isJuly() && !isAugust() && !isSeptember() && !isOctober() && !isNovember() && !isDecember()) {
             // do nothing

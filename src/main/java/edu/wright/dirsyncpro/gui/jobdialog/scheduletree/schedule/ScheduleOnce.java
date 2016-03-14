@@ -54,6 +54,7 @@ public class ScheduleOnce extends Schedule {
     /**
      * Calculates and sets the next upcoming event date.
      */
+    @Override
     public void calculateNextEvent() {
         if (date != null && calculateNextEventAllowed()) {
             Date candidNextEvent = null;

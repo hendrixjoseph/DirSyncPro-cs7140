@@ -39,6 +39,7 @@ public class LongIntVerifier extends DSPInputVerifier implements KeyListener, Mo
         this.max = max;
     }
 
+    @Override
     public boolean verify(JComponent component) {
         JTextField field = (JTextField) component;
 

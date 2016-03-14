@@ -74,6 +74,7 @@ public class ShutDownDialog extends ShutDownDialogObjects {
         this.setVisible(false);
     }
 
+    @Override
     protected void stopCountDown() {
         task.cancel();
         timer.purge();

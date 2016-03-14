@@ -236,7 +236,7 @@ public class XmlReader extends DefaultHandler {
         if (qName.equals(Xml.TAG_SCHEDULE)) {
             Schedule sched = null;
             // Get the last loaded job
-            job = (Job) jobs.get(jobs.size() - 1);
+            job = jobs.get(jobs.size() - 1);
             att = atts.getValue(Xml.ATTR_SCHEDULE_TYPE);
             if (att.equals(Schedule.Type.Once.toString())) {
                 sched = new ScheduleOnce(job);
@@ -316,7 +316,7 @@ public class XmlReader extends DefaultHandler {
         if (qName.equals(Xml.TAG_FILTER)) {
             Filter filt = null;
             // Get the last loaded job
-            job = (Job) jobs.get(jobs.size() - 1);
+            job = jobs.get(jobs.size() - 1);
             att = atts.getValue(Xml.ATTR_FILTER_TYPE);
             Filter.Action ac = Filter.Action.valueOf(atts.getValue(Xml.ATTR_FILTER_ACTION));
             if (att.equals(Filter.Type.ByPattern.toString())) {
@@ -355,7 +355,7 @@ public class XmlReader extends DefaultHandler {
     }
 
     /**
-     * Returns a <code>List</code> of {@code Directory}s to dirsyncpro.
+     * Returns a {@code List} of {@code Directory}s to dirsyncpro.
      *
      * @return List The {@code Directory}s to dirsyncpro.
      */

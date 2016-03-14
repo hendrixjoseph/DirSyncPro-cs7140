@@ -50,6 +50,7 @@ public class FilterByPattern extends Filter {
         }
     }
 
+    @Override
     public boolean matches(Path path) {
         File file = path.toFile();
         String fileName = file.getName();

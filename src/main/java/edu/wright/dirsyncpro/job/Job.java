@@ -229,8 +229,8 @@ public class Job extends JobObject implements Cloneable {
         ArrayList<Path> dstFiles = new ArrayList<>();
 
         // for all files
-        for (int i = 0; i < srcFiles.size(); i++) {
-            dstFiles.add(replacePath(srcFiles.get(i), srcPath, dstPath));
+        for (Path srcFile : srcFiles) {
+            dstFiles.add(replacePath(srcFile, srcPath, dstPath));
         }
 
         return dstFiles;

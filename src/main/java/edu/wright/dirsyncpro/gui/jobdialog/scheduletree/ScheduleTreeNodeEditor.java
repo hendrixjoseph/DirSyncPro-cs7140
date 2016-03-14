@@ -72,10 +72,10 @@ public class ScheduleTreeNodeEditor extends AbstractCellEditor implements TreeCe
                     Schedule schedule = ((ScheduleTree) mutableNode).schedule;
                     boolean enabled = (schedule instanceof ScheduleOnce) || (schedule instanceof ScheduleMinutely) || (schedule instanceof ScheduleHourly) || (schedule instanceof ScheduleDaily) || (schedule instanceof ScheduleWeekly) || (schedule instanceof ScheduleMonthly);
                     DirSyncPro.getGui().getJobDialog().enableEditRemoveScheduleButtons(enabled);
-                    if (mouseEvent.getClickCount() == 2 && !((ScheduleTree) mutableNode).isRoot()) {
+                    if (mouseEvent.getClickCount() == 2 && !mutableNode.isRoot()) {
                         DirSyncPro.getGui().getJobDialog().openEditScheduleDialog();
                     }
-                    editable |= (((ScheduleTree) mutableNode).isRoot());
+                    editable |= (mutableNode.isRoot());
                 }
             }
         }

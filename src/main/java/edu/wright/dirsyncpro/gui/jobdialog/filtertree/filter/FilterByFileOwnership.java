@@ -41,6 +41,7 @@ public class FilterByFileOwnership extends Filter {
         groupStr = group;
     }
 
+    @Override
     public boolean matches(Path path) {
         PosixFileAttributes posixFileAttributes = null;
 

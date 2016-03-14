@@ -175,8 +175,7 @@ public class SyncQ {
         } else {
             syncFiltered = true;
             syncQSyncFiltered = new ArrayList<>();
-            for (int i = 0; i < syncQ.size(); i++) {
-                SyncPair sp = syncQ.get(i);
+            for (SyncPair sp : syncQ) {
                 SyncPairStatus sps = sp.getSyncPairStatus();
                 if (getSyncQSyncFilterMode(sps.matchingCopyMode())) {
                     syncQSyncFiltered.add(sp);
@@ -208,8 +207,7 @@ public class SyncQ {
         } else {
             syncFiltered = true;
             syncQSyncFiltered = new ArrayList<>();
-            for (int i = 0; i < syncQ.size(); i++) {
-                SyncPair sp = syncQ.get(i);
+            for (SyncPair sp : syncQ) {
                 SyncPairStatus sps = sp.getSyncPairStatus();
                 if (getSyncQSyncFilterMode(sps.matchingCopyMode())) {
                     syncQSyncFiltered.add(sp);

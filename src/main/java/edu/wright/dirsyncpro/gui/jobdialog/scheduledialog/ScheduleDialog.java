@@ -250,6 +250,7 @@ public class ScheduleDialog extends ScheduleDialogObjects {
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(new MouseEvent(scheduleMonthlyTimeTextField, MouseEvent.MOUSE_CLICKED, 0, 0, -1, -1, 1, false));
     }
 
+    @Override
     protected void schedulesEvent() {
         scheduleTimeFrameFromLabel1.setEnabled(scheduleTimeFrameFromCheckBox.isSelected());
         scheduleTimeFrameFromLabel2.setEnabled(scheduleTimeFrameFromCheckBox.isSelected());
@@ -267,6 +268,7 @@ public class ScheduleDialog extends ScheduleDialogObjects {
         enableMonthlyScheduleTab(scheduleMonthlyRadioButton.isSelected(), false);
     }
 
+    @Override
     protected void applySchedule() {
         JobDialog jobDialog = DirSyncPro.getGui().getJobDialog();
         Job job = DirSyncPro.getGui().getSelectedJob();

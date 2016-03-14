@@ -89,8 +89,8 @@ public class XmlWriter {
         tag += addAttr(Xml.ATTR_SAVED_WITH_JAVA_VERSION, (System.getProperty("java.version") + "-" + System.getProperty("java.vendor")));
         writeEmptyTag(tag);
 
-        for (Iterator iter = jobs.iterator(); iter.hasNext();) {
-            Job job = (Job) iter.next();
+        for (Object job1 : jobs) {
+            Job job = (Job) job1;
 
             tag = Xml.TAG_JOB;
             tag += addAttr(Xml.ATTR_NAME, job.getName());

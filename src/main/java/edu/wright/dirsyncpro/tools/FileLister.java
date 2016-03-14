@@ -21,8 +21,8 @@ public class FileLister {
         }
         System.out.println("Please wait...");
         ArrayList<File> files = list(dir);
-        for (int i = 0; i < files.size(); i++) {
-            System.out.println(files.get(i).getAbsolutePath());
+        for (File file : files) {
+            System.out.println(file.getAbsolutePath());
         }
         System.out.println("Found " + files.size() + " files.");
     }

@@ -72,14 +72,17 @@ public class UpdateDialog extends UpdateDialogObjects {
         DirSyncPro.getGui().updateGUIEDT(false);
     }
 
+    @Override
     protected void downloadURLClicked() {
         u.openDownloadURLinBrowser();
     }
 
+    @Override
     protected void changelogURLClicked() {
         u.openChangelogURLinBrowser();
     }
 
+    @Override
     protected void openBrowser() {
         u.openDownloadURLinBrowser();
     }

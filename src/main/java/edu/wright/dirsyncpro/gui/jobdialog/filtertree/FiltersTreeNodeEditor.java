@@ -76,7 +76,7 @@ public class FiltersTreeNodeEditor extends AbstractCellEditor implements TreeCel
                     if (enabled && mouseEvent.getClickCount() == 2) {
                         DirSyncPro.getGui().getJobDialog().openEditFilterDialog();
                     }
-                    editable |= (((FiltersTree) mutableNode).isRoot());
+                    editable |= (mutableNode.isRoot());
                 }
             }
         }

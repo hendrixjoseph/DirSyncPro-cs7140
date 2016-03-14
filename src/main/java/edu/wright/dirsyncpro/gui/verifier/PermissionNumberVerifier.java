@@ -34,6 +34,7 @@ public class PermissionNumberVerifier extends DSPInputVerifier implements KeyLis
         super(parentDialog, component, "Not an octal number or out of range [000-777]!");
     }
 
+    @Override
     public boolean verify(JComponent component) {
         JTextField field = (JTextField) component;
 

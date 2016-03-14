@@ -18,7 +18,7 @@ public class MessageQ {
     private boolean viewFiltered;
 
     public MessageQ() {
-        messagesQ = new ArrayList<Message>();
+        messagesQ = new ArrayList<>();
         initMessageQViewFilter();
     }
 
@@ -62,9 +62,8 @@ public class MessageQ {
             viewFiltered = false;
         } else {
             viewFiltered = true;
-            messagesQViewFiltered = new ArrayList<Message>();
-            for (int i = 0; i < messagesQ.size(); i++) {
-                Message m = messagesQ.get(i);
+            messagesQViewFiltered = new ArrayList<>();
+            for (Message m : messagesQ) {
                 IconKey ik = m.getIconKey();
                 if (viewFilterMode.get(m.getIconKey().mapForMessageQ())) {
                     messagesQViewFiltered.add(m);

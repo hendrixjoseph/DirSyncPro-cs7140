@@ -44,12 +44,14 @@ public class LicenseDialog extends LicenseDialogObjects {
         super(frame);
     }
 
+    @Override
     protected void licenseAccepted() {
         licenseAccepted = true;
         DirSyncPro.setLicenseAccepted();
         setVisible(false);
     }
 
+    @Override
     protected void licenseNotAccepted() {
         // we are in gui
         if (DirSyncPro.getGui() != null) {

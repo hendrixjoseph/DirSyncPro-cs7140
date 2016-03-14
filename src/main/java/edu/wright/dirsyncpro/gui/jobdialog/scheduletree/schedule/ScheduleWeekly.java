@@ -199,6 +199,7 @@ public class ScheduleWeekly extends Schedule {
     /**
      * Calculates and sets the next upcoming event date.
      */
+    @Override
     public void calculateNextEvent() {
         if (!isSaturday() && !isMonday() && !isTuesday() && !isWednesday() && !isThursday() && !isFriday() && !isSunday()) {
             // do nothing

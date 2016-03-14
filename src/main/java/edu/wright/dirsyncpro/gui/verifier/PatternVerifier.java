@@ -38,6 +38,7 @@ public class PatternVerifier extends DSPInputVerifier implements KeyListener, Mo
         super(parentDialog, component, "");
     }
 
+    @Override
     public boolean verify(JComponent component) {
         JTextField field = (JTextField) component;
 

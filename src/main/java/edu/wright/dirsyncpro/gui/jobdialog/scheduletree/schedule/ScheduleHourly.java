@@ -52,6 +52,7 @@ public class ScheduleHourly extends Schedule {
     /**
      * Calculates and sets the next upcoming event date.
      */
+    @Override
     public void calculateNextEvent() {
         if (interval > 0 && calculateNextEventAllowed()) {
             Date candidNextEvent = null;

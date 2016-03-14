@@ -42,7 +42,7 @@ public class ScheduleEngine {
     Schedule synchronizingSchedule;
 
     public ScheduleEngine() {
-        scheduleQ = new Vector<Schedule>();
+        scheduleQ = new Vector<>();
         scheduleQUpdated.set(true);
         timer = new Timer();
     }

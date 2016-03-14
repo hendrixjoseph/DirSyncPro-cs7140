@@ -34,6 +34,7 @@ public class PathVerifier extends DSPInputVerifier implements KeyListener, Mouse
         super(parentDialog, component, "Path format error! Space char at the beginning/end!");
     }
 
+    @Override
     public boolean verify(JComponent component) {
         JTextField field = (JTextField) component;
 
