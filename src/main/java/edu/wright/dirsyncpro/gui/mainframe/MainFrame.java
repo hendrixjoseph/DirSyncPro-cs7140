@@ -35,7 +35,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.Vector;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import javax.swing.JFileChooser;
@@ -830,7 +830,7 @@ public class MainFrame extends MainFrameObjects {
                 menuItem.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        analyze(new Vector<Job>() {
+                        analyze(new ArrayList<Job>() {
                             {
                                 add(DirSyncPro.getGui().getSelectedJob());
                             }
@@ -846,7 +846,7 @@ public class MainFrame extends MainFrameObjects {
                 menuItem.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        synchronize(new Vector<Job>() {
+                        synchronize(new ArrayList<Job>() {
                             {
                                 add(DirSyncPro.getGui().getSelectedJob());
                             }
@@ -1338,7 +1338,7 @@ public class MainFrame extends MainFrameObjects {
             if (DirSyncPro.getSync().getJobs().size() > 1 && i < DirSyncPro.getSync().getJobs().size() - 1) {
                 job = DirSyncPro.getSync().getJobs().remove(i);
                 i++;
-                DirSyncPro.getSync().getJobs().insertElementAt(job, i);
+                DirSyncPro.getSync().getJobs().add(i,job);
                 updateJobsTree(row + 1);
             }
         }
@@ -1354,7 +1354,7 @@ public class MainFrame extends MainFrameObjects {
             if (i > 0) {
                 job = DirSyncPro.getSync().getJobs().remove(i);
                 i--;
-                DirSyncPro.getSync().getJobs().insertElementAt(job, i);
+                DirSyncPro.getSync().getJobs().add(i, job);
                 updateJobsTree(row - 1);
             }
         }
@@ -1406,7 +1406,7 @@ public class MainFrame extends MainFrameObjects {
                 job.setLog(new Log(job.getName() + "." + Const.LOG_FILE_EXTENSION, job));
             }
 
-            DirSyncPro.getSync().getJobs().insertElementAt(job, i);
+            DirSyncPro.getSync().getJobs().add(i,job);
             updateJobsTree(row + 1);
         }
     }
@@ -1577,7 +1577,7 @@ public class MainFrame extends MainFrameObjects {
         }
     }
 
-    protected void analyze(final Vector<Job> jobs) {
+    protected void analyze(final List<Job> jobs) {
 
         if (DirSyncPro.getSync().getState() == Sync.START
                 || DirSyncPro.getSync().getState() == Sync.PAUSE
@@ -1602,7 +1602,7 @@ public class MainFrame extends MainFrameObjects {
         syncProcess.execute();
     }
 
-    protected void synchronize(final Vector<Job> jobs) {
+    protected void synchronize(final List<Job> jobs) {
 
         if (DirSyncPro.getSync().getState() == Sync.START
                 || DirSyncPro.getSync().getState() == Sync.PAUSE

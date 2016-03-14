@@ -23,7 +23,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.Vector;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import javax.swing.JOptionPane;
@@ -32,17 +32,18 @@ import edu.wright.dirsyncpro.Const.IconKey;
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.job.Job;
 import edu.wright.dirsyncpro.sync.Sync;
+import java.util.ArrayList;
 
 public class ScheduleEngine {
 
-    private Vector<Schedule> scheduleQ;
+    private List<Schedule> scheduleQ;
     private AtomicBoolean scheduleQUpdated = new AtomicBoolean(false);
     Timer timer;
     boolean running;
     Schedule synchronizingSchedule;
 
     public ScheduleEngine() {
-        scheduleQ = new Vector<>();
+        scheduleQ = new ArrayList<>();
         scheduleQUpdated.set(true);
         timer = new Timer();
     }
@@ -81,7 +82,7 @@ public class ScheduleEngine {
             if (sched.getNextEvent().compareTo(now) <= 0) {
                 synchronizingSchedule = sched;
                 scheduleQUpdated.set(true);
-                Vector<Job> v = new Vector<>();
+                List<Job> v = new ArrayList<>();
                 v.add(sched.getJob());
                 DirSyncPro.getSync().getLog().printMinimal("Synchronizing job '" + sched.getJob().getName() + "' (scheduled: " + sched.toString().replace("Next event", "Event") + ")", IconKey.Info);
                 DirSyncPro.getSync().synchronize(v);
@@ -136,7 +137,7 @@ public class ScheduleEngine {
     /**
      * @return the scheduleQ
      */
-    public Vector<Schedule> getScheduleQ() {
+    public List<Schedule> getScheduleQ() {
         return scheduleQ;
     }
 
@@ -223,7 +224,7 @@ public class ScheduleEngine {
                 // === 3 ===
                 //do synchronization now and schedule another if needed
                 //System.out.println("Running at " + new Date(scheduledExecutionTime()));
-                DirSyncPro.getSync().synchronize(new Vector<Job>() {
+                DirSyncPro.getSync().synchronize(new ArrayList<Job>() {
                     {
                         add(j);
                     }

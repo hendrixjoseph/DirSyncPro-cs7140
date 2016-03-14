@@ -23,7 +23,7 @@ import java.awt.Toolkit;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Vector;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
@@ -43,6 +43,7 @@ import edu.wright.dirsyncpro.xml.ConfigConverter;
 import edu.wright.dirsyncpro.xml.XmlReader;
 import edu.wright.dirsyncpro.xml.XmlWriter;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 /**
  * Represents the synchronization.
@@ -105,7 +106,7 @@ public class Sync {
     /**
      * The directory definitions of the synchronization
      */
-    private Vector<Job> jobs = new Vector<>();
+    private List<Job> jobs = new ArrayList<>();
 
     private int dirCounter = 0;
 
@@ -131,7 +132,7 @@ public class Sync {
      */
     public Sync() {
 
-        jobs = new Vector<>();
+        jobs = new ArrayList<>();
         syncQ = new SyncQ();
         scheduleEngine = new ScheduleEngine();
 
@@ -306,7 +307,7 @@ public class Sync {
     /**
      * Analyzes the given jobs one by one.
      */
-    public void analyze(Vector<Job> js) {
+    public void analyze(List<Job> js) {
         setState(Sync.START);
 
         syncQ = new SyncQ();
@@ -442,7 +443,7 @@ public class Sync {
     /**
      * Synchronizes the Sync and eventually analyzes the given jobs
      */
-    public void synchronize(Vector<Job> js) {
+    public void synchronize(List<Job> js) {
 
         if (!alreadyAnalyzed || syncQ.isSynced()) {
             analyze(js);
@@ -970,7 +971,7 @@ public class Sync {
     /**
      * @return Returns the jobs.
      */
-    public Vector<Job> getJobs() {
+    public List<Job> getJobs() {
         return jobs;
     }
 
@@ -993,8 +994,8 @@ public class Sync {
     /**
      * @return Returns the enabled jobs.
      */
-    public Vector<Job> getEnabledJobs() {
-        Vector<Job> enabledDirs = new Vector<>();
+    public List<Job> getEnabledJobs() {
+        List<Job> enabledDirs = new ArrayList<>();
         for (Job job : jobs) {
             if (job.isEnabled()) {
                 enabledDirs.add(job);

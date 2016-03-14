@@ -19,15 +19,16 @@
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 
 import java.nio.file.Path;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FilterSet implements Cloneable {
 
-    protected Vector<Filter> includeFilters = new Vector<>();
-    protected Vector<Filter> excludeFilters = new Vector<>();
+    protected List<Filter> includeFilters = new ArrayList<>();
+    protected List<Filter> excludeFilters = new ArrayList<>();
 
     /**
-     * Addsthe filter in the filter array list.
+     * Adds the filter in the filter array list.
      *
      * @param filt
      */
@@ -48,8 +49,8 @@ public class FilterSet implements Cloneable {
             // dummy, will not happen
         }
 
-        fs.includeFilters = (Vector<Filter>) this.includeFilters.clone();
-        fs.excludeFilters = (Vector<Filter>) this.excludeFilters.clone();
+        fs.includeFilters = new ArrayList<>(this.includeFilters);
+        fs.excludeFilters = new ArrayList<>(this.excludeFilters);
         return fs;
     }
 
@@ -65,8 +66,8 @@ public class FilterSet implements Cloneable {
     /**
      * @return the filters array list
      */
-    public Vector<Filter> getFilters() {
-        Vector<Filter> allFilters = new Vector<>();
+    public List<Filter> getFilters() {
+        List<Filter> allFilters = new ArrayList<>();
         for (Filter filt : includeFilters) {
             allFilters.add((Filter) filt.clone());
         }
@@ -79,9 +80,9 @@ public class FilterSet implements Cloneable {
     /**
      * @param filters the filters to set
      */
-    public void setFilters(Vector<Filter> filters) {
-        includeFilters = new Vector<>();
-        excludeFilters = new Vector<>();
+    public void setFilters(List<Filter> filters) {
+        includeFilters = new ArrayList<>();
+        excludeFilters = new ArrayList<>();
 
         for (Filter filt : filters) {
             this.addFilter(filt);

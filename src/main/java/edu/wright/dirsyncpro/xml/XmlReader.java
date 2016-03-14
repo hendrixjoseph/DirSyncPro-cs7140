@@ -22,7 +22,7 @@ package edu.wright.dirsyncpro.xml;
 import java.io.FileInputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Vector;
+import java.util.List;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -49,6 +49,7 @@ import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleOnce;
 import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleWeekly;
 import edu.wright.dirsyncpro.job.Job;
 import edu.wright.dirsyncpro.sync.Sync;
+import java.util.ArrayList;
 
 /**
  * Reads a XML config file. The data can be retrieved via the various getter
@@ -59,7 +60,7 @@ import edu.wright.dirsyncpro.sync.Sync;
 public class XmlReader extends DefaultHandler {
 
     private String logFileName;
-    private Vector<Job> jobs = new Vector<>();
+    private List<Job> jobs = new ArrayList<>();
 
     /**
      * Reads data from the given XML file. The data can be retreived via the
@@ -359,7 +360,7 @@ public class XmlReader extends DefaultHandler {
      *
      * @return List The {@code Directory}s to dirsyncpro.
      */
-    public Vector<Job> getJobs() {
+    public List<Job> getJobs() {
         return jobs;
     }
 

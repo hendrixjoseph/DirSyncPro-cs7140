@@ -82,7 +82,7 @@ public class ScheduleTableModel extends AbstractTableModel {
         }
 
         String item = "";
-        Schedule sched = DirSyncPro.getSync().getScheduleEngine().getScheduleQ().elementAt(row);
+        Schedule sched = DirSyncPro.getSync().getScheduleEngine().getScheduleQ().get(row);
 
         switch (column) {
             case 0:

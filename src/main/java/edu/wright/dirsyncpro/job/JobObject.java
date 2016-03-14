@@ -27,7 +27,7 @@ import edu.wright.dirsyncpro.sync.RealtimeListener;
 import edu.wright.dirsyncpro.tools.Log;
 import java.nio.file.Path;
 import java.util.Collections;
-import java.util.Vector;
+import java.util.List;
 
 /**
  * Contains variables and getter and setter methods for the Directory class.
@@ -64,7 +64,7 @@ public abstract class JobObject {
     protected String dirB = "";
     protected Path pathB;
 
-    protected Vector<Schedule> schedules;
+    protected List<Schedule> schedules;
     protected FilterSet filterSet;
 
     //realtime sync
@@ -559,7 +559,7 @@ public abstract class JobObject {
     /**
      * @return the schedules
      */
-    public Vector<Schedule> getSchedules() {
+    public List<Schedule> getSchedules() {
         return schedules;
     }
 
@@ -577,7 +577,7 @@ public abstract class JobObject {
     /**
      * @param schedules the schedules to set
      */
-    public void setSchedules(Vector<Schedule> schedules) {
+    public void setSchedules(List<Schedule> schedules) {
         this.schedules = schedules;
     }
 

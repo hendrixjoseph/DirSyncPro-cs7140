@@ -25,7 +25,7 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.Stack;
-import java.util.Vector;
+import java.util.List;
 
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.Filter;
@@ -71,7 +71,7 @@ public class XmlWriter {
      *
      * @throws IOException
      */
-    public XmlWriter(String filename, String logFile, Vector jobs) throws IOException {
+    public XmlWriter(String filename, String logFile, List jobs) throws IOException {
         out = new FileOutputStream(filename);
         stack = new Stack();
         indent = 0;

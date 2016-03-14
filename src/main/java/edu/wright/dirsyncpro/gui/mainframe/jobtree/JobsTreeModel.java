@@ -18,7 +18,8 @@
  */
 package edu.wright.dirsyncpro.gui.mainframe.jobtree;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.event.TreeModelListener;
 import javax.swing.tree.DefaultTreeModel;
@@ -27,7 +28,7 @@ import javax.swing.tree.TreePath;
 public class JobsTreeModel extends DefaultTreeModel {
 
     private JobTree jobTree;
-    private Vector<TreeModelListener> treeModelListeners = new Vector<>();
+    private List<TreeModelListener> treeModelListeners = new ArrayList<>();
 
     public JobsTreeModel(JobTree jt) {
         super(jt);

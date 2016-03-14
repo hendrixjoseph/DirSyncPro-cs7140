@@ -41,7 +41,7 @@ public class ScheduleTableCellRenderer implements TableCellRenderer {
             return null;
         }
 
-        Schedule sched = DirSyncPro.getSync().getScheduleEngine().getScheduleQ().elementAt(row);
+        Schedule sched = DirSyncPro.getSync().getScheduleEngine().getScheduleQ().get(row);
 
         cell = new JLabel();
         cell.setText(String.valueOf(value));

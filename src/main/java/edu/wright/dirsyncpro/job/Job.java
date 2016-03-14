@@ -33,7 +33,7 @@ import java.nio.file.WatchEvent;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.EnumSet;
-import java.util.Vector;
+import java.util.List;
 
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.Const.IconKey;
@@ -112,7 +112,7 @@ public class Job extends JobObject implements Cloneable {
         this.setSyncDirTimeStamps(false);
         this.setIgnoreDaylightSavingGranularity(false);
         this.setGranularity(0);
-        this.schedules = new Vector<>();
+        this.schedules = new ArrayList<>();
     }
 
     /**
@@ -795,7 +795,7 @@ public class Job extends JobObject implements Cloneable {
      */
     public void restartRealtimeListeners() {
         //final Job j1 = this;
-        //DirSyncPro.getSync().synchronize(new Vector<Job>(){{add(j1);}});
+        //DirSyncPro.getSync().synchronize(new List<Job>(){{add(j1);}});
 
         stopRealtimeListeners();
         if (!enabled) {

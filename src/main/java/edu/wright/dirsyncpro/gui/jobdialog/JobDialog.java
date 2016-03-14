@@ -30,7 +30,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
-import java.util.Vector;
+import java.util.List;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -60,6 +60,7 @@ import edu.wright.dirsyncpro.gui.swing.MyJTabbedPane;
 import edu.wright.dirsyncpro.job.Job;
 import edu.wright.dirsyncpro.tools.FileTools;
 import edu.wright.dirsyncpro.tools.GuiTools;
+import java.util.ArrayList;
 
 /**
  * Contains the GUI methods.
@@ -86,11 +87,11 @@ public class JobDialog extends JobDialogObjects {
     private FilterDialog filterDialog = new FilterDialog(this);
     private ScheduleDialog scheduleDialog = new ScheduleDialog(this);
 
-    private static Vector<Schedule> schedules = new Vector<>();
+    private static List<Schedule> schedules = new ArrayList<>();
     private Job job;
 
     // temp vars for within the gui
-    private Vector<Filter> filters;
+    private List<Filter> filters;
 
     private String prevPattern;
 
@@ -258,7 +259,7 @@ public class JobDialog extends JobDialogObjects {
         // if custom, make copies of the filters to edit locally and save on 'apply'
         // init otherwise
         initFilters(((SyncMode) syncModeComboBox.getSelectedItem()).isCustom(), job);
-        schedules = (Vector<Schedule>) job.getSchedules().clone();
+        schedules = new ArrayList<>(job.getSchedules());
 
         updateFiltersTree();
         updateScheduleTree();
@@ -845,9 +846,9 @@ public class JobDialog extends JobDialogObjects {
 
     public void initFilters(boolean edit, Job job) {
         if (edit) {
-            filters = (Vector<Filter>) job.getFilterSet().getFilters().clone();
+            filters = new ArrayList<>(job.getFilterSet().getFilters());
         } else {
-            filters = new Vector<>();
+            filters = new ArrayList<>();
             filters.add(new FilterByPattern(job, Filter.Action.Include, Const.DEFAULT_INCLUDE_FILE, FilterByPattern.FilterPatternType.File, false));
             filters.add(new FilterByPattern(job, Filter.Action.Include, Const.DEFAULT_INCLUDE_DIR, FilterByPattern.FilterPatternType.Directory, false));
         }
