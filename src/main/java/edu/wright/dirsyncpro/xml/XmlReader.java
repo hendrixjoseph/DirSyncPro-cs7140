@@ -135,59 +135,59 @@ public class XmlReader extends DefaultHandler {
             job.setSyncMode(sm);
 
             att = (atts.getValue(Xml.ATTR_WITHSUBFOLDERS) != null) ? atts.getValue(Xml.ATTR_WITHSUBFOLDERS) : "false";
-            job.setRecursive(Boolean.valueOf(att).booleanValue());
+            job.setRecursive(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_VERIFY) != null) ? atts.getValue(Xml.ATTR_VERIFY) : "false";
-            job.setVerify(Boolean.valueOf(att).booleanValue());
+            job.setVerify(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_REALTIME) != null) ? atts.getValue(Xml.ATTR_REALTIME) : "false";
-            job.setSyncRealtime(Boolean.valueOf(att).booleanValue());
+            job.setSyncRealtime(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_REALTIME_SYNC_ON_START) != null) ? atts.getValue(Xml.ATTR_REALTIME_SYNC_ON_START) : "true";
-            job.setSyncRealtimeOnStart(Boolean.valueOf(att).booleanValue());
+            job.setSyncRealtimeOnStart(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_REALTIME_DELAY) != null) ? atts.getValue(Xml.ATTR_REALTIME_DELAY) : Const.DefaultRealtimeSyncDelayValue + "";
-            job.setSyncRealtimeDelay(Integer.valueOf(att).intValue());
+            job.setSyncRealtimeDelay(Integer.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_LOGFILE) != null) ? atts.getValue(Xml.ATTR_LOGFILE) : "";
             job.getLog().setFile(att);
 
             att = (atts.getValue(Xml.ATTR_SYNC_NEW) != null) ? atts.getValue(Xml.ATTR_SYNC_NEW) : "false";
-            job.setCopyNew(Boolean.valueOf(att).booleanValue());
+            job.setCopyNew(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_SYNC_MODIFIED) != null) ? atts.getValue(Xml.ATTR_SYNC_MODIFIED) : "false";
-            job.setCopyModified(Boolean.valueOf(att).booleanValue());
+            job.setCopyModified(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_SYNC_LARGER) != null) ? atts.getValue(Xml.ATTR_SYNC_LARGER) : "false";
-            job.setCopyLarger(Boolean.valueOf(att).booleanValue());
+            job.setCopyLarger(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_SYNC_LARGERMODIFIED) != null) ? atts.getValue(Xml.ATTR_SYNC_LARGERMODIFIED) : "false";
-            job.setCopyLargerModified(Boolean.valueOf(att).booleanValue());
+            job.setCopyLargerModified(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_SYNC_CMP_MODE) != null)
                     ? atts.getValue(Xml.ATTR_SYNC_CMP_MODE) : Const.COMPARE_MODE_DEFAULT.toString();
             job.setSyncCompareMode(Const.CompareMode.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_SYNC_ALL) != null) ? atts.getValue(Xml.ATTR_SYNC_ALL) : "false";
-            job.setCopyAll(Boolean.valueOf(att).booleanValue());
+            job.setCopyAll(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_DEL_FILES) != null) ? atts.getValue(Xml.ATTR_DEL_FILES) : "false";
-            job.setDelFiles(Boolean.valueOf(att).booleanValue());
+            job.setDelFiles(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_DEL_DIRS) != null) ? atts.getValue(Xml.ATTR_DEL_DIRS) : "false";
-            job.setDelDirs(Boolean.valueOf(att).booleanValue());
+            job.setDelDirs(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_DEL_EXCLUDED_FILES_A) != null) ? atts.getValue(Xml.ATTR_DEL_EXCLUDED_FILES_A) : "false";
-            job.setDeleteExcludedFilesA(Boolean.valueOf(att).booleanValue());
+            job.setDeleteExcludedFilesA(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_DEL_EXCLUDED_DIRS_A) != null) ? atts.getValue(Xml.ATTR_DEL_EXCLUDED_DIRS_A) : "false";
-            job.setDeleteExcludedDirsA(Boolean.valueOf(att).booleanValue());
+            job.setDeleteExcludedDirsA(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_DEL_EXCLUDED_FILES_B) != null) ? atts.getValue(Xml.ATTR_DEL_EXCLUDED_FILES_B) : "false";
-            job.setDeleteExcludedFilesB(Boolean.valueOf(att).booleanValue());
+            job.setDeleteExcludedFilesB(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_DEL_EXCLUDED_DIRS_B) != null) ? atts.getValue(Xml.ATTR_DEL_EXCLUDED_DIRS_B) : "false";
-            job.setDeleteExcludedDirsB(Boolean.valueOf(att).booleanValue());
+            job.setDeleteExcludedDirsB(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_SYNC_CONFLICT_RESOLUTION_MODE) != null)
                     ? atts.getValue(Xml.ATTR_SYNC_CONFLICT_RESOLUTION_MODE)
@@ -196,10 +196,10 @@ public class XmlReader extends DefaultHandler {
             job.setSyncConflictResolutionMode(Const.SyncConflictResolutionMode.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_BACKUPS) != null) ? atts.getValue(Xml.ATTR_BACKUPS) : "0";
-            job.setHowManyBackups(Integer.valueOf(att).intValue());
+            job.setHowManyBackups(Integer.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_BACKUPINLINE) != null) ? atts.getValue(Xml.ATTR_BACKUPINLINE) : "true";
-            job.setBackupInline(Boolean.valueOf(att).booleanValue());
+            job.setBackupInline(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_BACKUPDIR) != null) ? atts.getValue(Xml.ATTR_BACKUPDIR) : "";
             job.setBackupDir(att);
@@ -208,28 +208,28 @@ public class XmlReader extends DefaultHandler {
             job.setSymLinkMode(slm);
 
             att = (atts.getValue(Xml.ATTR_PRESERVE_DOS_ATTRIBUTES) != null) ? atts.getValue(Xml.ATTR_PRESERVE_DOS_ATTRIBUTES) : "false";
-            job.setPreserveDOSAttributes(Boolean.valueOf(att).booleanValue());
+            job.setPreserveDOSAttributes(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_PRESERVE_POSIX_FILE_PERMISSIONS) != null) ? atts.getValue(Xml.ATTR_PRESERVE_POSIX_FILE_PERMISSIONS) : "false";
-            job.setPreservePOSIXFilePermissions(Boolean.valueOf(att).booleanValue());
+            job.setPreservePOSIXFilePermissions(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_PRESERVE_POSIX_FILE_OWNERSHIP) != null) ? atts.getValue(Xml.ATTR_PRESERVE_POSIX_FILE_OWNERSHIP) : "false";
-            job.setPreservePOSIXFileOwnership(Boolean.valueOf(att).booleanValue());
+            job.setPreservePOSIXFileOwnership(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_OVERRIDE_READ_ONLY) != null) ? atts.getValue(Xml.ATTR_OVERRIDE_READ_ONLY) : "false";
-            job.setOverrideReadOnly(Boolean.valueOf(att).booleanValue());
+            job.setOverrideReadOnly(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_TIMESTAMPWRITEBACK) != null) ? atts.getValue(Xml.ATTR_TIMESTAMPWRITEBACK) : "false";
-            job.setWriteTimestampBack(Boolean.valueOf(att).booleanValue());
+            job.setWriteTimestampBack(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_IGNOREDAYLIGHTSAVINGGRANULARIY) != null) ? atts.getValue(Xml.ATTR_IGNOREDAYLIGHTSAVINGGRANULARIY) : "false";
-            job.setIgnoreDaylightSavingGranularity(Boolean.valueOf(att).booleanValue());
+            job.setIgnoreDaylightSavingGranularity(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_DIRSYNCTIMESTAMP) != null) ? atts.getValue(Xml.ATTR_DIRSYNCTIMESTAMP) : "false";
-            job.setSyncDirTimeStamps(Boolean.valueOf(att).booleanValue());
+            job.setSyncDirTimeStamps(Boolean.valueOf(att));
 
             att = (atts.getValue(Xml.ATTR_TIMESTAMPDIFF) != null) ? atts.getValue(Xml.ATTR_TIMESTAMPDIFF) : "0";
-            job.setGranularity(Integer.decode(att).intValue());
+            job.setGranularity(Integer.decode(att));
 
             jobs.add(job);
         }
@@ -279,13 +279,13 @@ public class XmlReader extends DefaultHandler {
                     sched.setTimeFrameTo((atts.getValue(Xml.ATTR_SCHEDULE_TIMEFRAME_TO) != null) ? (new SimpleDateFormat(Const.DefaultDateFormat)).parse(atts.getValue(Xml.ATTR_SCHEDULE_TIMEFRAME_TO)) : Const.NonDate);
                     ((ScheduleWeekly) sched).setInterval(atts.getValue(Xml.ATTR_SCHEDULE_INTERVAL) != null ? Integer.decode(atts.getValue(Xml.ATTR_SCHEDULE_INTERVAL)) : 1);
                     ((ScheduleWeekly) sched).setTime((atts.getValue(Xml.ATTR_SCHEDULE_TIME) != null) ? (new SimpleDateFormat(Const.DefaultTimeFormat)).parse(atts.getValue(Xml.ATTR_SCHEDULE_TIME)) : Const.NonDate);
-                    ((ScheduleWeekly) sched).setSunday((atts.getValue(Xml.ATTR_SCHEDULE_SUNDAY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_SUNDAY)).booleanValue());
-                    ((ScheduleWeekly) sched).setMonday(atts.getValue(Xml.ATTR_SCHEDULE_MONDAY) == null || Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_MONDAY)).booleanValue());
-                    ((ScheduleWeekly) sched).setTuesday((atts.getValue(Xml.ATTR_SCHEDULE_TUESDAY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_TUESDAY)).booleanValue());
-                    ((ScheduleWeekly) sched).setWednesday((atts.getValue(Xml.ATTR_SCHEDULE_WEDNESDAY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_WEDNESDAY)).booleanValue());
-                    ((ScheduleWeekly) sched).setThursday((atts.getValue(Xml.ATTR_SCHEDULE_THURSDAY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_THURSDAY)).booleanValue());
-                    ((ScheduleWeekly) sched).setFriday((atts.getValue(Xml.ATTR_SCHEDULE_FRIDAY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_FRIDAY)).booleanValue());
-                    ((ScheduleWeekly) sched).setSaturday((atts.getValue(Xml.ATTR_SCHEDULE_SATURDAY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_SATURDAY)).booleanValue());
+                    ((ScheduleWeekly) sched).setSunday((atts.getValue(Xml.ATTR_SCHEDULE_SUNDAY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_SUNDAY)));
+                    ((ScheduleWeekly) sched).setMonday(atts.getValue(Xml.ATTR_SCHEDULE_MONDAY) == null || Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_MONDAY)));
+                    ((ScheduleWeekly) sched).setTuesday((atts.getValue(Xml.ATTR_SCHEDULE_TUESDAY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_TUESDAY)));
+                    ((ScheduleWeekly) sched).setWednesday((atts.getValue(Xml.ATTR_SCHEDULE_WEDNESDAY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_WEDNESDAY)));
+                    ((ScheduleWeekly) sched).setThursday((atts.getValue(Xml.ATTR_SCHEDULE_THURSDAY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_THURSDAY)));
+                    ((ScheduleWeekly) sched).setFriday((atts.getValue(Xml.ATTR_SCHEDULE_FRIDAY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_FRIDAY)));
+                    ((ScheduleWeekly) sched).setSaturday((atts.getValue(Xml.ATTR_SCHEDULE_SATURDAY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_SATURDAY)));
                 } catch (ParseException e) {
                 }
             } else if (att.equals(Schedule.Type.Monthly.toString())) {
@@ -295,18 +295,18 @@ public class XmlReader extends DefaultHandler {
                     sched.setTimeFrameTo((atts.getValue(Xml.ATTR_SCHEDULE_TIMEFRAME_TO) != null) ? (new SimpleDateFormat(Const.DefaultDateFormat)).parse(atts.getValue(Xml.ATTR_SCHEDULE_TIMEFRAME_TO)) : Const.NonDate);
                     ((ScheduleMonthly) sched).setDay(atts.getValue(Xml.ATTR_SCHEDULE_DAY) != null ? Integer.decode(atts.getValue(Xml.ATTR_SCHEDULE_DAY)) : 1);
                     ((ScheduleMonthly) sched).setTime((atts.getValue(Xml.ATTR_SCHEDULE_TIME) != null) ? (new SimpleDateFormat(Const.DefaultTimeFormat)).parse(atts.getValue(Xml.ATTR_SCHEDULE_TIME)) : Const.NonDate);
-                    ((ScheduleMonthly) sched).setJanuary(atts.getValue(Xml.ATTR_SCHEDULE_JANUARY) == null || Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_JANUARY)).booleanValue());
-                    ((ScheduleMonthly) sched).setFebruary((atts.getValue(Xml.ATTR_SCHEDULE_FEBRUARY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_FEBRUARY)).booleanValue());
-                    ((ScheduleMonthly) sched).setMarch((atts.getValue(Xml.ATTR_SCHEDULE_MARCH) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_MARCH)).booleanValue());
-                    ((ScheduleMonthly) sched).setApril((atts.getValue(Xml.ATTR_SCHEDULE_APRIL) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_APRIL)).booleanValue());
-                    ((ScheduleMonthly) sched).setMay((atts.getValue(Xml.ATTR_SCHEDULE_MAY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_MAY)).booleanValue());
-                    ((ScheduleMonthly) sched).setJune((atts.getValue(Xml.ATTR_SCHEDULE_JUNE) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_JUNE)).booleanValue());
-                    ((ScheduleMonthly) sched).setJuly((atts.getValue(Xml.ATTR_SCHEDULE_JULY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_JULY)).booleanValue());
-                    ((ScheduleMonthly) sched).setAugust((atts.getValue(Xml.ATTR_SCHEDULE_AUGUST) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_AUGUST)).booleanValue());
-                    ((ScheduleMonthly) sched).setSeptember((atts.getValue(Xml.ATTR_SCHEDULE_SEPTEMBER) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_SEPTEMBER)).booleanValue());
-                    ((ScheduleMonthly) sched).setOctober((atts.getValue(Xml.ATTR_SCHEDULE_OCTOBER) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_OCTOBER)).booleanValue());
-                    ((ScheduleMonthly) sched).setNovember((atts.getValue(Xml.ATTR_SCHEDULE_NOVEMBER) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_NOVEMBER)).booleanValue());
-                    ((ScheduleMonthly) sched).setDecember((atts.getValue(Xml.ATTR_SCHEDULE_DECEMBER) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_DECEMBER)).booleanValue());
+                    ((ScheduleMonthly) sched).setJanuary(atts.getValue(Xml.ATTR_SCHEDULE_JANUARY) == null || Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_JANUARY)));
+                    ((ScheduleMonthly) sched).setFebruary((atts.getValue(Xml.ATTR_SCHEDULE_FEBRUARY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_FEBRUARY)));
+                    ((ScheduleMonthly) sched).setMarch((atts.getValue(Xml.ATTR_SCHEDULE_MARCH) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_MARCH)));
+                    ((ScheduleMonthly) sched).setApril((atts.getValue(Xml.ATTR_SCHEDULE_APRIL) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_APRIL)));
+                    ((ScheduleMonthly) sched).setMay((atts.getValue(Xml.ATTR_SCHEDULE_MAY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_MAY)));
+                    ((ScheduleMonthly) sched).setJune((atts.getValue(Xml.ATTR_SCHEDULE_JUNE) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_JUNE)));
+                    ((ScheduleMonthly) sched).setJuly((atts.getValue(Xml.ATTR_SCHEDULE_JULY) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_JULY)));
+                    ((ScheduleMonthly) sched).setAugust((atts.getValue(Xml.ATTR_SCHEDULE_AUGUST) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_AUGUST)));
+                    ((ScheduleMonthly) sched).setSeptember((atts.getValue(Xml.ATTR_SCHEDULE_SEPTEMBER) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_SEPTEMBER)));
+                    ((ScheduleMonthly) sched).setOctober((atts.getValue(Xml.ATTR_SCHEDULE_OCTOBER) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_OCTOBER)));
+                    ((ScheduleMonthly) sched).setNovember((atts.getValue(Xml.ATTR_SCHEDULE_NOVEMBER) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_NOVEMBER)));
+                    ((ScheduleMonthly) sched).setDecember((atts.getValue(Xml.ATTR_SCHEDULE_DECEMBER) != null) && Boolean.valueOf(atts.getValue(Xml.ATTR_SCHEDULE_DECEMBER)));
                 } catch (ParseException e) {
                 }
             }
