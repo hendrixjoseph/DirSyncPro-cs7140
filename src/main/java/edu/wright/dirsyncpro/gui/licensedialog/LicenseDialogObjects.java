@@ -152,12 +152,6 @@ private void licenseCancelButtoncancelActionPerformed(java.awt.event.ActionEvent
     licenseNotAccepted();
 }//GEN-LAST:event_licenseCancelButtoncancelActionPerformed
 
-// --Commented out by Inspection START (3/14/2016 7:59 PM):
-//private void openRecentMenuItemopenConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openRecentMenuItemopenConfigActionPerformed
-//    // TODO add your handling code here:
-//}//GEN-LAST:event_openRecentMenuItemopenConfigActionPerformed
-// --Commented out by Inspection STOP (3/14/2016 7:59 PM)
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LicenseLabel1;
     private javax.swing.JLabel LicenseLabel2;

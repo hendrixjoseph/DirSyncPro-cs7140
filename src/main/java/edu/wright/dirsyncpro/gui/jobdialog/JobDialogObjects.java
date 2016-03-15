@@ -2641,12 +2641,6 @@ private void ignoreDaylightSavingTimeCheckBoxActionPerformed(java.awt.event.Acti
     // TODO add your handling code here:
 }//GEN-LAST:event_ignoreDaylightSavingTimeCheckBoxActionPerformed
 
-// --Commented out by Inspection START (3/14/2016 7:58 PM):
-//private void openRecentMenuItemopenConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openRecentMenuItemopenConfigActionPerformed
-//    // TODO add your handling code here:
-//}//GEN-LAST:event_openRecentMenuItemopenConfigActionPerformed
-// --Commented out by Inspection STOP (3/14/2016 7:58 PM)
-
     private void swapButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_swapButtonActionPerformed
         String s = dirSrcField.getText();
         dirSrcField.setText(dirDstField.getText());
