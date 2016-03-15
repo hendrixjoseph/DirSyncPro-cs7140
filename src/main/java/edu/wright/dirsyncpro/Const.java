@@ -33,14 +33,14 @@ import edu.wright.dirsyncpro.tools.TimeTool;
  * @author F. Gerbig, O. Givi (info@dirsyncpro.org)
  */
 public class Const {
-    //Don't let anyone instantiate this class.
 
+    //Don't let anyone instantiate this class.
     private Const() {
     }
 
     /**
      * The version number.
-     */ // TODO program version
+     */
     public static final String VERSION = "1.51";
 
     /**
@@ -49,9 +49,6 @@ public class Const {
     public static final String PROGRAM = "DirSync Pro " + VERSION;
 
     public static final String dspHomeDir = ".DirSyncPro";
-    public static final String dspConfigDir = "configs";
-    public static final String dspLogsDir = "logs";
-    public static final boolean dspHomeInline = true;
 
     public static final int DEFAULT_GRANULARITY_TOLERANCE = 2;
 
@@ -103,8 +100,6 @@ public class Const {
     public static final String DefaultDateShortFormat = "dd-MM-yy HH:mm";
     public static final String DefaultDateLongFormat = "dd-MM-yyyy HH:mm:ss";
     public static final String DefaultTimeFormat = "HH:mm";
-    public static final String DefaultLogDateFormat = "yyyy-MM-dd HH:mm";
-    public static final boolean isInDayLightTimeNow = TimeTool.isInDayLightTimeNow(); // for performance reason set once at startup.
 
     public enum WeekDays {
         Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
@@ -116,14 +111,6 @@ public class Const {
 
     public static final Date NonDate = new Date(0);
 
-    /**
-     * Dir A
-     */
-    public static final String DIR_A = "DirA";
-    /**
-     * Dir B
-     */
-    public static final String DIR_B = "DirB";
 
     /**
      * Sync Mode
