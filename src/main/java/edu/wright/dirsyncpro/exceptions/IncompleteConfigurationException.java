@@ -41,23 +41,4 @@ public class IncompleteConfigurationException extends Exception {
     public IncompleteConfigurationException(String message) {
         super(message);
     }
-
-    /**
-     * Initializes a new {@code InclompleteConfigurationException}.
-     *
-     * @param cause
-     */
-    public IncompleteConfigurationException(Throwable cause) {
-        super(cause);
-    }
-
-    /**
-     * Initializes a new {@code InclompleteConfigurationException}.
-     *
-     * @param message
-     * @param cause
-     */
-    public IncompleteConfigurationException(String message, Throwable cause) {
-        super(message, cause);
-    }
 }

@@ -18,7 +18,6 @@
  */
 package edu.wright.dirsyncpro.tools;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -127,15 +126,5 @@ public class DateTool {
         cal.setTime(date);
         cal.add(field, value);
         return cal.getTime();
-    }
-
-    public static long getSeconds(Date date) {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        return cal.get(Calendar.SECOND);
-    }
-
-    public static void printDate(Date date) {
-        System.out.println((new SimpleDateFormat(Const.DefaultDateFormat)).format(date));
     }
 }

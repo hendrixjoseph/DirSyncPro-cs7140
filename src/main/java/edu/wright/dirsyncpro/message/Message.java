@@ -58,13 +58,6 @@ public class Message {
     /**
      * @return the date
      */
-    public Date getDate() {
-        return date;
-    }
-
-    /**
-     * @return the date
-     */
     public String getDateStr() {
         return dateStr;
     }

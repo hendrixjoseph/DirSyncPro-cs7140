@@ -55,15 +55,6 @@ public class Log {
     private Writer out;
 
     /**
-     * Prints an error message to the log.
-     *
-     * @param message The error message.
-     */
-    private void printError(String message) {
-        print(new Message(message, IconKey.Error, Const.LogLevel.Minimal));
-    }
-
-    /**
      * Initialize a new Log.
      *
      * @param filename The filename of this log.
@@ -273,19 +264,6 @@ public class Log {
     }
 
     /**
-     * Gets the path of the log.
-     *
-     * @return Returns the path.
-     */
-    public String getParentPath() {
-        if (isEnabled()) {
-            return file.getParentFile().getAbsolutePath();
-        } else {
-            return "";
-        }
-    }
-
-    /**
      * Gets the file name of the log.
      *
      * @return Returns the filename.
@@ -347,14 +325,6 @@ public class Log {
             }
             setFile(filename);
         }
-    }
-
-    public Job getJob() {
-        return job;
-    }
-
-    public void setJob(Job job) {
-        this.job = job;
     }
 
     public boolean isMessageQUpdated() {

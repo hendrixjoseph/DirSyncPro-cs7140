@@ -36,10 +36,6 @@ public class CopierFactory {
         void copy(FileInputStream is, FileOutputStream os, long fileSize) throws IOException;
     }
 
-    public static Copier getCopier() {
-        return channelCopier;
-    }
-
     private interface GUIUpdater {
 
         void updateGUI(long position, double scaledFileSize);

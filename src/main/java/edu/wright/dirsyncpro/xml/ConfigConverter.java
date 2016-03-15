@@ -76,11 +76,9 @@ public class ConfigConverter {
         Deprecated(String from, String to) {
             this.from = from;
             this.to = to;
-            this.literal = super.toString();
         }
 
         private String from;
-        private String literal;
         private String to;
 
         public String getFrom() {

@@ -21,7 +21,6 @@ package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.job.Job;
 
 public class FilterByPath extends Filter {
@@ -41,25 +40,6 @@ public class FilterByPath extends Filter {
     @Override
     public boolean matches(Path path) {
         return (path.compareTo(Paths.get(pathStr)) == 0);
-    }
-
-    /**
-     * Compares two Strings depending on the operating system (If the OS is MS
-     * Windows the comparison i done case insensitive). This comparison is used
-     * to match file and directory patterns to files and directories.
-     *
-     * @param a The first string.
-     * @param b The second string.
-     *
-     * @return {@code true} if the strings match, {@code false}
-     * otherwise.
-     */
-    private boolean matchDependingOnOS(String a, String b) {
-        if (Const.OS_IS_WINDOWS) {
-            return a.toLowerCase().matches(b.toLowerCase());
-        } else {
-            return a.matches(b);
-        }
     }
 
     public String getPathStr() {

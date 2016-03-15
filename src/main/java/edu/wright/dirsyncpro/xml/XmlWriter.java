@@ -23,7 +23,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
-import java.util.Iterator;
 import java.util.Stack;
 import java.util.List;
 
@@ -60,8 +59,6 @@ public class XmlWriter {
 
     private int indent;
 
-    private String tag;
-
     /**
      * Instantiates and initializes a new XMLWriter.
      *
@@ -78,7 +75,7 @@ public class XmlWriter {
 
         writeProlog();
 
-        tag = Xml.TAG_ROOT;
+        String tag = Xml.TAG_ROOT;
         writeDTD(tag);
         tag += addAttr(Xml.ATTR_LOGFILE, logFile);
         writeStartTag(tag);
@@ -418,7 +415,7 @@ public class XmlWriter {
         writelnText("<" + s + "/>");
     }
 
-    private final void writeEndTag() throws IOException {
+    private void writeEndTag() throws IOException {
         indent -= INDENTATION;
         writelnText("</" + stack.pop() + ">");
     }

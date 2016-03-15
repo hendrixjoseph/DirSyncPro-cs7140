@@ -28,14 +28,6 @@ public class TimeTool {
     private TimeTool() {
     }
 
-    public static void delay(long milliseconds) {
-        try {
-            Thread.sleep(milliseconds);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static String convertToIndication(long millis) {
         String timeStr = "";
         long seconds = millis / 1000;

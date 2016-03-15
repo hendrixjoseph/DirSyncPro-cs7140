@@ -57,14 +57,14 @@ public abstract class ShutDownDialogObjects extends javax.swing.JDialog {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        updateButtonsPanel = new javax.swing.JPanel();
+        javax.swing.JPanel updateButtonsPanel = new javax.swing.JPanel();
         cancelButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        spacer = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel1 = new javax.swing.JLabel();
+        javax.swing.JPanel spacer = new javax.swing.JPanel();
         localVersion = new javax.swing.JLabel();
         remoteVersion = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        spacer1 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel10 = new javax.swing.JLabel();
+        javax.swing.JPanel spacer1 = new javax.swing.JPanel();
         secondsJLabel = new javax.swing.JLabel();
 
         setTitle("ShutDown");
@@ -156,14 +156,9 @@ private void openRecentMenuItemopenConfigActionPerformed(java.awt.event.ActionEv
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     protected javax.swing.JButton cancelButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     protected javax.swing.JLabel localVersion;
     protected javax.swing.JLabel remoteVersion;
     protected javax.swing.JLabel secondsJLabel;
-    private javax.swing.JPanel spacer;
-    private javax.swing.JPanel spacer1;
-    private javax.swing.JPanel updateButtonsPanel;
     // End of variables declaration//GEN-END:variables
 
     abstract protected void stopCountDown();

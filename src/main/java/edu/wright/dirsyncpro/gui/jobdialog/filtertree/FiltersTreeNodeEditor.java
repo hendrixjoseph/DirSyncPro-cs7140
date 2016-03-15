@@ -27,7 +27,6 @@ import java.util.EventObject;
 import javax.swing.AbstractCellEditor;
 import javax.swing.JCheckBox;
 import javax.swing.JTree;
-import javax.swing.event.ChangeEvent;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeCellEditor;
 import javax.swing.tree.TreePath;
@@ -45,8 +44,6 @@ import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterByPattern;
 public class FiltersTreeNodeEditor extends AbstractCellEditor implements TreeCellEditor {
 
     FiltersTreeCellRenderer filtersTreeCellrenderer = new FiltersTreeCellRenderer();
-
-    ChangeEvent changeEvent = null;
 
     JTree tree;
 

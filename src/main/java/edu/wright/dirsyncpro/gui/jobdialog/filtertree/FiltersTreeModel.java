@@ -18,18 +18,12 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.List;
-
-import javax.swing.event.TreeModelListener;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 
 public class FiltersTreeModel extends DefaultTreeModel {
 
     private FiltersTree filtersTree;
-    private List<TreeModelListener> treeModelListeners = new ArrayList<>();
 
     public FiltersTreeModel(FiltersTree ft) {
         super(ft);

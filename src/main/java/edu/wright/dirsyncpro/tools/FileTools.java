@@ -38,11 +38,7 @@ import java.nio.file.attribute.DosFileAttributes;
 import java.nio.file.attribute.PosixFileAttributeView;
 import java.nio.file.attribute.PosixFileAttributes;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
 import java.util.UUID;
 import java.util.zip.CRC32;
 import java.util.zip.Checksum;
@@ -93,71 +89,6 @@ public class FileTools {
             return 0;
         } else {
             return -1;
-        }
-    }
-
-    /**
-     * Compares the dates of the given files. File dates are only accurate to
-     * the second; therefore file dates are divided by 1000 and truncated
-     * (converting milliseconds to seconds).
-     *
-     * @param src The source file.
-     * @param dst The destination file.
-     * @param gran Granularity
-     * @param idlsgran whether to ignore the daylight saving granularity
-     * @return int {@code -1} if the first file is newer than the second
-     * one; int {@code 0} if the modification times are the same; int
-     * {@code 1} if the second file is newer than the first one. If the
-     * second file doesn't exist {@code -1} is returned.
-     */
-    public static int cmpFileDates(File src, File dst, int gran, boolean idlsgran) {
-        long srcLastModified, dstLastModified, diff, offset;
-
-        if (!dst.exists()) {
-            return -1;
-        }
-
-        // convert to seconds
-        srcLastModified = src.lastModified() / 1000;
-        dstLastModified = dst.lastModified() / 1000;
-        diff = srcLastModified - dstLastModified;
-
-        offset = Const.DEFAULT_GRANULARITY_TOLERANCE + gran;
-
-        if (idlsgran) {
-            offset += 3600;
-        }
-
-        if (Math.abs(diff) <= offset) {
-            return 0;
-        } else if (diff < offset) {
-            return 1;
-        } else {
-            return -1;
-        }
-    }
-
-    /**
-     * Compares the sizes of the given files.
-     *
-     * @param src The source file.
-     * @param dst The destination file.
-     * @return int {@code -1} if the first file is smaller than the second
-     * one or the second file doesn't exist, {@code 0} if the sizes are the
-     * same, {@code 1} if the first file is larger than the second one.
-     */
-    public static int cmpFileSizes(File src, File dst) {
-        if (!dst.exists()) {
-            return -1;
-        }
-        long srcSize = src.length();
-        long dstSize = dst.length();
-        if (srcSize < dstSize) {
-            return -1;
-        } else if (srcSize == dstSize) {
-            return 0;
-        } else {
-            return 1;
         }
     }
 
@@ -415,47 +346,6 @@ public class FileTools {
     }
 
     /**
-     * Removes all symbolic links from the given array.
-     *
-     * @param filesAndLinks A list of files and links.
-     * @return File[] A list of files only (links have been removed).
-     */
-    public static File[] removeLinks(File[] filesAndLinks) {
-        List files = new ArrayList(Arrays.asList(filesAndLinks));
-
-        for (Iterator iter = files.iterator(); iter.hasNext();) {
-            File file = (File) iter.next();
-            if (Files.isSymbolicLink(file.toPath())) {
-                iter.remove();
-            }
-        }
-        return (File[]) files.toArray(new File[files.size()]);
-    }
-
-    /**
-     * Deletes a file and creates a backup if necessary.
-     *
-     * @param file The file to delete.
-     * @param dst The path to the destination directory.
-     * @param howManyBackups The number of backups to keep.
-     * @param backupDir the directory in which the backups are made
-     * @return {@code true} if the deletion could be completed,
-     * {@code false} if an error occoured.
-     * @throws FileNotFoundException
-     * @throws FileNotFoundException
-     *
-     */
-    public static boolean deleteFile(File file, String dst, int howManyBackups, String backupDir, boolean overrideReadOnly) throws FileNotFoundException {
-        if (!file.canWrite() && overrideReadOnly) {
-            file.setWritable(true);
-        }
-        if (howManyBackups > 0 && !file.isDirectory()) {
-            createBackup(file, dst, howManyBackups, backupDir);
-        }
-        return file.delete();
-    }
-
-    /**
      * Deletes a directory with contained files and subdirectories.
      *
      * @param dir The directory to delete.
@@ -483,20 +373,6 @@ public class FileTools {
             f.setWritable(true);
         }
         return result && f.delete();
-    }
-
-    /**
-     * Returns only the path portion of a full filename (consisting of path,
-     * filename, and extension).
-     *
-     * @param filename The full filename.
-     * @return The path.
-     */
-    public static String getOnlyPath(String filename) {
-        if (filename == null || filename.equals("")) {
-            return "";
-        }
-        return filename.substring(0, filename.lastIndexOf(File.separator));
     }
 
     /**

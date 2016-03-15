@@ -35,16 +35,9 @@ public class DSPReadByteChannel implements ReadableByteChannel {
             }
         }
     };
-    //Timer for GUI progress update
-    private final javax.swing.Timer timer = new javax.swing.Timer(10, progressBarUpdater);
 
     ReadableByteChannel rbc;
     long readBytes = 0;
-
-    public DSPReadByteChannel(ReadableByteChannel rbc) {
-        super();
-        this.rbc = rbc;
-    }
 
     @Override
     public boolean isOpen() {

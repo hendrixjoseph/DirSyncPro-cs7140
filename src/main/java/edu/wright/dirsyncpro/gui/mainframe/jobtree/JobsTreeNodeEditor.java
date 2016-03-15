@@ -27,7 +27,6 @@ import java.util.EventObject;
 import javax.swing.AbstractCellEditor;
 import javax.swing.JCheckBox;
 import javax.swing.JTree;
-import javax.swing.event.ChangeEvent;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeCellEditor;
 import javax.swing.tree.TreePath;
@@ -38,8 +37,6 @@ import edu.wright.dirsyncpro.job.Job;
 public class JobsTreeNodeEditor extends AbstractCellEditor implements TreeCellEditor {
 
     JobsTreeCellRenderer jobsTreeCellrenderer = new JobsTreeCellRenderer();
-
-    ChangeEvent changeEvent = null;
 
     JTree tree;
 

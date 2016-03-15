@@ -79,10 +79,6 @@ public class Updater {
         return updateXML;
     }
 
-    public boolean updateable() {
-        return uxmlr.isUpdateable();
-    }
-
     public void openDownloadURLinBrowser() {
         this.openBrowser(this.getUpdateURL());
     }

@@ -26,8 +26,4 @@ public abstract class J7Copier {
     public abstract void copy(Path srcPath, Path dstPath, boolean copyDosAttributes, boolean copyPosixPermissions, boolean copyPosixGroupAndOwner)
             throws IOException, SecurityException;
 
-    public void copy(Path srcPath, Path dstPath) throws IOException, SecurityException {
-        copy(srcPath, dstPath, false, false, false);
-    }
-
 }

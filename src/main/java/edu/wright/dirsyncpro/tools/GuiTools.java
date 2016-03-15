@@ -99,10 +99,6 @@ public class GuiTools {
         browseFileAndFolder(parent, jtf, JFileChooser.DIRECTORIES_ONLY);
     }
 
-    public static void browseFile(JDialog parent, JTextField jtf) {
-        browseFileAndFolder(parent, jtf, JFileChooser.FILES_ONLY);
-    }
-
     public static void browseFileAndFolder(JDialog parent, JTextField jtf) {
         browseFileAndFolder(parent, jtf, JFileChooser.FILES_AND_DIRECTORIES);
     }

@@ -340,13 +340,6 @@ public class JobTree extends DefaultMutableTreeNode {
     }
 
     /**
-     * Prints this JobTree.
-     */
-    public void print() {
-        print(this, "");
-    }
-
-    /**
      * Prints a JobTree
      *
      * @param jt JobTree to print

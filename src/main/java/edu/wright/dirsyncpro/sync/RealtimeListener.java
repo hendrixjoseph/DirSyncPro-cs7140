@@ -175,11 +175,6 @@ public class RealtimeListener {
         mListener = l;
     }
 
-    public RealtimeChangeListener getChangeListener() {
-        return mListener;
-    }
-
-    @SuppressWarnings("unchecked")
     static <T> WatchEvent<T> cast(WatchEvent<?> event) {
         return (WatchEvent<T>) event;
     }

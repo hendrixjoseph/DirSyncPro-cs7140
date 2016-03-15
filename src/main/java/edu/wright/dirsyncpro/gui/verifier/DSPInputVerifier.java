@@ -72,10 +72,6 @@ public class DSPInputVerifier extends InputVerifier implements KeyListener, Mous
         }
     }
 
-    protected String getErrorString() {
-        return errorStr;
-    }
-
     @Override
     public void keyPressed(KeyEvent e) {
         popup.setVisible(false);

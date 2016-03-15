@@ -33,7 +33,6 @@ import java.nio.file.WatchEvent;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.EnumSet;
-import java.util.List;
 
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.Const.IconKey;
@@ -213,27 +212,6 @@ public class Job extends JobObject implements Cloneable {
         String newPath = dstPath.toAbsolutePath().toString() + cut;
 
         return new File(newPath).toPath();
-    }
-
-    /**
-     * Changes the path of the given files from the sorce path to the
-     * destination path.
-     *
-     * @param srcFiles The files in the source directory.
-     * @param srcPath The source path.
-     * @param dstPath The destination path.
-     * @return File[] The files with the destination path.
-     */
-    private static ArrayList<Path> replacePath(ArrayList<Path> srcFiles, Path srcPath, Path dstPath) {
-
-        ArrayList<Path> dstFiles = new ArrayList<>();
-
-        // for all files
-        for (Path srcFile : srcFiles) {
-            dstFiles.add(replacePath(srcFile, srcPath, dstPath));
-        }
-
-        return dstFiles;
     }
 
     private class DSPFileVisitor extends SimpleFileVisitor<Path> {

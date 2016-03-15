@@ -108,8 +108,6 @@ public class Sync {
      */
     private List<Job> jobs = new ArrayList<>();
 
-    private int dirCounter = 0;
-
     private int mode = SYNCHRONIZATION;
 
     private int state = STOP;
@@ -331,7 +329,7 @@ public class Sync {
                 DirSyncPro.getGui().registerProgressBars(0, js.size() * 100, 0, "", false, -1, -1, "", false);
             }
 
-            dirCounter = 0;
+            int dirCounter = 0;
             for (Job jobOrg : js) {
 
                 // if an error has happened it has happened in an other

@@ -47,10 +47,6 @@ public class UpdateXmlReader extends DefaultHandler {
     private String changelogURL = "";
     private boolean contacted = false;
     boolean inBackground = true;
-    // changes is for backward compatibility for version <= 1.43.
-    // not uses in version >= 1.44
-    // can be deleted as of 01-01-2012
-    private String changes = "";
 
     private static final String TAGRoot = "dirsyncproupdate";
     private static final String ATTRUpdateable = "updateable";
@@ -115,7 +111,7 @@ public class UpdateXmlReader extends DefaultHandler {
             updateable = Boolean.valueOf(atts.getValue(ATTRUpdateable));
             newVersion = String.valueOf(atts.getValue(ATTRVersion));
             updateURL = String.valueOf(atts.getValue(ATTRUrl));
-            changes = String.valueOf(atts.getValue(ATTRChanges));
+            String changes = String.valueOf(atts.getValue(ATTRChanges));
             changelogURL = String.valueOf(atts.getValue(ATTRChangelog));
         }
     }
