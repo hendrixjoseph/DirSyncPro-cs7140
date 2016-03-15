@@ -71,8 +71,6 @@ public class FileTools {
      *
      * @param file The source file.
      * @param date The given date.
-     * @param gran Granularity
-     * @param idlsgran whether to ignore the daylight saving granularity
      * @return int {@code 1} if the file is newer than the date,
      * {@code 0} if the file is modified on date, {@code -1} if the
      * date is newer.
@@ -268,8 +266,8 @@ public class FileTools {
     /**
      * Sets the modification time of dstFile according to srcFile
      *
-     * @param srcFile of which the modification time is copied.
-     * @param dstFile to which the modification time is copied.
+     * @param srcPath of which the modification time is copied.
+     * @param dstPath to which the modification time is copied.
      */
     public static void copyTimestamp(Path srcPath, Path dstPath) throws FileNotFoundException {
         try {
@@ -337,7 +335,7 @@ public class FileTools {
     /**
      * Deletes a directory with contained files and subdirectories.
      *
-     * @param dir The directory to delete.
+     * @param f The directory to delete.
      * @param dst The path to the destination directory.
      * @param howManyBackups The number of backups to keep.
      * @param backupDir the directory in which the backups are made

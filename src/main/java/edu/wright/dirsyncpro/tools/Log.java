@@ -59,7 +59,6 @@ public class Log {
      *
      * @param filename The filename of this log.
      * @throws IncompleteConfigurationException
-     * @throws WarningException
      */
     public Log(String filename, Job job) {
         this.job = job;

@@ -475,7 +475,7 @@ public abstract class JobObject {
     }
 
     /**
-     * @param deleteExcludedDirsA the deleteExcludedDirsA to set
+     * @param deleteExcludedDirs the deleteExcludedDirsA to set
      */
     public void setDeleteExcludedDirsA(boolean deleteExcludedDirs) {
         this.deleteExcludedDirsA = deleteExcludedDirs;
@@ -489,7 +489,7 @@ public abstract class JobObject {
     }
 
     /**
-     * @param deleteExcludedFilesA the deleteExcludedFilesA to set
+     * @param deleteExcludedFiles the deleteExcludedFilesA to set
      */
     public void setDeleteExcludedFilesA(boolean deleteExcludedFiles) {
         this.deleteExcludedFilesA = deleteExcludedFiles;

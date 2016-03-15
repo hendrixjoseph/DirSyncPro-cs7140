@@ -207,7 +207,7 @@ public class Sync {
     /**
      * Saves a configuration.
      *
-     * @param filename The name of the file.
+     * @param xmlfilename The name of the file.
      * @throws Exception
      */
     public void save(String xmlfilename) throws Exception {

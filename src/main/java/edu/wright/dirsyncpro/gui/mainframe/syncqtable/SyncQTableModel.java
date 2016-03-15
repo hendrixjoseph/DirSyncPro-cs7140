@@ -38,7 +38,6 @@ public class SyncQTableModel extends AbstractTableModel {
     }
 
     /**
-     * @see TableModel#getColumnName()
      */
     @Override
     public String getColumnName(int col) {

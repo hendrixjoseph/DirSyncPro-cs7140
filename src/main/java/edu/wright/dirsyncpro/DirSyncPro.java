@@ -674,7 +674,7 @@ public class DirSyncPro {
     }
 
     /**
-     * @param lil the configInline to set
+     * @param cil the configInline to set
      */
     public static void setConfigInline(boolean cil) {
         if (cil) {

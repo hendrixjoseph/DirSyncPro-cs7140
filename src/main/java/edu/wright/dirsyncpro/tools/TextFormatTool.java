@@ -98,7 +98,7 @@ public class TextFormatTool {
     /**
      * Returns the string representing this date
      *
-     * @param date
+     * @param millis
      * @return the date string
      */
     public static String getDateText(long millis) {

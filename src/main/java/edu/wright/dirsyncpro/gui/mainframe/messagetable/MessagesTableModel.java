@@ -34,7 +34,7 @@ public class MessagesTableModel extends AbstractTableModel {
     }
 
     /**
-     * @see TableModel#getColumnName()
+     *
      */
     @Override
     public String getColumnName(int col) {
