@@ -830,11 +830,10 @@ public class MainFrame extends MainFrameObjects {
                 menuItem.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        analyze(new ArrayList<Job>() {
-                            {
-                                add(DirSyncPro.getGui().getSelectedJob());
-                            }
-                        });
+
+                        List<Job> list = new ArrayList<>();
+                        list.add(DirSyncPro.getGui().getSelectedJob());
+                        analyze(list);
                     }
                 });
                 popupMenu.add(menuItem);
@@ -846,11 +845,9 @@ public class MainFrame extends MainFrameObjects {
                 menuItem.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        synchronize(new ArrayList<Job>() {
-                            {
-                                add(DirSyncPro.getGui().getSelectedJob());
-                            }
-                        });
+                        List<Job> list = new ArrayList<>();
+                        list.add(DirSyncPro.getGui().getSelectedJob());
+                        synchronize(list);
                     }
                 });
                 popupMenu.add(menuItem);
@@ -1964,19 +1961,6 @@ public class MainFrame extends MainFrameObjects {
         setTitle(title);
     }
 
-    /**
-     * Initializes the progress bars
-     *
-     * @param totalValue
-     * @param totalMax
-     * @param totalAdd
-     * @param totalString
-     * @param totalIndeterminate
-     * @param currentValue
-     * @param currentMax
-     * @param currentString
-     * @param currentIndeterminate
-     */
     private String nor(int i) {
         String s = i + "";
         while (s.length() < 8) {

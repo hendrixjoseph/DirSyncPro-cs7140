@@ -314,14 +314,10 @@ public class FileTools {
      * @return The checksum.
      */
     public static long checksum(File file) throws FileNotFoundException {
-        // The input stream
-        FileInputStream in = null;
         // The checksum
         Checksum checksum = null;
 
-        try {
-
-            in = new FileInputStream(file);
+        try(FileInputStream in = new FileInputStream(file)) {
             checksum = new CRC32();
 
             int bytes_read;
@@ -333,13 +329,6 @@ public class FileTools {
         } catch (IOException e) {
             //throw new Error(e.getMessage());
             throw new FileNotFoundException("Could not open input stream to verify the file '" + file.getAbsolutePath() + "' (probably because access to the file is denied)");
-        } finally {
-            if (in != null) {
-                try {
-                    in.close(); // always close streams.
-                } catch (IOException e) {
-                }
-            }
         }
 
         return checksum.getValue();

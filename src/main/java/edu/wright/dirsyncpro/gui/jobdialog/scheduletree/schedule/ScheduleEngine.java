@@ -224,11 +224,9 @@ public class ScheduleEngine {
                 // === 3 ===
                 //do synchronization now and schedule another if needed
                 //System.out.println("Running at " + new Date(scheduledExecutionTime()));
-                DirSyncPro.getSync().synchronize(new ArrayList<Job>() {
-                    {
-                        add(j);
-                    }
-                });
+                List<Job> list = new ArrayList<>();
+                list.add(j);
+                DirSyncPro.getSync().synchronize(list);
                 synchronized (realtimeSchedule) {
 
                     recentSyncDate = realtimeSchedule.get(j);
