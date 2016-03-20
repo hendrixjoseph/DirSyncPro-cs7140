@@ -80,7 +80,6 @@ public class JobDialog extends JobDialogObjects {
     private static final int LOG_TAB_NO = 7;
     private static final int SCHEDULE_TAB_NO = 8;
     private static final int ADVANCED_TAB_NO = 9;
-    private static final int ACTIONS_TAB_NO = 10;
     private static List<Schedule> schedules = new ArrayList<>();
     private FilterDialog filterDialog = new FilterDialog(this);
     private ScheduleDialog scheduleDialog = new ScheduleDialog(this);
@@ -88,8 +87,6 @@ public class JobDialog extends JobDialogObjects {
 
     // temp vars for within the gui
     private List<Filter> filters;
-
-    private String prevPattern;
 
     public JobDialog(JFrame frame) {
         super(frame);
@@ -278,28 +275,8 @@ public class JobDialog extends JobDialogObjects {
         }
     }
 
-    public void setToCompareOptions() {
-        int tabNumber = COMPARE_TAB_NO;
-        if (jobTabbedPane.isEnabledAt(tabNumber)) {
-            ((MyJTabbedPane) jobTabbedPane).forceSetSelectedIndex(tabNumber);
-        } else {
-            ((MyJTabbedPane) jobTabbedPane).forceSetSelectedIndex(0);
-
-        }
-    }
-
     public void setToCopyOptions() {
         int tabNumber = COPY_TAB_NO;
-        if (jobTabbedPane.isEnabledAt(tabNumber)) {
-            ((MyJTabbedPane) jobTabbedPane).forceSetSelectedIndex(tabNumber);
-        } else {
-            ((MyJTabbedPane) jobTabbedPane).forceSetSelectedIndex(0);
-
-        }
-    }
-
-    public void setToConflictOptions() {
-        int tabNumber = CONFLICT_RESOLUTION_TAB_NO;
         if (jobTabbedPane.isEnabledAt(tabNumber)) {
             ((MyJTabbedPane) jobTabbedPane).forceSetSelectedIndex(tabNumber);
         } else {
@@ -320,16 +297,6 @@ public class JobDialog extends JobDialogObjects {
 
     public void setToDeleteOptions() {
         int tabNumber = DELETION_TAB_NO;
-        if (jobTabbedPane.isEnabledAt(tabNumber)) {
-            ((MyJTabbedPane) jobTabbedPane).forceSetSelectedIndex(tabNumber);
-        } else {
-            ((MyJTabbedPane) jobTabbedPane).forceSetSelectedIndex(0);
-
-        }
-    }
-
-    public void setToBackupOptions() {
-        int tabNumber = BACKUP_TAB_NO;
         if (jobTabbedPane.isEnabledAt(tabNumber)) {
             ((MyJTabbedPane) jobTabbedPane).forceSetSelectedIndex(tabNumber);
         } else {
@@ -365,14 +332,6 @@ public class JobDialog extends JobDialogObjects {
         } else {
             ((MyJTabbedPane) jobTabbedPane).forceSetSelectedIndex(0);
 
-        }
-    }
-
-    private void enableBasicOptions(boolean enabled, boolean selected) {
-        int tabNumber = BASIC_TAB_NO;
-        jobTabbedPane.setEnabledAt(tabNumber, enabled);
-        if (selected) {
-            ((MyJTabbedPane) jobTabbedPane).forceSetSelectedIndex(tabNumber);
         }
     }
 
@@ -766,14 +725,6 @@ public class JobDialog extends JobDialogObjects {
             DirSyncPro.getSync().copyOptionsToEnabledJobs(job);
             this.setVisible(false);
         }
-    }
-
-    public JTree getFiltersTreeJTree() {
-        return filtersTree;
-    }
-
-    public JTree getSchedulesTreeJTree() {
-        return scheduleTree;
     }
 
     public void updateFiltersTree() {

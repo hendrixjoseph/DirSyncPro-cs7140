@@ -83,9 +83,4 @@ public class FilterByFileOwnership extends Filter {
         return s;
     }
 
-    @Override
-    public int compareTo(Filter s) {
-        // moet worden aangepast nadat radio owner/group in the gui is aangebracht.
-        return super.compareTo(s);
-    }
 }

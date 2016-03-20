@@ -33,9 +33,6 @@ public class SyncQTableModel extends AbstractTableModel {
 
     private static final String[] columnNames = {"Dir A", "Date", "Size", "Mode", "Dir B", "Date", "Size"};
 
-    public SyncQTableModel() {
-    }
-
     /**
      */
     @Override

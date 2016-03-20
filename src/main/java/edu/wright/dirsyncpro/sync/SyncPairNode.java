@@ -28,20 +28,10 @@ public class SyncPairNode {
     private SyncPairNode parent;
     private SyncPairNode[] children;
 
-    public SyncPairNode(SyncPair syncPair, SyncPairNode parent) {
-        this.syncPair = syncPair;
-        this.parent = parent;
-    }
 
-    public SyncPair getSyncPair() {
-        return syncPair;
-    }
 
     public SyncPairNode getParent() {
         return parent;
     }
 
-    public SyncPairNode[] getChildren() {
-        return children;
-    }
 }

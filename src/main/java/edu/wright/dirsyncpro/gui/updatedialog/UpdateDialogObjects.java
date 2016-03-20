@@ -273,10 +273,6 @@ public abstract class UpdateDialogObjects extends javax.swing.JDialog {
         this.setVisible(false);
     }//GEN-LAST:event_notNowButtoncancelActionPerformed
 
-    private void openRecentMenuItemopenConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openRecentMenuItemopenConfigActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_openRecentMenuItemopenConfigActionPerformed
-
     private void downloadURLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_downloadURLMouseClicked
         downloadURLClicked();
     }//GEN-LAST:event_downloadURLMouseClicked

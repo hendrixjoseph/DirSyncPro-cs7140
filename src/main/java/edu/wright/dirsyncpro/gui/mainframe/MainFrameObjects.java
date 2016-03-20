@@ -45,7 +45,7 @@ import javax.swing.ImageIcon;
  */
 public abstract class MainFrameObjects extends javax.swing.JFrame {
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify
     protected javax.swing.JButton analyzeButton;
     protected javax.swing.JMenuItem analyzeMenuItem;
     protected javax.swing.JMenuItem appendMenuItem;
@@ -2746,7 +2746,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
     private void syncQSyncFilterConflictFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterConflictFilesCheckBoxdirEventActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_syncQSyncFilterConflictFilesCheckBoxdirEventActionPerformed
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration
 
     abstract protected void about();
 

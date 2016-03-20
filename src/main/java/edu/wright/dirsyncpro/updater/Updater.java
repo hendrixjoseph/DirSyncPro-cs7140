@@ -35,50 +35,6 @@ public class Updater {
         uxmlr = new UpdateXmlReader(url, inBackground);
     }
 
-    private String readUpdateXML() {
-        // for test purposes only
-
-        String updateXML = "";
-
-        try {
-
-            String url = Const.UPDATEURL;
-            url += "?version=" + Const.VERSION;
-            url += "&os.name=" + System.getProperty("os.name");
-            url += "&os.version=" + System.getProperty("os.version");
-            url += "&os.arch=" + System.getProperty("os.arch");
-            url += "&java.version=" + System.getProperty("java.version");
-            url += "&java.vendor=" + System.getProperty("java.vendor");
-            try {
-                url = URLEncoder.encode(url, "UTF-8");
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-
-            URL updateURL = new URL(url);
-            URLConnection urlConnection = updateURL.openConnection();
-
-            BufferedReader d = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-
-            String line;
-            while ((line = d.readLine()) != null) {
-                updateXML += line + "\n";
-            }
-
-            d.close();
-
-        } catch (MalformedURLException e) {
-            if (!inBackground) {
-                DirSyncPro.displayError("Update URL syntax error!");
-            }
-        } catch (IOException e) {
-            if (!inBackground) {
-                DirSyncPro.displayError("Unable to contact the update server!");
-            }
-        }
-        return updateXML;
-    }
-
     public void openDownloadURLinBrowser() {
         this.openBrowser(this.getUpdateURL());
     }

@@ -44,8 +44,6 @@ public class ScheduleTreeNodeEditor extends AbstractCellEditor implements TreeCe
 
     ScheduleTreeCellRenderer scheduleTreeCellrenderer = new ScheduleTreeCellRenderer();
 
-    ChangeEvent changeEvent = null;
-
     JTree tree;
 
     public ScheduleTreeNodeEditor(JTree t) {

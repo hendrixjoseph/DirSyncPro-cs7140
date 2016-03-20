@@ -84,16 +84,8 @@ public class SyncPair {
         return fileA;
     }
 
-    public void setFileA(File fileA) {
-        this.fileA = fileA;
-    }
-
     public File getFileB() {
         return fileB;
-    }
-
-    public void setFileB(File fileB) {
-        this.fileB = fileB;
     }
 
     public SyncPairStatus getSyncPairStatus() {
@@ -184,10 +176,6 @@ public class SyncPair {
         return job;
     }
 
-    public void setJob(Job job) {
-        this.job = job;
-    }
-
     public long getDateA() {
         return dateA;
     }
@@ -208,16 +196,8 @@ public class SyncPair {
         return fileAExists;
     }
 
-    public void setFileAExists(boolean fileAExists) {
-        this.fileAExists = fileAExists;
-    }
-
     public boolean isFileBExists() {
         return fileBExists;
-    }
-
-    public void setFileBExists(boolean fileBExists) {
-        this.fileBExists = fileBExists;
     }
 
 }

@@ -31,9 +31,6 @@ public class ScheduleTableCellRenderer implements TableCellRenderer {
 
     protected JLabel cell;
 
-    public ScheduleTableCellRenderer() {
-    }
-
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         if (row >= DirSyncPro.getSync().getScheduleEngine().getScheduleQ().size() || row < 0) {

@@ -42,7 +42,6 @@ public class WildcardTools {
     private static final String WILDCARD_TIME_MINUTE = "<mm>";
     private static final String WILDCARD_TIME_SECOND = "<ss>";
 
-    private static final String WILDCARD_GLOBALLOG = "<globallog>";
     private static final String WILDCARD_NAME = "<jobname>";
 
     private static final String WILDCARD_USERNAME = "<username>";

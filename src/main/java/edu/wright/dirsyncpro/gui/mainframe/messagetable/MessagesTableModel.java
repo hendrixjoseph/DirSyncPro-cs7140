@@ -30,9 +30,6 @@ public class MessagesTableModel extends AbstractTableModel {
 
     private static final String[] columnNames = {"Time", "Message"};
 
-    public MessagesTableModel() {
-    }
-
     /**
      *
      */

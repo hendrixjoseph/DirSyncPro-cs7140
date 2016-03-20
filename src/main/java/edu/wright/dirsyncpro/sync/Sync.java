@@ -770,28 +770,6 @@ public class Sync {
         System.exit(SyncError.ErrorFatal.getExitCode());
     }
 
-    private void checkAndSyncParentDirs(SyncPair sp) {
-        if (sp.getJob().isSyncDirTimeStamps()) {
-
-        }
-    }
-
-    /**
-     * Checks if the mode if the synchronization is analyze.
-     *
-     * @return {@code true} if the synchronization is in analyze mode, {@code false} otherwise.
-     */
-    public boolean isAnalyze() {
-        return (mode == ANALYZE);
-    }
-
-    /**
-     * @return Returns the syncMode.
-     */
-    public int getMode() {
-        return mode;
-    }
-
     /**
      * @param syncMode The syncMode to set.
      */
@@ -871,17 +849,6 @@ public class Sync {
     public void enableAllJobs(boolean enabled) {
         for (Job job : jobs) {
             job.setEnabled(enabled);
-        }
-    }
-
-    /**
-     * Set the options of all directory definitions to the default settings.
-     */
-    public void setAllJobsToDefaults() {
-        for (Job job : jobs) {
-            if (job.isEnabled()) {
-                job.init();
-            }
         }
     }
 

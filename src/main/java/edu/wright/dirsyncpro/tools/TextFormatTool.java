@@ -30,15 +30,6 @@ public class TextFormatTool {
     }
 
     /**
-     * Returns a date string for the last modification of the file.
-     *
-     * @return Time of last modification of the file as a date string.
-     */
-    public static String getLastModifiedShort(File f) {
-        return (new SimpleDateFormat(Const.DefaultDateShortFormat)).format(f.lastModified());
-    }
-
-    /**
      * Returns a date string for the last modification of the time.
      *
      * @return Time of last modification of the file as a date string.
@@ -66,19 +57,6 @@ public class TextFormatTool {
     }
 
     /**
-     * Returns the formatted length.
-     *
-     * @param f The File of which the size is needed
-     *
-     * @return Formatted length.
-     */
-    public static String getLength(File f) {
-
-        long length = f.length();
-        return getHumanReadable(length);
-    }
-
-    /**
      * Returns the human readable formatted number.
      *
      * @param number The number to format
@@ -97,38 +75,4 @@ public class TextFormatTool {
 
     }
 
-    /**
-     * Returns the string representing this date
-     *
-     * @param millis
-     *
-     * @return the date string
-     */
-    public static String getDateText(long millis) {
-        String s = "";
-        long hours = millis / 3600000;
-        long minutes = (millis % 3600000) / 1000;
-        System.out.println(millis + " " + hours + " " + minutes);
-
-        if (minutes > 1) {
-            if (hours > 1) {
-                s = hours + " hours and " + minutes + " minutes";
-            } else if (hours == 1) {
-                s = hours + " hour and " + minutes + " minutes";
-            }
-        } else if (minutes == 1) {
-            if (hours > 1) {
-                s = hours + " hours and " + minutes + " minute";
-            } else if (hours == 1) {
-                s = hours + " hour and " + minutes + " minute";
-            }
-        } else if (hours > 1) {
-            s = hours + " hours";
-        } else if (hours == 1) {
-            s = hours + " hour";
-        } else {
-            s = "less than a minute";
-        }
-        return s;
-    }
 }

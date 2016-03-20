@@ -414,12 +414,6 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         filtersTabbedPane.setMaximumSize(null);
-        filtersTabbedPane.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                filtersTabbedPaneMouseClicked(evt);
-            }
-        });
 
         basicFilterJPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         basicFilterJPanel.setLayout(new java.awt.GridBagLayout());
@@ -824,12 +818,6 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersRegularExpressionCheckBox.setMaximumSize(null);
         filtersRegularExpressionCheckBox.setMinimumSize(null);
         filtersRegularExpressionCheckBox.setPreferredSize(null);
-        filtersRegularExpressionCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filtersRegularExpressionCheckBoxActionPerformed(evt);
-            }
-        });
         jPanel26.add(filtersRegularExpressionCheckBox);
 
         regularExpressionJLabel.setText("Regular Expression");
@@ -1120,12 +1108,6 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersDateTextField.setText("01-01-2010  00:00");
         filtersDateTextField.setInputVerifier(new DateTimeVerifier(this, filtersDateTextField));
         filtersDateTextField.setMinimumSize(new java.awt.Dimension(96, 20));
-        filtersDateTextField.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ffiltersDateTextFieldActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -1161,12 +1143,6 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersDateTimeUnitField.setInputVerifier(new LongIntVerifier(this, filtersDateTimeUnitField, 0, Long.MAX_VALUE));
         filtersDateTimeUnitField.setMinimumSize(new java.awt.Dimension(40, 20));
         filtersDateTimeUnitField.setName(""); // NOI18N
-        filtersDateTimeUnitField.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ffiltersDateTimeUnitFieldActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -1860,13 +1836,6 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         permissionFilterCheckBoxClicked();
     }//GEN-LAST:event_permissionFilterCheckBoxActionPerformed
 
-    private void ffiltersDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ffiltersDateTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ffiltersDateTextFieldActionPerformed
-
-    private void filtersTabbedPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_filtersTabbedPaneMouseClicked
-    }//GEN-LAST:event_filtersTabbedPaneMouseClicked
-
     private void filtersPermissionFilterFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtersPermissionFilterFieldKeyReleased
         permissionFilterValueChanged();
     }//GEN-LAST:event_filtersPermissionFilterFieldKeyReleased
@@ -1874,14 +1843,6 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
     private void filtersPermissionFilterFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtersPermissionFilterFieldKeyPressed
         permissionFilterValueChanged();
     }//GEN-LAST:event_filtersPermissionFilterFieldKeyPressed
-
-    private void filtersRegularExpressionCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersRegularExpressionCheckBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_filtersRegularExpressionCheckBoxActionPerformed
-
-    private void ffiltersDateTimeUnitFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ffiltersDateTimeUnitFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ffiltersDateTimeUnitFieldActionPerformed
 
     private void filtersDateModeSpecificTimeRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersDateModeSpecificTimeRadioButtonActionPerformed
         adjustFilterDateTypeRadioButtons();

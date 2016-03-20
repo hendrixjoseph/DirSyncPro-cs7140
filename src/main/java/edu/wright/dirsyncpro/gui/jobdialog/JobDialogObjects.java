@@ -891,12 +891,6 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         compareFileSizesDatesRadioButton.setMaximumSize(null);
         compareFileSizesDatesRadioButton.setMinimumSize(null);
         compareFileSizesDatesRadioButton.setPreferredSize(null);
-        compareFileSizesDatesRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                compareFileSizesDatesRadioButtonActionPerformed(evt);
-            }
-        });
         jPanel97.add(compareFileSizesDatesRadioButton);
 
         compareFileSizesDatesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyModified.png"))); // NOI18N
@@ -916,12 +910,6 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         compareFileSizesDatesMetaDataRadioButton.setMaximumSize(null);
         compareFileSizesDatesMetaDataRadioButton.setMinimumSize(null);
         compareFileSizesDatesMetaDataRadioButton.setPreferredSize(null);
-        compareFileSizesDatesMetaDataRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                compareFileSizesDatesMetaDataRadioButtonActionPerformed(evt);
-            }
-        });
         jPanel101.add(compareFileSizesDatesMetaDataRadioButton);
 
         compareFileSizesDatesMetaDataLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/group.png"))); // NOI18N
@@ -941,12 +929,6 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         compareFileContentsRadioButton.setMaximumSize(null);
         compareFileContentsRadioButton.setMinimumSize(null);
         compareFileContentsRadioButton.setPreferredSize(null);
-        compareFileContentsRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                compareFileContentsRadioButtonActionPerformed(evt);
-            }
-        });
         jPanel102.add(compareFileContentsRadioButton);
 
         compareFileContentsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_file.png"))); // NOI18N
@@ -1902,22 +1884,6 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         scheduleTree.setCellEditor(new ScheduleTreeNodeEditor(scheduleTree));
         scheduleTree.setCellRenderer(new ScheduleTreeCellRenderer());
         scheduleTree.setEditable(true);
-        scheduleTree.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                scheduleTreeMouseClicked(evt);
-            }
-
-            @Override
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                scheduleTreeMousePressed(evt);
-            }
-
-            @Override
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                scheduleTreeMouseReleased(evt);
-            }
-        });
         jScrollPane4.setViewportView(scheduleTree);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -2078,34 +2044,6 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirTimestampDiffField.setInputVerifier(new LongIntVerifier(this, dirTimestampDiffField, 0, 86401));
         dirTimestampDiffField.setMaximumSize(null);
         dirTimestampDiffField.setMinimumSize(new java.awt.Dimension(10, 20));
-        dirTimestampDiffField.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dirTimestampDiffFieldActionPerformed(evt);
-            }
-        });
-        dirTimestampDiffField.addFocusListener(new java.awt.event.FocusAdapter() {
-            @Override
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                dirTimestampDiffFieldFocusLost(evt);
-            }
-        });
-        dirTimestampDiffField.addKeyListener(new java.awt.event.KeyAdapter() {
-            @Override
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                dirTimestampDiffFieldEventKey(evt);
-            }
-
-            @Override
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                dirTimestampDiffFieldEventKey(evt);
-            }
-
-            @Override
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                dirTimestampDiffFieldEventKey(evt);
-            }
-        });
         dirTimestampDiffFieldPanel.add(dirTimestampDiffField);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -2127,12 +2065,6 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
 
         dirTimestampWriteBackCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         dirTimestampWriteBackCheckBox.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        dirTimestampWriteBackCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dirTimestampWriteBackCheckBoxActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -2166,12 +2098,6 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
 
         dirTimestampSyncCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         dirTimestampSyncCheckBox.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        dirTimestampSyncCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dirTimestampSyncCheckBoxActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -2196,12 +2122,6 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
 
         ignoreDaylightSavingTimeCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         ignoreDaylightSavingTimeCheckBox.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        ignoreDaylightSavingTimeCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ignoreDaylightSavingTimeCheckBoxActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -2469,34 +2389,6 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         realtimeSyncDelayField.setInputVerifier(new LongIntVerifier(this, realtimeSyncDelayField, 0, 86401));
         realtimeSyncDelayField.setMaximumSize(null);
         realtimeSyncDelayField.setMinimumSize(new java.awt.Dimension(10, 20));
-        realtimeSyncDelayField.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                realtimeSyncDelayFieldActionPerformed(evt);
-            }
-        });
-        realtimeSyncDelayField.addFocusListener(new java.awt.event.FocusAdapter() {
-            @Override
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                realtimeSyncDelayFieldFocusLost(evt);
-            }
-        });
-        realtimeSyncDelayField.addKeyListener(new java.awt.event.KeyAdapter() {
-            @Override
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                realtimeSyncDelayFieldEventKey1(evt);
-            }
-
-            @Override
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                realtimeSyncDelayFieldEventKey2(evt);
-            }
-
-            @Override
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                realtimeSyncDelayFieldEventKey(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -2558,12 +2450,6 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
 
         realtimeSyncOnStartCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         realtimeSyncOnStartCheckBox.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        realtimeSyncOnStartCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                realtimeSyncOnStartCheckBoxActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -2764,18 +2650,6 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         GuiTools.browseFolder(this, dirSrcField);
     }//GEN-LAST:event_dirSrcChangeButtonbrowseSrcActionPerformed
 
-    private void dirTimestampWriteBackCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirTimestampWriteBackCheckBoxActionPerformed
-    }//GEN-LAST:event_dirTimestampWriteBackCheckBoxActionPerformed
-
-    private void dirTimestampDiffFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirTimestampDiffFieldActionPerformed
-    }//GEN-LAST:event_dirTimestampDiffFieldActionPerformed
-
-    private void dirTimestampDiffFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dirTimestampDiffFieldFocusLost
-    }//GEN-LAST:event_dirTimestampDiffFieldFocusLost
-
-    private void dirTimestampDiffFieldEventKey(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dirTimestampDiffFieldEventKey
-    }//GEN-LAST:event_dirTimestampDiffFieldEventKey
-
     private void dirBackupDirChangeButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirBackupDirChangeButtonbrowseSrcActionPerformed
         GuiTools.browseFolder(this, dirBackupDirField);
     }//GEN-LAST:event_dirBackupDirChangeButtonbrowseSrcActionPerformed
@@ -2836,18 +2710,6 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         openAddFilterDialog();
     }//GEN-LAST:event_addFilterButtonlistAddActionPerformed
 
-    private void scheduleTreeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scheduleTreeMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_scheduleTreeMouseClicked
-
-    private void scheduleTreeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scheduleTreeMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_scheduleTreeMousePressed
-
-    private void scheduleTreeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scheduleTreeMouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_scheduleTreeMouseReleased
-
     private void addScheduleButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addScheduleButtonlistAddActionPerformed
         openAddScheduleDialog();
     }//GEN-LAST:event_addScheduleButtonlistAddActionPerformed
@@ -2868,67 +2730,21 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         GuiTools.collapseAll(scheduleTree);
     }//GEN-LAST:event_scheduleCollapseAllButtondisableAllDirsActionPerformed
 
-    private void dirTimestampSyncCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirTimestampSyncCheckBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dirTimestampSyncCheckBoxActionPerformed
-
-    private void ignoreDaylightSavingTimeCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ignoreDaylightSavingTimeCheckBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ignoreDaylightSavingTimeCheckBoxActionPerformed
-
     private void swapButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_swapButtonActionPerformed
         String s = dirSrcField.getText();
         dirSrcField.setText(dirDstField.getText());
         dirDstField.setText(s);
-    }//GEN-LAST:event_swapButtonActionPerformed
-
-    private void compareFileSizesDatesRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compareFileSizesDatesRadioButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_compareFileSizesDatesRadioButtonActionPerformed
-
-    private void compareFileSizesDatesMetaDataRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compareFileSizesDatesMetaDataRadioButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_compareFileSizesDatesMetaDataRadioButtonActionPerformed
-
-    private void compareFileContentsRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compareFileContentsRadioButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_compareFileContentsRadioButtonActionPerformed
-
-    private void realtimeSyncDelayFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_realtimeSyncDelayFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_realtimeSyncDelayFieldActionPerformed
-
-    private void realtimeSyncDelayFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_realtimeSyncDelayFieldFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_realtimeSyncDelayFieldFocusLost
-
-    private void realtimeSyncDelayFieldEventKey1(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_realtimeSyncDelayFieldEventKey1
-        // TODO add your handling code here:
-    }//GEN-LAST:event_realtimeSyncDelayFieldEventKey1
-
-    private void realtimeSyncDelayFieldEventKey2(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_realtimeSyncDelayFieldEventKey2
-        // TODO add your handling code here:
-    }//GEN-LAST:event_realtimeSyncDelayFieldEventKey2
-
-    private void realtimeSyncDelayFieldEventKey(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_realtimeSyncDelayFieldEventKey
-        // TODO add your handling code here:
-    }//GEN-LAST:event_realtimeSyncDelayFieldEventKey
+    }
 
     private void realtimeSyncCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_realtimeSyncCheckBoxActionPerformed
         adjustRealtimeSyncOptions();
-    }//GEN-LAST:event_realtimeSyncCheckBoxActionPerformed
-
-    private void realtimeSyncOnStartCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_realtimeSyncOnStartCheckBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_realtimeSyncOnStartCheckBoxActionPerformed
+    }
 
     private void syncModeComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_syncModeComboBoxItemStateChanged
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             syncModeComboBoxClicked();
         }
-    }//GEN-LAST:event_syncModeComboBoxItemStateChanged
-    // End of variables declaration//GEN-END:variables
-
+    }
     abstract protected void adjustRealtimeSyncOptions();
 
     abstract protected void openAddFilterDialog();

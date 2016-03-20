@@ -151,17 +151,6 @@ public class SyncQ {
         }
     }
 
-    public void cloneSyncSyncQSyncFilter() {
-        SyncQ dspSyncQ = DirSyncPro.getSync().getSyncQ();
-        syncFilterMode.put(CopyMode.New, dspSyncQ.getSyncQSyncFilterMode(CopyMode.New));
-        syncFilterMode.put(CopyMode.Modified, dspSyncQ.getSyncQSyncFilterMode(CopyMode.Modified));
-        syncFilterMode.put(CopyMode.Larger, dspSyncQ.getSyncQSyncFilterMode(CopyMode.Larger));
-        syncFilterMode.put(CopyMode.LargerAndModified, dspSyncQ.getSyncQSyncFilterMode(CopyMode.LargerAndModified));
-        syncFilterMode.put(CopyMode.DeleteFiles, dspSyncQ.getSyncQSyncFilterMode(CopyMode.DeleteFiles));
-        syncFilterMode.put(CopyMode.DeleteDirs, dspSyncQ.getSyncQSyncFilterMode(CopyMode.DeleteDirs));
-        syncFilterMode.put(CopyMode.ConflictFiles, dspSyncQ.getSyncQSyncFilterMode(CopyMode.ConflictFiles));
-    }
-
     public void syncFilter() {
         if (getSyncQSyncFilterMode(CopyMode.New)
                 && getSyncQSyncFilterMode(CopyMode.Modified)
@@ -355,26 +344,6 @@ public class SyncQ {
         sp.setSyncPairStatus(spsTo);
         recalculateStats(sp, 1);
         updated = true;
-    }
-
-    public boolean appendToSyncQ(SyncQ sq) {
-        this.countFiles += sq.getCountFiles();
-        this.countRedundantFiles += sq.getCountRedundantFiles();
-        this.countLargerFiles += sq.getCountLargerFiles();
-        this.countLargerAndModifiedFiles += sq.getCountLargerAndModifiedFiles();
-        this.countModifiedFiles += sq.getCountModifiedFiles();
-        this.countNewFiles += sq.getCountNewFiles();
-        this.countForcedCopyFiles += sq.getCountForcedCopyFiles();
-
-        this.countDirs += sq.getCountDirs();
-        this.countRedundantDirs += sq.getCountRedundantDirs();
-        this.countModifiedDirs += sq.getCountModifiedDirs();
-        this.countNewDirs += sq.getCountNewDirs();
-        this.countConflictFiles += sq.getCountConflictFiles();
-        this.countForcedCopyDirs += sq.getCountForcedCopyDirs();
-
-        updated = true;
-        return syncQ.addAll(sq.syncQ);
     }
 
     /**

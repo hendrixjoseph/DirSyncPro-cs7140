@@ -34,9 +34,6 @@ public class SyncQTableCellRenderer implements TableCellRenderer {
 
     protected JLabel cell;
 
-    public SyncQTableCellRenderer() {
-    }
-
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         int size = DirSyncPro.getSync().getSyncQ().viewSize();

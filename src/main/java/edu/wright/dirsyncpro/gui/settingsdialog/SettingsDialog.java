@@ -239,43 +239,6 @@ public class SettingsDialog extends SettingsDialogObjects {
         DirSyncPro.getGui().iconifyForm();
     }
 
-    protected void browseDefaultLog() {
-        Job job = DirSyncPro.getGui().getSelectedJob();
-
-        try {
-            JFileChooser fileChooser = new JFileChooser();
-
-            fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-
-            /*			if (!defaultLogField.getText().equals("")) {
-                File logFile = new File(defaultLogField.getText());
-				fileChooser.setCurrentDirectory(logFile);
-				if (logFile.isFile()) {
-					fileChooser.setSelectedFile(logFile);
-				}
-			}
-             */
-            if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-
-                File file = fileChooser.getSelectedFile();
-                String filename = file.getPath();
-
-                // if only a path was selected suggest a filename
-                if (file.isDirectory()) {
-                    // if the path doesn't end with an separator add one
-                    if (!filename.endsWith(File.separator)) {
-                        filename += File.separator;
-                    }
-                    filename += DirSyncPro.getSync().getName() + "." + Const.LOG_FILE_EXTENSION;
-                }
-
-//				defaultLogField.setText(filename);
-            }
-        } catch (Exception e) {
-            throw new Error(e);
-        }
-    }
-
     @Override
     protected void setDefaultShutDownCommandField() {
         shutDownCommandField.setText(Const.Properties.ShutDownCommand.getDefault());

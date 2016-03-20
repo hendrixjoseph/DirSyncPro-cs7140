@@ -27,7 +27,6 @@ import java.util.List;
 public class ScheduleTreeModel extends DefaultTreeModel {
 
     private ScheduleTree scheduleTree;
-    private List<TreeModelListener> treeModelListeners = new ArrayList<>();
 
     public ScheduleTreeModel(ScheduleTree st) {
         super(st);

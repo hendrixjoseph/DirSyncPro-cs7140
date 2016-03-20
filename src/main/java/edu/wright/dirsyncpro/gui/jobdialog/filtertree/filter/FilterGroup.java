@@ -32,7 +32,4 @@ public class FilterGroup extends Filter {
 
     }
 
-    public String toString() {
-        return super.toString();
-    }
 }

@@ -116,8 +116,5 @@ public class Filter implements Comparable<Filter>, Cloneable {
             this.icon = new ImageIcon(Const.class.getResource(iconFile));
         }
 
-        public Icon getIcon() {
-            return icon;
-        }
     }
 }

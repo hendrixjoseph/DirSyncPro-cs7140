@@ -57,9 +57,7 @@ public class Const {
      */
     public static final String ALL_INCLUSIVE_PATTERN = "*";
     public static final String DEFAULT_INCLUDE_DIR = ALL_INCLUSIVE_PATTERN;
-    public static final String DEFAULT_EXCLUDE_DIR = "";
     public static final String DEFAULT_INCLUDE_FILE = ALL_INCLUSIVE_PATTERN;
-    public static final String DEFAULT_EXCLUDE_FILE = "";
     public static final SyncConflictResolutionMode BIDIR_SYNC_CONFLICT_RESOLUTION_MODE_DEFAULT = SyncConflictResolutionMode.CopyModified;
     public static final SyncConflictResolutionMode MONODIR_SYNC_CONFLICT_RESOLUTION_MODE_DEFAULT = SyncConflictResolutionMode.WarnUser;
     /**
@@ -383,12 +381,10 @@ public class Const {
         private Icon icon;
         private Color color;
         private boolean isFileOperation;
-        private boolean isDirOperation;
         private boolean ab;
 
         SyncPairStatus(boolean isFO, boolean isDO, boolean isAB, String name, String iconFile, Color c) {
             this.isFileOperation = isFO;
-            this.isDirOperation = isDO;
             this.ab = isAB;
             this.name = name;
             this.icon = new ImageIcon(Const.class.getResource(iconFile));
@@ -442,9 +438,6 @@ public class Const {
             return isFileOperation;
         }
 
-        public boolean isDirOperation() {
-            return isDirOperation;
-        }
     }
 
     /**
@@ -482,19 +475,8 @@ public class Const {
         }
     }
 
-    /**
-     * Display selection constants
-     */
-    public enum Display {
-        ALL, COPY_NEW, COPY_MODIFIED, DELETED, ERROR
-    }
-
     public enum IconKey {
-        Sync("/icons/icon_sync.png", new Color(255, 255, 255)),
-        Dir("/icons/dirBlue.png", new Color(255, 255, 255)),
-        Subdir("/icons/dirViolet.png", new Color(255, 255, 255)),
         Info("/icons/icon_info.png", new Color(255, 255, 255)),
-        Config("/icons/icon_config.png", new Color(255, 255, 255)),
         CopyForced("/icons/copyAll.png", new Color(255, 255, 255)),
         CopyNew("/icons/copyNew.png", new Color(255, 255, 255)),
         CopyModified("/icons/copyModified.png", new Color(255, 255, 255)),

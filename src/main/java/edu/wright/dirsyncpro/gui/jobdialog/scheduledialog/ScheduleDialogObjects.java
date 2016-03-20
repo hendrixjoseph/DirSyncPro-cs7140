@@ -1167,12 +1167,6 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
         dirIncludeAndExcludeFilesPanel4.add(scheduleMonthlySeptemberCheckBox, gridBagConstraints);
 
         scheduleMonthlyOctoberCheckBox.setText("October");
-        scheduleMonthlyOctoberCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scheduleMonthlyOctoberCheckBoxActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
@@ -1310,18 +1304,9 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
         schedulesEvent();
     }//GEN-LAST:event_scheduleTimeFrameToCheckBoxActionPerformed
 
-    private void openRecentMenuItemopenConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openRecentMenuItemopenConfigActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_openRecentMenuItemopenConfigActionPerformed
-
     private void scheduleMinutelyRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleMinutelyRadioButtonActionPerformed
         schedulesEvent();
     }//GEN-LAST:event_scheduleMinutelyRadioButtonActionPerformed
-
-    private void scheduleMonthlyOctoberCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleMonthlyOctoberCheckBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_scheduleMonthlyOctoberCheckBoxActionPerformed
-    // End of variables declaration//GEN-END:variables
 
     abstract protected void applySchedule();
 
