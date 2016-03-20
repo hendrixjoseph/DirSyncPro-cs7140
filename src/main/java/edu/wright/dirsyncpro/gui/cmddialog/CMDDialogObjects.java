@@ -161,12 +161,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdAddSyncCheckBox.setMaximumSize(null);
         cmdAddSyncCheckBox.setMinimumSize(null);
         cmdAddSyncCheckBox.setPreferredSize(null);
-        cmdAddSyncCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdAddSyncCheckBoxActionPerformed(evt);
-            }
-        });
+        cmdAddSyncCheckBox.addActionListener(evt -> cmdAddSyncCheckBoxActionPerformed(evt));
         jPanel88.add(cmdAddSyncCheckBox, new java.awt.GridBagConstraints());
 
         cmdAddSyncJLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/start.png"))); // NOI18N
@@ -207,12 +202,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdAddAnalyzeCheckBox.setMaximumSize(null);
         cmdAddAnalyzeCheckBox.setMinimumSize(null);
         cmdAddAnalyzeCheckBox.setPreferredSize(null);
-        cmdAddAnalyzeCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdAddAnalyzeCheckBoxActionPerformed(evt);
-            }
-        });
+        cmdAddAnalyzeCheckBox.addActionListener(evt -> cmdAddAnalyzeCheckBoxActionPerformed(evt));
         jPanel91.add(cmdAddAnalyzeCheckBox, new java.awt.GridBagConstraints());
 
         cmdAddAnalyzeJLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/preview.png"))); // NOI18N
@@ -252,12 +242,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdAddNoGuiCheckBox.setMaximumSize(null);
         cmdAddNoGuiCheckBox.setMinimumSize(null);
         cmdAddNoGuiCheckBox.setPreferredSize(null);
-        cmdAddNoGuiCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdAddNoGuiCheckBoxActionPerformed(evt);
-            }
-        });
+        cmdAddNoGuiCheckBox.addActionListener(evt -> cmdAddNoGuiCheckBoxActionPerformed(evt));
         jPanel92.add(cmdAddNoGuiCheckBox, new java.awt.GridBagConstraints());
 
         cmdAddNoGuiJLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/terminal.png"))); // NOI18N
@@ -296,12 +281,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdAddQuitCheckBox.setMaximumSize(null);
         cmdAddQuitCheckBox.setMinimumSize(null);
         cmdAddQuitCheckBox.setPreferredSize(null);
-        cmdAddQuitCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdAddQuitCheckBoxActionPerformed(evt);
-            }
-        });
+        cmdAddQuitCheckBox.addActionListener(evt -> cmdAddQuitCheckBoxActionPerformed(evt));
         jPanel93.add(cmdAddQuitCheckBox, new java.awt.GridBagConstraints());
 
         cmdAddQuitJLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/quit.png"))); // NOI18N
@@ -341,12 +321,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdAddScheduleCheckBox.setMaximumSize(null);
         cmdAddScheduleCheckBox.setMinimumSize(null);
         cmdAddScheduleCheckBox.setPreferredSize(null);
-        cmdAddScheduleCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdAddScheduleCheckBoxActionPerformed(evt);
-            }
-        });
+        cmdAddScheduleCheckBox.addActionListener(evt -> cmdAddScheduleCheckBoxActionPerformed(evt));
         jPanel94.add(cmdAddScheduleCheckBox, new java.awt.GridBagConstraints());
 
         cmdAddScheduleJLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/startSchedule.png"))); // NOI18N
@@ -386,12 +361,7 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdAddIconifyCheckBox.setMaximumSize(null);
         cmdAddIconifyCheckBox.setMinimumSize(null);
         cmdAddIconifyCheckBox.setPreferredSize(null);
-        cmdAddIconifyCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdAddIconifyCheckBoxActionPerformed(evt);
-            }
-        });
+        cmdAddIconifyCheckBox.addActionListener(evt -> cmdAddIconifyCheckBoxActionPerformed(evt));
         jPanel95.add(cmdAddIconifyCheckBox, new java.awt.GridBagConstraints());
 
         cmdAddIconifyJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/DirSyncPro.png"))); // NOI18N
@@ -461,34 +431,19 @@ public abstract class CMDDialogObjects extends javax.swing.JDialog {
         cmdCloseButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cancel.png"))); // NOI18N
         cmdCloseButton.setText("Close");
         cmdCloseButton.setAlignmentX(0.5F);
-        cmdCloseButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdCloseButtoncancelActionPerformed(evt);
-            }
-        });
+        cmdCloseButton.addActionListener(evt -> cmdCloseButtoncancelActionPerformed(evt));
         settingsButtonsPanel3.add(cmdCloseButton, new java.awt.GridBagConstraints());
 
         cmdCopyToClipboardButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyAll.png"))); // NOI18N
         cmdCopyToClipboardButton.setText("Copy to clipboard");
         cmdCopyToClipboardButton.setAlignmentX(0.5F);
-        cmdCopyToClipboardButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdCopyToClipboardButtonActionPerformed(evt);
-            }
-        });
+        cmdCopyToClipboardButton.addActionListener(evt -> cmdCopyToClipboardButtonActionPerformed(evt));
         settingsButtonsPanel3.add(cmdCopyToClipboardButton, new java.awt.GridBagConstraints());
 
         cmdSaveBatchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileSave.png"))); // NOI18N
         cmdSaveBatchButton.setText("Save to batch file");
         cmdSaveBatchButton.setAlignmentX(0.5F);
-        cmdSaveBatchButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdSaveBatchButtonActionPerformed(evt);
-            }
-        });
+        cmdSaveBatchButton.addActionListener(evt -> cmdSaveBatchButtonActionPerformed(evt));
         settingsButtonsPanel3.add(cmdSaveBatchButton, new java.awt.GridBagConstraints());
 
         gridBagConstraints = new java.awt.GridBagConstraints();

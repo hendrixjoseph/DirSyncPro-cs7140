@@ -472,12 +472,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         newButton.setMinimumSize(new java.awt.Dimension(30, 30));
         newButton.setOpaque(false);
         newButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        newButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newButtonnewConfigActionPerformed(evt);
-            }
-        });
+        newButton.addActionListener(evt -> newButtonnewConfigActionPerformed(evt));
         toolBar.add(newButton);
 
         openButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonFileOpen.png"))); // NOI18N
@@ -487,12 +482,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         openButton.setMinimumSize(new java.awt.Dimension(30, 30));
         openButton.setOpaque(false);
         openButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        openButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openButtonopenConfigActionPerformed(evt);
-            }
-        });
+        openButton.addActionListener(evt -> openButtonopenConfigActionPerformed(evt));
         toolBar.add(openButton);
 
         saveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonFileSave.png"))); // NOI18N
@@ -502,12 +492,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         saveButton.setMinimumSize(new java.awt.Dimension(30, 30));
         saveButton.setOpaque(false);
         saveButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        saveButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveButtonsaveConfigActionPerformed(evt);
-            }
-        });
+        saveButton.addActionListener(evt -> saveButtonsaveConfigActionPerformed(evt));
         toolBar.add(saveButton);
 
         saveAsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonFileSaveAs.png"))); // NOI18N
@@ -520,12 +505,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         saveAsButton.setOpaque(false);
         saveAsButton.setPreferredSize(new java.awt.Dimension(30, 30));
         saveAsButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        saveAsButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveAsButtonsaveConfigActionPerformed(evt);
-            }
-        });
+        saveAsButton.addActionListener(evt -> saveAsButtonsaveConfigActionPerformed(evt));
         toolBar.add(saveAsButton);
 
         jSeparator2.setBackground(new java.awt.Color(204, 204, 204));
@@ -541,12 +521,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         analyzeButton.setMinimumSize(new java.awt.Dimension(30, 30));
         analyzeButton.setOpaque(false);
         analyzeButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        analyzeButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                analyzeButtonpreviewStartActionPerformed(evt);
-            }
-        });
+        analyzeButton.addActionListener(evt -> analyzeButtonpreviewStartActionPerformed(evt));
         toolBar.add(analyzeButton);
 
         synchronizeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonStart.png"))); // NOI18N
@@ -556,12 +531,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         synchronizeButton.setMinimumSize(new java.awt.Dimension(30, 30));
         synchronizeButton.setOpaque(false);
         synchronizeButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        synchronizeButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                synchronizeButtonsynchronizationStartActionPerformed(evt);
-            }
-        });
+        synchronizeButton.addActionListener(evt -> synchronizeButtonsynchronizationStartActionPerformed(evt));
         toolBar.add(synchronizeButton);
 
         pauseButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonPause.png"))); // NOI18N
@@ -570,12 +540,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         pauseButton.setMaximumSize(new java.awt.Dimension(30, 30));
         pauseButton.setMinimumSize(new java.awt.Dimension(30, 30));
         pauseButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        pauseButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pauseButtonsynchronizationPauseActionPerformed(evt);
-            }
-        });
+        pauseButton.addActionListener(evt -> pauseButtonsynchronizationPauseActionPerformed(evt));
         toolBar.add(pauseButton);
 
         stopButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonStop.png"))); // NOI18N
@@ -585,12 +550,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         stopButton.setMinimumSize(new java.awt.Dimension(30, 30));
         stopButton.setOpaque(false);
         stopButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        stopButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stopButtonsynchronizationStopActionPerformed(evt);
-            }
-        });
+        stopButton.addActionListener(evt -> stopButtonsynchronizationStopActionPerformed(evt));
         toolBar.add(stopButton);
 
         shutDownButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonExit.png"))); // NOI18N
@@ -603,12 +563,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         shutDownButton.setOpaque(false);
         shutDownButton.setPreferredSize(new java.awt.Dimension(30, 30));
         shutDownButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        shutDownButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                shutDownButtonsynchronizationStopActionPerformed(evt);
-            }
-        });
+        shutDownButton.addActionListener(evt -> shutDownButtonsynchronizationStopActionPerformed(evt));
         toolBar.add(shutDownButton);
 
         jSeparator3.setBackground(new java.awt.Color(204, 204, 204));
@@ -626,12 +581,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         scheduleStartButton.setOpaque(false);
         scheduleStartButton.setPreferredSize(new java.awt.Dimension(30, 30));
         scheduleStartButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        scheduleStartButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scheduleStartButtonsynchronizationStartActionPerformed(evt);
-            }
-        });
+        scheduleStartButton.addActionListener(evt -> scheduleStartButtonsynchronizationStartActionPerformed(evt));
         toolBar.add(scheduleStartButton);
 
         scheduleStopButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonStopSchedule.png"))); // NOI18N
@@ -643,12 +593,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         scheduleStopButton.setOpaque(false);
         scheduleStopButton.setPreferredSize(new java.awt.Dimension(30, 30));
         scheduleStopButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        scheduleStopButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scheduleStopButtonsynchronizationStartActionPerformed(evt);
-            }
-        });
+        scheduleStopButton.addActionListener(evt -> scheduleStopButtonsynchronizationStartActionPerformed(evt));
         toolBar.add(scheduleStopButton);
 
         jSeparator6.setBackground(new java.awt.Color(204, 204, 204));
@@ -664,12 +609,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         aboutButton.setMinimumSize(new java.awt.Dimension(30, 30));
         aboutButton.setOpaque(false);
         aboutButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        aboutButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aboutButtonaboutActionPerformed(evt);
-            }
-        });
+        aboutButton.addActionListener(evt -> aboutButtonaboutActionPerformed(evt));
         toolBar.add(aboutButton);
 
         contentsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonContents.png"))); // NOI18N
@@ -679,12 +619,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         contentsButton.setMinimumSize(new java.awt.Dimension(30, 30));
         contentsButton.setOpaque(false);
         contentsButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        contentsButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contentsButtoncontentsActionPerformed(evt);
-            }
-        });
+        contentsButton.addActionListener(evt -> contentsButtoncontentsActionPerformed(evt));
         toolBar.add(contentsButton);
 
         donateButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/donate22x22.png"))); // NOI18N
@@ -696,12 +631,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         donateButton.setOpaque(false);
         donateButton.setPreferredSize(new java.awt.Dimension(30, 30));
         donateButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        donateButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                donateButtoncontentsActionPerformed(evt);
-            }
-        });
+        donateButton.addActionListener(evt -> donateButtoncontentsActionPerformed(evt));
         toolBar.add(donateButton);
 
         getContentPane().add(toolBar, java.awt.BorderLayout.NORTH);
@@ -726,12 +656,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobEnableAllButton.setMaximumSize(null);
         jobEnableAllButton.setMinimumSize(null);
         jobEnableAllButton.setPreferredSize(null);
-        jobEnableAllButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jobEnableAllButtonenableAllDirsActionPerformed(evt);
-            }
-        });
+        jobEnableAllButton.addActionListener(evt -> jobEnableAllButtonenableAllDirsActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 0;
@@ -748,12 +673,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobDisableAllButton.setMaximumSize(null);
         jobDisableAllButton.setMinimumSize(null);
         jobDisableAllButton.setPreferredSize(null);
-        jobDisableAllButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jobDisableAllButtondisableAllDirsActionPerformed(evt);
-            }
-        });
+        jobDisableAllButton.addActionListener(evt -> jobDisableAllButtondisableAllDirsActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 7;
         gridBagConstraints.gridy = 0;
@@ -770,12 +690,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobDownButton.setMaximumSize(null);
         jobDownButton.setMinimumSize(null);
         jobDownButton.setPreferredSize(null);
-        jobDownButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jobDownButtonlistDownActionPerformed(evt);
-            }
-        });
+        jobDownButton.addActionListener(evt -> jobDownButtonlistDownActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
@@ -788,12 +703,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobUpButton.setToolTipText("Move the selected Job up.");
         jobUpButton.setIconTextGap(2);
         jobUpButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        jobUpButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jobUpButtonlistUpActionPerformed(evt);
-            }
-        });
+        jobUpButton.addActionListener(evt -> jobUpButtonlistUpActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -809,12 +719,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobAddButton.setMaximumSize(null);
         jobAddButton.setMinimumSize(null);
         jobAddButton.setPreferredSize(null);
-        jobAddButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jobAddButtonlistAddActionPerformed(evt);
-            }
-        });
+        jobAddButton.addActionListener(evt -> jobAddButtonlistAddActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -827,12 +732,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobEditButton.setToolTipText("Edit the selected Job");
         jobEditButton.setIconTextGap(2);
         jobEditButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        jobEditButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jobEditButtonlistAddActionPerformed(evt);
-            }
-        });
+        jobEditButton.addActionListener(evt -> jobEditButtonlistAddActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -848,12 +748,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobCopyButton.setMaximumSize(null);
         jobCopyButton.setMinimumSize(null);
         jobCopyButton.setPreferredSize(null);
-        jobCopyButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jobCopyButtonlistCopyActionPerformed(evt);
-            }
-        });
+        jobCopyButton.addActionListener(evt -> jobCopyButtonlistCopyActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
@@ -869,12 +764,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobRemoveButton.setMaximumSize(null);
         jobRemoveButton.setMinimumSize(null);
         jobRemoveButton.setPreferredSize(null);
-        jobRemoveButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jobRemoveButtonlistRemoveActionPerformed(evt);
-            }
-        });
+        jobRemoveButton.addActionListener(evt -> jobRemoveButtonlistRemoveActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
@@ -897,12 +787,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobExpandOneLevelButton.setMaximumSize(null);
         jobExpandOneLevelButton.setMinimumSize(null);
         jobExpandOneLevelButton.setPreferredSize(null);
-        jobExpandOneLevelButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jobExpandOneLevelButtonenableAllDirsActionPerformed(evt);
-            }
-        });
+        jobExpandOneLevelButton.addActionListener(evt -> jobExpandOneLevelButtonenableAllDirsActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 0;
@@ -919,12 +804,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jobCollapseAllButton.setMaximumSize(null);
         jobCollapseAllButton.setMinimumSize(null);
         jobCollapseAllButton.setPreferredSize(null);
-        jobCollapseAllButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jobCollapseAllButtondisableAllDirsActionPerformed(evt);
-            }
-        });
+        jobCollapseAllButton.addActionListener(evt -> jobCollapseAllButtondisableAllDirsActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 9;
         gridBagConstraints.gridy = 0;
@@ -1469,12 +1349,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterResetButton.setToolTipText("Reset the default options to their defaults.");
         syncQViewFilterResetButton.setAlignmentX(0.5F);
         syncQViewFilterResetButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        syncQViewFilterResetButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQViewFilterResetButtonActionPerformed(evt);
-            }
-        });
+        syncQViewFilterResetButton.addActionListener(evt -> syncQViewFilterResetButtonActionPerformed(evt));
         jPanel50.add(syncQViewFilterResetButton);
 
         syncQViewFilterOKButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ok.png"))); // NOI18N
@@ -1482,12 +1357,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterOKButton.setToolTipText("Reset the default options to their defaults.");
         syncQViewFilterOKButton.setAlignmentX(0.5F);
         syncQViewFilterOKButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        syncQViewFilterOKButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQViewFilterOKButtonActionPerformed(evt);
-            }
-        });
+        syncQViewFilterOKButton.addActionListener(evt -> syncQViewFilterOKButtonActionPerformed(evt));
         jPanel50.add(syncQViewFilterOKButton);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1654,12 +1524,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterResetButton.setToolTipText("Reset the default options to their defaults.");
         syncQSyncFilterResetButton.setAlignmentX(0.5F);
         syncQSyncFilterResetButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        syncQSyncFilterResetButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQSyncFilterResetButtonActionPerformed(evt);
-            }
-        });
+        syncQSyncFilterResetButton.addActionListener(evt -> syncQSyncFilterResetButtonActionPerformed(evt));
         jPanel52.add(syncQSyncFilterResetButton);
 
         syncQSyncFilterOKButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ok.png"))); // NOI18N
@@ -1667,12 +1532,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterOKButton.setToolTipText("Reset the default options to their defaults.");
         syncQSyncFilterOKButton.setAlignmentX(0.5F);
         syncQSyncFilterOKButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        syncQSyncFilterOKButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQSyncFilterOKButtonActionPerformed(evt);
-            }
-        });
+        syncQSyncFilterOKButton.addActionListener(evt -> syncQSyncFilterOKButtonActionPerformed(evt));
         jPanel52.add(syncQSyncFilterOKButton);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1919,12 +1779,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterResetButton.setToolTipText("Reset the message filter options.");
         messagesViewFilterResetButton.setAlignmentX(0.5F);
         messagesViewFilterResetButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        messagesViewFilterResetButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                messagesViewFilterResetButtonActionPerformed(evt);
-            }
-        });
+        messagesViewFilterResetButton.addActionListener(evt -> messagesViewFilterResetButtonActionPerformed(evt));
         jPanel51.add(messagesViewFilterResetButton);
 
         messagesViewFilterOKButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ok.png"))); // NOI18N
@@ -1932,12 +1787,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterOKButton.setToolTipText("Filter the messages according to the message filter options.");
         messagesViewFilterOKButton.setAlignmentX(0.5F);
         messagesViewFilterOKButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        messagesViewFilterOKButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                messagesViewFilterOKButtonActionPerformed(evt);
-            }
-        });
+        messagesViewFilterOKButton.addActionListener(evt -> messagesViewFilterOKButtonActionPerformed(evt));
         jPanel51.add(messagesViewFilterOKButton);
 
         messagesCleanButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cancel.png"))); // NOI18N
@@ -1945,12 +1795,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesCleanButton.setToolTipText("Delete all messages.");
         messagesCleanButton.setAlignmentX(0.5F);
         messagesCleanButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        messagesCleanButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                messagesCleanButtonActionPerformed(evt);
-            }
-        });
+        messagesCleanButton.addActionListener(evt -> messagesCleanButtonActionPerformed(evt));
         jPanel51.add(messagesCleanButton);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -2064,23 +1909,13 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         newMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         newMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileNew.png"))); // NOI18N
         newMenuItem.setText("New");
-        newMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newMenuItemnewConfigActionPerformed(evt);
-            }
-        });
+        newMenuItem.addActionListener(evt -> newMenuItemnewConfigActionPerformed(evt));
         fileMenu.add(newMenuItem);
 
         openMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
         openMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileOpen.png"))); // NOI18N
         openMenuItem.setText("Open");
-        openMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openMenuItemopenConfigActionPerformed(evt);
-            }
-        });
+        openMenuItem.addActionListener(evt -> openMenuItemopenConfigActionPerformed(evt));
         fileMenu.add(openMenuItem);
 
         openRecentMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileOpen.png"))); // NOI18N
@@ -2089,57 +1924,32 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         appendMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileOpen.png"))); // NOI18N
         appendMenuItem.setText("Append");
-        appendMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                appendMenuItemopenConfigActionPerformed(evt);
-            }
-        });
+        appendMenuItem.addActionListener(evt -> appendMenuItemopenConfigActionPerformed(evt));
         fileMenu.add(appendMenuItem);
         fileMenu.add(jSeparator7);
 
         saveMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         saveMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileSave.png"))); // NOI18N
         saveMenuItem.setText("Save");
-        saveMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveMenuItemsaveConfigActionPerformed(evt);
-            }
-        });
+        saveMenuItem.addActionListener(evt -> saveMenuItemsaveConfigActionPerformed(evt));
         fileMenu.add(saveMenuItem);
 
         saveAsMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         saveAsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileSaveAs.png"))); // NOI18N
         saveAsMenuItem.setText("Save As");
-        saveAsMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveAsMenuItemsaveConfigActionPerformed(evt);
-            }
-        });
+        saveAsMenuItem.addActionListener(evt -> saveAsMenuItemsaveConfigActionPerformed(evt));
         fileMenu.add(saveAsMenuItem);
 
         saveEnabledAsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileSaveAs.png"))); // NOI18N
         saveEnabledAsMenuItem.setText("Save enabled jobs As");
-        saveEnabledAsMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveEnabledAsMenuItemsaveConfigActionPerformed(evt);
-            }
-        });
+        saveEnabledAsMenuItem.addActionListener(evt -> saveEnabledAsMenuItemsaveConfigActionPerformed(evt));
         fileMenu.add(saveEnabledAsMenuItem);
         fileMenu.add(jSeparator4);
 
         quitMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         quitMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/quit.png"))); // NOI18N
         quitMenuItem.setText("Quit");
-        quitMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quitMenuItemquitActionPerformed(evt);
-            }
-        });
+        quitMenuItem.addActionListener(evt -> quitMenuItemquitActionPerformed(evt));
         fileMenu.add(quitMenuItem);
 
         menuBar.add(fileMenu);
@@ -2148,73 +1958,38 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         analyzeMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/preview.png"))); // NOI18N
         analyzeMenuItem.setText("Analyze");
-        analyzeMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                analyzeMenuItempreviewStartActionPerformed(evt);
-            }
-        });
+        analyzeMenuItem.addActionListener(evt -> analyzeMenuItempreviewStartActionPerformed(evt));
         runMenu.add(analyzeMenuItem);
 
         synchronizeMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/start.png"))); // NOI18N
         synchronizeMenuItem.setText("Synchronize");
-        synchronizeMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                synchronizeMenuItemsynchronizationStartActionPerformed(evt);
-            }
-        });
+        synchronizeMenuItem.addActionListener(evt -> synchronizeMenuItemsynchronizationStartActionPerformed(evt));
         runMenu.add(synchronizeMenuItem);
 
         pauseMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/pause.png"))); // NOI18N
         pauseMenuItem.setText("Pause");
-        pauseMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pauseMenuItemsynchronizationStopActionPerformed(evt);
-            }
-        });
+        pauseMenuItem.addActionListener(evt -> pauseMenuItemsynchronizationStopActionPerformed(evt));
         runMenu.add(pauseMenuItem);
 
         stopMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/stop.png"))); // NOI18N
         stopMenuItem.setText("Stop");
-        stopMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stopMenuItemsynchronizationStopActionPerformed(evt);
-            }
-        });
+        stopMenuItem.addActionListener(evt -> stopMenuItemsynchronizationStopActionPerformed(evt));
         runMenu.add(stopMenuItem);
 
         shutDownMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/exit16x16.png"))); // NOI18N
         shutDownMenuItem.setText("Shut down after sync");
-        shutDownMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                shutDownMenuItemsynchronizationStopActionPerformed(evt);
-            }
-        });
+        shutDownMenuItem.addActionListener(evt -> shutDownMenuItemsynchronizationStopActionPerformed(evt));
         runMenu.add(shutDownMenuItem);
         runMenu.add(jSeparator5);
 
         startScheduledTasksMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/startSchedule.png"))); // NOI18N
         startScheduledTasksMenuItem.setText("Start Schedule Engine");
-        startScheduledTasksMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                startScheduledTasksMenuItemsynchronizationStartActionPerformed(evt);
-            }
-        });
+        startScheduledTasksMenuItem.addActionListener(evt -> startScheduledTasksMenuItemsynchronizationStartActionPerformed(evt));
         runMenu.add(startScheduledTasksMenuItem);
 
         stopScheduledTasksMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/stopSchedule.png"))); // NOI18N
         stopScheduledTasksMenuItem.setText("Stop Schedule Engine");
-        stopScheduledTasksMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stopScheduledTasksMenuItemsynchronizationStartActionPerformed(evt);
-            }
-        });
+        stopScheduledTasksMenuItem.addActionListener(evt -> stopScheduledTasksMenuItemsynchronizationStartActionPerformed(evt));
         runMenu.add(stopScheduledTasksMenuItem);
 
         menuBar.add(runMenu);
@@ -2223,32 +1998,17 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         swapSrcDstMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/swapSrcDst.png"))); // NOI18N
         swapSrcDstMenuItem.setText("Swap all source and destination directories");
-        swapSrcDstMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                swapSrcDstMenuItemtoolsSwapSrcDstActionPerformed(evt);
-            }
-        });
+        swapSrcDstMenuItem.addActionListener(evt -> swapSrcDstMenuItemtoolsSwapSrcDstActionPerformed(evt));
         toolsMenu.add(swapSrcDstMenuItem);
 
         cmdMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/terminal.png"))); // NOI18N
         cmdMenuItem.setText("Generate command line");
-        cmdMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdMenuItemOptionsActionPerformed(evt);
-            }
-        });
+        cmdMenuItem.addActionListener(evt -> cmdMenuItemOptionsActionPerformed(evt));
         toolsMenu.add(cmdMenuItem);
 
         optionsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_config.png"))); // NOI18N
         optionsMenuItem.setText("Options");
-        optionsMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                optionsMenuItemOptionsActionPerformed(evt);
-            }
-        });
+        optionsMenuItem.addActionListener(evt -> optionsMenuItemOptionsActionPerformed(evt));
         toolsMenu.add(optionsMenuItem);
 
         menuBar.add(toolsMenu);
@@ -2258,45 +2018,25 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         contentsMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
         contentsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/contents.png"))); // NOI18N
         contentsMenuItem.setText("Help contents");
-        contentsMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contentsMenuItemcontentsActionPerformed(evt);
-            }
-        });
+        contentsMenuItem.addActionListener(evt -> contentsMenuItemcontentsActionPerformed(evt));
         helpMenu.add(contentsMenuItem);
 
         donateMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/donate16x16.png"))); // NOI18N
         donateMenuItem.setText("Make a donation!");
         donateMenuItem.setToolTipText("<html>If this program is good for your purpose please consider a donation <br />as less as you would like as a gesture to encourage us developing this program.<br />Click this menu item to go to the SourceForge donation page.<br /><br />Thank you!</html>");
-        donateMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                donateMenuItemcontentsActionPerformed(evt);
-            }
-        });
+        donateMenuItem.addActionListener(evt -> donateMenuItemcontentsActionPerformed(evt));
         helpMenu.add(donateMenuItem);
         helpMenu.add(jSeparator1);
 
         updateMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/update16x16.png"))); // NOI18N
         updateMenuItem.setText("Check for updates");
-        updateMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateMenuItemaboutActionPerformed(evt);
-            }
-        });
+        updateMenuItem.addActionListener(evt -> updateMenuItemaboutActionPerformed(evt));
         helpMenu.add(updateMenuItem);
 
         aboutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         aboutMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/about.png"))); // NOI18N
         aboutMenuItem.setText("About");
-        aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aboutMenuItemaboutActionPerformed(evt);
-            }
-        });
+        aboutMenuItem.addActionListener(evt -> aboutMenuItemaboutActionPerformed(evt));
         helpMenu.add(aboutMenuItem);
 
         menuBar.add(helpMenu);

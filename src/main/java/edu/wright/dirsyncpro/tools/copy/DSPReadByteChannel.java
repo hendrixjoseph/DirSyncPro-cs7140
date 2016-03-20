@@ -29,12 +29,9 @@ public class DSPReadByteChannel implements ReadableByteChannel {
 
     ReadableByteChannel rbc;
     long readBytes = 0;
-    private final ActionListener progressBarUpdater = new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent evt) {
-            if (DirSyncPro.isGuiMode()) {
-                DirSyncPro.getGui().registerProgressBars(-1, -1, -1, "", false, (int) (readBytes * 100.), 100, "", false);
-            }
+    private final ActionListener progressBarUpdater = evt -> {
+        if (DirSyncPro.isGuiMode()) {
+            DirSyncPro.getGui().registerProgressBars(-1, -1, -1, "", false, (int) (readBytes * 100.), 100, "", false);
         }
     };
 

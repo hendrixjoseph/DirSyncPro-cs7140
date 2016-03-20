@@ -84,12 +84,9 @@ public class FiltersTreeNodeEditor extends AbstractCellEditor implements TreeCel
 
         Component editorComponent = filtersTreeCellrenderer.getTreeCellRendererComponent(tree, value, true, expanded, leaf, row, true);
 
-        ItemListener itemListener = new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent itemEvent) {
-                if (stopCellEditing()) {
-                    fireEditingStopped();
-                }
+        ItemListener itemListener = itemEvent -> {
+            if (stopCellEditing()) {
+                fireEditingStopped();
             }
         };
 

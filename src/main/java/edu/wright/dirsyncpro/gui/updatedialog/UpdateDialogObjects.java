@@ -94,24 +94,14 @@ public abstract class UpdateDialogObjects extends javax.swing.JDialog {
         gotodownloadsButton.setText("Go to download page");
         gotodownloadsButton.setAlignmentX(0.5F);
         gotodownloadsButton.setPreferredSize(null);
-        gotodownloadsButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gotodownloadsButtonActionPerformed(evt);
-            }
-        });
+        gotodownloadsButton.addActionListener(evt -> gotodownloadsButtonActionPerformed(evt));
         updateButtonsPanel.add(gotodownloadsButton);
 
         notNowButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cancel.png"))); // NOI18N
         notNowButton.setText("Not Now");
         notNowButton.setAlignmentX(0.5F);
         notNowButton.setPreferredSize(null);
-        notNowButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                notNowButtoncancelActionPerformed(evt);
-            }
-        });
+        notNowButton.addActionListener(evt -> notNowButtoncancelActionPerformed(evt));
         updateButtonsPanel.add(notNowButton);
 
         gridBagConstraints = new java.awt.GridBagConstraints();

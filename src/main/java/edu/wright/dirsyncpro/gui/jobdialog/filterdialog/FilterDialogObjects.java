@@ -443,12 +443,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByPatternRadioButton.setMaximumSize(null);
         filtersByPatternRadioButton.setMinimumSize(null);
         filtersByPatternRadioButton.setPreferredSize(null);
-        filtersByPatternRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filtersByPatternRadioButtonActionPerformed(evt);
-            }
-        });
+        filtersByPatternRadioButton.addActionListener(evt -> filtersByPatternRadioButtonActionPerformed(evt));
         jPanel36.add(filtersByPatternRadioButton);
 
         filtersByPatternLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/pattern.png"))); // NOI18N
@@ -468,12 +463,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByFileSizeRadioButton.setMaximumSize(null);
         filtersByFileSizeRadioButton.setMinimumSize(null);
         filtersByFileSizeRadioButton.setPreferredSize(null);
-        filtersByFileSizeRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filtersByFileSizeRadioButtonActionPerformed(evt);
-            }
-        });
+        filtersByFileSizeRadioButton.addActionListener(evt -> filtersByFileSizeRadioButtonActionPerformed(evt));
         jPanel37.add(filtersByFileSizeRadioButton);
 
         filtersByFileSizeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/smaller.png"))); // NOI18N
@@ -493,12 +483,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByPathRadioButton.setMaximumSize(null);
         filtersByPathRadioButton.setMinimumSize(null);
         filtersByPathRadioButton.setPreferredSize(null);
-        filtersByPathRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filtersByPathRadioButtonActionPerformed(evt);
-            }
-        });
+        filtersByPathRadioButton.addActionListener(evt -> filtersByPathRadioButtonActionPerformed(evt));
         jPanel104.add(filtersByPathRadioButton);
 
         filtersByPathLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirBlue.png"))); // NOI18N
@@ -518,12 +503,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByFileAttributeRadioButton.setMaximumSize(null);
         filtersByFileAttributeRadioButton.setMinimumSize(null);
         filtersByFileAttributeRadioButton.setPreferredSize(null);
-        filtersByFileAttributeRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filtersByFileAttributeRadioButtonActionPerformed(evt);
-            }
-        });
+        filtersByFileAttributeRadioButton.addActionListener(evt -> filtersByFileAttributeRadioButtonActionPerformed(evt));
         jPanel105.add(filtersByFileAttributeRadioButton);
 
         filtersByFileAttributeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/file.png"))); // NOI18N
@@ -543,12 +523,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByFileOwnershipRadioButton.setMaximumSize(null);
         filtersByFileOwnershipRadioButton.setMinimumSize(null);
         filtersByFileOwnershipRadioButton.setPreferredSize(null);
-        filtersByFileOwnershipRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filtersByFileOwnershipRadioButtonActionPerformed(evt);
-            }
-        });
+        filtersByFileOwnershipRadioButton.addActionListener(evt -> filtersByFileOwnershipRadioButtonActionPerformed(evt));
         jPanel106.add(filtersByFileOwnershipRadioButton);
 
         filtersByFileOwnershipLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/group.png"))); // NOI18N
@@ -568,12 +543,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByFilePermissionsRadioButton.setMaximumSize(null);
         filtersByFilePermissionsRadioButton.setMinimumSize(null);
         filtersByFilePermissionsRadioButton.setPreferredSize(null);
-        filtersByFilePermissionsRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filtersByFilePermissionsRadioButtonActionPerformed(evt);
-            }
-        });
+        filtersByFilePermissionsRadioButton.addActionListener(evt -> filtersByFilePermissionsRadioButtonActionPerformed(evt));
         jPanel107.add(filtersByFilePermissionsRadioButton);
 
         filtersByFilePermissionsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/permissions.png"))); // NOI18N
@@ -593,12 +563,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByDateRadioButton.setMaximumSize(null);
         filtersByDateRadioButton.setMinimumSize(null);
         filtersByDateRadioButton.setPreferredSize(null);
-        filtersByDateRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filtersByDateRadioButtonActionPerformed(evt);
-            }
-        });
+        filtersByDateRadioButton.addActionListener(evt -> filtersByDateRadioButtonActionPerformed(evt));
         jPanel38.add(filtersByDateRadioButton);
 
         filtersByDateLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/date.png"))); // NOI18N
@@ -1059,12 +1024,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersDateModeSpecificTimeRadioButton.setMaximumSize(null);
         filtersDateModeSpecificTimeRadioButton.setMinimumSize(null);
         filtersDateModeSpecificTimeRadioButton.setPreferredSize(null);
-        filtersDateModeSpecificTimeRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filtersDateModeSpecificTimeRadioButtonActionPerformed(evt);
-            }
-        });
+        filtersDateModeSpecificTimeRadioButton.addActionListener(evt -> filtersDateModeSpecificTimeRadioButtonActionPerformed(evt));
         jPanel44.add(filtersDateModeSpecificTimeRadioButton);
 
         jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1day.png"))); // NOI18N
@@ -1084,12 +1044,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersDateModeTimeUnitRadioButton.setMaximumSize(null);
         filtersDateModeTimeUnitRadioButton.setMinimumSize(null);
         filtersDateModeTimeUnitRadioButton.setPreferredSize(null);
-        filtersDateModeTimeUnitRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filtersDateModeTimeUnitRadioButtonActionPerformed(evt);
-            }
-        });
+        filtersDateModeTimeUnitRadioButton.addActionListener(evt -> filtersDateModeTimeUnitRadioButtonActionPerformed(evt));
         jPanel48.add(filtersDateModeTimeUnitRadioButton);
 
         jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/date.png"))); // NOI18N
@@ -1238,12 +1193,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         pathFilterBrowseButton.setToolTipText("Browse");
         pathFilterBrowseButton.setIconTextGap(2);
         pathFilterBrowseButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        pathFilterBrowseButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pathFilterBrowseButtonbrowseSrcActionPerformed(evt);
-            }
-        });
+        pathFilterBrowseButton.addActionListener(evt -> pathFilterBrowseButtonbrowseSrcActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 1;
@@ -1551,12 +1501,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterURCheckBox.setMaximumSize(null);
         filtersPermissionFilterURCheckBox.setMinimumSize(null);
         filtersPermissionFilterURCheckBox.setPreferredSize(null);
-        filtersPermissionFilterURCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                permissionFilterCheckBoxActionPerformed(evt);
-            }
-        });
+        filtersPermissionFilterURCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -1565,12 +1510,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterUWCheckBox.setMaximumSize(null);
         filtersPermissionFilterUWCheckBox.setMinimumSize(null);
         filtersPermissionFilterUWCheckBox.setPreferredSize(null);
-        filtersPermissionFilterUWCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                permissionFilterCheckBoxActionPerformed(evt);
-            }
-        });
+        filtersPermissionFilterUWCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 1;
@@ -1579,12 +1519,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterUXCheckBox.setMaximumSize(null);
         filtersPermissionFilterUXCheckBox.setMinimumSize(null);
         filtersPermissionFilterUXCheckBox.setPreferredSize(null);
-        filtersPermissionFilterUXCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                permissionFilterCheckBoxActionPerformed(evt);
-            }
-        });
+        filtersPermissionFilterUXCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 1;
@@ -1593,12 +1528,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterGRCheckBox.setMaximumSize(null);
         filtersPermissionFilterGRCheckBox.setMinimumSize(null);
         filtersPermissionFilterGRCheckBox.setPreferredSize(null);
-        filtersPermissionFilterGRCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                permissionFilterCheckBoxActionPerformed(evt);
-            }
-        });
+        filtersPermissionFilterGRCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -1607,12 +1537,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterGWCheckBox.setMaximumSize(null);
         filtersPermissionFilterGWCheckBox.setMinimumSize(null);
         filtersPermissionFilterGWCheckBox.setPreferredSize(null);
-        filtersPermissionFilterGWCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                permissionFilterCheckBoxActionPerformed(evt);
-            }
-        });
+        filtersPermissionFilterGWCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -1621,12 +1546,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterGXCheckBox.setMaximumSize(null);
         filtersPermissionFilterGXCheckBox.setMinimumSize(null);
         filtersPermissionFilterGXCheckBox.setPreferredSize(null);
-        filtersPermissionFilterGXCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                permissionFilterCheckBoxActionPerformed(evt);
-            }
-        });
+        filtersPermissionFilterGXCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 2;
@@ -1635,12 +1555,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterORCheckBox.setMaximumSize(null);
         filtersPermissionFilterORCheckBox.setMinimumSize(null);
         filtersPermissionFilterORCheckBox.setPreferredSize(null);
-        filtersPermissionFilterORCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                permissionFilterCheckBoxActionPerformed(evt);
-            }
-        });
+        filtersPermissionFilterORCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
@@ -1649,12 +1564,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterOWCheckBox.setMaximumSize(null);
         filtersPermissionFilterOWCheckBox.setMinimumSize(null);
         filtersPermissionFilterOWCheckBox.setPreferredSize(null);
-        filtersPermissionFilterOWCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                permissionFilterCheckBoxActionPerformed(evt);
-            }
-        });
+        filtersPermissionFilterOWCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 3;
@@ -1663,12 +1573,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterOXCheckBox.setMaximumSize(null);
         filtersPermissionFilterOXCheckBox.setMinimumSize(null);
         filtersPermissionFilterOXCheckBox.setPreferredSize(null);
-        filtersPermissionFilterOXCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                permissionFilterCheckBoxActionPerformed(evt);
-            }
-        });
+        filtersPermissionFilterOXCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 3;
@@ -1758,12 +1663,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersOKButton.setMaximumSize(null);
         filtersOKButton.setMinimumSize(null);
         filtersOKButton.setPreferredSize(null);
-        filtersOKButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filtersOKButtonActionPerformed(evt);
-            }
-        });
+        filtersOKButton.addActionListener(evt -> filtersOKButtonActionPerformed(evt));
         filtersButtonsPanel.add(filtersOKButton);
 
         filtersCancelButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cancel.png"))); // NOI18N
@@ -1772,12 +1672,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersCancelButton.setMaximumSize(null);
         filtersCancelButton.setMinimumSize(null);
         filtersCancelButton.setPreferredSize(null);
-        filtersCancelButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filtersCancelButtoncancelActionPerformed(evt);
-            }
-        });
+        filtersCancelButton.addActionListener(evt -> filtersCancelButtoncancelActionPerformed(evt));
         filtersButtonsPanel.add(filtersCancelButton);
 
         gridBagConstraints = new java.awt.GridBagConstraints();

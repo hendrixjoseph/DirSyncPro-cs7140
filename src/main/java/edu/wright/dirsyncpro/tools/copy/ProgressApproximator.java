@@ -43,12 +43,7 @@ public class ProgressApproximator {
     //system time when startApprox() was called
     private long startTime = 0;
     //performs GUI progress update
-    private final ActionListener taskPerformer = new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent evt) {
-            updateProgress();
-        }
-    };
+    private final ActionListener taskPerformer = evt -> updateProgress();
     //private constructor for singleton pattern
     private ProgressApproximator() {
         this.t = new javax.swing.Timer(10, taskPerformer);

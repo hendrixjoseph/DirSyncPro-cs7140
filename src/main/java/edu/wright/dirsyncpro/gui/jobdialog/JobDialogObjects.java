@@ -693,12 +693,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirDstChangeButton.setToolTipText("Browse for the destination directory.");
         dirDstChangeButton.setIconTextGap(2);
         dirDstChangeButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        dirDstChangeButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dirDstChangeButtonbrowseDstActionPerformed(evt);
-            }
-        });
+        dirDstChangeButton.addActionListener(evt -> dirDstChangeButtonbrowseDstActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 2;
@@ -710,12 +705,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirSrcChangeButton.setToolTipText("Browse for the source directory.");
         dirSrcChangeButton.setIconTextGap(2);
         dirSrcChangeButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        dirSrcChangeButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dirSrcChangeButtonbrowseSrcActionPerformed(evt);
-            }
-        });
+        dirSrcChangeButton.addActionListener(evt -> dirSrcChangeButtonbrowseSrcActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 1;
@@ -775,12 +765,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
 
         swapButton.setText("Swap");
         swapButton.setAlignmentX(0.5F);
-        swapButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                swapButtonActionPerformed(evt);
-            }
-        });
+        swapButton.addActionListener(evt -> swapButtonActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
@@ -832,12 +817,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         syncModeJPanel.add(label9, gridBagConstraints);
 
         syncModeComboBox.setMaximumRowCount(Const.SyncMode.values().length);
-        syncModeComboBox.addItemListener(new java.awt.event.ItemListener() {
-            @Override
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                syncModeComboBoxItemStateChanged(evt);
-            }
-        });
+        syncModeComboBox.addItemListener(evt -> syncModeComboBoxItemStateChanged(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
@@ -969,12 +949,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyAllCheckBox.setMaximumSize(null);
         dirCopyAllCheckBox.setMinimumSize(null);
         dirCopyAllCheckBox.setPreferredSize(null);
-        dirCopyAllCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dirCopyAllCheckBoxdirEventActionPerformed(evt);
-            }
-        });
+        dirCopyAllCheckBox.addActionListener(evt -> dirCopyAllCheckBoxdirEventActionPerformed(evt));
         jPanel8.add(dirCopyAllCheckBox);
 
         dirCopyAllLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyAll.png"))); // NOI18N
@@ -989,12 +964,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyNewCheckBox.setMaximumSize(null);
         dirCopyNewCheckBox.setMinimumSize(null);
         dirCopyNewCheckBox.setPreferredSize(null);
-        dirCopyNewCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dirCopyNewCheckBoxdirEventActionPerformed(evt);
-            }
-        });
+        dirCopyNewCheckBox.addActionListener(evt -> dirCopyNewCheckBoxdirEventActionPerformed(evt));
         jPanel9.add(dirCopyNewCheckBox);
 
         dirCopyNewLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyNew.png"))); // NOI18N
@@ -1012,12 +982,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyLargerCheckBox.setMaximumSize(null);
         dirCopyLargerCheckBox.setMinimumSize(null);
         dirCopyLargerCheckBox.setPreferredSize(null);
-        dirCopyLargerCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dirCopyLargerCheckBoxdirEventActionPerformed(evt);
-            }
-        });
+        dirCopyLargerCheckBox.addActionListener(evt -> dirCopyLargerCheckBoxdirEventActionPerformed(evt));
         jPanel10.add(dirCopyLargerCheckBox);
 
         dirCopyLargerLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyLarger.png"))); // NOI18N
@@ -1035,12 +1000,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyModifiedCheckBox.setMaximumSize(null);
         dirCopyModifiedCheckBox.setMinimumSize(null);
         dirCopyModifiedCheckBox.setPreferredSize(null);
-        dirCopyModifiedCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dirCopyModifiedCheckBoxdirEventActionPerformed(evt);
-            }
-        });
+        dirCopyModifiedCheckBox.addActionListener(evt -> dirCopyModifiedCheckBoxdirEventActionPerformed(evt));
         jPanel11.add(dirCopyModifiedCheckBox);
 
         dirCopyModifiedLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyModified.png"))); // NOI18N
@@ -1058,12 +1018,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyLargerModifiedCheckBox.setMaximumSize(null);
         dirCopyLargerModifiedCheckBox.setMinimumSize(null);
         dirCopyLargerModifiedCheckBox.setPreferredSize(null);
-        dirCopyLargerModifiedCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dirCopyLargerModifiedCheckBoxdirEventActionPerformed(evt);
-            }
-        });
+        dirCopyLargerModifiedCheckBox.addActionListener(evt -> dirCopyLargerModifiedCheckBoxdirEventActionPerformed(evt));
         jPanel12.add(dirCopyLargerModifiedCheckBox);
 
         dirCopyLargerModifiedLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyLargerModified.png"))); // NOI18N
@@ -1372,12 +1327,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         addFilterButton.setToolTipText("Add a new Job.");
         addFilterButton.setIconTextGap(2);
         addFilterButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        addFilterButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addFilterButtonlistAddActionPerformed(evt);
-            }
-        });
+        addFilterButton.addActionListener(evt -> addFilterButtonlistAddActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -1390,12 +1340,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         editFilterButton.setToolTipText("Edit the selected Job");
         editFilterButton.setIconTextGap(2);
         editFilterButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        editFilterButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editFilterButtonlistAddActionPerformed(evt);
-            }
-        });
+        editFilterButton.addActionListener(evt -> editFilterButtonlistAddActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -1411,12 +1356,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         removeFilterButton.setMaximumSize(null);
         removeFilterButton.setMinimumSize(null);
         removeFilterButton.setPreferredSize(null);
-        removeFilterButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removeFilterButtonlistRemoveActionPerformed(evt);
-            }
-        });
+        removeFilterButton.addActionListener(evt -> removeFilterButtonlistRemoveActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
@@ -1438,12 +1378,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         filtersExpandAllButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         filtersExpandAllButton.setMaximumSize(null);
         filtersExpandAllButton.setPreferredSize(new java.awt.Dimension(70, 17));
-        filtersExpandAllButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filtersExpandAllButtonenableAllDirsActionPerformed(evt);
-            }
-        });
+        filtersExpandAllButton.addActionListener(evt -> filtersExpandAllButtonenableAllDirsActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 0;
@@ -1459,12 +1394,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         filtersCollapseAllButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         filtersCollapseAllButton.setMaximumSize(null);
         filtersCollapseAllButton.setPreferredSize(new java.awt.Dimension(70, 17));
-        filtersCollapseAllButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filtersCollapseAllButtondisableAllDirsActionPerformed(evt);
-            }
-        });
+        filtersCollapseAllButton.addActionListener(evt -> filtersCollapseAllButtondisableAllDirsActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 9;
         gridBagConstraints.gridy = 0;
@@ -1717,12 +1647,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirBackupDirChangeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/browse.png"))); // NOI18N
         dirBackupDirChangeButton.setIconTextGap(2);
         dirBackupDirChangeButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        dirBackupDirChangeButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dirBackupDirChangeButtonbrowseSrcActionPerformed(evt);
-            }
-        });
+        dirBackupDirChangeButton.addActionListener(evt -> dirBackupDirChangeButtonbrowseSrcActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 2;
@@ -1826,12 +1751,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirLogBrowseButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/browse.png"))); // NOI18N
         dirLogBrowseButton.setIconTextGap(2);
         dirLogBrowseButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        dirLogBrowseButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dirLogBrowseButtonbrowseSrcActionPerformed(evt);
-            }
-        });
+        dirLogBrowseButton.addActionListener(evt -> dirLogBrowseButtonbrowseSrcActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 1;
@@ -1845,12 +1765,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirEnableLoggingCheckBox.setMaximumSize(null);
         dirEnableLoggingCheckBox.setMinimumSize(null);
         dirEnableLoggingCheckBox.setPreferredSize(null);
-        dirEnableLoggingCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dirEnableLoggingCheckBoxdirEventActionPerformed(evt);
-            }
-        });
+        dirEnableLoggingCheckBox.addActionListener(evt -> dirEnableLoggingCheckBoxdirEventActionPerformed(evt));
         jPanel73.add(dirEnableLoggingCheckBox);
 
         dirEnableLoggingJLabel.setText("Enable logging.");
@@ -1921,12 +1836,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         addScheduleButton.setToolTipText("Add a new Job.");
         addScheduleButton.setIconTextGap(2);
         addScheduleButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        addScheduleButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addScheduleButtonlistAddActionPerformed(evt);
-            }
-        });
+        addScheduleButton.addActionListener(evt -> addScheduleButtonlistAddActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -1939,12 +1849,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         editScheduleButton.setToolTipText("Edit the selected Job");
         editScheduleButton.setIconTextGap(2);
         editScheduleButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        editScheduleButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editScheduleButtonlistAddActionPerformed(evt);
-            }
-        });
+        editScheduleButton.addActionListener(evt -> editScheduleButtonlistAddActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -1960,12 +1865,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         removeScheduleButton.setMaximumSize(null);
         removeScheduleButton.setMinimumSize(null);
         removeScheduleButton.setPreferredSize(null);
-        removeScheduleButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removeScheduleButtonlistRemoveActionPerformed(evt);
-            }
-        });
+        removeScheduleButton.addActionListener(evt -> removeScheduleButtonlistRemoveActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
@@ -1987,12 +1887,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         scheduleExpandAllButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         scheduleExpandAllButton.setMaximumSize(null);
         scheduleExpandAllButton.setPreferredSize(new java.awt.Dimension(70, 17));
-        scheduleExpandAllButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scheduleExpandAllButtonenableAllDirsActionPerformed(evt);
-            }
-        });
+        scheduleExpandAllButton.addActionListener(evt -> scheduleExpandAllButtonenableAllDirsActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 0;
@@ -2008,12 +1903,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         scheduleCollapseAllButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         scheduleCollapseAllButton.setMaximumSize(null);
         scheduleCollapseAllButton.setPreferredSize(new java.awt.Dimension(70, 17));
-        scheduleCollapseAllButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scheduleCollapseAllButtondisableAllDirsActionPerformed(evt);
-            }
-        });
+        scheduleCollapseAllButton.addActionListener(evt -> scheduleCollapseAllButtondisableAllDirsActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 9;
         gridBagConstraints.gridy = 0;
@@ -2420,12 +2310,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
 
         realtimeSyncCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         realtimeSyncCheckBox.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        realtimeSyncCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                realtimeSyncCheckBoxActionPerformed(evt);
-            }
-        });
+        realtimeSyncCheckBox.addActionListener(evt -> realtimeSyncCheckBoxActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -2487,12 +2372,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         copySettingsToAllJobsGoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/apply.png"))); // NOI18N
         copySettingsToAllJobsGoButton.setText("Go");
         copySettingsToAllJobsGoButton.setAlignmentX(0.5F);
-        copySettingsToAllJobsGoButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                copySettingsToAllJobsGoButtonActionPerformed(evt);
-            }
-        });
+        copySettingsToAllJobsGoButton.addActionListener(evt -> copySettingsToAllJobsGoButtonActionPerformed(evt));
         settingsActionsPanel.add(copySettingsToAllJobsGoButton, new java.awt.GridBagConstraints());
 
         resetJobSettingsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirRemove.png"))); // NOI18N
@@ -2506,12 +2386,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         resetJobSettingsGoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/apply.png"))); // NOI18N
         resetJobSettingsGoButton.setText("Go");
         resetJobSettingsGoButton.setAlignmentX(0.5F);
-        resetJobSettingsGoButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resetJobSettingsGoButtonActionPerformed(evt);
-            }
-        });
+        resetJobSettingsGoButton.addActionListener(evt -> resetJobSettingsGoButtonActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -2528,12 +2403,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         copySettingsToEnabledJobsGoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/apply.png"))); // NOI18N
         copySettingsToEnabledJobsGoButton.setText("Go");
         copySettingsToEnabledJobsGoButton.setAlignmentX(0.5F);
-        copySettingsToEnabledJobsGoButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                copySettingsToEnabledJobsGoButtonActionPerformed(evt);
-            }
-        });
+        copySettingsToEnabledJobsGoButton.addActionListener(evt -> copySettingsToEnabledJobsGoButtonActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -2596,12 +2466,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         jobOKButton.setMaximumSize(null);
         jobOKButton.setMinimumSize(null);
         jobOKButton.setPreferredSize(null);
-        jobOKButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jobOKButtonActionPerformed(evt);
-            }
-        });
+        jobOKButton.addActionListener(evt -> jobOKButtonActionPerformed(evt));
         settingsButtonsPanel2.add(jobOKButton);
 
         jobCancelButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cancel.png"))); // NOI18N
@@ -2610,12 +2475,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         jobCancelButton.setMaximumSize(null);
         jobCancelButton.setMinimumSize(null);
         jobCancelButton.setPreferredSize(null);
-        jobCancelButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jobCancelButtoncancelActionPerformed(evt);
-            }
-        });
+        jobCancelButton.addActionListener(evt -> jobCancelButtoncancelActionPerformed(evt));
         settingsButtonsPanel2.add(jobCancelButton);
 
         gridBagConstraints = new java.awt.GridBagConstraints();

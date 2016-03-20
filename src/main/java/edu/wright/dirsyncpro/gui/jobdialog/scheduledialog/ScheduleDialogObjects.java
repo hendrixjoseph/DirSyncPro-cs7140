@@ -327,12 +327,7 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
         scheduleOnceRadioButton.setMaximumSize(null);
         scheduleOnceRadioButton.setMinimumSize(null);
         scheduleOnceRadioButton.setPreferredSize(null);
-        scheduleOnceRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scheduleOnceRadioButtonActionPerformed(evt);
-            }
-        });
+        scheduleOnceRadioButton.addActionListener(evt -> scheduleOnceRadioButtonActionPerformed(evt));
         jPanel76.add(scheduleOnceRadioButton);
 
         jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/once.png"))); // NOI18N
@@ -352,12 +347,7 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
         scheduleDailyRadioButton.setMaximumSize(null);
         scheduleDailyRadioButton.setMinimumSize(null);
         scheduleDailyRadioButton.setPreferredSize(null);
-        scheduleDailyRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scheduleDailyRadioButtonActionPerformed(evt);
-            }
-        });
+        scheduleDailyRadioButton.addActionListener(evt -> scheduleDailyRadioButtonActionPerformed(evt));
         jPanel77.add(scheduleDailyRadioButton);
 
         jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1day.png"))); // NOI18N
@@ -377,12 +367,7 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
         scheduleWeeklyRadioButton.setMaximumSize(null);
         scheduleWeeklyRadioButton.setMinimumSize(null);
         scheduleWeeklyRadioButton.setPreferredSize(null);
-        scheduleWeeklyRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scheduleWeeklyRadioButtonActionPerformed(evt);
-            }
-        });
+        scheduleWeeklyRadioButton.addActionListener(evt -> scheduleWeeklyRadioButtonActionPerformed(evt));
         jPanel85.add(scheduleWeeklyRadioButton);
 
         jLabel52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/7days.png"))); // NOI18N
@@ -402,12 +387,7 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
         scheduleMonthlyRadioButton.setMaximumSize(null);
         scheduleMonthlyRadioButton.setMinimumSize(null);
         scheduleMonthlyRadioButton.setPreferredSize(null);
-        scheduleMonthlyRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scheduleMonthlyRadioButtonActionPerformed(evt);
-            }
-        });
+        scheduleMonthlyRadioButton.addActionListener(evt -> scheduleMonthlyRadioButtonActionPerformed(evt));
         jPanel86.add(scheduleMonthlyRadioButton);
 
         jLabel53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/30days.png"))); // NOI18N
@@ -427,12 +407,7 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
         scheduleHourlyRadioButton.setMaximumSize(null);
         scheduleHourlyRadioButton.setMinimumSize(null);
         scheduleHourlyRadioButton.setPreferredSize(null);
-        scheduleHourlyRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scheduleHourlyRadioButtonActionPerformed(evt);
-            }
-        });
+        scheduleHourlyRadioButton.addActionListener(evt -> scheduleHourlyRadioButtonActionPerformed(evt));
         jPanel87.add(scheduleHourlyRadioButton);
 
         jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/hourly.png"))); // NOI18N
@@ -452,12 +427,7 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
         scheduleMinutelyRadioButton.setMaximumSize(null);
         scheduleMinutelyRadioButton.setMinimumSize(null);
         scheduleMinutelyRadioButton.setPreferredSize(null);
-        scheduleMinutelyRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scheduleMinutelyRadioButtonActionPerformed(evt);
-            }
-        });
+        scheduleMinutelyRadioButton.addActionListener(evt -> scheduleMinutelyRadioButtonActionPerformed(evt));
         jPanel89.add(scheduleMinutelyRadioButton);
 
         jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/minutely.png"))); // NOI18N
@@ -521,12 +491,7 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 0);
         inExcludeJPanel3.add(lookNfeelLabel5, gridBagConstraints);
 
-        scheduleTimeFrameToCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scheduleTimeFrameToCheckBoxActionPerformed(evt);
-            }
-        });
+        scheduleTimeFrameToCheckBox.addActionListener(evt -> scheduleTimeFrameToCheckBoxActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -537,12 +502,7 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
         scheduleTimeFrameFromTextField.setText("01-01-2010  00:00");
         scheduleTimeFrameFromTextField.setInputVerifier(new DateTimeVerifier(this, scheduleTimeFrameFromTextField));
         scheduleTimeFrameFromTextField.setMinimumSize(new java.awt.Dimension(96, 20));
-        scheduleTimeFrameFromTextField.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scheduleTimeFrameFromTextFieldActionPerformed(evt);
-            }
-        });
+        scheduleTimeFrameFromTextField.addActionListener(evt -> scheduleTimeFrameFromTextFieldActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 1;
@@ -559,12 +519,7 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         inExcludeJPanel3.add(scheduleTimeFrameToTextField, gridBagConstraints);
 
-        scheduleTimeFrameFromCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scheduleTimeFrameFromCheckBoxActionPerformed(evt);
-            }
-        });
+        scheduleTimeFrameFromCheckBox.addActionListener(evt -> scheduleTimeFrameFromCheckBoxActionPerformed(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -1230,12 +1185,7 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
         schedulesOKButton.setMaximumSize(null);
         schedulesOKButton.setMinimumSize(null);
         schedulesOKButton.setPreferredSize(null);
-        schedulesOKButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                schedulesOKButtonActionPerformed(evt);
-            }
-        });
+        schedulesOKButton.addActionListener(evt -> schedulesOKButtonActionPerformed(evt));
         schedulesButtonsPanel.add(schedulesOKButton);
 
         schedulesCancelButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cancel.png"))); // NOI18N
@@ -1244,12 +1194,7 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
         schedulesCancelButton.setMaximumSize(null);
         schedulesCancelButton.setMinimumSize(null);
         schedulesCancelButton.setPreferredSize(null);
-        schedulesCancelButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                schedulesCancelButtoncancelActionPerformed(evt);
-            }
-        });
+        schedulesCancelButton.addActionListener(evt -> schedulesCancelButtoncancelActionPerformed(evt));
         schedulesButtonsPanel.add(schedulesCancelButton);
 
         gridBagConstraints = new java.awt.GridBagConstraints();

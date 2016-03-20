@@ -727,23 +727,17 @@ public class JobDialog extends JobDialogObjects {
     }
 
     public void updateFiltersTree() {
-        Runnable r = new Runnable() {
-            @Override
-            public void run() {
-                ((FiltersTreeModel) filtersTree.getModel()).reload(getFiltersTree());
-                GuiTools.expandAll(filtersTree);
-            }
+        Runnable r = () -> {
+            ((FiltersTreeModel) filtersTree.getModel()).reload(getFiltersTree());
+            GuiTools.expandAll(filtersTree);
         };
         SwingUtilities.invokeLater(r);
     }
 
     public void updateScheduleTree() {
-        Runnable r = new Runnable() {
-            @Override
-            public void run() {
-                ((ScheduleTreeModel) scheduleTree.getModel()).reload(getScheduleTree());
-                GuiTools.expandAll(scheduleTree);
-            }
+        Runnable r = () -> {
+            ((ScheduleTreeModel) scheduleTree.getModel()).reload(getScheduleTree());
+            GuiTools.expandAll(scheduleTree);
         };
         SwingUtilities.invokeLater(r);
     }

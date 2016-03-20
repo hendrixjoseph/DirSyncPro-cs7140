@@ -71,22 +71,11 @@ public class Tray {
                 }
             };
 
-            ActionListener exitListener = new ActionListener() {
-
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    DirSyncPro.getGui().quit();
-                }
-            };
+            ActionListener exitListener = e -> DirSyncPro.getGui().quit();
 
             PopupMenu popup = new PopupMenu();
             MenuItem menuItem = new MenuItem("Open");
-            menuItem.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    DirSyncPro.getGui().makeVisible();
-                }
-            });
+            menuItem.addActionListener(e -> DirSyncPro.getGui().makeVisible());
             popup.add(menuItem);
 
             menuItem = new MenuItem("Exit");

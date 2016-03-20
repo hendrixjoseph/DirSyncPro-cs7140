@@ -88,14 +88,11 @@ public class SettingsDialog extends SettingsDialogObjects {
     @Override
     protected void applyApplicationSettings() {
         // global log will be initialised by start()
-        Runnable r = new Runnable() {
-            @Override
-            public void run() {
-                setGeneral();
-                setView();
-                setSync();
-                setLog();
-            }
+        Runnable r = () -> {
+            setGeneral();
+            setView();
+            setSync();
+            setLog();
         };
         SwingUtilities.invokeLater(r);
     }

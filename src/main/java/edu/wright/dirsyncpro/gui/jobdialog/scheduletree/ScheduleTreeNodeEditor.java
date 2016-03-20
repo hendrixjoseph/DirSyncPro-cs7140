@@ -83,12 +83,9 @@ public class ScheduleTreeNodeEditor extends AbstractCellEditor implements TreeCe
 
         Component editorComponent = scheduleTreeCellrenderer.getTreeCellRendererComponent(tree, value, true, expanded, leaf, row, true);
 
-        ItemListener itemListener = new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent itemEvent) {
-                if (stopCellEditing()) {
-                    fireEditingStopped();
-                }
+        ItemListener itemListener = itemEvent -> {
+            if (stopCellEditing()) {
+                fireEditingStopped();
             }
         };
 

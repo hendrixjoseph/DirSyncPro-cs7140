@@ -731,12 +731,7 @@ public class Job extends JobObject implements Cloneable {
 
         final Job j = this;
         //schedule next syncronization once any change appears
-        RealtimeListener.RealtimeChangeListener changeListener = new RealtimeListener.RealtimeChangeListener() {
-            @Override
-            public void change(WatchEvent<Path> we) {
-                ScheduleEngine.getRealtimeInstance().scheduleRealtime(j, syncRealtimeDelay * 1000);
-            }
-        };
+        RealtimeListener.RealtimeChangeListener changeListener = we -> ScheduleEngine.getRealtimeInstance().scheduleRealtime(j, syncRealtimeDelay * 1000);
 
         dirAListener.setChangeListener(changeListener);
         dirBListener.setChangeListener(changeListener);

@@ -31,16 +31,13 @@ public class ScreenUpdater {
     AtomicBoolean running = new AtomicBoolean(false);
 
     public ScreenUpdater() {
-        final ActionListener taskPerformer = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                if (running.compareAndSet(false, true)) {
-                    if (DirSyncPro.getGui() != null) {
-                        //we are already within EDT
-                        DirSyncPro.getGui().updateGUIEDT(false);
-                    }
-                    running.set(false);
+        final ActionListener taskPerformer = evt -> {
+            if (running.compareAndSet(false, true)) {
+                if (DirSyncPro.getGui() != null) {
+                    //we are already within EDT
+                    DirSyncPro.getGui().updateGUIEDT(false);
                 }
+                running.set(false);
             }
         };
         timer = new Timer(10, taskPerformer);

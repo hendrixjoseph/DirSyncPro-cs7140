@@ -31,22 +31,12 @@ import java.text.MessageFormat;
 
 public class CopierFactory {
 
-    private final static GUIUpdater guiUpdater = new GUIUpdater() {
-
-        @Override
-        public void updateGUI(long position, double scaledFileSize) {
-            if (DirSyncPro.isGuiMode()) {
-                DirSyncPro.getGui().registerProgressBars(-1, -1, -1, "", false, (int) (position / scaledFileSize), 100, "", false);
-            }
+    private final static GUIUpdater guiUpdater = (position, scaledFileSize) -> {
+        if (DirSyncPro.isGuiMode()) {
+            DirSyncPro.getGui().registerProgressBars(-1, -1, -1, "", false, (int) (position / scaledFileSize), 100, "", false);
         }
-
     };
-    private final static GUIUpdater nonGuiUpdater = new GUIUpdater() {
-
-        @Override
-        public void updateGUI(long position, double scaledFileSize) {
-        }
-
+    private final static GUIUpdater nonGuiUpdater = (position, scaledFileSize) -> {
     };
     private final static Copier channelCopier = new Copier() {
 

@@ -252,12 +252,7 @@ public class MainFrame extends MainFrameObjects {
             JMenuItem subMenuItem = new JMenuItem(f.getName());
             subMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/file.png")));
             subMenuItem.setToolTipText(f.getAbsolutePath());
-            subMenuItem.addActionListener(new java.awt.event.ActionListener() {
-                @Override
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    openConfig(f, true);
-                }
-            });
+            subMenuItem.addActionListener(evt -> openConfig(f, true));
             openRecentMenu.add(subMenuItem);
         }
     }
@@ -738,12 +733,9 @@ public class MainFrame extends MainFrameObjects {
                     menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ok.png")));
                 }
 
-                menuItem.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        job.setEnabled(!job.isEnabled()); // toggle enable
-                        updateJobsTree();
-                    }
+                menuItem.addActionListener(e -> {
+                    job.setEnabled(!job.isEnabled()); // toggle enable
+                    updateJobsTree();
                 });
                 popupMenu.add(menuItem);
 
@@ -751,60 +743,35 @@ public class MainFrame extends MainFrameObjects {
                 menuItem = new JMenuItem("Edit");
                 menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/edit.png")));
 
-                menuItem.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        openEditJobDialog();
-                    }
-                });
+                menuItem.addActionListener(e -> openEditJobDialog());
                 popupMenu.add(menuItem);
 
                 // up
                 menuItem = new JMenuItem("Up");
                 menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirUp.png")));
 
-                menuItem.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        upwardeJob();
-                    }
-                });
+                menuItem.addActionListener(e -> upwardeJob());
                 popupMenu.add(menuItem);
 
                 // up
                 menuItem = new JMenuItem("Down");
                 menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirDown.png")));
 
-                menuItem.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        downwardJob();
-                    }
-                });
+                menuItem.addActionListener(e -> downwardJob());
                 popupMenu.add(menuItem);
 
                 // copy
                 menuItem = new JMenuItem("Copy");
                 menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyAll.png")));
 
-                menuItem.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        copyJob();
-                    }
-                });
+                menuItem.addActionListener(e -> copyJob());
                 popupMenu.add(menuItem);
 
                 // remove
                 menuItem = new JMenuItem("Remove");
                 menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/deleteFile.png")));
 
-                menuItem.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        removeJob();
-                    }
-                });
+                menuItem.addActionListener(e -> removeJob());
                 popupMenu.add(menuItem);
 
                 popupMenu.addSeparator();
@@ -812,14 +779,11 @@ public class MainFrame extends MainFrameObjects {
                 menuItem = new JMenuItem("Analyze this job now");
                 menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/preview.png")));
 
-                menuItem.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
+                menuItem.addActionListener(e -> {
 
-                        List<Job> list = new ArrayList<>();
-                        list.add(DirSyncPro.getGui().getSelectedJob());
-                        analyze(list);
-                    }
+                    List<Job> list = new ArrayList<>();
+                    list.add(DirSyncPro.getGui().getSelectedJob());
+                    analyze(list);
                 });
                 popupMenu.add(menuItem);
 
@@ -827,13 +791,10 @@ public class MainFrame extends MainFrameObjects {
                 menuItem = new JMenuItem("Synchronize this job now");
                 menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/start.png")));
 
-                menuItem.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        List<Job> list = new ArrayList<>();
-                        list.add(DirSyncPro.getGui().getSelectedJob());
-                        synchronize(list);
-                    }
+                menuItem.addActionListener(e -> {
+                    List<Job> list = new ArrayList<>();
+                    list.add(DirSyncPro.getGui().getSelectedJob());
+                    synchronize(list);
                 });
                 popupMenu.add(menuItem);
 
@@ -875,52 +836,43 @@ public class MainFrame extends MainFrameObjects {
 
             //remove this
             menuItem = new JMenuItem("Remove this from Q");
-            menuItem.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    DirSyncPro.getSync().getSyncQ().delete(sp);
-                    syncQTable.clearSelection();
-                    DirSyncPro.getSync().getSyncQ().syncFilter();
-                    DirSyncPro.getGui().updateSyncQInGUI();
-                    DirSyncPro.getGui().updateStatsinGUI();
-                }
+            menuItem.addActionListener(e -> {
+                DirSyncPro.getSync().getSyncQ().delete(sp);
+                syncQTable.clearSelection();
+                DirSyncPro.getSync().getSyncQ().syncFilter();
+                DirSyncPro.getGui().updateSyncQInGUI();
+                DirSyncPro.getGui().updateStatsinGUI();
             });
             menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cancel.png")));
             popupMenu.add(menuItem);
 
             //remove all
             menuItem = new JMenuItem("Remove all of this mode from Q");
-            menuItem.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    DirSyncPro.getSync().getSyncQ().deleteAllOfKind(sp);
-                    syncQTable.clearSelection();
-                    DirSyncPro.getSync().getSyncQ().syncFilter();
-                    DirSyncPro.getGui().updateSyncQInGUI();
-                    DirSyncPro.getGui().updateStatsinGUI();
-                }
+            menuItem.addActionListener(e -> {
+                DirSyncPro.getSync().getSyncQ().deleteAllOfKind(sp);
+                syncQTable.clearSelection();
+                DirSyncPro.getSync().getSyncQ().syncFilter();
+                DirSyncPro.getGui().updateSyncQInGUI();
+                DirSyncPro.getGui().updateStatsinGUI();
             });
             menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cancel.png")));
             popupMenu.add(menuItem);
 
             //remove selected
             menuItem = new JMenuItem("Remove all selected from Q");
-            menuItem.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    int[] rows = syncQTable.getSelectedRows();
-                    ArrayList<SyncPair> syncPairs = new ArrayList<>();
-                    for (int row : rows) {
-                        syncPairs.add(DirSyncPro.getSync().getSyncQ().get(row));
-                    }
-                    for (int i = 0; i < rows.length; i++) {
-                        DirSyncPro.getSync().getSyncQ().delete(syncPairs.get(i));
-                    }
-                    syncQTable.clearSelection();
-                    DirSyncPro.getSync().getSyncQ().syncFilter();
-                    DirSyncPro.getGui().updateSyncQInGUI();
-                    DirSyncPro.getGui().updateStatsinGUI();
+            menuItem.addActionListener(e -> {
+                int[] rows = syncQTable.getSelectedRows();
+                ArrayList<SyncPair> syncPairs = new ArrayList<>();
+                for (int row : rows) {
+                    syncPairs.add(DirSyncPro.getSync().getSyncQ().get(row));
                 }
+                for (int i = 0; i < rows.length; i++) {
+                    DirSyncPro.getSync().getSyncQ().delete(syncPairs.get(i));
+                }
+                syncQTable.clearSelection();
+                DirSyncPro.getSync().getSyncQ().syncFilter();
+                DirSyncPro.getGui().updateSyncQInGUI();
+                DirSyncPro.getGui().updateStatsinGUI();
             });
             menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cancel.png")));
             popupMenu.add(menuItem);
@@ -951,14 +903,11 @@ public class MainFrame extends MainFrameObjects {
                     }
                     for (final SyncPairStatus sps : spsArray) {
                         menuItem = new JMenuItem(sps.toString());
-                        menuItem.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                DirSyncPro.getSync().getSyncQ().change(sp, sps);
-                                DirSyncPro.getSync().getSyncQ().syncFilter();
-                                DirSyncPro.getGui().updateSyncQInGUI();
-                                DirSyncPro.getGui().updateStatsinGUI();
-                            }
+                        menuItem.addActionListener(e -> {
+                            DirSyncPro.getSync().getSyncQ().change(sp, sps);
+                            DirSyncPro.getSync().getSyncQ().syncFilter();
+                            DirSyncPro.getGui().updateSyncQInGUI();
+                            DirSyncPro.getGui().updateStatsinGUI();
                         });
                         menuItem.setIcon(sps.getIcon());
                         submenu.add(menuItem);
@@ -978,14 +927,11 @@ public class MainFrame extends MainFrameObjects {
                     }
                     for (final SyncPairStatus sps : spsArray) {
                         menuItem = new JMenuItem(sps.toString());
-                        menuItem.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                DirSyncPro.getSync().getSyncQ().changeAll(sp, sps);
-                                DirSyncPro.getSync().getSyncQ().syncFilter();
-                                DirSyncPro.getGui().updateSyncQInGUI();
-                                DirSyncPro.getGui().updateStatsinGUI();
-                            }
+                        menuItem.addActionListener(e -> {
+                            DirSyncPro.getSync().getSyncQ().changeAll(sp, sps);
+                            DirSyncPro.getSync().getSyncQ().syncFilter();
+                            DirSyncPro.getGui().updateSyncQInGUI();
+                            DirSyncPro.getGui().updateStatsinGUI();
                         });
                         menuItem.setIcon(sps.getIcon());
                         submenu.add(menuItem);
@@ -1001,42 +947,39 @@ public class MainFrame extends MainFrameObjects {
                     spsArray.addAll(Arrays.asList(SyncPairStatus.FileDirACopyForced, SyncPairStatus.FileDirBCopyForced, SyncPairStatus.FileDirBIsRedundant, SyncPairStatus.FileDirAIsRedundant));
                     for (final SyncPairStatus sps : spsArray) {
                         menuItem = new JMenuItem(sps.toString());
-                        menuItem.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                int[] rows = syncQTable.getSelectedRows();
-                                ArrayList<SyncPair> syncPairs = new ArrayList<>();
-                                for (int row : rows) {
-                                    syncPairs.add(DirSyncPro.getSync().getSyncQ().get(row));
-                                }
-                                for (int i = 0; i < rows.length; i++) {
-                                    SyncPairStatus spsTmp = sps;
-                                    if (syncPairs.get(i).getFileA().isFile()) {
-                                        switch (sps) {
-                                            case FileDirACopyForced:
-                                                spsTmp = SyncPairStatus.FileACopyForced;
-                                                break;
-                                            case FileDirAIsRedundant:
-                                                spsTmp = SyncPairStatus.FileAIsRedundant;
-                                                break;
-                                        }
-                                    } else {
-                                        switch (sps) {
-                                            case FileDirACopyForced:
-                                                spsTmp = SyncPairStatus.DirACopyForced;
-                                                break;
-                                            case FileDirAIsRedundant:
-                                                spsTmp = SyncPairStatus.DirAIsRedundant;
-                                                break;
-                                        }
-                                    }
-                                    DirSyncPro.getSync().getSyncQ().change(syncPairs.get(i), spsTmp);
-                                }
-                                syncQTable.clearSelection();
-                                DirSyncPro.getSync().getSyncQ().syncFilter();
-                                DirSyncPro.getGui().updateSyncQInGUI();
-                                DirSyncPro.getGui().updateStatsinGUI();
+                        menuItem.addActionListener(e -> {
+                            int[] rows = syncQTable.getSelectedRows();
+                            ArrayList<SyncPair> syncPairs = new ArrayList<>();
+                            for (int row : rows) {
+                                syncPairs.add(DirSyncPro.getSync().getSyncQ().get(row));
                             }
+                            for (int i = 0; i < rows.length; i++) {
+                                SyncPairStatus spsTmp = sps;
+                                if (syncPairs.get(i).getFileA().isFile()) {
+                                    switch (sps) {
+                                        case FileDirACopyForced:
+                                            spsTmp = SyncPairStatus.FileACopyForced;
+                                            break;
+                                        case FileDirAIsRedundant:
+                                            spsTmp = SyncPairStatus.FileAIsRedundant;
+                                            break;
+                                    }
+                                } else {
+                                    switch (sps) {
+                                        case FileDirACopyForced:
+                                            spsTmp = SyncPairStatus.DirACopyForced;
+                                            break;
+                                        case FileDirAIsRedundant:
+                                            spsTmp = SyncPairStatus.DirAIsRedundant;
+                                            break;
+                                    }
+                                }
+                                DirSyncPro.getSync().getSyncQ().change(syncPairs.get(i), spsTmp);
+                            }
+                            syncQTable.clearSelection();
+                            DirSyncPro.getSync().getSyncQ().syncFilter();
+                            DirSyncPro.getGui().updateSyncQInGUI();
+                            DirSyncPro.getGui().updateStatsinGUI();
                         });
                         menuItem.setIcon(sps.getIcon());
                         submenu.add(menuItem);
@@ -1048,42 +991,33 @@ public class MainFrame extends MainFrameObjects {
                         popupMenu.addSeparator();
                         if (file.isDirectory()) {
                             menuItem = new JMenuItem("Open folder");
-                            menuItem.addActionListener(new ActionListener() {
-                                @Override
-                                public void actionPerformed(ActionEvent e) {
-                                    try {
-                                        DesktopTools.launchFile(f.getPath());
-                                    } catch (Exception ex) {
-                                        DirSyncPro.displayError("Could not open the folder!");
-                                    }
+                            menuItem.addActionListener(e -> {
+                                try {
+                                    DesktopTools.launchFile(f.getPath());
+                                } catch (Exception ex) {
+                                    DirSyncPro.displayError("Could not open the folder!");
                                 }
                             });
                             menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirGreen.png")));
                             popupMenu.add(menuItem);
                         } else if (file.isFile()) {
                             menuItem = new JMenuItem("Open");
-                            menuItem.addActionListener(new ActionListener() {
-                                @Override
-                                public void actionPerformed(ActionEvent e) {
-                                    try {
-                                        DesktopTools.launchFile(f.getPath());
-                                    } catch (Exception ex) {
-                                        DirSyncPro.displayError("Could not open the file!");
-                                    }
+                            menuItem.addActionListener(e -> {
+                                try {
+                                    DesktopTools.launchFile(f.getPath());
+                                } catch (Exception ex) {
+                                    DirSyncPro.displayError("Could not open the file!");
                                 }
                             });
                             menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_file.png")));
                             popupMenu.add(menuItem);
 
                             menuItem = new JMenuItem("Open parent folder");
-                            menuItem.addActionListener(new ActionListener() {
-                                @Override
-                                public void actionPerformed(ActionEvent e) {
-                                    try {
-                                        DesktopTools.launchFile(f.getParentFile().getPath());
-                                    } catch (Exception ex) {
-                                        DirSyncPro.displayError("Could not open the parent folder!");
-                                    }
+                            menuItem.addActionListener(e -> {
+                                try {
+                                    DesktopTools.launchFile(f.getParentFile().getPath());
+                                } catch (Exception ex) {
+                                    DirSyncPro.displayError("Could not open the parent folder!");
                                 }
                             });
                             menuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirGreen.png")));
@@ -1100,15 +1034,12 @@ public class MainFrame extends MainFrameObjects {
 
                         final String filename = f.getName();
                         menuItem = new JMenuItem("Pattern: " + filename);
-                        menuItem.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                FilterByPattern filter = new FilterByPattern(sp.getJob(), Filter.Action.Exclude);
-                                filter.setPattern(filename);
-                                filter.setPatternType(f.isFile() ? FilterByPattern.FilterPatternType.File : FilterByPattern.FilterPatternType.Directory);
+                        menuItem.addActionListener(e -> {
+                            FilterByPattern filter = new FilterByPattern(sp.getJob(), Filter.Action.Exclude);
+                            filter.setPattern(filename);
+                            filter.setPatternType(f.isFile() ? FilterByPattern.FilterPatternType.File : FilterByPattern.FilterPatternType.Directory);
 
-                                DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
-                            }
+                            DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
                         });
                         menuItem.setIcon(Filter.Type.ByPattern.getIcon());
                         submenu.add(menuItem);
@@ -1117,15 +1048,12 @@ public class MainFrame extends MainFrameObjects {
                         if (file.isFile() && filename.lastIndexOf(".") > 0) {
                             final String extension = "*" + filename.substring(filename.lastIndexOf("."), filename.length());
                             menuItem = new JMenuItem("Extension: " + extension);
-                            menuItem.addActionListener(new ActionListener() {
-                                @Override
-                                public void actionPerformed(ActionEvent e) {
-                                    FilterByPattern filter = new FilterByPattern(sp.getJob(), Filter.Action.Exclude);
-                                    filter.setPattern(extension);
-                                    filter.setPatternType(FilterByPattern.FilterPatternType.File);
+                            menuItem.addActionListener(e -> {
+                                FilterByPattern filter = new FilterByPattern(sp.getJob(), Filter.Action.Exclude);
+                                filter.setPattern(extension);
+                                filter.setPatternType(FilterByPattern.FilterPatternType.File);
 
-                                    DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
-                                }
+                                DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
                             });
                             menuItem.setIcon(Filter.Type.ByPattern.getIcon());
                             submenu.add(menuItem);
@@ -1141,40 +1069,31 @@ public class MainFrame extends MainFrameObjects {
                         popupMenu.add(submenu);
 
                         menuItem = new JMenuItem("File is edited earlier than " + TextFormatTool.getLastModifiedLong(f));
-                        menuItem.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                FilterByDate filter = new FilterByDate(sp.getJob(), Filter.Action.Exclude);
-                                filter.setDate(new Date(f.lastModified()));
-                                filter.setDateType(FilterDateType.EarlierThan);
-                                DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
-                            }
+                        menuItem.addActionListener(e -> {
+                            FilterByDate filter = new FilterByDate(sp.getJob(), Filter.Action.Exclude);
+                            filter.setDate(new Date(f.lastModified()));
+                            filter.setDateType(FilterDateType.EarlierThan);
+                            DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
                         });
                         menuItem.setIcon(Filter.Type.ByDate.getIcon());
                         submenu.add(menuItem);
 
                         menuItem = new JMenuItem("File is edited exactly on " + TextFormatTool.getLastModifiedLong(f));
-                        menuItem.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                FilterByDate filter = new FilterByDate(sp.getJob(), Filter.Action.Exclude);
-                                filter.setDate(new Date(f.lastModified()));
-                                filter.setDateType(FilterDateType.ExactlyOn);
-                                DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
-                            }
+                        menuItem.addActionListener(e -> {
+                            FilterByDate filter = new FilterByDate(sp.getJob(), Filter.Action.Exclude);
+                            filter.setDate(new Date(f.lastModified()));
+                            filter.setDateType(FilterDateType.ExactlyOn);
+                            DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
                         });
                         menuItem.setIcon(Filter.Type.ByDate.getIcon());
                         submenu.add(menuItem);
 
                         menuItem = new JMenuItem("File is edited later than " + TextFormatTool.getLastModifiedLong(f));
-                        menuItem.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                FilterByDate filter = new FilterByDate(sp.getJob(), Filter.Action.Exclude);
-                                filter.setDate(new Date(f.lastModified()));
-                                filter.setDateType(FilterDateType.LaterThan);
-                                DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
-                            }
+                        menuItem.addActionListener(e -> {
+                            FilterByDate filter = new FilterByDate(sp.getJob(), Filter.Action.Exclude);
+                            filter.setDate(new Date(f.lastModified()));
+                            filter.setDateType(FilterDateType.LaterThan);
+                            DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
                         });
                         menuItem.setIcon(Filter.Type.ByDate.getIcon());
                         submenu.add(menuItem);
@@ -1190,40 +1109,31 @@ public class MainFrame extends MainFrameObjects {
 
                         final long fileSize = f.length();
                         menuItem = new JMenuItem("File Size < " + fileSize + " bytes");
-                        menuItem.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                FilterByFileSize filter = new FilterByFileSize(sp.getJob(), Filter.Action.Exclude);
-                                filter.setValue(fileSize);
-                                filter.setFileSizeType(FilterByFileSize.FilterFileSizeType.SmallerThan);
-                                DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
-                            }
+                        menuItem.addActionListener(e -> {
+                            FilterByFileSize filter = new FilterByFileSize(sp.getJob(), Filter.Action.Exclude);
+                            filter.setValue(fileSize);
+                            filter.setFileSizeType(FilterByFileSize.FilterFileSizeType.SmallerThan);
+                            DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
                         });
                         menuItem.setIcon(Filter.Type.ByFileSize.getIcon());
                         submenu.add(menuItem);
 
                         menuItem = new JMenuItem("File Size = " + fileSize + " bytes");
-                        menuItem.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                FilterByFileSize filter = new FilterByFileSize(sp.getJob(), Filter.Action.Exclude);
-                                filter.setValue(fileSize);
-                                filter.setFileSizeType(FilterByFileSize.FilterFileSizeType.Exactly);
-                                DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
-                            }
+                        menuItem.addActionListener(e -> {
+                            FilterByFileSize filter = new FilterByFileSize(sp.getJob(), Filter.Action.Exclude);
+                            filter.setValue(fileSize);
+                            filter.setFileSizeType(FilterByFileSize.FilterFileSizeType.Exactly);
+                            DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
                         });
                         menuItem.setIcon(Filter.Type.ByFileSize.getIcon());
                         submenu.add(menuItem);
 
                         menuItem = new JMenuItem("File Size > " + fileSize + " bytes");
-                        menuItem.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                FilterByFileSize filter = new FilterByFileSize(sp.getJob(), Filter.Action.Exclude);
-                                filter.setValue(fileSize);
-                                filter.setFileSizeType(FilterByFileSize.FilterFileSizeType.LargerThan);
-                                DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
-                            }
+                        menuItem.addActionListener(e -> {
+                            FilterByFileSize filter = new FilterByFileSize(sp.getJob(), Filter.Action.Exclude);
+                            filter.setValue(fileSize);
+                            filter.setFileSizeType(FilterByFileSize.FilterFileSizeType.LargerThan);
+                            DirSyncPro.getGui().openEditJobDialog(sp.getJob(), filter);
                         });
                         menuItem.setIcon(Filter.Type.ByFileSize.getIcon());
                         submenu.add(menuItem);
@@ -1285,27 +1195,21 @@ public class MainFrame extends MainFrameObjects {
     }
 
     public void updateJobsTree() {
-        Runnable r = new Runnable() {
-            @Override
-            public void run() {
-                int[] rows = {1};
-                if (jobsTree.getSelectionRows() != null && jobsTree.getSelectionRows().length > 0) {
-                    rows = jobsTree.getSelectionRows();
-                }
-                ((JobsTreeModel) jobsTree.getModel()).reload(getJobTree());
-                jobsTree.setSelectionRows(rows);
+        Runnable r = () -> {
+            int[] rows = {1};
+            if (jobsTree.getSelectionRows() != null && jobsTree.getSelectionRows().length > 0) {
+                rows = jobsTree.getSelectionRows();
             }
+            ((JobsTreeModel) jobsTree.getModel()).reload(getJobTree());
+            jobsTree.setSelectionRows(rows);
         };
         SwingUtilities.invokeLater(r);
     }
 
     public void updateJobsTree(final int row) {
-        Runnable r = new Runnable() {
-            @Override
-            public void run() {
-                ((JobsTreeModel) jobsTree.getModel()).reload(getJobTree());
-                jobsTree.setSelectionRow(row);
-            }
+        Runnable r = () -> {
+            ((JobsTreeModel) jobsTree.getModel()).reload(getJobTree());
+            jobsTree.setSelectionRow(row);
         };
         SwingUtilities.invokeLater(r);
     }
@@ -1989,12 +1893,7 @@ public class MainFrame extends MainFrameObjects {
             if (SwingUtilities.isEventDispatchThread()) {
                 updateGUI();
             } else {
-                Runnable r = new Runnable() {
-                    @Override
-                    public void run() {
-                        updateGUI();
-                    }
-                };
+                Runnable r = () -> updateGUI();
                 SwingUtilities.invokeLater(r);
             }
         }
@@ -2003,12 +1902,7 @@ public class MainFrame extends MainFrameObjects {
     public void updateGUIEDT(boolean forced) {
         if (forced) {
             //wait till we may update or two seconds
-            Timer timer = new Timer(2000, new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent evt) {
-                    ((Timer) evt.getSource()).stop();
-                }
-            });
+            Timer timer = new Timer(2000, evt -> ((Timer) evt.getSource()).stop());
             timer.start();
             while (updatingGUI.get() || !timer.isRunning()) {
                 //wait
@@ -2018,12 +1912,7 @@ public class MainFrame extends MainFrameObjects {
             if (SwingUtilities.isEventDispatchThread()) {
                 updateGUI();
             } else {
-                Runnable r = new Runnable() {
-                    @Override
-                    public void run() {
-                        updateGUI();
-                    }
-                };
+                Runnable r = () -> updateGUI();
                 SwingUtilities.invokeLater(r);
             }
         }

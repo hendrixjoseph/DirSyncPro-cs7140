@@ -42,10 +42,7 @@ public class RealtimeListener {
 
     private final WatchService watcher;
     private final Map<WatchKey, Path> keys;
-    private RealtimeChangeListener mListener = new RealtimeChangeListener() {
-        @Override
-        public void change(WatchEvent<Path> e) {
-        }
+    private RealtimeChangeListener mListener = e -> {
     };
     /**
      * Process all events for keys queued to the watcher
@@ -99,11 +96,8 @@ public class RealtimeListener {
     }
 
     public void start() {
-        t = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                startInternal();
-            }
+        t = new Thread(() -> {
+            startInternal();
         });
         t.start();
     }

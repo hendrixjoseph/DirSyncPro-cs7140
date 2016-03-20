@@ -123,23 +123,13 @@ public abstract class LicenseDialogObjects extends javax.swing.JDialog {
         licenseOkButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ok.png"))); // NOI18N
         licenseOkButton.setText("I Accept");
         licenseOkButton.setAlignmentX(0.5F);
-        licenseOkButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                licenseOkButtonActionPerformed(evt);
-            }
-        });
+        licenseOkButton.addActionListener(evt -> licenseOkButtonActionPerformed(evt));
         settingsButtonsPanel.add(licenseOkButton);
 
         licenseCancelButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cancel.png"))); // NOI18N
         licenseCancelButton.setText("I Don't Accept");
         licenseCancelButton.setAlignmentX(0.5F);
-        licenseCancelButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                licenseCancelButtoncancelActionPerformed(evt);
-            }
-        });
+        licenseCancelButton.addActionListener(evt -> licenseCancelButtoncancelActionPerformed(evt));
         settingsButtonsPanel.add(licenseCancelButton);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
