@@ -19,11 +19,10 @@
  */
 package edu.wright.dirsyncpro.gui.mainframe;
 
-import java.io.File;
+import edu.wright.dirsyncpro.Const;
 
 import javax.swing.filechooser.FileFilter;
-
-import edu.wright.dirsyncpro.Const;
+import java.io.File;
 
 /**
  * Shows only files with the configuration extension of DirSyncPro.
@@ -43,8 +42,8 @@ public class DSPFileFilter extends FileFilter {
      * Returns if the given File shall be shown in a file chooser.
      *
      * @param f The File in question.
-     * @return {@code true} if the file shall be shown, {@code false}
-     * else.
+     *
+     * @return {@code true} if the file shall be shown, {@code false} else.
      */
     @Override
     public boolean accept(File f) {

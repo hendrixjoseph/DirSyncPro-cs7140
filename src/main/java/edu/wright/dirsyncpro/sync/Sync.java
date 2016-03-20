@@ -18,15 +18,6 @@
  */
 package edu.wright.dirsyncpro.sync;
 
-import java.awt.Cursor;
-import java.awt.Toolkit;
-import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-
-import javax.swing.JOptionPane;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.Const.IconKey;
 import edu.wright.dirsyncpro.Const.LogLevel;
@@ -42,8 +33,16 @@ import edu.wright.dirsyncpro.tools.WildcardTools;
 import edu.wright.dirsyncpro.xml.ConfigConverter;
 import edu.wright.dirsyncpro.xml.XmlReader;
 import edu.wright.dirsyncpro.xml.XmlWriter;
+
+import javax.swing.JOptionPane;
+import java.awt.Cursor;
+import java.awt.Toolkit;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Represents the synchronization.
@@ -81,50 +80,21 @@ public class Sync {
      * The state the synchronization is in: start, pause, stop, or stopping
      */
     public static final int PAUSE = 2;
-
-    public enum SyncError {
-        NoError(0),
-        Warning(1),
-        ErrorThisJob(1),
-        ErrorOtherJob(1),
-        ErrorFatal(2),
-        Aborted(3);
-
-        private int exitCode;
-
-        SyncError(int ec) {
-            exitCode = ec;
-        }
-
-        public int getExitCode() {
-            return exitCode;
-        }
-    }
-
     private String syncSessionName;
-
     /**
      * The directory definitions of the synchronization
      */
     private List<Job> jobs = new ArrayList<>();
-
     private int mode = SYNCHRONIZATION;
-
     private int state = STOP;
-
     private SyncError error = SyncError.NoError;
-
     private Date syncDate;
-
     private Log log;
     private LogLevel logLevel;
-
     private boolean optionsChanged = false;
     private boolean alreadyAnalyzed = false;
-
     private SyncQ syncQ;
     private ScheduleEngine scheduleEngine;
-
     /**
      * Initializes a new synchronization.
      */
@@ -188,6 +158,7 @@ public class Sync {
      * Loads a configuration.
      *
      * @param filename The name of the file.
+     *
      * @throws Exception
      */
     public void load(String filename) throws Exception {
@@ -208,6 +179,7 @@ public class Sync {
      * Saves a configuration.
      *
      * @param xmlfilename The name of the file.
+     *
      * @throws Exception
      */
     public void save(String xmlfilename) throws Exception {
@@ -215,8 +187,7 @@ public class Sync {
     }
 
     /**
-     * Swaps the source and destination directories in all directory
-     * definitions.
+     * Swaps the source and destination directories in all directory definitions.
      */
     public void swapSrcDst() {
         String temp;
@@ -749,15 +720,15 @@ public class Sync {
             if (DirSyncPro.isGuiMode()) {
                 DirSyncPro.displayError(
                         "Out of memory Error!\n\n"
-                        + "Java (JRE) may have been started with low memroy.\n"
-                        + "Please restart DirSync Pro using the DirSyncPro.exe executable (MS \n"
-                        + "Windows) or by using -Xmx512M flag (java -Xmx512M -jar dirsyncpro.jar)\n"
-                        + "to allocate more memroy for DirSync Pro.\n\n"
-                        + "If this problem keeps happening, please try to reproduce the error and to\n"
-                        + "find out which specific action triggers it; then send a description of\n"
-                        + "this error and the debug information to: " + Const.EMAIL
-                        + "\n\nThanks in advance!\n\n"
-                        + "DirSync Pro will quit now!");
+                                + "Java (JRE) may have been started with low memroy.\n"
+                                + "Please restart DirSync Pro using the DirSyncPro.exe executable (MS \n"
+                                + "Windows) or by using -Xmx512M flag (java -Xmx512M -jar dirsyncpro.jar)\n"
+                                + "to allocate more memroy for DirSync Pro.\n\n"
+                                + "If this problem keeps happening, please try to reproduce the error and to\n"
+                                + "find out which specific action triggers it; then send a description of\n"
+                                + "this error and the debug information to: " + Const.EMAIL
+                                + "\n\nThanks in advance!\n\n"
+                                + "DirSync Pro will quit now!");
             }
         }
         e.printStackTrace(System.err);
@@ -789,10 +760,10 @@ public class Sync {
             if (DirSyncPro.isGuiMode()) {
                 DirSyncPro.displayError(
                         "A fatal error occured:\n" + e + ".\n\n"
-                        + "The program will write debug information to the global log file (if enabled) and exit.\n\n"
-                        + "Please try to reproduce the error and to find out which specific action triggers it;\n"
-                        + "then send a description of this error and the debug information to:\n" + Const.EMAIL
-                        + "\n\nThanks in advance!");
+                                + "The program will write debug information to the global log file (if enabled) and exit.\n\n"
+                                + "Please try to reproduce the error and to find out which specific action triggers it;\n"
+                                + "then send a description of this error and the debug information to:\n" + Const.EMAIL
+                                + "\n\nThanks in advance!");
             }
         }
         e.printStackTrace(System.err);
@@ -808,8 +779,7 @@ public class Sync {
     /**
      * Checks if the mode if the synchronization is analyze.
      *
-     * @return {@code true} if the synchronization is in analyze mode,
-     * {@code false} otherwise.
+     * @return {@code true} if the synchronization is in analyze mode, {@code false} otherwise.
      */
     public boolean isAnalyze() {
         return (mode == ANALYZE);
@@ -837,20 +807,19 @@ public class Sync {
     }
 
     /**
-     * Checks if DirSyncPro is stopping, i.e. if {@code syncState} is set
-     * to {@code STOPPING}.
+     * @param syncState The syncState to set.
+     */
+    public void setState(int syncState) {
+        this.state = syncState;
+    }
+
+    /**
+     * Checks if DirSyncPro is stopping, i.e. if {@code syncState} is set to {@code STOPPING}.
      *
      * @return {@code true} if DirSyncPro is stopping.
      */
     public boolean isStopping() {
         return state == STOPPING;
-    }
-
-    /**
-     * @param syncState The syncState to set.
-     */
-    public void setState(int syncState) {
-        this.state = syncState;
     }
 
     /**
@@ -866,17 +835,17 @@ public class Sync {
     }
 
     /**
-     * @param error The error to set.
-     */
-    public void setError(SyncError error) {
-        this.error = error;
-    }
-
-    /**
      * @return Returns the error.
      */
     public SyncError getError() {
         return error;
+    }
+
+    /**
+     * @param error The error to set.
+     */
+    public void setError(SyncError error) {
+        this.error = error;
     }
 
     /**
@@ -920,6 +889,7 @@ public class Sync {
      * Returns the next postfix numbering index for a new/copied directory
      *
      * @param s The string after which the postfix string should be searched
+     *
      * @return the next postfix integer index
      */
     public int getNextJobPostfixStringIndex(String s) {
@@ -941,8 +911,7 @@ public class Sync {
     }
 
     /**
-     * Copy the options of the given job definitions to ALL job definitions
-     * (including itself).
+     * Copy the options of the given job definitions to ALL job definitions (including itself).
      *
      * @param jobWithOptions The directory definition with the options to copy.
      */
@@ -953,8 +922,7 @@ public class Sync {
     }
 
     /**
-     * Copy the options of the given job definitions to all ENABLED job
-     * definitions (including itself).
+     * Copy the options of the given job definitions to all ENABLED job definitions (including itself).
      *
      * @param jobWithOptions The directory definition with the options to copy.
      */
@@ -1071,5 +1039,24 @@ public class Sync {
 
     public Date getSyncDate() {
         return syncDate;
+    }
+
+    public enum SyncError {
+        NoError(0),
+        Warning(1),
+        ErrorThisJob(1),
+        ErrorOtherJob(1),
+        ErrorFatal(2),
+        Aborted(3);
+
+        private int exitCode;
+
+        SyncError(int ec) {
+            exitCode = ec;
+        }
+
+        public int getExitCode() {
+            return exitCode;
+        }
     }
 }

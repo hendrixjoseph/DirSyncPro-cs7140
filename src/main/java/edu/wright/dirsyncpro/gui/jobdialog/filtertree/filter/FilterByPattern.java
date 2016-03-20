@@ -18,23 +18,18 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 
+import edu.wright.dirsyncpro.Const;
+import edu.wright.dirsyncpro.job.Job;
+
 import java.io.File;
 import java.nio.file.Path;
 import java.util.regex.Pattern;
 
-import edu.wright.dirsyncpro.Const;
-import edu.wright.dirsyncpro.job.Job;
-
 public class FilterByPattern extends Filter {
-
-    public enum FilterPatternType {
-        File, Directory
-    }
 
     private String pattern = "";
     private FilterPatternType patternType;
     private boolean regExp;
-
     public FilterByPattern(Job j, Action a) {
         super(j, a);
         type = Filter.Type.ByPattern;
@@ -67,15 +62,12 @@ public class FilterByPattern extends Filter {
     }
 
     /**
-     * Compares a String to the 'pattern' depending on the operating system (If
-     * the OS is MS Windows the comparison i done case insensitive). This
-     * comparison is used to match file and directory patterns to files and
-     * directories.
+     * Compares a String to the 'pattern' depending on the operating system (If the OS is MS Windows the comparison i
+     * done case insensitive). This comparison is used to match file and directory patterns to files and directories.
      *
      * @param a The string to compare.
      *
-     * @return {@code true} if the strings match, {@code false}
-     * otherwise.
+     * @return {@code true} if the strings match, {@code false} otherwise.
      */
     private boolean matchDependingOnOS(String a) {
         String patternToMatch = pattern;
@@ -150,5 +142,9 @@ public class FilterByPattern extends Filter {
 
     public void setRegExp(boolean regExp) {
         this.regExp = regExp;
+    }
+
+    public enum FilterPatternType {
+        File, Directory
     }
 }

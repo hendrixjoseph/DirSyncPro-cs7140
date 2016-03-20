@@ -52,7 +52,7 @@ public class J7CopierFactory {
     }
 
     public static void copyFileAttributes(FileSystemProvider sfsp, FileSystemProvider dfsp, Path srcPath, Path dstPath,
-            boolean copyDosAttributes, boolean copyPosixPermissions, boolean copyPosixGroupAndOwner) throws IOException {
+                                          boolean copyDosAttributes, boolean copyPosixPermissions, boolean copyPosixGroupAndOwner) throws IOException {
         if (copyDosAttributes) {
             try {
                 DosFileAttributes dosAttr = sfsp.readAttributes(srcPath, DosFileAttributes.class, LinkOption.NOFOLLOW_LINKS);

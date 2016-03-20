@@ -17,14 +17,13 @@
  */
 package edu.wright.dirsyncpro.sync;
 
-import java.io.File;
-
-import javax.swing.Icon;
-import javax.swing.filechooser.FileSystemView;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.Const.SyncPairStatus;
 import edu.wright.dirsyncpro.job.Job;
+
+import javax.swing.Icon;
+import javax.swing.filechooser.FileSystemView;
+import java.io.File;
 
 /**
  * Represents a file pair to synchronize.
@@ -85,8 +84,16 @@ public class SyncPair {
         return fileA;
     }
 
+    public void setFileA(File fileA) {
+        this.fileA = fileA;
+    }
+
     public File getFileB() {
         return fileB;
+    }
+
+    public void setFileB(File fileB) {
+        this.fileB = fileB;
     }
 
     public SyncPairStatus getSyncPairStatus() {
@@ -95,14 +102,6 @@ public class SyncPair {
 
     protected void setSyncPairStatus(Const.SyncPairStatus syncPairStatus) {
         this.syncPairStatus = syncPairStatus;
-    }
-
-    public void setFileA(File fileA) {
-        this.fileA = fileA;
-    }
-
-    public void setFileB(File fileB) {
-        this.fileB = fileB;
     }
 
     public void setSynced() {

@@ -20,19 +20,18 @@
  */
 package edu.wright.dirsyncpro.gui.settingsdialog;
 
-import java.io.File;
-
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.Const.IconKey;
 import edu.wright.dirsyncpro.Const.LogLevel;
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.job.Job;
 import edu.wright.dirsyncpro.tools.GuiTools;
+
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import java.io.File;
 
 /**
  * Contains the GUI methods.
@@ -249,7 +248,7 @@ public class SettingsDialog extends SettingsDialogObjects {
             fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
             /*			if (!defaultLogField.getText().equals("")) {
-				File logFile = new File(defaultLogField.getText());
+                File logFile = new File(defaultLogField.getText());
 				fileChooser.setCurrentDirectory(logFile);
 				if (logFile.isFile()) {
 					fileChooser.setSelectedFile(logFile);

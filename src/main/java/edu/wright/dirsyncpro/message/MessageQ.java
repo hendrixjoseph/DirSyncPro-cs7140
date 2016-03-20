@@ -1,9 +1,9 @@
 package edu.wright.dirsyncpro.message;
 
+import edu.wright.dirsyncpro.Const.IconKey;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import edu.wright.dirsyncpro.Const.IconKey;
 
 /**
  * Represents a queue of Messages.
@@ -73,8 +73,8 @@ public class MessageQ {
     }
 
     /**
-     *
      * @param ik the IconKey
+     *
      * @return boolean if the view filter for ik is set
      */
     public boolean getMessagesQViewFilterMode(IconKey ik) {
@@ -82,9 +82,8 @@ public class MessageQ {
     }
 
     /**
-     *
      * @param ik the IconKey to set the value for
-     * @param b boolean value to set
+     * @param b  boolean value to set
      */
     public void setMessagesQViewFilterMode(IconKey ik, boolean b) {
         viewFilterMode.put(ik, b);

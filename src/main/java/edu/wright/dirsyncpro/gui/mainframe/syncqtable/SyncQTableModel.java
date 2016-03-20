@@ -18,15 +18,14 @@
  */
 package edu.wright.dirsyncpro.gui.mainframe.syncqtable;
 
-import java.io.File;
-
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.TableModel;
-
 import edu.wright.dirsyncpro.Const.SyncPairStatus;
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.sync.SyncPair;
 import edu.wright.dirsyncpro.tools.TextFormatTool;
+
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableModel;
+import java.io.File;
 
 @SuppressWarnings("serial")
 public class SyncQTableModel extends AbstractTableModel {

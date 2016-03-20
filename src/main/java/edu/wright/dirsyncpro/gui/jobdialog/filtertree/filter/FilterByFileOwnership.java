@@ -18,12 +18,12 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 
+import edu.wright.dirsyncpro.job.Job;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.attribute.PosixFileAttributes;
-
-import edu.wright.dirsyncpro.job.Job;
 
 public class FilterByFileOwnership extends Filter {
 

@@ -18,14 +18,13 @@
  */
 package edu.wright.dirsyncpro.gui.mainframe.messagetable;
 
-import java.awt.Component;
+import edu.wright.dirsyncpro.DirSyncPro;
+import edu.wright.dirsyncpro.message.Message;
 
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
-
-import edu.wright.dirsyncpro.DirSyncPro;
-import edu.wright.dirsyncpro.message.Message;
+import java.awt.Component;
 
 public class MessagesTableCellRenderer implements TableCellRenderer {
 

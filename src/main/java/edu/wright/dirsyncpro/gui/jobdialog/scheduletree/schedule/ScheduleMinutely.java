@@ -18,11 +18,11 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule;
 
-import java.util.Calendar;
-import java.util.Date;
-
 import edu.wright.dirsyncpro.job.Job;
 import edu.wright.dirsyncpro.tools.DateTool;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class ScheduleMinutely extends Schedule {
 

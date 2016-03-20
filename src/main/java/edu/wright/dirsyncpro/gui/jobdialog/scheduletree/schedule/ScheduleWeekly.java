@@ -18,15 +18,15 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.Const.WeekDays;
 import edu.wright.dirsyncpro.job.Job;
 import edu.wright.dirsyncpro.tools.DateTool;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 
 public class ScheduleWeekly extends Schedule {
 

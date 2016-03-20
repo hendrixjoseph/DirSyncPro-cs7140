@@ -20,20 +20,17 @@
  */
 package edu.wright.dirsyncpro.message;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import javax.swing.Icon;
-
 import edu.wright.dirsyncpro.Const.IconKey;
 import edu.wright.dirsyncpro.Const.LogLevel;
 
+import javax.swing.Icon;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
- *
  * Represents a file pair to synchronize.
  *
  * @author O. Givi (info@dirsyncpro.org)
- *
  */
 public class Message {
 

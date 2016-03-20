@@ -20,16 +20,15 @@
  */
 package edu.wright.dirsyncpro.gui.updatedialog;
 
-import java.awt.Component;
-
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.Const.IconKey;
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.tools.GuiTools;
 import edu.wright.dirsyncpro.updater.Updater;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import java.awt.Component;
 
 /**
  * Contains the GUI methods.

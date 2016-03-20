@@ -18,14 +18,13 @@
  */
 package edu.wright.dirsyncpro.gui.mainframe.scheduletable;
 
-import java.text.SimpleDateFormat;
-
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.TableModel;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.Schedule;
+
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableModel;
+import java.text.SimpleDateFormat;
 
 @SuppressWarnings("serial")
 public class ScheduleTableModel extends AbstractTableModel {

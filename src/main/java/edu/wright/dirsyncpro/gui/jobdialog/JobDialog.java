@@ -20,25 +20,6 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog;
 
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.Transferable;
-import java.awt.datatransfer.UnsupportedFlavorException;
-import java.awt.dnd.DnDConstants;
-import java.awt.dnd.DropTarget;
-import java.awt.dnd.DropTargetDropEvent;
-import java.io.File;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.List;
-
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.JTree;
-import javax.swing.SwingUtilities;
-import javax.swing.tree.DefaultMutableTreeNode;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.Const.IconKey;
 import edu.wright.dirsyncpro.Const.SymLinkMode;
@@ -59,7 +40,25 @@ import edu.wright.dirsyncpro.gui.swing.MyJTabbedPane;
 import edu.wright.dirsyncpro.job.Job;
 import edu.wright.dirsyncpro.tools.FileTools;
 import edu.wright.dirsyncpro.tools.GuiTools;
+
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JTree;
+import javax.swing.SwingUtilities;
+import javax.swing.tree.DefaultMutableTreeNode;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
+import java.awt.datatransfer.UnsupportedFlavorException;
+import java.awt.dnd.DnDConstants;
+import java.awt.dnd.DropTarget;
+import java.awt.dnd.DropTargetDropEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Contains the GUI methods.
@@ -82,11 +81,9 @@ public class JobDialog extends JobDialogObjects {
     private static final int SCHEDULE_TAB_NO = 8;
     private static final int ADVANCED_TAB_NO = 9;
     private static final int ACTIONS_TAB_NO = 10;
-
+    private static List<Schedule> schedules = new ArrayList<>();
     private FilterDialog filterDialog = new FilterDialog(this);
     private ScheduleDialog scheduleDialog = new ScheduleDialog(this);
-
-    private static List<Schedule> schedules = new ArrayList<>();
     private Job job;
 
     // temp vars for within the gui
@@ -478,8 +475,7 @@ public class JobDialog extends JobDialogObjects {
     }
 
     /**
-     * enables/disables the Edit and Remove buttons for the edit schedules
-     * dialog
+     * enables/disables the Edit and Remove buttons for the edit schedules dialog
      *
      * @param enabled
      */

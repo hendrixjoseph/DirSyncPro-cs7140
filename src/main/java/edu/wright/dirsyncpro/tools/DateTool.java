@@ -18,10 +18,10 @@
  */
 package edu.wright.dirsyncpro.tools;
 
+import edu.wright.dirsyncpro.Const;
+
 import java.util.Calendar;
 import java.util.Date;
-
-import edu.wright.dirsyncpro.Const;
 
 public class DateTool {
 
@@ -30,17 +30,16 @@ public class DateTool {
     }
 
     /**
-     * Compares the given dates. Dates are only accurate to the second;
-     * therefore file dates are divided by 1000 and truncated (converting
-     * milliseconds to seconds).
+     * Compares the given dates. Dates are only accurate to the second; therefore file dates are divided by 1000 and
+     * truncated (converting milliseconds to seconds).
      *
-     * @param fAD date 1
-     * @param fBD date 2
-     * @param gran Granularity
+     * @param fAD      date 1
+     * @param fBD      date 2
+     * @param gran     Granularity
      * @param idlsgran whether to ignore the daylight saving granularity
-     * @return int {@code -1} if the first file is newer than the second
-     * one; int {@code 0} if the dates are the same; int {@code 1} if
-     * the second date is newer than the first one.
+     *
+     * @return int {@code -1} if the first file is newer than the second one; int {@code 0} if the dates are the same;
+     * int {@code 1} if the second date is newer than the first one.
      */
     public static int cmpDates(long fAD, long fBD, int gran, boolean idlsgran) {
         long srcLastModified, dstLastModified, diff, offset;

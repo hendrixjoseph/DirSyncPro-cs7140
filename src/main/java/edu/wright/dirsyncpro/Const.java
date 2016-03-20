@@ -19,13 +19,10 @@
  */
 package edu.wright.dirsyncpro;
 
-import java.awt.Color;
-import java.util.Date;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-
-import edu.wright.dirsyncpro.tools.TimeTool;
+import java.awt.Color;
+import java.util.Date;
 
 /**
  * Contains the constants used in DirSyncPro.
@@ -34,29 +31,160 @@ import edu.wright.dirsyncpro.tools.TimeTool;
  */
 public class Const {
 
-    //Don't let anyone instantiate this class.
-    private Const() {
-    }
-
     /**
      * The version number.
      */
     public static final String VERSION = "1.51";
-
     /**
      * The program name
      */
     public static final String PROGRAM = "DirSync Pro " + VERSION;
-
     public static final String dspHomeDir = ".DirSyncPro";
-
     public static final int DEFAULT_GRANULARITY_TOLERANCE = 2;
-
     /**
      * The name of the properties file.
      */
     public static final String PROPERTIES_FILENAME = "dirsyncpro.properties";
+    public static final int DefaultRealtimeSyncDelayValue = 60;
+    public static final String DefaultDateFormat = "dd-MM-yyyy HH:mm";
+    public static final String DefaultDateShortFormat = "dd-MM-yy HH:mm";
+    public static final String DefaultDateLongFormat = "dd-MM-yyyy HH:mm:ss";
+    public static final String DefaultTimeFormat = "HH:mm";
+    public static final Date NonDate = new Date(0);
+    public static final CompareMode COMPARE_MODE_DEFAULT = CompareMode.CompareFileSizesDates;
+    /**
+     * Default include/excludes
+     */
+    public static final String ALL_INCLUSIVE_PATTERN = "*";
+    public static final String DEFAULT_INCLUDE_DIR = ALL_INCLUSIVE_PATTERN;
+    public static final String DEFAULT_EXCLUDE_DIR = "";
+    public static final String DEFAULT_INCLUDE_FILE = ALL_INCLUSIVE_PATTERN;
+    public static final String DEFAULT_EXCLUDE_FILE = "";
+    public static final SyncConflictResolutionMode BIDIR_SYNC_CONFLICT_RESOLUTION_MODE_DEFAULT = SyncConflictResolutionMode.CopyModified;
+    public static final SyncConflictResolutionMode MONODIR_SYNC_CONFLICT_RESOLUTION_MODE_DEFAULT = SyncConflictResolutionMode.WarnUser;
+    /**
+     * The file extension for config files.
+     */
+    public static final String SYNC_FILE_EXTENSION = "dsc";
+    public static final String LOG_FILE_EXTENSION = "log";
+    /**
+     * The DirA &amp; DirB file extension for conflicting modified/larger files in bidirectional sync.
+     */
+    public static final String DIR_A_RENAME_FILE_EXTENSION = "DirA";
+    public static final String DIR_B_RENAME_FILE_EXTENSION = "DirB";
+    public static final String DEFAULT_SYNC_SESSION_NAME = "DirSyncProJobset";
+    public static final String DEFAULT_GLOBALLOG_FILENAME = "DirSyncPro" + "." + LOG_FILE_EXTENSION;
+    public static final String DEFAULT_JOBSET_NAME = "Job";
+    /**
+     * The number of milliseconds to sleep while pause.
+     */
+    public static final long PAUSE = 500;
+    /**
+     * true if the operating system is MS Windows, false otherwise.
+     */
+    public static final boolean OS_IS_WINDOWS = System.getProperty("os.name").toLowerCase().startsWith("windows");
+    public static final String shutDownCommand = (OS_IS_WINDOWS ? "shutdown.exe -s -t 0" : "shutdown -h now");
+    /**
+     * The copyright message.
+     */
+    public static final String COPYRIGHT = "DirSync Pro is designed and developed by O. Givi.\n"
+            + "DirSync Pro is based on DirSync (Directory Synchronize) by E. Gerber and F. Gerbig.\n\n"
+            + "(C) 2008-2014 O. Givi\n"
+            + "(C) 2002-2008 by E. Gerber, F. Gerbig and T. Groetzner.\n"
+            + "Thanks to P. Kolacz, M.V. Beloshapkin, M. Lux, G. Noorlander, T. Brixel, D. Caravana, R. Williams\n"
+            + "and D. Petre for the contributions";
+    /**
+     * The License message
+     */
+    public static final String LICENSE = "This program comes with ABSOLUTELY NO WARRANTY; It is licensed according to GPL v3.\n"
+            + "By using this program you ACCEPT the license terms.\nPlease read the 'License.txt' file accompanying this program.";
+    /**
+     * Contacts
+     */
+    public static final String HOMEPAGE = "http://www.dirsyncpro.org";
+    public static final String DONATEURL = "http://www.dirsyncpro.org/donate.html";
+    public static final String EMAIL = "info@dirsyncpro.org";
+    public static final String TWITTER = "@DirSyncPro";
+    /**
+     * The update script location (URL).
+     */
+    public static final String UPDATEURL = "http://update.dirsyncpro.org/";
+    /**
+     * The "about" message.
+     */
+    public static final String MESSAGE
+            = "Homepage: " + HOMEPAGE + "\n"
+            + "Contact:  " + EMAIL + "\n"
+            + "Twitter:  " + TWITTER + "\n\n"
+            + "This program is governed by the GNU License (GPL) either version 3 of the License, or any later version.\n"
+            + "Most icons are from the Kommon Desktop Environment (KDE) released under the GPL. Please consult the\n"
+            + "License.txt file or the Manual for information on the license. For more help on DirSync Pro please consult\n"
+            + "the manual or take a look at the homepage.\n\n"
+            + "If this program is good for your purpose please:\n"
+            + " 1) talk about DirSync Pro on the internet (facebook, blogs, forums, ...), dig it, twit it, etc.\n"
+            + " 2) consider a donation, any amount you would like, as a gesture to let us keep developing this program\n"
+            + "    (please visit: " + HOMEPAGE + ").";
+    /**
+     * The default name for the backup folder.
+     */
+    public static final String BACKUP_FOLDER_NAME = ".DirSyncProBackup";
+    /**
+     * The maximum number of backup versions of a single file to keep. Be careful to increase this above 98, because the
+     * backup filename only has a two digit version.
+     */
+    public static final int BACKUP_MAX_NUMBER = 50;
+    public static final int OPEN_RECENT_NUMBER_OF_DOCS = 8;
+    /**
+     * The help message.
+     */
+    public static String HELP = MESSAGE + "\n\n" + "For help on using DirectorySynchronize Pro try '" + DirSyncPro.getOptionsMarker() + "usage'.\n";
+    public static String manualFilename = "Manual.pdf";
+    /**
+     * The usage message.
+     */
+    public static String USAGE = "Usage:\n'dirsyncpro ["
+            + DirSyncPro.getOptionsMarker()
+            + "help] [" + DirSyncPro.getOptionsMarker()
+            + "usage] [" + DirSyncPro.getOptionsMarker()
+            + "sync] [" + DirSyncPro.getOptionsMarker()
+            + "analyze] [" + DirSyncPro.getOptionsMarker()
+            + "schedule] [" + DirSyncPro.getOptionsMarker()
+            + "iconify] [" + DirSyncPro.getOptionsMarker()
+            + "quit] [" + DirSyncPro.getOptionsMarker()
+            + "nogui] <configfile>'\n"
+            + "  "
+            + DirSyncPro.getOptionsMarker()
+            + "help      Display help on homepage, contact, and license.\n"
+            + "  "
+            + DirSyncPro.getOptionsMarker()
+            + "usage     Displays this screen.\n"
+            + "  "
+            + DirSyncPro.getOptionsMarker()
+            + "sync      Starts a synchronization if a configuration file is specified.\n"
+            + "  "
+            + DirSyncPro.getOptionsMarker()
+            + "analyze   Starts a analyze rather than a synchronization if a configuration file is specified.\n"
+            + "  "
+            + DirSyncPro.getOptionsMarker()
+            + "schedule  Starts the schedule engine as soon as the GUI is started.\n"
+            + "  "
+            + DirSyncPro.getOptionsMarker()
+            + "iconify   Minimizes the Gui to the tray (if available) on start up.\n"
+            + "  "
+            + DirSyncPro.getOptionsMarker()
+            + "quit      Quits the program after the analyze or the synchronization.\n"
+            + "  "
+            + DirSyncPro.getOptionsMarker()
+            + "nogui     Start DirectorySynchronize Pro in console mode and start synchronization.\n\n"
+            + "Usage examples:\n" + "  * Start in GUI mode:\n"
+            + "      dirsyncpro\n" + "  * Start synchronization in GUI mode and quit afterwards:\n"
+            + "      dirsyncpro " + DirSyncPro.getOptionsMarker() + "sync " + DirSyncPro.getOptionsMarker() + "quit <configfile>\n"
+            + "  * Start synchronization in command line mode:\n"
+            + "      dirsyncpro " + DirSyncPro.getOptionsMarker() + "sync " + DirSyncPro.getOptionsMarker() + "nogui <configfile>\n";
 
+    //Don't let anyone instantiate this class.
+    private Const() {
+    }
     public enum Properties {
         SystemLookAndFeel("dirsyncpro.gui.systemlookandfeel", "true"),
         LicenseAccepted("dirsyncpro.licenseaccepted", ""),
@@ -94,23 +222,12 @@ public class Const {
             return prDefault;
         }
     }
-
-    public static final int DefaultRealtimeSyncDelayValue = 60;
-    public static final String DefaultDateFormat = "dd-MM-yyyy HH:mm";
-    public static final String DefaultDateShortFormat = "dd-MM-yy HH:mm";
-    public static final String DefaultDateLongFormat = "dd-MM-yyyy HH:mm:ss";
-    public static final String DefaultTimeFormat = "HH:mm";
-
     public enum WeekDays {
         Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
     }
-
     public enum Months {
         January, February, March, April, May, June, July, August, September, October, November, December
     }
-
-    public static final Date NonDate = new Date(0);
-
 
     /**
      * Sync Mode
@@ -127,15 +244,14 @@ public class Const {
         ABCustom("Synchronize A -> B (custom)", "/icons/syncModeAB16x16.png"),
         BACustom("Synchronize B -> A (custom)", "/icons/syncModeBA16x16.png");
 
+        private String name;
+        private String literal;
+        private Icon icon;
         SyncMode(String name, String iconFile) {
             this.name = name;
             this.icon = new ImageIcon(Const.class.getResource(iconFile));
             this.literal = super.toString();
         }
-
-        private String name;
-        private String literal;
-        private Icon icon;
 
         @Override
         public String toString() {
@@ -183,8 +299,6 @@ public class Const {
         CompareFileSizesDates, CompareFileSizesDatesMetaData, CompareFileContents
     }
 
-    public static final CompareMode COMPARE_MODE_DEFAULT = CompareMode.CompareFileSizesDates;
-
     /**
      * Copy Mode
      */
@@ -198,17 +312,17 @@ public class Const {
         DeleteDirs("Delete unnecessary dirs after synchronization"),
         ConflictFiles("Conflict files"); //
 
+        private String name;
+
         CopyMode(String name) {
             this.name = name;
         }
-        private String name;
 
         @Override
         public String toString() {
             return name;
         }
     }
-
     public enum SymLinkMode {
         SkipSymLinks("Skip symbolic links"),
         CopySymLinks("Copy Symbolic links"),
@@ -334,23 +448,11 @@ public class Const {
     }
 
     /**
-     * Default include/excludes
-     */
-    public static final String ALL_INCLUSIVE_PATTERN = "*";
-    public static final String DEFAULT_INCLUDE_DIR = ALL_INCLUSIVE_PATTERN;
-    public static final String DEFAULT_EXCLUDE_DIR = "";
-    public static final String DEFAULT_INCLUDE_FILE = ALL_INCLUSIVE_PATTERN;
-    public static final String DEFAULT_EXCLUDE_FILE = "";
-
-    /**
      * Conflict mode "Copy Modified" for the Bidirectional Synchronization
      */
     public enum SyncConflictResolutionMode {
         CopyModified, CopyLarger, CopyLargerAndModified, CopyRenamed, WarnUser, Skip, CopySource
     }
-
-    public static final SyncConflictResolutionMode BIDIR_SYNC_CONFLICT_RESOLUTION_MODE_DEFAULT = SyncConflictResolutionMode.CopyModified;
-    public static final SyncConflictResolutionMode MONODIR_SYNC_CONFLICT_RESOLUTION_MODE_DEFAULT = SyncConflictResolutionMode.WarnUser;
 
     /**
      * log level
@@ -358,7 +460,6 @@ public class Const {
     public enum LogLevel {
         Minimal, Moderate, Excessive
     }
-
     public enum FileType {
         DSC("dsc", "DirSync Pro config file"),
         SH("sh", "bash script"),
@@ -382,146 +483,11 @@ public class Const {
     }
 
     /**
-     * The file extension for config files.
-     */
-    public static final String SYNC_FILE_EXTENSION = "dsc";
-    public static final String LOG_FILE_EXTENSION = "log";
-
-    /**
-     * The DirA &amp; DirB file extension for conflicting modified/larger files in
-     * bidirectional sync.
-     */
-    public static final String DIR_A_RENAME_FILE_EXTENSION = "DirA";
-    public static final String DIR_B_RENAME_FILE_EXTENSION = "DirB";
-
-    public static final String DEFAULT_SYNC_SESSION_NAME = "DirSyncProJobset";
-    public static final String DEFAULT_GLOBALLOG_FILENAME = "DirSyncPro" + "." + LOG_FILE_EXTENSION;
-    public static final String DEFAULT_JOBSET_NAME = "Job";
-
-    /**
-     * The number of milliseconds to sleep while pause.
-     */
-    public static final long PAUSE = 500;
-
-    /**
-     * true if the operating system is MS Windows, false otherwise.
-     */
-    public static final boolean OS_IS_WINDOWS = System.getProperty("os.name").toLowerCase().startsWith("windows");
-
-    public static final String shutDownCommand = (OS_IS_WINDOWS ? "shutdown.exe -s -t 0" : "shutdown -h now");
-
-    /**
-     * The copyright message.
-     */
-    public static final String COPYRIGHT = "DirSync Pro is designed and developed by O. Givi.\n"
-            + "DirSync Pro is based on DirSync (Directory Synchronize) by E. Gerber and F. Gerbig.\n\n"
-            + "(C) 2008-2014 O. Givi\n"
-            + "(C) 2002-2008 by E. Gerber, F. Gerbig and T. Groetzner.\n"
-            + "Thanks to P. Kolacz, M.V. Beloshapkin, M. Lux, G. Noorlander, T. Brixel, D. Caravana, R. Williams\n"
-            + "and D. Petre for the contributions";
-    /**
-     * The License message
-     */
-    public static final String LICENSE = "This program comes with ABSOLUTELY NO WARRANTY; It is licensed according to GPL v3.\n"
-            + "By using this program you ACCEPT the license terms.\nPlease read the 'License.txt' file accompanying this program.";
-
-    /**
-     * Contacts
-     */
-    public static final String HOMEPAGE = "http://www.dirsyncpro.org";
-    public static final String DONATEURL = "http://www.dirsyncpro.org/donate.html";
-    public static final String EMAIL = "info@dirsyncpro.org";
-    public static final String TWITTER = "@DirSyncPro";
-
-    /**
-     * The update script location (URL).
-     */
-    public static final String UPDATEURL = "http://update.dirsyncpro.org/";
-
-    /**
-     * The "about" message.
-     */
-    public static final String MESSAGE
-            = "Homepage: " + HOMEPAGE + "\n"
-            + "Contact:  " + EMAIL + "\n"
-            + "Twitter:  " + TWITTER + "\n\n"
-            + "This program is governed by the GNU License (GPL) either version 3 of the License, or any later version.\n"
-            + "Most icons are from the Kommon Desktop Environment (KDE) released under the GPL. Please consult the\n"
-            + "License.txt file or the Manual for information on the license. For more help on DirSync Pro please consult\n"
-            + "the manual or take a look at the homepage.\n\n"
-            + "If this program is good for your purpose please:\n"
-            + " 1) talk about DirSync Pro on the internet (facebook, blogs, forums, ...), dig it, twit it, etc.\n"
-            + " 2) consider a donation, any amount you would like, as a gesture to let us keep developing this program\n"
-            + "    (please visit: " + HOMEPAGE + ").";
-
-    /**
-     * The help message.
-     */
-    public static String HELP = MESSAGE + "\n\n" + "For help on using DirectorySynchronize Pro try '" + DirSyncPro.getOptionsMarker() + "usage'.\n";
-    public static String manualFilename = "Manual.pdf";
-
-    /**
-     * The usage message.
-     */
-    public static String USAGE = "Usage:\n'dirsyncpro ["
-            + DirSyncPro.getOptionsMarker()
-            + "help] [" + DirSyncPro.getOptionsMarker()
-            + "usage] [" + DirSyncPro.getOptionsMarker()
-            + "sync] [" + DirSyncPro.getOptionsMarker()
-            + "analyze] [" + DirSyncPro.getOptionsMarker()
-            + "schedule] [" + DirSyncPro.getOptionsMarker()
-            + "iconify] [" + DirSyncPro.getOptionsMarker()
-            + "quit] [" + DirSyncPro.getOptionsMarker()
-            + "nogui] <configfile>'\n"
-            + "  "
-            + DirSyncPro.getOptionsMarker()
-            + "help      Display help on homepage, contact, and license.\n"
-            + "  "
-            + DirSyncPro.getOptionsMarker()
-            + "usage     Displays this screen.\n"
-            + "  "
-            + DirSyncPro.getOptionsMarker()
-            + "sync      Starts a synchronization if a configuration file is specified.\n"
-            + "  "
-            + DirSyncPro.getOptionsMarker()
-            + "analyze   Starts a analyze rather than a synchronization if a configuration file is specified.\n"
-            + "  "
-            + DirSyncPro.getOptionsMarker()
-            + "schedule  Starts the schedule engine as soon as the GUI is started.\n"
-            + "  "
-            + DirSyncPro.getOptionsMarker()
-            + "iconify   Minimizes the Gui to the tray (if available) on start up.\n"
-            + "  "
-            + DirSyncPro.getOptionsMarker()
-            + "quit      Quits the program after the analyze or the synchronization.\n"
-            + "  "
-            + DirSyncPro.getOptionsMarker()
-            + "nogui     Start DirectorySynchronize Pro in console mode and start synchronization.\n\n"
-            + "Usage examples:\n" + "  * Start in GUI mode:\n"
-            + "      dirsyncpro\n" + "  * Start synchronization in GUI mode and quit afterwards:\n"
-            + "      dirsyncpro " + DirSyncPro.getOptionsMarker() + "sync " + DirSyncPro.getOptionsMarker() + "quit <configfile>\n"
-            + "  * Start synchronization in command line mode:\n"
-            + "      dirsyncpro " + DirSyncPro.getOptionsMarker() + "sync " + DirSyncPro.getOptionsMarker() + "nogui <configfile>\n";
-
-    /**
      * Display selection constants
      */
     public enum Display {
         ALL, COPY_NEW, COPY_MODIFIED, DELETED, ERROR
     }
-
-    /**
-     * The default name for the backup folder.
-     */
-    public static final String BACKUP_FOLDER_NAME = ".DirSyncProBackup";
-    /**
-     * The maximum number of backup versions of a single file to keep. Be
-     * careful to increase this above 98, because the backup filename only has a
-     * two digit version.
-     */
-    public static final int BACKUP_MAX_NUMBER = 50;
-
-    public static final int OPEN_RECENT_NUMBER_OF_DOCS = 8;
 
     public enum IconKey {
         Sync("/icons/icon_sync.png", new Color(255, 255, 255)),

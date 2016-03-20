@@ -20,20 +20,6 @@
  */
 package edu.wright.dirsyncpro.job;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.FileVisitOption;
-import java.nio.file.FileVisitResult;
-import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
-import java.nio.file.Path;
-import java.nio.file.SimpleFileVisitor;
-import java.nio.file.WatchEvent;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
-import java.util.EnumSet;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.Const.IconKey;
 import edu.wright.dirsyncpro.Const.SymLinkMode;
@@ -56,11 +42,24 @@ import edu.wright.dirsyncpro.tools.Log;
 import edu.wright.dirsyncpro.tools.TextFormatTool;
 import edu.wright.dirsyncpro.tools.WildcardTools;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.FileVisitOption;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.WatchEvent;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
+import java.util.EnumSet;
+
 /**
- * Represents a directory (source and destination) to be synchronized. Contains
- * the source and destination path to sync, whether the sync will be done
- * recursive, which file extensions to fileInclude and fileExclude, if and where
- * to log what's being done and how the synchronization should be done.
+ * Represents a directory (source and destination) to be synchronized. Contains the source and destination path to sync,
+ * whether the sync will be done recursive, which file extensions to fileInclude and fileExclude, if and where to log
+ * what's being done and how the synchronization should be done.
  *
  * @author E. Gerber, F. Gerbig, O. Givi (info@dirsyncpro.org)
  */
@@ -82,6 +81,31 @@ public class Job extends JobObject implements Cloneable {
     public Job(boolean enabled) {
         this();
         this.setEnabled(enabled);
+    }
+
+    /**
+     * Changes the path of the given file from the sorce path to the destination path.
+     *
+     * @param srcFile The file in the source directory.
+     * @param srcPath The source path.
+     * @param dstPath The destination path.
+     *
+     * @return File The file with the destination path.
+     */
+    private static Path replacePath(Path srcFile, Path srcPath, Path dstPath) {
+
+        // get actual path
+        String path = srcFile.toAbsolutePath().toString();
+        // delete source path from actual path
+        String cut = path.substring(srcPath.toAbsolutePath().toString().length(), path.length());
+
+        if (!cut.startsWith(File.separator)) {
+            cut = File.separator + cut;
+        }
+        // add destination path with remaining actual path
+        String newPath = dstPath.toAbsolutePath().toString() + cut;
+
+        return new File(newPath).toPath();
     }
 
     @Override
@@ -189,109 +213,6 @@ public class Job extends JobObject implements Cloneable {
         this.filterSet = new FilterSet();
     }
 
-    /**
-     * Changes the path of the given file from the sorce path to the destination
-     * path.
-     *
-     * @param srcFile The file in the source directory.
-     * @param srcPath The source path.
-     * @param dstPath The destination path.
-     * @return File The file with the destination path.
-     */
-    private static Path replacePath(Path srcFile, Path srcPath, Path dstPath) {
-
-        // get actual path
-        String path = srcFile.toAbsolutePath().toString();
-        // delete source path from actual path
-        String cut = path.substring(srcPath.toAbsolutePath().toString().length(), path.length());
-
-        if (!cut.startsWith(File.separator)) {
-            cut = File.separator + cut;
-        }
-        // add destination path with remaining actual path
-        String newPath = dstPath.toAbsolutePath().toString() + cut;
-
-        return new File(newPath).toPath();
-    }
-
-    private class DSPFileVisitor extends SimpleFileVisitor<Path> {
-
-        FilterSet filters;
-        boolean ab;
-        int depth;
-        boolean deletionAnalysis;
-
-        public DSPFileVisitor(FilterSet filters, boolean ab) {
-            super();
-            this.filters = filters;
-            this.ab = ab;
-            this.depth = -1;
-        }
-
-        @Override
-        public FileVisitResult visitFile(Path file, BasicFileAttributes attr) {
-            if (DirSyncPro.getSync().isStopping()) {
-                return FileVisitResult.TERMINATE;
-            }
-            if (filters.matchesAnyIncludeFilter(file)) {
-                if (filters.matchesAnyExcludeFilter(file)) {
-                    analyzeFilePair(file, ab, deletionAnalysis, true);
-                } else {
-                    analyzeFilePair(file, ab, deletionAnalysis, false);
-                    DirSyncPro.getSync().getSyncQ().addTotalAnalyzedFiles(1);
-                }
-            }
-            return FileVisitResult.CONTINUE;
-        }
-
-        @Override
-        public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) {
-            depth++;
-            if (DirSyncPro.getSync().isStopping()) {
-                return FileVisitResult.TERMINATE;
-            }
-            if (depth == 0) {
-                //skip the root folders (src/dst)
-                return FileVisitResult.CONTINUE;
-            } else if (filters.matchesAnyIncludeFilter(dir)) {
-                if (filters.matchesAnyExcludeFilter(dir)) {
-                    analyzeFilePair(dir, ab, deletionAnalysis, true);
-                    return FileVisitResult.SKIP_SUBTREE;
-                } else {
-                    analyzeFilePair(dir, ab, deletionAnalysis, false);
-                    DirSyncPro.getSync().getSyncQ().addTotalAnalyzedDirs(1);
-                    return FileVisitResult.CONTINUE;
-                }
-            } else {
-                return FileVisitResult.SKIP_SUBTREE;
-            }
-        }
-
-        @Override
-        public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
-            if (exc != null) {
-                getLog().printMinimal("Unable to analyze: " + dir.toAbsolutePath() + " (" + exc.getMessage() + ")", IconKey.Error);
-            }
-            return FileVisitResult.CONTINUE;
-        }
-
-        @Override
-        public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
-            if (exc != null) {
-                getLog().printMinimal("Unable to analyze: " + file.toAbsolutePath() + " (" + exc.getMessage() + ")", IconKey.Error);
-            }
-            return FileVisitResult.CONTINUE;
-        }
-
-        public void setDeletionAnalysis(boolean deletionAnalysis) {
-            this.deletionAnalysis = deletionAnalysis;
-        }
-
-        public void resetDepth() {
-            this.depth = -1;
-        }
-    }
-
     private SyncPair analyzeSyncPairStatus(File fA, File fB, boolean ab, boolean deletionAnalysis, boolean excluded) {
         long fADate;
         long fBDate;
@@ -356,199 +277,199 @@ public class Job extends JobObject implements Cloneable {
                 return null;
             }
         } else // !deletionAnalysis
-        if (excluded) {
-            // !deletionAnalysis && excluded
-            //This file is being excluded (during copy analysis). Delete it if excluded files/dirs are intended to be deleted.
-            boolean isDeleteExcluded = getSyncMode() != SyncMode.BIMirror && getFilterSet().hasExcludeFilters();
-            if (isDeleteExcluded && !fAIsDir && fAEx && isDeleteExcludedFilesA()) {
-                getLog().printModerate("Delete excluded file from Dir A: " + fA.getAbsolutePath(), IconKey.Deleted);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileAIsRedundant, ab, this);
-            }
-            if (isDeleteExcluded && fAIsDir && fAEx && isDeleteExcludedDirsA()) {
-                getLog().printModerate("Delete excluded dir from Dir A: " + fA.getAbsolutePath(), IconKey.Deleted);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirAIsRedundant, ab, this);
-            }
-            if (isDeleteExcluded && !fBIsDir && fBEx && isDeleteExcludedFilesB()) {
-                getLog().printModerate("Delete excluded file from Dir B: " + fB.getAbsolutePath(), IconKey.Deleted);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileBIsRedundant, ab, this);
-            }
-            if (isDeleteExcluded && fBIsDir && fBEx && isDeleteExcludedDirsB()) {
-                getLog().printModerate("Delete excluded dir from Dir B: " + fB.getAbsolutePath(), IconKey.Deleted);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirBIsRedundant, ab, this);
-            }
-        } else {
-            // !deletionAnalysis && !!excluded
-            //copy analysis
-            getLog().printExcessive("Copy analysis info A: " + fA.getAbsolutePath() + " [" + (fAEx ? "exists" : "does not exist") + (fAIsDir ? ", dir" : ", file") + ", " + TextFormatTool.getLastModifiedLong(fADate) + ", " + fASize + " bytes]", IconKey.Info);
-            getLog().printExcessive("Copy analysis info B: " + fB.getAbsolutePath() + " [" + (fBEx ? "exists" : "does not exist") + (fBIsDir ? ", dir" : ", file") + ", " + TextFormatTool.getLastModifiedLong(fBDate) + ", " + fBSize + " bytes]", IconKey.Info);
-
-            if (ab && fAEx && fAIsDir && isCopyAll()) {
-                getLog().printModerate("Copy forced: " + fA.getAbsolutePath(), IconKey.DirA);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirACopyForced, ab, this);
-            }
-
-            if (!ab && fBEx && fBIsDir && isCopyAll()) {
-                getLog().printModerate("Copy forced: " + fB.getAbsolutePath(), IconKey.DirB);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirBCopyForced, ab, this);
-            }
-            if (ab && fAEx && !fAIsDir && isCopyAll()) {
-                getLog().printModerate("Copy forced: " + fA.getAbsolutePath(), IconKey.CopyForced);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileACopyForced, ab, this);
-            }
-
-            if (!ab && fBEx && !fBIsDir && isCopyAll()) {
-                getLog().printModerate("Copy forced: " + fB.getAbsolutePath(), IconKey.CopyForced);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileBCopyForced, ab, this);
-            }
-
-            if (ab && fAEx && !fBEx && fAIsDir && isCopyNew()) {
-                getLog().printModerate("New: " + fA.getAbsolutePath(), IconKey.DirA);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirAIsNew, ab, this);
-            }
-
-            if (!ab && !fAEx && fBEx && fBIsDir && isCopyNew()) {
-                getLog().printModerate("New: " + fB.getAbsolutePath(), IconKey.DirB);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirBIsNew, ab, this);
-            }
-
-            if (ab && fAEx && !fBEx && isCopyNew()) {
-                getLog().printModerate("New: " + fA.getAbsolutePath(), IconKey.CopyNew);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileAIsNew, ab, this);
-            }
-
-            if (!ab && !fAEx && fBEx && isCopyNew()) {
-                getLog().printModerate("New: " + fB.getAbsolutePath(), IconKey.CopyNew);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileBIsNew, ab, this);
-            }
-
-            assert fAEx && fBEx;
-
-            boolean fileASameSizefileB = (fASize == fBSize);
-            boolean fileAIsLarger = (fASize > fBSize);
-            boolean fileBIsLarger = (fASize < fBSize);
-
-            int modCompare = DateTool.cmpDates(fADate, fBDate, getGranularity(), isIgnoreDaylightSavingGranularity());
-
-            boolean fileASameDatefileB = (modCompare == 0);
-            boolean fileAIsModified = (modCompare == -1);
-            boolean fileBIsModified = (modCompare == 1);
-
-            if (fileASameSizefileB && getSyncCompareMode() == Const.CompareMode.CompareFileContents && fA.isFile() && fB.isFile()) {
-                try {
-                    modCompare = FileTools.checksumIdentical(fA, fB) ? 0 : 1;
-                } catch (FileNotFoundException we) {
-                    getLog().printMinimal("Warning: " + we.getMessage(), IconKey.Warning);
-                    DirSyncPro.getSync().setError(SyncError.Warning);
+            if (excluded) {
+                // !deletionAnalysis && excluded
+                //This file is being excluded (during copy analysis). Delete it if excluded files/dirs are intended to be deleted.
+                boolean isDeleteExcluded = getSyncMode() != SyncMode.BIMirror && getFilterSet().hasExcludeFilters();
+                if (isDeleteExcluded && !fAIsDir && fAEx && isDeleteExcludedFilesA()) {
+                    getLog().printModerate("Delete excluded file from Dir A: " + fA.getAbsolutePath(), IconKey.Deleted);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileAIsRedundant, ab, this);
                 }
-                fileAIsModified = fileBIsModified = (modCompare == 1);
-            }
+                if (isDeleteExcluded && fAIsDir && fAEx && isDeleteExcludedDirsA()) {
+                    getLog().printModerate("Delete excluded dir from Dir A: " + fA.getAbsolutePath(), IconKey.Deleted);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirAIsRedundant, ab, this);
+                }
+                if (isDeleteExcluded && !fBIsDir && fBEx && isDeleteExcludedFilesB()) {
+                    getLog().printModerate("Delete excluded file from Dir B: " + fB.getAbsolutePath(), IconKey.Deleted);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileBIsRedundant, ab, this);
+                }
+                if (isDeleteExcluded && fBIsDir && fBEx && isDeleteExcludedDirsB()) {
+                    getLog().printModerate("Delete excluded dir from Dir B: " + fB.getAbsolutePath(), IconKey.Deleted);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirBIsRedundant, ab, this);
+                }
+            } else {
+                // !deletionAnalysis && !!excluded
+                //copy analysis
+                getLog().printExcessive("Copy analysis info A: " + fA.getAbsolutePath() + " [" + (fAEx ? "exists" : "does not exist") + (fAIsDir ? ", dir" : ", file") + ", " + TextFormatTool.getLastModifiedLong(fADate) + ", " + fASize + " bytes]", IconKey.Info);
+                getLog().printExcessive("Copy analysis info B: " + fB.getAbsolutePath() + " [" + (fBEx ? "exists" : "does not exist") + (fBIsDir ? ", dir" : ", file") + ", " + TextFormatTool.getLastModifiedLong(fBDate) + ", " + fBSize + " bytes]", IconKey.Info);
 
-            if (fileASameDatefileB && getSyncCompareMode() == Const.CompareMode.CompareFileSizesDatesMetaData) {
-                modCompare = FileTools.cmpFileAttributes(fA, fB);
-                fileAIsModified = fileBIsModified = (modCompare == 1);
-            }
+                if (ab && fAEx && fAIsDir && isCopyAll()) {
+                    getLog().printModerate("Copy forced: " + fA.getAbsolutePath(), IconKey.DirA);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirACopyForced, ab, this);
+                }
 
-            if (isSyncDirTimeStamps() && ab && !fileASameDatefileB && fAIsDir && fBIsDir
-                    && ((isCopyModified())
-                    || (getSyncMode().isBI() && getSyncConflictResolutionMode() == SyncConflictResolutionMode.CopyModified))) {
-                getLog().printModerate("Modified: " + fA.getAbsolutePath(), IconKey.CopyModified);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirAIsModified, ab, this);
-            }
+                if (!ab && fBEx && fBIsDir && isCopyAll()) {
+                    getLog().printModerate("Copy forced: " + fB.getAbsolutePath(), IconKey.DirB);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirBCopyForced, ab, this);
+                }
+                if (ab && fAEx && !fAIsDir && isCopyAll()) {
+                    getLog().printModerate("Copy forced: " + fA.getAbsolutePath(), IconKey.CopyForced);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileACopyForced, ab, this);
+                }
 
-            if (isSyncDirTimeStamps() && !ab && !fileASameDatefileB
-                    && ((isCopyModified())
-                    || (getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyModified)))) {
-                getLog().printModerate("Modified: " + fB.getAbsolutePath(), IconKey.CopyModified);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirBIsModified, ab, this);
-            }
+                if (!ab && fBEx && !fBIsDir && isCopyAll()) {
+                    getLog().printModerate("Copy forced: " + fB.getAbsolutePath(), IconKey.CopyForced);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileBCopyForced, ab, this);
+                }
 
-            // do nothing if both dirs exist and not returned above
-            if (!fAEx || !fBEx || fAIsDir || fBIsDir) {
+                if (ab && fAEx && !fBEx && fAIsDir && isCopyNew()) {
+                    getLog().printModerate("New: " + fA.getAbsolutePath(), IconKey.DirA);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirAIsNew, ab, this);
+                }
+
+                if (!ab && !fAEx && fBEx && fBIsDir && isCopyNew()) {
+                    getLog().printModerate("New: " + fB.getAbsolutePath(), IconKey.DirB);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirBIsNew, ab, this);
+                }
+
+                if (ab && fAEx && !fBEx && isCopyNew()) {
+                    getLog().printModerate("New: " + fA.getAbsolutePath(), IconKey.CopyNew);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileAIsNew, ab, this);
+                }
+
+                if (!ab && !fAEx && fBEx && isCopyNew()) {
+                    getLog().printModerate("New: " + fB.getAbsolutePath(), IconKey.CopyNew);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileBIsNew, ab, this);
+                }
+
+                assert fAEx && fBEx;
+
+                boolean fileASameSizefileB = (fASize == fBSize);
+                boolean fileAIsLarger = (fASize > fBSize);
+                boolean fileBIsLarger = (fASize < fBSize);
+
+                int modCompare = DateTool.cmpDates(fADate, fBDate, getGranularity(), isIgnoreDaylightSavingGranularity());
+
+                boolean fileASameDatefileB = (modCompare == 0);
+                boolean fileAIsModified = (modCompare == -1);
+                boolean fileBIsModified = (modCompare == 1);
+
+                if (fileASameSizefileB && getSyncCompareMode() == Const.CompareMode.CompareFileContents && fA.isFile() && fB.isFile()) {
+                    try {
+                        modCompare = FileTools.checksumIdentical(fA, fB) ? 0 : 1;
+                    } catch (FileNotFoundException we) {
+                        getLog().printMinimal("Warning: " + we.getMessage(), IconKey.Warning);
+                        DirSyncPro.getSync().setError(SyncError.Warning);
+                    }
+                    fileAIsModified = fileBIsModified = (modCompare == 1);
+                }
+
+                if (fileASameDatefileB && getSyncCompareMode() == Const.CompareMode.CompareFileSizesDatesMetaData) {
+                    modCompare = FileTools.cmpFileAttributes(fA, fB);
+                    fileAIsModified = fileBIsModified = (modCompare == 1);
+                }
+
+                if (isSyncDirTimeStamps() && ab && !fileASameDatefileB && fAIsDir && fBIsDir
+                        && ((isCopyModified())
+                        || (getSyncMode().isBI() && getSyncConflictResolutionMode() == SyncConflictResolutionMode.CopyModified))) {
+                    getLog().printModerate("Modified: " + fA.getAbsolutePath(), IconKey.CopyModified);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirAIsModified, ab, this);
+                }
+
+                if (isSyncDirTimeStamps() && !ab && !fileASameDatefileB
+                        && ((isCopyModified())
+                        || (getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyModified)))) {
+                    getLog().printModerate("Modified: " + fB.getAbsolutePath(), IconKey.CopyModified);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.DirBIsModified, ab, this);
+                }
+
+                // do nothing if both dirs exist and not returned above
+                if (!fAEx || !fBEx || fAIsDir || fBIsDir) {
+                    return null;
+                }
+
+                assert !fAIsDir && !fBIsDir && fAEx && fBEx;
+
+                if (ab
+                        && ((fileAIsModified && (isCopyModified()) && (getSyncMode() == SyncMode.ABMirror || getSyncMode() == SyncMode.ABCustom))
+                        || (fileAIsModified && getSyncMode().isBI() && getSyncConflictResolutionMode() == SyncConflictResolutionMode.CopyModified))) {
+                    getLog().printModerate("Modified: " + fA.getAbsolutePath(), IconKey.CopyModified);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileAIsModified, ab, this);
+                }
+
+                if (!ab
+                        && ((fileBIsModified && (isCopyModified()) && (getSyncMode() == SyncMode.BAMirror || getSyncMode() == SyncMode.BACustom))
+                        || (fileBIsModified && getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyModified)))) {
+                    getLog().printModerate("Modified: " + fB.getAbsolutePath(), IconKey.CopyModified);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileBIsModified, ab, this);
+                }
+
+                if (ab && fileAIsLarger
+                        && ((isCopyLarger() && (getSyncMode() == SyncMode.ABMirror || getSyncMode() == SyncMode.ABCustom))
+                        || (getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyLarger)))) {
+                    getLog().printModerate("Larger: " + fA.getAbsolutePath(), IconKey.CopyLarger);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileAIsLarger, ab, this);
+                }
+
+                if (!ab && fileBIsLarger
+                        && ((isCopyLarger() && (getSyncMode() == SyncMode.BAMirror || getSyncMode() == SyncMode.BACustom))
+                        || (getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyLarger)))) {
+                    getLog().printModerate("Larger: " + fB.getAbsolutePath(), IconKey.CopyLarger);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileBIsLarger, ab, this);
+                }
+
+                if (ab && fileAIsModified && fileAIsLarger
+                        && ((isCopyLargerModified() && (getSyncMode() == SyncMode.ABMirror || getSyncMode() == SyncMode.ABCustom))
+                        || (getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyLargerAndModified)))) {
+                    getLog().printModerate("Larger & Modified: " + fA.getAbsolutePath(), IconKey.CopyLargerModified);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileAIsLargerAndModified, ab, this);
+                }
+
+                if (!ab && fileBIsModified && fileBIsLarger
+                        && ((isCopyLargerModified() && (getSyncMode() == SyncMode.BAMirror || getSyncMode() == SyncMode.BACustom))
+                        || (getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyLargerAndModified)))) {
+                    getLog().printModerate("Larger & Modified: " + fB.getAbsolutePath(), IconKey.CopyLargerModified);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileBIsLargerAndModified, ab, this);
+                }
+
+                //Monodirectional conflict resolution by copying the source
+                if (ab && ((!fileASameDatefileB || !fileASameSizefileB) && !getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopySource))) {
+                    getLog().printModerate("Monodirectional conflict resolution by copying the source: " + fA.getAbsolutePath(), IconKey.SyncConflict);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.ConflictResolutionCopySourceA, ab, this);
+                }
+                if (!ab && ((!fileASameDatefileB || !fileASameSizefileB) && !getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopySource))) {
+                    getLog().printModerate("Monodirectional conflict resolution by copying the source: " + fB.getAbsolutePath(), IconKey.SyncConflict);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.ConflictResolutionCopySourceB, ab, this);
+                }
+
+                //Bidirectional conflict resolution by renaming
+                if ((ab && getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyRenamed))
+                        && (fileAIsModified || !fileASameSizefileB)) {
+                    getLog().printModerate("Bidirectional conflict resolution by renaming: " + fA.getAbsolutePath() + " & " + fB.getAbsolutePath(), IconKey.SyncConflict);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.ConflictResolutionRename, ab, this);
+                }
+                if ((!ab && getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyRenamed))
+                        && (fileBIsModified || !fileASameSizefileB)) {
+                    getLog().printModerate("Bidirectional conflict resolution by renaming: " + fA.getAbsolutePath() + " & " + fB.getAbsolutePath(), IconKey.SyncConflict);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.ConflictResolutionRename, ab, this);
+                }
+
+                //Bidirectional & Monodirectional conflict resolutin by warning
+                if (ab && (((fileAIsModified || !fileASameSizefileB) && getSyncMode().isBI())
+                        || ((!fileASameDatefileB || !fileASameSizefileB) && !getSyncMode().isBI()))
+                        && getSyncConflictResolutionMode() == SyncConflictResolutionMode.WarnUser) {
+                    getLog().printModerate("Sync conflict warning: " + fA.getAbsolutePath() + " & " + fB.getAbsolutePath(), IconKey.SyncConflict);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.ConflictResolutionWarn, ab, this);
+                }
+                if (!ab && (((fileBIsModified || !fileASameSizefileB) && getSyncMode().isBI())
+                        || ((!fileASameDatefileB || !fileASameSizefileB) && !getSyncMode().isBI()))
+                        && getSyncConflictResolutionMode() == SyncConflictResolutionMode.WarnUser) {
+                    getLog().printModerate("Sync conflict warning: " + fA.getAbsolutePath() + " & " + fB.getAbsolutePath(), IconKey.SyncConflict);
+                    return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.ConflictResolutionWarn, ab, this);
+                }
+                //default
                 return null;
             }
-
-            assert !fAIsDir && !fBIsDir && fAEx && fBEx;
-
-            if (ab
-                    && ((fileAIsModified && (isCopyModified()) && (getSyncMode() == SyncMode.ABMirror || getSyncMode() == SyncMode.ABCustom))
-                    || (fileAIsModified && getSyncMode().isBI() && getSyncConflictResolutionMode() == SyncConflictResolutionMode.CopyModified))) {
-                getLog().printModerate("Modified: " + fA.getAbsolutePath(), IconKey.CopyModified);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileAIsModified, ab, this);
-            }
-
-            if (!ab
-                    && ((fileBIsModified && (isCopyModified()) && (getSyncMode() == SyncMode.BAMirror || getSyncMode() == SyncMode.BACustom))
-                    || (fileBIsModified && getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyModified)))) {
-                getLog().printModerate("Modified: " + fB.getAbsolutePath(), IconKey.CopyModified);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileBIsModified, ab, this);
-            }
-
-            if (ab && fileAIsLarger
-                    && ((isCopyLarger() && (getSyncMode() == SyncMode.ABMirror || getSyncMode() == SyncMode.ABCustom))
-                    || (getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyLarger)))) {
-                getLog().printModerate("Larger: " + fA.getAbsolutePath(), IconKey.CopyLarger);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileAIsLarger, ab, this);
-            }
-
-            if (!ab && fileBIsLarger
-                    && ((isCopyLarger() && (getSyncMode() == SyncMode.BAMirror || getSyncMode() == SyncMode.BACustom))
-                    || (getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyLarger)))) {
-                getLog().printModerate("Larger: " + fB.getAbsolutePath(), IconKey.CopyLarger);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileBIsLarger, ab, this);
-            }
-
-            if (ab && fileAIsModified && fileAIsLarger
-                    && ((isCopyLargerModified() && (getSyncMode() == SyncMode.ABMirror || getSyncMode() == SyncMode.ABCustom))
-                    || (getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyLargerAndModified)))) {
-                getLog().printModerate("Larger & Modified: " + fA.getAbsolutePath(), IconKey.CopyLargerModified);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileAIsLargerAndModified, ab, this);
-            }
-
-            if (!ab && fileBIsModified && fileBIsLarger
-                    && ((isCopyLargerModified() && (getSyncMode() == SyncMode.BAMirror || getSyncMode() == SyncMode.BACustom))
-                    || (getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyLargerAndModified)))) {
-                getLog().printModerate("Larger & Modified: " + fB.getAbsolutePath(), IconKey.CopyLargerModified);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.FileBIsLargerAndModified, ab, this);
-            }
-
-            //Monodirectional conflict resolution by copying the source
-            if (ab && ((!fileASameDatefileB || !fileASameSizefileB) && !getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopySource))) {
-                getLog().printModerate("Monodirectional conflict resolution by copying the source: " + fA.getAbsolutePath(), IconKey.SyncConflict);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.ConflictResolutionCopySourceA, ab, this);
-            }
-            if (!ab && ((!fileASameDatefileB || !fileASameSizefileB) && !getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopySource))) {
-                getLog().printModerate("Monodirectional conflict resolution by copying the source: " + fB.getAbsolutePath(), IconKey.SyncConflict);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.ConflictResolutionCopySourceB, ab, this);
-            }
-
-            //Bidirectional conflict resolution by renaming
-            if ((ab && getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyRenamed))
-                    && (fileAIsModified || !fileASameSizefileB)) {
-                getLog().printModerate("Bidirectional conflict resolution by renaming: " + fA.getAbsolutePath() + " & " + fB.getAbsolutePath(), IconKey.SyncConflict);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.ConflictResolutionRename, ab, this);
-            }
-            if ((!ab && getSyncMode().isBI() && getSyncConflictResolutionMode().equals(SyncConflictResolutionMode.CopyRenamed))
-                    && (fileBIsModified || !fileASameSizefileB)) {
-                getLog().printModerate("Bidirectional conflict resolution by renaming: " + fA.getAbsolutePath() + " & " + fB.getAbsolutePath(), IconKey.SyncConflict);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.ConflictResolutionRename, ab, this);
-            }
-
-            //Bidirectional & Monodirectional conflict resolutin by warning
-            if (ab && (((fileAIsModified || !fileASameSizefileB) && getSyncMode().isBI())
-                    || ((!fileASameDatefileB || !fileASameSizefileB) && !getSyncMode().isBI()))
-                    && getSyncConflictResolutionMode() == SyncConflictResolutionMode.WarnUser) {
-                getLog().printModerate("Sync conflict warning: " + fA.getAbsolutePath() + " & " + fB.getAbsolutePath(), IconKey.SyncConflict);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.ConflictResolutionWarn, ab, this);
-            }
-            if (!ab && (((fileBIsModified || !fileASameSizefileB) && getSyncMode().isBI())
-                    || ((!fileASameDatefileB || !fileASameSizefileB) && !getSyncMode().isBI()))
-                    && getSyncConflictResolutionMode() == SyncConflictResolutionMode.WarnUser) {
-                getLog().printModerate("Sync conflict warning: " + fA.getAbsolutePath() + " & " + fB.getAbsolutePath(), IconKey.SyncConflict);
-                return new SyncPair(fA, fB, fAEx, fBEx, fAIsDir, fBIsDir, fADate, fBDate, fASize, fBSize, SyncPairStatus.ConflictResolutionWarn, ab, this);
-            }
-            //default
-            return null;
-        }
         //dummy
         return null;
     }
@@ -753,8 +674,8 @@ public class Job extends JobObject implements Cloneable {
      * Creates and returns a copy of this object.
      *
      * @return a clone of this instance.
-     * @exception CloneNotSupportedException if the object's class does not
-     * support the {@code Cloneable} interface.
+     *
+     * @throws CloneNotSupportedException if the object's class does not support the {@code Cloneable} interface.
      * @see java.lang.Cloneable
      */
     @Override
@@ -830,6 +751,84 @@ public class Job extends JobObject implements Cloneable {
         }
         if (dirBListener != null) {
             dirBListener.stop();
+        }
+    }
+
+    private class DSPFileVisitor extends SimpleFileVisitor<Path> {
+
+        FilterSet filters;
+        boolean ab;
+        int depth;
+        boolean deletionAnalysis;
+
+        public DSPFileVisitor(FilterSet filters, boolean ab) {
+            super();
+            this.filters = filters;
+            this.ab = ab;
+            this.depth = -1;
+        }
+
+        @Override
+        public FileVisitResult visitFile(Path file, BasicFileAttributes attr) {
+            if (DirSyncPro.getSync().isStopping()) {
+                return FileVisitResult.TERMINATE;
+            }
+            if (filters.matchesAnyIncludeFilter(file)) {
+                if (filters.matchesAnyExcludeFilter(file)) {
+                    analyzeFilePair(file, ab, deletionAnalysis, true);
+                } else {
+                    analyzeFilePair(file, ab, deletionAnalysis, false);
+                    DirSyncPro.getSync().getSyncQ().addTotalAnalyzedFiles(1);
+                }
+            }
+            return FileVisitResult.CONTINUE;
+        }
+
+        @Override
+        public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) {
+            depth++;
+            if (DirSyncPro.getSync().isStopping()) {
+                return FileVisitResult.TERMINATE;
+            }
+            if (depth == 0) {
+                //skip the root folders (src/dst)
+                return FileVisitResult.CONTINUE;
+            } else if (filters.matchesAnyIncludeFilter(dir)) {
+                if (filters.matchesAnyExcludeFilter(dir)) {
+                    analyzeFilePair(dir, ab, deletionAnalysis, true);
+                    return FileVisitResult.SKIP_SUBTREE;
+                } else {
+                    analyzeFilePair(dir, ab, deletionAnalysis, false);
+                    DirSyncPro.getSync().getSyncQ().addTotalAnalyzedDirs(1);
+                    return FileVisitResult.CONTINUE;
+                }
+            } else {
+                return FileVisitResult.SKIP_SUBTREE;
+            }
+        }
+
+        @Override
+        public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+            if (exc != null) {
+                getLog().printMinimal("Unable to analyze: " + dir.toAbsolutePath() + " (" + exc.getMessage() + ")", IconKey.Error);
+            }
+            return FileVisitResult.CONTINUE;
+        }
+
+        @Override
+        public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+            if (exc != null) {
+                getLog().printMinimal("Unable to analyze: " + file.toAbsolutePath() + " (" + exc.getMessage() + ")", IconKey.Error);
+            }
+            return FileVisitResult.CONTINUE;
+        }
+
+        public void setDeletionAnalysis(boolean deletionAnalysis) {
+            this.deletionAnalysis = deletionAnalysis;
+        }
+
+        public void resetDepth() {
+            this.depth = -1;
         }
     }
 }

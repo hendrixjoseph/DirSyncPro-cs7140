@@ -18,6 +18,8 @@
  */
 package edu.wright.dirsyncpro.tools.copy;
 
+import edu.wright.dirsyncpro.DirSyncPro;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -27,19 +29,7 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.text.MessageFormat;
 
-import edu.wright.dirsyncpro.DirSyncPro;
-
 public class CopierFactory {
-
-    public interface Copier {
-
-        void copy(FileInputStream is, FileOutputStream os, long fileSize) throws IOException;
-    }
-
-    private interface GUIUpdater {
-
-        void updateGUI(long position, double scaledFileSize);
-    }
 
     private final static GUIUpdater guiUpdater = new GUIUpdater() {
 
@@ -51,7 +41,6 @@ public class CopierFactory {
         }
 
     };
-
     private final static GUIUpdater nonGuiUpdater = new GUIUpdater() {
 
         @Override
@@ -59,14 +48,6 @@ public class CopierFactory {
         }
 
     };
-
-    private static GUIUpdater getGUIUpdater() {
-        if (DirSyncPro.isGuiMode()) {
-            return guiUpdater;
-        }
-        return nonGuiUpdater;
-    }
-
     private final static Copier channelCopier = new Copier() {
 
         private final static int BUFFER_SIZE = 512 * 1024;
@@ -87,7 +68,6 @@ public class CopierFactory {
         }
 
     };
-
     private final static Copier bufferedStreamCopier = new Copier() {
 
         private final static int BUFFER_SIZE = 8 * 1024;
@@ -122,7 +102,6 @@ public class CopierFactory {
         }
 
     };
-
     private final static Copier plainStreamCopier = new Copier() {
 
         private final static int BUFFER_SIZE = 8 * 1024;
@@ -142,6 +121,13 @@ public class CopierFactory {
         }
 
     };
+
+    private static GUIUpdater getGUIUpdater() {
+        if (DirSyncPro.isGuiMode()) {
+            return guiUpdater;
+        }
+        return nonGuiUpdater;
+    }
 
     // for tests only
     public static void main(String[] args) throws Exception {
@@ -246,5 +232,15 @@ public class CopierFactory {
         System.out.println(MessageFormat.format("average runtime channelCopier {0,number,0.00} ms", new Object[]{avr[channel]}));
         System.out.println(MessageFormat.format("average runtime bufferedStreamCopier {0,number,0.00} ms", new Object[]{avr[buffered]}));
         System.out.println(MessageFormat.format("average runtime plainStreamCopier {0,number,0.00} ms", new Object[]{avr[plain]}));
+    }
+
+    public interface Copier {
+
+        void copy(FileInputStream is, FileOutputStream os, long fileSize) throws IOException;
+    }
+
+    private interface GUIUpdater {
+
+        void updateGUI(long position, double scaledFileSize);
     }
 }

@@ -18,18 +18,17 @@
  */
 package edu.wright.dirsyncpro.gui.mainframe.syncqtable;
 
-import java.awt.Component;
-import java.io.File;
+import edu.wright.dirsyncpro.Const.IconKey;
+import edu.wright.dirsyncpro.DirSyncPro;
+import edu.wright.dirsyncpro.sync.SyncPair;
+import edu.wright.dirsyncpro.tools.TextFormatTool;
 
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.UIManager;
 import javax.swing.table.TableCellRenderer;
-
-import edu.wright.dirsyncpro.Const.IconKey;
-import edu.wright.dirsyncpro.DirSyncPro;
-import edu.wright.dirsyncpro.sync.SyncPair;
-import edu.wright.dirsyncpro.tools.TextFormatTool;
+import java.awt.Component;
+import java.io.File;
 
 public class SyncQTableCellRenderer implements TableCellRenderer {
 

@@ -18,6 +18,8 @@
  */
 package edu.wright.dirsyncpro.tools.copy;
 
+import edu.wright.dirsyncpro.DirSyncPro;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -28,8 +30,6 @@ import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.spi.FileSystemProvider;
 import java.util.EnumSet;
-
-import edu.wright.dirsyncpro.DirSyncPro;
 
 public class FallbackCopier extends J7Copier {
 
@@ -54,9 +54,9 @@ public class FallbackCopier extends J7Copier {
             approximator = ProgressApproximator.getApproximator();
             approximator.startApprox(srcPath, true);
         } else //... else set progress to 0 percent
-        if (DirSyncPro.isGuiMode()) {
-            DirSyncPro.getGui().registerProgressBars(-1, -1, -1, "", false, 0, 100, "", false);
-        }
+            if (DirSyncPro.isGuiMode()) {
+                DirSyncPro.getGui().registerProgressBars(-1, -1, -1, "", false, 0, 100, "", false);
+            }
 
         //fall-back to ByteChannel transfer if providers are not equal (bypassing slow JDK fall-back implementation)
         FileChannel readCh = null, writeCh = null;
@@ -111,9 +111,9 @@ public class FallbackCopier extends J7Copier {
             //file transfer complete, update approximation ...
             approximator.endApprox();
         } else //... or set progress to 100 percent
-        if (DirSyncPro.isGuiMode()) {
-            DirSyncPro.getGui().registerProgressBars(-1, -1, -1, "", false, 100, 100, "", false);
-        }
+            if (DirSyncPro.isGuiMode()) {
+                DirSyncPro.getGui().registerProgressBars(-1, -1, -1, "", false, 100, 100, "", false);
+            }
 
     }
 

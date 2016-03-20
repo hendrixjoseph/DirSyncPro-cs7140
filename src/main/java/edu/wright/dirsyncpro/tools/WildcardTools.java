@@ -19,11 +19,11 @@
  */
 package edu.wright.dirsyncpro.tools;
 
+import edu.wright.dirsyncpro.job.Job;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import edu.wright.dirsyncpro.job.Job;
 
 /**
  * Tools for handling the time and date wildcards.
@@ -57,6 +57,7 @@ public class WildcardTools {
      *
      * @param s The String containing wildcards.
      * @param d The date to replace the wildcards with.
+     *
      * @return The string with the wildcards replaced.
      */
     public static String replaceDateWildcards(String s, Date d) {
@@ -92,6 +93,7 @@ public class WildcardTools {
      *
      * @param s The String containing wildcards.
      * @param d The date to replace the wildcards with.
+     *
      * @return The string with the wildcards replaced.
      */
     public static String replaceTimeWildcards(String s, Date d) {
@@ -123,11 +125,11 @@ public class WildcardTools {
     }
 
     /**
-     * Replaces the jobname wildcards in the given String with the corresponding
-     * system properties.
+     * Replaces the jobname wildcards in the given String with the corresponding system properties.
      *
-     * @param s The String containing wildcards.
+     * @param s   The String containing wildcards.
      * @param job The directory to replace the wildcards with.
+     *
      * @return The string with the wildcards replaced.
      */
     public static String replaceDirectoryWildcards(String s, Job job) {
@@ -135,10 +137,10 @@ public class WildcardTools {
     }
 
     /**
-     * Replaces the user wildcards in the given String with the corresponding
-     * system properties.
+     * Replaces the user wildcards in the given String with the corresponding system properties.
      *
      * @param s The String containing wildcards.
+     *
      * @return The string with the wildcards replaced.
      */
     public static String replaceUserWildcards(String s) {
@@ -148,14 +150,13 @@ public class WildcardTools {
     }
 
     /**
-     * Generic "replace all" method replacing all occurences of &lt;what&gt; in
-     * &lt;where&gt; with &lt;withWhat&gt;.
+     * Generic "replace all" method replacing all occurences of &lt;what&gt; in &lt;where&gt; with &lt;withWhat&gt;.
      *
-     * @param where The {@code String} to change.
-     * @param what The {@code String} to replace.
+     * @param where    The {@code String} to change.
+     * @param what     The {@code String} to replace.
      * @param withWhat The {@code String} to replace with.
-     * @return The string with all occurences of &lt;what&gt; replaced by
-     * &lt;withWhat&gt;.
+     *
+     * @return The string with all occurences of &lt;what&gt; replaced by &lt;withWhat&gt;.
      */
     public static String replaceAll(String where, String what, String withWhat) {
         while (where.contains(what)) {

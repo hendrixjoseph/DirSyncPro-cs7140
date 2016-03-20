@@ -18,12 +18,11 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.scheduletree;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.swing.event.TreeModelListener;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ScheduleTreeModel extends DefaultTreeModel {
 

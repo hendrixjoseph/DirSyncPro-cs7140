@@ -18,34 +18,42 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule;
 
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-import javax.swing.JOptionPane;
-
 import edu.wright.dirsyncpro.Const.IconKey;
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.job.Job;
 import edu.wright.dirsyncpro.sync.Sync;
+
+import javax.swing.JOptionPane;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ScheduleEngine {
 
-    private List<Schedule> scheduleQ;
-    private AtomicBoolean scheduleQUpdated = new AtomicBoolean(false);
+    private static ScheduleEngine realtimeInstance = new ScheduleEngine();
     Timer timer;
     boolean running;
     Schedule synchronizingSchedule;
+    private List<Schedule> scheduleQ;
+    private AtomicBoolean scheduleQUpdated = new AtomicBoolean(false);
+    //job - job to be syncronized, Date - date, when synchronization needs to be done
+    //Empty record for job means that it need another task to be created
+    //if record exists then it need to be updated with a new date and rscheduled after current task completes
+    private HashMap<Job, Date> realtimeSchedule = new HashMap<>();
 
     public ScheduleEngine() {
         scheduleQ = new ArrayList<>();
         scheduleQUpdated.set(true);
         timer = new Timer();
+    }
+
+    public static ScheduleEngine getRealtimeInstance() {
+        return realtimeInstance;
     }
 
     public void addSchedules(Job job) {
@@ -157,16 +165,6 @@ public class ScheduleEngine {
         return running;
     }
 
-    //job - job to be syncronized, Date - date, when synchronization needs to be done
-    //Empty record for job means that it need another task to be created
-    //if record exists then it need to be updated with a new date and rscheduled after current task completes
-    private HashMap<Job, Date> realtimeSchedule = new HashMap<>();
-    private static ScheduleEngine realtimeInstance = new ScheduleEngine();
-
-    public static ScheduleEngine getRealtimeInstance() {
-        return realtimeInstance;
-    }
-
     public void scheduleRealtime(final Job j, int delay) {
         Date d = null;
         synchronized (realtimeSchedule) {
@@ -180,7 +178,7 @@ public class ScheduleEngine {
                     realtimeSchedule.put(j, now);
                     //System.out.println("Already scheduled for " + d + ". Extending to " + now);
                 } else
-					;//System.out.println("Previously scheduled for " + d + " is later than " + now);
+                    ;//System.out.println("Previously scheduled for " + d + " is later than " + now);
                 return;
             }
 

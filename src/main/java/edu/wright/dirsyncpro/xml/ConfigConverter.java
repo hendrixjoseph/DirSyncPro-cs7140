@@ -1,94 +1,13 @@
 package edu.wright.dirsyncpro.xml;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.tools.FileTools;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class ConfigConverter {
-
-    enum Deprecated {
-        D01("<!DOCTYPE dirsync ", "<!DOCTYPE dirsyncpro "),
-        D02("<!ELEMENT dirsync ", "<!ELEMENT dirsyncpro "),
-        D03("<!ATTLIST dirsync ", "<!ATTLIST dirsyncpro "),
-        D04("<dirsync ", "<dirsyncpro "),
-        D05("dirsync>", "dirsyncpro>"),
-        // tags directory -> job , as of v. 1.4
-        D06("<!ELEMENT directory ", "<!ELEMENT job "),
-        D07("<!ATTLIST directory ", "<!ATTLIST job "),
-        D08("<directory ", "<job "),
-        D09("directory>", "job>"),
-        //bi dir sync mode , as of v. 1.3
-        D10("bidirsyncconflictmode=\"COPY_MODIFIED\"", "bidirsyncconflictmode=\"CopyModified\""),
-        D11("bidirsyncconflictmode=\"COPY_LARGER\"", "bidirsyncconflictmode=\"CopyLarger\""),
-        D12("bidirsyncconflictmode=\"COPY_LARGER_MODIFIED\"", "bidirsyncconflictmode=\"CopyLargerAndModified\""),
-        D13("bidirsyncconflictmode=\"COPY_RENAMED\"", "bidirsyncconflictmode=\"CopyRenamed\""),
-        D14("bidirsyncconflictmode=\"WARN_USER\"", "bidirsyncconflictmode=\"WarnUser\""),
-        D15("bidirsyncconflictmode=\"RenameCopy\"", "bidirsyncconflictmode=\"CopyRenamed\""),
-        D16("SyncMode=\"A to B\"", "SyncMode=\"" + Const.SyncMode.ABCustom.getLiteral() + "\""),
-        D17("SyncMode=\"B to A\"", "SyncMode=\"" + Const.SyncMode.BACustom.getLiteral() + "\""),
-        D18("SyncMode=\"AB\"", "SyncMode=\"" + Const.SyncMode.ABCustom.getLiteral() + "\""),
-        D19("SyncMode=\"BA\"", "SyncMode=\"" + Const.SyncMode.BACustom.getLiteral() + "\""),
-        D20("SyncMode=\"Bidirectional\"", "SyncMode=\"" + Const.SyncMode.BIMirror.getLiteral() + "\""),
-        D21("SyncMode=\"Bidirectional\"", "SyncMode=\"" + Const.SyncMode.BIMirror.getLiteral() + "\""),
-        //delexcludedfiles -> delExcludedFilesB & delexcludeddirs -> delExcludeddirsB
-        D22(" delexcludedfiles \\(true\\|false\\) ", " delExcludedFilesB \\(true\\|false\\) "),
-        D23(" delexcludeddirs \\(true\\|false\\) ", " delExcludedDirsB \\(true\\|false\\) "),
-        D24(" delexcludedfiles=\"", " delExcludedFilesB=\""),
-        D25(" delexcludeddirs=\"", " delExcludedDirsB=\""),
-        //sync mode & sync conflict as of 1.41
-        D26("SyncMode", "syncMode"),
-        D27("syncMode=\"ABIncremental\"", "syncMode=\"" + Const.SyncMode.ABMirror.getLiteral() + "\""),
-        D28("syncMode=\"BAIncremental\"", "syncMode=\"" + Const.SyncMode.BAMirror.getLiteral() + "\""),
-        D29("bidirsyncconflictmode", "syncConflictResolutionMode"),
-        D30("timestampdiff", "granularity"),
-        D31("timestampwriteback", "timestampWriteBack"),
-        D32("backupinline", "backupInline"),
-        D33("backupdir", "backupDir"),
-        D34("withsubfolders", "recursive"),
-        D35("job include ", "job includeFiles "),
-        D36(" include=\"", " includeFiles=\""),
-        D37("job exclude ", "job excludeFiles "),
-        D38(" exclude=\"", " excludeFiles=\""),
-        D39("dirinclude", "includeDirs"),
-        D40("direxclude", "excludeDirs"),
-        D41("FileSizeSmallerInclude", "includeFileSizeSmallerThan"),
-        D42("FileSizeExactlyInclude", "includeFileSizeExactly"),
-        D43("FileSizeLargerInclude", "includeFileSizeLargerThan"),
-        D44("FileSizeSmallerExclude", "excludeFileSizeSmallerThan"),
-        D45("FileSizeExactlyExclude", "excludeFileSizeExactly"),
-        D46("FileSizeLargerExclude", "excludeFileSizeLargerThan"),
-        D47("copynew", "copyNew"),
-        D48("copymodified", "copyModified"),
-        D49("copylarger", "copyLarger"),
-        D50("copylargermodified", "copyLargerAndModified"),
-        D51("copyall", "copyAll"),
-        D52("delfiles", "delFiles"),
-        D53("deldirs", "delDirs"),
-        //filters, as of 1.45
-        D54(" includeFiles=\"", "__POSTCONVERT_FILTERS__"), //does it all for all old filters
-
-        //due to custom bi mode as of 1.46
-        D55("syncMode=\"BI\"", "syncMode=\"" + Const.SyncMode.BIMirror.getLiteral() + "\""),;
-
-        Deprecated(String from, String to) {
-            this.from = from;
-            this.to = to;
-        }
-
-        private String from;
-        private String to;
-
-        public String getFrom() {
-            return from;
-        }
-
-        public String getTo() {
-            return to;
-        }
-    }
 
     // no instance allowd
     private ConfigConverter() {
@@ -248,5 +167,85 @@ public class ConfigConverter {
 //			}
 //		}
         return output;
+    }
+
+    enum Deprecated {
+        D01("<!DOCTYPE dirsync ", "<!DOCTYPE dirsyncpro "),
+        D02("<!ELEMENT dirsync ", "<!ELEMENT dirsyncpro "),
+        D03("<!ATTLIST dirsync ", "<!ATTLIST dirsyncpro "),
+        D04("<dirsync ", "<dirsyncpro "),
+        D05("dirsync>", "dirsyncpro>"),
+        // tags directory -> job , as of v. 1.4
+        D06("<!ELEMENT directory ", "<!ELEMENT job "),
+        D07("<!ATTLIST directory ", "<!ATTLIST job "),
+        D08("<directory ", "<job "),
+        D09("directory>", "job>"),
+        //bi dir sync mode , as of v. 1.3
+        D10("bidirsyncconflictmode=\"COPY_MODIFIED\"", "bidirsyncconflictmode=\"CopyModified\""),
+        D11("bidirsyncconflictmode=\"COPY_LARGER\"", "bidirsyncconflictmode=\"CopyLarger\""),
+        D12("bidirsyncconflictmode=\"COPY_LARGER_MODIFIED\"", "bidirsyncconflictmode=\"CopyLargerAndModified\""),
+        D13("bidirsyncconflictmode=\"COPY_RENAMED\"", "bidirsyncconflictmode=\"CopyRenamed\""),
+        D14("bidirsyncconflictmode=\"WARN_USER\"", "bidirsyncconflictmode=\"WarnUser\""),
+        D15("bidirsyncconflictmode=\"RenameCopy\"", "bidirsyncconflictmode=\"CopyRenamed\""),
+        D16("SyncMode=\"A to B\"", "SyncMode=\"" + Const.SyncMode.ABCustom.getLiteral() + "\""),
+        D17("SyncMode=\"B to A\"", "SyncMode=\"" + Const.SyncMode.BACustom.getLiteral() + "\""),
+        D18("SyncMode=\"AB\"", "SyncMode=\"" + Const.SyncMode.ABCustom.getLiteral() + "\""),
+        D19("SyncMode=\"BA\"", "SyncMode=\"" + Const.SyncMode.BACustom.getLiteral() + "\""),
+        D20("SyncMode=\"Bidirectional\"", "SyncMode=\"" + Const.SyncMode.BIMirror.getLiteral() + "\""),
+        D21("SyncMode=\"Bidirectional\"", "SyncMode=\"" + Const.SyncMode.BIMirror.getLiteral() + "\""),
+        //delexcludedfiles -> delExcludedFilesB & delexcludeddirs -> delExcludeddirsB
+        D22(" delexcludedfiles \\(true\\|false\\) ", " delExcludedFilesB \\(true\\|false\\) "),
+        D23(" delexcludeddirs \\(true\\|false\\) ", " delExcludedDirsB \\(true\\|false\\) "),
+        D24(" delexcludedfiles=\"", " delExcludedFilesB=\""),
+        D25(" delexcludeddirs=\"", " delExcludedDirsB=\""),
+        //sync mode & sync conflict as of 1.41
+        D26("SyncMode", "syncMode"),
+        D27("syncMode=\"ABIncremental\"", "syncMode=\"" + Const.SyncMode.ABMirror.getLiteral() + "\""),
+        D28("syncMode=\"BAIncremental\"", "syncMode=\"" + Const.SyncMode.BAMirror.getLiteral() + "\""),
+        D29("bidirsyncconflictmode", "syncConflictResolutionMode"),
+        D30("timestampdiff", "granularity"),
+        D31("timestampwriteback", "timestampWriteBack"),
+        D32("backupinline", "backupInline"),
+        D33("backupdir", "backupDir"),
+        D34("withsubfolders", "recursive"),
+        D35("job include ", "job includeFiles "),
+        D36(" include=\"", " includeFiles=\""),
+        D37("job exclude ", "job excludeFiles "),
+        D38(" exclude=\"", " excludeFiles=\""),
+        D39("dirinclude", "includeDirs"),
+        D40("direxclude", "excludeDirs"),
+        D41("FileSizeSmallerInclude", "includeFileSizeSmallerThan"),
+        D42("FileSizeExactlyInclude", "includeFileSizeExactly"),
+        D43("FileSizeLargerInclude", "includeFileSizeLargerThan"),
+        D44("FileSizeSmallerExclude", "excludeFileSizeSmallerThan"),
+        D45("FileSizeExactlyExclude", "excludeFileSizeExactly"),
+        D46("FileSizeLargerExclude", "excludeFileSizeLargerThan"),
+        D47("copynew", "copyNew"),
+        D48("copymodified", "copyModified"),
+        D49("copylarger", "copyLarger"),
+        D50("copylargermodified", "copyLargerAndModified"),
+        D51("copyall", "copyAll"),
+        D52("delfiles", "delFiles"),
+        D53("deldirs", "delDirs"),
+        //filters, as of 1.45
+        D54(" includeFiles=\"", "__POSTCONVERT_FILTERS__"), //does it all for all old filters
+
+        //due to custom bi mode as of 1.46
+        D55("syncMode=\"BI\"", "syncMode=\"" + Const.SyncMode.BIMirror.getLiteral() + "\""),;
+
+        private String from;
+        private String to;
+        Deprecated(String from, String to) {
+            this.from = from;
+            this.to = to;
+        }
+
+        public String getFrom() {
+            return from;
+        }
+
+        public String getTo() {
+            return to;
+        }
     }
 }

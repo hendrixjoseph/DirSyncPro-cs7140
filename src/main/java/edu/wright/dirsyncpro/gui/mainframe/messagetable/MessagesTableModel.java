@@ -18,11 +18,11 @@
  */
 package edu.wright.dirsyncpro.gui.mainframe.messagetable;
 
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.TableModel;
-
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.message.Message;
+
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableModel;
 
 @SuppressWarnings("serial")
 public class MessagesTableModel extends AbstractTableModel {

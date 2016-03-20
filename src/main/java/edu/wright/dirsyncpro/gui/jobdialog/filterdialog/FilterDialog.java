@@ -20,15 +20,6 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.filterdialog;
 
-import java.awt.Toolkit;
-import java.awt.event.MouseEvent;
-import java.nio.file.attribute.PosixFilePermission;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import javax.swing.JDialog;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.gui.jobdialog.JobDialog;
@@ -44,6 +35,14 @@ import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterByPattern;
 import edu.wright.dirsyncpro.gui.swing.MyJTabbedPane;
 import edu.wright.dirsyncpro.job.Job;
 
+import javax.swing.JDialog;
+import java.awt.Toolkit;
+import java.awt.event.MouseEvent;
+import java.nio.file.attribute.PosixFilePermission;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Contains the GUI methods.
  *
@@ -52,19 +51,14 @@ import edu.wright.dirsyncpro.job.Job;
 @SuppressWarnings("unused")
 public class FilterDialog extends FilterDialogObjects {
 
+    // temp vars for within the gui
+    private String prevPattern;
+    //end FIXME
+    private Filter filter;
+
     {
         filtersDateTimeUnitComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(FilterTimeUnitType.values()));
     }
-    //end FIXME
-
-    // temp vars for within the gui
-    private String prevPattern;
-
-    private enum FilterTabs {
-        ByPattern, BySize, ByDate, ByPath, ByFileAttribute, ByGroup, ByFilePermission
-    }
-
-    private Filter filter;
 
     public FilterDialog(JDialog dialog) {
         super(dialog);
@@ -433,5 +427,9 @@ public class FilterDialog extends FilterDialogObjects {
 
     public boolean isPatternRegularExpression() {
         return filtersRegularExpressionCheckBox.isSelected();
+    }
+
+    private enum FilterTabs {
+        ByPattern, BySize, ByDate, ByPath, ByFileAttribute, ByGroup, ByFilePermission
     }
 }

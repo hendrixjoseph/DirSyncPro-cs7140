@@ -18,12 +18,7 @@
  */
 package edu.wright.dirsyncpro.gui.verifier;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import edu.wright.dirsyncpro.Const;
 
 import javax.swing.InputVerifier;
 import javax.swing.JComponent;
@@ -31,13 +26,17 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
-
-import edu.wright.dirsyncpro.Const;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class DSPInputVerifier extends InputVerifier implements KeyListener, MouseListener {
 
-    JDialog popup;
     protected String errorStr;
+    JDialog popup;
     JLabel jText;
 
     public DSPInputVerifier(JDialog parentDialog, JComponent component, String eStr) {

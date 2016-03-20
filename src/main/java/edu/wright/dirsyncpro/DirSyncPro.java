@@ -21,6 +21,17 @@
  */
 package edu.wright.dirsyncpro;
 
+import edu.wright.dirsyncpro.Const.LogLevel;
+import edu.wright.dirsyncpro.gui.mainframe.MainFrame;
+import edu.wright.dirsyncpro.sync.Sync;
+import edu.wright.dirsyncpro.tools.FileTools;
+import edu.wright.dirsyncpro.tools.Log;
+import edu.wright.dirsyncpro.tools.TextFormatTool;
+import edu.wright.dirsyncpro.updater.Updater;
+
+import javax.swing.SwingWorker;
+import javax.swing.UIManager;
+import javax.swing.plaf.ColorUIResource;
 import java.awt.Color;
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,18 +43,6 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
-
-import javax.swing.SwingWorker;
-import javax.swing.UIManager;
-import javax.swing.plaf.ColorUIResource;
-
-import edu.wright.dirsyncpro.Const.LogLevel;
-import edu.wright.dirsyncpro.gui.mainframe.MainFrame;
-import edu.wright.dirsyncpro.sync.Sync;
-import edu.wright.dirsyncpro.tools.FileTools;
-import edu.wright.dirsyncpro.tools.Log;
-import edu.wright.dirsyncpro.tools.TextFormatTool;
-import edu.wright.dirsyncpro.updater.Updater;
 //SYMLINKMODE ADDED, check if it works fine and then imlement rules to handle the job.
 
 /**
@@ -82,7 +81,7 @@ public class DirSyncPro {
 
         List<String> options = new ArrayList<>(Arrays.asList(args));
 
-        for (Iterator<String> iter = options.iterator(); iter.hasNext();) {
+        for (Iterator<String> iter = options.iterator(); iter.hasNext(); ) {
             // all arguments
             String option = iter.next().toLowerCase();
 
@@ -131,6 +130,7 @@ public class DirSyncPro {
      * The main class of DirSyncPro.
      *
      * @param args The command line argguments.
+     *
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
@@ -279,8 +279,7 @@ public class DirSyncPro {
     /**
      * Returns whether the progam is in GUI mode.
      *
-     * @return boolean {@code true} if the program is in GUI mode,
-     * {@code false} else.
+     * @return boolean {@code true} if the program is in GUI mode, {@code false} else.
      */
     public static boolean isGuiMode() {
         return !((option_noGui) || (gui == null));
@@ -371,30 +370,27 @@ public class DirSyncPro {
     }
 
     /**
-     * Set the quit option.
-     *
-     * @param option_quit If set to {@code true} the program will quit
-     * after the current operation.
-     */
-    public static void setOption_quit(boolean option_quit) {
-        DirSyncPro.option_quit = option_quit;
-    }
-
-    /**
      * Get the setting of the quit option.
      *
-     * @return {@code true} if the option is enabled, {@code false}
-     * otherwise.
+     * @return {@code true} if the option is enabled, {@code false} otherwise.
      */
     public static boolean isOption_quit() {
         return option_quit;
     }
 
     /**
+     * Set the quit option.
+     *
+     * @param option_quit If set to {@code true} the program will quit after the current operation.
+     */
+    public static void setOption_quit(boolean option_quit) {
+        DirSyncPro.option_quit = option_quit;
+    }
+
+    /**
      * Get the setting of the iconify option.
      *
-     * @return {@code true} if the option is enabled, {@code false}
-     * otherwise.
+     * @return {@code true} if the option is enabled, {@code false} otherwise.
      */
     public static boolean isOption_iconify() {
         return option_iconify;
@@ -403,8 +399,7 @@ public class DirSyncPro {
     /**
      * Get the setting of the analyze option.
      *
-     * @return {@code true} if the option is enabled, {@code false}
-     * otherwise.
+     * @return {@code true} if the option is enabled, {@code false} otherwise.
      */
     public static boolean isOption_analyze() {
         return option_analyze;
@@ -468,21 +463,21 @@ public class DirSyncPro {
     }
 
     /**
-     * Set the synchronization.
-     *
-     * @param sync The synchronization.
-     */
-    public static void setSync(Sync sync) {
-        DirSyncPro.sync = sync;
-    }
-
-    /**
      * Gets the synchronization.
      *
      * @return The synchronization.
      */
     public static Sync getSync() {
         return sync;
+    }
+
+    /**
+     * Set the synchronization.
+     *
+     * @param sync The synchronization.
+     */
+    public static void setSync(Sync sync) {
+        DirSyncPro.sync = sync;
     }
 
     /**
@@ -561,8 +556,8 @@ public class DirSyncPro {
                         //log.printMinimal("You may set another paths in the options window.", Const.IconKey.Warning);
                         displayWarning(
                                 "Folder regarding 'dirsyncpro.home' parameter (if defined), program folder, user home\n"
-                                + "directory and current directory are not writable to store the DirSync Pro property file.\n"
-                                + "Program options could not be saved. You may set another paths in the options window.");
+                                        + "directory and current directory are not writable to store the DirSync Pro property file.\n"
+                                        + "Program options could not be saved. You may set another paths in the options window.");
                     }
                 }
             }
@@ -584,8 +579,8 @@ public class DirSyncPro {
     /**
      * get the path to the folder where the configs are saved
      *
-     * @param withFileSeprator boolean whether to return the path with a file
-     * seprator postfix
+     * @param withFileSeprator boolean whether to return the path with a file seprator postfix
+     *
      * @return the path
      */
     public static String getConfigPath(boolean withFileSeprator) {
@@ -617,8 +612,8 @@ public class DirSyncPro {
     /**
      * get the path to the folder where the logs are saved
      *
-     * @param withFileSeprator boolean whether to return the path with a file
-     * seprator postfix
+     * @param withFileSeprator boolean whether to return the path with a file seprator postfix
+     *
      * @return the path.
      */
     public static String getLogsPath(boolean withFileSeprator) {
@@ -683,7 +678,6 @@ public class DirSyncPro {
     }
 
     /**
-     *
      * @return boolean if the license for this version is already accepted.
      */
     public static boolean isLicenseAccepted() {
@@ -696,7 +690,6 @@ public class DirSyncPro {
     }
 
     /**
-     *
      * @return boolean if should check for updates automatically
      */
     public static boolean isCheckforUpdate() {

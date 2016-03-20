@@ -20,13 +20,6 @@
  */
 package edu.wright.dirsyncpro.tools;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
-import java.util.Date;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.Const.IconKey;
 import edu.wright.dirsyncpro.Const.LogLevel;
@@ -35,7 +28,14 @@ import edu.wright.dirsyncpro.exceptions.IncompleteConfigurationException;
 import edu.wright.dirsyncpro.job.Job;
 import edu.wright.dirsyncpro.message.Message;
 import edu.wright.dirsyncpro.message.MessageQ;
+
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.Date;
 
 /**
  * Represents a log file. Contains methods to create or continue a log file.
@@ -58,6 +58,7 @@ public class Log {
      * Initialize a new Log.
      *
      * @param filename The filename of this log.
+     *
      * @throws IncompleteConfigurationException
      */
     public Log(String filename, Job job) {
@@ -262,6 +263,20 @@ public class Log {
         }
     }
 
+    public void setPath(String path) {
+        if (isEnabled()) {
+            String filename = getFilename();
+            if (!path.equals("")) {
+                if (path.endsWith(File.separator)) {
+                    filename = path + filename;
+                } else {
+                    filename = path + File.separator + filename;
+                }
+            }
+            setFile(filename);
+        }
+    }
+
     /**
      * Gets the file name of the log.
      *
@@ -310,20 +325,6 @@ public class Log {
     public void cleanMessages() {
         messages = new MessageQ();
         messageQUpdated = true;
-    }
-
-    public void setPath(String path) {
-        if (isEnabled()) {
-            String filename = getFilename();
-            if (!path.equals("")) {
-                if (path.endsWith(File.separator)) {
-                    filename = path + filename;
-                } else {
-                    filename = path + File.separator + filename;
-                }
-            }
-            setFile(filename);
-        }
     }
 
     public boolean isMessageQUpdated() {

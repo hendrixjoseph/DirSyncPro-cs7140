@@ -22,9 +22,6 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.filterdialog;
 
-import javax.swing.ImageIcon;
-import javax.swing.JDialog;
-
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.gui.swing.MyJTabbedPane;
 import edu.wright.dirsyncpro.gui.verifier.DateTimeVerifier;
@@ -34,6 +31,9 @@ import edu.wright.dirsyncpro.gui.verifier.PatternVerifier;
 import edu.wright.dirsyncpro.gui.verifier.PermissionNumberVerifier;
 import edu.wright.dirsyncpro.tools.GuiTools;
 
+import javax.swing.ImageIcon;
+import javax.swing.JDialog;
+
 /**
  * The DirSyncPro Main GUI.
  *
@@ -41,6 +41,175 @@ import edu.wright.dirsyncpro.tools.GuiTools;
  */
 public abstract class FilterDialogObjects extends javax.swing.JDialog {
 
+    protected javax.swing.JLabel archiveAtttributeJLabel;
+
+    /**
+     * Creates new form GuiObjects
+     */
+//    public GuiObjects() {
+//       initComponents();
+//    }
+    protected javax.swing.JLabel dirFileIncludeLabel;
+    protected javax.swing.JLabel dirFileIncludeLabel1;
+    protected javax.swing.JLabel dirFileIncludeLabel2;
+    protected javax.swing.JCheckBox filtersArchiveAttributeCheckBox;
+    protected javax.swing.JLabel filtersByDateLabel;
+    protected javax.swing.JRadioButton filtersByDateRadioButton;
+    protected javax.swing.JLabel filtersByFileAttributeLabel;
+    protected javax.swing.JRadioButton filtersByFileAttributeRadioButton;
+    protected javax.swing.JLabel filtersByFileOwnershipLabel;
+    protected javax.swing.JRadioButton filtersByFileOwnershipRadioButton;
+    protected javax.swing.JLabel filtersByFilePermissionsLabel;
+    protected javax.swing.JRadioButton filtersByFilePermissionsRadioButton;
+    protected javax.swing.JLabel filtersByFileSizeLabel;
+    protected javax.swing.JRadioButton filtersByFileSizeRadioButton;
+    protected javax.swing.JLabel filtersByPathLabel;
+    protected javax.swing.JRadioButton filtersByPathRadioButton;
+    protected javax.swing.JLabel filtersByPatternLabel;
+    protected javax.swing.JRadioButton filtersByPatternRadioButton;
+    protected javax.swing.JButton filtersCancelButton;
+    protected javax.swing.JRadioButton filtersDateModeSpecificTimeRadioButton;
+    protected javax.swing.JRadioButton filtersDateModeTimeUnitRadioButton;
+    protected javax.swing.JLabel filtersDateSpecificTimeJLabelAfter;
+    protected javax.swing.JFormattedTextField filtersDateTextField;
+    protected javax.swing.JComboBox filtersDateTimeUnitComboBox;
+    protected javax.swing.JFormattedTextField filtersDateTimeUnitField;
+    protected javax.swing.JLabel filtersDateTimeUnitJLabelAfter;
+    protected javax.swing.JRadioButton filtersDirPatternRadioButton;
+    protected javax.swing.JRadioButton filtersEarlierDateRadioButton;
+    protected javax.swing.JRadioButton filtersExactFileSizeRadioButton;
+    protected javax.swing.JRadioButton filtersExcludeRadioButton;
+    protected javax.swing.JRadioButton filtersFilePatternRadioButton;
+    protected javax.swing.JTextField filtersFileSizeField;
+    protected javax.swing.JTextField filtersGroupFilterField;
+    protected javax.swing.JCheckBox filtersHiddenAttributeCheckBox;
+    protected javax.swing.JRadioButton filtersIncludeRadioButton;
+    protected javax.swing.JRadioButton filtersLargerFileSizeRadioButton;
+    protected javax.swing.JRadioButton filtersLaterDateRadioButton;
+    protected javax.swing.JButton filtersOKButton;
+    protected javax.swing.JTextField filtersOwnerFilterField;
+    protected javax.swing.JTextField filtersPathFilterField;
+    protected javax.swing.JTextField filtersPatternField;
+    protected javax.swing.JTextField filtersPermissionFilterField;
+    protected javax.swing.JCheckBox filtersPermissionFilterGRCheckBox;
+    protected javax.swing.JCheckBox filtersPermissionFilterGWCheckBox;
+    protected javax.swing.JCheckBox filtersPermissionFilterGXCheckBox;
+    protected javax.swing.JCheckBox filtersPermissionFilterORCheckBox;
+    protected javax.swing.JCheckBox filtersPermissionFilterOWCheckBox;
+    protected javax.swing.JCheckBox filtersPermissionFilterOXCheckBox;
+    protected javax.swing.JCheckBox filtersPermissionFilterURCheckBox;
+    protected javax.swing.JCheckBox filtersPermissionFilterUWCheckBox;
+    protected javax.swing.JCheckBox filtersPermissionFilterUXCheckBox;
+    protected javax.swing.JCheckBox filtersReadOnlyAttributeCheckBox;
+    protected javax.swing.JCheckBox filtersRegularExpressionCheckBox;
+    protected javax.swing.JRadioButton filtersSameDateRadioButton;
+    protected javax.swing.JRadioButton filtersSmallerFileSizeRadioButton;
+    protected javax.swing.JCheckBox filtersSystemAttributeCheckBox;
+    protected javax.swing.JTabbedPane filtersTabbedPane;
+    protected javax.swing.JLabel hiddenAttributeJLabel;
+    protected javax.swing.JButton pathFilterBrowseButton;
+    protected javax.swing.JLabel pathFilterJLabel;
+    protected javax.swing.JLabel pathFilterJLabel2;
+    protected javax.swing.JLabel pathFilterJLabel3;
+    protected javax.swing.JLabel permissionFilterJLabel;
+    protected javax.swing.JLabel permissionFilterJLabel1;
+    protected javax.swing.JLabel permissionFilterJLabel2;
+    protected javax.swing.JLabel permissionFilterJLabel3;
+    protected javax.swing.JLabel permissionFilterJLabel4;
+    protected javax.swing.JLabel permissionFilterJLabel5;
+    protected javax.swing.JLabel permissionFilterJLabel6;
+    protected javax.swing.JLabel readOnlyAttributeJLabel;
+    protected javax.swing.JLabel regularExpressionJLabel;
+    protected javax.swing.JLabel systemAtttributeJLabel;
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Spacer11;
+    private javax.swing.JPanel Spacer13;
+    private javax.swing.JPanel Spacer15;
+    private javax.swing.JPanel Spacer27;
+    private javax.swing.JPanel Spacer28;
+    private javax.swing.JPanel Spacer29;
+    private javax.swing.JPanel Spacer30;
+    private javax.swing.JPanel Spacer31;
+    private javax.swing.JPanel Spacer32;
+    private javax.swing.JPanel Spacer33;
+    private javax.swing.JPanel Spacer9;
+    private javax.swing.ButtonGroup buttonGroupFilterDate;
+    private javax.swing.ButtonGroup buttonGroupFilterDateMode;
+    private javax.swing.ButtonGroup buttonGroupFilterFileDir;
+    private javax.swing.ButtonGroup buttonGroupFilterFileSize;
+    private javax.swing.ButtonGroup buttonGroupFilterIncludeExclude;
+    private javax.swing.ButtonGroup buttonGroupFilterType;
+    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel1;
+    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel8;
+    private javax.swing.JPanel fileattributesJPanel;
+    private javax.swing.JPanel filtersButtonsPanel;
+    private javax.swing.JPanel inExcludeJPanel;
+    private javax.swing.JPanel inExcludeJPanel1;
+    private javax.swing.JPanel inExcludeJPanel2;
+    private javax.swing.JPanel inExcludeJPanel3;
+    private javax.swing.JPanel inExcludeJPanel4;
+    private javax.swing.JPanel informationPanel12;
+    private javax.swing.JPanel informationPanel13;
+    private javax.swing.JPanel informationPanel14;
+    private javax.swing.JPanel informationPanel22;
+    private javax.swing.JPanel informationPanel23;
+    private javax.swing.JPanel informationPanel24;
+    private javax.swing.JPanel informationPanel25;
+    private javax.swing.JPanel informationPanel26;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel101;
+    private javax.swing.JPanel jPanel102;
+    private javax.swing.JPanel jPanel103;
+    private javax.swing.JPanel jPanel104;
+    private javax.swing.JPanel jPanel105;
+    private javax.swing.JPanel jPanel106;
+    private javax.swing.JPanel jPanel107;
+    private javax.swing.JPanel jPanel108;
+    private javax.swing.JPanel jPanel109;
+    private javax.swing.JPanel jPanel110;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel36;
+    private javax.swing.JPanel jPanel37;
+    private javax.swing.JPanel jPanel38;
+    private javax.swing.JPanel jPanel41;
+    private javax.swing.JPanel jPanel42;
+    private javax.swing.JPanel jPanel43;
+    private javax.swing.JPanel jPanel44;
+    private javax.swing.JPanel jPanel45;
+    private javax.swing.JPanel jPanel46;
+    private javax.swing.JPanel jPanel47;
+    private javax.swing.JPanel jPanel48;
+    private javax.swing.JPanel jPanel49;
+    private javax.swing.JPanel jPanel97;
+    private javax.swing.JPanel jPanel98;
+    private javax.swing.JTextPane jTextPane13;
+    private javax.swing.JTextPane jTextPane14;
+    private javax.swing.JTextPane jTextPane15;
+    private javax.swing.JTextPane jTextPane23;
+    private javax.swing.JTextPane jTextPane24;
+    private javax.swing.JTextPane jTextPane25;
+    private javax.swing.JTextPane jTextPane26;
+    private javax.swing.JTextPane jTextPane27;
+    private javax.swing.JLabel lookNfeelLabel2;
+    private javax.swing.JLabel lookNfeelLabel3;
+    private javax.swing.JPanel lookNfeelPanel1;
+    private javax.swing.JPanel patternFilterPanel;
     public FilterDialogObjects(JDialog dialog) {
         super(dialog);
         GuiTools.setSystemLookAndFeel(DirSyncPro.isSystemLookAndFeel());
@@ -49,15 +218,8 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
     }
 
     /**
-     * Creates new form GuiObjects
-     */
-//    public GuiObjects() {
-//       initComponents();
-//    }
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
+     * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The
+     * content of this method is always regenerated by the Form Editor.
      */
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -987,7 +1149,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
 
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
-        filtersDateTimeUnitComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        filtersDateTimeUnitComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[]{"Item 1", "Item 2", "Item 3", "Item 4"}));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -1554,6 +1716,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 filtersPermissionFilterFieldKeyPressed(evt);
             }
+
             @Override
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 filtersPermissionFilterFieldKeyReleased(evt);
@@ -1649,45 +1812,45 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-private void filtersOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersOKButtonActionPerformed
-    // If no focus -> a fields has blocked applying settings
-    if (filtersOKButton.hasFocus()) {
-        applyFilter();
+    private void filtersOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersOKButtonActionPerformed
+        // If no focus -> a fields has blocked applying settings
+        if (filtersOKButton.hasFocus()) {
+            applyFilter();
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_filtersOKButtonActionPerformed
+
+    private void filtersCancelButtoncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersCancelButtoncancelActionPerformed
         this.setVisible(false);
-    }
-}//GEN-LAST:event_filtersOKButtonActionPerformed
+    }//GEN-LAST:event_filtersCancelButtoncancelActionPerformed
 
-private void filtersCancelButtoncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersCancelButtoncancelActionPerformed
-    this.setVisible(false);
-}//GEN-LAST:event_filtersCancelButtoncancelActionPerformed
+    private void filtersByPatternRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByPatternRadioButtonActionPerformed
+        filterEvent();
+    }//GEN-LAST:event_filtersByPatternRadioButtonActionPerformed
 
-private void filtersByPatternRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByPatternRadioButtonActionPerformed
-    filterEvent();
-}//GEN-LAST:event_filtersByPatternRadioButtonActionPerformed
-
-private void filtersByFileSizeRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByFileSizeRadioButtonActionPerformed
-    filterEvent();
-}//GEN-LAST:event_filtersByFileSizeRadioButtonActionPerformed
+    private void filtersByFileSizeRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByFileSizeRadioButtonActionPerformed
+        filterEvent();
+    }//GEN-LAST:event_filtersByFileSizeRadioButtonActionPerformed
 
     private void pathFilterBrowseButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pathFilterBrowseButtonbrowseSrcActionPerformed
-    GuiTools.browseFileAndFolder(this, filtersPathFilterField);
-}//GEN-LAST:event_pathFilterBrowseButtonbrowseSrcActionPerformed
+        GuiTools.browseFileAndFolder(this, filtersPathFilterField);
+    }//GEN-LAST:event_pathFilterBrowseButtonbrowseSrcActionPerformed
 
-private void filtersByPathRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByPathRadioButtonActionPerformed
-    filterEvent();
-}//GEN-LAST:event_filtersByPathRadioButtonActionPerformed
+    private void filtersByPathRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByPathRadioButtonActionPerformed
+        filterEvent();
+    }//GEN-LAST:event_filtersByPathRadioButtonActionPerformed
 
-private void filtersByFileAttributeRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByFileAttributeRadioButtonActionPerformed
-    filterEvent();
-}//GEN-LAST:event_filtersByFileAttributeRadioButtonActionPerformed
+    private void filtersByFileAttributeRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByFileAttributeRadioButtonActionPerformed
+        filterEvent();
+    }//GEN-LAST:event_filtersByFileAttributeRadioButtonActionPerformed
 
-private void filtersByFileOwnershipRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByFileOwnershipRadioButtonActionPerformed
-    filterEvent();
-}//GEN-LAST:event_filtersByFileOwnershipRadioButtonActionPerformed
+    private void filtersByFileOwnershipRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByFileOwnershipRadioButtonActionPerformed
+        filterEvent();
+    }//GEN-LAST:event_filtersByFileOwnershipRadioButtonActionPerformed
 
-private void filtersByFilePermissionsRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByFilePermissionsRadioButtonActionPerformed
-    filterEvent();
-}//GEN-LAST:event_filtersByFilePermissionsRadioButtonActionPerformed
+    private void filtersByFilePermissionsRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByFilePermissionsRadioButtonActionPerformed
+        filterEvent();
+    }//GEN-LAST:event_filtersByFilePermissionsRadioButtonActionPerformed
 
     private void filtersByDateRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByDateRadioButtonActionPerformed
         filterEvent();
@@ -1727,169 +1890,6 @@ private void filtersByFilePermissionsRadioButtonActionPerformed(java.awt.event.A
     private void filtersDateModeTimeUnitRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersDateModeTimeUnitRadioButtonActionPerformed
         adjustFilterDateTypeRadioButtons();
     }//GEN-LAST:event_filtersDateModeTimeUnitRadioButtonActionPerformed
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Spacer11;
-    private javax.swing.JPanel Spacer13;
-    private javax.swing.JPanel Spacer15;
-    private javax.swing.JPanel Spacer27;
-    private javax.swing.JPanel Spacer28;
-    private javax.swing.JPanel Spacer29;
-    private javax.swing.JPanel Spacer30;
-    private javax.swing.JPanel Spacer31;
-    private javax.swing.JPanel Spacer32;
-    private javax.swing.JPanel Spacer33;
-    private javax.swing.JPanel Spacer9;
-    protected javax.swing.JLabel archiveAtttributeJLabel;
-    private javax.swing.ButtonGroup buttonGroupFilterDate;
-    private javax.swing.ButtonGroup buttonGroupFilterDateMode;
-    private javax.swing.ButtonGroup buttonGroupFilterFileDir;
-    private javax.swing.ButtonGroup buttonGroupFilterFileSize;
-    private javax.swing.ButtonGroup buttonGroupFilterIncludeExclude;
-    private javax.swing.ButtonGroup buttonGroupFilterType;
-    protected javax.swing.JLabel dirFileIncludeLabel;
-    protected javax.swing.JLabel dirFileIncludeLabel1;
-    protected javax.swing.JLabel dirFileIncludeLabel2;
-    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel1;
-    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel8;
-    private javax.swing.JPanel fileattributesJPanel;
-    protected javax.swing.JCheckBox filtersArchiveAttributeCheckBox;
-    private javax.swing.JPanel filtersButtonsPanel;
-    protected javax.swing.JLabel filtersByDateLabel;
-    protected javax.swing.JRadioButton filtersByDateRadioButton;
-    protected javax.swing.JLabel filtersByFileAttributeLabel;
-    protected javax.swing.JRadioButton filtersByFileAttributeRadioButton;
-    protected javax.swing.JLabel filtersByFileOwnershipLabel;
-    protected javax.swing.JRadioButton filtersByFileOwnershipRadioButton;
-    protected javax.swing.JLabel filtersByFilePermissionsLabel;
-    protected javax.swing.JRadioButton filtersByFilePermissionsRadioButton;
-    protected javax.swing.JLabel filtersByFileSizeLabel;
-    protected javax.swing.JRadioButton filtersByFileSizeRadioButton;
-    protected javax.swing.JLabel filtersByPathLabel;
-    protected javax.swing.JRadioButton filtersByPathRadioButton;
-    protected javax.swing.JLabel filtersByPatternLabel;
-    protected javax.swing.JRadioButton filtersByPatternRadioButton;
-    protected javax.swing.JButton filtersCancelButton;
-    protected javax.swing.JRadioButton filtersDateModeSpecificTimeRadioButton;
-    protected javax.swing.JRadioButton filtersDateModeTimeUnitRadioButton;
-    protected javax.swing.JLabel filtersDateSpecificTimeJLabelAfter;
-    protected javax.swing.JFormattedTextField filtersDateTextField;
-    protected javax.swing.JComboBox filtersDateTimeUnitComboBox;
-    protected javax.swing.JFormattedTextField filtersDateTimeUnitField;
-    protected javax.swing.JLabel filtersDateTimeUnitJLabelAfter;
-    protected javax.swing.JRadioButton filtersDirPatternRadioButton;
-    protected javax.swing.JRadioButton filtersEarlierDateRadioButton;
-    protected javax.swing.JRadioButton filtersExactFileSizeRadioButton;
-    protected javax.swing.JRadioButton filtersExcludeRadioButton;
-    protected javax.swing.JRadioButton filtersFilePatternRadioButton;
-    protected javax.swing.JTextField filtersFileSizeField;
-    protected javax.swing.JTextField filtersGroupFilterField;
-    protected javax.swing.JCheckBox filtersHiddenAttributeCheckBox;
-    protected javax.swing.JRadioButton filtersIncludeRadioButton;
-    protected javax.swing.JRadioButton filtersLargerFileSizeRadioButton;
-    protected javax.swing.JRadioButton filtersLaterDateRadioButton;
-    protected javax.swing.JButton filtersOKButton;
-    protected javax.swing.JTextField filtersOwnerFilterField;
-    protected javax.swing.JTextField filtersPathFilterField;
-    protected javax.swing.JTextField filtersPatternField;
-    protected javax.swing.JTextField filtersPermissionFilterField;
-    protected javax.swing.JCheckBox filtersPermissionFilterGRCheckBox;
-    protected javax.swing.JCheckBox filtersPermissionFilterGWCheckBox;
-    protected javax.swing.JCheckBox filtersPermissionFilterGXCheckBox;
-    protected javax.swing.JCheckBox filtersPermissionFilterORCheckBox;
-    protected javax.swing.JCheckBox filtersPermissionFilterOWCheckBox;
-    protected javax.swing.JCheckBox filtersPermissionFilterOXCheckBox;
-    protected javax.swing.JCheckBox filtersPermissionFilterURCheckBox;
-    protected javax.swing.JCheckBox filtersPermissionFilterUWCheckBox;
-    protected javax.swing.JCheckBox filtersPermissionFilterUXCheckBox;
-    protected javax.swing.JCheckBox filtersReadOnlyAttributeCheckBox;
-    protected javax.swing.JCheckBox filtersRegularExpressionCheckBox;
-    protected javax.swing.JRadioButton filtersSameDateRadioButton;
-    protected javax.swing.JRadioButton filtersSmallerFileSizeRadioButton;
-    protected javax.swing.JCheckBox filtersSystemAttributeCheckBox;
-    protected javax.swing.JTabbedPane filtersTabbedPane;
-    protected javax.swing.JLabel hiddenAttributeJLabel;
-    private javax.swing.JPanel inExcludeJPanel;
-    private javax.swing.JPanel inExcludeJPanel1;
-    private javax.swing.JPanel inExcludeJPanel2;
-    private javax.swing.JPanel inExcludeJPanel3;
-    private javax.swing.JPanel inExcludeJPanel4;
-    private javax.swing.JPanel informationPanel12;
-    private javax.swing.JPanel informationPanel13;
-    private javax.swing.JPanel informationPanel14;
-    private javax.swing.JPanel informationPanel22;
-    private javax.swing.JPanel informationPanel23;
-    private javax.swing.JPanel informationPanel24;
-    private javax.swing.JPanel informationPanel25;
-    private javax.swing.JPanel informationPanel26;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel78;
-    private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel80;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel101;
-    private javax.swing.JPanel jPanel102;
-    private javax.swing.JPanel jPanel103;
-    private javax.swing.JPanel jPanel104;
-    private javax.swing.JPanel jPanel105;
-    private javax.swing.JPanel jPanel106;
-    private javax.swing.JPanel jPanel107;
-    private javax.swing.JPanel jPanel108;
-    private javax.swing.JPanel jPanel109;
-    private javax.swing.JPanel jPanel110;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel25;
-    private javax.swing.JPanel jPanel26;
-    private javax.swing.JPanel jPanel36;
-    private javax.swing.JPanel jPanel37;
-    private javax.swing.JPanel jPanel38;
-    private javax.swing.JPanel jPanel41;
-    private javax.swing.JPanel jPanel42;
-    private javax.swing.JPanel jPanel43;
-    private javax.swing.JPanel jPanel44;
-    private javax.swing.JPanel jPanel45;
-    private javax.swing.JPanel jPanel46;
-    private javax.swing.JPanel jPanel47;
-    private javax.swing.JPanel jPanel48;
-    private javax.swing.JPanel jPanel49;
-    private javax.swing.JPanel jPanel97;
-    private javax.swing.JPanel jPanel98;
-    private javax.swing.JTextPane jTextPane13;
-    private javax.swing.JTextPane jTextPane14;
-    private javax.swing.JTextPane jTextPane15;
-    private javax.swing.JTextPane jTextPane23;
-    private javax.swing.JTextPane jTextPane24;
-    private javax.swing.JTextPane jTextPane25;
-    private javax.swing.JTextPane jTextPane26;
-    private javax.swing.JTextPane jTextPane27;
-    private javax.swing.JLabel lookNfeelLabel2;
-    private javax.swing.JLabel lookNfeelLabel3;
-    private javax.swing.JPanel lookNfeelPanel1;
-    protected javax.swing.JButton pathFilterBrowseButton;
-    protected javax.swing.JLabel pathFilterJLabel;
-    protected javax.swing.JLabel pathFilterJLabel2;
-    protected javax.swing.JLabel pathFilterJLabel3;
-    private javax.swing.JPanel patternFilterPanel;
-    protected javax.swing.JLabel permissionFilterJLabel;
-    protected javax.swing.JLabel permissionFilterJLabel1;
-    protected javax.swing.JLabel permissionFilterJLabel2;
-    protected javax.swing.JLabel permissionFilterJLabel3;
-    protected javax.swing.JLabel permissionFilterJLabel4;
-    protected javax.swing.JLabel permissionFilterJLabel5;
-    protected javax.swing.JLabel permissionFilterJLabel6;
-    protected javax.swing.JLabel readOnlyAttributeJLabel;
-    protected javax.swing.JLabel regularExpressionJLabel;
-    protected javax.swing.JLabel systemAtttributeJLabel;
     // End of variables declaration//GEN-END:variables
 
     abstract protected void adjustFilterDateTypeRadioButtons();

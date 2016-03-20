@@ -18,12 +18,12 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog;
 
+import edu.wright.dirsyncpro.Const;
+
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 import javax.swing.UIManager;
-
-import edu.wright.dirsyncpro.Const;
 
 class SyncModeComboboxCellRenderer extends JLabel implements ListCellRenderer {
 
@@ -42,9 +42,8 @@ class SyncModeComboboxCellRenderer extends JLabel implements ListCellRenderer {
     }
 
     /**
-     * @see
-     * javax.swing.ListCellRenderer#getListCellRendererComponent(javax.swing.JList,
-     * java.lang.Object, int, boolean, boolean)
+     * @see javax.swing.ListCellRenderer#getListCellRendererComponent(javax.swing.JList, java.lang.Object, int, boolean,
+     * boolean)
      */
     @Override
     public java.awt.Component getListCellRendererComponent(

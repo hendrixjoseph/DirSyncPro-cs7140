@@ -18,54 +18,27 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 
+import edu.wright.dirsyncpro.Const;
+import edu.wright.dirsyncpro.job.Job;
+import edu.wright.dirsyncpro.tools.FileTools;
+
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import edu.wright.dirsyncpro.Const;
-import edu.wright.dirsyncpro.job.Job;
-import edu.wright.dirsyncpro.tools.FileTools;
-
 public class FilterByDate extends Filter {
-
-    public enum FilterDateType {
-        EarlierThan, ExactlyOn, LaterThan
-    }
-
-    public enum FilterDateMode {
-        SpecificTime, TimeUnit
-    }
-
-    public enum FilterTimeUnitType {
-        Hours(Calendar.HOUR),
-        Days(Calendar.DAY_OF_YEAR),
-        Weeks(Calendar.WEEK_OF_YEAR),
-        Months(Calendar.MONTH);
-
-        FilterTimeUnitType(int value) {
-            this.value = value;
-        }
-
-        private int value;
-
-        public int getValue() {
-            return value;
-        }
-    }
 
     private FilterDateMode filterDateMode;
     private Date date;
     private FilterDateType filterDateType;
     private int timeUnitValue;
     private FilterTimeUnitType unitType;
-
     public FilterByDate(Job j, Action a) {
         super(j, a);
         type = Filter.Type.ByDate;
     }
-
     public FilterByDate(Job j, Action a, Date d, FilterDateType fdt) {
         this(j, a);
         date = d;
@@ -74,7 +47,6 @@ public class FilterByDate extends Filter {
         this.timeUnitValue = 0;
         this.unitType = FilterTimeUnitType.Hours; //dummy
     }
-
     public FilterByDate(Job j, Action a, Integer unitValue, FilterTimeUnitType unitType, FilterDateType dateType) {
         this(j, a);
         this.timeUnitValue = unitValue;
@@ -102,16 +74,16 @@ public class FilterByDate extends Filter {
         return filterDateMode;
     }
 
+    public void setDateMode(FilterDateMode mode) {
+        this.filterDateMode = mode;
+    }
+
     public boolean isFilterByTimeUnit() {
         return filterDateMode == FilterDateMode.TimeUnit;
     }
 
     public boolean isFilterByModificationTime() {
         return filterDateMode == FilterDateMode.SpecificTime;
-    }
-
-    public void setDateMode(FilterDateMode mode) {
-        this.filterDateMode = mode;
     }
 
     public Integer getTimeUnitValue() {
@@ -192,6 +164,31 @@ public class FilterByDate extends Filter {
             return date.compareTo(((FilterByDate) s).getDate());
         } else {
             return super.compareTo(s);
+        }
+    }
+
+    public enum FilterDateType {
+        EarlierThan, ExactlyOn, LaterThan
+    }
+
+    public enum FilterDateMode {
+        SpecificTime, TimeUnit
+    }
+
+    public enum FilterTimeUnitType {
+        Hours(Calendar.HOUR),
+        Days(Calendar.DAY_OF_YEAR),
+        Weeks(Calendar.WEEK_OF_YEAR),
+        Months(Calendar.MONTH);
+
+        private int value;
+
+        FilterTimeUnitType(int value) {
+            this.value = value;
+        }
+
+        public int getValue() {
+            return value;
         }
     }
 }

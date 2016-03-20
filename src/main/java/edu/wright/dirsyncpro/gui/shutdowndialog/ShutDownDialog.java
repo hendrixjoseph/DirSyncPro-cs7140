@@ -17,13 +17,12 @@
  */
 package edu.wright.dirsyncpro.gui.shutdowndialog;
 
+import edu.wright.dirsyncpro.DirSyncPro;
+
+import javax.swing.JFrame;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import javax.swing.JFrame;
-
-import edu.wright.dirsyncpro.DirSyncPro;
 
 /**
  * Contains the GUI methods.
@@ -35,23 +34,6 @@ public class ShutDownDialog extends ShutDownDialogObjects {
 
     int counter = 0;
     Timer timer = new Timer();
-
-    public class CountDownTask extends TimerTask {
-
-        @Override
-        public void run() {
-            if (counter > 0) {
-                counter--;
-                setSeconds();
-            } else {
-                this.cancel();
-                timer.purge();
-                setInvisible();
-                DirSyncPro.shutDownSystem();
-            }
-        }
-    }
-
     TimerTask task = new CountDownTask();
 
     public ShutDownDialog(JFrame frame) {
@@ -78,5 +60,21 @@ public class ShutDownDialog extends ShutDownDialogObjects {
     protected void stopCountDown() {
         task.cancel();
         timer.purge();
+    }
+
+    public class CountDownTask extends TimerTask {
+
+        @Override
+        public void run() {
+            if (counter > 0) {
+                counter--;
+                setSeconds();
+            } else {
+                this.cancel();
+                timer.purge();
+                setInvisible();
+                DirSyncPro.shutDownSystem();
+            }
+        }
     }
 }

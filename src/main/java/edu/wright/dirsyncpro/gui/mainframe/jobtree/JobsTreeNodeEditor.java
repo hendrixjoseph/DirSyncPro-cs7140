@@ -18,11 +18,8 @@
  */
 package edu.wright.dirsyncpro.gui.mainframe.jobtree;
 
-import java.awt.Component;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.MouseEvent;
-import java.util.EventObject;
+import edu.wright.dirsyncpro.DirSyncPro;
+import edu.wright.dirsyncpro.job.Job;
 
 import javax.swing.AbstractCellEditor;
 import javax.swing.JCheckBox;
@@ -30,9 +27,11 @@ import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeCellEditor;
 import javax.swing.tree.TreePath;
-
-import edu.wright.dirsyncpro.DirSyncPro;
-import edu.wright.dirsyncpro.job.Job;
+import java.awt.Component;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.MouseEvent;
+import java.util.EventObject;
 
 public class JobsTreeNodeEditor extends AbstractCellEditor implements TreeCellEditor {
 

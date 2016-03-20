@@ -18,10 +18,10 @@
  */
 package edu.wright.dirsyncpro.tools;
 
+import edu.wright.dirsyncpro.Const;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
-
-import edu.wright.dirsyncpro.Const;
 
 public class TextFormatTool {
 
@@ -69,6 +69,7 @@ public class TextFormatTool {
      * Returns the formatted length.
      *
      * @param f The File of which the size is needed
+     *
      * @return Formatted length.
      */
     public static String getLength(File f) {
@@ -81,6 +82,7 @@ public class TextFormatTool {
      * Returns the human readable formatted number.
      *
      * @param number The number to format
+     *
      * @return Formatted number.
      */
     public static String getHumanReadable(long number) {
@@ -99,6 +101,7 @@ public class TextFormatTool {
      * Returns the string representing this date
      *
      * @param millis
+     *
      * @return the date string
      */
     public static String getDateText(long millis) {

@@ -18,11 +18,6 @@
  */
 package edu.wright.dirsyncpro.tools;
 
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Toolkit;
-import java.io.File;
-
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JTextField;
@@ -31,6 +26,10 @@ import javax.swing.UIManager;
 import javax.swing.text.EditorKit;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.io.File;
 
 /**
  * Contains methods to manipulate arrays
@@ -38,25 +37,6 @@ import javax.swing.text.html.StyleSheet;
  * @author O. Givi (info@dirsyncpro.org)
  */
 public class GuiTools {
-
-    public static class MyStyleSheet extends StyleSheet {
-
-        private StyleSheet styles;
-        HTMLEditorKit editorKit = new HTMLEditorKit();
-
-        public MyStyleSheet() {
-            super();
-            styles = new StyleSheet();
-            Font font = UIManager.getFont("Label.font");
-            String bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
-            styles.addRule(bodyRule);
-            editorKit.setStyleSheet(styles);
-        }
-
-        public EditorKit getEditorKit() {
-            return editorKit;
-        }
-    }
 
     private static EditorKit editorKit = (new MyStyleSheet()).getEditorKit();
 
@@ -140,6 +120,25 @@ public class GuiTools {
                 UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
             }
         } catch (Exception e) {
+        }
+    }
+
+    public static class MyStyleSheet extends StyleSheet {
+
+        HTMLEditorKit editorKit = new HTMLEditorKit();
+        private StyleSheet styles;
+
+        public MyStyleSheet() {
+            super();
+            styles = new StyleSheet();
+            Font font = UIManager.getFont("Label.font");
+            String bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
+            styles.addRule(bodyRule);
+            editorKit.setStyleSheet(styles);
+        }
+
+        public EditorKit getEditorKit() {
+            return editorKit;
         }
     }
 

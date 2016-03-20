@@ -18,14 +18,14 @@
  */
 package edu.wright.dirsyncpro.tools;
 
+import edu.wright.dirsyncpro.DirSyncPro;
+
 import java.awt.Desktop;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-
-import edu.wright.dirsyncpro.DirSyncPro;
 
 /**
  * Contains methods to manipulate arrays

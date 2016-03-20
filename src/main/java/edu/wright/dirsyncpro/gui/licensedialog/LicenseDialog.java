@@ -20,14 +20,13 @@
  */
 package edu.wright.dirsyncpro.gui.licensedialog;
 
+import edu.wright.dirsyncpro.DirSyncPro;
+import edu.wright.dirsyncpro.tools.GuiTools;
+
+import javax.swing.JFrame;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
-import javax.swing.JFrame;
-
-import edu.wright.dirsyncpro.DirSyncPro;
-import edu.wright.dirsyncpro.tools.GuiTools;
 
 /**
  * Contains the GUI methods.

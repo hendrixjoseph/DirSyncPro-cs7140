@@ -18,15 +18,14 @@
  */
 package edu.wright.dirsyncpro.gui.mainframe.scheduletable;
 
-import java.awt.Component;
+import edu.wright.dirsyncpro.Const.IconKey;
+import edu.wright.dirsyncpro.DirSyncPro;
+import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.Schedule;
 
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
-
-import edu.wright.dirsyncpro.Const.IconKey;
-import edu.wright.dirsyncpro.DirSyncPro;
-import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.Schedule;
+import java.awt.Component;
 
 public class ScheduleTableCellRenderer implements TableCellRenderer {
 

@@ -22,11 +22,16 @@
  */
 package edu.wright.dirsyncpro.tools;
 
+import edu.wright.dirsyncpro.Const;
+import edu.wright.dirsyncpro.DirSyncPro;
+import edu.wright.dirsyncpro.tools.copy.J7CopierFactory;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -42,11 +47,6 @@ import java.util.Date;
 import java.util.UUID;
 import java.util.zip.CRC32;
 import java.util.zip.Checksum;
-
-import edu.wright.dirsyncpro.Const;
-import edu.wright.dirsyncpro.DirSyncPro;
-import edu.wright.dirsyncpro.tools.copy.J7CopierFactory;
-import java.io.FileNotFoundException;
 
 /**
  * Contains methods to compare file date and size and to copy a file.
@@ -65,15 +65,14 @@ public class FileTools {
     }
 
     /**
-     * Compares the date of the given file against the given date. File date is
-     * only accurate to the second; therefore file dates are divided by 60000
-     * and truncated (converting milliseconds to minutes).
+     * Compares the date of the given file against the given date. File date is only accurate to the second; therefore
+     * file dates are divided by 60000 and truncated (converting milliseconds to minutes).
      *
      * @param file The source file.
      * @param date The given date.
-     * @return int {@code 1} if the file is newer than the date,
-     * {@code 0} if the file is modified on date, {@code -1} if the
-     * date is newer.
+     *
+     * @return int {@code 1} if the file is newer than the date, {@code 0} if the file is modified on date, {@code -1}
+     * if the date is newer.
      */
     public static int cmpFileDatesInMinutes(File file, Date date) {
         long fileLastModified;
@@ -95,9 +94,9 @@ public class FileTools {
      *
      * @param src The source file.
      * @param dst The destination file.
-     * @return int {@code 1} there are differences in file attributes
-     * between the files {@code 0} both files have the same attributes
-     * {@code -1} second file does not exist.
+     *
+     * @return int {@code 1} there are differences in file attributes between the files {@code 0} both files have the
+     * same attributes {@code -1} second file does not exist.
      */
     public static int cmpFileAttributes(File src, File dst) {
         if (!dst.exists()) {
@@ -154,14 +153,14 @@ public class FileTools {
     /**
      * Copies the source file to the given destination with the same filename.
      *
-     * @param srcFile The file to copy.
-     * @param dstFile The destination (where to copy the source file).
-     * @param dst The path to Dir B.
-     * @param howManyBackups The number of backups to keep.
-     * @param backupDir the directory in which the backups are made
-     * @param verify whether to verify the copied file
-     * @param writeTimeStampBack whether to write the timestamp of the dest file
-     * back to the source file
+     * @param srcFile            The file to copy.
+     * @param dstFile            The destination (where to copy the source file).
+     * @param dst                The path to Dir B.
+     * @param howManyBackups     The number of backups to keep.
+     * @param backupDir          the directory in which the backups are made
+     * @param verify             whether to verify the copied file
+     * @param writeTimeStampBack whether to write the timestamp of the dest file back to the source file
+     *
      * @throws IOException
      * @throws FileNotFoundException
      * @throws FileNotFoundException
@@ -279,8 +278,7 @@ public class FileTools {
     }
 
     /**
-     * Sets the modification time of the parent of dstFile according to the
-     * parent of srcFile
+     * Sets the modification time of the parent of dstFile according to the parent of srcFile
      *
      * @param srcFile of which the parent modification time is copied.
      * @param dstFile to which the parent modification time is copied.
@@ -299,6 +297,7 @@ public class FileTools {
      *
      * @param srcFile The source file to compare.
      * @param dstFile The destination file to compare.
+     *
      * @return {@code true} if the checksums match.
      */
     public static boolean checksumIdentical(File srcFile, File dstFile) throws FileNotFoundException {
@@ -309,13 +308,14 @@ public class FileTools {
      * Calculates the checksum of a file.
      *
      * @param file The file which checksum shall be calculated.
+     *
      * @return The checksum.
      */
     public static long checksum(File file) throws FileNotFoundException {
         // The checksum
         Checksum checksum = null;
 
-        try(FileInputStream in = new FileInputStream(file)) {
+        try (FileInputStream in = new FileInputStream(file)) {
             checksum = new CRC32();
 
             int bytes_read;
@@ -335,12 +335,13 @@ public class FileTools {
     /**
      * Deletes a directory with contained files and subdirectories.
      *
-     * @param f The directory to delete.
-     * @param dst The path to the destination directory.
+     * @param f              The directory to delete.
+     * @param dst            The path to the destination directory.
      * @param howManyBackups The number of backups to keep.
-     * @param backupDir the directory in which the backups are made
-     * @return {@code true} if the deletion could be completed,
-     * {@code false} if an error occoured.
+     * @param backupDir      the directory in which the backups are made
+     *
+     * @return {@code true} if the deletion could be completed, {@code false} if an error occoured.
+     *
      * @throws FileNotFoundException
      * @throws FileNotFoundException
      */
@@ -363,10 +364,10 @@ public class FileTools {
     }
 
     /**
-     * Returns only the filename portion of a full filename (consisting of path,
-     * filename, and extension).
+     * Returns only the filename portion of a full filename (consisting of path, filename, and extension).
      *
      * @param filename The full filename.
+     *
      * @return The filename.
      */
     public static String getOnlyFilename(String filename) {
@@ -381,10 +382,10 @@ public class FileTools {
     }
 
     /**
-     * Returns only the extension portion of a full filename (consisting of
-     * path, filename, and extension).
+     * Returns only the extension portion of a full filename (consisting of path, filename, and extension).
      *
      * @param filename The full filename.
+     *
      * @return The extension.
      */
     public static String getOnlyExtension(String filename) {
@@ -401,6 +402,7 @@ public class FileTools {
      * Ensures that the given path ends with a file separator.
      *
      * @param path The path ending or not ending with a file separator.
+     *
      * @return The path ending with a file separator.
      */
     public static String ensurePathEndsWithSeparator(String path) {
@@ -419,6 +421,7 @@ public class FileTools {
      * Check whether a path is writable; path must be a directory.
      *
      * @param path
+     *
      * @return true if writable, false otherwise.
      */
     public static boolean directoryIsWritable(String path) {
@@ -438,11 +441,13 @@ public class FileTools {
     /**
      * Specifies the backup file for a given file to backup.
      *
-     * @param file The file to backup.
-     * @param dst The path to Dir B.
+     * @param file        The file to backup.
+     * @param dst         The path to Dir B.
      * @param backupCount The number of this backup.
-     * @param backupDir the directory in which the backups are made
+     * @param backupDir   the directory in which the backups are made
+     *
      * @return The backup file.
+     *
      * @throws IOException
      */
     public static File getBackupFile(File file, String dst, int backupCount, String backupDir) throws IOException {
@@ -475,9 +480,10 @@ public class FileTools {
 
     /**
      * @param file
-     * @param dst The path to Dir B.
+     * @param dst            The path to Dir B.
      * @param howManyBackups The number of backups to keep.
-     * @param backupDir the directory in which the backups are made
+     * @param backupDir      the directory in which the backups are made
+     *
      * @throws FileNotFoundException
      * @throws FileNotFoundException
      */
@@ -496,12 +502,12 @@ public class FileTools {
     }
 
     /**
-     * Rotates existing backups (increases their number until it reaches the
-     * maximum number of backups).
+     * Rotates existing backups (increases their number until it reaches the maximum number of backups).
      *
-     * @param file The file to backup.
-     * @param dst The path to Dir B.
+     * @param file      The file to backup.
+     * @param dst       The path to Dir B.
      * @param backupDir the directory in which the backups are made
+     *
      * @throws IOException
      */
     public static void rotateBackups(File file, String dst, String backupDir) throws IOException {
@@ -519,13 +525,13 @@ public class FileTools {
     }
 
     /**
-     * Deletes old backups (backups with a number greater than the maximum
-     * number of backups).
+     * Deletes old backups (backups with a number greater than the maximum number of backups).
      *
-     * @param file The file to backup.
-     * @param dst The path to Dir B.
+     * @param file           The file to backup.
+     * @param dst            The path to Dir B.
      * @param howManyBackups The number of backups to keep.
-     * @param backupDir the directory in which the backups are made
+     * @param backupDir      the directory in which the backups are made
+     *
      * @throws IOException
      */
     public static void deleteOldBackups(File file, String dst, int howManyBackups, String backupDir) throws IOException {
@@ -540,6 +546,7 @@ public class FileTools {
      * replaces all illegal characters in the given filename with '_' char
      *
      * @param filename the input filename
+     *
      * @return the filename inclusive replacements
      */
     public static String replaceIllegalCharactersInFileName(String filename) {
@@ -554,6 +561,7 @@ public class FileTools {
      * Reads a file and returns its content.
      *
      * @param filename
+     *
      * @return
      */
     public static String readFile(String filename) {

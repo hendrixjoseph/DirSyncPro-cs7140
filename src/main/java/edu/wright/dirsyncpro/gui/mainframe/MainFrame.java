@@ -20,39 +20,6 @@
  */
 package edu.wright.dirsyncpro.gui.mainframe;
 
-import java.awt.Component;
-import java.awt.Desktop;
-import java.awt.Dimension;
-import java.awt.Frame;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.io.File;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-import javax.swing.JFileChooser;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JScrollBar;
-import javax.swing.JTable;
-import javax.swing.SwingUtilities;
-import javax.swing.SwingWorker;
-import javax.swing.Timer;
-import javax.swing.ToolTipManager;
-import javax.swing.tree.DefaultMutableTreeNode;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.Const.CopyMode;
 import edu.wright.dirsyncpro.Const.IconKey;
@@ -84,6 +51,38 @@ import edu.wright.dirsyncpro.tools.Log;
 import edu.wright.dirsyncpro.tools.TextFormatTool;
 import edu.wright.dirsyncpro.updater.Updater;
 
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JScrollBar;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+import javax.swing.SwingWorker;
+import javax.swing.Timer;
+import javax.swing.ToolTipManager;
+import javax.swing.tree.DefaultMutableTreeNode;
+import java.awt.Component;
+import java.awt.Desktop;
+import java.awt.Dimension;
+import java.awt.Frame;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 /**
  * Contains the GUI methods.
  *
@@ -94,19 +93,18 @@ public class MainFrame extends MainFrameObjects {
 
     protected Tray dirSyncProTray;
     protected ScreenUpdater screenUpdater;
-
+    protected SwingWorker<Void, Void> syncProcess = null;
+    protected SwingWorker<Void, Void> helperProcess = null;
+    protected boolean isEnabled = true;
+    protected File currentConfig; // for open/save dialog
+    // whether the directory is being updated from the gui
+    protected boolean isUpdateDirFromGui = true;
     private JobDialog jobDialog = new JobDialog(this);
     private SettingsDialog settingsDialog = new SettingsDialog(this);
     private LicenseDialog licenseDialog = new LicenseDialog(this);
     private UpdateDialog updateDialog = new UpdateDialog(this);
     private CMDDialog cmdDialog = new CMDDialog(this);
     private ShutDownDialog shutDownDialog = new ShutDownDialog(this);
-
-    protected SwingWorker<Void, Void> syncProcess = null;
-    protected SwingWorker<Void, Void> helperProcess = null;
-
-    protected boolean isEnabled = true;
-
     private int progressTotalValue;
     private int progressTotalMax;
     private int progressTotalAdd;
@@ -116,7 +114,6 @@ public class MainFrame extends MainFrameObjects {
     private int progressCurrentMax;
     private String progressCurrentString;
     private boolean progressCurrentIndeterminate;
-
     private int prevProgressTotalValue;
     private int prevProgessTotalAdd;
     private int prevProgessTotalMax;
@@ -126,19 +123,10 @@ public class MainFrame extends MainFrameObjects {
     private int prevProgessCurrentMax;
     private String prevProgessCurrentString;
     private boolean prevProgessCurrentIndeterminate;
-
     private boolean progressbarUpdated = false;
-
     private AtomicBoolean updatingGUI = new AtomicBoolean(false);
-
-    protected File currentConfig; // for open/save dialog
-
     private boolean currentConfigAlreadyAccessed = false;
-
     private Updater u;
-
-    // whether the directory is being updated from the gui
-    protected boolean isUpdateDirFromGui = true;
 
     public MainFrame() {
         // always select the last row (the created dummy job)
@@ -703,8 +691,8 @@ public class MainFrame extends MainFrameObjects {
         if (!manual.exists()) {
             DirSyncPro.displayError(
                     "Unable to open the help file (" + manual.getAbsolutePath()
-                    + ")\nThe help file resides normally in the program folder.\n\nYou may always download "
-                    + Const.manualFilename + " from " + Const.HOMEPAGE
+                            + ")\nThe help file resides normally in the program folder.\n\nYou may always download "
+                            + Const.manualFilename + " from " + Const.HOMEPAGE
             );
         } else {
             DesktopTools.launchFile(manual.getAbsolutePath());
@@ -712,12 +700,9 @@ public class MainFrame extends MainFrameObjects {
     }
 
     /**
-     * *
-     * updates the SyncQ in GUI public void accumulateSyncQ(){ SyncQ syncQ = new
-     * SyncQ(); Object[] dirs = syncQDirList.getSelectedValues(); for (int i =
-     * 0; i< dirs.length; i++){ Job dir = (Job) dirs[i];
-     * syncQ.addAll(dir.getSyncQueue()); } DirSyncPro.getSync().setSyncQ(syncQ);
-     * }
+     * * updates the SyncQ in GUI public void accumulateSyncQ(){ SyncQ syncQ = new SyncQ(); Object[] dirs =
+     * syncQDirList.getSelectedValues(); for (int i = 0; i< dirs.length; i++){ Job dir = (Job) dirs[i];
+     * syncQ.addAll(dir.getSyncQueue()); } DirSyncPro.getSync().setSyncQ(syncQ); }
      */
     @Override
     protected void syncQDirSelected() {
@@ -1335,7 +1320,7 @@ public class MainFrame extends MainFrameObjects {
             if (DirSyncPro.getSync().getJobs().size() > 1 && i < DirSyncPro.getSync().getJobs().size() - 1) {
                 job = DirSyncPro.getSync().getJobs().remove(i);
                 i++;
-                DirSyncPro.getSync().getJobs().add(i,job);
+                DirSyncPro.getSync().getJobs().add(i, job);
                 updateJobsTree(row + 1);
             }
         }
@@ -1403,7 +1388,7 @@ public class MainFrame extends MainFrameObjects {
                 job.setLog(new Log(job.getName() + "." + Const.LOG_FILE_EXTENSION, job));
             }
 
-            DirSyncPro.getSync().getJobs().add(i,job);
+            DirSyncPro.getSync().getJobs().add(i, job);
             updateJobsTree(row + 1);
         }
     }
@@ -1633,8 +1618,7 @@ public class MainFrame extends MainFrameObjects {
     /**
      * Check if the GUI is enabled.
      *
-     * @return {@code true} if the GUI is enabled, {@code false}
-     * otherwise.
+     * @return {@code true} if the GUI is enabled, {@code false} otherwise.
      */
     public boolean isGuiEnabled() {
         return isEnabled;
@@ -1759,7 +1743,7 @@ public class MainFrame extends MainFrameObjects {
         updateJobsTree();
     }
 
-//	public void updateSyncQTableColumnSizesInGUIEDT(){
+    //	public void updateSyncQTableColumnSizesInGUIEDT(){
 //		helperProcess = new SwingWorker<Void, Void>() {
 //			protected Void doInBackground() {
 //				autoResizeColumn(syncQTable, 1);
@@ -1921,6 +1905,15 @@ public class MainFrame extends MainFrameObjects {
     }
 
     /**
+     * Returns the current config
+     *
+     * @return Current Config
+     */
+    public File getCurrentConfig() {
+        return currentConfig;
+    }
+
+    /**
      * Sets the current configuration.
      *
      * @param currentConfig The currentConfig to set.
@@ -1928,15 +1921,6 @@ public class MainFrame extends MainFrameObjects {
     public void setCurrentConfig(File currentConfig) {
         this.currentConfig = currentConfig;
         updateTitle();
-    }
-
-    /**
-     * Returns the current config
-     *
-     * @return Current Config
-     */
-    public File getCurrentConfig() {
-        return currentConfig;
     }
 
     /**

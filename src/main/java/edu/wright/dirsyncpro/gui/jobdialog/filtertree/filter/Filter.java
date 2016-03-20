@@ -18,57 +18,18 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 
-import java.nio.file.Path;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.job.Job;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import java.nio.file.Path;
+
 public class Filter implements Comparable<Filter>, Cloneable {
-
-    public enum Type {
-        ExcludeGroup("/icons/excludeFile.png"),
-        IncludeGroup("/icons/includeFile.png"),
-        ByPattern("/icons/pattern.png"),
-        ByFileSize("/icons/smaller.png"),
-        ByDate("/icons/calendar.png"),
-        ByPath("/icons/dirBlue.png"),
-        ByDOSAttributes("/icons/file.png"),
-        ByFileOwnership("/icons/group.png"),
-        ByFilePermissions("/icons/permissions.png");
-
-        private Icon icon;
-
-        public Icon getIcon() {
-            return icon;
-        }
-
-        Type(String iconFile) {
-            this.icon = new ImageIcon(Const.class.getResource(iconFile));
-        }
-    }
-
-    public enum Action {
-        Include("/icons/includeFile.png"),
-        Exclude("/icons/excludeFile.png");
-
-        private Icon icon;
-
-        public Icon getIcon() {
-            return icon;
-        }
-
-        Action(String iconFile) {
-            this.icon = new ImageIcon(Const.class.getResource(iconFile));
-        }
-    }
 
     protected Type type;
     protected Action action;
     protected Job job;
-
     public Filter(Job j, Action a) {
         job = j;
         action = a;
@@ -121,5 +82,42 @@ public class Filter implements Comparable<Filter>, Cloneable {
     //dummy to override
     public boolean matches(Path path) {
         return true;
+    }
+
+    public enum Type {
+        ExcludeGroup("/icons/excludeFile.png"),
+        IncludeGroup("/icons/includeFile.png"),
+        ByPattern("/icons/pattern.png"),
+        ByFileSize("/icons/smaller.png"),
+        ByDate("/icons/calendar.png"),
+        ByPath("/icons/dirBlue.png"),
+        ByDOSAttributes("/icons/file.png"),
+        ByFileOwnership("/icons/group.png"),
+        ByFilePermissions("/icons/permissions.png");
+
+        private Icon icon;
+
+        Type(String iconFile) {
+            this.icon = new ImageIcon(Const.class.getResource(iconFile));
+        }
+
+        public Icon getIcon() {
+            return icon;
+        }
+    }
+
+    public enum Action {
+        Include("/icons/includeFile.png"),
+        Exclude("/icons/excludeFile.png");
+
+        private Icon icon;
+
+        Action(String iconFile) {
+            this.icon = new ImageIcon(Const.class.getResource(iconFile));
+        }
+
+        public Icon getIcon() {
+            return icon;
+        }
     }
 }

@@ -18,73 +18,20 @@
  */
 package edu.wright.dirsyncpro.gui.mainframe.jobtree;
 
-import java.util.Enumeration;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.tree.DefaultMutableTreeNode;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.Filter;
 import edu.wright.dirsyncpro.job.Job;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.tree.DefaultMutableTreeNode;
+import java.util.Enumeration;
+
 public class JobTree extends DefaultMutableTreeNode {
-
-    public enum Type {
-        Root("/icons/DirSyncPro.png"),
-        Job("/icons/name.png"),
-        Path("/icons/dirBlue.png"),
-        Source("/icons/dirGreen.png"),
-        Destination("/icons/dirOrange.png"),
-        Mode("/icons/syncModeBI16x16.png"),
-        Filters("/icons/filter.png"),
-        FilterByPattern("/icons/pattern.png"),
-        FilterByFileSize("/icons/smaller.png"),
-        FilterByDate("/icons/calendar.png"),
-        FilterByPath("/icons/dirBlue.png"),
-        FilterByDOSAttributes("/icons/file.png"),
-        FilterByFileOwnership("/icons/group.png"),
-        FilterByFilePermissions("/icons/permissions.png"),
-        FileSizeSmallerInclude("/icons/smaller.png"),
-        FileSizeExactlyInclude("/icons/sameSize.png"),
-        FileSizeLargerInclude("/icons/larger.png"),
-        FileSizeSmallerExclude("/icons/smaller.png"),
-        FileSizeExactlyExclude("/icons/sameSize.png"),
-        FileSizeLargerExclude("/icons/larger.png"),
-        SyncMode("/icons/syncModeBI16x16.png"),
-        CopyOptions("/icons/copyAll.png"),
-        ConflictResolution("/icons/conflict_icon.png"),
-        WithSubFolders("/icons/withSubdirs.png"),
-        Verify("/icons/verify.png"),
-        Preserves("/icons/permissions.png"),
-        OverrideReadOnly("/icons/link.png"),
-        RealtimeSync("/icons/icon_sync.png"),
-        Delete("/icons/deleteDir.png"),
-        SymLink("/icons/deleteDir.png"),
-        Granularity("/icons/timestampDiff.png"),
-        WriteTimeStampsBack("/icons/writeTimestampBack.png"),
-        DirTimeStamps("/icons/timestampDiffDir.png"),
-        IgnoreDayLightSavingGranularity("/icons/timestamp.png"),
-        Log("/icons/log.png"),
-        Schedule("/icons/calendar.png"),
-        ScheduleItem("/icons/calendar.png");
-
-        private Icon icon;
-
-        public Icon getIcon() {
-            return icon;
-        }
-
-        Type(String iconFile) {
-            this.icon = new ImageIcon(Const.class.getResource(iconFile));
-        }
-    }
 
     public Type type;
     public Object value;
     public JobTree parent;
-//	public ArrayList<JobTree> children = new ArrayList<JobTree>();
-
     public JobTree(Type t, Object v, JobTree p) {
         type = t;
         value = v;
@@ -94,6 +41,7 @@ public class JobTree extends DefaultMutableTreeNode {
             p.add(this);
         }
     }
+//	public ArrayList<JobTree> children = new ArrayList<JobTree>();
 
     public String toString() {
         if (type == Type.Job) {
@@ -342,7 +290,7 @@ public class JobTree extends DefaultMutableTreeNode {
     /**
      * Prints a JobTree
      *
-     * @param jt JobTree to print
+     * @param jt    JobTree to print
      * @param ident Beginning ident (mostly "").
      */
     public void print(JobTree jt, String ident) {
@@ -360,6 +308,56 @@ public class JobTree extends DefaultMutableTreeNode {
                 JobTree ch = (JobTree) children.nextElement();
                 print(ch, ident + " ");
             }
+        }
+    }
+
+    public enum Type {
+        Root("/icons/DirSyncPro.png"),
+        Job("/icons/name.png"),
+        Path("/icons/dirBlue.png"),
+        Source("/icons/dirGreen.png"),
+        Destination("/icons/dirOrange.png"),
+        Mode("/icons/syncModeBI16x16.png"),
+        Filters("/icons/filter.png"),
+        FilterByPattern("/icons/pattern.png"),
+        FilterByFileSize("/icons/smaller.png"),
+        FilterByDate("/icons/calendar.png"),
+        FilterByPath("/icons/dirBlue.png"),
+        FilterByDOSAttributes("/icons/file.png"),
+        FilterByFileOwnership("/icons/group.png"),
+        FilterByFilePermissions("/icons/permissions.png"),
+        FileSizeSmallerInclude("/icons/smaller.png"),
+        FileSizeExactlyInclude("/icons/sameSize.png"),
+        FileSizeLargerInclude("/icons/larger.png"),
+        FileSizeSmallerExclude("/icons/smaller.png"),
+        FileSizeExactlyExclude("/icons/sameSize.png"),
+        FileSizeLargerExclude("/icons/larger.png"),
+        SyncMode("/icons/syncModeBI16x16.png"),
+        CopyOptions("/icons/copyAll.png"),
+        ConflictResolution("/icons/conflict_icon.png"),
+        WithSubFolders("/icons/withSubdirs.png"),
+        Verify("/icons/verify.png"),
+        Preserves("/icons/permissions.png"),
+        OverrideReadOnly("/icons/link.png"),
+        RealtimeSync("/icons/icon_sync.png"),
+        Delete("/icons/deleteDir.png"),
+        SymLink("/icons/deleteDir.png"),
+        Granularity("/icons/timestampDiff.png"),
+        WriteTimeStampsBack("/icons/writeTimestampBack.png"),
+        DirTimeStamps("/icons/timestampDiffDir.png"),
+        IgnoreDayLightSavingGranularity("/icons/timestamp.png"),
+        Log("/icons/log.png"),
+        Schedule("/icons/calendar.png"),
+        ScheduleItem("/icons/calendar.png");
+
+        private Icon icon;
+
+        Type(String iconFile) {
+            this.icon = new ImageIcon(Const.class.getResource(iconFile));
+        }
+
+        public Icon getIcon() {
+            return icon;
         }
     }
 }

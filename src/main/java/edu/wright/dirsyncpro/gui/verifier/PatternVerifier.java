@@ -18,6 +18,11 @@
  */
 package edu.wright.dirsyncpro.gui.verifier;
 
+import edu.wright.dirsyncpro.DirSyncPro;
+
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;
@@ -25,12 +30,6 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
-
-import javax.swing.JComponent;
-import javax.swing.JDialog;
-import javax.swing.JTextField;
-
-import edu.wright.dirsyncpro.DirSyncPro;
 
 public class PatternVerifier extends DSPInputVerifier implements KeyListener, MouseListener {
 

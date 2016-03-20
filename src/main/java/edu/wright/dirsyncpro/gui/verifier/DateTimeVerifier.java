@@ -18,15 +18,14 @@
  */
 package edu.wright.dirsyncpro.gui.verifier;
 
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.JFormattedTextField;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
-
-import javax.swing.JComponent;
-import javax.swing.JDialog;
-import javax.swing.JFormattedTextField;
 
 public class DateTimeVerifier extends DSPInputVerifier implements KeyListener, MouseListener {
 

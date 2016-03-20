@@ -17,15 +17,15 @@
  */
 package edu.wright.dirsyncpro.sync;
 
-import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import edu.wright.dirsyncpro.Const.CopyMode;
 import edu.wright.dirsyncpro.Const.SymLinkMode;
 import edu.wright.dirsyncpro.Const.SyncPairStatus;
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterSet;
+
+import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Represents a queue of SyncPairs.
@@ -236,10 +236,9 @@ public class SyncQ {
     }
 
     /**
-     * changes the status of all Sync Pairs with the same stat and updates the
-     * stats in SyncQ
+     * changes the status of all Sync Pairs with the same stat and updates the stats in SyncQ
      *
-     * @param sp the Sync Pair as template to change
+     * @param sp    the Sync Pair as template to change
      * @param spsTo the new status
      */
     public void changeAll(SyncPair sp, SyncPairStatus spsTo) {
@@ -346,7 +345,7 @@ public class SyncQ {
     /**
      * changes the status of a Sync Pair and updates the stats in SyncQ
      *
-     * @param sp the Sync Pair to change
+     * @param sp    the Sync Pair to change
      * @param spsTo the new status
      */
     public void change(SyncPair sp, SyncPairStatus spsTo) {
@@ -379,7 +378,6 @@ public class SyncQ {
     }
 
     /**
-     *
      * @return total number of files
      */
     public int getCountFiles() {
@@ -387,7 +385,6 @@ public class SyncQ {
     }
 
     /**
-     *
      * @return total number of dirs
      */
     public int getCountDirs() {
@@ -512,8 +509,8 @@ public class SyncQ {
     }
 
     /**
-     *
      * @param cm the CopyMode
+     *
      * @return boolean if the view filter for cm is set
      */
     public boolean getSyncQViewFilterMode(CopyMode cm) {
@@ -521,17 +518,16 @@ public class SyncQ {
     }
 
     /**
-     *
      * @param cm the CopyMode to set the value for
-     * @param b boolean value to set
+     * @param b  boolean value to set
      */
     public void setSyncQViewFilterMode(CopyMode cm, boolean b) {
         viewFilterMode.put(cm, b);
     }
 
     /**
-     *
      * @param cm the CopyMode
+     *
      * @return boolean if the sync filter for cm is set
      */
     public boolean getSyncQSyncFilterMode(CopyMode cm) {
@@ -539,9 +535,8 @@ public class SyncQ {
     }
 
     /**
-     *
      * @param cm the CopyMode to set the value for
-     * @param b boolean value to set
+     * @param b  boolean value to set
      */
     public void setSyncQSyncFilterMode(CopyMode cm, boolean b) {
         syncFilterMode.put(cm, b);

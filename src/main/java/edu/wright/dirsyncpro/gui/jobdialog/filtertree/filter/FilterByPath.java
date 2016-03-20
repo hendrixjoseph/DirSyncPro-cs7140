@@ -18,10 +18,10 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 
+import edu.wright.dirsyncpro.job.Job;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
-import edu.wright.dirsyncpro.job.Job;
 
 public class FilterByPath extends Filter {
 

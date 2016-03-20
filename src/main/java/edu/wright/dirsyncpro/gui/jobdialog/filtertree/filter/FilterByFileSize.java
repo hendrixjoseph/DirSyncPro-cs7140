@@ -18,20 +18,15 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 
+import edu.wright.dirsyncpro.job.Job;
+
 import java.io.File;
 import java.nio.file.Path;
 
-import edu.wright.dirsyncpro.job.Job;
-
 public class FilterByFileSize extends Filter {
-
-    public enum FilterFileSizeType {
-        SmallerThan, Exactly, LargerThan
-    }
 
     private long value = 0;
     private FilterFileSizeType fileSizeType;
-
     public FilterByFileSize(Job j, Action a) {
         super(j, a);
         type = Filter.Type.ByFileSize;
@@ -93,5 +88,9 @@ public class FilterByFileSize extends Filter {
         } else {
             return super.compareTo(s);
         }
+    }
+
+    public enum FilterFileSizeType {
+        SmallerThan, Exactly, LargerThan
     }
 }

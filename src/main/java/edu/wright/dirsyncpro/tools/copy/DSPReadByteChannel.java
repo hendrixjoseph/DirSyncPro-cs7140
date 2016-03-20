@@ -18,15 +18,17 @@
  */
 package edu.wright.dirsyncpro.tools.copy;
 
+import edu.wright.dirsyncpro.DirSyncPro;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.nio.channels.ReadableByteChannel;
 
-import edu.wright.dirsyncpro.DirSyncPro;
-
 public class DSPReadByteChannel implements ReadableByteChannel {
 
+    ReadableByteChannel rbc;
+    long readBytes = 0;
     private final ActionListener progressBarUpdater = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent evt) {
@@ -35,9 +37,6 @@ public class DSPReadByteChannel implements ReadableByteChannel {
             }
         }
     };
-
-    ReadableByteChannel rbc;
-    long readBytes = 0;
 
     @Override
     public boolean isOpen() {

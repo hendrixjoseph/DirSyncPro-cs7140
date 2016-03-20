@@ -18,10 +18,9 @@
  */
 package edu.wright.dirsyncpro.gui.swing;
 
+import javax.swing.JTabbedPane;
 import java.awt.Component;
 import java.awt.KeyboardFocusManager;
-
-import javax.swing.JTabbedPane;
 
 public class MyJTabbedPane extends JTabbedPane {
 

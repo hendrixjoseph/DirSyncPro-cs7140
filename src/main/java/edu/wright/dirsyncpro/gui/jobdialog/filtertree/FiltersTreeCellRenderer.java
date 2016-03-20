@@ -18,12 +18,11 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree;
 
-import java.awt.Component;
-
 import javax.swing.JCheckBox;
 import javax.swing.JTree;
 import javax.swing.UIManager;
 import javax.swing.tree.TreeCellRenderer;
+import java.awt.Component;
 
 public class FiltersTreeCellRenderer extends JCheckBox implements TreeCellRenderer {
 

@@ -18,11 +18,6 @@
  */
 package edu.wright.dirsyncpro.sync;
 
-import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
-import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
-import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
-import static java.nio.file.StandardWatchEventKinds.OVERFLOW;
-
 import java.io.IOException;
 import java.nio.file.ClosedWatchServiceException;
 import java.nio.file.FileSystems;
@@ -38,6 +33,11 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
+import static java.nio.file.StandardWatchEventKinds.OVERFLOW;
+
 public class RealtimeListener {
 
     private final WatchService watcher;
@@ -47,12 +47,20 @@ public class RealtimeListener {
         public void change(WatchEvent<Path> e) {
         }
     };
+    /**
+     * Process all events for keys queued to the watcher
+     */
+    private Thread t = null;
 
     public RealtimeListener(String dir) throws IOException {
         this.watcher = FileSystems.getDefault().newWatchService();
         this.keys = new HashMap<>();
 
         registerAll(Paths.get(dir));
+    }
+
+    static <T> WatchEvent<T> cast(WatchEvent<?> event) {
+        return (WatchEvent<T>) event;
     }
 
     /**
@@ -64,8 +72,7 @@ public class RealtimeListener {
     }
 
     /**
-     * Register the given directory, and all its sub-directories, with the
-     * WatchService.
+     * Register the given directory, and all its sub-directories, with the WatchService.
      */
     private void registerAll(final Path start) throws IOException {
         // register directory and sub-directories
@@ -78,11 +85,6 @@ public class RealtimeListener {
             }
         });
     }
-
-    /**
-     * Process all events for keys queued to the watcher
-     */
-    private Thread t = null;
 
     public void stop() {
         if (t != null && t.isAlive() && !t.isInterrupted()) {
@@ -107,7 +109,7 @@ public class RealtimeListener {
     }
 
     public void startInternal() {
-        for (;;) {
+        for (; ; ) {
             // wait for key to be signalled
             WatchKey key;
             try {
@@ -166,16 +168,12 @@ public class RealtimeListener {
         }
     }
 
-    public interface RealtimeChangeListener {
-
-        void change(WatchEvent<Path> e);
-    }
-
     public void setChangeListener(RealtimeChangeListener l) {
         mListener = l;
     }
 
-    static <T> WatchEvent<T> cast(WatchEvent<?> event) {
-        return (WatchEvent<T>) event;
+    public interface RealtimeChangeListener {
+
+        void change(WatchEvent<Path> e);
     }
 }

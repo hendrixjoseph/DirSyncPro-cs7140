@@ -18,43 +18,23 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.job.Job;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Schedule implements Comparable<Schedule> {
-
-    public enum Type {
-        Once("/icons/once.png"),
-        Minutely("/icons/minutely.png"),
-        Hourly("/icons/hourly.png"),
-        Daily("/icons/daily.png"),
-        Weekly("/icons/weekly.png"),
-        Monthly("/icons/monthly.png");
-
-        private Icon icon;
-
-        public Icon getIcon() {
-            return icon;
-        }
-
-        Type(String iconFile) {
-            this.icon = new ImageIcon(Const.class.getResource(iconFile));
-        }
-    }
 
     protected Type type;
     protected Date timeFrameFrom = Const.NonDate;
     protected Date timeFrameTo = Const.NonDate;
     protected Date nextEvent;
     protected Date lastSynced;
-    private Date modificationTime;
     protected Job job;
+    private Date modificationTime;
 
     /**
      * @return the type
@@ -98,18 +78,6 @@ public class Schedule implements Comparable<Schedule> {
         return nextEvent;
     }
 
-    /**
-     * Calculates and sets the next upcoming event date. method to be overriden
-     * by extended classes.
-     */
-    public void calculateNextEvent() {
-    }
-
-    protected boolean withinTimeFrame(Date date) {
-        return (!hasTimeFrameFrom() || timeFrameFrom.compareTo(date) <= 0)
-                && (!hasTimeFrameTo() || timeFrameTo.compareTo(date) >= 0);
-    }
-
     protected void setNextEvent(Date date) {
         if (date != null && withinTimeFrame(date)) {
             nextEvent = date;
@@ -118,6 +86,17 @@ public class Schedule implements Comparable<Schedule> {
             nextEvent = null;
         }
 
+    }
+
+    /**
+     * Calculates and sets the next upcoming event date. method to be overriden by extended classes.
+     */
+    public void calculateNextEvent() {
+    }
+
+    protected boolean withinTimeFrame(Date date) {
+        return (!hasTimeFrameFrom() || timeFrameFrom.compareTo(date) <= 0)
+                && (!hasTimeFrameTo() || timeFrameTo.compareTo(date) >= 0);
     }
 
     public boolean hasTimeFrameFrom() {
@@ -178,5 +157,24 @@ public class Schedule implements Comparable<Schedule> {
 
     protected boolean calculateNextEventAllowed() {
         return (nextEvent == null || (nextEvent == lastSynced));
+    }
+
+    public enum Type {
+        Once("/icons/once.png"),
+        Minutely("/icons/minutely.png"),
+        Hourly("/icons/hourly.png"),
+        Daily("/icons/daily.png"),
+        Weekly("/icons/weekly.png"),
+        Monthly("/icons/monthly.png");
+
+        private Icon icon;
+
+        Type(String iconFile) {
+            this.icon = new ImageIcon(Const.class.getResource(iconFile));
+        }
+
+        public Icon getIcon() {
+            return icon;
+        }
     }
 }

@@ -18,11 +18,11 @@
  */
 package edu.wright.dirsyncpro.tools.copy;
 
+import edu.wright.dirsyncpro.DirSyncPro;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.nio.file.Path;
-
-import edu.wright.dirsyncpro.DirSyncPro;
 
 public class ProgressApproximator {
 
@@ -30,43 +30,8 @@ public class ProgressApproximator {
     private final static ProgressApproximator instance = new ProgressApproximator();
 
     private final static double LOG_FACTOR = Math.log(10);
-
-    public static double log10(double val) {
-        return Math.log(val) / LOG_FACTOR;
-    }
-
-    public static ProgressApproximator getApproximator() {
-        return instance;
-    }
-
-    private class Approximation {
-
-        private double approx = 0.;
-
-        //update Approximation with last copy time and last file size
-        public void updateApprox(long duration, double fileSize) {
-            approx = fileSize / duration;
-        }
-
-        //tells whether we have at least one approximation in this object
-        public boolean hasApprox() {
-            return approx > 0;
-        }
-
-        //get approximation value
-        public double getApprox() {
-            return approx;
-        }
-
-    }
-
-    //private constructor for singleton pattern
-    private ProgressApproximator() {
-        for (int i = 0; i < 20; i++) {
-            approx[i] = new Approximation();
-        }
-    }
-
+    //Timer for GUI progress update
+    private final javax.swing.Timer t;
     //array with approximation objects for file sizes 1, 10, 100, 1000, ..., 10^19 bytes
     private Approximation[] approx = new Approximation[20];
     //size of current file
@@ -84,8 +49,21 @@ public class ProgressApproximator {
             updateProgress();
         }
     };
-    //Timer for GUI progress update
-    private final javax.swing.Timer t = new javax.swing.Timer(10, taskPerformer);
+    //private constructor for singleton pattern
+    private ProgressApproximator() {
+        this.t = new javax.swing.Timer(10, taskPerformer);
+        for (int i = 0; i < 20; i++) {
+            approx[i] = new Approximation();
+        }
+    }
+
+    public static double log10(double val) {
+        return Math.log(val) / LOG_FACTOR;
+    }
+
+    public static ProgressApproximator getApproximator() {
+        return instance;
+    }
 
     //start an approximation with a file with given size
     public void startApprox(Path path, boolean updateProgress) {
@@ -180,6 +158,27 @@ public class ProgressApproximator {
             int value = (int) (getNormalizedApprox() * 99.);
             DirSyncPro.getGui().registerProgressBars(-1, -1, value, "", false, value, 100, "", false);
         }
+    }
+
+    private class Approximation {
+
+        private double approx = 0.;
+
+        //update Approximation with last copy time and last file size
+        public void updateApprox(long duration, double fileSize) {
+            approx = fileSize / duration;
+        }
+
+        //tells whether we have at least one approximation in this object
+        public boolean hasApprox() {
+            return approx > 0;
+        }
+
+        //get approximation value
+        public double getApprox() {
+            return approx;
+        }
+
     }
 
 }

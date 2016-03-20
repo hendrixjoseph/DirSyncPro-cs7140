@@ -25,6 +25,7 @@ import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterSet;
 import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.Schedule;
 import edu.wright.dirsyncpro.sync.RealtimeListener;
 import edu.wright.dirsyncpro.tools.Log;
+
 import java.nio.file.Path;
 import java.util.Collections;
 import java.util.List;
@@ -36,44 +37,35 @@ import java.util.List;
  */
 public abstract class JobObject {
 
-    String name = "";
-
     protected boolean enabled;
-
-    // log object for this directory
-    private Log log;
-
     // sync mode
     protected Const.SyncMode syncMode;
+    // Conflict mode for the bidirectional sync
+    protected Const.SyncConflictResolutionMode syncConflictResolutionMode;
+    // Compare mode
+    protected Const.CompareMode syncCompareMode;
     /*
-		 * Mirror implicates: copyAll=false, copyNew=true, copyLarger=false, copyModified=true, copyLargerModified=false, deleteFiles=true, deleteDirs=true, filterSet={}, compareMode=CompareFileSizesDates;
+         * Mirror implicates: copyAll=false, copyNew=true, copyLarger=false, copyModified=true, copyLargerModified=false, deleteFiles=true, deleteDirs=true, filterSet={}, compareMode=CompareFileSizesDates;
 		 * Full implicates: copyAll=true, copyNew=false, copyLarger=false, copyModified=false, copyLargerModified=false, deleteFiles=true, deleteDirs=true, filterSet={}, compareMode=CompareFileSizesDates;
 		 * Contribute implicates: copyAll=false, copyNew=true, copyLarger=false, copyModified=false, copyLargerModified=false, deleteFiles=false, deleteDirs=false, filterSet={}, compareMode=CompareFileSizesDates;
 		 * Custom initializes like Mirror but could be change any option.
      */
-
-    // Conflict mode for the bidirectional sync
-    protected Const.SyncConflictResolutionMode syncConflictResolutionMode;
-
-    // Compare mode
-    protected Const.CompareMode syncCompareMode;
-
     // source and destination directories
     protected String dirA = "";
     protected Path pathA;
     protected String dirB = "";
     protected Path pathB;
-
     protected List<Schedule> schedules;
     protected FilterSet filterSet;
-
     //realtime sync
     protected boolean syncRealtime;
     protected boolean syncRealtimeOnStart;
     protected int syncRealtimeDelay = Const.DefaultRealtimeSyncDelayValue;
     protected RealtimeListener dirAListener;
     protected RealtimeListener dirBListener;
-
+    String name = "";
+    // log object for this directory
+    private Log log;
     // copy options
     private boolean recursive;
     private boolean verify;
@@ -121,6 +113,15 @@ public abstract class JobObject {
     }
 
     /**
+     * Sets the name of the dirsyncpro action.
+     *
+     * @param name The name of this dirsyncpro action.
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
      * Returns the source path of the directory to dirsyncpro.
      *
      * @return The source path.
@@ -132,112 +133,10 @@ public abstract class JobObject {
     /**
      * Returns if all files are copied.
      *
-     * @return {@code true} if all files are copied, else
-     * {@code false}.
+     * @return {@code true} if all files are copied, else {@code false}.
      */
     public boolean isCopyAll() {
         return copyAll;
-    }
-
-    /**
-     * Returns if only larger files are copied.
-     *
-     * @return {@code true} if only larger files are copied, else
-     * {@code false}.
-     */
-    public boolean isCopyLarger() {
-        return copyLarger;
-    }
-
-    /**
-     * Returns if only files are copied that are larger <b>and </b> modified.
-     *
-     * @return {@code true} if only are copied that are larger <b>and
-     * </b> modified, else {@code false}.
-     */
-    public boolean isCopyLargerModified() {
-        return copyLargerModified;
-    }
-
-    /**
-     * Returns if only modified files are copied.
-     *
-     * @return {@code true} if only modified files are copied, else
-     * {@code false}.
-     */
-    public boolean isCopyModified() {
-        return copyModified;
-    }
-
-    /**
-     * Returns if only new files (files not existing in the destination
-     * directory) are copied.
-     *
-     * @return {@code true} if only new files are copied, else
-     * {@code false}.
-     */
-    public boolean isCopyNew() {
-        return copyNew;
-    }
-
-    /**
-     * Returns if directories deleted in the source directory are deleted in the
-     * destination directory.
-     *
-     * @return {@code true} if directories deleted in the source directory
-     * are deleted in the destination directory, else {@code false}.
-     */
-    public boolean isDelDirs() {
-        return deleteDirs;
-    }
-
-    /**
-     * Returns if files deleted in the source directory are deleted in the
-     * destination directory.
-     *
-     * @return {@code true} if files deleted in the source directory are
-     * deleted in the destination directory, else {@code false}.
-     */
-    public boolean isDelFiles() {
-        return deleteFiles;
-    }
-
-    /**
-     * Get how man files of a changed or deleted file should be kept.
-     *
-     * @return number of backups to keep ({@code 0} means none).
-     */
-    public int getHowManyBackups() {
-        return howManyBackups;
-    }
-
-    /**
-     * Determines whether this directory is enabled.
-     *
-     * @return {@code true} if the component is enabled, {@code false}
-     * otherwise.
-     */
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    /**
-     * Returns if the dirsyncpro is done with verify.
-     *
-     * @return {@code true} if verify is enabled.
-     */
-    public boolean isVerify() {
-        return verify;
-    }
-
-    /**
-     * Returns if the dirsyncpro is done with subfolders.
-     *
-     * @return {@code true} if the job is recursive, else
-     * {@code false}.
-     */
-    public boolean isRecursive() {
-        return recursive;
     }
 
     /**
@@ -250,6 +149,15 @@ public abstract class JobObject {
     }
 
     /**
+     * Returns if only larger files are copied.
+     *
+     * @return {@code true} if only larger files are copied, else {@code false}.
+     */
+    public boolean isCopyLarger() {
+        return copyLarger;
+    }
+
+    /**
      * Sets whether only larger files are copied.
      *
      * @param copyLarger {@code true} if only larger files are copied.
@@ -259,14 +167,30 @@ public abstract class JobObject {
     }
 
     /**
+     * Returns if only files are copied that are larger <b>and </b> modified.
+     *
+     * @return {@code true} if only are copied that are larger <b>and </b> modified, else {@code false}.
+     */
+    public boolean isCopyLargerModified() {
+        return copyLargerModified;
+    }
+
+    /**
      * Sets whether only files are copied that are larger <b>and </b> modified.
      *
-     * @param copyLargerModified {@code true} if only files are copied that
-     * are larger
-     * <b>and </b> modified.
+     * @param copyLargerModified {@code true} if only files are copied that are larger <b>and </b> modified.
      */
     public void setCopyLargerModified(boolean copyLargerModified) {
         this.copyLargerModified = copyLargerModified;
+    }
+
+    /**
+     * Returns if only modified files are copied.
+     *
+     * @return {@code true} if only modified files are copied, else {@code false}.
+     */
+    public boolean isCopyModified() {
+        return copyModified;
     }
 
     /**
@@ -279,8 +203,16 @@ public abstract class JobObject {
     }
 
     /**
-     * Sets whether only new files (files not existing in the destination
-     * directory) are copied.
+     * Returns if only new files (files not existing in the destination directory) are copied.
+     *
+     * @return {@code true} if only new files are copied, else {@code false}.
+     */
+    public boolean isCopyNew() {
+        return copyNew;
+    }
+
+    /**
+     * Sets whether only new files (files not existing in the destination directory) are copied.
      *
      * @param copyNew {@code true} if only new files are copied.
      */
@@ -289,25 +221,51 @@ public abstract class JobObject {
     }
 
     /**
-     * Sets whether directories deleted in the source directory are deleted in
-     * the destination directory.
+     * Returns if directories deleted in the source directory are deleted in the destination directory.
      *
-     * @param delDirs {@code true} if directories deleted in the source
-     * directory are deleted in the destination directory.
+     * @return {@code true} if directories deleted in the source directory are deleted in the destination directory,
+     * else {@code false}.
+     */
+    public boolean isDelDirs() {
+        return deleteDirs;
+    }
+
+    /**
+     * Sets whether directories deleted in the source directory are deleted in the destination directory.
+     *
+     * @param delDirs {@code true} if directories deleted in the source directory are deleted in the destination
+     *                directory.
      */
     public void setDelDirs(boolean delDirs) {
         this.deleteDirs = delDirs;
     }
 
     /**
-     * Sets whether files deleted in the source directory are deleted in the
-     * destination directory.
+     * Returns if files deleted in the source directory are deleted in the destination directory.
      *
-     * @param delFiles {@code true} if files deleted in the source
-     * directory are deleted in the destination directory.
+     * @return {@code true} if files deleted in the source directory are deleted in the destination directory, else
+     * {@code false}.
+     */
+    public boolean isDelFiles() {
+        return deleteFiles;
+    }
+
+    /**
+     * Sets whether files deleted in the source directory are deleted in the destination directory.
+     *
+     * @param delFiles {@code true} if files deleted in the source directory are deleted in the destination directory.
      */
     public void setDelFiles(boolean delFiles) {
         this.deleteFiles = delFiles;
+    }
+
+    /**
+     * Get how man files of a changed or deleted file should be kept.
+     *
+     * @return number of backups to keep ({@code 0} means none).
+     */
+    public int getHowManyBackups() {
+        return howManyBackups;
     }
 
     /**
@@ -320,32 +278,67 @@ public abstract class JobObject {
     }
 
     /**
-     * Sets the destination path of the directory to dirsyncpro.
+     * Determines whether this directory is enabled.
      *
-     * @param dst The destination path.
+     * @return {@code true} if the component is enabled, {@code false} otherwise.
      */
-    public void setDst(String dst) {
-        this.dirB = dst;
+    public boolean isEnabled() {
+        return enabled;
     }
 
     /**
-     * Enables or disables this directory, depending on the value of the
-     * parameter enabled.
+     * Enables or disables this directory, depending on the value of the parameter enabled.
      *
-     * @param enabled If {@code true}, this component is enabled; otherwise
-     * this component is disabled.
+     * @param enabled If {@code true}, this component is enabled; otherwise this component is disabled.
      */
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
 
     /**
-     * Sets the name of the dirsyncpro action.
+     * Returns if the dirsyncpro is done with verify.
      *
-     * @param name The name of this dirsyncpro action.
+     * @return {@code true} if verify is enabled.
      */
-    public void setName(String name) {
-        this.name = name;
+    public boolean isVerify() {
+        return verify;
+    }
+
+    /**
+     * Sets whether copied files should be verified.
+     *
+     * @param b Whether copied files should be verified. Set to {@code true} to enable verify.
+     */
+    public void setVerify(boolean b) {
+        verify = b;
+    }
+
+    /**
+     * Returns if the dirsyncpro is done with subfolders.
+     *
+     * @return {@code true} if the job is recursive, else {@code false}.
+     */
+    public boolean isRecursive() {
+        return recursive;
+    }
+
+    /**
+     * Sets whether the dirsyncpro is done with subfolders.
+     *
+     * @param recursive Whether the dirsyncpro is done with subfolders. {@code true} if the synchroize is done with
+     *                  subfolders.
+     */
+    public void setRecursive(boolean recursive) {
+        this.recursive = recursive;
+    }
+
+    /**
+     * Sets the destination path of the directory to dirsyncpro.
+     *
+     * @param dst The destination path.
+     */
+    public void setDst(String dst) {
+        this.dirB = dst;
     }
 
     /**
@@ -358,30 +351,9 @@ public abstract class JobObject {
     }
 
     /**
-     * Sets whether copied files should be verified.
-     *
-     * @param b Whether copied files should be verified. Set to
-     * {@code true} to enable verify.
-     */
-    public void setVerify(boolean b) {
-        verify = b;
-    }
-
-    /**
-     * Sets whether the dirsyncpro is done with subfolders.
-     *
-     * @param recursive Whether the dirsyncpro is done with subfolders.
-     * {@code true} if the synchroize is done with subfolders.
-     */
-    public void setRecursive(boolean recursive) {
-        this.recursive = recursive;
-    }
-
-    /**
      * Returns the directory log object
      *
      * @return Log log The log
-     *
      */
     public Log getLog() {
         return log;
@@ -564,6 +536,13 @@ public abstract class JobObject {
     }
 
     /**
+     * @param schedules the schedules to set
+     */
+    public void setSchedules(List<Schedule> schedules) {
+        this.schedules = schedules;
+    }
+
+    /**
      * @param sched
      */
     public void addSchedule(Schedule sched) {
@@ -572,13 +551,6 @@ public abstract class JobObject {
             sch.calculateNextEvent();
         }
         Collections.sort(schedules);
-    }
-
-    /**
-     * @param schedules the schedules to set
-     */
-    public void setSchedules(List<Schedule> schedules) {
-        this.schedules = schedules;
     }
 
     /**

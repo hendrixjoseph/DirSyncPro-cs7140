@@ -18,20 +18,6 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.scheduletree;
 
-import java.awt.Component;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.MouseEvent;
-import java.util.EventObject;
-
-import javax.swing.AbstractCellEditor;
-import javax.swing.JCheckBox;
-import javax.swing.JTree;
-import javax.swing.event.ChangeEvent;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.TreeCellEditor;
-import javax.swing.tree.TreePath;
-
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.Schedule;
 import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleDaily;
@@ -40,6 +26,19 @@ import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleMinutel
 import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleMonthly;
 import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleOnce;
 import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleWeekly;
+
+import javax.swing.AbstractCellEditor;
+import javax.swing.JCheckBox;
+import javax.swing.JTree;
+import javax.swing.event.ChangeEvent;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreeCellEditor;
+import javax.swing.tree.TreePath;
+import java.awt.Component;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.MouseEvent;
+import java.util.EventObject;
 
 public class ScheduleTreeNodeEditor extends AbstractCellEditor implements TreeCellEditor {
 

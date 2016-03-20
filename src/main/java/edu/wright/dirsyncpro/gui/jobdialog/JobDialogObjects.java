@@ -22,14 +22,6 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog;
 
-import java.awt.Font;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.UIManager;
-import javax.swing.text.html.HTMLEditorKit;
-import javax.swing.text.html.StyleSheet;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.FiltersTree;
@@ -45,8 +37,15 @@ import edu.wright.dirsyncpro.gui.verifier.LongIntVerifier;
 import edu.wright.dirsyncpro.gui.verifier.PathVerifier;
 import edu.wright.dirsyncpro.gui.verifier.WildCardVerifier;
 import edu.wright.dirsyncpro.tools.GuiTools;
-import java.awt.event.ItemEvent;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.text.html.HTMLEditorKit;
+import javax.swing.text.html.StyleSheet;
+import java.awt.Font;
+import java.awt.event.ItemEvent;
 
 /**
  * The DirSyncPro Main GUI.
@@ -56,6 +55,237 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public abstract class JobDialogObjects extends javax.swing.JDialog {
 
+    protected javax.swing.JButton addFilterButton;
+    protected javax.swing.JButton addScheduleButton;
+    protected javax.swing.JLabel bidirectionalConflictCopyLargerLabel;
+    protected javax.swing.JRadioButton bidirectionalConflictCopyLargerRadioButton;
+    protected javax.swing.JLabel bidirectionalConflictCopyModifiedLabel;
+    protected javax.swing.JRadioButton bidirectionalConflictCopyModifiedRadioButton;
+    protected javax.swing.JLabel bidirectionalConflictRenameCopyLabel;
+    protected javax.swing.JRadioButton bidirectionalConflictRenameCopyRadioButton;
+    protected javax.swing.JLabel bidirectionalConflictSkipLabel;
+    protected javax.swing.JRadioButton bidirectionalConflictSkipRadioButton;
+    protected javax.swing.JLabel bidirectionalConflictWarnUserLabel;
+    protected javax.swing.JRadioButton bidirectionalConflictWarnUserRadioButton;
+    protected javax.swing.JLabel compareFileContentsLabel;
+    protected javax.swing.JRadioButton compareFileContentsRadioButton;
+    protected javax.swing.JLabel compareFileSizesDatesLabel;
+    protected javax.swing.JLabel compareFileSizesDatesMetaDataLabel;
+    protected javax.swing.JRadioButton compareFileSizesDatesMetaDataRadioButton;
+    protected javax.swing.JRadioButton compareFileSizesDatesRadioButton;
+    protected javax.swing.JTabbedPane conflictResolutionJTabbedPane;
+    protected javax.swing.JButton copySettingsToAllJobsGoButton;
+    protected javax.swing.JLabel copySettingsToAllJobsLabel;
+    protected javax.swing.JButton copySettingsToEnabledJobsGoButton;
+    protected javax.swing.JLabel copySettingsToEnabledlJobsLabel;
+    protected javax.swing.JLabel copySymLinkLabel;
+    protected javax.swing.JRadioButton copySymLinkRadioButton;
+    protected javax.swing.JCheckBox deleteExcludedDirsACheckBox;
+    protected javax.swing.JCheckBox deleteExcludedDirsBCheckBox;
+    protected javax.swing.JCheckBox deleteExcludedFilesACheckBox;
+    protected javax.swing.JCheckBox deleteExcludedFilesBCheckBox;
+    protected javax.swing.JButton dirBackupDirChangeButton;
+    protected javax.swing.JTextField dirBackupDirField;
+    protected javax.swing.JCheckBox dirBackupDirInlineCheckBox;
+    protected javax.swing.JLabel dirBackupDirInlineLabel;
+    protected javax.swing.JLabel dirBackupDirLabel;
+    protected javax.swing.JTextField dirBackupField;
+    protected javax.swing.JLabel dirBackupLabel1;
+    protected javax.swing.JLabel dirBackupLabel2;
+    protected javax.swing.JCheckBox dirCopyAllCheckBox;
+    protected javax.swing.JLabel dirCopyAllLabel;
+    protected javax.swing.JCheckBox dirCopyLargerCheckBox;
+    protected javax.swing.JLabel dirCopyLargerLabel;
+    protected javax.swing.JCheckBox dirCopyLargerModifiedCheckBox;
+    protected javax.swing.JLabel dirCopyLargerModifiedLabel;
+    protected javax.swing.JCheckBox dirCopyModifiedCheckBox;
+    protected javax.swing.JLabel dirCopyModifiedLabel;
+    protected javax.swing.JCheckBox dirCopyNewCheckBox;
+    protected javax.swing.JLabel dirCopyNewLabel;
+    protected javax.swing.JCheckBox dirDeleteDirsCheckBox;
+    protected javax.swing.JLabel dirDeleteDirsLabel;
+    protected javax.swing.JLabel dirDeleteExcludedDirsLabel;
+    protected javax.swing.JLabel dirDeleteExcludedDirsLabel1;
+    protected javax.swing.JLabel dirDeleteExcludedFilesLabel;
+    protected javax.swing.JLabel dirDeleteExcludedFilesLabel1;
+    protected javax.swing.JCheckBox dirDeleteFilesCheckBox;
+    protected javax.swing.JLabel dirDeleteFilesLabel;
+    protected javax.swing.JButton dirDstChangeButton;
+    protected javax.swing.JTextField dirDstField;
+    protected javax.swing.JLabel dirDstLabel;
+    protected javax.swing.JCheckBox dirEnableLoggingCheckBox;
+    protected javax.swing.JLabel dirEnableLoggingJLabel;
+    protected javax.swing.JButton dirLogBrowseButton;
+    protected javax.swing.JTextField dirLogField;
+    protected javax.swing.JLabel dirLogLabel;
+    protected javax.swing.JTextField dirNameField;
+    protected javax.swing.JLabel dirNameLabel;
+    protected javax.swing.JButton dirSrcChangeButton;
+    protected javax.swing.JTextField dirSrcField;
+    protected javax.swing.JLabel dirSrcLabel;
+    protected javax.swing.JTextField dirTimestampDiffField;
+    protected javax.swing.JLabel dirTimestampDiffLabel1;
+    protected javax.swing.JLabel dirTimestampDiffLabel2;
+    protected javax.swing.JLabel dirTimestampDiffLabel3;
+    protected javax.swing.JCheckBox dirTimestampSyncCheckBox;
+    protected javax.swing.JCheckBox dirTimestampWriteBackCheckBox;
+    protected javax.swing.JCheckBox dirVerifyCheckBox;
+    protected javax.swing.JLabel dirVerifyLabel;
+    protected javax.swing.JCheckBox dirWithSubfoldersCheckBox;
+    protected javax.swing.JLabel dirWithSubfoldersLabel;
+    protected javax.swing.JButton editFilterButton;
+    protected javax.swing.JButton editScheduleButton;
+    protected javax.swing.JButton filtersCollapseAllButton;
+    protected javax.swing.JButton filtersExpandAllButton;
+    protected javax.swing.JTree filtersTree;
+    protected javax.swing.JLabel followSymLinkLabel;
+    protected javax.swing.JRadioButton followSymLinkRadioButton;
+    protected javax.swing.JCheckBox ignoreDaylightSavingTimeCheckBox;
+    protected javax.swing.JButton jobCancelButton;
+    protected javax.swing.JButton jobOKButton;
+    protected javax.swing.JTabbedPane jobTabbedPane;
+    protected javax.swing.JLabel monodirectionalConflictCopySourceLabel;
+    protected javax.swing.JRadioButton monodirectionalConflictCopySourceRadioButton;
+    protected javax.swing.JLabel monodirectionalConflictSkipLabel;
+    protected javax.swing.JRadioButton monodirectionalConflictSkipRadioButton;
+    protected javax.swing.JLabel monodirectionalConflictWarnUserLabel;
+    protected javax.swing.JRadioButton monodirectionalConflictWarnUserRadioButton;
+    protected javax.swing.JCheckBox overrideReadOnlyCheckBox;
+    protected javax.swing.JLabel overrideReadOnlyLabel;
+    protected javax.swing.JCheckBox preserveDOSAttributesCheckBox;
+    protected javax.swing.JLabel preserveDOSAttributesLabel;
+    protected javax.swing.JCheckBox preserveFileOwnershipCheckBox;
+    protected javax.swing.JLabel preserveFileOwnershipLabel;
+    protected javax.swing.JCheckBox preserveFilePermissionsCheckBox;
+    protected javax.swing.JLabel preserveFilePermissionsLabel;
+    protected javax.swing.JCheckBox realtimeSyncCheckBox;
+    protected javax.swing.JTextField realtimeSyncDelayField;
+    protected javax.swing.JCheckBox realtimeSyncOnStartCheckBox;
+    protected javax.swing.JButton removeFilterButton;
+    protected javax.swing.JButton removeScheduleButton;
+    protected javax.swing.JButton resetJobSettingsGoButton;
+    protected javax.swing.JLabel resetJobSettingsLabel;
+    protected javax.swing.JButton scheduleCollapseAllButton;
+    protected javax.swing.JButton scheduleExpandAllButton;
+    protected javax.swing.JTree scheduleTree;
+    protected javax.swing.JLabel skipSymLinkLabel;
+    protected javax.swing.JRadioButton skipSymLinkRadioButton;
+    protected javax.swing.JButton swapButton;
+    protected javax.swing.JComboBox syncModeComboBox;
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel IgnoreDaylightSavingTimeJLabel;
+    private javax.swing.JLabel IgnoreDaylightSavingTimeJLabel1;
+    private javax.swing.JPanel Spacer10;
+    private javax.swing.JPanel Spacer12;
+    private javax.swing.JPanel Spacer14;
+    private javax.swing.JPanel Spacer16;
+    private javax.swing.JPanel Spacer17;
+    private javax.swing.JPanel Spacer2;
+    private javax.swing.JPanel Spacer25;
+    private javax.swing.JPanel Spacer26;
+    private javax.swing.JPanel Spacer27;
+    private javax.swing.JPanel Spacer4;
+    private javax.swing.JPanel Spacer5;
+    private javax.swing.JPanel Spacer6;
+    private javax.swing.JPanel Spacer7;
+    private javax.swing.JPanel Spacer8;
+    private javax.swing.JPanel attributeJPanel;
+    private javax.swing.JPanel bidirectionalSyncConflictPanel;
+    private javax.swing.ButtonGroup buttonGroupBidirectionalConflict;
+    private javax.swing.ButtonGroup buttonGroupCompare;
+    private javax.swing.ButtonGroup buttonGroupMonodirectionalConflict;
+    private javax.swing.ButtonGroup buttonGroupSymLinks;
+    private javax.swing.JPanel compareaJpanel;
+    private javax.swing.JPanel dirBackupPanel;
+    private javax.swing.JPanel dirDeleteOptionsPanel;
+    private javax.swing.JPanel dirLogFilePanel;
+    private javax.swing.JPanel dirSymbolicLinkPane;
+    private javax.swing.JPanel dirTimestampDiffFieldPanel;
+    private javax.swing.JPanel dirTimestampDiffFieldPanel1;
+    private javax.swing.JLabel dirTimestampWriteBackLabel;
+    private javax.swing.JLabel dirTimestampWriteBackLabel1;
+    private javax.swing.JLabel dirTimestampWriteBackLabel3;
+    private javax.swing.JPanel dirTimestampWriteBackPanel;
+    private javax.swing.JPanel informationPanel;
+    private javax.swing.JPanel informationPanel1;
+    private javax.swing.JPanel informationPanel10;
+    private javax.swing.JPanel informationPanel2;
+    private javax.swing.JPanel informationPanel3;
+    private javax.swing.JPanel informationPanel4;
+    private javax.swing.JPanel informationPanel5;
+    private javax.swing.JPanel informationPanel6;
+    private javax.swing.JPanel informationPanel7;
+    private javax.swing.JPanel informationPanel8;
+    private javax.swing.JPanel informationPanel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel100;
+    private javax.swing.JPanel jPanel101;
+    private javax.swing.JPanel jPanel102;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
+    private javax.swing.JPanel jPanel38;
+    private javax.swing.JPanel jPanel39;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel40;
+    private javax.swing.JPanel jPanel44;
+    private javax.swing.JPanel jPanel48;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel73;
+    private javax.swing.JPanel jPanel78;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel81;
+    private javax.swing.JPanel jPanel82;
+    private javax.swing.JPanel jPanel84;
+    private javax.swing.JPanel jPanel85;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanel95;
+    private javax.swing.JPanel jPanel96;
+    private javax.swing.JPanel jPanel97;
+    private javax.swing.JPanel jPanel99;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTextPane jTextPane10;
+    private javax.swing.JTextPane jTextPane11;
+    private javax.swing.JTextPane jTextPane2;
+    private javax.swing.JTextPane jTextPane3;
+    private javax.swing.JTextPane jTextPane4;
+    private javax.swing.JTextPane jTextPane5;
+    private javax.swing.JTextPane jTextPane6;
+    private javax.swing.JTextPane jTextPane7;
+    private javax.swing.JTextPane jTextPane8;
+    private javax.swing.JTextPane jTextPane9;
+    private javax.swing.JLabel label9;
+    private javax.swing.JPanel monodirectionalSyncConflictPanel;
+    private javax.swing.JPanel realTimeSyncPanel;
+    private javax.swing.JPanel settingsActionsPanel;
+    private javax.swing.JPanel settingsButtonsPanel2;
+    private javax.swing.JPanel syncModeJPanel;
+    private javax.swing.JPanel verifyJPanel;
+    private javax.swing.JPanel viewJPanel3;
+    private javax.swing.JPanel viewJPanel4;
     public JobDialogObjects(JFrame frame) {
         super(frame);
         GuiTools.setSystemLookAndFeel(DirSyncPro.isSystemLookAndFeel());
@@ -64,9 +294,8 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
     }
 
     /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
+     * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The
+     * content of this method is always regenerated by the Form Editor.
      */
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -110,12 +339,12 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         informationPanel10 = new javax.swing.JPanel();
         jTextPane11 = new javax.swing.JTextPane();
         editorKit = new HTMLEditorKit();
- styles = new StyleSheet();
- font = UIManager.getFont("Label.font");
- bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
- styles.addRule(bodyRule);
- editorKit.setStyleSheet(styles);
- jTextPane11.setEditorKit(editorKit);
+        styles = new StyleSheet();
+        font = UIManager.getFont("Label.font");
+        bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
+        styles.addRule(bodyRule);
+        editorKit.setStyleSheet(styles);
+        jTextPane11.setEditorKit(editorKit);
         compareaJpanel = new javax.swing.JPanel();
         jPanel97 = new javax.swing.JPanel();
         compareFileSizesDatesRadioButton = new javax.swing.JRadioButton();
@@ -1678,10 +1907,12 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 scheduleTreeMouseClicked(evt);
             }
+
             @Override
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 scheduleTreeMousePressed(evt);
             }
+
             @Override
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 scheduleTreeMouseReleased(evt);
@@ -1864,10 +2095,12 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 dirTimestampDiffFieldEventKey(evt);
             }
+
             @Override
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 dirTimestampDiffFieldEventKey(evt);
             }
+
             @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 dirTimestampDiffFieldEventKey(evt);
@@ -2253,10 +2486,12 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 realtimeSyncDelayFieldEventKey1(evt);
             }
+
             @Override
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 realtimeSyncDelayFieldEventKey2(evt);
             }
+
             @Override
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 realtimeSyncDelayFieldEventKey(evt);
@@ -2507,30 +2742,30 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
 
     private void dirLogBrowseButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirLogBrowseButtonbrowseSrcActionPerformed
         browseLog();
-}//GEN-LAST:event_dirLogBrowseButtonbrowseSrcActionPerformed
+    }//GEN-LAST:event_dirLogBrowseButtonbrowseSrcActionPerformed
 
     private void dirDstChangeButtonbrowseDstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirDstChangeButtonbrowseDstActionPerformed
         GuiTools.browseFolder(this, dirDstField);
-}//GEN-LAST:event_dirDstChangeButtonbrowseDstActionPerformed
+    }//GEN-LAST:event_dirDstChangeButtonbrowseDstActionPerformed
 
     private void dirCopyLargerCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirCopyLargerCheckBoxdirEventActionPerformed
         verifyCopyOptionsInGUI();
-}//GEN-LAST:event_dirCopyLargerCheckBoxdirEventActionPerformed
+    }//GEN-LAST:event_dirCopyLargerCheckBoxdirEventActionPerformed
 
     private void dirCopyModifiedCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirCopyModifiedCheckBoxdirEventActionPerformed
         verifyCopyOptionsInGUI();
-}//GEN-LAST:event_dirCopyModifiedCheckBoxdirEventActionPerformed
+    }//GEN-LAST:event_dirCopyModifiedCheckBoxdirEventActionPerformed
 
     private void dirCopyLargerModifiedCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirCopyLargerModifiedCheckBoxdirEventActionPerformed
         verifyCopyOptionsInGUI();
-}//GEN-LAST:event_dirCopyLargerModifiedCheckBoxdirEventActionPerformed
+    }//GEN-LAST:event_dirCopyLargerModifiedCheckBoxdirEventActionPerformed
 
     private void dirSrcChangeButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirSrcChangeButtonbrowseSrcActionPerformed
         GuiTools.browseFolder(this, dirSrcField);
-}//GEN-LAST:event_dirSrcChangeButtonbrowseSrcActionPerformed
+    }//GEN-LAST:event_dirSrcChangeButtonbrowseSrcActionPerformed
 
     private void dirTimestampWriteBackCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirTimestampWriteBackCheckBoxActionPerformed
-}//GEN-LAST:event_dirTimestampWriteBackCheckBoxActionPerformed
+    }//GEN-LAST:event_dirTimestampWriteBackCheckBoxActionPerformed
 
     private void dirTimestampDiffFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirTimestampDiffFieldActionPerformed
     }//GEN-LAST:event_dirTimestampDiffFieldActionPerformed
@@ -2539,107 +2774,107 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
     }//GEN-LAST:event_dirTimestampDiffFieldFocusLost
 
     private void dirTimestampDiffFieldEventKey(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dirTimestampDiffFieldEventKey
-}//GEN-LAST:event_dirTimestampDiffFieldEventKey
+    }//GEN-LAST:event_dirTimestampDiffFieldEventKey
 
-private void dirBackupDirChangeButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirBackupDirChangeButtonbrowseSrcActionPerformed
-    GuiTools.browseFolder(this, dirBackupDirField);
-}//GEN-LAST:event_dirBackupDirChangeButtonbrowseSrcActionPerformed
+    private void dirBackupDirChangeButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirBackupDirChangeButtonbrowseSrcActionPerformed
+        GuiTools.browseFolder(this, dirBackupDirField);
+    }//GEN-LAST:event_dirBackupDirChangeButtonbrowseSrcActionPerformed
 
-private void dirEnableLoggingCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirEnableLoggingCheckBoxdirEventActionPerformed
-    jobEnableLoggingCheckBoxClicked();
-}//GEN-LAST:event_dirEnableLoggingCheckBoxdirEventActionPerformed
+    private void dirEnableLoggingCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirEnableLoggingCheckBoxdirEventActionPerformed
+        jobEnableLoggingCheckBoxClicked();
+    }//GEN-LAST:event_dirEnableLoggingCheckBoxdirEventActionPerformed
 
-private void jobOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobOKButtonActionPerformed
-    // If no focus -> a fields has blocked applying settings
-    if (jobOKButton.hasFocus()) {
-        applyJobSettings();
+    private void jobOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobOKButtonActionPerformed
+        // If no focus -> a fields has blocked applying settings
+        if (jobOKButton.hasFocus()) {
+            applyJobSettings();
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_jobOKButtonActionPerformed
+
+    private void jobCancelButtoncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobCancelButtoncancelActionPerformed
         this.setVisible(false);
-    }
-}//GEN-LAST:event_jobOKButtonActionPerformed
+    }//GEN-LAST:event_jobCancelButtoncancelActionPerformed
 
-private void jobCancelButtoncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobCancelButtoncancelActionPerformed
-    this.setVisible(false);
-}//GEN-LAST:event_jobCancelButtoncancelActionPerformed
+    private void dirCopyNewCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirCopyNewCheckBoxdirEventActionPerformed
+        verifyCopyOptionsInGUI();
+    }//GEN-LAST:event_dirCopyNewCheckBoxdirEventActionPerformed
 
-private void dirCopyNewCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirCopyNewCheckBoxdirEventActionPerformed
-    verifyCopyOptionsInGUI();
-}//GEN-LAST:event_dirCopyNewCheckBoxdirEventActionPerformed
+    private void dirCopyAllCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirCopyAllCheckBoxdirEventActionPerformed
+        verifyCopyOptionsInGUI();
+    }//GEN-LAST:event_dirCopyAllCheckBoxdirEventActionPerformed
 
-private void dirCopyAllCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirCopyAllCheckBoxdirEventActionPerformed
-    verifyCopyOptionsInGUI();
-}//GEN-LAST:event_dirCopyAllCheckBoxdirEventActionPerformed
+    private void copySettingsToAllJobsGoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copySettingsToAllJobsGoButtonActionPerformed
+        copyOptionsToAllJobs();
+    }//GEN-LAST:event_copySettingsToAllJobsGoButtonActionPerformed
 
-private void copySettingsToAllJobsGoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copySettingsToAllJobsGoButtonActionPerformed
-    copyOptionsToAllJobs();
-}//GEN-LAST:event_copySettingsToAllJobsGoButtonActionPerformed
+    private void resetJobSettingsGoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetJobSettingsGoButtonActionPerformed
+        resetJobSettings();
+    }//GEN-LAST:event_resetJobSettingsGoButtonActionPerformed
 
-private void resetJobSettingsGoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetJobSettingsGoButtonActionPerformed
-    resetJobSettings();
-}//GEN-LAST:event_resetJobSettingsGoButtonActionPerformed
+    private void copySettingsToEnabledJobsGoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copySettingsToEnabledJobsGoButtonActionPerformed
+        copyOptionsToEnabledJobs();
+    }//GEN-LAST:event_copySettingsToEnabledJobsGoButtonActionPerformed
 
-private void copySettingsToEnabledJobsGoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copySettingsToEnabledJobsGoButtonActionPerformed
-    copyOptionsToEnabledJobs();
-}//GEN-LAST:event_copySettingsToEnabledJobsGoButtonActionPerformed
+    private void filtersCollapseAllButtondisableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersCollapseAllButtondisableAllDirsActionPerformed
+        GuiTools.collapseAll(filtersTree);
+    }//GEN-LAST:event_filtersCollapseAllButtondisableAllDirsActionPerformed
 
-private void filtersCollapseAllButtondisableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersCollapseAllButtondisableAllDirsActionPerformed
-    GuiTools.collapseAll(filtersTree);
-}//GEN-LAST:event_filtersCollapseAllButtondisableAllDirsActionPerformed
+    private void filtersExpandAllButtonenableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersExpandAllButtonenableAllDirsActionPerformed
+        GuiTools.expandAll(filtersTree);
+    }//GEN-LAST:event_filtersExpandAllButtonenableAllDirsActionPerformed
 
-private void filtersExpandAllButtonenableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersExpandAllButtonenableAllDirsActionPerformed
-    GuiTools.expandAll(filtersTree);
-}//GEN-LAST:event_filtersExpandAllButtonenableAllDirsActionPerformed
+    private void removeFilterButtonlistRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFilterButtonlistRemoveActionPerformed
+        removeFilter();
+    }//GEN-LAST:event_removeFilterButtonlistRemoveActionPerformed
 
-private void removeFilterButtonlistRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFilterButtonlistRemoveActionPerformed
-    removeFilter();
-}//GEN-LAST:event_removeFilterButtonlistRemoveActionPerformed
+    private void editFilterButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editFilterButtonlistAddActionPerformed
+        openEditFilterDialog();
+    }//GEN-LAST:event_editFilterButtonlistAddActionPerformed
 
-private void editFilterButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editFilterButtonlistAddActionPerformed
-    openEditFilterDialog();
-}//GEN-LAST:event_editFilterButtonlistAddActionPerformed
+    private void addFilterButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFilterButtonlistAddActionPerformed
+        openAddFilterDialog();
+    }//GEN-LAST:event_addFilterButtonlistAddActionPerformed
 
-private void addFilterButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFilterButtonlistAddActionPerformed
-    openAddFilterDialog();
-}//GEN-LAST:event_addFilterButtonlistAddActionPerformed
+    private void scheduleTreeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scheduleTreeMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_scheduleTreeMouseClicked
 
-private void scheduleTreeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scheduleTreeMouseClicked
-    // TODO add your handling code here:
-}//GEN-LAST:event_scheduleTreeMouseClicked
+    private void scheduleTreeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scheduleTreeMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_scheduleTreeMousePressed
 
-private void scheduleTreeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scheduleTreeMousePressed
-    // TODO add your handling code here:
-}//GEN-LAST:event_scheduleTreeMousePressed
+    private void scheduleTreeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scheduleTreeMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_scheduleTreeMouseReleased
 
-private void scheduleTreeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scheduleTreeMouseReleased
-    // TODO add your handling code here:
-}//GEN-LAST:event_scheduleTreeMouseReleased
+    private void addScheduleButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addScheduleButtonlistAddActionPerformed
+        openAddScheduleDialog();
+    }//GEN-LAST:event_addScheduleButtonlistAddActionPerformed
 
-private void addScheduleButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addScheduleButtonlistAddActionPerformed
-    openAddScheduleDialog();
-}//GEN-LAST:event_addScheduleButtonlistAddActionPerformed
+    private void editScheduleButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editScheduleButtonlistAddActionPerformed
+        openEditScheduleDialog();
+    }//GEN-LAST:event_editScheduleButtonlistAddActionPerformed
 
-private void editScheduleButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editScheduleButtonlistAddActionPerformed
-    openEditScheduleDialog();
-}//GEN-LAST:event_editScheduleButtonlistAddActionPerformed
+    private void removeScheduleButtonlistRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeScheduleButtonlistRemoveActionPerformed
+        removeSchedule();
+    }//GEN-LAST:event_removeScheduleButtonlistRemoveActionPerformed
 
-private void removeScheduleButtonlistRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeScheduleButtonlistRemoveActionPerformed
-    removeSchedule();
-}//GEN-LAST:event_removeScheduleButtonlistRemoveActionPerformed
+    private void scheduleExpandAllButtonenableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleExpandAllButtonenableAllDirsActionPerformed
+        GuiTools.expandOneLevel(scheduleTree);
+    }//GEN-LAST:event_scheduleExpandAllButtonenableAllDirsActionPerformed
 
-private void scheduleExpandAllButtonenableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleExpandAllButtonenableAllDirsActionPerformed
-    GuiTools.expandOneLevel(scheduleTree);
-}//GEN-LAST:event_scheduleExpandAllButtonenableAllDirsActionPerformed
+    private void scheduleCollapseAllButtondisableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleCollapseAllButtondisableAllDirsActionPerformed
+        GuiTools.collapseAll(scheduleTree);
+    }//GEN-LAST:event_scheduleCollapseAllButtondisableAllDirsActionPerformed
 
-private void scheduleCollapseAllButtondisableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleCollapseAllButtondisableAllDirsActionPerformed
-    GuiTools.collapseAll(scheduleTree);
-}//GEN-LAST:event_scheduleCollapseAllButtondisableAllDirsActionPerformed
+    private void dirTimestampSyncCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirTimestampSyncCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dirTimestampSyncCheckBoxActionPerformed
 
-private void dirTimestampSyncCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirTimestampSyncCheckBoxActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_dirTimestampSyncCheckBoxActionPerformed
-
-private void ignoreDaylightSavingTimeCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ignoreDaylightSavingTimeCheckBoxActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_ignoreDaylightSavingTimeCheckBoxActionPerformed
+    private void ignoreDaylightSavingTimeCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ignoreDaylightSavingTimeCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ignoreDaylightSavingTimeCheckBoxActionPerformed
 
     private void swapButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_swapButtonActionPerformed
         String s = dirSrcField.getText();
@@ -2692,238 +2927,6 @@ private void ignoreDaylightSavingTimeCheckBoxActionPerformed(java.awt.event.Acti
             syncModeComboBoxClicked();
         }
     }//GEN-LAST:event_syncModeComboBoxItemStateChanged
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel IgnoreDaylightSavingTimeJLabel;
-    private javax.swing.JLabel IgnoreDaylightSavingTimeJLabel1;
-    private javax.swing.JPanel Spacer10;
-    private javax.swing.JPanel Spacer12;
-    private javax.swing.JPanel Spacer14;
-    private javax.swing.JPanel Spacer16;
-    private javax.swing.JPanel Spacer17;
-    private javax.swing.JPanel Spacer2;
-    private javax.swing.JPanel Spacer25;
-    private javax.swing.JPanel Spacer26;
-    private javax.swing.JPanel Spacer27;
-    private javax.swing.JPanel Spacer4;
-    private javax.swing.JPanel Spacer5;
-    private javax.swing.JPanel Spacer6;
-    private javax.swing.JPanel Spacer7;
-    private javax.swing.JPanel Spacer8;
-    protected javax.swing.JButton addFilterButton;
-    protected javax.swing.JButton addScheduleButton;
-    private javax.swing.JPanel attributeJPanel;
-    protected javax.swing.JLabel bidirectionalConflictCopyLargerLabel;
-    protected javax.swing.JRadioButton bidirectionalConflictCopyLargerRadioButton;
-    protected javax.swing.JLabel bidirectionalConflictCopyModifiedLabel;
-    protected javax.swing.JRadioButton bidirectionalConflictCopyModifiedRadioButton;
-    protected javax.swing.JLabel bidirectionalConflictRenameCopyLabel;
-    protected javax.swing.JRadioButton bidirectionalConflictRenameCopyRadioButton;
-    protected javax.swing.JLabel bidirectionalConflictSkipLabel;
-    protected javax.swing.JRadioButton bidirectionalConflictSkipRadioButton;
-    protected javax.swing.JLabel bidirectionalConflictWarnUserLabel;
-    protected javax.swing.JRadioButton bidirectionalConflictWarnUserRadioButton;
-    private javax.swing.JPanel bidirectionalSyncConflictPanel;
-    private javax.swing.ButtonGroup buttonGroupBidirectionalConflict;
-    private javax.swing.ButtonGroup buttonGroupCompare;
-    private javax.swing.ButtonGroup buttonGroupMonodirectionalConflict;
-    private javax.swing.ButtonGroup buttonGroupSymLinks;
-    protected javax.swing.JLabel compareFileContentsLabel;
-    protected javax.swing.JRadioButton compareFileContentsRadioButton;
-    protected javax.swing.JLabel compareFileSizesDatesLabel;
-    protected javax.swing.JLabel compareFileSizesDatesMetaDataLabel;
-    protected javax.swing.JRadioButton compareFileSizesDatesMetaDataRadioButton;
-    protected javax.swing.JRadioButton compareFileSizesDatesRadioButton;
-    private javax.swing.JPanel compareaJpanel;
-    protected javax.swing.JTabbedPane conflictResolutionJTabbedPane;
-    protected javax.swing.JButton copySettingsToAllJobsGoButton;
-    protected javax.swing.JLabel copySettingsToAllJobsLabel;
-    protected javax.swing.JButton copySettingsToEnabledJobsGoButton;
-    protected javax.swing.JLabel copySettingsToEnabledlJobsLabel;
-    protected javax.swing.JLabel copySymLinkLabel;
-    protected javax.swing.JRadioButton copySymLinkRadioButton;
-    protected javax.swing.JCheckBox deleteExcludedDirsACheckBox;
-    protected javax.swing.JCheckBox deleteExcludedDirsBCheckBox;
-    protected javax.swing.JCheckBox deleteExcludedFilesACheckBox;
-    protected javax.swing.JCheckBox deleteExcludedFilesBCheckBox;
-    protected javax.swing.JButton dirBackupDirChangeButton;
-    protected javax.swing.JTextField dirBackupDirField;
-    protected javax.swing.JCheckBox dirBackupDirInlineCheckBox;
-    protected javax.swing.JLabel dirBackupDirInlineLabel;
-    protected javax.swing.JLabel dirBackupDirLabel;
-    protected javax.swing.JTextField dirBackupField;
-    protected javax.swing.JLabel dirBackupLabel1;
-    protected javax.swing.JLabel dirBackupLabel2;
-    private javax.swing.JPanel dirBackupPanel;
-    protected javax.swing.JCheckBox dirCopyAllCheckBox;
-    protected javax.swing.JLabel dirCopyAllLabel;
-    protected javax.swing.JCheckBox dirCopyLargerCheckBox;
-    protected javax.swing.JLabel dirCopyLargerLabel;
-    protected javax.swing.JCheckBox dirCopyLargerModifiedCheckBox;
-    protected javax.swing.JLabel dirCopyLargerModifiedLabel;
-    protected javax.swing.JCheckBox dirCopyModifiedCheckBox;
-    protected javax.swing.JLabel dirCopyModifiedLabel;
-    protected javax.swing.JCheckBox dirCopyNewCheckBox;
-    protected javax.swing.JLabel dirCopyNewLabel;
-    protected javax.swing.JCheckBox dirDeleteDirsCheckBox;
-    protected javax.swing.JLabel dirDeleteDirsLabel;
-    protected javax.swing.JLabel dirDeleteExcludedDirsLabel;
-    protected javax.swing.JLabel dirDeleteExcludedDirsLabel1;
-    protected javax.swing.JLabel dirDeleteExcludedFilesLabel;
-    protected javax.swing.JLabel dirDeleteExcludedFilesLabel1;
-    protected javax.swing.JCheckBox dirDeleteFilesCheckBox;
-    protected javax.swing.JLabel dirDeleteFilesLabel;
-    private javax.swing.JPanel dirDeleteOptionsPanel;
-    protected javax.swing.JButton dirDstChangeButton;
-    protected javax.swing.JTextField dirDstField;
-    protected javax.swing.JLabel dirDstLabel;
-    protected javax.swing.JCheckBox dirEnableLoggingCheckBox;
-    protected javax.swing.JLabel dirEnableLoggingJLabel;
-    protected javax.swing.JButton dirLogBrowseButton;
-    protected javax.swing.JTextField dirLogField;
-    private javax.swing.JPanel dirLogFilePanel;
-    protected javax.swing.JLabel dirLogLabel;
-    protected javax.swing.JTextField dirNameField;
-    protected javax.swing.JLabel dirNameLabel;
-    protected javax.swing.JButton dirSrcChangeButton;
-    protected javax.swing.JTextField dirSrcField;
-    protected javax.swing.JLabel dirSrcLabel;
-    private javax.swing.JPanel dirSymbolicLinkPane;
-    protected javax.swing.JTextField dirTimestampDiffField;
-    private javax.swing.JPanel dirTimestampDiffFieldPanel;
-    private javax.swing.JPanel dirTimestampDiffFieldPanel1;
-    protected javax.swing.JLabel dirTimestampDiffLabel1;
-    protected javax.swing.JLabel dirTimestampDiffLabel2;
-    protected javax.swing.JLabel dirTimestampDiffLabel3;
-    protected javax.swing.JCheckBox dirTimestampSyncCheckBox;
-    protected javax.swing.JCheckBox dirTimestampWriteBackCheckBox;
-    private javax.swing.JLabel dirTimestampWriteBackLabel;
-    private javax.swing.JLabel dirTimestampWriteBackLabel1;
-    private javax.swing.JLabel dirTimestampWriteBackLabel3;
-    private javax.swing.JPanel dirTimestampWriteBackPanel;
-    protected javax.swing.JCheckBox dirVerifyCheckBox;
-    protected javax.swing.JLabel dirVerifyLabel;
-    protected javax.swing.JCheckBox dirWithSubfoldersCheckBox;
-    protected javax.swing.JLabel dirWithSubfoldersLabel;
-    protected javax.swing.JButton editFilterButton;
-    protected javax.swing.JButton editScheduleButton;
-    protected javax.swing.JButton filtersCollapseAllButton;
-    protected javax.swing.JButton filtersExpandAllButton;
-    protected javax.swing.JTree filtersTree;
-    protected javax.swing.JLabel followSymLinkLabel;
-    protected javax.swing.JRadioButton followSymLinkRadioButton;
-    protected javax.swing.JCheckBox ignoreDaylightSavingTimeCheckBox;
-    private javax.swing.JPanel informationPanel;
-    private javax.swing.JPanel informationPanel1;
-    private javax.swing.JPanel informationPanel10;
-    private javax.swing.JPanel informationPanel2;
-    private javax.swing.JPanel informationPanel3;
-    private javax.swing.JPanel informationPanel4;
-    private javax.swing.JPanel informationPanel5;
-    private javax.swing.JPanel informationPanel6;
-    private javax.swing.JPanel informationPanel7;
-    private javax.swing.JPanel informationPanel8;
-    private javax.swing.JPanel informationPanel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel100;
-    private javax.swing.JPanel jPanel101;
-    private javax.swing.JPanel jPanel102;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
-    private javax.swing.JPanel jPanel25;
-    private javax.swing.JPanel jPanel26;
-    private javax.swing.JPanel jPanel27;
-    private javax.swing.JPanel jPanel28;
-    private javax.swing.JPanel jPanel29;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel30;
-    private javax.swing.JPanel jPanel31;
-    private javax.swing.JPanel jPanel32;
-    private javax.swing.JPanel jPanel38;
-    private javax.swing.JPanel jPanel39;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel40;
-    private javax.swing.JPanel jPanel44;
-    private javax.swing.JPanel jPanel48;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel73;
-    private javax.swing.JPanel jPanel78;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel81;
-    private javax.swing.JPanel jPanel82;
-    private javax.swing.JPanel jPanel84;
-    private javax.swing.JPanel jPanel85;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JPanel jPanel95;
-    private javax.swing.JPanel jPanel96;
-    private javax.swing.JPanel jPanel97;
-    private javax.swing.JPanel jPanel99;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane10;
-    private javax.swing.JTextPane jTextPane11;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JTextPane jTextPane3;
-    private javax.swing.JTextPane jTextPane4;
-    private javax.swing.JTextPane jTextPane5;
-    private javax.swing.JTextPane jTextPane6;
-    private javax.swing.JTextPane jTextPane7;
-    private javax.swing.JTextPane jTextPane8;
-    private javax.swing.JTextPane jTextPane9;
-    protected javax.swing.JButton jobCancelButton;
-    protected javax.swing.JButton jobOKButton;
-    protected javax.swing.JTabbedPane jobTabbedPane;
-    private javax.swing.JLabel label9;
-    protected javax.swing.JLabel monodirectionalConflictCopySourceLabel;
-    protected javax.swing.JRadioButton monodirectionalConflictCopySourceRadioButton;
-    protected javax.swing.JLabel monodirectionalConflictSkipLabel;
-    protected javax.swing.JRadioButton monodirectionalConflictSkipRadioButton;
-    protected javax.swing.JLabel monodirectionalConflictWarnUserLabel;
-    protected javax.swing.JRadioButton monodirectionalConflictWarnUserRadioButton;
-    private javax.swing.JPanel monodirectionalSyncConflictPanel;
-    protected javax.swing.JCheckBox overrideReadOnlyCheckBox;
-    protected javax.swing.JLabel overrideReadOnlyLabel;
-    protected javax.swing.JCheckBox preserveDOSAttributesCheckBox;
-    protected javax.swing.JLabel preserveDOSAttributesLabel;
-    protected javax.swing.JCheckBox preserveFileOwnershipCheckBox;
-    protected javax.swing.JLabel preserveFileOwnershipLabel;
-    protected javax.swing.JCheckBox preserveFilePermissionsCheckBox;
-    protected javax.swing.JLabel preserveFilePermissionsLabel;
-    private javax.swing.JPanel realTimeSyncPanel;
-    protected javax.swing.JCheckBox realtimeSyncCheckBox;
-    protected javax.swing.JTextField realtimeSyncDelayField;
-    protected javax.swing.JCheckBox realtimeSyncOnStartCheckBox;
-    protected javax.swing.JButton removeFilterButton;
-    protected javax.swing.JButton removeScheduleButton;
-    protected javax.swing.JButton resetJobSettingsGoButton;
-    protected javax.swing.JLabel resetJobSettingsLabel;
-    protected javax.swing.JButton scheduleCollapseAllButton;
-    protected javax.swing.JButton scheduleExpandAllButton;
-    protected javax.swing.JTree scheduleTree;
-    private javax.swing.JPanel settingsActionsPanel;
-    private javax.swing.JPanel settingsButtonsPanel2;
-    protected javax.swing.JLabel skipSymLinkLabel;
-    protected javax.swing.JRadioButton skipSymLinkRadioButton;
-    protected javax.swing.JButton swapButton;
-    protected javax.swing.JComboBox syncModeComboBox;
-    private javax.swing.JPanel syncModeJPanel;
-    private javax.swing.JPanel verifyJPanel;
-    private javax.swing.JPanel viewJPanel3;
-    private javax.swing.JPanel viewJPanel4;
     // End of variables declaration//GEN-END:variables
 
     abstract protected void adjustRealtimeSyncOptions();

@@ -26,10 +26,6 @@ package edu.wright.dirsyncpro.xml;
  */
 abstract class Xml {
 
-    //Don't let anyone instantiate this class.
-    private Xml() {
-    }
-
     static final String TAG_ROOT = "dirsyncpro";
     static final String TAG_JOB = "job";
     static final String TAG_SCHEDULE = "schedule";
@@ -74,7 +70,6 @@ abstract class Xml {
     static final String ATTR_PRESERVE_POSIX_FILE_PERMISSIONS = "preservePOSIXFilePermissions";
     static final String ATTR_PRESERVE_POSIX_FILE_OWNERSHIP = "preservePOSIXFileOwnership";
     static final String ATTR_OVERRIDE_READ_ONLY = "overrideReadOnly";
-
     static final String ATTR_SCHEDULE_TYPE = "type";
     static final String ATTR_SCHEDULE_TIMEFRAME_FROM = "timeFrameFrom";
     static final String ATTR_SCHEDULE_TIMEFRAME_TO = "timeFrameTo";
@@ -101,7 +96,6 @@ abstract class Xml {
     static final String ATTR_SCHEDULE_OCTOBER = "october";
     static final String ATTR_SCHEDULE_NOVEMBER = "november";
     static final String ATTR_SCHEDULE_DECEMBER = "december";
-
     static final String ATTR_FILTER_TYPE = "type";
     static final String ATTR_FILTER_ACTION = "action";
     static final String ATTR_FILTER_DATE_MODE = "dateMode";
@@ -122,4 +116,7 @@ abstract class Xml {
     static final String ATTR_FILTER_PATTERN_PATTERN_STR = "pattern";
     static final String ATTR_FILTER_PATTERN_PATTERN_TYPE = "patternType";
     static final String ATTR_FILTER_PATTERN_REGEXP = "regularExpression";
+    //Don't let anyone instantiate this class.
+    private Xml() {
+    }
 }

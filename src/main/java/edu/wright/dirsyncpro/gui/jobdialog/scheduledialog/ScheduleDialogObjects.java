@@ -22,15 +22,15 @@
  */
 package edu.wright.dirsyncpro.gui.jobdialog.scheduledialog;
 
-import javax.swing.ImageIcon;
-import javax.swing.JDialog;
-
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.gui.swing.MyJTabbedPane;
 import edu.wright.dirsyncpro.gui.verifier.DateTimeVerifier;
 import edu.wright.dirsyncpro.gui.verifier.LongIntVerifier;
 import edu.wright.dirsyncpro.gui.verifier.TimeVerifier;
 import edu.wright.dirsyncpro.tools.GuiTools;
+
+import javax.swing.ImageIcon;
+import javax.swing.JDialog;
 
 /**
  * The DirSyncPro Main GUI.
@@ -39,6 +39,121 @@ import edu.wright.dirsyncpro.tools.GuiTools;
  */
 public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
 
+    protected javax.swing.JLabel jLabel43;
+
+    /**
+     * Creates new form GuiObjects
+     */
+//    public GuiObjects() {
+//       initComponents();
+//    }
+    protected javax.swing.JLabel lookNfeelLabel5;
+    protected javax.swing.JFormattedTextField scheduleDailyEveryTextField;
+    protected javax.swing.JRadioButton scheduleDailyRadioButton;
+    protected javax.swing.JFormattedTextField scheduleDailyTimeTextField;
+    protected javax.swing.JFormattedTextField scheduleHourlyEveryTextField;
+    protected javax.swing.JRadioButton scheduleHourlyRadioButton;
+    protected javax.swing.JFormattedTextField scheduleMinutelyEveryTextField;
+    protected javax.swing.JRadioButton scheduleMinutelyRadioButton;
+    protected javax.swing.JCheckBox scheduleMonthlyAprilCheckBox;
+    protected javax.swing.JCheckBox scheduleMonthlyAugustCheckBox;
+    protected javax.swing.JFormattedTextField scheduleMonthlyDayNumberTextField;
+    protected javax.swing.JCheckBox scheduleMonthlyDecemberCheckBox;
+    protected javax.swing.JCheckBox scheduleMonthlyFebruaryCheckBox;
+    protected javax.swing.JCheckBox scheduleMonthlyJanuaryCheckBox;
+    protected javax.swing.JCheckBox scheduleMonthlyJulyCheckBox;
+    protected javax.swing.JCheckBox scheduleMonthlyJuneCheckBox;
+    protected javax.swing.JCheckBox scheduleMonthlyMarchCheckBox;
+    protected javax.swing.JCheckBox scheduleMonthlyMayCheckBox;
+    protected javax.swing.JCheckBox scheduleMonthlyNovemberCheckBox;
+    protected javax.swing.JCheckBox scheduleMonthlyOctoberCheckBox;
+    protected javax.swing.JRadioButton scheduleMonthlyRadioButton;
+    protected javax.swing.JCheckBox scheduleMonthlySeptemberCheckBox;
+    protected javax.swing.JFormattedTextField scheduleMonthlyTimeTextField;
+    protected javax.swing.JRadioButton scheduleOnceRadioButton;
+    protected javax.swing.JFormattedTextField scheduleOnceTextField;
+    protected javax.swing.JCheckBox scheduleTimeFrameFromCheckBox;
+    protected javax.swing.JLabel scheduleTimeFrameFromLabel1;
+    protected javax.swing.JLabel scheduleTimeFrameFromLabel2;
+    protected javax.swing.JFormattedTextField scheduleTimeFrameFromTextField;
+    protected javax.swing.JCheckBox scheduleTimeFrameToCheckBox;
+    protected javax.swing.JLabel scheduleTimeFrameToLabel1;
+    protected javax.swing.JLabel scheduleTimeFrameToLabel2;
+    protected javax.swing.JFormattedTextField scheduleTimeFrameToTextField;
+    protected javax.swing.JFormattedTextField scheduleWeeklyEveryTextField;
+    protected javax.swing.JCheckBox scheduleWeeklyFridayCheckBox;
+    protected javax.swing.JCheckBox scheduleWeeklyMondayCheckBox;
+    protected javax.swing.JRadioButton scheduleWeeklyRadioButton;
+    protected javax.swing.JCheckBox scheduleWeeklySaturdayCheckBox;
+    protected javax.swing.JCheckBox scheduleWeeklySundayCheckBox;
+    protected javax.swing.JCheckBox scheduleWeeklyThursdayCheckBox;
+    protected javax.swing.JFormattedTextField scheduleWeeklyTimeTextField;
+    protected javax.swing.JCheckBox scheduleWeeklyTuesdayCheckBox;
+    protected javax.swing.JCheckBox scheduleWeeklyWednesdayCheckBox;
+    protected javax.swing.JButton schedulesCancelButton;
+    protected javax.swing.JButton schedulesOKButton;
+    protected javax.swing.JTabbedPane schedulesTabbedPane;
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Spacer18;
+    private javax.swing.JPanel Spacer19;
+    private javax.swing.JPanel Spacer20;
+    private javax.swing.JPanel Spacer21;
+    private javax.swing.JPanel Spacer22;
+    private javax.swing.JPanel Spacer23;
+    private javax.swing.JPanel Spacer24;
+    private javax.swing.ButtonGroup buttonGroupScheduleType;
+    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel2;
+    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel3;
+    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel4;
+    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel5;
+    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel6;
+    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel7;
+    private javax.swing.JPanel inExcludeJPanel3;
+    private javax.swing.JPanel informationPanel15;
+    private javax.swing.JPanel informationPanel16;
+    private javax.swing.JPanel informationPanel17;
+    private javax.swing.JPanel informationPanel18;
+    private javax.swing.JPanel informationPanel19;
+    private javax.swing.JPanel informationPanel20;
+    private javax.swing.JPanel informationPanel21;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
+    private javax.swing.JPanel jPanel76;
+    private javax.swing.JPanel jPanel77;
+    private javax.swing.JPanel jPanel85;
+    private javax.swing.JPanel jPanel86;
+    private javax.swing.JPanel jPanel87;
+    private javax.swing.JPanel jPanel89;
+    private javax.swing.JTextPane jTextPane16;
+    private javax.swing.JTextPane jTextPane17;
+    private javax.swing.JTextPane jTextPane18;
+    private javax.swing.JTextPane jTextPane19;
+    private javax.swing.JTextPane jTextPane20;
+    private javax.swing.JTextPane jTextPane21;
+    private javax.swing.JTextPane jTextPane22;
+    private javax.swing.JLabel lookNfeelLabel4;
+    private javax.swing.JPanel lookNfeelPanel2;
+    private javax.swing.JPanel schedulesButtonsPanel;
     public ScheduleDialogObjects(JDialog dialog) {
         super(dialog);
         GuiTools.setSystemLookAndFeel(DirSyncPro.isSystemLookAndFeel());
@@ -47,15 +162,8 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
     }
 
     /**
-     * Creates new form GuiObjects
-     */
-//    public GuiObjects() {
-//       initComponents();
-//    }
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
+     * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The
+     * content of this method is always regenerated by the Form Editor.
      */
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -1158,170 +1266,61 @@ public abstract class ScheduleDialogObjects extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-private void schedulesOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_schedulesOKButtonActionPerformed
-    // If no focus -> a fields has blocked applying settings
-    if (schedulesOKButton.hasFocus()) {
-        applySchedule();
+    private void schedulesOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_schedulesOKButtonActionPerformed
+        // If no focus -> a fields has blocked applying settings
+        if (schedulesOKButton.hasFocus()) {
+            applySchedule();
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_schedulesOKButtonActionPerformed
+
+    private void schedulesCancelButtoncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_schedulesCancelButtoncancelActionPerformed
         this.setVisible(false);
-    }
-}//GEN-LAST:event_schedulesOKButtonActionPerformed
+    }//GEN-LAST:event_schedulesCancelButtoncancelActionPerformed
 
-private void schedulesCancelButtoncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_schedulesCancelButtoncancelActionPerformed
-    this.setVisible(false);
-}//GEN-LAST:event_schedulesCancelButtoncancelActionPerformed
+    private void scheduleHourlyRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleHourlyRadioButtonActionPerformed
+        schedulesEvent();
+    }//GEN-LAST:event_scheduleHourlyRadioButtonActionPerformed
 
-private void scheduleHourlyRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleHourlyRadioButtonActionPerformed
-    schedulesEvent();
-}//GEN-LAST:event_scheduleHourlyRadioButtonActionPerformed
+    private void scheduleMonthlyRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleMonthlyRadioButtonActionPerformed
+        schedulesEvent();
+    }//GEN-LAST:event_scheduleMonthlyRadioButtonActionPerformed
 
-private void scheduleMonthlyRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleMonthlyRadioButtonActionPerformed
-    schedulesEvent();
-}//GEN-LAST:event_scheduleMonthlyRadioButtonActionPerformed
+    private void scheduleWeeklyRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleWeeklyRadioButtonActionPerformed
+        schedulesEvent();
+    }//GEN-LAST:event_scheduleWeeklyRadioButtonActionPerformed
 
-private void scheduleWeeklyRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleWeeklyRadioButtonActionPerformed
-    schedulesEvent();
-}//GEN-LAST:event_scheduleWeeklyRadioButtonActionPerformed
+    private void scheduleDailyRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleDailyRadioButtonActionPerformed
+        schedulesEvent();
+    }//GEN-LAST:event_scheduleDailyRadioButtonActionPerformed
 
-private void scheduleDailyRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleDailyRadioButtonActionPerformed
-    schedulesEvent();
-}//GEN-LAST:event_scheduleDailyRadioButtonActionPerformed
+    private void scheduleOnceRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleOnceRadioButtonActionPerformed
+        schedulesEvent();
+    }//GEN-LAST:event_scheduleOnceRadioButtonActionPerformed
 
-private void scheduleOnceRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleOnceRadioButtonActionPerformed
-    schedulesEvent();
-}//GEN-LAST:event_scheduleOnceRadioButtonActionPerformed
+    private void scheduleTimeFrameFromTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleTimeFrameFromTextFieldActionPerformed
+        schedulesEvent();
+    }//GEN-LAST:event_scheduleTimeFrameFromTextFieldActionPerformed
 
-private void scheduleTimeFrameFromTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleTimeFrameFromTextFieldActionPerformed
-    schedulesEvent();
-}//GEN-LAST:event_scheduleTimeFrameFromTextFieldActionPerformed
+    private void scheduleTimeFrameFromCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleTimeFrameFromCheckBoxActionPerformed
+        schedulesEvent();
+    }//GEN-LAST:event_scheduleTimeFrameFromCheckBoxActionPerformed
 
-private void scheduleTimeFrameFromCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleTimeFrameFromCheckBoxActionPerformed
-    schedulesEvent();
-}//GEN-LAST:event_scheduleTimeFrameFromCheckBoxActionPerformed
+    private void scheduleTimeFrameToCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleTimeFrameToCheckBoxActionPerformed
+        schedulesEvent();
+    }//GEN-LAST:event_scheduleTimeFrameToCheckBoxActionPerformed
 
-private void scheduleTimeFrameToCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleTimeFrameToCheckBoxActionPerformed
-    schedulesEvent();
-}//GEN-LAST:event_scheduleTimeFrameToCheckBoxActionPerformed
+    private void openRecentMenuItemopenConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openRecentMenuItemopenConfigActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openRecentMenuItemopenConfigActionPerformed
 
-private void openRecentMenuItemopenConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openRecentMenuItemopenConfigActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_openRecentMenuItemopenConfigActionPerformed
-
-private void scheduleMinutelyRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleMinutelyRadioButtonActionPerformed
-    schedulesEvent();
-}//GEN-LAST:event_scheduleMinutelyRadioButtonActionPerformed
+    private void scheduleMinutelyRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleMinutelyRadioButtonActionPerformed
+        schedulesEvent();
+    }//GEN-LAST:event_scheduleMinutelyRadioButtonActionPerformed
 
     private void scheduleMonthlyOctoberCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleMonthlyOctoberCheckBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_scheduleMonthlyOctoberCheckBoxActionPerformed
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Spacer18;
-    private javax.swing.JPanel Spacer19;
-    private javax.swing.JPanel Spacer20;
-    private javax.swing.JPanel Spacer21;
-    private javax.swing.JPanel Spacer22;
-    private javax.swing.JPanel Spacer23;
-    private javax.swing.JPanel Spacer24;
-    private javax.swing.ButtonGroup buttonGroupScheduleType;
-    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel2;
-    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel3;
-    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel4;
-    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel5;
-    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel6;
-    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel7;
-    private javax.swing.JPanel inExcludeJPanel3;
-    private javax.swing.JPanel informationPanel15;
-    private javax.swing.JPanel informationPanel16;
-    private javax.swing.JPanel informationPanel17;
-    private javax.swing.JPanel informationPanel18;
-    private javax.swing.JPanel informationPanel19;
-    private javax.swing.JPanel informationPanel20;
-    private javax.swing.JPanel informationPanel21;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    protected javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
-    private javax.swing.JPanel jPanel76;
-    private javax.swing.JPanel jPanel77;
-    private javax.swing.JPanel jPanel85;
-    private javax.swing.JPanel jPanel86;
-    private javax.swing.JPanel jPanel87;
-    private javax.swing.JPanel jPanel89;
-    private javax.swing.JTextPane jTextPane16;
-    private javax.swing.JTextPane jTextPane17;
-    private javax.swing.JTextPane jTextPane18;
-    private javax.swing.JTextPane jTextPane19;
-    private javax.swing.JTextPane jTextPane20;
-    private javax.swing.JTextPane jTextPane21;
-    private javax.swing.JTextPane jTextPane22;
-    private javax.swing.JLabel lookNfeelLabel4;
-    protected javax.swing.JLabel lookNfeelLabel5;
-    private javax.swing.JPanel lookNfeelPanel2;
-    protected javax.swing.JFormattedTextField scheduleDailyEveryTextField;
-    protected javax.swing.JRadioButton scheduleDailyRadioButton;
-    protected javax.swing.JFormattedTextField scheduleDailyTimeTextField;
-    protected javax.swing.JFormattedTextField scheduleHourlyEveryTextField;
-    protected javax.swing.JRadioButton scheduleHourlyRadioButton;
-    protected javax.swing.JFormattedTextField scheduleMinutelyEveryTextField;
-    protected javax.swing.JRadioButton scheduleMinutelyRadioButton;
-    protected javax.swing.JCheckBox scheduleMonthlyAprilCheckBox;
-    protected javax.swing.JCheckBox scheduleMonthlyAugustCheckBox;
-    protected javax.swing.JFormattedTextField scheduleMonthlyDayNumberTextField;
-    protected javax.swing.JCheckBox scheduleMonthlyDecemberCheckBox;
-    protected javax.swing.JCheckBox scheduleMonthlyFebruaryCheckBox;
-    protected javax.swing.JCheckBox scheduleMonthlyJanuaryCheckBox;
-    protected javax.swing.JCheckBox scheduleMonthlyJulyCheckBox;
-    protected javax.swing.JCheckBox scheduleMonthlyJuneCheckBox;
-    protected javax.swing.JCheckBox scheduleMonthlyMarchCheckBox;
-    protected javax.swing.JCheckBox scheduleMonthlyMayCheckBox;
-    protected javax.swing.JCheckBox scheduleMonthlyNovemberCheckBox;
-    protected javax.swing.JCheckBox scheduleMonthlyOctoberCheckBox;
-    protected javax.swing.JRadioButton scheduleMonthlyRadioButton;
-    protected javax.swing.JCheckBox scheduleMonthlySeptemberCheckBox;
-    protected javax.swing.JFormattedTextField scheduleMonthlyTimeTextField;
-    protected javax.swing.JRadioButton scheduleOnceRadioButton;
-    protected javax.swing.JFormattedTextField scheduleOnceTextField;
-    protected javax.swing.JCheckBox scheduleTimeFrameFromCheckBox;
-    protected javax.swing.JLabel scheduleTimeFrameFromLabel1;
-    protected javax.swing.JLabel scheduleTimeFrameFromLabel2;
-    protected javax.swing.JFormattedTextField scheduleTimeFrameFromTextField;
-    protected javax.swing.JCheckBox scheduleTimeFrameToCheckBox;
-    protected javax.swing.JLabel scheduleTimeFrameToLabel1;
-    protected javax.swing.JLabel scheduleTimeFrameToLabel2;
-    protected javax.swing.JFormattedTextField scheduleTimeFrameToTextField;
-    protected javax.swing.JFormattedTextField scheduleWeeklyEveryTextField;
-    protected javax.swing.JCheckBox scheduleWeeklyFridayCheckBox;
-    protected javax.swing.JCheckBox scheduleWeeklyMondayCheckBox;
-    protected javax.swing.JRadioButton scheduleWeeklyRadioButton;
-    protected javax.swing.JCheckBox scheduleWeeklySaturdayCheckBox;
-    protected javax.swing.JCheckBox scheduleWeeklySundayCheckBox;
-    protected javax.swing.JCheckBox scheduleWeeklyThursdayCheckBox;
-    protected javax.swing.JFormattedTextField scheduleWeeklyTimeTextField;
-    protected javax.swing.JCheckBox scheduleWeeklyTuesdayCheckBox;
-    protected javax.swing.JCheckBox scheduleWeeklyWednesdayCheckBox;
-    private javax.swing.JPanel schedulesButtonsPanel;
-    protected javax.swing.JButton schedulesCancelButton;
-    protected javax.swing.JButton schedulesOKButton;
-    protected javax.swing.JTabbedPane schedulesTabbedPane;
     // End of variables declaration//GEN-END:variables
 
     abstract protected void applySchedule();

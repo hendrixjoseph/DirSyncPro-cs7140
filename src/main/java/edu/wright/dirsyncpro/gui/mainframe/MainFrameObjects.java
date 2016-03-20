@@ -22,8 +22,6 @@
  */
 package edu.wright.dirsyncpro.gui.mainframe;
 
-import javax.swing.ImageIcon;
-
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.gui.jobdialog.JobDialog;
 import edu.wright.dirsyncpro.gui.mainframe.jobtree.JobTree;
@@ -38,6 +36,8 @@ import edu.wright.dirsyncpro.gui.mainframe.syncqtable.SyncQTableCellRenderer;
 import edu.wright.dirsyncpro.gui.mainframe.syncqtable.SyncQTableModel;
 import edu.wright.dirsyncpro.tools.GuiTools;
 
+import javax.swing.ImageIcon;
+
 /**
  * The DirSyncPro Main GUI.
  *
@@ -45,6 +45,187 @@ import edu.wright.dirsyncpro.tools.GuiTools;
  */
 public abstract class MainFrameObjects extends javax.swing.JFrame {
 
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    protected javax.swing.JButton analyzeButton;
+    protected javax.swing.JMenuItem analyzeMenuItem;
+    protected javax.swing.JMenuItem appendMenuItem;
+    protected javax.swing.JMenuItem cmdMenuItem;
+    protected javax.swing.JProgressBar currentProgress;
+    protected javax.swing.JLabel jLabel;
+    protected javax.swing.JLabel jLabel11;
+    protected javax.swing.JLabel jLabel13;
+    protected javax.swing.JLabel jLabel14;
+    protected javax.swing.JLabel jLabel15;
+    protected javax.swing.JLabel jLabel21;
+    protected javax.swing.JLabel jLabel22;
+    protected javax.swing.JLabel jLabel23;
+    protected javax.swing.JLabel jLabel25;
+    protected javax.swing.JLabel jLabel34;
+    protected javax.swing.JLabel jLabel35;
+    protected javax.swing.JLabel jLabel46;
+    protected javax.swing.JLabel jLabel70;
+    protected javax.swing.JLabel jLabel71;
+    protected javax.swing.JLabel jLabel72;
+    protected javax.swing.JLabel jLabel73;
+    protected javax.swing.JLabel jLabel77;
+    protected javax.swing.JButton jobAddButton;
+    protected javax.swing.JButton jobCollapseAllButton;
+    protected javax.swing.JButton jobCopyButton;
+    protected javax.swing.JButton jobDisableAllButton;
+    protected javax.swing.JButton jobDownButton;
+    protected javax.swing.JButton jobEditButton;
+    protected javax.swing.JButton jobEnableAllButton;
+    protected javax.swing.JButton jobExpandOneLevelButton;
+    protected javax.swing.JButton jobRemoveButton;
+    protected javax.swing.JButton jobUpButton;
+    protected javax.swing.JTree jobsTree;
+    protected javax.swing.JButton messagesCleanButton;
+    protected javax.swing.JTable messagesTable;
+    protected javax.swing.JScrollPane messagesTableScrollPane;
+    protected javax.swing.JCheckBox messagesViewFilterErrorsCheckBox;
+    protected javax.swing.JLabel messagesViewFilterErrorsLabel;
+    protected javax.swing.JCheckBox messagesViewFilterFileOperationsCheckBox;
+    protected javax.swing.JLabel messagesViewFilterFileOperationsLabel;
+    protected javax.swing.JCheckBox messagesViewFilterInfosCheckBox;
+    protected javax.swing.JLabel messagesViewFilterInfosLabel;
+    protected javax.swing.JButton messagesViewFilterOKButton;
+    protected javax.swing.JButton messagesViewFilterResetButton;
+    protected javax.swing.JCheckBox messagesViewFilterWarningsCheckBox;
+    protected javax.swing.JLabel messagesViewFilterWarningsLabel;
+    protected javax.swing.JButton newButton;
+    protected javax.swing.JMenuItem newMenuItem;
+    protected javax.swing.JButton openButton;
+    protected javax.swing.JMenuItem openMenuItem;
+    protected javax.swing.JMenu openRecentMenu;
+    protected javax.swing.JMenuItem optionsMenuItem;
+    protected javax.swing.JToggleButton pauseButton;
+    protected javax.swing.JButton saveAsButton;
+    protected javax.swing.JMenuItem saveAsMenuItem;
+    protected javax.swing.JButton saveButton;
+    protected javax.swing.JMenuItem saveEnabledAsMenuItem;
+    protected javax.swing.JMenuItem saveMenuItem;
+    protected javax.swing.JLabel scheduleEngineStatusField;
+    protected javax.swing.JButton scheduleStartButton;
+    protected javax.swing.JButton scheduleStopButton;
+    protected javax.swing.JTable scheduleTable;
+    protected javax.swing.JButton shutDownButton;
+    protected javax.swing.JMenuItem startScheduledTasksMenuItem;
+    protected javax.swing.JMenuItem stopScheduledTasksMenuItem;
+    protected javax.swing.JMenuItem swapSrcDstMenuItem;
+    protected javax.swing.JLabel syncQBytesAllwaysFilesDirs;
+    protected javax.swing.JLabel syncQBytesDeletedFilesDirs;
+    protected javax.swing.JLabel syncQBytesFilesDirsToBeSynced;
+    protected javax.swing.JLabel syncQBytesLargerAndModifiedFilesDirs;
+    protected javax.swing.JLabel syncQBytesLargerFilesDirs;
+    protected javax.swing.JLabel syncQBytesModifieldFilesDirs;
+    protected javax.swing.JLabel syncQBytesNewFilesDirs;
+    protected javax.swing.JLabel syncQNumberOfAllwaysDirs;
+    protected javax.swing.JLabel syncQNumberOfAllwaysFiles;
+    protected javax.swing.JLabel syncQNumberOfAllwaysFilesDirs;
+    protected javax.swing.JLabel syncQNumberOfConflictFiles;
+    protected javax.swing.JLabel syncQNumberOfConflictFilesDirs;
+    protected javax.swing.JLabel syncQNumberOfDeletedDirs;
+    protected javax.swing.JLabel syncQNumberOfDeletedFiles;
+    protected javax.swing.JLabel syncQNumberOfDeletedFilesDirs;
+    protected javax.swing.JLabel syncQNumberOfDirsToBeSynced;
+    protected javax.swing.JLabel syncQNumberOfFilesDirsToBeSynced;
+    protected javax.swing.JLabel syncQNumberOfFilesToBeSynced;
+    protected javax.swing.JLabel syncQNumberOfLargerAndModifiedFiles;
+    protected javax.swing.JLabel syncQNumberOfLargerAndModifiedFilesDirs;
+    protected javax.swing.JLabel syncQNumberOfLargerFiles;
+    protected javax.swing.JLabel syncQNumberOfLargerFilesDirs;
+    protected javax.swing.JLabel syncQNumberOfModifieldDirs;
+    protected javax.swing.JLabel syncQNumberOfModifieldFiles;
+    protected javax.swing.JLabel syncQNumberOfModifieldFilesDirs;
+    protected javax.swing.JLabel syncQNumberOfNewDirs;
+    protected javax.swing.JLabel syncQNumberOfNewFiles;
+    protected javax.swing.JLabel syncQNumberOfNewFilesDirs;
+    protected javax.swing.JCheckBox syncQSyncFilterConflictFilesCheckBox;
+    protected javax.swing.JLabel syncQSyncFilterConflictFilesLabel;
+    protected javax.swing.JCheckBox syncQSyncFilterDeletedDirsCheckBox;
+    protected javax.swing.JLabel syncQSyncFilterDeletedDirsLabel;
+    protected javax.swing.JCheckBox syncQSyncFilterDeletedFilesCheckBox;
+    protected javax.swing.JLabel syncQSyncFilterDeletedFilesLabel;
+    protected javax.swing.JCheckBox syncQSyncFilterLargerAndModifiedFilesCheckBox;
+    protected javax.swing.JLabel syncQSyncFilterLargerAndModifiedFilesLabel;
+    protected javax.swing.JCheckBox syncQSyncFilterLargerFilesCheckBox;
+    protected javax.swing.JLabel syncQSyncFilterLargerFilesLabel;
+    protected javax.swing.JCheckBox syncQSyncFilterModifiedFilesCheckBox;
+    protected javax.swing.JLabel syncQSyncFilterModifiedFilesLabel;
+    protected javax.swing.JCheckBox syncQSyncFilterNewFilesCheckBox;
+    protected javax.swing.JLabel syncQSyncFilterNewFilesLabel;
+    protected javax.swing.JButton syncQSyncFilterOKButton;
+    protected javax.swing.JButton syncQSyncFilterResetButton;
+    protected javax.swing.JTable syncQTable;
+    protected javax.swing.JLabel syncQTotalNumberOfAnalyzedDirs;
+    protected javax.swing.JLabel syncQTotalNumberOfAnalyzedFiles;
+    protected javax.swing.JLabel syncQTotalNumberOfFilesDirs;
+    protected javax.swing.JCheckBox syncQViewFilterConflictFilesCheckBox;
+    protected javax.swing.JLabel syncQViewFilterConflictFilesLabel;
+    protected javax.swing.JCheckBox syncQViewFilterDeletedDirsCheckBox;
+    protected javax.swing.JLabel syncQViewFilterDeletedDirsLabel;
+    protected javax.swing.JCheckBox syncQViewFilterDeletedFilesCheckBox;
+    protected javax.swing.JLabel syncQViewFilterDeletedFilesLabel;
+    protected javax.swing.JCheckBox syncQViewFilterLargerAndModifiedFilesCheckBox;
+    protected javax.swing.JLabel syncQViewFilterLargerAndModifiedFilesLabel;
+    protected javax.swing.JCheckBox syncQViewFilterLargerFilesCheckBox;
+    protected javax.swing.JLabel syncQViewFilterLargerFilesLabel;
+    protected javax.swing.JCheckBox syncQViewFilterModifiedFilesCheckBox;
+    protected javax.swing.JLabel syncQViewFilterModifiedFilesLabel;
+    protected javax.swing.JCheckBox syncQViewFilterNewFilesCheckBox;
+    protected javax.swing.JLabel syncQViewFilterNewFilesLabel;
+    protected javax.swing.JButton syncQViewFilterOKButton;
+    protected javax.swing.JButton syncQViewFilterResetButton;
+    protected javax.swing.JButton synchronizeButton;
+    protected javax.swing.JMenuItem synchronizeMenuItem;
+    protected javax.swing.JTabbedPane tabbedPane;
+    protected javax.swing.JProgressBar totalProgress;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel50;
+    private javax.swing.JPanel jPanel51;
+    private javax.swing.JPanel jPanel52;
+    private javax.swing.JPanel jPanel53;
+    private javax.swing.JPanel jPanel54;
+    private javax.swing.JPanel jPanel55;
+    private javax.swing.JPanel jPanel56;
+    private javax.swing.JPanel jPanel57;
+    private javax.swing.JPanel jPanel58;
+    private javax.swing.JPanel jPanel59;
+    private javax.swing.JPanel jPanel60;
+    private javax.swing.JPanel jPanel61;
+    private javax.swing.JPanel jPanel62;
+    private javax.swing.JPanel jPanel63;
+    private javax.swing.JPanel jPanel64;
+    private javax.swing.JPanel jPanel65;
+    private javax.swing.JPanel jPanel66;
+    private javax.swing.JPanel jPanel67;
+    private javax.swing.JPanel jPanel68;
+    private javax.swing.JPanel jPanel69;
+    private javax.swing.JPanel jPanel70;
+    private javax.swing.JPanel jPanel71;
+    private javax.swing.JPanel jPanel72;
+    private javax.swing.JPanel jPanel73;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JPopupMenu.Separator jSeparator7;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JMenuItem pauseMenuItem;
+    private javax.swing.JPanel scheduleStatusJPanel;
+    private javax.swing.JMenuItem shutDownMenuItem;
+    private javax.swing.JPanel spacer3;
+    private javax.swing.JPanel spacer6;
+    private javax.swing.JPanel spacer7;
+    private javax.swing.JButton stopButton;
+    private javax.swing.JMenuItem stopMenuItem;
+    private javax.swing.JPanel summaryJPanel;
+    private javax.swing.JPanel syncJPanel;
+    private javax.swing.JMenu toolsMenu;
+    private javax.swing.JPanel viewJPanel;
+    private javax.swing.JPanel viewJPanel1;
+    private javax.swing.JPanel viewJPanel2;
     public MainFrameObjects() {
         super();
         GuiTools.setSystemLookAndFeel(DirSyncPro.isSystemLookAndFeel());
@@ -53,9 +234,8 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
     }
 
     /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
+     * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The
+     * content of this method is always regenerated by the Form Editor.
      */
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -276,6 +456,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
+
             @Override
             public void windowIconified(java.awt.event.WindowEvent evt) {
                 formWindowIconified(evt);
@@ -770,10 +951,12 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jobsTreeMouseClicked(evt);
             }
+
             @Override
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jobsTreeMousePressed(evt);
             }
+
             @Override
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 jobsTreeMouseReleased(evt);
@@ -1614,10 +1797,12 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 syncQTableMouseClicked(evt);
             }
+
             @Override
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 syncQTableMousePressed(evt);
             }
+
             @Override
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 syncQTableMouseReleased(evt);
@@ -2245,7 +2430,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
     private void saveMenuItemsaveConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemsaveConfigActionPerformed
         saveConfig();
-}//GEN-LAST:event_saveMenuItemsaveConfigActionPerformed
+    }//GEN-LAST:event_saveMenuItemsaveConfigActionPerformed
 
     private void quitMenuItemquitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitMenuItemquitActionPerformed
         quit();
@@ -2289,7 +2474,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
     private void saveButtonsaveConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonsaveConfigActionPerformed
         saveConfig();
-}//GEN-LAST:event_saveButtonsaveConfigActionPerformed
+    }//GEN-LAST:event_saveButtonsaveConfigActionPerformed
 
     private void analyzeButtonpreviewStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analyzeButtonpreviewStartActionPerformed
         analyzeStart();
@@ -2319,216 +2504,216 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         GuiTools.collapseAll(jobsTree);
         getJobDialog().setToBasicOptions();
         addJob();
-}//GEN-LAST:event_jobAddButtonlistAddActionPerformed
+    }//GEN-LAST:event_jobAddButtonlistAddActionPerformed
 
     private void jobCopyButtonlistCopyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobCopyButtonlistCopyActionPerformed
         copyJob();
-}//GEN-LAST:event_jobCopyButtonlistCopyActionPerformed
+    }//GEN-LAST:event_jobCopyButtonlistCopyActionPerformed
 
     private void jobUpButtonlistUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobUpButtonlistUpActionPerformed
         upwardeJob();
-}//GEN-LAST:event_jobUpButtonlistUpActionPerformed
+    }//GEN-LAST:event_jobUpButtonlistUpActionPerformed
 
     private void jobDownButtonlistDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobDownButtonlistDownActionPerformed
         downwardJob();
-}//GEN-LAST:event_jobDownButtonlistDownActionPerformed
+    }//GEN-LAST:event_jobDownButtonlistDownActionPerformed
 
     private void jobRemoveButtonlistRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobRemoveButtonlistRemoveActionPerformed
         removeJob();
-}//GEN-LAST:event_jobRemoveButtonlistRemoveActionPerformed
+    }//GEN-LAST:event_jobRemoveButtonlistRemoveActionPerformed
 
     private void jobEnableAllButtonenableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobEnableAllButtonenableAllDirsActionPerformed
         enableAllDirs();
-}//GEN-LAST:event_jobEnableAllButtonenableAllDirsActionPerformed
+    }//GEN-LAST:event_jobEnableAllButtonenableAllDirsActionPerformed
 
     private void jobDisableAllButtondisableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobDisableAllButtondisableAllDirsActionPerformed
         disableAllDirs();
-}//GEN-LAST:event_jobDisableAllButtondisableAllDirsActionPerformed
+    }//GEN-LAST:event_jobDisableAllButtondisableAllDirsActionPerformed
 
     private void tabbedPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabbedPaneMouseClicked
         //dirEvent();
     }//GEN-LAST:event_tabbedPaneMouseClicked
 
-private void saveAsButtonsaveConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsButtonsaveConfigActionPerformed
-    saveAsConfig();
-}//GEN-LAST:event_saveAsButtonsaveConfigActionPerformed
+    private void saveAsButtonsaveConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsButtonsaveConfigActionPerformed
+        saveAsConfig();
+    }//GEN-LAST:event_saveAsButtonsaveConfigActionPerformed
 
-private void pauseMenuItemsynchronizationStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pauseMenuItemsynchronizationStopActionPerformed
-    pause();
-}//GEN-LAST:event_pauseMenuItemsynchronizationStopActionPerformed
+    private void pauseMenuItemsynchronizationStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pauseMenuItemsynchronizationStopActionPerformed
+        pause();
+    }//GEN-LAST:event_pauseMenuItemsynchronizationStopActionPerformed
 
-private void saveAsMenuItemsaveConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsMenuItemsaveConfigActionPerformed
-    saveAsConfig();
-}//GEN-LAST:event_saveAsMenuItemsaveConfigActionPerformed
+    private void saveAsMenuItemsaveConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsMenuItemsaveConfigActionPerformed
+        saveAsConfig();
+    }//GEN-LAST:event_saveAsMenuItemsaveConfigActionPerformed
 
-private void donateButtoncontentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_donateButtoncontentsActionPerformed
-    donate();
-}//GEN-LAST:event_donateButtoncontentsActionPerformed
+    private void donateButtoncontentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_donateButtoncontentsActionPerformed
+        donate();
+    }//GEN-LAST:event_donateButtoncontentsActionPerformed
 
-private void donateMenuItemcontentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_donateMenuItemcontentsActionPerformed
-    donate();
-}//GEN-LAST:event_donateMenuItemcontentsActionPerformed
+    private void donateMenuItemcontentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_donateMenuItemcontentsActionPerformed
+        donate();
+    }//GEN-LAST:event_donateMenuItemcontentsActionPerformed
 
-private void syncQViewFilterResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterResetButtonActionPerformed
-    syncQViewFilterChanged(true);
-}//GEN-LAST:event_syncQViewFilterResetButtonActionPerformed
+    private void syncQViewFilterResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterResetButtonActionPerformed
+        syncQViewFilterChanged(true);
+    }//GEN-LAST:event_syncQViewFilterResetButtonActionPerformed
 
-private void syncQViewFilterOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterOKButtonActionPerformed
-    syncQViewFilterChanged(false);
-}//GEN-LAST:event_syncQViewFilterOKButtonActionPerformed
+    private void syncQViewFilterOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterOKButtonActionPerformed
+        syncQViewFilterChanged(false);
+    }//GEN-LAST:event_syncQViewFilterOKButtonActionPerformed
 
-private void syncQViewFilterDeletedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterDeletedFilesCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_syncQViewFilterDeletedFilesCheckBoxdirEventActionPerformed
+    private void syncQViewFilterDeletedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterDeletedFilesCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syncQViewFilterDeletedFilesCheckBoxdirEventActionPerformed
 
-private void syncQViewFilterLargerFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterLargerFilesCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_syncQViewFilterLargerFilesCheckBoxdirEventActionPerformed
+    private void syncQViewFilterLargerFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterLargerFilesCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syncQViewFilterLargerFilesCheckBoxdirEventActionPerformed
 
-private void syncQViewFilterModifiedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterModifiedFilesCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_syncQViewFilterModifiedFilesCheckBoxdirEventActionPerformed
+    private void syncQViewFilterModifiedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterModifiedFilesCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syncQViewFilterModifiedFilesCheckBoxdirEventActionPerformed
 
-private void syncQViewFilterNewFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterNewFilesCheckBoxdirEventActionPerformed
+    private void syncQViewFilterNewFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterNewFilesCheckBoxdirEventActionPerformed
 
-    // TODO add your handling code here:
-}//GEN-LAST:event_syncQViewFilterNewFilesCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syncQViewFilterNewFilesCheckBoxdirEventActionPerformed
 
-private void syncQViewFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_syncQViewFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed
+    private void syncQViewFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syncQViewFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed
 
-private void syncQSyncFilterNewFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterNewFilesCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_syncQSyncFilterNewFilesCheckBoxdirEventActionPerformed
+    private void syncQSyncFilterNewFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterNewFilesCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syncQSyncFilterNewFilesCheckBoxdirEventActionPerformed
 
-private void syncQSyncFilterLargerFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterLargerFilesCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_syncQSyncFilterLargerFilesCheckBoxdirEventActionPerformed
+    private void syncQSyncFilterLargerFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterLargerFilesCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syncQSyncFilterLargerFilesCheckBoxdirEventActionPerformed
 
-private void syncQSyncFilterModifiedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterModifiedFilesCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_syncQSyncFilterModifiedFilesCheckBoxdirEventActionPerformed
+    private void syncQSyncFilterModifiedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterModifiedFilesCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syncQSyncFilterModifiedFilesCheckBoxdirEventActionPerformed
 
-private void syncQSyncFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_syncQSyncFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed
+    private void syncQSyncFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syncQSyncFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed
 
-private void syncQSyncFilterDeletedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterDeletedFilesCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_syncQSyncFilterDeletedFilesCheckBoxdirEventActionPerformed
+    private void syncQSyncFilterDeletedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterDeletedFilesCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syncQSyncFilterDeletedFilesCheckBoxdirEventActionPerformed
 
-private void syncQSyncFilterResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterResetButtonActionPerformed
-    syncQSyncFilterChanged(true);
-}//GEN-LAST:event_syncQSyncFilterResetButtonActionPerformed
+    private void syncQSyncFilterResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterResetButtonActionPerformed
+        syncQSyncFilterChanged(true);
+    }//GEN-LAST:event_syncQSyncFilterResetButtonActionPerformed
 
-private void syncQSyncFilterOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterOKButtonActionPerformed
-    syncQSyncFilterChanged(false);
-}//GEN-LAST:event_syncQSyncFilterOKButtonActionPerformed
+    private void syncQSyncFilterOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterOKButtonActionPerformed
+        syncQSyncFilterChanged(false);
+    }//GEN-LAST:event_syncQSyncFilterOKButtonActionPerformed
 
-private void messagesViewFilterOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterOKButtonActionPerformed
-    messagesQViewFilterChanged(false);
-}//GEN-LAST:event_messagesViewFilterOKButtonActionPerformed
+    private void messagesViewFilterOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterOKButtonActionPerformed
+        messagesQViewFilterChanged(false);
+    }//GEN-LAST:event_messagesViewFilterOKButtonActionPerformed
 
-private void messagesViewFilterResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterResetButtonActionPerformed
-    messagesQViewFilterChanged(true);
-}//GEN-LAST:event_messagesViewFilterResetButtonActionPerformed
+    private void messagesViewFilterResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterResetButtonActionPerformed
+        messagesQViewFilterChanged(true);
+    }//GEN-LAST:event_messagesViewFilterResetButtonActionPerformed
 
-private void messagesViewFilterFileOperationsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterFileOperationsCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_messagesViewFilterFileOperationsCheckBoxdirEventActionPerformed
+    private void messagesViewFilterFileOperationsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterFileOperationsCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_messagesViewFilterFileOperationsCheckBoxdirEventActionPerformed
 
-private void messagesViewFilterWarningsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterWarningsCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_messagesViewFilterWarningsCheckBoxdirEventActionPerformed
+    private void messagesViewFilterWarningsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterWarningsCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_messagesViewFilterWarningsCheckBoxdirEventActionPerformed
 
-private void messagesViewFilterErrorsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterErrorsCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_messagesViewFilterErrorsCheckBoxdirEventActionPerformed
+    private void messagesViewFilterErrorsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterErrorsCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_messagesViewFilterErrorsCheckBoxdirEventActionPerformed
 
-private void messagesViewFilterInfosCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterInfosCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_messagesViewFilterInfosCheckBoxdirEventActionPerformed
+    private void messagesViewFilterInfosCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterInfosCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_messagesViewFilterInfosCheckBoxdirEventActionPerformed
 
-private void syncQViewFilterDeletedDirsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterDeletedDirsCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_syncQViewFilterDeletedDirsCheckBoxdirEventActionPerformed
+    private void syncQViewFilterDeletedDirsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterDeletedDirsCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syncQViewFilterDeletedDirsCheckBoxdirEventActionPerformed
 
-private void syncQSyncFilterDeletedDirsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterDeletedDirsCheckBoxdirEventActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_syncQSyncFilterDeletedDirsCheckBoxdirEventActionPerformed
+    private void syncQSyncFilterDeletedDirsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterDeletedDirsCheckBoxdirEventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_syncQSyncFilterDeletedDirsCheckBoxdirEventActionPerformed
 
-private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
-    syncQViewFilterChanged(true);
-}//GEN-LAST:event_jTabbedPane1MouseClicked
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        syncQViewFilterChanged(true);
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
 
-private void messagesCleanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesCleanButtonActionPerformed
-    cleanLog();
-}//GEN-LAST:event_messagesCleanButtonActionPerformed
+    private void messagesCleanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesCleanButtonActionPerformed
+        cleanLog();
+    }//GEN-LAST:event_messagesCleanButtonActionPerformed
 
-private void jobEditButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobEditButtonlistAddActionPerformed
-    openEditJobDialog();
-}//GEN-LAST:event_jobEditButtonlistAddActionPerformed
+    private void jobEditButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobEditButtonlistAddActionPerformed
+        openEditJobDialog();
+    }//GEN-LAST:event_jobEditButtonlistAddActionPerformed
 
-private void jobExpandOneLevelButtonenableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobExpandOneLevelButtonenableAllDirsActionPerformed
-    GuiTools.expandOneLevel(jobsTree);
-}//GEN-LAST:event_jobExpandOneLevelButtonenableAllDirsActionPerformed
+    private void jobExpandOneLevelButtonenableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobExpandOneLevelButtonenableAllDirsActionPerformed
+        GuiTools.expandOneLevel(jobsTree);
+    }//GEN-LAST:event_jobExpandOneLevelButtonenableAllDirsActionPerformed
 
-private void jobCollapseAllButtondisableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobCollapseAllButtondisableAllDirsActionPerformed
-    GuiTools.collapseAll(jobsTree);
-}//GEN-LAST:event_jobCollapseAllButtondisableAllDirsActionPerformed
+    private void jobCollapseAllButtondisableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobCollapseAllButtondisableAllDirsActionPerformed
+        GuiTools.collapseAll(jobsTree);
+    }//GEN-LAST:event_jobCollapseAllButtondisableAllDirsActionPerformed
 
-private void jobsTreeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jobsTreeMouseClicked
-    jobsTreeMouseHandler(evt);
-}//GEN-LAST:event_jobsTreeMouseClicked
+    private void jobsTreeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jobsTreeMouseClicked
+        jobsTreeMouseHandler(evt);
+    }//GEN-LAST:event_jobsTreeMouseClicked
 
-private void jobsTreeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jobsTreeMousePressed
-    jobsTreeMouseHandler(evt);
-}//GEN-LAST:event_jobsTreeMousePressed
+    private void jobsTreeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jobsTreeMousePressed
+        jobsTreeMouseHandler(evt);
+    }//GEN-LAST:event_jobsTreeMousePressed
 
-private void jobsTreeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jobsTreeMouseReleased
-    jobsTreeMouseHandler(evt);
-}//GEN-LAST:event_jobsTreeMouseReleased
+    private void jobsTreeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jobsTreeMouseReleased
+        jobsTreeMouseHandler(evt);
+    }//GEN-LAST:event_jobsTreeMouseReleased
 
-private void syncQTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_syncQTableMouseClicked
-    syncQMouseHandler(evt);
-}//GEN-LAST:event_syncQTableMouseClicked
+    private void syncQTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_syncQTableMouseClicked
+        syncQMouseHandler(evt);
+    }//GEN-LAST:event_syncQTableMouseClicked
 
-private void syncQTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_syncQTableMousePressed
-    syncQMouseHandler(evt);
-}//GEN-LAST:event_syncQTableMousePressed
+    private void syncQTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_syncQTableMousePressed
+        syncQMouseHandler(evt);
+    }//GEN-LAST:event_syncQTableMousePressed
 
-private void syncQTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_syncQTableMouseReleased
-    syncQMouseHandler(evt);
-}//GEN-LAST:event_syncQTableMouseReleased
+    private void syncQTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_syncQTableMouseReleased
+        syncQMouseHandler(evt);
+    }//GEN-LAST:event_syncQTableMouseReleased
 
-private void startScheduledTasksMenuItemsynchronizationStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startScheduledTasksMenuItemsynchronizationStartActionPerformed
-    schedulerStart();
-}//GEN-LAST:event_startScheduledTasksMenuItemsynchronizationStartActionPerformed
+    private void startScheduledTasksMenuItemsynchronizationStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startScheduledTasksMenuItemsynchronizationStartActionPerformed
+        schedulerStart();
+    }//GEN-LAST:event_startScheduledTasksMenuItemsynchronizationStartActionPerformed
 
-private void stopScheduledTasksMenuItemsynchronizationStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopScheduledTasksMenuItemsynchronizationStartActionPerformed
-    schedulerStop();
-}//GEN-LAST:event_stopScheduledTasksMenuItemsynchronizationStartActionPerformed
+    private void stopScheduledTasksMenuItemsynchronizationStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopScheduledTasksMenuItemsynchronizationStartActionPerformed
+        schedulerStop();
+    }//GEN-LAST:event_stopScheduledTasksMenuItemsynchronizationStartActionPerformed
 
-private void scheduleStartButtonsynchronizationStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleStartButtonsynchronizationStartActionPerformed
-    schedulerStart();
-}//GEN-LAST:event_scheduleStartButtonsynchronizationStartActionPerformed
+    private void scheduleStartButtonsynchronizationStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleStartButtonsynchronizationStartActionPerformed
+        schedulerStart();
+    }//GEN-LAST:event_scheduleStartButtonsynchronizationStartActionPerformed
 
-private void scheduleStopButtonsynchronizationStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleStopButtonsynchronizationStartActionPerformed
-    schedulerStop();
-}//GEN-LAST:event_scheduleStopButtonsynchronizationStartActionPerformed
+    private void scheduleStopButtonsynchronizationStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleStopButtonsynchronizationStartActionPerformed
+        schedulerStop();
+    }//GEN-LAST:event_scheduleStopButtonsynchronizationStartActionPerformed
 
-private void openRecentMenuItemopenConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openRecentMenuItemopenConfigActionPerformed
-    // TODO add your handling code here:
-}//GEN-LAST:event_openRecentMenuItemopenConfigActionPerformed
+    private void openRecentMenuItemopenConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openRecentMenuItemopenConfigActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openRecentMenuItemopenConfigActionPerformed
 
-private void cmdMenuItemOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMenuItemOptionsActionPerformed
-    cmdMenuItemClicked();
-}//GEN-LAST:event_cmdMenuItemOptionsActionPerformed
+    private void cmdMenuItemOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMenuItemOptionsActionPerformed
+        cmdMenuItemClicked();
+    }//GEN-LAST:event_cmdMenuItemOptionsActionPerformed
 
-private void updateMenuItemaboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMenuItemaboutActionPerformed
-    DirSyncPro.getGui().getUpdateDialog().checkForUpdate(false, this);
-}//GEN-LAST:event_updateMenuItemaboutActionPerformed
+    private void updateMenuItemaboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMenuItemaboutActionPerformed
+        DirSyncPro.getGui().getUpdateDialog().checkForUpdate(false, this);
+    }//GEN-LAST:event_updateMenuItemaboutActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         exitForm();
@@ -2561,188 +2746,6 @@ private void updateMenuItemaboutActionPerformed(java.awt.event.ActionEvent evt) 
     private void syncQSyncFilterConflictFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterConflictFilesCheckBoxdirEventActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_syncQSyncFilterConflictFilesCheckBoxdirEventActionPerformed
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    protected javax.swing.JButton analyzeButton;
-    protected javax.swing.JMenuItem analyzeMenuItem;
-    protected javax.swing.JMenuItem appendMenuItem;
-    protected javax.swing.JMenuItem cmdMenuItem;
-    protected javax.swing.JProgressBar currentProgress;
-    protected javax.swing.JLabel jLabel;
-    protected javax.swing.JLabel jLabel11;
-    protected javax.swing.JLabel jLabel13;
-    protected javax.swing.JLabel jLabel14;
-    protected javax.swing.JLabel jLabel15;
-    protected javax.swing.JLabel jLabel21;
-    protected javax.swing.JLabel jLabel22;
-    protected javax.swing.JLabel jLabel23;
-    protected javax.swing.JLabel jLabel25;
-    protected javax.swing.JLabel jLabel34;
-    protected javax.swing.JLabel jLabel35;
-    protected javax.swing.JLabel jLabel46;
-    protected javax.swing.JLabel jLabel70;
-    protected javax.swing.JLabel jLabel71;
-    protected javax.swing.JLabel jLabel72;
-    protected javax.swing.JLabel jLabel73;
-    protected javax.swing.JLabel jLabel77;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel50;
-    private javax.swing.JPanel jPanel51;
-    private javax.swing.JPanel jPanel52;
-    private javax.swing.JPanel jPanel53;
-    private javax.swing.JPanel jPanel54;
-    private javax.swing.JPanel jPanel55;
-    private javax.swing.JPanel jPanel56;
-    private javax.swing.JPanel jPanel57;
-    private javax.swing.JPanel jPanel58;
-    private javax.swing.JPanel jPanel59;
-    private javax.swing.JPanel jPanel60;
-    private javax.swing.JPanel jPanel61;
-    private javax.swing.JPanel jPanel62;
-    private javax.swing.JPanel jPanel63;
-    private javax.swing.JPanel jPanel64;
-    private javax.swing.JPanel jPanel65;
-    private javax.swing.JPanel jPanel66;
-    private javax.swing.JPanel jPanel67;
-    private javax.swing.JPanel jPanel68;
-    private javax.swing.JPanel jPanel69;
-    private javax.swing.JPanel jPanel70;
-    private javax.swing.JPanel jPanel71;
-    private javax.swing.JPanel jPanel72;
-    private javax.swing.JPanel jPanel73;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JPopupMenu.Separator jSeparator7;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    protected javax.swing.JButton jobAddButton;
-    protected javax.swing.JButton jobCollapseAllButton;
-    protected javax.swing.JButton jobCopyButton;
-    protected javax.swing.JButton jobDisableAllButton;
-    protected javax.swing.JButton jobDownButton;
-    protected javax.swing.JButton jobEditButton;
-    protected javax.swing.JButton jobEnableAllButton;
-    protected javax.swing.JButton jobExpandOneLevelButton;
-    protected javax.swing.JButton jobRemoveButton;
-    protected javax.swing.JButton jobUpButton;
-    protected javax.swing.JTree jobsTree;
-    protected javax.swing.JButton messagesCleanButton;
-    protected javax.swing.JTable messagesTable;
-    protected javax.swing.JScrollPane messagesTableScrollPane;
-    protected javax.swing.JCheckBox messagesViewFilterErrorsCheckBox;
-    protected javax.swing.JLabel messagesViewFilterErrorsLabel;
-    protected javax.swing.JCheckBox messagesViewFilterFileOperationsCheckBox;
-    protected javax.swing.JLabel messagesViewFilterFileOperationsLabel;
-    protected javax.swing.JCheckBox messagesViewFilterInfosCheckBox;
-    protected javax.swing.JLabel messagesViewFilterInfosLabel;
-    protected javax.swing.JButton messagesViewFilterOKButton;
-    protected javax.swing.JButton messagesViewFilterResetButton;
-    protected javax.swing.JCheckBox messagesViewFilterWarningsCheckBox;
-    protected javax.swing.JLabel messagesViewFilterWarningsLabel;
-    protected javax.swing.JButton newButton;
-    protected javax.swing.JMenuItem newMenuItem;
-    protected javax.swing.JButton openButton;
-    protected javax.swing.JMenuItem openMenuItem;
-    protected javax.swing.JMenu openRecentMenu;
-    protected javax.swing.JMenuItem optionsMenuItem;
-    protected javax.swing.JToggleButton pauseButton;
-    private javax.swing.JMenuItem pauseMenuItem;
-    protected javax.swing.JButton saveAsButton;
-    protected javax.swing.JMenuItem saveAsMenuItem;
-    protected javax.swing.JButton saveButton;
-    protected javax.swing.JMenuItem saveEnabledAsMenuItem;
-    protected javax.swing.JMenuItem saveMenuItem;
-    protected javax.swing.JLabel scheduleEngineStatusField;
-    protected javax.swing.JButton scheduleStartButton;
-    private javax.swing.JPanel scheduleStatusJPanel;
-    protected javax.swing.JButton scheduleStopButton;
-    protected javax.swing.JTable scheduleTable;
-    protected javax.swing.JButton shutDownButton;
-    private javax.swing.JMenuItem shutDownMenuItem;
-    private javax.swing.JPanel spacer3;
-    private javax.swing.JPanel spacer6;
-    private javax.swing.JPanel spacer7;
-    protected javax.swing.JMenuItem startScheduledTasksMenuItem;
-    private javax.swing.JButton stopButton;
-    private javax.swing.JMenuItem stopMenuItem;
-    protected javax.swing.JMenuItem stopScheduledTasksMenuItem;
-    private javax.swing.JPanel summaryJPanel;
-    protected javax.swing.JMenuItem swapSrcDstMenuItem;
-    private javax.swing.JPanel syncJPanel;
-    protected javax.swing.JLabel syncQBytesAllwaysFilesDirs;
-    protected javax.swing.JLabel syncQBytesDeletedFilesDirs;
-    protected javax.swing.JLabel syncQBytesFilesDirsToBeSynced;
-    protected javax.swing.JLabel syncQBytesLargerAndModifiedFilesDirs;
-    protected javax.swing.JLabel syncQBytesLargerFilesDirs;
-    protected javax.swing.JLabel syncQBytesModifieldFilesDirs;
-    protected javax.swing.JLabel syncQBytesNewFilesDirs;
-    protected javax.swing.JLabel syncQNumberOfAllwaysDirs;
-    protected javax.swing.JLabel syncQNumberOfAllwaysFiles;
-    protected javax.swing.JLabel syncQNumberOfAllwaysFilesDirs;
-    protected javax.swing.JLabel syncQNumberOfConflictFiles;
-    protected javax.swing.JLabel syncQNumberOfConflictFilesDirs;
-    protected javax.swing.JLabel syncQNumberOfDeletedDirs;
-    protected javax.swing.JLabel syncQNumberOfDeletedFiles;
-    protected javax.swing.JLabel syncQNumberOfDeletedFilesDirs;
-    protected javax.swing.JLabel syncQNumberOfDirsToBeSynced;
-    protected javax.swing.JLabel syncQNumberOfFilesDirsToBeSynced;
-    protected javax.swing.JLabel syncQNumberOfFilesToBeSynced;
-    protected javax.swing.JLabel syncQNumberOfLargerAndModifiedFiles;
-    protected javax.swing.JLabel syncQNumberOfLargerAndModifiedFilesDirs;
-    protected javax.swing.JLabel syncQNumberOfLargerFiles;
-    protected javax.swing.JLabel syncQNumberOfLargerFilesDirs;
-    protected javax.swing.JLabel syncQNumberOfModifieldDirs;
-    protected javax.swing.JLabel syncQNumberOfModifieldFiles;
-    protected javax.swing.JLabel syncQNumberOfModifieldFilesDirs;
-    protected javax.swing.JLabel syncQNumberOfNewDirs;
-    protected javax.swing.JLabel syncQNumberOfNewFiles;
-    protected javax.swing.JLabel syncQNumberOfNewFilesDirs;
-    protected javax.swing.JCheckBox syncQSyncFilterConflictFilesCheckBox;
-    protected javax.swing.JLabel syncQSyncFilterConflictFilesLabel;
-    protected javax.swing.JCheckBox syncQSyncFilterDeletedDirsCheckBox;
-    protected javax.swing.JLabel syncQSyncFilterDeletedDirsLabel;
-    protected javax.swing.JCheckBox syncQSyncFilterDeletedFilesCheckBox;
-    protected javax.swing.JLabel syncQSyncFilterDeletedFilesLabel;
-    protected javax.swing.JCheckBox syncQSyncFilterLargerAndModifiedFilesCheckBox;
-    protected javax.swing.JLabel syncQSyncFilterLargerAndModifiedFilesLabel;
-    protected javax.swing.JCheckBox syncQSyncFilterLargerFilesCheckBox;
-    protected javax.swing.JLabel syncQSyncFilterLargerFilesLabel;
-    protected javax.swing.JCheckBox syncQSyncFilterModifiedFilesCheckBox;
-    protected javax.swing.JLabel syncQSyncFilterModifiedFilesLabel;
-    protected javax.swing.JCheckBox syncQSyncFilterNewFilesCheckBox;
-    protected javax.swing.JLabel syncQSyncFilterNewFilesLabel;
-    protected javax.swing.JButton syncQSyncFilterOKButton;
-    protected javax.swing.JButton syncQSyncFilterResetButton;
-    protected javax.swing.JTable syncQTable;
-    protected javax.swing.JLabel syncQTotalNumberOfAnalyzedDirs;
-    protected javax.swing.JLabel syncQTotalNumberOfAnalyzedFiles;
-    protected javax.swing.JLabel syncQTotalNumberOfFilesDirs;
-    protected javax.swing.JCheckBox syncQViewFilterConflictFilesCheckBox;
-    protected javax.swing.JLabel syncQViewFilterConflictFilesLabel;
-    protected javax.swing.JCheckBox syncQViewFilterDeletedDirsCheckBox;
-    protected javax.swing.JLabel syncQViewFilterDeletedDirsLabel;
-    protected javax.swing.JCheckBox syncQViewFilterDeletedFilesCheckBox;
-    protected javax.swing.JLabel syncQViewFilterDeletedFilesLabel;
-    protected javax.swing.JCheckBox syncQViewFilterLargerAndModifiedFilesCheckBox;
-    protected javax.swing.JLabel syncQViewFilterLargerAndModifiedFilesLabel;
-    protected javax.swing.JCheckBox syncQViewFilterLargerFilesCheckBox;
-    protected javax.swing.JLabel syncQViewFilterLargerFilesLabel;
-    protected javax.swing.JCheckBox syncQViewFilterModifiedFilesCheckBox;
-    protected javax.swing.JLabel syncQViewFilterModifiedFilesLabel;
-    protected javax.swing.JCheckBox syncQViewFilterNewFilesCheckBox;
-    protected javax.swing.JLabel syncQViewFilterNewFilesLabel;
-    protected javax.swing.JButton syncQViewFilterOKButton;
-    protected javax.swing.JButton syncQViewFilterResetButton;
-    protected javax.swing.JButton synchronizeButton;
-    protected javax.swing.JMenuItem synchronizeMenuItem;
-    protected javax.swing.JTabbedPane tabbedPane;
-    private javax.swing.JMenu toolsMenu;
-    protected javax.swing.JProgressBar totalProgress;
-    private javax.swing.JPanel viewJPanel;
-    private javax.swing.JPanel viewJPanel1;
-    private javax.swing.JPanel viewJPanel2;
     // End of variables declaration//GEN-END:variables
 
     abstract protected void about();

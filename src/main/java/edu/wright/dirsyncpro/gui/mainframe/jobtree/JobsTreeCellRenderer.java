@@ -18,16 +18,15 @@
  */
 package edu.wright.dirsyncpro.gui.mainframe.jobtree;
 
-import java.awt.Component;
+import edu.wright.dirsyncpro.DirSyncPro;
+import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.Schedule;
+import edu.wright.dirsyncpro.job.Job;
 
 import javax.swing.JCheckBox;
 import javax.swing.JTree;
 import javax.swing.UIManager;
 import javax.swing.tree.TreeCellRenderer;
-
-import edu.wright.dirsyncpro.DirSyncPro;
-import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.Schedule;
-import edu.wright.dirsyncpro.job.Job;
+import java.awt.Component;
 
 public class JobsTreeCellRenderer extends JCheckBox implements TreeCellRenderer {
 

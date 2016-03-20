@@ -18,13 +18,12 @@
  */
 package edu.wright.dirsyncpro.gui.mainframe;
 
+import edu.wright.dirsyncpro.DirSyncPro;
+
+import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.atomic.AtomicBoolean;
-
-import javax.swing.Timer;
-
-import edu.wright.dirsyncpro.DirSyncPro;
 
 public class ScreenUpdater {
 

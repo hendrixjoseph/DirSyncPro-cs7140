@@ -19,18 +19,6 @@
  */
 package edu.wright.dirsyncpro.xml;
 
-import java.io.FileInputStream;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.List;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.Filter;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterByDate;
@@ -49,11 +37,20 @@ import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleOnce;
 import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleWeekly;
 import edu.wright.dirsyncpro.job.Job;
 import edu.wright.dirsyncpro.sync.Sync;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import java.io.FileInputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Reads a XML config file. The data can be retrieved via the various getter
- * methods.
+ * Reads a XML config file. The data can be retrieved via the various getter methods.
  *
  * @author F. Gerbig, O. Givi (info@dirsyncpro.org)
  */
@@ -63,10 +60,10 @@ public class XmlReader extends DefaultHandler {
     private List<Job> jobs = new ArrayList<>();
 
     /**
-     * Reads data from the given XML file. The data can be retreived via the
-     * various getter methods.
+     * Reads data from the given XML file. The data can be retreived via the various getter methods.
      *
      * @param filename The filename of the XML fil to read the data from.
+     *
      * @throws Exception
      */
     public XmlReader(String filename) throws Exception {
@@ -82,13 +79,11 @@ public class XmlReader extends DefaultHandler {
     /**
      * SAX method called for every XML element start.
      *
-     * @param namespaceURI The namespace of this XML element (if the parser is
-     * namespace aware).
-     * @param localname The localname of this XML element (if the parser is
-     * namespace aware).
-     * @param qName The name of this XML element (if the parser is NOT namespace
-     * aware).
-     * @param atts The XML elements attributes.
+     * @param namespaceURI The namespace of this XML element (if the parser is namespace aware).
+     * @param localname    The localname of this XML element (if the parser is namespace aware).
+     * @param qName        The name of this XML element (if the parser is NOT namespace aware).
+     * @param atts         The XML elements attributes.
+     *
      * @throws SAXException
      */
     @Override

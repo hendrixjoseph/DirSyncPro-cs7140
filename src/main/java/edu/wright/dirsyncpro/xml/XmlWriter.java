@@ -19,13 +19,6 @@
  */
 package edu.wright.dirsyncpro.xml;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.text.SimpleDateFormat;
-import java.util.Stack;
-import java.util.List;
-
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.Filter;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterByDate;
@@ -43,6 +36,13 @@ import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleMonthly
 import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleOnce;
 import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleWeekly;
 import edu.wright.dirsyncpro.job.Job;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.Stack;
 
 /**
  * Writes the given data to a XML config file.
@@ -247,8 +247,8 @@ public class XmlWriter {
     }
 
     /**
-     * Encodes the string using XML entities. The five standard XML entities are
-     * replaced and additionally backslashes and linefeeds are encoded.
+     * Encodes the string using XML entities. The five standard XML entities are replaced and additionally backslashes
+     * and linefeeds are encoded.
      *
      * @param s The string to encode.
      *

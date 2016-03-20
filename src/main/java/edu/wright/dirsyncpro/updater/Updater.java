@@ -1,5 +1,8 @@
 package edu.wright.dirsyncpro.updater;
 
+import edu.wright.dirsyncpro.Const;
+import edu.wright.dirsyncpro.DirSyncPro;
+
 import java.awt.Desktop;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,9 +14,6 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-
-import edu.wright.dirsyncpro.Const;
-import edu.wright.dirsyncpro.DirSyncPro;
 
 public class Updater {
 
@@ -98,25 +98,20 @@ public class Updater {
     }
 
     /**
-     *
-     * @return {@code String} the URL from which the update is to be
-     * downloaded.
+     * @return {@code String} the URL from which the update is to be downloaded.
      */
     public String getUpdateURL() {
         return uxmlr.getUpdateURL();
     }
 
     /**
-     *
-     * @return {@code String} the new version which is available for
-     * download
+     * @return {@code String} the new version which is available for download
      */
     public String getNewVersion() {
         return uxmlr.getNewVersion();
     }
 
     /**
-     *
      * @return {@code String} the major changes in this update
      */
     public String getChangelogURL() {
@@ -125,7 +120,6 @@ public class Updater {
     }
 
     /**
-     *
      * @return {@code boolean} whether there is a new update available
      */
     public boolean isUpdateable() {
@@ -133,9 +127,7 @@ public class Updater {
     }
 
     /**
-     *
-     * @return {@code boolean} if contacting the update server has
-     * succeeded.
+     * @return {@code boolean} if contacting the update server has succeeded.
      */
     public boolean contacted() {
         return uxmlr.contacted();
