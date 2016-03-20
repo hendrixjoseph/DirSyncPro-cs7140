@@ -19,10 +19,10 @@
  */
 package edu.wright.dirsyncpro;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.util.Date;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  * Contains the constants used in DirSyncPro.

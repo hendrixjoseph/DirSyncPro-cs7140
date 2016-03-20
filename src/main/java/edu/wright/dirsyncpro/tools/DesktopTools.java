@@ -22,6 +22,7 @@ import edu.wright.dirsyncpro.DirSyncPro;
 
 import java.awt.Desktop;
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -65,7 +66,7 @@ public class DesktopTools {
         }
         try {
             Desktop.getDesktop().browse(getFileURI(filePath));
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             DirSyncPro.displayError("Unable to open: " + filePath);
             ex.printStackTrace();
         }

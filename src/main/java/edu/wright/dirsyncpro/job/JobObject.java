@@ -383,7 +383,7 @@ public abstract class JobObject {
      * @return the backupDir
      */
     public String getBackupDir() {
-        if (this.isBackupInline() || backupDir.equals("")) {
+        if (this.isBackupInline() || backupDir.isEmpty()) {
             return "";
         } else {
             return backupDir;

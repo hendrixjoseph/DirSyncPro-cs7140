@@ -19,7 +19,6 @@
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 
 import edu.wright.dirsyncpro.job.Job;
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -50,6 +49,7 @@ public class FilterByPath extends Filter {
         this.pathStr = pathStr;
     }
 
+    @Override
     public String toString() {
         String s = "";
         s += " Path: '" + this.pathStr + "'";

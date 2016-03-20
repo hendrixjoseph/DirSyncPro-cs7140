@@ -82,11 +82,11 @@ public class CopierFactory {
             } finally {
                 try {
                     bis.close();
-                } catch (Exception e) {
+                } catch (IOException e) {
                 }
                 try {
                     bos.close();
-                } catch (Exception e) {
+                } catch (IOException e) {
                 }
             }
         }

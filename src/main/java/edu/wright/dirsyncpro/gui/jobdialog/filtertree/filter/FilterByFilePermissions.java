@@ -19,7 +19,6 @@
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 
 import edu.wright.dirsyncpro.job.Job;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -164,6 +163,7 @@ public class FilterByFilePermissions extends Filter {
         this.permissionValue = Integer.parseInt(s, 8);
     }
 
+    @Override
     public String toString() {
         String s = "";
         s += " Permission value= " + getOctalPermissionValue();

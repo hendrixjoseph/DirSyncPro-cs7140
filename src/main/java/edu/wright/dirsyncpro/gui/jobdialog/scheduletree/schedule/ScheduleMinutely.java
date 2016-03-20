@@ -71,6 +71,7 @@ public class ScheduleMinutely extends Schedule {
     /**
      * returns a string presenting this schedule
      */
+    @Override
     public String toString() {
         String str = "Runs every " + interval + " minute" + (interval > 1 ? "s" : "");
         str = str.trim();

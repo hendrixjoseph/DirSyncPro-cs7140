@@ -247,6 +247,7 @@ public class ScheduleWeekly extends Schedule {
                 || (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY && isSaturday());
     }
 
+    @Override
     public String toString() {
         String str = "";
         if (isMonday()) {

@@ -206,7 +206,7 @@ public class FileTools {
             // can the not existing destination file be created?
             try {
                 dstFile.createNewFile();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 throw new FileNotFoundException("Destination file cannot be created: " + dstFile.getAbsolutePath());
             }
         }
@@ -371,7 +371,7 @@ public class FileTools {
      * @return The filename.
      */
     public static String getOnlyFilename(String filename) {
-        if (filename == null || filename.equals("")) {
+        if (filename == null || filename.isEmpty()) {
             return "";
         }
         filename = filename.substring(filename.lastIndexOf(File.separator) + 1, filename.length());
@@ -389,7 +389,7 @@ public class FileTools {
      * @return The extension.
      */
     public static String getOnlyExtension(String filename) {
-        if (filename == null || filename.equals("")) {
+        if (filename == null || filename.isEmpty()) {
             return "";
         }
         if (filename.lastIndexOf('.') == -1) {
@@ -425,7 +425,7 @@ public class FileTools {
      * @return true if writable, false otherwise.
      */
     public static boolean directoryIsWritable(String path) {
-        if (!path.equals("")) {
+        if (!path.isEmpty()) {
             path = ensurePathEndsWithSeparator(path);
         }
         path += UUID.randomUUID().toString();
@@ -455,18 +455,12 @@ public class FileTools {
 
         String path = file.getParentFile().getCanonicalPath();
         path = path.substring(dst.length(), path.length());
-        /**
-         * path is the relative path from dst to the file example: absolutepath:
-         * d:\documents\file.txt file: file.txt path: \documents\ bd:
-         * d:\SyncFolder backupfile:
-         * d:\SyncFolder\.DirSyncProBackup\documents\file00.txt
-         */
         String filename = getOnlyFilename(pathFilenameExtension);
         String extension = getOnlyExtension(pathFilenameExtension);
         String count = new DecimalFormat("00").format(backupCount);
 
         String bd;
-        if (backupDir.equals("")) {
+        if (backupDir.isEmpty()) {
             bd = dst;
         } else {
             bd = backupDir;
@@ -475,7 +469,7 @@ public class FileTools {
         return new File(ensurePathEndsWithSeparator(bd)
                 + Const.BACKUP_FOLDER_NAME
                 + ensurePathEndsWithSeparator(path)
-                + filename + "_" + count + (extension.equals("") ? "" : "." + extension));
+                + filename + "_" + count + (extension.isEmpty() ? "" : "." + extension));
     }
 
     /**
@@ -568,14 +562,14 @@ public class FileTools {
         String lines = "";
         try {
             FileInputStream fstream = new FileInputStream(filename);
-            DataInputStream in = new DataInputStream(fstream);
-            BufferedReader br = new BufferedReader(new InputStreamReader(in));
-            String line;
-            while ((line = br.readLine()) != null) {
-                lines += line + System.getProperty("line.separator");
+            try (DataInputStream in = new DataInputStream(fstream)) {
+                BufferedReader br = new BufferedReader(new InputStreamReader(in));
+                String line;
+                while ((line = br.readLine()) != null) {
+                    lines += line + System.getProperty("line.separator");
+                }
             }
-            in.close();
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.err.println("Error: " + e.getMessage());
         }
         return lines;
@@ -590,10 +584,12 @@ public class FileTools {
     public static void writeFile(String filename, String content) {
         try {
             FileWriter fstream = new FileWriter(filename);
-            BufferedWriter out = new BufferedWriter(fstream);
-            out.write(content);
-            out.close();
-        } catch (Exception e) {
+
+            try (BufferedWriter out = new BufferedWriter(fstream)) {
+                out.write(content);
+            }
+
+        } catch (IOException e) {
             System.err.println("Error: " + e.getMessage());
         }
     }

@@ -19,6 +19,7 @@
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree;
 
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 
 public class FiltersTreeModel extends DefaultTreeModel {
@@ -39,7 +40,7 @@ public class FiltersTreeModel extends DefaultTreeModel {
     // number of a node's childeren
     @Override
     public int getChildCount(Object parent) {
-        return ((FiltersTree) parent).getChildCount();
+        return ((TreeNode) parent).getChildCount();
     }
 
     // child's position in its parent node
@@ -56,13 +57,13 @@ public class FiltersTreeModel extends DefaultTreeModel {
     // get the indexth child of the parent
     @Override
     public Object getChild(Object nodeObject, int index) {
-        return ((FiltersTree) nodeObject).getChildAt(index);
+        return ((TreeNode) nodeObject).getChildAt(index);
     }
 
     // is it leaf?
     @Override
     public boolean isLeaf(Object node) {
-        return (((FiltersTree) node).isLeaf());
+        return (((TreeNode) node).isLeaf());
     }
 
     // value changed

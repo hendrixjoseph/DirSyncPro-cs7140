@@ -32,6 +32,7 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import java.io.File;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  * Contains the GUI methods.
@@ -69,20 +70,16 @@ public class SettingsDialog extends SettingsDialogObjects {
 
     @Override
     protected void browseSettingsLogPath() {
-        try {
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 
-            if (!logsPathField.getText().equals("")) {
+            if (!logsPathField.getText().isEmpty()) {
                 fileChooser.setCurrentDirectory(new File(logsPathField.getText()));
             }
 
             if (fileChooser.showOpenDialog(null) == javax.swing.JFileChooser.APPROVE_OPTION) {
                 logsPathField.setText(fileChooser.getSelectedFile().getPath());
             }
-        } catch (Exception e) {
-            throw new Error(e);
-        }
     }
 
     @Override
@@ -105,7 +102,7 @@ public class SettingsDialog extends SettingsDialogObjects {
             } else {
                 UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
             }
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
         }
         // repaint all components
         DirSyncPro.getGui().updateAllComponentTreeUI();

@@ -20,10 +20,9 @@ package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.job.Job;
-
+import java.nio.file.Path;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import java.nio.file.Path;
 
 public class Filter implements Comparable<Filter>, Cloneable {
 

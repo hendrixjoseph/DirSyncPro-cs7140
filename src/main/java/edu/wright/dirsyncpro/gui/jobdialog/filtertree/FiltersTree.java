@@ -20,7 +20,6 @@ package edu.wright.dirsyncpro.gui.jobdialog.filtertree;
 
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.Filter;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.tree.DefaultMutableTreeNode;

@@ -28,10 +28,6 @@ import edu.wright.dirsyncpro.tools.FileTools;
 import edu.wright.dirsyncpro.tools.Log;
 import edu.wright.dirsyncpro.tools.TextFormatTool;
 import edu.wright.dirsyncpro.updater.Updater;
-
-import javax.swing.SwingWorker;
-import javax.swing.UIManager;
-import javax.swing.plaf.ColorUIResource;
 import java.awt.Color;
 import java.io.File;
 import java.io.FileInputStream;
@@ -43,8 +39,9 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
-//SYMLINKMODE ADDED, check if it works fine and then imlement rules to handle the job.
-
+import javax.swing.SwingWorker;
+import javax.swing.UIManager;
+import javax.swing.plaf.ColorUIResource;
 /**
  * The main class of DirSyncPro.
  *
@@ -423,7 +420,7 @@ public class DirSyncPro {
 
         // search properties at specified location or in current directory
         String hp = getHomePath();
-        if (hp.equals("")) {
+        if (hp.isEmpty()) {
             hp = null;
         }
         String filename = new File(hp, Const.PROPERTIES_FILENAME).getCanonicalPath();
@@ -450,14 +447,14 @@ public class DirSyncPro {
     private static void saveProperties() {
         try { // write properties to disk
             String path = getHomePath();
-            if (path.equals("")) {
+            if (path.isEmpty()) {
                 path = null;
             }
             String filename = new File(path, Const.PROPERTIES_FILENAME).getCanonicalPath();
             try (FileOutputStream out = new FileOutputStream(filename)) {
                 properties.store(out, "Properties of DirSync Pro " + Const.VERSION);
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -518,10 +515,6 @@ public class DirSyncPro {
             homePath = path;
             homePathSet = true;
         } else {
-            if (!path.isEmpty() && !FileTools.directoryIsWritable(path)) {
-                //log.printMinimal("'dirsyncpro.home' property is set but the corresponding directory is not wriable!", Const.IconKey.Warning);
-                //log.printMinimal("Trying the program folder...", Const.IconKey.Warning);
-            }
 
             path = getProgramPath();
             if (FileTools.directoryIsWritable(path)) {
@@ -588,7 +581,7 @@ public class DirSyncPro {
         File f = new File(path);
         f = new File(f.getAbsolutePath());
         path = f.getAbsolutePath();
-        if (withFileSeprator && !path.equals("")) {
+        if (withFileSeprator && !path.isEmpty()) {
             path += File.separator;
         }
         return path;
@@ -621,7 +614,7 @@ public class DirSyncPro {
         File f = new File(path);
         f = new File(f.getAbsolutePath());
         path = f.getAbsolutePath();
-        if (withFileSeprator && !path.equals("")) {
+        if (withFileSeprator && !path.isEmpty()) {
             path += File.separator;
         }
         return path;
@@ -649,7 +642,7 @@ public class DirSyncPro {
      * @return the logsInline
      */
     public static boolean isLogsInline() {
-        return properties.getProperty(Const.Properties.LogsPath.getPrString(), getHomePath()).equals("");
+        return properties.getProperty(Const.Properties.LogsPath.getPrString(), getHomePath()).isEmpty();
     }
 
     /**
@@ -665,7 +658,7 @@ public class DirSyncPro {
      * @return the configInline
      */
     public static boolean isConfigInline() {
-        return properties.getProperty(Const.Properties.ConfigPath.getPrString(), getHomePath()).equals("");
+        return properties.getProperty(Const.Properties.ConfigPath.getPrString(), getHomePath()).isEmpty();
     }
 
     /**

@@ -96,9 +96,7 @@ public class RealtimeListener {
     }
 
     public void start() {
-        t = new Thread(() -> {
-            startInternal();
-        });
+        t = new Thread(this::startInternal);
         t.start();
     }
 

@@ -21,7 +21,6 @@ package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.job.Job;
 import edu.wright.dirsyncpro.tools.FileTools;
-
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

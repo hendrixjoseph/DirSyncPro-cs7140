@@ -89,7 +89,9 @@ public class ScheduleDaily extends Schedule {
 
     /**
      * returns a string presenting this schedule
+     * @return
      */
+    @Override
     public String toString() {
         String str = "Runs every " + interval + " day" + (interval > 1 ? "s" : "") + " at " + (new SimpleDateFormat(Const.DefaultTimeFormat)).format(time);
         str = str.trim();

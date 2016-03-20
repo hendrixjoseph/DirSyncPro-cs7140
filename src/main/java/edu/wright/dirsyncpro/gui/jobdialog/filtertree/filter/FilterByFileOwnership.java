@@ -19,7 +19,6 @@
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 
 import edu.wright.dirsyncpro.job.Job;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -51,8 +50,8 @@ public class FilterByFileOwnership extends Filter {
             //TODO
         }
 
-        return ((!ownerStr.equals("") && posixFileAttributes.owner().getName().equals(ownerStr))
-                && (!groupStr.equals("") && posixFileAttributes.group().getName().equals(groupStr)));
+        return ((!ownerStr.isEmpty() && posixFileAttributes.owner().getName().equals(ownerStr))
+                && (!groupStr.isEmpty() && posixFileAttributes.group().getName().equals(groupStr)));
     }
 
     public String getGroupStr() {
@@ -71,14 +70,15 @@ public class FilterByFileOwnership extends Filter {
         this.ownerStr = ownerStr;
     }
 
+    @Override
     public String toString() {
         String s = super.toString();
         s += " Files/Dirs with the ownership: ";
-        if (!this.ownerStr.equals("")) {
-            s += " owner='" + this.ownerStr + "'";
+        if (!ownerStr.isEmpty()) {
+            s += " owner='" + ownerStr + "'";
         }
-        if (!this.groupStr.equals("")) {
-            s += " group='" + this.groupStr + "'";
+        if (!groupStr.isEmpty()) {
+            s += " group='" + groupStr + "'";
         }
         return s;
     }

@@ -51,7 +51,6 @@ import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
-import java.nio.file.WatchEvent;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.EnumSet;
@@ -545,7 +544,7 @@ public class Job extends JobObject implements Cloneable {
         printJobOptions();
 
         // check if src directory exists
-        if (dirA.equals("")) {
+        if (dirA.isEmpty()) {
             getLog().printMinimal(" Directory A is not specified!", IconKey.Error);
             throw new IncompleteConfigurationException("Directory A is not specified!");
         }
@@ -559,7 +558,7 @@ public class Job extends JobObject implements Cloneable {
             throw new IncompleteConfigurationException();
         }
         // check if dst directory exists
-        if (dirB.equals("")) {
+        if (dirB.isEmpty()) {
             getLog().printMinimal(" Directory B is not specified!", IconKey.Error);
             throw new IncompleteConfigurationException("Directory B is not specified!");
         }
@@ -704,7 +703,7 @@ public class Job extends JobObject implements Cloneable {
         if (!syncRealtime) {
             return;
         }
-        if (dirA.equals("") || dirB.equals("")) {
+        if (dirA.isEmpty() || dirB.isEmpty()) {
             return;
         }
 

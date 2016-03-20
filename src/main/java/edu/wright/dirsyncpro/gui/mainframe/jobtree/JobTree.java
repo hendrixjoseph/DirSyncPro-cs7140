@@ -43,6 +43,7 @@ public class JobTree extends DefaultMutableTreeNode {
     }
 //	public ArrayList<JobTree> children = new ArrayList<JobTree>();
 
+    @Override
     public String toString() {
         if (type == Type.Job) {
             return value.toString();
@@ -279,7 +280,7 @@ public class JobTree extends DefaultMutableTreeNode {
             return "<html><b>Filter: </b>" + ((Filter) value).getAction() + " " + value.toString() + "</html>";
         } else if (type == Type.Log) {
             String filename = ((Job) value).getLog().getFilename();
-            return "<html><b>Job log: </b>" + (filename.equals("") ? "None" : "'" + filename + "'") + "</html>";
+            return "<html><b>Job log: </b>" + (filename.isEmpty() ? "None" : "'" + filename + "'") + "</html>";
         } else if (type == Type.Schedule) {
             return "<html><b>Schedules:</b>" + (((Job) parent.value).HasSchedules() ? " has some schedules" : " None") + "</html>";
         } else {

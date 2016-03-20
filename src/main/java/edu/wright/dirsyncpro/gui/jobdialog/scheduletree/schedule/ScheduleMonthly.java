@@ -330,6 +330,7 @@ public class ScheduleMonthly extends Schedule {
     /**
      * returns a string presenting this schedule
      */
+    @Override
     public String toString() {
         String str = "";
         if (isJanuary()) {

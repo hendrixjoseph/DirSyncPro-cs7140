@@ -70,8 +70,6 @@ import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
@@ -117,7 +115,6 @@ public class MainFrame extends MainFrameObjects {
     private int prevProgressTotalValue;
     private int prevProgessTotalAdd;
     private int prevProgessTotalMax;
-    private String prevProgessTotalString;
     private boolean prevProgessTotalIndeterminate;
     private int prevProgessCurrentValue;
     private int prevProgessCurrentMax;
@@ -1880,7 +1877,7 @@ public class MainFrame extends MainFrameObjects {
         if (currentMax != -1) {
             progressCurrentMax = currentMax;
         }
-        if (currentString != null && !currentString.equals("") || currentString == null) {
+        if (currentString != null && !currentString.isEmpty() || currentString == null) {
             progressCurrentString = currentString;
         }
         progressCurrentIndeterminate = currentIndeterminate;
@@ -1893,7 +1890,7 @@ public class MainFrame extends MainFrameObjects {
             if (SwingUtilities.isEventDispatchThread()) {
                 updateGUI();
             } else {
-                Runnable r = () -> updateGUI();
+                Runnable r = this::updateGUI;
                 SwingUtilities.invokeLater(r);
             }
         }
@@ -1912,7 +1909,7 @@ public class MainFrame extends MainFrameObjects {
             if (SwingUtilities.isEventDispatchThread()) {
                 updateGUI();
             } else {
-                Runnable r = () -> updateGUI();
+                Runnable r = this::updateGUI;
                 SwingUtilities.invokeLater(r);
             }
         }
@@ -1982,6 +1979,7 @@ public class MainFrame extends MainFrameObjects {
 
         //total string could only be set to null otherwise will always be used as timer
         String tmpTotalString = DirSyncPro.getSync().getSyncTime((float) (progressTotalValue + progressTotalAdd) / progressTotalMax);
+        String prevProgessTotalString;
         if (progressTotalString == null) {
             totalProgress.setString(progressTotalString);
             prevProgessTotalString = progressTotalString;

@@ -67,7 +67,7 @@ public class Log {
     }
 
     public void setFile(String filename) {
-        if (filename.equals("")) {
+        if (filename.isEmpty()) {
             this.disable();
             return;
         }
@@ -165,7 +165,7 @@ public class Log {
                 out.write(m.getDateStr() + " " + m + System.getProperty("line.separator"));
                 out.flush();
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             throw new Error(e);
         }
     }
@@ -266,7 +266,7 @@ public class Log {
     public void setPath(String path) {
         if (isEnabled()) {
             String filename = getFilename();
-            if (!path.equals("")) {
+            if (!path.isEmpty()) {
                 if (path.endsWith(File.separator)) {
                     filename = path + filename;
                 } else {
@@ -284,7 +284,7 @@ public class Log {
      */
     public String getFilename() {
         if (isEnabled()) {
-            if (wildCardedFileName.equals("")) {
+            if (wildCardedFileName.isEmpty()) {
                 return file.getName();
             } else {
                 return wildCardedFileName;

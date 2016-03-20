@@ -20,7 +20,6 @@ package edu.wright.dirsyncpro.gui.jobdialog.scheduletree;
 
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.Schedule;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -43,6 +42,7 @@ public class ScheduleTree extends DefaultMutableTreeNode {
         return true;
     }
 
+    @Override
     public String toString() {
         if (parent == null) {
             return "Schedules";

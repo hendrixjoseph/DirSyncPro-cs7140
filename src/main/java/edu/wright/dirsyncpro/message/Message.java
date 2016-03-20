@@ -34,7 +34,6 @@ import java.util.Date;
  */
 public class Message {
 
-    private Date date;
     private String dateStr;
     private String message;
     private Icon icon;
@@ -42,7 +41,7 @@ public class Message {
     private LogLevel loglevel;
 
     public Message(String m, IconKey ik, LogLevel l) {
-        date = new Date();
+        Date date = new Date();
         dateStr = (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(date);
         message = m;
         iconKey = ik;
@@ -62,6 +61,7 @@ public class Message {
     /**
      * @return the message
      */
+    @Override
     public String toString() {
         return message;
     }

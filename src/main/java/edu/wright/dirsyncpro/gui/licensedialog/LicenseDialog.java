@@ -25,6 +25,7 @@ import edu.wright.dirsyncpro.tools.GuiTools;
 
 import javax.swing.JFrame;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
@@ -69,7 +70,7 @@ public class LicenseDialog extends LicenseDialogObjects {
             while ((line = br.readLine()) != null) {
                 licenseText += line + "\n";
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Unable to show the License. Please read License.txt.");
             e.printStackTrace();
 //			System.exit(1);

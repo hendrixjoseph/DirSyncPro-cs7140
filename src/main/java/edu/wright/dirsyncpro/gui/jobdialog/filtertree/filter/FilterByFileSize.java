@@ -19,7 +19,6 @@
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 
 import edu.wright.dirsyncpro.job.Job;
-
 import java.io.File;
 import java.nio.file.Path;
 
@@ -63,6 +62,7 @@ public class FilterByFileSize extends Filter {
         this.fileSizeType = type;
     }
 
+    @Override
     public String toString() {
         String s = "";
         s += " Files with size";

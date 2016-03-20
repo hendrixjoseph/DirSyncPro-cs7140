@@ -68,6 +68,7 @@ public class ScheduleOnce extends Schedule {
     /**
      * returns a string presenting this schedule
      */
+    @Override
     public String toString() {
         String str = "Runs once on " + (new SimpleDateFormat(Const.DefaultDateFormat)).format(date);
         str = str.trim();

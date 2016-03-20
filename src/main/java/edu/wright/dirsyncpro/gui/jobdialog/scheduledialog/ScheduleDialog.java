@@ -33,13 +33,12 @@ import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule.ScheduleWeekly;
 import edu.wright.dirsyncpro.gui.swing.MyJTabbedPane;
 import edu.wright.dirsyncpro.job.Job;
 import edu.wright.dirsyncpro.tools.DateTool;
-
-import javax.swing.JDialog;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JDialog;
 
 /**
  * Contains the GUI methods.

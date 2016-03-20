@@ -34,14 +34,13 @@ import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterByPath;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterByPattern;
 import edu.wright.dirsyncpro.gui.swing.MyJTabbedPane;
 import edu.wright.dirsyncpro.job.Job;
-
-import javax.swing.JDialog;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.nio.file.attribute.PosixFilePermission;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JDialog;
 
 /**
  * Contains the GUI methods.
@@ -51,8 +50,6 @@ import java.util.Date;
 @SuppressWarnings("unused")
 public class FilterDialog extends FilterDialogObjects {
 
-    // temp vars for within the gui
-    private String prevPattern;
     //end FIXME
     private Filter filter;
 
@@ -123,7 +120,7 @@ public class FilterDialog extends FilterDialogObjects {
                 enableFilterTab(FilterTabs.ByPattern, true, true);
                 filtersFilePatternRadioButton.setSelected(((FilterByPattern) ft).getPatternType() == FilterByPattern.FilterPatternType.File);
                 filtersDirPatternRadioButton.setSelected(((FilterByPattern) ft).getPatternType() == FilterByPattern.FilterPatternType.Directory);
-                prevPattern = ((FilterByPattern) ft).getPattern();
+                String prevPattern = ((FilterByPattern) ft).getPattern();
                 filtersRegularExpressionCheckBox.setSelected(((FilterByPattern) ft).isRegExp());
                 filtersPatternField.setText(prevPattern);
             } else if (byFileSize) {
@@ -358,7 +355,7 @@ public class FilterDialog extends FilterDialogObjects {
             }
             String unitsNumberText = filtersDateTimeUnitField.getText();
             try {
-                ((FilterByDate) filter).setTimeUnitValue((unitsNumberText != null && !unitsNumberText.equals("")) ? Integer.parseInt(unitsNumberText) : 0);
+                ((FilterByDate) filter).setTimeUnitValue((unitsNumberText != null && !unitsNumberText.isEmpty()) ? Integer.parseInt(unitsNumberText) : 0);
             } catch (NumberFormatException e) {
                 ((FilterByDate) filter).setTimeUnitValue(0);
             }

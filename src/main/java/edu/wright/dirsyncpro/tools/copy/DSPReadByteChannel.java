@@ -20,7 +20,6 @@ package edu.wright.dirsyncpro.tools.copy;
 
 import edu.wright.dirsyncpro.DirSyncPro;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.nio.channels.ReadableByteChannel;

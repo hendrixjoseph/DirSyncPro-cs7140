@@ -30,7 +30,6 @@ import edu.wright.dirsyncpro.gui.verifier.PathVerifier;
 import edu.wright.dirsyncpro.gui.verifier.PatternVerifier;
 import edu.wright.dirsyncpro.gui.verifier.PermissionNumberVerifier;
 import edu.wright.dirsyncpro.tools.GuiTools;
-
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 
@@ -121,95 +120,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
     protected javax.swing.JLabel readOnlyAttributeJLabel;
     protected javax.swing.JLabel regularExpressionJLabel;
     protected javax.swing.JLabel systemAtttributeJLabel;
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Spacer11;
-    private javax.swing.JPanel Spacer13;
-    private javax.swing.JPanel Spacer15;
-    private javax.swing.JPanel Spacer27;
-    private javax.swing.JPanel Spacer28;
-    private javax.swing.JPanel Spacer29;
-    private javax.swing.JPanel Spacer30;
-    private javax.swing.JPanel Spacer31;
-    private javax.swing.JPanel Spacer32;
-    private javax.swing.JPanel Spacer33;
-    private javax.swing.JPanel Spacer9;
-    private javax.swing.ButtonGroup buttonGroupFilterDate;
-    private javax.swing.ButtonGroup buttonGroupFilterDateMode;
-    private javax.swing.ButtonGroup buttonGroupFilterFileDir;
-    private javax.swing.ButtonGroup buttonGroupFilterFileSize;
-    private javax.swing.ButtonGroup buttonGroupFilterIncludeExclude;
-    private javax.swing.ButtonGroup buttonGroupFilterType;
-    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel1;
-    private javax.swing.JPanel dirIncludeAndExcludeFilesPanel8;
-    private javax.swing.JPanel fileattributesJPanel;
-    private javax.swing.JPanel filtersButtonsPanel;
-    private javax.swing.JPanel inExcludeJPanel;
-    private javax.swing.JPanel inExcludeJPanel1;
-    private javax.swing.JPanel inExcludeJPanel2;
-    private javax.swing.JPanel inExcludeJPanel3;
-    private javax.swing.JPanel inExcludeJPanel4;
-    private javax.swing.JPanel informationPanel12;
-    private javax.swing.JPanel informationPanel13;
-    private javax.swing.JPanel informationPanel14;
-    private javax.swing.JPanel informationPanel22;
-    private javax.swing.JPanel informationPanel23;
-    private javax.swing.JPanel informationPanel24;
-    private javax.swing.JPanel informationPanel25;
-    private javax.swing.JPanel informationPanel26;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel78;
-    private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel80;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel101;
-    private javax.swing.JPanel jPanel102;
-    private javax.swing.JPanel jPanel103;
-    private javax.swing.JPanel jPanel104;
-    private javax.swing.JPanel jPanel105;
-    private javax.swing.JPanel jPanel106;
-    private javax.swing.JPanel jPanel107;
-    private javax.swing.JPanel jPanel108;
-    private javax.swing.JPanel jPanel109;
-    private javax.swing.JPanel jPanel110;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel25;
-    private javax.swing.JPanel jPanel26;
-    private javax.swing.JPanel jPanel36;
-    private javax.swing.JPanel jPanel37;
-    private javax.swing.JPanel jPanel38;
-    private javax.swing.JPanel jPanel41;
-    private javax.swing.JPanel jPanel42;
-    private javax.swing.JPanel jPanel43;
-    private javax.swing.JPanel jPanel44;
-    private javax.swing.JPanel jPanel45;
-    private javax.swing.JPanel jPanel46;
-    private javax.swing.JPanel jPanel47;
-    private javax.swing.JPanel jPanel48;
-    private javax.swing.JPanel jPanel49;
-    private javax.swing.JPanel jPanel97;
-    private javax.swing.JPanel jPanel98;
-    private javax.swing.JTextPane jTextPane13;
-    private javax.swing.JTextPane jTextPane14;
-    private javax.swing.JTextPane jTextPane15;
-    private javax.swing.JTextPane jTextPane23;
-    private javax.swing.JTextPane jTextPane24;
-    private javax.swing.JTextPane jTextPane25;
-    private javax.swing.JTextPane jTextPane26;
-    private javax.swing.JTextPane jTextPane27;
-    private javax.swing.JLabel lookNfeelLabel2;
-    private javax.swing.JLabel lookNfeelLabel3;
-    private javax.swing.JPanel lookNfeelPanel1;
-    private javax.swing.JPanel patternFilterPanel;
+
     public FilterDialogObjects(JDialog dialog) {
         super(dialog);
         GuiTools.setSystemLookAndFeel(DirSyncPro.isSystemLookAndFeel());
@@ -221,163 +132,163 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
      * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The
      * content of this method is always regenerated by the Form Editor.
      */
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        buttonGroupFilterType = new javax.swing.ButtonGroup();
-        buttonGroupFilterIncludeExclude = new javax.swing.ButtonGroup();
-        buttonGroupFilterFileDir = new javax.swing.ButtonGroup();
-        buttonGroupFilterFileSize = new javax.swing.ButtonGroup();
-        buttonGroupFilterDate = new javax.swing.ButtonGroup();
-        buttonGroupFilterDateMode = new javax.swing.ButtonGroup();
+        javax.swing.ButtonGroup buttonGroupFilterType = new javax.swing.ButtonGroup();
+        javax.swing.ButtonGroup buttonGroupFilterIncludeExclude = new javax.swing.ButtonGroup();
+        javax.swing.ButtonGroup buttonGroupFilterFileDir = new javax.swing.ButtonGroup();
+        javax.swing.ButtonGroup buttonGroupFilterFileSize = new javax.swing.ButtonGroup();
+        javax.swing.ButtonGroup buttonGroupFilterDate = new javax.swing.ButtonGroup();
+        javax.swing.ButtonGroup buttonGroupFilterDateMode = new javax.swing.ButtonGroup();
         filtersTabbedPane = new MyJTabbedPane();
         javax.swing.JPanel basicFilterJPanel = new javax.swing.JPanel();
-        lookNfeelPanel1 = new javax.swing.JPanel();
-        jLabel26 = new javax.swing.JLabel();
-        lookNfeelLabel2 = new javax.swing.JLabel();
-        jPanel36 = new javax.swing.JPanel();
+        javax.swing.JPanel lookNfeelPanel1 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel26 = new javax.swing.JLabel();
+        javax.swing.JLabel lookNfeelLabel2 = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel36 = new javax.swing.JPanel();
         filtersByPatternRadioButton = new javax.swing.JRadioButton();
         filtersByPatternLabel = new javax.swing.JLabel();
-        jPanel37 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel37 = new javax.swing.JPanel();
         filtersByFileSizeRadioButton = new javax.swing.JRadioButton();
         filtersByFileSizeLabel = new javax.swing.JLabel();
-        jPanel104 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel104 = new javax.swing.JPanel();
         filtersByPathRadioButton = new javax.swing.JRadioButton();
         filtersByPathLabel = new javax.swing.JLabel();
-        jPanel105 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel105 = new javax.swing.JPanel();
         filtersByFileAttributeRadioButton = new javax.swing.JRadioButton();
         filtersByFileAttributeLabel = new javax.swing.JLabel();
-        jPanel106 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel106 = new javax.swing.JPanel();
         filtersByFileOwnershipRadioButton = new javax.swing.JRadioButton();
         filtersByFileOwnershipLabel = new javax.swing.JLabel();
-        jPanel107 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel107 = new javax.swing.JPanel();
         filtersByFilePermissionsRadioButton = new javax.swing.JRadioButton();
         filtersByFilePermissionsLabel = new javax.swing.JLabel();
-        jPanel38 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel38 = new javax.swing.JPanel();
         filtersByDateRadioButton = new javax.swing.JRadioButton();
         filtersByDateLabel = new javax.swing.JLabel();
-        Spacer13 = new javax.swing.JPanel();
-        informationPanel13 = new javax.swing.JPanel();
-        jTextPane14 = new javax.swing.JTextPane();
+        javax.swing.JPanel spacer13 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel13 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane14 = new javax.swing.JTextPane();
         jTextPane14.setEditorKit(GuiTools.getDefaultEditorKit());
-        inExcludeJPanel = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
-        lookNfeelLabel3 = new javax.swing.JLabel();
-        jPanel41 = new javax.swing.JPanel();
+        javax.swing.JPanel inExcludeJPanel = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel29 = new javax.swing.JLabel();
+        javax.swing.JLabel lookNfeelLabel3 = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel41 = new javax.swing.JPanel();
         filtersIncludeRadioButton = new javax.swing.JRadioButton();
-        jLabel30 = new javax.swing.JLabel();
-        jPanel42 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel30 = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel42 = new javax.swing.JPanel();
         filtersExcludeRadioButton = new javax.swing.JRadioButton();
-        jLabel31 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel31 = new javax.swing.JLabel();
         javax.swing.JPanel patternFilterJPanel = new javax.swing.JPanel();
-        Spacer11 = new javax.swing.JPanel();
-        informationPanel12 = new javax.swing.JPanel();
-        jTextPane13 = new javax.swing.JTextPane();
+        javax.swing.JPanel spacer11 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel12 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane13 = new javax.swing.JTextPane();
         jTextPane13.setEditorKit(GuiTools.getDefaultEditorKit());
-        patternFilterPanel = new javax.swing.JPanel();
+        javax.swing.JPanel patternFilterPanel = new javax.swing.JPanel();
         dirFileIncludeLabel = new javax.swing.JLabel();
         filtersPatternField = new javax.swing.JTextField();
-        inExcludeJPanel1 = new javax.swing.JPanel();
-        jPanel43 = new javax.swing.JPanel();
+        javax.swing.JPanel inExcludeJPanel1 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel43 = new javax.swing.JPanel();
         filtersFilePatternRadioButton = new javax.swing.JRadioButton();
-        jLabel33 = new javax.swing.JLabel();
-        jPanel45 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel33 = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel45 = new javax.swing.JPanel();
         filtersDirPatternRadioButton = new javax.swing.JRadioButton();
-        jLabel36 = new javax.swing.JLabel();
-        jPanel26 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel36 = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel26 = new javax.swing.JPanel();
         filtersRegularExpressionCheckBox = new javax.swing.JCheckBox();
         regularExpressionJLabel = new javax.swing.JLabel();
         javax.swing.JPanel sizeFiltersJPanel = new javax.swing.JPanel();
-        Spacer15 = new javax.swing.JPanel();
-        informationPanel14 = new javax.swing.JPanel();
-        jTextPane15 = new javax.swing.JTextPane();
+        javax.swing.JPanel spacer15 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel14 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane15 = new javax.swing.JTextPane();
         jTextPane15.setEditorKit(GuiTools.getDefaultEditorKit());
-        dirIncludeAndExcludeFilesPanel1 = new javax.swing.JPanel();
+        javax.swing.JPanel dirIncludeAndExcludeFilesPanel1 = new javax.swing.JPanel();
         dirFileIncludeLabel1 = new javax.swing.JLabel();
         filtersFileSizeField = new javax.swing.JTextField();
-        inExcludeJPanel2 = new javax.swing.JPanel();
-        jPanel46 = new javax.swing.JPanel();
+        javax.swing.JPanel inExcludeJPanel2 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel46 = new javax.swing.JPanel();
         filtersSmallerFileSizeRadioButton = new javax.swing.JRadioButton();
-        jLabel37 = new javax.swing.JLabel();
-        jPanel47 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel37 = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel47 = new javax.swing.JPanel();
         filtersExactFileSizeRadioButton = new javax.swing.JRadioButton();
-        jLabel39 = new javax.swing.JLabel();
-        jPanel49 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel39 = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel49 = new javax.swing.JPanel();
         filtersLargerFileSizeRadioButton = new javax.swing.JRadioButton();
-        jLabel40 = new javax.swing.JLabel();
+        javax.swing.JLabel jLabel40 = new javax.swing.JLabel();
         dirFileIncludeLabel2 = new javax.swing.JLabel();
         javax.swing.JPanel dateFiltersJPanel = new javax.swing.JPanel();
-        dirIncludeAndExcludeFilesPanel8 = new javax.swing.JPanel();
-        inExcludeJPanel4 = new javax.swing.JPanel();
-        jPanel108 = new javax.swing.JPanel();
+        javax.swing.JPanel dirIncludeAndExcludeFilesPanel8 = new javax.swing.JPanel();
+        javax.swing.JPanel inExcludeJPanel4 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel108 = new javax.swing.JPanel();
         filtersEarlierDateRadioButton = new javax.swing.JRadioButton();
-        jLabel78 = new javax.swing.JLabel();
-        jPanel109 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel78 = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel109 = new javax.swing.JPanel();
         filtersSameDateRadioButton = new javax.swing.JRadioButton();
-        jLabel79 = new javax.swing.JLabel();
-        jPanel110 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel79 = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel110 = new javax.swing.JPanel();
         filtersLaterDateRadioButton = new javax.swing.JRadioButton();
-        jLabel80 = new javax.swing.JLabel();
-        inExcludeJPanel3 = new javax.swing.JPanel();
-        jPanel44 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel80 = new javax.swing.JLabel();
+        javax.swing.JPanel inExcludeJPanel3 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel44 = new javax.swing.JPanel();
         filtersDateModeSpecificTimeRadioButton = new javax.swing.JRadioButton();
-        jLabel34 = new javax.swing.JLabel();
-        jPanel48 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel34 = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel48 = new javax.swing.JPanel();
         filtersDateModeTimeUnitRadioButton = new javax.swing.JRadioButton();
-        jLabel35 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel35 = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel1 = new javax.swing.JPanel();
         filtersDateTextField = new javax.swing.JFormattedTextField();
         filtersDateSpecificTimeJLabelAfter = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel2 = new javax.swing.JPanel();
         filtersDateTimeUnitComboBox = new javax.swing.JComboBox();
         filtersDateTimeUnitField = new javax.swing.JFormattedTextField();
         filtersDateTimeUnitJLabelAfter = new javax.swing.JLabel();
-        Spacer33 = new javax.swing.JPanel();
-        Spacer32 = new javax.swing.JPanel();
-        Spacer30 = new javax.swing.JPanel();
-        informationPanel26 = new javax.swing.JPanel();
-        jTextPane27 = new javax.swing.JTextPane();
+        javax.swing.JPanel spacer33 = new javax.swing.JPanel();
+        javax.swing.JPanel spacer32 = new javax.swing.JPanel();
+        javax.swing.JPanel spacer30 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel26 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane27 = new javax.swing.JTextPane();
         jTextPane27.setEditorKit(GuiTools.getDefaultEditorKit());
         javax.swing.JPanel pathFilterJPanel = new javax.swing.JPanel();
         javax.swing.JPanel absoultePathFilterJPanel = new javax.swing.JPanel();
         pathFilterJLabel = new javax.swing.JLabel();
         pathFilterBrowseButton = new javax.swing.JButton();
         filtersPathFilterField = new javax.swing.JTextField();
-        Spacer27 = new javax.swing.JPanel();
-        informationPanel22 = new javax.swing.JPanel();
-        jTextPane23 = new javax.swing.JTextPane();
+        javax.swing.JPanel spacer27 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel22 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane23 = new javax.swing.JTextPane();
         jTextPane23.setEditorKit(GuiTools.getDefaultEditorKit());
         javax.swing.JPanel attributeFilterJPanel = new javax.swing.JPanel();
         javax.swing.JPanel absoultePathFilterJPanel1 = new javax.swing.JPanel();
-        fileattributesJPanel = new javax.swing.JPanel();
-        jPanel25 = new javax.swing.JPanel();
+        javax.swing.JPanel fileattributesJPanel = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel25 = new javax.swing.JPanel();
         filtersReadOnlyAttributeCheckBox = new javax.swing.JCheckBox();
         readOnlyAttributeJLabel = new javax.swing.JLabel();
-        jPanel97 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel97 = new javax.swing.JPanel();
         filtersHiddenAttributeCheckBox = new javax.swing.JCheckBox();
         hiddenAttributeJLabel = new javax.swing.JLabel();
-        jPanel98 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel98 = new javax.swing.JPanel();
         filtersSystemAttributeCheckBox = new javax.swing.JCheckBox();
         systemAtttributeJLabel = new javax.swing.JLabel();
-        jPanel101 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel101 = new javax.swing.JPanel();
         filtersArchiveAttributeCheckBox = new javax.swing.JCheckBox();
         archiveAtttributeJLabel = new javax.swing.JLabel();
-        Spacer9 = new javax.swing.JPanel();
-        Spacer28 = new javax.swing.JPanel();
-        informationPanel23 = new javax.swing.JPanel();
-        jTextPane24 = new javax.swing.JTextPane();
+        javax.swing.JPanel spacer9 = new javax.swing.JPanel();
+        javax.swing.JPanel spacer28 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel23 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane24 = new javax.swing.JTextPane();
         jTextPane24.setEditorKit(GuiTools.getDefaultEditorKit());
         javax.swing.JPanel byGroupFilterJPanel = new javax.swing.JPanel();
         javax.swing.JPanel groupFilterJPanel = new javax.swing.JPanel();
         pathFilterJLabel2 = new javax.swing.JLabel();
         filtersGroupFilterField = new javax.swing.JTextField();
-        jPanel102 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel102 = new javax.swing.JPanel();
         pathFilterJLabel3 = new javax.swing.JLabel();
         filtersOwnerFilterField = new javax.swing.JTextField();
-        Spacer29 = new javax.swing.JPanel();
-        informationPanel24 = new javax.swing.JPanel();
-        jTextPane25 = new javax.swing.JTextPane();
+        javax.swing.JPanel spacer29 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel24 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane25 = new javax.swing.JTextPane();
         jTextPane25.setEditorKit(GuiTools.getDefaultEditorKit());
         javax.swing.JPanel byPermissionsFilterJPanel = new javax.swing.JPanel();
         javax.swing.JPanel permissionsFilterJPanel = new javax.swing.JPanel();
@@ -398,12 +309,12 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterOXCheckBox = new javax.swing.JCheckBox();
         permissionFilterJLabel6 = new javax.swing.JLabel();
         filtersPermissionFilterField = new javax.swing.JTextField();
-        jPanel103 = new javax.swing.JPanel();
-        Spacer31 = new javax.swing.JPanel();
-        informationPanel25 = new javax.swing.JPanel();
-        jTextPane26 = new javax.swing.JTextPane();
+        javax.swing.JPanel jPanel103 = new javax.swing.JPanel();
+        javax.swing.JPanel spacer31 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel25 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane26 = new javax.swing.JTextPane();
         jTextPane26.setEditorKit(GuiTools.getDefaultEditorKit());
-        filtersButtonsPanel = new javax.swing.JPanel();
+        javax.swing.JPanel filtersButtonsPanel = new javax.swing.JPanel();
         filtersOKButton = new javax.swing.JButton();
         filtersCancelButton = new javax.swing.JButton();
 
@@ -443,7 +354,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByPatternRadioButton.setMaximumSize(null);
         filtersByPatternRadioButton.setMinimumSize(null);
         filtersByPatternRadioButton.setPreferredSize(null);
-        filtersByPatternRadioButton.addActionListener(evt -> filtersByPatternRadioButtonActionPerformed(evt));
+        filtersByPatternRadioButton.addActionListener(this::filtersByPatternRadioButtonActionPerformed);
         jPanel36.add(filtersByPatternRadioButton);
 
         filtersByPatternLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/pattern.png"))); // NOI18N
@@ -463,7 +374,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByFileSizeRadioButton.setMaximumSize(null);
         filtersByFileSizeRadioButton.setMinimumSize(null);
         filtersByFileSizeRadioButton.setPreferredSize(null);
-        filtersByFileSizeRadioButton.addActionListener(evt -> filtersByFileSizeRadioButtonActionPerformed(evt));
+        filtersByFileSizeRadioButton.addActionListener(this::filtersByFileSizeRadioButtonActionPerformed);
         jPanel37.add(filtersByFileSizeRadioButton);
 
         filtersByFileSizeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/smaller.png"))); // NOI18N
@@ -483,7 +394,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByPathRadioButton.setMaximumSize(null);
         filtersByPathRadioButton.setMinimumSize(null);
         filtersByPathRadioButton.setPreferredSize(null);
-        filtersByPathRadioButton.addActionListener(evt -> filtersByPathRadioButtonActionPerformed(evt));
+        filtersByPathRadioButton.addActionListener(this::filtersByPathRadioButtonActionPerformed);
         jPanel104.add(filtersByPathRadioButton);
 
         filtersByPathLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirBlue.png"))); // NOI18N
@@ -503,7 +414,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByFileAttributeRadioButton.setMaximumSize(null);
         filtersByFileAttributeRadioButton.setMinimumSize(null);
         filtersByFileAttributeRadioButton.setPreferredSize(null);
-        filtersByFileAttributeRadioButton.addActionListener(evt -> filtersByFileAttributeRadioButtonActionPerformed(evt));
+        filtersByFileAttributeRadioButton.addActionListener(this::filtersByFileAttributeRadioButtonActionPerformed);
         jPanel105.add(filtersByFileAttributeRadioButton);
 
         filtersByFileAttributeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/file.png"))); // NOI18N
@@ -523,7 +434,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByFileOwnershipRadioButton.setMaximumSize(null);
         filtersByFileOwnershipRadioButton.setMinimumSize(null);
         filtersByFileOwnershipRadioButton.setPreferredSize(null);
-        filtersByFileOwnershipRadioButton.addActionListener(evt -> filtersByFileOwnershipRadioButtonActionPerformed(evt));
+        filtersByFileOwnershipRadioButton.addActionListener(this::filtersByFileOwnershipRadioButtonActionPerformed);
         jPanel106.add(filtersByFileOwnershipRadioButton);
 
         filtersByFileOwnershipLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/group.png"))); // NOI18N
@@ -543,7 +454,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByFilePermissionsRadioButton.setMaximumSize(null);
         filtersByFilePermissionsRadioButton.setMinimumSize(null);
         filtersByFilePermissionsRadioButton.setPreferredSize(null);
-        filtersByFilePermissionsRadioButton.addActionListener(evt -> filtersByFilePermissionsRadioButtonActionPerformed(evt));
+        filtersByFilePermissionsRadioButton.addActionListener(this::filtersByFilePermissionsRadioButtonActionPerformed);
         jPanel107.add(filtersByFilePermissionsRadioButton);
 
         filtersByFilePermissionsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/permissions.png"))); // NOI18N
@@ -563,7 +474,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersByDateRadioButton.setMaximumSize(null);
         filtersByDateRadioButton.setMinimumSize(null);
         filtersByDateRadioButton.setPreferredSize(null);
-        filtersByDateRadioButton.addActionListener(evt -> filtersByDateRadioButtonActionPerformed(evt));
+        filtersByDateRadioButton.addActionListener(this::filtersByDateRadioButtonActionPerformed);
         jPanel38.add(filtersByDateRadioButton);
 
         filtersByDateLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/date.png"))); // NOI18N
@@ -586,7 +497,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        basicFilterJPanel.add(Spacer13, gridBagConstraints);
+        basicFilterJPanel.add(spacer13, gridBagConstraints);
 
         informationPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel13.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -679,7 +590,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        patternFilterJPanel.add(Spacer11, gridBagConstraints);
+        patternFilterJPanel.add(spacer11, gridBagConstraints);
 
         informationPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel12.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -809,7 +720,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        sizeFiltersJPanel.add(Spacer15, gridBagConstraints);
+        sizeFiltersJPanel.add(spacer15, gridBagConstraints);
 
         informationPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel14.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -1024,7 +935,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersDateModeSpecificTimeRadioButton.setMaximumSize(null);
         filtersDateModeSpecificTimeRadioButton.setMinimumSize(null);
         filtersDateModeSpecificTimeRadioButton.setPreferredSize(null);
-        filtersDateModeSpecificTimeRadioButton.addActionListener(evt -> filtersDateModeSpecificTimeRadioButtonActionPerformed(evt));
+        filtersDateModeSpecificTimeRadioButton.addActionListener(this::filtersDateModeSpecificTimeRadioButtonActionPerformed);
         jPanel44.add(filtersDateModeSpecificTimeRadioButton);
 
         jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1day.png"))); // NOI18N
@@ -1044,7 +955,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersDateModeTimeUnitRadioButton.setMaximumSize(null);
         filtersDateModeTimeUnitRadioButton.setMinimumSize(null);
         filtersDateModeTimeUnitRadioButton.setPreferredSize(null);
-        filtersDateModeTimeUnitRadioButton.addActionListener(evt -> filtersDateModeTimeUnitRadioButtonActionPerformed(evt));
+        filtersDateModeTimeUnitRadioButton.addActionListener(this::filtersDateModeTimeUnitRadioButtonActionPerformed);
         jPanel48.add(filtersDateModeTimeUnitRadioButton);
 
         jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/date.png"))); // NOI18N
@@ -1124,7 +1035,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 1.0;
-        inExcludeJPanel3.add(Spacer33, gridBagConstraints);
+        inExcludeJPanel3.add(spacer33, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1137,7 +1048,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.weightx = 1.0;
-        dirIncludeAndExcludeFilesPanel8.add(Spacer32, gridBagConstraints);
+        dirIncludeAndExcludeFilesPanel8.add(spacer32, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1149,7 +1060,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        dateFiltersJPanel.add(Spacer30, gridBagConstraints);
+        dateFiltersJPanel.add(spacer30, gridBagConstraints);
 
         informationPanel26.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel26.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -1193,7 +1104,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         pathFilterBrowseButton.setToolTipText("Browse");
         pathFilterBrowseButton.setIconTextGap(2);
         pathFilterBrowseButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        pathFilterBrowseButton.addActionListener(evt -> pathFilterBrowseButtonbrowseSrcActionPerformed(evt));
+        pathFilterBrowseButton.addActionListener(this::pathFilterBrowseButtonbrowseSrcActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 1;
@@ -1223,7 +1134,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        pathFilterJPanel.add(Spacer27, gridBagConstraints);
+        pathFilterJPanel.add(spacer27, gridBagConstraints);
 
         informationPanel22.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel22.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -1329,7 +1240,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.weightx = 1.0;
-        fileattributesJPanel.add(Spacer9, gridBagConstraints);
+        fileattributesJPanel.add(spacer9, gridBagConstraints);
 
         absoultePathFilterJPanel1.add(fileattributesJPanel);
 
@@ -1343,7 +1254,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        attributeFilterJPanel.add(Spacer28, gridBagConstraints);
+        attributeFilterJPanel.add(spacer28, gridBagConstraints);
 
         informationPanel23.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel23.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -1423,7 +1334,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        byGroupFilterJPanel.add(Spacer29, gridBagConstraints);
+        byGroupFilterJPanel.add(spacer29, gridBagConstraints);
 
         informationPanel24.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel24.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -1501,7 +1412,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterURCheckBox.setMaximumSize(null);
         filtersPermissionFilterURCheckBox.setMinimumSize(null);
         filtersPermissionFilterURCheckBox.setPreferredSize(null);
-        filtersPermissionFilterURCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
+        filtersPermissionFilterURCheckBox.addActionListener(this::permissionFilterCheckBoxActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -1510,7 +1421,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterUWCheckBox.setMaximumSize(null);
         filtersPermissionFilterUWCheckBox.setMinimumSize(null);
         filtersPermissionFilterUWCheckBox.setPreferredSize(null);
-        filtersPermissionFilterUWCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
+        filtersPermissionFilterUWCheckBox.addActionListener(this::permissionFilterCheckBoxActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 1;
@@ -1519,7 +1430,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterUXCheckBox.setMaximumSize(null);
         filtersPermissionFilterUXCheckBox.setMinimumSize(null);
         filtersPermissionFilterUXCheckBox.setPreferredSize(null);
-        filtersPermissionFilterUXCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
+        filtersPermissionFilterUXCheckBox.addActionListener(this::permissionFilterCheckBoxActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 1;
@@ -1528,7 +1439,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterGRCheckBox.setMaximumSize(null);
         filtersPermissionFilterGRCheckBox.setMinimumSize(null);
         filtersPermissionFilterGRCheckBox.setPreferredSize(null);
-        filtersPermissionFilterGRCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
+        filtersPermissionFilterGRCheckBox.addActionListener(this::permissionFilterCheckBoxActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -1537,7 +1448,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterGWCheckBox.setMaximumSize(null);
         filtersPermissionFilterGWCheckBox.setMinimumSize(null);
         filtersPermissionFilterGWCheckBox.setPreferredSize(null);
-        filtersPermissionFilterGWCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
+        filtersPermissionFilterGWCheckBox.addActionListener(this::permissionFilterCheckBoxActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -1546,7 +1457,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterGXCheckBox.setMaximumSize(null);
         filtersPermissionFilterGXCheckBox.setMinimumSize(null);
         filtersPermissionFilterGXCheckBox.setPreferredSize(null);
-        filtersPermissionFilterGXCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
+        filtersPermissionFilterGXCheckBox.addActionListener(this::permissionFilterCheckBoxActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 2;
@@ -1555,7 +1466,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterORCheckBox.setMaximumSize(null);
         filtersPermissionFilterORCheckBox.setMinimumSize(null);
         filtersPermissionFilterORCheckBox.setPreferredSize(null);
-        filtersPermissionFilterORCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
+        filtersPermissionFilterORCheckBox.addActionListener(this::permissionFilterCheckBoxActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
@@ -1564,7 +1475,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterOWCheckBox.setMaximumSize(null);
         filtersPermissionFilterOWCheckBox.setMinimumSize(null);
         filtersPermissionFilterOWCheckBox.setPreferredSize(null);
-        filtersPermissionFilterOWCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
+        filtersPermissionFilterOWCheckBox.addActionListener(this::permissionFilterCheckBoxActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 3;
@@ -1573,7 +1484,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersPermissionFilterOXCheckBox.setMaximumSize(null);
         filtersPermissionFilterOXCheckBox.setMinimumSize(null);
         filtersPermissionFilterOXCheckBox.setPreferredSize(null);
-        filtersPermissionFilterOXCheckBox.addActionListener(evt -> permissionFilterCheckBoxActionPerformed(evt));
+        filtersPermissionFilterOXCheckBox.addActionListener(this::permissionFilterCheckBoxActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 3;
@@ -1625,7 +1536,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        byPermissionsFilterJPanel.add(Spacer31, gridBagConstraints);
+        byPermissionsFilterJPanel.add(spacer31, gridBagConstraints);
 
         informationPanel25.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel25.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -1663,7 +1574,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersOKButton.setMaximumSize(null);
         filtersOKButton.setMinimumSize(null);
         filtersOKButton.setPreferredSize(null);
-        filtersOKButton.addActionListener(evt -> filtersOKButtonActionPerformed(evt));
+        filtersOKButton.addActionListener(this::filtersOKButtonActionPerformed);
         filtersButtonsPanel.add(filtersOKButton);
 
         filtersCancelButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cancel.png"))); // NOI18N
@@ -1672,7 +1583,7 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         filtersCancelButton.setMaximumSize(null);
         filtersCancelButton.setMinimumSize(null);
         filtersCancelButton.setPreferredSize(null);
-        filtersCancelButton.addActionListener(evt -> filtersCancelButtoncancelActionPerformed(evt));
+        filtersCancelButton.addActionListener(this::filtersCancelButtoncancelActionPerformed);
         filtersButtonsPanel.add(filtersCancelButton);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1681,72 +1592,72 @@ public abstract class FilterDialogObjects extends javax.swing.JDialog {
         getContentPane().add(filtersButtonsPanel, gridBagConstraints);
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>
 
-    private void filtersOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersOKButtonActionPerformed
+    private void filtersOKButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // If no focus -> a fields has blocked applying settings
         if (filtersOKButton.hasFocus()) {
             applyFilter();
             this.setVisible(false);
         }
-    }//GEN-LAST:event_filtersOKButtonActionPerformed
+    }
 
-    private void filtersCancelButtoncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersCancelButtoncancelActionPerformed
+    private void filtersCancelButtoncancelActionPerformed(java.awt.event.ActionEvent evt) {
         this.setVisible(false);
-    }//GEN-LAST:event_filtersCancelButtoncancelActionPerformed
+    }
 
-    private void filtersByPatternRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByPatternRadioButtonActionPerformed
+    private void filtersByPatternRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         filterEvent();
-    }//GEN-LAST:event_filtersByPatternRadioButtonActionPerformed
+    }
 
-    private void filtersByFileSizeRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByFileSizeRadioButtonActionPerformed
+    private void filtersByFileSizeRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         filterEvent();
-    }//GEN-LAST:event_filtersByFileSizeRadioButtonActionPerformed
+    }
 
-    private void pathFilterBrowseButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pathFilterBrowseButtonbrowseSrcActionPerformed
+    private void pathFilterBrowseButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {
         GuiTools.browseFileAndFolder(this, filtersPathFilterField);
-    }//GEN-LAST:event_pathFilterBrowseButtonbrowseSrcActionPerformed
+    }
 
-    private void filtersByPathRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByPathRadioButtonActionPerformed
+    private void filtersByPathRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         filterEvent();
-    }//GEN-LAST:event_filtersByPathRadioButtonActionPerformed
+    }
 
-    private void filtersByFileAttributeRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByFileAttributeRadioButtonActionPerformed
+    private void filtersByFileAttributeRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         filterEvent();
-    }//GEN-LAST:event_filtersByFileAttributeRadioButtonActionPerformed
+    }
 
-    private void filtersByFileOwnershipRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByFileOwnershipRadioButtonActionPerformed
+    private void filtersByFileOwnershipRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         filterEvent();
-    }//GEN-LAST:event_filtersByFileOwnershipRadioButtonActionPerformed
+    }
 
-    private void filtersByFilePermissionsRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByFilePermissionsRadioButtonActionPerformed
+    private void filtersByFilePermissionsRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         filterEvent();
-    }//GEN-LAST:event_filtersByFilePermissionsRadioButtonActionPerformed
+    }
 
-    private void filtersByDateRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersByDateRadioButtonActionPerformed
+    private void filtersByDateRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         filterEvent();
-    }//GEN-LAST:event_filtersByDateRadioButtonActionPerformed
+    }
 
-    private void permissionFilterCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_permissionFilterCheckBoxActionPerformed
+    private void permissionFilterCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {
         permissionFilterCheckBoxClicked();
-    }//GEN-LAST:event_permissionFilterCheckBoxActionPerformed
+    }
 
-    private void filtersPermissionFilterFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtersPermissionFilterFieldKeyReleased
+    private void filtersPermissionFilterFieldKeyReleased(java.awt.event.KeyEvent evt) {
         permissionFilterValueChanged();
-    }//GEN-LAST:event_filtersPermissionFilterFieldKeyReleased
+    }
 
-    private void filtersPermissionFilterFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtersPermissionFilterFieldKeyPressed
+    private void filtersPermissionFilterFieldKeyPressed(java.awt.event.KeyEvent evt) {
         permissionFilterValueChanged();
-    }//GEN-LAST:event_filtersPermissionFilterFieldKeyPressed
+    }
 
-    private void filtersDateModeSpecificTimeRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersDateModeSpecificTimeRadioButtonActionPerformed
+    private void filtersDateModeSpecificTimeRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         adjustFilterDateTypeRadioButtons();
-    }//GEN-LAST:event_filtersDateModeSpecificTimeRadioButtonActionPerformed
+    }
 
-    private void filtersDateModeTimeUnitRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersDateModeTimeUnitRadioButtonActionPerformed
+    private void filtersDateModeTimeUnitRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         adjustFilterDateTypeRadioButtons();
-    }//GEN-LAST:event_filtersDateModeTimeUnitRadioButtonActionPerformed
-    // End of variables declaration//GEN-END:variables
+    }
+    // End of variables declaration
 
     abstract protected void adjustFilterDateTypeRadioButtons();
 

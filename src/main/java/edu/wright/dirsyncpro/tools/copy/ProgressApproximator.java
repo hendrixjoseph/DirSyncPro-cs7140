@@ -20,7 +20,6 @@ package edu.wright.dirsyncpro.tools.copy;
 
 import edu.wright.dirsyncpro.DirSyncPro;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.nio.file.Path;
 
@@ -42,10 +41,10 @@ public class ProgressApproximator {
     private int curApproxIndex = 0;
     //system time when startApprox() was called
     private long startTime = 0;
-    //performs GUI progress update
-    private final ActionListener taskPerformer = evt -> updateProgress();
+
     //private constructor for singleton pattern
     private ProgressApproximator() {
+        ActionListener taskPerformer = evt -> updateProgress();
         this.t = new javax.swing.Timer(10, taskPerformer);
         for (int i = 0; i < 20; i++) {
             approx[i] = new Approximation();

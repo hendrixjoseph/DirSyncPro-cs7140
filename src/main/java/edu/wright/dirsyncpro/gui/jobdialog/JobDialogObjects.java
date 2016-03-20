@@ -37,15 +37,14 @@ import edu.wright.dirsyncpro.gui.verifier.LongIntVerifier;
 import edu.wright.dirsyncpro.gui.verifier.PathVerifier;
 import edu.wright.dirsyncpro.gui.verifier.WildCardVerifier;
 import edu.wright.dirsyncpro.tools.GuiTools;
-
+import java.awt.Font;
+import java.awt.event.ItemEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
-import java.awt.Font;
-import java.awt.event.ItemEvent;
 
 /**
  * The DirSyncPro Main GUI.
@@ -172,120 +171,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
     protected javax.swing.JRadioButton skipSymLinkRadioButton;
     protected javax.swing.JButton swapButton;
     protected javax.swing.JComboBox syncModeComboBox;
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel IgnoreDaylightSavingTimeJLabel;
-    private javax.swing.JLabel IgnoreDaylightSavingTimeJLabel1;
-    private javax.swing.JPanel Spacer10;
-    private javax.swing.JPanel Spacer12;
-    private javax.swing.JPanel Spacer14;
-    private javax.swing.JPanel Spacer16;
-    private javax.swing.JPanel Spacer17;
-    private javax.swing.JPanel Spacer2;
-    private javax.swing.JPanel Spacer25;
-    private javax.swing.JPanel Spacer26;
-    private javax.swing.JPanel Spacer27;
-    private javax.swing.JPanel Spacer4;
-    private javax.swing.JPanel Spacer5;
-    private javax.swing.JPanel Spacer6;
-    private javax.swing.JPanel Spacer7;
-    private javax.swing.JPanel Spacer8;
-    private javax.swing.JPanel attributeJPanel;
-    private javax.swing.JPanel bidirectionalSyncConflictPanel;
-    private javax.swing.ButtonGroup buttonGroupBidirectionalConflict;
-    private javax.swing.ButtonGroup buttonGroupCompare;
-    private javax.swing.ButtonGroup buttonGroupMonodirectionalConflict;
-    private javax.swing.ButtonGroup buttonGroupSymLinks;
-    private javax.swing.JPanel compareaJpanel;
-    private javax.swing.JPanel dirBackupPanel;
-    private javax.swing.JPanel dirDeleteOptionsPanel;
-    private javax.swing.JPanel dirLogFilePanel;
-    private javax.swing.JPanel dirSymbolicLinkPane;
-    private javax.swing.JPanel dirTimestampDiffFieldPanel;
-    private javax.swing.JPanel dirTimestampDiffFieldPanel1;
-    private javax.swing.JLabel dirTimestampWriteBackLabel;
-    private javax.swing.JLabel dirTimestampWriteBackLabel1;
-    private javax.swing.JLabel dirTimestampWriteBackLabel3;
-    private javax.swing.JPanel dirTimestampWriteBackPanel;
-    private javax.swing.JPanel informationPanel;
-    private javax.swing.JPanel informationPanel1;
-    private javax.swing.JPanel informationPanel10;
-    private javax.swing.JPanel informationPanel2;
-    private javax.swing.JPanel informationPanel3;
-    private javax.swing.JPanel informationPanel4;
-    private javax.swing.JPanel informationPanel5;
-    private javax.swing.JPanel informationPanel6;
-    private javax.swing.JPanel informationPanel7;
-    private javax.swing.JPanel informationPanel8;
-    private javax.swing.JPanel informationPanel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel100;
-    private javax.swing.JPanel jPanel101;
-    private javax.swing.JPanel jPanel102;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
-    private javax.swing.JPanel jPanel25;
-    private javax.swing.JPanel jPanel26;
-    private javax.swing.JPanel jPanel27;
-    private javax.swing.JPanel jPanel28;
-    private javax.swing.JPanel jPanel29;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel30;
-    private javax.swing.JPanel jPanel31;
-    private javax.swing.JPanel jPanel32;
-    private javax.swing.JPanel jPanel38;
-    private javax.swing.JPanel jPanel39;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel40;
-    private javax.swing.JPanel jPanel44;
-    private javax.swing.JPanel jPanel48;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel73;
-    private javax.swing.JPanel jPanel78;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel81;
-    private javax.swing.JPanel jPanel82;
-    private javax.swing.JPanel jPanel84;
-    private javax.swing.JPanel jPanel85;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JPanel jPanel95;
-    private javax.swing.JPanel jPanel96;
-    private javax.swing.JPanel jPanel97;
-    private javax.swing.JPanel jPanel99;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane10;
-    private javax.swing.JTextPane jTextPane11;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JTextPane jTextPane3;
-    private javax.swing.JTextPane jTextPane4;
-    private javax.swing.JTextPane jTextPane5;
-    private javax.swing.JTextPane jTextPane6;
-    private javax.swing.JTextPane jTextPane7;
-    private javax.swing.JTextPane jTextPane8;
-    private javax.swing.JTextPane jTextPane9;
-    private javax.swing.JLabel label9;
-    private javax.swing.JPanel monodirectionalSyncConflictPanel;
-    private javax.swing.JPanel realTimeSyncPanel;
-    private javax.swing.JPanel settingsActionsPanel;
-    private javax.swing.JPanel settingsButtonsPanel2;
-    private javax.swing.JPanel syncModeJPanel;
-    private javax.swing.JPanel verifyJPanel;
-    private javax.swing.JPanel viewJPanel3;
-    private javax.swing.JPanel viewJPanel4;
+
     public JobDialogObjects(JFrame frame) {
         super(frame);
         GuiTools.setSystemLookAndFeel(DirSyncPro.isSystemLookAndFeel());
@@ -297,14 +183,14 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
      * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The
      * content of this method is always regenerated by the Form Editor.
      */
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        buttonGroupSymLinks = new javax.swing.ButtonGroup();
-        buttonGroupBidirectionalConflict = new javax.swing.ButtonGroup();
-        buttonGroupMonodirectionalConflict = new javax.swing.ButtonGroup();
-        buttonGroupCompare = new javax.swing.ButtonGroup();
+        javax.swing.ButtonGroup buttonGroupSymLinks = new javax.swing.ButtonGroup();
+        javax.swing.ButtonGroup buttonGroupBidirectionalConflict = new javax.swing.ButtonGroup();
+        javax.swing.ButtonGroup buttonGroupMonodirectionalConflict = new javax.swing.ButtonGroup();
+        javax.swing.ButtonGroup buttonGroupCompare = new javax.swing.ButtonGroup();
         jobTabbedPane = new MyJTabbedPane();
         javax.swing.JPanel basicTab = new javax.swing.JPanel();
         javax.swing.JPanel pathsPanel = new javax.swing.JPanel();
@@ -316,14 +202,14 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirSrcChangeButton = new javax.swing.JButton();
         dirSrcField = new javax.swing.JTextField();
         dirDstLabel = new javax.swing.JLabel();
-        jPanel15 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel15 = new javax.swing.JPanel();
         dirWithSubfoldersCheckBox = new javax.swing.JCheckBox();
         dirWithSubfoldersLabel = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel3 = new javax.swing.JPanel();
         swapButton = new javax.swing.JButton();
-        Spacer2 = new javax.swing.JPanel();
-        informationPanel = new javax.swing.JPanel();
-        jTextPane1 = new javax.swing.JTextPane();
+        javax.swing.JPanel spacer2 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane1 = new javax.swing.JTextPane();
         HTMLEditorKit editorKit = new HTMLEditorKit();
         StyleSheet styles = new StyleSheet();
         Font font = UIManager.getFont("Label.font");
@@ -331,13 +217,13 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
         jTextPane1.setEditorKit(editorKit);
-        syncModeJPanel = new javax.swing.JPanel();
-        label9 = new javax.swing.JLabel();
+        javax.swing.JPanel syncModeJPanel = new javax.swing.JPanel();
+        javax.swing.JLabel label9 = new javax.swing.JLabel();
         syncModeComboBox = new javax.swing.JComboBox();
         javax.swing.JPanel compareTab = new javax.swing.JPanel();
-        Spacer10 = new javax.swing.JPanel();
-        informationPanel10 = new javax.swing.JPanel();
-        jTextPane11 = new javax.swing.JTextPane();
+        javax.swing.JPanel spacer10 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel10 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane11 = new javax.swing.JTextPane();
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -345,38 +231,38 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
         jTextPane11.setEditorKit(editorKit);
-        compareaJpanel = new javax.swing.JPanel();
-        jPanel97 = new javax.swing.JPanel();
+        javax.swing.JPanel compareaJpanel = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel97 = new javax.swing.JPanel();
         compareFileSizesDatesRadioButton = new javax.swing.JRadioButton();
         compareFileSizesDatesLabel = new javax.swing.JLabel();
-        jPanel101 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel101 = new javax.swing.JPanel();
         compareFileSizesDatesMetaDataRadioButton = new javax.swing.JRadioButton();
         compareFileSizesDatesMetaDataLabel = new javax.swing.JLabel();
-        jPanel102 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel102 = new javax.swing.JPanel();
         compareFileContentsRadioButton = new javax.swing.JRadioButton();
         compareFileContentsLabel = new javax.swing.JLabel();
-        jPanel31 = new javax.swing.JPanel();
-        Spacer27 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel31 = new javax.swing.JPanel();
+        javax.swing.JPanel spacer27 = new javax.swing.JPanel();
         javax.swing.JPanel copyTab = new javax.swing.JPanel();
         javax.swing.JPanel copyOptionsJPanel = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel8 = new javax.swing.JPanel();
         dirCopyAllCheckBox = new javax.swing.JCheckBox();
         dirCopyAllLabel = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel9 = new javax.swing.JPanel();
         dirCopyNewCheckBox = new javax.swing.JCheckBox();
         dirCopyNewLabel = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel10 = new javax.swing.JPanel();
         dirCopyLargerCheckBox = new javax.swing.JCheckBox();
         dirCopyLargerLabel = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel11 = new javax.swing.JPanel();
         dirCopyModifiedCheckBox = new javax.swing.JCheckBox();
         dirCopyModifiedLabel = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel12 = new javax.swing.JPanel();
         dirCopyLargerModifiedCheckBox = new javax.swing.JCheckBox();
         dirCopyLargerModifiedLabel = new javax.swing.JLabel();
-        Spacer12 = new javax.swing.JPanel();
-        informationPanel1 = new javax.swing.JPanel();
-        jTextPane2 = new javax.swing.JTextPane();
+        javax.swing.JPanel spacer12 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel1 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane2 = new javax.swing.JTextPane();
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -386,39 +272,39 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         jTextPane2.setEditorKit(editorKit);
         javax.swing.JPanel conflictResolutionTab = new javax.swing.JPanel();
         conflictResolutionJTabbedPane = new MyJTabbedPane();
-        monodirectionalSyncConflictPanel = new javax.swing.JPanel();
-        jPanel96 = new javax.swing.JPanel();
+        javax.swing.JPanel monodirectionalSyncConflictPanel = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel96 = new javax.swing.JPanel();
         monodirectionalConflictCopySourceRadioButton = new javax.swing.JRadioButton();
         monodirectionalConflictCopySourceLabel = new javax.swing.JLabel();
-        jPanel99 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel99 = new javax.swing.JPanel();
         monodirectionalConflictWarnUserRadioButton = new javax.swing.JRadioButton();
         monodirectionalConflictWarnUserLabel = new javax.swing.JLabel();
-        jPanel100 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel100 = new javax.swing.JPanel();
         monodirectionalConflictSkipRadioButton = new javax.swing.JRadioButton();
         monodirectionalConflictSkipLabel = new javax.swing.JLabel();
-        jPanel22 = new javax.swing.JPanel();
-        Spacer26 = new javax.swing.JPanel();
-        bidirectionalSyncConflictPanel = new javax.swing.JPanel();
-        jPanel38 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel22 = new javax.swing.JPanel();
+        javax.swing.JPanel spacer26 = new javax.swing.JPanel();
+        javax.swing.JPanel bidirectionalSyncConflictPanel = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel38 = new javax.swing.JPanel();
         bidirectionalConflictCopyModifiedRadioButton = new javax.swing.JRadioButton();
         bidirectionalConflictCopyModifiedLabel = new javax.swing.JLabel();
-        jPanel39 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel39 = new javax.swing.JPanel();
         bidirectionalConflictCopyLargerRadioButton = new javax.swing.JRadioButton();
         bidirectionalConflictCopyLargerLabel = new javax.swing.JLabel();
-        jPanel48 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel48 = new javax.swing.JPanel();
         bidirectionalConflictRenameCopyRadioButton = new javax.swing.JRadioButton();
         bidirectionalConflictRenameCopyLabel = new javax.swing.JLabel();
-        jPanel40 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel40 = new javax.swing.JPanel();
         bidirectionalConflictWarnUserRadioButton = new javax.swing.JRadioButton();
         bidirectionalConflictWarnUserLabel = new javax.swing.JLabel();
-        jPanel95 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel95 = new javax.swing.JPanel();
         bidirectionalConflictSkipRadioButton = new javax.swing.JRadioButton();
         bidirectionalConflictSkipLabel = new javax.swing.JLabel();
-        jPanel21 = new javax.swing.JPanel();
-        Spacer25 = new javax.swing.JPanel();
-        Spacer17 = new javax.swing.JPanel();
-        informationPanel2 = new javax.swing.JPanel();
-        jTextPane3 = new javax.swing.JTextPane();
+        javax.swing.JPanel jPanel21 = new javax.swing.JPanel();
+        javax.swing.JPanel spacer25 = new javax.swing.JPanel();
+        javax.swing.JPanel spacer17 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel2 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane3 = new javax.swing.JTextPane();
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -427,10 +313,10 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         editorKit.setStyleSheet(styles);
         jTextPane3.setEditorKit(editorKit);
         javax.swing.JPanel filtersTab = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        javax.swing.JScrollPane jScrollPane3 = new javax.swing.JScrollPane();
         filtersTree = new javax.swing.JTree();
-        informationPanel3 = new javax.swing.JPanel();
-        jTextPane4 = new javax.swing.JTextPane();
+        javax.swing.JPanel informationPanel3 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane4 = new javax.swing.JTextPane();
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -438,37 +324,37 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
         jTextPane4.setEditorKit(editorKit);
-        viewJPanel3 = new javax.swing.JPanel();
+        javax.swing.JPanel viewJPanel3 = new javax.swing.JPanel();
         addFilterButton = new javax.swing.JButton();
         editFilterButton = new javax.swing.JButton();
         removeFilterButton = new javax.swing.JButton();
-        jPanel16 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel16 = new javax.swing.JPanel();
         filtersExpandAllButton = new javax.swing.JButton();
         filtersCollapseAllButton = new javax.swing.JButton();
         javax.swing.JPanel deletionTab = new javax.swing.JPanel();
-        dirDeleteOptionsPanel = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        javax.swing.JPanel dirDeleteOptionsPanel = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel5 = new javax.swing.JPanel();
         dirDeleteFilesCheckBox = new javax.swing.JCheckBox();
         dirDeleteFilesLabel = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel13 = new javax.swing.JPanel();
         dirDeleteDirsCheckBox = new javax.swing.JCheckBox();
         dirDeleteDirsLabel = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel7 = new javax.swing.JPanel();
         deleteExcludedFilesACheckBox = new javax.swing.JCheckBox();
         dirDeleteExcludedFilesLabel = new javax.swing.JLabel();
-        jPanel44 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel44 = new javax.swing.JPanel();
         deleteExcludedDirsACheckBox = new javax.swing.JCheckBox();
         dirDeleteExcludedDirsLabel = new javax.swing.JLabel();
-        jPanel18 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel18 = new javax.swing.JPanel();
         deleteExcludedFilesBCheckBox = new javax.swing.JCheckBox();
         dirDeleteExcludedFilesLabel1 = new javax.swing.JLabel();
-        jPanel78 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel78 = new javax.swing.JPanel();
         deleteExcludedDirsBCheckBox = new javax.swing.JCheckBox();
         dirDeleteExcludedDirsLabel1 = new javax.swing.JLabel();
-        Spacer7 = new javax.swing.JPanel();
-        Spacer6 = new javax.swing.JPanel();
-        informationPanel4 = new javax.swing.JPanel();
-        jTextPane5 = new javax.swing.JTextPane();
+        javax.swing.JPanel spacer7 = new javax.swing.JPanel();
+        javax.swing.JPanel spacer6 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel4 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane5 = new javax.swing.JTextPane();
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -477,20 +363,20 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         editorKit.setStyleSheet(styles);
         jTextPane5.setEditorKit(editorKit);
         javax.swing.JPanel backupTab = new javax.swing.JPanel();
-        dirBackupPanel = new javax.swing.JPanel();
+        javax.swing.JPanel dirBackupPanel = new javax.swing.JPanel();
         dirBackupLabel1 = new javax.swing.JLabel();
         dirBackupField = new javax.swing.JTextField();
         dirBackupLabel2 = new javax.swing.JLabel();
-        jPanel30 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel30 = new javax.swing.JPanel();
         dirBackupDirInlineCheckBox = new javax.swing.JCheckBox();
         dirBackupDirInlineLabel = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel2 = new javax.swing.JPanel();
         dirBackupDirLabel = new javax.swing.JLabel();
         dirBackupDirField = new javax.swing.JTextField();
         dirBackupDirChangeButton = new javax.swing.JButton();
-        Spacer4 = new javax.swing.JPanel();
-        informationPanel5 = new javax.swing.JPanel();
-        jTextPane6 = new javax.swing.JTextPane();
+        javax.swing.JPanel spacer4 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel5 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane6 = new javax.swing.JTextPane();
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -499,9 +385,9 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         editorKit.setStyleSheet(styles);
         jTextPane6.setEditorKit(editorKit);
         javax.swing.JPanel logTab = new javax.swing.JPanel();
-        Spacer5 = new javax.swing.JPanel();
-        informationPanel8 = new javax.swing.JPanel();
-        jTextPane9 = new javax.swing.JTextPane();
+        javax.swing.JPanel spacer5 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel8 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane9 = new javax.swing.JTextPane();
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -509,18 +395,18 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
         jTextPane9.setEditorKit(editorKit);
-        dirLogFilePanel = new javax.swing.JPanel();
+        javax.swing.JPanel dirLogFilePanel = new javax.swing.JPanel();
         dirLogLabel = new javax.swing.JLabel();
         dirLogField = new javax.swing.JTextField();
         dirLogBrowseButton = new javax.swing.JButton();
-        jPanel73 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel73 = new javax.swing.JPanel();
         dirEnableLoggingCheckBox = new javax.swing.JCheckBox();
         dirEnableLoggingJLabel = new javax.swing.JLabel();
         javax.swing.JPanel scheduleTab = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
+        javax.swing.JScrollPane jScrollPane4 = new javax.swing.JScrollPane();
         scheduleTree = new javax.swing.JTree();
-        informationPanel9 = new javax.swing.JPanel();
-        jTextPane10 = new javax.swing.JTextPane();
+        javax.swing.JPanel informationPanel9 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane10 = new javax.swing.JTextPane();
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -528,46 +414,46 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
         jTextPane4.setEditorKit(editorKit);
-        viewJPanel4 = new javax.swing.JPanel();
+        javax.swing.JPanel viewJPanel4 = new javax.swing.JPanel();
         addScheduleButton = new javax.swing.JButton();
         editScheduleButton = new javax.swing.JButton();
         removeScheduleButton = new javax.swing.JButton();
-        jPanel17 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel17 = new javax.swing.JPanel();
         scheduleExpandAllButton = new javax.swing.JButton();
         scheduleCollapseAllButton = new javax.swing.JButton();
         javax.swing.JPanel advancedTab = new javax.swing.JPanel();
-        dirTimestampWriteBackPanel = new javax.swing.JPanel();
-        dirTimestampDiffFieldPanel = new javax.swing.JPanel();
+        javax.swing.JPanel dirTimestampWriteBackPanel = new javax.swing.JPanel();
+        javax.swing.JPanel dirTimestampDiffFieldPanel = new javax.swing.JPanel();
         dirTimestampDiffField = new javax.swing.JTextField();
-        jPanel28 = new javax.swing.JPanel();
-        dirTimestampWriteBackLabel = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel28 = new javax.swing.JPanel();
+        javax.swing.JLabel dirTimestampWriteBackLabel = new javax.swing.JLabel();
         dirTimestampWriteBackCheckBox = new javax.swing.JCheckBox();
         dirTimestampDiffLabel1 = new javax.swing.JLabel();
-        jPanel81 = new javax.swing.JPanel();
-        dirTimestampWriteBackLabel1 = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel81 = new javax.swing.JPanel();
+        javax.swing.JLabel dirTimestampWriteBackLabel1 = new javax.swing.JLabel();
         dirTimestampSyncCheckBox = new javax.swing.JCheckBox();
-        jPanel84 = new javax.swing.JPanel();
-        IgnoreDaylightSavingTimeJLabel = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel84 = new javax.swing.JPanel();
+        javax.swing.JLabel ignoreDaylightSavingTimeJLabel = new javax.swing.JLabel();
         ignoreDaylightSavingTimeCheckBox = new javax.swing.JCheckBox();
-        dirSymbolicLinkPane = new javax.swing.JPanel();
-        jPanel27 = new javax.swing.JPanel();
+        javax.swing.JPanel dirSymbolicLinkPane = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel27 = new javax.swing.JPanel();
         skipSymLinkRadioButton = new javax.swing.JRadioButton();
         skipSymLinkLabel = new javax.swing.JLabel();
-        jPanel23 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel23 = new javax.swing.JPanel();
         copySymLinkRadioButton = new javax.swing.JRadioButton();
         copySymLinkLabel = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel32 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel4 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel1 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel32 = new javax.swing.JPanel();
         followSymLinkRadioButton = new javax.swing.JRadioButton();
         followSymLinkLabel = new javax.swing.JLabel();
-        Spacer8 = new javax.swing.JPanel();
-        verifyJPanel = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
+        javax.swing.JPanel spacer8 = new javax.swing.JPanel();
+        javax.swing.JPanel verifyJPanel = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel6 = new javax.swing.JPanel();
         dirVerifyCheckBox = new javax.swing.JCheckBox();
         dirVerifyLabel = new javax.swing.JLabel();
-        informationPanel6 = new javax.swing.JPanel();
-        jTextPane7 = new javax.swing.JTextPane();
+        javax.swing.JPanel informationPanel6 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane7 = new javax.swing.JTextPane();
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -575,42 +461,42 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
         jTextPane7.setEditorKit(editorKit);
-        attributeJPanel = new javax.swing.JPanel();
-        jPanel24 = new javax.swing.JPanel();
+        javax.swing.JPanel attributeJPanel = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel24 = new javax.swing.JPanel();
         preserveDOSAttributesCheckBox = new javax.swing.JCheckBox();
         preserveDOSAttributesLabel = new javax.swing.JLabel();
-        jPanel25 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel25 = new javax.swing.JPanel();
         preserveFilePermissionsCheckBox = new javax.swing.JCheckBox();
         preserveFilePermissionsLabel = new javax.swing.JLabel();
-        jPanel26 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel26 = new javax.swing.JPanel();
         preserveFileOwnershipCheckBox = new javax.swing.JCheckBox();
         preserveFileOwnershipLabel = new javax.swing.JLabel();
-        jPanel29 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel29 = new javax.swing.JPanel();
         overrideReadOnlyCheckBox = new javax.swing.JCheckBox();
         overrideReadOnlyLabel = new javax.swing.JLabel();
-        realTimeSyncPanel = new javax.swing.JPanel();
-        dirTimestampDiffFieldPanel1 = new javax.swing.JPanel();
+        javax.swing.JPanel realTimeSyncPanel = new javax.swing.JPanel();
+        javax.swing.JPanel dirTimestampDiffFieldPanel1 = new javax.swing.JPanel();
         dirTimestampDiffLabel2 = new javax.swing.JLabel();
         realtimeSyncDelayField = new javax.swing.JTextField();
         dirTimestampDiffLabel3 = new javax.swing.JLabel();
-        jPanel85 = new javax.swing.JPanel();
-        IgnoreDaylightSavingTimeJLabel1 = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel85 = new javax.swing.JPanel();
+        javax.swing.JLabel ignoreDaylightSavingTimeJLabel1 = new javax.swing.JLabel();
         realtimeSyncCheckBox = new javax.swing.JCheckBox();
-        jPanel82 = new javax.swing.JPanel();
-        dirTimestampWriteBackLabel3 = new javax.swing.JLabel();
+        javax.swing.JPanel jPanel82 = new javax.swing.JPanel();
+        javax.swing.JLabel dirTimestampWriteBackLabel3 = new javax.swing.JLabel();
         realtimeSyncOnStartCheckBox = new javax.swing.JCheckBox();
         javax.swing.JPanel actionsTab = new javax.swing.JPanel();
-        settingsActionsPanel = new javax.swing.JPanel();
+        javax.swing.JPanel settingsActionsPanel = new javax.swing.JPanel();
         copySettingsToAllJobsLabel = new javax.swing.JLabel();
         copySettingsToAllJobsGoButton = new javax.swing.JButton();
         resetJobSettingsLabel = new javax.swing.JLabel();
         resetJobSettingsGoButton = new javax.swing.JButton();
         copySettingsToEnabledlJobsLabel = new javax.swing.JLabel();
         copySettingsToEnabledJobsGoButton = new javax.swing.JButton();
-        Spacer16 = new javax.swing.JPanel();
-        Spacer14 = new javax.swing.JPanel();
-        informationPanel7 = new javax.swing.JPanel();
-        jTextPane8 = new javax.swing.JTextPane();
+        javax.swing.JPanel spacer16 = new javax.swing.JPanel();
+        javax.swing.JPanel spacer14 = new javax.swing.JPanel();
+        javax.swing.JPanel informationPanel7 = new javax.swing.JPanel();
+        javax.swing.JTextPane jTextPane8 = new javax.swing.JTextPane();
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -618,7 +504,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
         jTextPane8.setEditorKit(editorKit);
-        settingsButtonsPanel2 = new javax.swing.JPanel();
+        javax.swing.JPanel settingsButtonsPanel2 = new javax.swing.JPanel();
         jobOKButton = new javax.swing.JButton();
         jobCancelButton = new javax.swing.JButton();
 
@@ -693,7 +579,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirDstChangeButton.setToolTipText("Browse for the destination directory.");
         dirDstChangeButton.setIconTextGap(2);
         dirDstChangeButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        dirDstChangeButton.addActionListener(evt -> dirDstChangeButtonbrowseDstActionPerformed(evt));
+        dirDstChangeButton.addActionListener(this::dirDstChangeButtonbrowseDstActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 2;
@@ -705,7 +591,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirSrcChangeButton.setToolTipText("Browse for the source directory.");
         dirSrcChangeButton.setIconTextGap(2);
         dirSrcChangeButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        dirSrcChangeButton.addActionListener(evt -> dirSrcChangeButtonbrowseSrcActionPerformed(evt));
+        dirSrcChangeButton.addActionListener(this::dirSrcChangeButtonbrowseSrcActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 1;
@@ -765,7 +651,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
 
         swapButton.setText("Swap");
         swapButton.setAlignmentX(0.5F);
-        swapButton.addActionListener(evt -> swapButtonActionPerformed(evt));
+        swapButton.addActionListener(this::swapButtonActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
@@ -781,7 +667,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        basicTab.add(Spacer2, gridBagConstraints);
+        basicTab.add(spacer2, gridBagConstraints);
 
         informationPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -817,7 +703,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         syncModeJPanel.add(label9, gridBagConstraints);
 
         syncModeComboBox.setMaximumRowCount(Const.SyncMode.values().length);
-        syncModeComboBox.addItemListener(evt -> syncModeComboBoxItemStateChanged(evt));
+        syncModeComboBox.addItemListener(this::syncModeComboBoxItemStateChanged);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
@@ -838,7 +724,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.weighty = 1.0;
-        compareTab.add(Spacer10, gridBagConstraints);
+        compareTab.add(spacer10, gridBagConstraints);
 
         informationPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel10.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -929,7 +815,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.weightx = 1.0;
-        compareaJpanel.add(Spacer27, gridBagConstraints);
+        compareaJpanel.add(spacer27, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
@@ -949,7 +835,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyAllCheckBox.setMaximumSize(null);
         dirCopyAllCheckBox.setMinimumSize(null);
         dirCopyAllCheckBox.setPreferredSize(null);
-        dirCopyAllCheckBox.addActionListener(evt -> dirCopyAllCheckBoxdirEventActionPerformed(evt));
+        dirCopyAllCheckBox.addActionListener(this::dirCopyAllCheckBoxdirEventActionPerformed);
         jPanel8.add(dirCopyAllCheckBox);
 
         dirCopyAllLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyAll.png"))); // NOI18N
@@ -964,7 +850,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyNewCheckBox.setMaximumSize(null);
         dirCopyNewCheckBox.setMinimumSize(null);
         dirCopyNewCheckBox.setPreferredSize(null);
-        dirCopyNewCheckBox.addActionListener(evt -> dirCopyNewCheckBoxdirEventActionPerformed(evt));
+        dirCopyNewCheckBox.addActionListener(this::dirCopyNewCheckBoxdirEventActionPerformed);
         jPanel9.add(dirCopyNewCheckBox);
 
         dirCopyNewLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyNew.png"))); // NOI18N
@@ -982,7 +868,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyLargerCheckBox.setMaximumSize(null);
         dirCopyLargerCheckBox.setMinimumSize(null);
         dirCopyLargerCheckBox.setPreferredSize(null);
-        dirCopyLargerCheckBox.addActionListener(evt -> dirCopyLargerCheckBoxdirEventActionPerformed(evt));
+        dirCopyLargerCheckBox.addActionListener(this::dirCopyLargerCheckBoxdirEventActionPerformed);
         jPanel10.add(dirCopyLargerCheckBox);
 
         dirCopyLargerLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyLarger.png"))); // NOI18N
@@ -1000,7 +886,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyModifiedCheckBox.setMaximumSize(null);
         dirCopyModifiedCheckBox.setMinimumSize(null);
         dirCopyModifiedCheckBox.setPreferredSize(null);
-        dirCopyModifiedCheckBox.addActionListener(evt -> dirCopyModifiedCheckBoxdirEventActionPerformed(evt));
+        dirCopyModifiedCheckBox.addActionListener(this::dirCopyModifiedCheckBoxdirEventActionPerformed);
         jPanel11.add(dirCopyModifiedCheckBox);
 
         dirCopyModifiedLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyModified.png"))); // NOI18N
@@ -1018,7 +904,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirCopyLargerModifiedCheckBox.setMaximumSize(null);
         dirCopyLargerModifiedCheckBox.setMinimumSize(null);
         dirCopyLargerModifiedCheckBox.setPreferredSize(null);
-        dirCopyLargerModifiedCheckBox.addActionListener(evt -> dirCopyLargerModifiedCheckBoxdirEventActionPerformed(evt));
+        dirCopyLargerModifiedCheckBox.addActionListener(this::dirCopyLargerModifiedCheckBoxdirEventActionPerformed);
         jPanel12.add(dirCopyLargerModifiedCheckBox);
 
         dirCopyLargerModifiedLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyLargerModified.png"))); // NOI18N
@@ -1041,7 +927,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.weighty = 1.0;
-        copyTab.add(Spacer12, gridBagConstraints);
+        copyTab.add(spacer12, gridBagConstraints);
 
         informationPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel1.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -1137,7 +1023,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.weightx = 1.0;
-        monodirectionalSyncConflictPanel.add(Spacer26, gridBagConstraints);
+        monodirectionalSyncConflictPanel.add(spacer26, gridBagConstraints);
 
         conflictResolutionJTabbedPane.addTab("Monodirectional", monodirectionalSyncConflictPanel);
 
@@ -1243,7 +1129,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.weightx = 1.0;
-        bidirectionalSyncConflictPanel.add(Spacer25, gridBagConstraints);
+        bidirectionalSyncConflictPanel.add(spacer25, gridBagConstraints);
 
         conflictResolutionJTabbedPane.addTab("Bidirectional", bidirectionalSyncConflictPanel);
 
@@ -1254,7 +1140,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.weighty = 1.0;
-        conflictResolutionTab.add(Spacer17, gridBagConstraints);
+        conflictResolutionTab.add(spacer17, gridBagConstraints);
 
         informationPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel2.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -1327,7 +1213,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         addFilterButton.setToolTipText("Add a new Job.");
         addFilterButton.setIconTextGap(2);
         addFilterButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        addFilterButton.addActionListener(evt -> addFilterButtonlistAddActionPerformed(evt));
+        addFilterButton.addActionListener(this::addFilterButtonlistAddActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -1340,7 +1226,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         editFilterButton.setToolTipText("Edit the selected Job");
         editFilterButton.setIconTextGap(2);
         editFilterButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        editFilterButton.addActionListener(evt -> editFilterButtonlistAddActionPerformed(evt));
+        editFilterButton.addActionListener(this::editFilterButtonlistAddActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -1356,7 +1242,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         removeFilterButton.setMaximumSize(null);
         removeFilterButton.setMinimumSize(null);
         removeFilterButton.setPreferredSize(null);
-        removeFilterButton.addActionListener(evt -> removeFilterButtonlistRemoveActionPerformed(evt));
+        removeFilterButton.addActionListener(this::removeFilterButtonlistRemoveActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
@@ -1378,7 +1264,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         filtersExpandAllButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         filtersExpandAllButton.setMaximumSize(null);
         filtersExpandAllButton.setPreferredSize(new java.awt.Dimension(70, 17));
-        filtersExpandAllButton.addActionListener(evt -> filtersExpandAllButtonenableAllDirsActionPerformed(evt));
+        filtersExpandAllButton.addActionListener(this::filtersExpandAllButtonenableAllDirsActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 0;
@@ -1394,7 +1280,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         filtersCollapseAllButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         filtersCollapseAllButton.setMaximumSize(null);
         filtersCollapseAllButton.setPreferredSize(new java.awt.Dimension(70, 17));
-        filtersCollapseAllButton.addActionListener(evt -> filtersCollapseAllButtondisableAllDirsActionPerformed(evt));
+        filtersCollapseAllButton.addActionListener(this::filtersCollapseAllButtondisableAllDirsActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 9;
         gridBagConstraints.gridy = 0;
@@ -1525,7 +1411,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.weightx = 1.0;
-        dirDeleteOptionsPanel.add(Spacer7, gridBagConstraints);
+        dirDeleteOptionsPanel.add(spacer7, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1537,7 +1423,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.weighty = 1.0;
-        deletionTab.add(Spacer6, gridBagConstraints);
+        deletionTab.add(spacer6, gridBagConstraints);
 
         informationPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel4.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -1647,7 +1533,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirBackupDirChangeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/browse.png"))); // NOI18N
         dirBackupDirChangeButton.setIconTextGap(2);
         dirBackupDirChangeButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        dirBackupDirChangeButton.addActionListener(evt -> dirBackupDirChangeButtonbrowseSrcActionPerformed(evt));
+        dirBackupDirChangeButton.addActionListener(this::dirBackupDirChangeButtonbrowseSrcActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 2;
@@ -1665,7 +1551,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        backupTab.add(Spacer4, gridBagConstraints);
+        backupTab.add(spacer4, gridBagConstraints);
 
         informationPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel5.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -1696,7 +1582,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        logTab.add(Spacer5, gridBagConstraints);
+        logTab.add(spacer5, gridBagConstraints);
 
         informationPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel8.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -1751,7 +1637,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirLogBrowseButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/browse.png"))); // NOI18N
         dirLogBrowseButton.setIconTextGap(2);
         dirLogBrowseButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        dirLogBrowseButton.addActionListener(evt -> dirLogBrowseButtonbrowseSrcActionPerformed(evt));
+        dirLogBrowseButton.addActionListener(this::dirLogBrowseButtonbrowseSrcActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 1;
@@ -1765,7 +1651,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         dirEnableLoggingCheckBox.setMaximumSize(null);
         dirEnableLoggingCheckBox.setMinimumSize(null);
         dirEnableLoggingCheckBox.setPreferredSize(null);
-        dirEnableLoggingCheckBox.addActionListener(evt -> dirEnableLoggingCheckBoxdirEventActionPerformed(evt));
+        dirEnableLoggingCheckBox.addActionListener(this::dirEnableLoggingCheckBoxdirEventActionPerformed);
         jPanel73.add(dirEnableLoggingCheckBox);
 
         dirEnableLoggingJLabel.setText("Enable logging.");
@@ -1836,7 +1722,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         addScheduleButton.setToolTipText("Add a new Job.");
         addScheduleButton.setIconTextGap(2);
         addScheduleButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        addScheduleButton.addActionListener(evt -> addScheduleButtonlistAddActionPerformed(evt));
+        addScheduleButton.addActionListener(this::addScheduleButtonlistAddActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -1849,7 +1735,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         editScheduleButton.setToolTipText("Edit the selected Job");
         editScheduleButton.setIconTextGap(2);
         editScheduleButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        editScheduleButton.addActionListener(evt -> editScheduleButtonlistAddActionPerformed(evt));
+        editScheduleButton.addActionListener(this::editScheduleButtonlistAddActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -1865,7 +1751,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         removeScheduleButton.setMaximumSize(null);
         removeScheduleButton.setMinimumSize(null);
         removeScheduleButton.setPreferredSize(null);
-        removeScheduleButton.addActionListener(evt -> removeScheduleButtonlistRemoveActionPerformed(evt));
+        removeScheduleButton.addActionListener(this::removeScheduleButtonlistRemoveActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
@@ -1887,7 +1773,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         scheduleExpandAllButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         scheduleExpandAllButton.setMaximumSize(null);
         scheduleExpandAllButton.setPreferredSize(new java.awt.Dimension(70, 17));
-        scheduleExpandAllButton.addActionListener(evt -> scheduleExpandAllButtonenableAllDirsActionPerformed(evt));
+        scheduleExpandAllButton.addActionListener(this::scheduleExpandAllButtonenableAllDirsActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 0;
@@ -1903,7 +1789,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         scheduleCollapseAllButton.setMargin(new java.awt.Insets(2, 2, 2, 2));
         scheduleCollapseAllButton.setMaximumSize(null);
         scheduleCollapseAllButton.setPreferredSize(new java.awt.Dimension(70, 17));
-        scheduleCollapseAllButton.addActionListener(evt -> scheduleCollapseAllButtondisableAllDirsActionPerformed(evt));
+        scheduleCollapseAllButton.addActionListener(this::scheduleCollapseAllButtondisableAllDirsActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 9;
         gridBagConstraints.gridy = 0;
@@ -2003,12 +1889,12 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
 
         jPanel84.setLayout(new java.awt.GridBagLayout());
 
-        IgnoreDaylightSavingTimeJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/timestamp.png"))); // NOI18N
-        IgnoreDaylightSavingTimeJLabel.setText("Ignore daylight saving granularity.");
+        ignoreDaylightSavingTimeJLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/timestamp.png"))); // NOI18N
+        ignoreDaylightSavingTimeJLabel.setText("Ignore daylight saving granularity.");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        jPanel84.add(IgnoreDaylightSavingTimeJLabel, gridBagConstraints);
+        jPanel84.add(ignoreDaylightSavingTimeJLabel, gridBagConstraints);
 
         ignoreDaylightSavingTimeCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         ignoreDaylightSavingTimeCheckBox.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -2113,7 +1999,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.weighty = 1.0;
-        advancedTab.add(Spacer8, gridBagConstraints);
+        advancedTab.add(spacer8, gridBagConstraints);
 
         verifyJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Verify"));
         verifyJPanel.setLayout(new java.awt.GridBagLayout());
@@ -2301,16 +2187,16 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
 
         jPanel85.setLayout(new java.awt.GridBagLayout());
 
-        IgnoreDaylightSavingTimeJLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/start.png"))); // NOI18N
-        IgnoreDaylightSavingTimeJLabel1.setText("Enable realtime synchronization");
+        ignoreDaylightSavingTimeJLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/start.png"))); // NOI18N
+        ignoreDaylightSavingTimeJLabel1.setText("Enable realtime synchronization");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        jPanel85.add(IgnoreDaylightSavingTimeJLabel1, gridBagConstraints);
+        jPanel85.add(ignoreDaylightSavingTimeJLabel1, gridBagConstraints);
 
         realtimeSyncCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         realtimeSyncCheckBox.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        realtimeSyncCheckBox.addActionListener(evt -> realtimeSyncCheckBoxActionPerformed(evt));
+        realtimeSyncCheckBox.addActionListener(this::realtimeSyncCheckBoxActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -2372,7 +2258,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         copySettingsToAllJobsGoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/apply.png"))); // NOI18N
         copySettingsToAllJobsGoButton.setText("Go");
         copySettingsToAllJobsGoButton.setAlignmentX(0.5F);
-        copySettingsToAllJobsGoButton.addActionListener(evt -> copySettingsToAllJobsGoButtonActionPerformed(evt));
+        copySettingsToAllJobsGoButton.addActionListener(this::copySettingsToAllJobsGoButtonActionPerformed);
         settingsActionsPanel.add(copySettingsToAllJobsGoButton, new java.awt.GridBagConstraints());
 
         resetJobSettingsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirRemove.png"))); // NOI18N
@@ -2386,7 +2272,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         resetJobSettingsGoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/apply.png"))); // NOI18N
         resetJobSettingsGoButton.setText("Go");
         resetJobSettingsGoButton.setAlignmentX(0.5F);
-        resetJobSettingsGoButton.addActionListener(evt -> resetJobSettingsGoButtonActionPerformed(evt));
+        resetJobSettingsGoButton.addActionListener(this::resetJobSettingsGoButtonActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -2403,7 +2289,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         copySettingsToEnabledJobsGoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/apply.png"))); // NOI18N
         copySettingsToEnabledJobsGoButton.setText("Go");
         copySettingsToEnabledJobsGoButton.setAlignmentX(0.5F);
-        copySettingsToEnabledJobsGoButton.addActionListener(evt -> copySettingsToEnabledJobsGoButtonActionPerformed(evt));
+        copySettingsToEnabledJobsGoButton.addActionListener(this::copySettingsToEnabledJobsGoButtonActionPerformed);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -2414,7 +2300,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridheight = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        settingsActionsPanel.add(Spacer16, gridBagConstraints);
+        settingsActionsPanel.add(spacer16, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -2426,7 +2312,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.weighty = 1.0;
-        actionsTab.add(Spacer14, gridBagConstraints);
+        actionsTab.add(spacer14, gridBagConstraints);
 
         informationPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
         informationPanel7.setPreferredSize(new java.awt.Dimension(298, 180));
@@ -2466,7 +2352,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         jobOKButton.setMaximumSize(null);
         jobOKButton.setMinimumSize(null);
         jobOKButton.setPreferredSize(null);
-        jobOKButton.addActionListener(evt -> jobOKButtonActionPerformed(evt));
+        jobOKButton.addActionListener(this::jobOKButtonActionPerformed);
         settingsButtonsPanel2.add(jobOKButton);
 
         jobCancelButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cancel.png"))); // NOI18N
@@ -2475,7 +2361,7 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         jobCancelButton.setMaximumSize(null);
         jobCancelButton.setMinimumSize(null);
         jobCancelButton.setPreferredSize(null);
-        jobCancelButton.addActionListener(evt -> jobCancelButtoncancelActionPerformed(evt));
+        jobCancelButton.addActionListener(this::jobCancelButtoncancelActionPerformed);
         settingsButtonsPanel2.add(jobCancelButton);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -2484,123 +2370,123 @@ public abstract class JobDialogObjects extends javax.swing.JDialog {
         getContentPane().add(settingsButtonsPanel2, gridBagConstraints);
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>
 
-    private void dirLogBrowseButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirLogBrowseButtonbrowseSrcActionPerformed
+    private void dirLogBrowseButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {
         browseLog();
-    }//GEN-LAST:event_dirLogBrowseButtonbrowseSrcActionPerformed
+    }
 
-    private void dirDstChangeButtonbrowseDstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirDstChangeButtonbrowseDstActionPerformed
+    private void dirDstChangeButtonbrowseDstActionPerformed(java.awt.event.ActionEvent evt) {
         GuiTools.browseFolder(this, dirDstField);
-    }//GEN-LAST:event_dirDstChangeButtonbrowseDstActionPerformed
+    }
 
-    private void dirCopyLargerCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirCopyLargerCheckBoxdirEventActionPerformed
+    private void dirCopyLargerCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {
         verifyCopyOptionsInGUI();
-    }//GEN-LAST:event_dirCopyLargerCheckBoxdirEventActionPerformed
+    }
 
-    private void dirCopyModifiedCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirCopyModifiedCheckBoxdirEventActionPerformed
+    private void dirCopyModifiedCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {
         verifyCopyOptionsInGUI();
-    }//GEN-LAST:event_dirCopyModifiedCheckBoxdirEventActionPerformed
+    }
 
-    private void dirCopyLargerModifiedCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirCopyLargerModifiedCheckBoxdirEventActionPerformed
+    private void dirCopyLargerModifiedCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {
         verifyCopyOptionsInGUI();
-    }//GEN-LAST:event_dirCopyLargerModifiedCheckBoxdirEventActionPerformed
+    }
 
-    private void dirSrcChangeButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirSrcChangeButtonbrowseSrcActionPerformed
+    private void dirSrcChangeButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {
         GuiTools.browseFolder(this, dirSrcField);
-    }//GEN-LAST:event_dirSrcChangeButtonbrowseSrcActionPerformed
+    }
 
-    private void dirBackupDirChangeButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirBackupDirChangeButtonbrowseSrcActionPerformed
+    private void dirBackupDirChangeButtonbrowseSrcActionPerformed(java.awt.event.ActionEvent evt) {
         GuiTools.browseFolder(this, dirBackupDirField);
-    }//GEN-LAST:event_dirBackupDirChangeButtonbrowseSrcActionPerformed
+    }
 
-    private void dirEnableLoggingCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirEnableLoggingCheckBoxdirEventActionPerformed
+    private void dirEnableLoggingCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {
         jobEnableLoggingCheckBoxClicked();
-    }//GEN-LAST:event_dirEnableLoggingCheckBoxdirEventActionPerformed
+    }
 
-    private void jobOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobOKButtonActionPerformed
+    private void jobOKButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // If no focus -> a fields has blocked applying settings
         if (jobOKButton.hasFocus()) {
             applyJobSettings();
             this.setVisible(false);
         }
-    }//GEN-LAST:event_jobOKButtonActionPerformed
+    }
 
-    private void jobCancelButtoncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobCancelButtoncancelActionPerformed
+    private void jobCancelButtoncancelActionPerformed(java.awt.event.ActionEvent evt) {
         this.setVisible(false);
-    }//GEN-LAST:event_jobCancelButtoncancelActionPerformed
+    }
 
-    private void dirCopyNewCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirCopyNewCheckBoxdirEventActionPerformed
+    private void dirCopyNewCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {
         verifyCopyOptionsInGUI();
-    }//GEN-LAST:event_dirCopyNewCheckBoxdirEventActionPerformed
+    }
 
-    private void dirCopyAllCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirCopyAllCheckBoxdirEventActionPerformed
+    private void dirCopyAllCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {
         verifyCopyOptionsInGUI();
-    }//GEN-LAST:event_dirCopyAllCheckBoxdirEventActionPerformed
+    }
 
-    private void copySettingsToAllJobsGoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copySettingsToAllJobsGoButtonActionPerformed
+    private void copySettingsToAllJobsGoButtonActionPerformed(java.awt.event.ActionEvent evt) {
         copyOptionsToAllJobs();
-    }//GEN-LAST:event_copySettingsToAllJobsGoButtonActionPerformed
+    }
 
-    private void resetJobSettingsGoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetJobSettingsGoButtonActionPerformed
+    private void resetJobSettingsGoButtonActionPerformed(java.awt.event.ActionEvent evt) {
         resetJobSettings();
-    }//GEN-LAST:event_resetJobSettingsGoButtonActionPerformed
+    }
 
-    private void copySettingsToEnabledJobsGoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copySettingsToEnabledJobsGoButtonActionPerformed
+    private void copySettingsToEnabledJobsGoButtonActionPerformed(java.awt.event.ActionEvent evt) {
         copyOptionsToEnabledJobs();
-    }//GEN-LAST:event_copySettingsToEnabledJobsGoButtonActionPerformed
+    }
 
-    private void filtersCollapseAllButtondisableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersCollapseAllButtondisableAllDirsActionPerformed
+    private void filtersCollapseAllButtondisableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {
         GuiTools.collapseAll(filtersTree);
-    }//GEN-LAST:event_filtersCollapseAllButtondisableAllDirsActionPerformed
+    }
 
-    private void filtersExpandAllButtonenableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filtersExpandAllButtonenableAllDirsActionPerformed
+    private void filtersExpandAllButtonenableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {
         GuiTools.expandAll(filtersTree);
-    }//GEN-LAST:event_filtersExpandAllButtonenableAllDirsActionPerformed
+    }
 
-    private void removeFilterButtonlistRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFilterButtonlistRemoveActionPerformed
+    private void removeFilterButtonlistRemoveActionPerformed(java.awt.event.ActionEvent evt) {
         removeFilter();
-    }//GEN-LAST:event_removeFilterButtonlistRemoveActionPerformed
+    }
 
-    private void editFilterButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editFilterButtonlistAddActionPerformed
+    private void editFilterButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {
         openEditFilterDialog();
-    }//GEN-LAST:event_editFilterButtonlistAddActionPerformed
+    }
 
-    private void addFilterButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFilterButtonlistAddActionPerformed
+    private void addFilterButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {
         openAddFilterDialog();
-    }//GEN-LAST:event_addFilterButtonlistAddActionPerformed
+    }
 
-    private void addScheduleButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addScheduleButtonlistAddActionPerformed
+    private void addScheduleButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {
         openAddScheduleDialog();
-    }//GEN-LAST:event_addScheduleButtonlistAddActionPerformed
+    }
 
-    private void editScheduleButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editScheduleButtonlistAddActionPerformed
+    private void editScheduleButtonlistAddActionPerformed(java.awt.event.ActionEvent evt) {
         openEditScheduleDialog();
-    }//GEN-LAST:event_editScheduleButtonlistAddActionPerformed
+    }
 
-    private void removeScheduleButtonlistRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeScheduleButtonlistRemoveActionPerformed
+    private void removeScheduleButtonlistRemoveActionPerformed(java.awt.event.ActionEvent evt) {
         removeSchedule();
-    }//GEN-LAST:event_removeScheduleButtonlistRemoveActionPerformed
+    }
 
-    private void scheduleExpandAllButtonenableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleExpandAllButtonenableAllDirsActionPerformed
+    private void scheduleExpandAllButtonenableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {
         GuiTools.expandOneLevel(scheduleTree);
-    }//GEN-LAST:event_scheduleExpandAllButtonenableAllDirsActionPerformed
+    }
 
-    private void scheduleCollapseAllButtondisableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleCollapseAllButtondisableAllDirsActionPerformed
+    private void scheduleCollapseAllButtondisableAllDirsActionPerformed(java.awt.event.ActionEvent evt) {
         GuiTools.collapseAll(scheduleTree);
-    }//GEN-LAST:event_scheduleCollapseAllButtondisableAllDirsActionPerformed
+    }
 
-    private void swapButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_swapButtonActionPerformed
+    private void swapButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String s = dirSrcField.getText();
         dirSrcField.setText(dirDstField.getText());
         dirDstField.setText(s);
     }
 
-    private void realtimeSyncCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_realtimeSyncCheckBoxActionPerformed
+    private void realtimeSyncCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {
         adjustRealtimeSyncOptions();
     }
 
-    private void syncModeComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_syncModeComboBoxItemStateChanged
+    private void syncModeComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             syncModeComboBoxClicked();
         }

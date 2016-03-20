@@ -30,6 +30,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.io.File;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  * Contains methods to manipulate arrays
@@ -84,11 +85,10 @@ public class GuiTools {
     }
 
     private static void browseFileAndFolder(JDialog parent, JTextField jtf, int mode) {
-        try {
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setFileSelectionMode(mode);
 
-            if (!jtf.getText().equals("")) {
+            if (!jtf.getText().isEmpty()) {
                 fileChooser.setCurrentDirectory(new File(jtf.getText()));
             }
 
@@ -101,10 +101,6 @@ public class GuiTools {
             if (fileChooser.showOpenDialog(parent) == javax.swing.JFileChooser.APPROVE_OPTION) {
                 jtf.setText(fileChooser.getSelectedFile().getPath());
             }
-
-        } catch (Exception e) {
-            throw new Error(e);
-        }
     }
 
     public static EditorKit getDefaultEditorKit() {
@@ -119,7 +115,7 @@ public class GuiTools {
             } else {
                 UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
             }
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
         }
     }
 

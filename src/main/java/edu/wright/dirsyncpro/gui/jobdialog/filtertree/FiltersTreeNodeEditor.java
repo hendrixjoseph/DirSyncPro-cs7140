@@ -27,18 +27,16 @@ import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterByFilePermiss
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterByFileSize;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterByPath;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterByPattern;
-
+import java.awt.Component;
+import java.awt.event.ItemListener;
+import java.awt.event.MouseEvent;
+import java.util.EventObject;
 import javax.swing.AbstractCellEditor;
 import javax.swing.JCheckBox;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeCellEditor;
 import javax.swing.tree.TreePath;
-import java.awt.Component;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.MouseEvent;
-import java.util.EventObject;
 
 public class FiltersTreeNodeEditor extends AbstractCellEditor implements TreeCellEditor {
 

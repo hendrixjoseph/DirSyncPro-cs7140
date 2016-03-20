@@ -40,13 +40,6 @@ import edu.wright.dirsyncpro.gui.swing.MyJTabbedPane;
 import edu.wright.dirsyncpro.job.Job;
 import edu.wright.dirsyncpro.tools.FileTools;
 import edu.wright.dirsyncpro.tools.GuiTools;
-
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
-import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
@@ -58,6 +51,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
  * Contains the GUI methods.
@@ -121,9 +120,6 @@ public class JobDialog extends JobDialogObjects {
                     }
                 } catch (UnsupportedFlavorException | IOException ex) {
                     DirSyncPro.getSync().getLog().printMinimal("Drag and Drop failed! " + ex.getMessage(), IconKey.Error);
-                } catch (Exception ex) {
-                    DirSyncPro.getSync().getLog().printMinimal("Drag and Drop failed! " + ex.getMessage(), IconKey.Error);
-                    System.out.println(ex.getMessage());
                 } finally {
                     dtde.dropComplete(true);
                 }
@@ -433,7 +429,8 @@ public class JobDialog extends JobDialogObjects {
     }
 
     /**
-     * enables/disables the Edit and Remove buttons for the edit schedules dialog
+     * enables/disables the Edit and Remove buttons for the edit schedules
+     * dialog
      *
      * @param enabled
      */
@@ -600,13 +597,6 @@ public class JobDialog extends JobDialogObjects {
     }
 
     public void arrangeJobDialogTabs() {
-        /**
-         * Dir in/excl	!SAD File in/excl	!SAD Log	!SAD Subs	!SAD Verify	!SAD
-         * Sync opts	!SAD && !BI Deletes	!SAD && !BI Backups	!SAD && !BI Backup
-         * Dir	!SAD && !BI && !Inline Conflicts	!SAD && BI
-         */
-
-        boolean enabled;
 
         if (syncModeComboBox.getSelectedItem() == Const.SyncMode.ABMirror || syncModeComboBox.getSelectedItem() == Const.SyncMode.BAMirror) {
             enableCopyOptions(false, false);
@@ -744,42 +734,37 @@ public class JobDialog extends JobDialogObjects {
 
     @Override
     protected void browseLog() {
-        try {
-            JFileChooser fileChooser = new JFileChooser();
+        JFileChooser fileChooser = new JFileChooser();
 
-            fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
-            if (!dirLogField.getText().isEmpty()) {
-                File logFile = new File(dirLogField.getText());
-                fileChooser.setCurrentDirectory(logFile);
-                if (logFile.isFile()) {
-                    fileChooser.setSelectedFile(logFile);
-                }
-            } else {
-                Job job = DirSyncPro.getGui().getSelectedJob();
-                File logFile = new File(DirSyncPro.getLogsPath(true) + FileTools.replaceIllegalCharactersInFileName(job.getName()) + "." + Const.LOG_FILE_EXTENSION);
+        if (!dirLogField.getText().isEmpty()) {
+            File logFile = new File(dirLogField.getText());
+            fileChooser.setCurrentDirectory(logFile);
+            if (logFile.isFile()) {
                 fileChooser.setSelectedFile(logFile);
-                fileChooser.setCurrentDirectory(new File(DirSyncPro.getLogsPath(false)));
             }
+        } else {
+            Job job = DirSyncPro.getGui().getSelectedJob();
+            File logFile = new File(DirSyncPro.getLogsPath(true) + FileTools.replaceIllegalCharactersInFileName(job.getName()) + "." + Const.LOG_FILE_EXTENSION);
+            fileChooser.setSelectedFile(logFile);
+            fileChooser.setCurrentDirectory(new File(DirSyncPro.getLogsPath(false)));
+        }
 
-            if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+        if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 
-                File file = fileChooser.getSelectedFile();
-                String filename = file.getPath();
+            File file = fileChooser.getSelectedFile();
+            String filename = file.getPath();
 
-                // if only a path was selected suggest a filename
-                if (file.isDirectory()) {
-                    if (!filename.endsWith(File.separator)) {
-                        filename += File.separator;
-                    }
-                    filename += dirNameField.getText() + ".log";
+            // if only a path was selected suggest a filename
+            if (file.isDirectory()) {
+                if (!filename.endsWith(File.separator)) {
+                    filename += File.separator;
                 }
-
-                dirLogField.setText(filename);
+                filename += dirNameField.getText() + ".log";
             }
 
-        } catch (Exception e) {
-            throw new Error(e);
+            dirLogField.setText(filename);
         }
     }
 

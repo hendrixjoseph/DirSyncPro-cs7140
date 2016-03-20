@@ -173,12 +173,9 @@ public class ScheduleEngine {
             if (d != null) {
                 Date now = new Date();
                 now.setTime(now.getTime() + delay);
-                //d.setTime(d.getTime() + delay);
                 if (now.getTime() > d.getTime()) {
                     realtimeSchedule.put(j, now);
-                    //System.out.println("Already scheduled for " + d + ". Extending to " + now);
-                } else
-                    ;//System.out.println("Previously scheduled for " + d + " is later than " + now);
+                }
                 return;
             }
 

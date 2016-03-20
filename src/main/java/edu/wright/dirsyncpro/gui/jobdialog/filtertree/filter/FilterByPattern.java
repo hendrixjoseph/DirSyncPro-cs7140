@@ -20,7 +20,6 @@ package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.job.Job;
-
 import java.io.File;
 import java.nio.file.Path;
 import java.util.regex.Pattern;
@@ -90,6 +89,7 @@ public class FilterByPattern extends Filter {
         this.patternType = type;
     }
 
+    @Override
     public String toString() {
         String s = "";
         if (this.patternType == FilterPatternType.File) {

@@ -20,11 +20,10 @@ package edu.wright.dirsyncpro.gui.jobdialog.scheduletree.schedule;
 
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.job.Job;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 public class Schedule implements Comparable<Schedule> {
 
@@ -107,6 +106,7 @@ public class Schedule implements Comparable<Schedule> {
         return (timeFrameTo.compareTo(Const.NonDate) != 0);
     }
 
+    @Override
     public String toString() {
         String str = "";
         if (timeFrameFrom.compareTo(Const.NonDate) != 0) {

@@ -19,7 +19,6 @@
 package edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter;
 
 import edu.wright.dirsyncpro.job.Job;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
