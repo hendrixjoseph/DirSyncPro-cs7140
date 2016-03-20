@@ -20,7 +20,6 @@ package edu.wright.dirsyncpro.sync;
 import edu.wright.dirsyncpro.Const.CopyMode;
 import edu.wright.dirsyncpro.Const.SymLinkMode;
 import edu.wright.dirsyncpro.Const.SyncPairStatus;
-import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterSet;
 
 import java.nio.file.Files;

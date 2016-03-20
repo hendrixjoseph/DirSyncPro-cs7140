@@ -25,7 +25,6 @@ package edu.wright.dirsyncpro.gui.shutdowndialog;
 import edu.wright.dirsyncpro.DirSyncPro;
 import edu.wright.dirsyncpro.tools.GuiTools;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 /**

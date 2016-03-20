@@ -710,12 +710,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         mainPanel.setLayout(new java.awt.GridBagLayout());
 
         tabbedPane.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
-        tabbedPane.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabbedPaneMouseClicked(evt);
-            }
-        });
 
         jobsJPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jobsJPanel.setLayout(new java.awt.GridBagLayout());
@@ -1334,12 +1328,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jPanel53.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 0, 0));
 
         syncQViewFilterNewFilesCheckBox.setToolTipText("Synchronize all files and dirs.");
-        syncQViewFilterNewFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQViewFilterNewFilesCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel53.add(syncQViewFilterNewFilesCheckBox);
 
         syncQViewFilterNewFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyNew.png"))); // NOI18N
@@ -1359,12 +1347,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterLargerFilesCheckBox.setMaximumSize(null);
         syncQViewFilterLargerFilesCheckBox.setMinimumSize(null);
         syncQViewFilterLargerFilesCheckBox.setPreferredSize(null);
-        syncQViewFilterLargerFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQViewFilterLargerFilesCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel55.add(syncQViewFilterLargerFilesCheckBox);
 
         syncQViewFilterLargerFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyLarger.png"))); // NOI18N
@@ -1384,12 +1366,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterDeletedFilesCheckBox.setMaximumSize(null);
         syncQViewFilterDeletedFilesCheckBox.setMinimumSize(null);
         syncQViewFilterDeletedFilesCheckBox.setPreferredSize(null);
-        syncQViewFilterDeletedFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQViewFilterDeletedFilesCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel57.add(syncQViewFilterDeletedFilesCheckBox);
 
         syncQViewFilterDeletedFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/deleteFile.png"))); // NOI18N
@@ -1409,12 +1385,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterModifiedFilesCheckBox.setMaximumSize(null);
         syncQViewFilterModifiedFilesCheckBox.setMinimumSize(null);
         syncQViewFilterModifiedFilesCheckBox.setPreferredSize(null);
-        syncQViewFilterModifiedFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQViewFilterModifiedFilesCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel54.add(syncQViewFilterModifiedFilesCheckBox);
 
         syncQViewFilterModifiedFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyModified.png"))); // NOI18N
@@ -1434,12 +1404,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterLargerAndModifiedFilesCheckBox.setMaximumSize(null);
         syncQViewFilterLargerAndModifiedFilesCheckBox.setMinimumSize(null);
         syncQViewFilterLargerAndModifiedFilesCheckBox.setPreferredSize(null);
-        syncQViewFilterLargerAndModifiedFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQViewFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel56.add(syncQViewFilterLargerAndModifiedFilesCheckBox);
 
         syncQViewFilterLargerAndModifiedFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyLargerModified.png"))); // NOI18N
@@ -1459,12 +1423,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterDeletedDirsCheckBox.setMaximumSize(null);
         syncQViewFilterDeletedDirsCheckBox.setMinimumSize(null);
         syncQViewFilterDeletedDirsCheckBox.setPreferredSize(null);
-        syncQViewFilterDeletedDirsCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQViewFilterDeletedDirsCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel71.add(syncQViewFilterDeletedDirsCheckBox);
 
         syncQViewFilterDeletedDirsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/deleteDir.png"))); // NOI18N
@@ -1484,12 +1442,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterConflictFilesCheckBox.setMaximumSize(null);
         syncQViewFilterConflictFilesCheckBox.setMinimumSize(null);
         syncQViewFilterConflictFilesCheckBox.setPreferredSize(null);
-        syncQViewFilterConflictFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQViewFilterConflictFilesCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel68.add(syncQViewFilterConflictFilesCheckBox);
 
         syncQViewFilterConflictFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/conflict_icon.png"))); // NOI18N
@@ -1563,12 +1515,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jPanel60.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 0, 0));
 
         syncQSyncFilterNewFilesCheckBox.setToolTipText("Synchronize all files and dirs.");
-        syncQSyncFilterNewFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQSyncFilterNewFilesCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel60.add(syncQSyncFilterNewFilesCheckBox);
 
         syncQSyncFilterNewFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyNew.png"))); // NOI18N
@@ -1586,12 +1532,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterLargerFilesCheckBox.setMaximumSize(null);
         syncQSyncFilterLargerFilesCheckBox.setMinimumSize(null);
         syncQSyncFilterLargerFilesCheckBox.setPreferredSize(null);
-        syncQSyncFilterLargerFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQSyncFilterLargerFilesCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel61.add(syncQSyncFilterLargerFilesCheckBox);
 
         syncQSyncFilterLargerFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyLarger.png"))); // NOI18N
@@ -1611,12 +1551,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterDeletedFilesCheckBox.setMaximumSize(null);
         syncQSyncFilterDeletedFilesCheckBox.setMinimumSize(null);
         syncQSyncFilterDeletedFilesCheckBox.setPreferredSize(null);
-        syncQSyncFilterDeletedFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQSyncFilterDeletedFilesCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel64.add(syncQSyncFilterDeletedFilesCheckBox);
 
         syncQSyncFilterDeletedFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/deleteFile.png"))); // NOI18N
@@ -1636,12 +1570,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterModifiedFilesCheckBox.setMaximumSize(null);
         syncQSyncFilterModifiedFilesCheckBox.setMinimumSize(null);
         syncQSyncFilterModifiedFilesCheckBox.setPreferredSize(null);
-        syncQSyncFilterModifiedFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQSyncFilterModifiedFilesCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel62.add(syncQSyncFilterModifiedFilesCheckBox);
 
         syncQSyncFilterModifiedFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyModified.png"))); // NOI18N
@@ -1661,12 +1589,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterLargerAndModifiedFilesCheckBox.setMaximumSize(null);
         syncQSyncFilterLargerAndModifiedFilesCheckBox.setMinimumSize(null);
         syncQSyncFilterLargerAndModifiedFilesCheckBox.setPreferredSize(null);
-        syncQSyncFilterLargerAndModifiedFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQSyncFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel63.add(syncQSyncFilterLargerAndModifiedFilesCheckBox);
 
         syncQSyncFilterLargerAndModifiedFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyLargerModified.png"))); // NOI18N
@@ -1686,12 +1608,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterDeletedDirsCheckBox.setMaximumSize(null);
         syncQSyncFilterDeletedDirsCheckBox.setMinimumSize(null);
         syncQSyncFilterDeletedDirsCheckBox.setPreferredSize(null);
-        syncQSyncFilterDeletedDirsCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQSyncFilterDeletedDirsCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel72.add(syncQSyncFilterDeletedDirsCheckBox);
 
         syncQSyncFilterDeletedDirsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/deleteDir.png"))); // NOI18N
@@ -1711,12 +1627,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterConflictFilesCheckBox.setMaximumSize(null);
         syncQSyncFilterConflictFilesCheckBox.setMinimumSize(null);
         syncQSyncFilterConflictFilesCheckBox.setPreferredSize(null);
-        syncQSyncFilterConflictFilesCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                syncQSyncFilterConflictFilesCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel73.add(syncQSyncFilterConflictFilesCheckBox);
 
         syncQSyncFilterConflictFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/conflict_icon.png"))); // NOI18N
@@ -1930,12 +1840,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         jPanel66.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 0, 0));
 
         messagesViewFilterInfosCheckBox.setToolTipText("Synchronize all files and dirs.");
-        messagesViewFilterInfosCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                messagesViewFilterInfosCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel66.add(messagesViewFilterInfosCheckBox);
 
         messagesViewFilterInfosLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_info.png"))); // NOI18N
@@ -1953,12 +1857,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterErrorsCheckBox.setMaximumSize(null);
         messagesViewFilterErrorsCheckBox.setMinimumSize(null);
         messagesViewFilterErrorsCheckBox.setPreferredSize(null);
-        messagesViewFilterErrorsCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                messagesViewFilterErrorsCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel67.add(messagesViewFilterErrorsCheckBox);
 
         messagesViewFilterErrorsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_error.png"))); // NOI18N
@@ -1977,12 +1875,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterWarningsCheckBox.setMaximumSize(null);
         messagesViewFilterWarningsCheckBox.setMinimumSize(null);
         messagesViewFilterWarningsCheckBox.setPreferredSize(null);
-        messagesViewFilterWarningsCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                messagesViewFilterWarningsCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel69.add(messagesViewFilterWarningsCheckBox);
 
         messagesViewFilterWarningsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_warning.png"))); // NOI18N
@@ -2001,12 +1893,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterFileOperationsCheckBox.setMaximumSize(null);
         messagesViewFilterFileOperationsCheckBox.setMinimumSize(null);
         messagesViewFilterFileOperationsCheckBox.setPreferredSize(null);
-        messagesViewFilterFileOperationsCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                messagesViewFilterFileOperationsCheckBoxdirEventActionPerformed(evt);
-            }
-        });
         jPanel70.add(messagesViewFilterFileOperationsCheckBox);
 
         messagesViewFilterFileOperationsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyLinks.png"))); // NOI18N
@@ -2530,10 +2416,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         disableAllDirs();
     }//GEN-LAST:event_jobDisableAllButtondisableAllDirsActionPerformed
 
-    private void tabbedPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabbedPaneMouseClicked
-        //dirEvent();
-    }//GEN-LAST:event_tabbedPaneMouseClicked
-
     private void saveAsButtonsaveConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsButtonsaveConfigActionPerformed
         saveAsConfig();
     }//GEN-LAST:event_saveAsButtonsaveConfigActionPerformed
@@ -2562,47 +2444,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterChanged(false);
     }//GEN-LAST:event_syncQViewFilterOKButtonActionPerformed
 
-    private void syncQViewFilterDeletedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterDeletedFilesCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_syncQViewFilterDeletedFilesCheckBoxdirEventActionPerformed
-
-    private void syncQViewFilterLargerFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterLargerFilesCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_syncQViewFilterLargerFilesCheckBoxdirEventActionPerformed
-
-    private void syncQViewFilterModifiedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterModifiedFilesCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_syncQViewFilterModifiedFilesCheckBoxdirEventActionPerformed
-
-    private void syncQViewFilterNewFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterNewFilesCheckBoxdirEventActionPerformed
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_syncQViewFilterNewFilesCheckBoxdirEventActionPerformed
-
-    private void syncQViewFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_syncQViewFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed
-
-    private void syncQSyncFilterNewFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterNewFilesCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_syncQSyncFilterNewFilesCheckBoxdirEventActionPerformed
-
-    private void syncQSyncFilterLargerFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterLargerFilesCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_syncQSyncFilterLargerFilesCheckBoxdirEventActionPerformed
-
-    private void syncQSyncFilterModifiedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterModifiedFilesCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_syncQSyncFilterModifiedFilesCheckBoxdirEventActionPerformed
-
-    private void syncQSyncFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_syncQSyncFilterLargerAndModifiedFilesCheckBoxdirEventActionPerformed
-
-    private void syncQSyncFilterDeletedFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterDeletedFilesCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_syncQSyncFilterDeletedFilesCheckBoxdirEventActionPerformed
-
     private void syncQSyncFilterResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterResetButtonActionPerformed
         syncQSyncFilterChanged(true);
     }//GEN-LAST:event_syncQSyncFilterResetButtonActionPerformed
@@ -2618,30 +2459,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
     private void messagesViewFilterResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterResetButtonActionPerformed
         messagesQViewFilterChanged(true);
     }//GEN-LAST:event_messagesViewFilterResetButtonActionPerformed
-
-    private void messagesViewFilterFileOperationsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterFileOperationsCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_messagesViewFilterFileOperationsCheckBoxdirEventActionPerformed
-
-    private void messagesViewFilterWarningsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterWarningsCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_messagesViewFilterWarningsCheckBoxdirEventActionPerformed
-
-    private void messagesViewFilterErrorsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterErrorsCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_messagesViewFilterErrorsCheckBoxdirEventActionPerformed
-
-    private void messagesViewFilterInfosCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesViewFilterInfosCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_messagesViewFilterInfosCheckBoxdirEventActionPerformed
-
-    private void syncQViewFilterDeletedDirsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterDeletedDirsCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_syncQViewFilterDeletedDirsCheckBoxdirEventActionPerformed
-
-    private void syncQSyncFilterDeletedDirsCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterDeletedDirsCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_syncQSyncFilterDeletedDirsCheckBoxdirEventActionPerformed
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         syncQViewFilterChanged(true);
@@ -2703,10 +2520,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         schedulerStop();
     }//GEN-LAST:event_scheduleStopButtonsynchronizationStartActionPerformed
 
-    private void openRecentMenuItemopenConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openRecentMenuItemopenConfigActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_openRecentMenuItemopenConfigActionPerformed
-
     private void cmdMenuItemOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMenuItemOptionsActionPerformed
         cmdMenuItemClicked();
     }//GEN-LAST:event_cmdMenuItemOptionsActionPerformed
@@ -2738,15 +2551,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
     private void shutDownMenuItemsynchronizationStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shutDownMenuItemsynchronizationStopActionPerformed
         shutDownButton.setSelected(!shutDownButton.isSelected());
     }//GEN-LAST:event_shutDownMenuItemsynchronizationStopActionPerformed
-
-    private void syncQViewFilterConflictFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQViewFilterConflictFilesCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_syncQViewFilterConflictFilesCheckBoxdirEventActionPerformed
-
-    private void syncQSyncFilterConflictFilesCheckBoxdirEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_syncQSyncFilterConflictFilesCheckBoxdirEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_syncQSyncFilterConflictFilesCheckBoxdirEventActionPerformed
-    // End of variables declaration
 
     abstract protected void about();
 
