@@ -2310,8 +2310,6 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
     abstract protected void synchronizationStart();
 
-    abstract protected void syncQDirSelected();
-
     abstract protected void syncQMouseHandler(java.awt.event.MouseEvent evt);
 
     abstract protected void syncQSyncFilterChanged(boolean reset);

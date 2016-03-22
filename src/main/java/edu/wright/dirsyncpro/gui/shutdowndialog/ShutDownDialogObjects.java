@@ -42,5 +42,4 @@ public abstract class ShutDownDialogObjects extends javax.swing.JDialog {
     }
 
 
-    abstract protected void stopCountDown();
 }

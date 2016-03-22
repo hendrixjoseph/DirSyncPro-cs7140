@@ -318,7 +318,6 @@ public class MainFrame extends MainFrameObjects {
 
     @Override
     protected void openConfig() {
-        String filename = "";
 
         if (!reallyQuit()) {
             return;
@@ -689,17 +688,6 @@ public class MainFrame extends MainFrameObjects {
         } else {
             DesktopTools.launchFile(manual.getAbsolutePath());
         }
-    }
-
-    /**
-     * * updates the SyncQ in GUI public void accumulateSyncQ(){ SyncQ syncQ = new SyncQ(); Object[] dirs =
-     * syncQDirList.getSelectedValues(); for (int i = 0; i< dirs.length; i++){ Job dir = (Job) dirs[i];
-     * syncQ.addAll(dir.getSyncQueue()); } DirSyncPro.getSync().setSyncQ(syncQ); }
-     */
-    @Override
-    protected void syncQDirSelected() {
-        //accumulateSyncQ();
-        DirSyncPro.getGui().updateSyncQInGUI();
     }
 
     @Override

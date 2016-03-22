@@ -270,7 +270,6 @@ public class FilterDialog extends FilterDialogObjects {
 
     @Override
     protected void applyFilter() {
-        JobDialog jobDialog = DirSyncPro.getGui().getJobDialog();
         Job job = DirSyncPro.getGui().getSelectedJob();
         Filter.Action ac = (filtersIncludeRadioButton.isSelected() ? Filter.Action.Include : Filter.Action.Exclude);
 

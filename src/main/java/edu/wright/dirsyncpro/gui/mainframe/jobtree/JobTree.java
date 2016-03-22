@@ -25,7 +25,6 @@ import edu.wright.dirsyncpro.job.Job;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.tree.DefaultMutableTreeNode;
-import java.util.Enumeration;
 
 public class JobTree extends DefaultMutableTreeNode {
 
@@ -285,30 +284,6 @@ public class JobTree extends DefaultMutableTreeNode {
             return "<html><b>Schedules:</b>" + (((Job) parent.value).HasSchedules() ? " has some schedules" : " None") + "</html>";
         } else {
             return value.toString();
-        }
-    }
-
-    /**
-     * Prints a JobTree
-     *
-     * @param jt    JobTree to print
-     * @param ident Beginning ident (mostly "").
-     */
-    public void print(JobTree jt, String ident) {
-        if (jt.isLeaf()) {
-            System.out.println(ident + jt.type);
-        } else {
-            System.out.print(ident + jt.type);
-            if (jt.type.equals(JobTree.Type.Job)) {
-                System.out.println("(" + jt.value + ")");
-            } else {
-                System.out.println();
-            }
-            Enumeration children = jt.children();
-            while (children.hasMoreElements()) {
-                JobTree ch = (JobTree) children.nextElement();
-                print(ch, ident + " ");
-            }
         }
     }
 

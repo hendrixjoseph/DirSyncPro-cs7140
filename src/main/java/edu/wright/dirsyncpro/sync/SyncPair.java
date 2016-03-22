@@ -40,14 +40,12 @@ public class SyncPair {
     private long sizeB;
     private boolean fileAExists;
     private boolean fileBExists;
-    private boolean fileAIsDir;
-    private boolean fileBIsDir;
     private Const.SyncPairStatus syncPairStatus;
     private boolean synced;
     private Job job;
     private Icon icon = null;
 
-    public SyncPair(File a, File b, boolean fAEx, boolean fBEx, boolean fAD, boolean fBD, long fADate, long fBDate, long fAS, long fBS, SyncPairStatus sps, boolean ab, Job j) {
+    public SyncPair(File a, File b, boolean fAEx, boolean fBEx, long fADate, long fBDate, long fAS, long fBS, SyncPairStatus sps, Job j) {
         fileA = a;
         fileB = b;
         sizeA = fAS;
@@ -56,8 +54,6 @@ public class SyncPair {
         dateB = fBDate;
         fileAExists = fAEx;
         fileBExists = fBEx;
-        fileAIsDir = fAD;
-        fileBIsDir = fBD;
         synced = false;
         icon = null;
         syncPairStatus = sps;
@@ -110,7 +106,6 @@ public class SyncPair {
             case FileBIsRedundant:
             case DirBIsRedundant:
                 fileBExists = fileB.exists();
-                fileBIsDir = fileB.isDirectory();
                 dateB = (fileBExists ? fileB.lastModified() : 0);
                 sizeB = (fileBExists ? fileB.length() : 0);
                 break;
@@ -125,7 +120,6 @@ public class SyncPair {
             case FileAIsRedundant:
             case DirAIsRedundant:
                 fileAExists = fileA.exists();
-                fileAIsDir = fileA.isDirectory();
                 dateA = (fileAExists ? fileA.lastModified() : 0);
                 sizeA = (fileAExists ? fileA.length() : 0);
                 break;
@@ -133,11 +127,9 @@ public class SyncPair {
             case ConflictResolutionRename:
             case ConflictResolutionWarn:
                 fileAExists = fileA.exists();
-                fileAIsDir = fileA.isDirectory();
                 dateA = (fileAExists ? fileA.lastModified() : 0);
                 sizeA = (fileAExists ? fileA.length() : 0);
                 fileBExists = fileB.exists();
-                fileBIsDir = fileB.isDirectory();
                 dateB = (fileBExists ? fileB.lastModified() : 0);
                 sizeB = (fileBExists ? fileB.length() : 0);
                 break;

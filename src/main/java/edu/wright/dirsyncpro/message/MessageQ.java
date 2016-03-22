@@ -64,7 +64,6 @@ public class MessageQ {
             viewFiltered = true;
             messagesQViewFiltered = new ArrayList<>();
             for (Message m : messagesQ) {
-                IconKey ik = m.getIconKey();
                 if (viewFilterMode.get(m.getIconKey().mapForMessageQ())) {
                     messagesQViewFiltered.add(m);
                 }

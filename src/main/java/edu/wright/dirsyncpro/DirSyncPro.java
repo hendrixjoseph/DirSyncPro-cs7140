@@ -528,8 +528,7 @@ public class DirSyncPro {
                 path = System.getProperty("user.home") + File.separator + Const.dspHomeDir;
                 if (FileTools.directoryIsWritable(path)) {
                     //log.printExcessive("'" + Const.dspHomeDir + "' in the user home directory is wriable to store the property file.", Const.IconKey.Info);
-                    File f = new File(path + File.separator + Const.PROPERTIES_FILENAME);
-                    f = new File(path);
+                    File f  = new File(path);
                     if (!f.exists()) {
                         f.mkdirs();
                     }

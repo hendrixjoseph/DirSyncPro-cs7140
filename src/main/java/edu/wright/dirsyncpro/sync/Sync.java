@@ -85,7 +85,6 @@ public class Sync {
      * The directory definitions of the synchronization
      */
     private List<Job> jobs = new ArrayList<>();
-    private int mode = SYNCHRONIZATION;
     private int state = STOP;
     private SyncError error = SyncError.NoError;
     private Date syncDate;
@@ -119,7 +118,6 @@ public class Sync {
         this.optionsChanged = false;
         this.alreadyAnalyzed = false;
 
-        mode = SYNCHRONIZATION;
         state = STOP;
 
     }
@@ -774,7 +772,6 @@ public class Sync {
      * @param syncMode The syncMode to set.
      */
     public void setMode(int syncMode) {
-        this.mode = syncMode;
     }
 
     /**

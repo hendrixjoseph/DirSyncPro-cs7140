@@ -63,7 +63,6 @@ public class GuiTools {
     }
 
     public static void openDialog(JDialog dialog) {
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         // calculate the size of the dialog first
         dialog.pack();
         int width = dialog.getSize().width;
