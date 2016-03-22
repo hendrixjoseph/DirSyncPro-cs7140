@@ -70,10 +70,8 @@ public class LicenseDialog extends LicenseDialogObjects {
             while ((line = br.readLine()) != null) {
                 licenseText += line + "\n";
             }
-        } catch (IOException e) {
+        } catch (NullPointerException | IOException e) {
             System.out.println("Unable to show the License. Please read License.txt.");
-            e.printStackTrace();
-//			System.exit(1);
             return;
         }
 
