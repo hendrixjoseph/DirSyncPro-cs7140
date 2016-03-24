@@ -26,9 +26,7 @@ import javax.swing.UIManager;
 import javax.swing.text.EditorKit;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
-import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Toolkit;
 import java.io.File;
 import javax.swing.UnsupportedLookAndFeelException;
 

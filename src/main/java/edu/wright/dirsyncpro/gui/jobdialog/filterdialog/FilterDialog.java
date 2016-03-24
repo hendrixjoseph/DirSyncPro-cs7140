@@ -22,7 +22,6 @@ package edu.wright.dirsyncpro.gui.jobdialog.filterdialog;
 
 import edu.wright.dirsyncpro.Const;
 import edu.wright.dirsyncpro.DirSyncPro;
-import edu.wright.dirsyncpro.gui.jobdialog.JobDialog;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.Filter;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterByDate;
 import edu.wright.dirsyncpro.gui.jobdialog.filtertree.filter.FilterByDate.FilterTimeUnitType;

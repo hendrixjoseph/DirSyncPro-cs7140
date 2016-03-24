@@ -7,6 +7,61 @@
     <groupId>edu.wright</groupId>
     <artifactId>dirSyncPro</artifactId>
     <version>0.1</version>
+
+    <name>DirSyncPro for CS7140</name>
+    <description></description>
+    <inceptionYear>2016</inceptionYear>
+
+    <scm>
+        <url>https://github.com/hendrixjoseph/DirSyncPro-cs7140</url>
+        <connection>scm:git:https://github.com/hendrixjoseph/DirSyncPro-cs7140.git</connection>
+        <developerConnection>scm:git:https://github.com/hendrixjoseph/DirSyncPro-cs7140.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Joseph Hendrix</name>
+            <email>hendrix.11@wright.edu</email>
+            <url>http://hendrixjoseph.github.io</url>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <organization>
+                <![CDATA[<a href="http://www.wright.edu">Wright State University</a><br /><a href="https://engineering-computer-science.wright.edu">College of Engineering and Computer Science</a><br /><a href="https://engineering-computer-science.wright.edu/computer-science-and-engineering">Department of Computer Science and Engineering</a>]]>
+            </organization>
+            <properties>
+                <picUrl>images/joe.jpg</picUrl>
+            </properties>
+        </developer>
+        <developer>
+            <name>Anargyros Angeleas</name>
+            <email>angeleas.2@wright.edu</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <organization>
+                <![CDATA[<a href="http://www.wright.edu">Wright State University</a><br /><a href="https://engineering-computer-science.wright.edu">College of Engineering and Computer Science</a><br /><a href="https://engineering-computer-science.wright.edu/computer-science-and-engineering">Department of Computer Science and Engineering</a>]]>
+            </organization>
+        </developer>
+        <developer>
+            <name>Zacharias Chasparis</name>
+            <email>chasparis.2@wright.edu</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <organization>
+                <![CDATA[<a href="http://www.wright.edu">Wright State University</a><br /><a href="https://engineering-computer-science.wright.edu">College of Engineering and Computer Science</a><br /><a href="https://engineering-computer-science.wright.edu/computer-science-and-engineering">Department of Computer Science and Engineering</a>]]>
+            </organization>
+        </developer>
+    </developers>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-drive</artifactId>
+            <version>v2-rev211-1.21.0</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
@@ -84,7 +139,6 @@
                     <callerGraph>true</callerGraph>
                     <createSubdirs>true</createSubdirs>
                     <haveDot>true</haveDot>
-                    <haveGraph>true</haveGraph>
                     <generateLatex>false</generateLatex>
                     <generateHtml>true</generateHtml>
                     <outputDirectory>${basedir}/target/doxygen_doc</outputDirectory>
