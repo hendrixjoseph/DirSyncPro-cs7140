@@ -42,6 +42,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
+
 /**
  * The DirSyncPro Main GUI.
  *
@@ -70,11 +71,11 @@ public abstract class JobDialogObjects extends JDialog {
     protected JRadioButton compareFileSizesDatesMetaDataRadioButton = new JRadioButton();
     protected JRadioButton compareFileSizesDatesRadioButton = new JRadioButton();
     protected JTabbedPane conflictResolutionJTabbedPane = new MyJTabbedPane();
-    protected JButton copySettingsToAllJobsGoButton;
-    protected JLabel copySettingsToAllJobsLabel;
-    protected JButton copySettingsToEnabledJobsGoButton;
-    protected JLabel copySettingsToEnabledlJobsLabel;
-    protected JLabel copySymLinkLabel;
+    protected JButton copySettingsToAllJobsGoButton = new JButton();
+    protected JLabel copySettingsToAllJobsLabel = new JLabel();
+    protected JButton copySettingsToEnabledJobsGoButton = new JButton();
+    protected JLabel copySettingsToEnabledlJobsLabel = new JLabel();
+    protected JLabel copySymLinkLabel = new JLabel();
     protected JRadioButton copySymLinkRadioButton = new JRadioButton();
     protected JCheckBox deleteExcludedDirsACheckBox = new JCheckBox();
     protected JCheckBox deleteExcludedDirsBCheckBox = new JCheckBox();
@@ -121,12 +122,12 @@ public abstract class JobDialogObjects extends JDialog {
     protected JLabel dirSrcLabel = new JLabel();
     protected JTextField dirTimestampDiffField = new JTextField();
     protected JLabel dirTimestampDiffLabel1 = new JLabel();
-    protected JLabel dirTimestampDiffLabel2;
-    protected JLabel dirTimestampDiffLabel3;
+    protected JLabel dirTimestampDiffLabel2 = new JLabel();
+    protected JLabel dirTimestampDiffLabel3 = new JLabel();
     protected JCheckBox dirTimestampSyncCheckBox = new JCheckBox();
     protected JCheckBox dirTimestampWriteBackCheckBox = new JCheckBox();
     protected JCheckBox dirVerifyCheckBox = new JCheckBox();
-    protected JLabel dirVerifyLabel;
+    protected JLabel dirVerifyLabel = new JLabel();
     protected JCheckBox dirWithSubfoldersCheckBox = new JCheckBox();
     protected JLabel dirWithSubfoldersLabel = new JLabel();
     protected JButton editFilterButton = new JButton();
@@ -134,11 +135,11 @@ public abstract class JobDialogObjects extends JDialog {
     protected JButton filtersCollapseAllButton = new JButton();
     protected JButton filtersExpandAllButton = new JButton();
     protected JTree filtersTree = new JTree();
-    protected JLabel followSymLinkLabel;
+    protected JLabel followSymLinkLabel = new JLabel();
     protected JRadioButton followSymLinkRadioButton = new JRadioButton();
     protected JCheckBox ignoreDaylightSavingTimeCheckBox = new JCheckBox();
-    protected JButton jobCancelButton;
-    protected JButton jobOKButton;
+    protected JButton jobCancelButton = new JButton();
+    protected JButton jobOKButton = new JButton();
     protected JTabbedPane jobTabbedPane = new MyJTabbedPane();
     protected JLabel monodirectionalConflictCopySourceLabel = new JLabel();
     protected JRadioButton monodirectionalConflictCopySourceRadioButton = new JRadioButton();
@@ -146,25 +147,25 @@ public abstract class JobDialogObjects extends JDialog {
     protected JRadioButton monodirectionalConflictSkipRadioButton = new JRadioButton();
     protected JLabel monodirectionalConflictWarnUserLabel = new JLabel();
     protected JRadioButton monodirectionalConflictWarnUserRadioButton = new JRadioButton();
-    protected JCheckBox overrideReadOnlyCheckBox;
-    protected JLabel overrideReadOnlyLabel;
-    protected JCheckBox preserveDOSAttributesCheckBox;
-    protected JLabel preserveDOSAttributesLabel;
-    protected JCheckBox preserveFileOwnershipCheckBox;
-    protected JLabel preserveFileOwnershipLabel;
-    protected JCheckBox preserveFilePermissionsCheckBox;
-    protected JLabel preserveFilePermissionsLabel;
-    protected JCheckBox realtimeSyncCheckBox;
-    protected JTextField realtimeSyncDelayField;
-    protected JCheckBox realtimeSyncOnStartCheckBox;
+    protected JCheckBox overrideReadOnlyCheckBox = new JCheckBox();
+    protected JLabel overrideReadOnlyLabel = new JLabel();
+    protected JCheckBox preserveDOSAttributesCheckBox = new JCheckBox();
+    protected JLabel preserveDOSAttributesLabel = new JLabel();
+    protected JCheckBox preserveFileOwnershipCheckBox = new JCheckBox();
+    protected JLabel preserveFileOwnershipLabel = new JLabel();
+    protected JCheckBox preserveFilePermissionsCheckBox = new JCheckBox();
+    protected JLabel preserveFilePermissionsLabel = new JLabel();
+    protected JCheckBox realtimeSyncCheckBox = new JCheckBox();
+    protected JTextField realtimeSyncDelayField = new JTextField();
+    protected JCheckBox realtimeSyncOnStartCheckBox = new JCheckBox();
     protected JButton removeFilterButton = new JButton();
     protected JButton removeScheduleButton = new JButton();
-    protected JButton resetJobSettingsGoButton;
-    protected JLabel resetJobSettingsLabel;
+    protected JButton resetJobSettingsGoButton = new JButton();
+    protected JLabel resetJobSettingsLabel = new JLabel();
     protected JButton scheduleCollapseAllButton = new JButton();
     protected JButton scheduleExpandAllButton = new JButton();
     protected JTree scheduleTree = new JTree();
-    protected JLabel skipSymLinkLabel;
+    protected JLabel skipSymLinkLabel = new JLabel();
     protected JRadioButton skipSymLinkRadioButton = new JRadioButton();
     protected JButton swapButton = new JButton();
     protected JComboBox syncModeComboBox = new JComboBox();
@@ -182,6 +183,12 @@ public abstract class JobDialogObjects extends JDialog {
     private void initComponents() {
         GridBagConstraints gridBagConstraints;
 
+        JPanel jPanels[] = new JPanel[200];
+
+        for (int i = 0; i < jPanels.length; i++) {
+            jPanels[i] = new JPanel();
+        }
+
         ButtonGroup buttonGroupSymLinks = new ButtonGroup();
         ButtonGroup buttonGroupBidirectionalConflict = new ButtonGroup();
         ButtonGroup buttonGroupMonodirectionalConflict = new ButtonGroup();
@@ -189,8 +196,6 @@ public abstract class JobDialogObjects extends JDialog {
         JPanel basicTab = new JPanel();
         JPanel pathsPanel = new JPanel();
 
-        JPanel jPanel15 = new JPanel();
-        JPanel jPanel3 = new JPanel();
         JPanel spacer2 = new JPanel();
         JPanel informationPanel = new JPanel();
         JTextPane jTextPane1 = new JTextPane();
@@ -215,18 +220,11 @@ public abstract class JobDialogObjects extends JDialog {
         editorKit.setStyleSheet(styles);
         jTextPane11.setEditorKit(editorKit);
         JPanel compareaJpanel = new JPanel();
-        JPanel jPanel97 = new JPanel();
-        JPanel jPanel101 = new JPanel();
-        JPanel jPanel102 = new JPanel();
-        JPanel jPanel31 = new JPanel();
+
         JPanel spacer27 = new JPanel();
         JPanel copyTab = new JPanel();
         JPanel copyOptionsJPanel = new JPanel();
-        JPanel jPanel8 = new JPanel();
-        JPanel jPanel9 = new JPanel();
-        JPanel jPanel10 = new JPanel();
-        JPanel jPanel11 = new JPanel();
-        JPanel jPanel12 = new JPanel();
+
         JPanel spacer12 = new JPanel();
         JPanel informationPanel1 = new JPanel();
         JTextPane jTextPane2 = new JTextPane();
@@ -239,18 +237,10 @@ public abstract class JobDialogObjects extends JDialog {
         jTextPane2.setEditorKit(editorKit);
         JPanel conflictResolutionTab = new JPanel();
         JPanel monodirectionalSyncConflictPanel = new JPanel();
-        JPanel jPanel96 = new JPanel();
-        JPanel jPanel99 = new JPanel();
-        JPanel jPanel100 = new JPanel();
-        JPanel jPanel22 = new JPanel();
+
         JPanel spacer26 = new JPanel();
         JPanel bidirectionalSyncConflictPanel = new JPanel();
-        JPanel jPanel38 = new JPanel();
-        JPanel jPanel39 = new JPanel();
-        JPanel jPanel48 = new JPanel();
-        JPanel jPanel40 = new JPanel();
-        JPanel jPanel95 = new JPanel();
-        JPanel jPanel21 = new JPanel();
+
         JPanel spacer25 = new JPanel();
         JPanel spacer17 = new JPanel();
         JPanel informationPanel2 = new JPanel();
@@ -274,15 +264,10 @@ public abstract class JobDialogObjects extends JDialog {
         editorKit.setStyleSheet(styles);
         jTextPane4.setEditorKit(editorKit);
         JPanel viewJPanel3 = new JPanel();
-        JPanel jPanel16 = new JPanel();
+
         JPanel deletionTab = new JPanel();
         JPanel dirDeleteOptionsPanel = new JPanel();
-        JPanel jPanel5 = new JPanel();
-        JPanel jPanel13 = new JPanel();
-        JPanel jPanel7 = new JPanel();
-        JPanel jPanel44 = new JPanel();
-        JPanel jPanel18 = new JPanel();
-        JPanel jPanel78 = new JPanel();
+
         JPanel spacer7 = new JPanel();
         JPanel spacer6 = new JPanel();
         JPanel informationPanel4 = new JPanel();
@@ -296,8 +281,7 @@ public abstract class JobDialogObjects extends JDialog {
         jTextPane5.setEditorKit(editorKit);
         JPanel backupTab = new JPanel();
         JPanel dirBackupPanel = new JPanel();
-        JPanel jPanel30 = new JPanel();
-        JPanel jPanel2 = new JPanel();
+
         JPanel spacer4 = new JPanel();
         JPanel informationPanel5 = new JPanel();
         JTextPane jTextPane6 = new JTextPane();
@@ -320,7 +304,7 @@ public abstract class JobDialogObjects extends JDialog {
         editorKit.setStyleSheet(styles);
         jTextPane9.setEditorKit(editorKit);
         JPanel dirLogFilePanel = new JPanel();
-        JPanel jPanel73 = new JPanel();
+
         JPanel scheduleTab = new JPanel();
         JScrollPane jScrollPane4 = new JScrollPane();
         JPanel informationPanel9 = new JPanel();
@@ -333,29 +317,21 @@ public abstract class JobDialogObjects extends JDialog {
         editorKit.setStyleSheet(styles);
         jTextPane4.setEditorKit(editorKit);
         JPanel viewJPanel4 = new JPanel();
-        JPanel jPanel17 = new JPanel();
+
         JPanel advancedTab = new JPanel();
         JPanel dirTimestampWriteBackPanel = new JPanel();
         JPanel dirTimestampDiffFieldPanel = new JPanel();
-        JPanel jPanel28 = new JPanel();
+
         JLabel dirTimestampWriteBackLabel = new JLabel();
-        JPanel jPanel81 = new JPanel();
+
         JLabel dirTimestampWriteBackLabel1 = new JLabel();
-        JPanel jPanel84 = new JPanel();
+
         JLabel ignoreDaylightSavingTimeJLabel = new JLabel();
         JPanel dirSymbolicLinkPane = new JPanel();
-        JPanel jPanel27 = new JPanel();
-        skipSymLinkLabel = new JLabel();
-        JPanel jPanel23 = new JPanel();
-        copySymLinkLabel = new JLabel();
-        JPanel jPanel4 = new JPanel();
-        JPanel jPanel1 = new JPanel();
-        JPanel jPanel32 = new JPanel();
-        followSymLinkLabel = new JLabel();
+
         JPanel spacer8 = new JPanel();
         JPanel verifyJPanel = new JPanel();
-        JPanel jPanel6 = new JPanel();
-        dirVerifyLabel = new JLabel();
+
         JPanel informationPanel6 = new JPanel();
         JTextPane jTextPane7 = new JTextPane();
         editorKit = new HTMLEditorKit();
@@ -366,37 +342,15 @@ public abstract class JobDialogObjects extends JDialog {
         editorKit.setStyleSheet(styles);
         jTextPane7.setEditorKit(editorKit);
         JPanel attributeJPanel = new JPanel();
-        JPanel jPanel24 = new JPanel();
-        preserveDOSAttributesCheckBox = new JCheckBox();
-        preserveDOSAttributesLabel = new JLabel();
-        JPanel jPanel25 = new JPanel();
-        preserveFilePermissionsCheckBox = new JCheckBox();
-        preserveFilePermissionsLabel = new JLabel();
-        JPanel jPanel26 = new JPanel();
-        preserveFileOwnershipCheckBox = new JCheckBox();
-        preserveFileOwnershipLabel = new JLabel();
-        JPanel jPanel29 = new JPanel();
-        overrideReadOnlyCheckBox = new JCheckBox();
-        overrideReadOnlyLabel = new JLabel();
+
         JPanel realTimeSyncPanel = new JPanel();
         JPanel dirTimestampDiffFieldPanel1 = new JPanel();
-        dirTimestampDiffLabel2 = new JLabel();
-        realtimeSyncDelayField = new JTextField();
-        dirTimestampDiffLabel3 = new JLabel();
-        JPanel jPanel85 = new JPanel();
+
         JLabel ignoreDaylightSavingTimeJLabel1 = new JLabel();
-        realtimeSyncCheckBox = new JCheckBox();
-        JPanel jPanel82 = new JPanel();
+
         JLabel dirTimestampWriteBackLabel3 = new JLabel();
-        realtimeSyncOnStartCheckBox = new JCheckBox();
         JPanel actionsTab = new JPanel();
         JPanel settingsActionsPanel = new JPanel();
-        copySettingsToAllJobsLabel = new JLabel();
-        copySettingsToAllJobsGoButton = new JButton();
-        resetJobSettingsLabel = new JLabel();
-        resetJobSettingsGoButton = new JButton();
-        copySettingsToEnabledlJobsLabel = new JLabel();
-        copySettingsToEnabledJobsGoButton = new JButton();
         JPanel spacer16 = new JPanel();
         JPanel spacer14 = new JPanel();
         JPanel informationPanel7 = new JPanel();
@@ -409,8 +363,6 @@ public abstract class JobDialogObjects extends JDialog {
         editorKit.setStyleSheet(styles);
         jTextPane8.setEditorKit(editorKit);
         JPanel settingsButtonsPanel2 = new JPanel();
-        jobOKButton = new JButton();
-        jobCancelButton = new JButton();
 
         setTitle("Job Options");
         setIconImage(new ImageIcon(getClass().getResource("/icons/DirSyncPro64x64.png")).getImage());
@@ -526,32 +478,32 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.anchor = GridBagConstraints.EAST;
         pathsPanel.add(dirDstLabel, gridBagConstraints);
 
-        jPanel15.setMaximumSize(null);
-        jPanel15.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[15].setMaximumSize(null);
+        jPanels[15].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         dirWithSubfoldersCheckBox.setHorizontalAlignment(SwingConstants.LEFT);
         dirWithSubfoldersCheckBox.setMaximumSize(null);
         dirWithSubfoldersCheckBox.setMinimumSize(null);
         dirWithSubfoldersCheckBox.setPreferredSize(null);
-        jPanel15.add(dirWithSubfoldersCheckBox);
+        jPanels[15].add(dirWithSubfoldersCheckBox);
 
         dirWithSubfoldersLabel.setIcon(new ImageIcon(getClass().getResource("/icons/withSubdirs.png"))); // NOI18N
         dirWithSubfoldersLabel.setText("Include subfolders");
-        jPanel15.add(dirWithSubfoldersLabel);
+        jPanels[15].add(dirWithSubfoldersLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = GridBagConstraints.EAST;
         gridBagConstraints.insets = new Insets(0, 0, 0, 8);
-        pathsPanel.add(jPanel15, gridBagConstraints);
+        pathsPanel.add(jPanels[15], gridBagConstraints);
 
-        jPanel3.setLayout(new GridBagLayout());
+        jPanels[3].setLayout(new GridBagLayout());
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = GridBagConstraints.EAST;
-        pathsPanel.add(jPanel3, gridBagConstraints);
+        pathsPanel.add(jPanels[3], gridBagConstraints);
 
         swapButton.setText("Swap");
         swapButton.setAlignmentX(0.5F);
@@ -673,67 +625,67 @@ public abstract class JobDialogObjects extends JDialog {
         compareaJpanel.setBorder(BorderFactory.createTitledBorder("Compare"));
         compareaJpanel.setLayout(new GridBagLayout());
 
-        jPanel97.setMaximumSize(null);
-        jPanel97.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[97].setMaximumSize(null);
+        jPanels[97].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         buttonGroupCompare.add(compareFileSizesDatesRadioButton);
         compareFileSizesDatesRadioButton.setMaximumSize(null);
         compareFileSizesDatesRadioButton.setMinimumSize(null);
         compareFileSizesDatesRadioButton.setPreferredSize(null);
-        jPanel97.add(compareFileSizesDatesRadioButton);
+        jPanels[97].add(compareFileSizesDatesRadioButton);
 
         compareFileSizesDatesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyModified.png"))); // NOI18N
         compareFileSizesDatesLabel.setText("Compare only file sizes and modification dates (fastest)");
-        jPanel97.add(compareFileSizesDatesLabel);
+        jPanels[97].add(compareFileSizesDatesLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        compareaJpanel.add(jPanel97, gridBagConstraints);
+        compareaJpanel.add(jPanels[97], gridBagConstraints);
 
-        jPanel101.setMaximumSize(null);
-        jPanel101.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[101].setMaximumSize(null);
+        jPanels[101].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         buttonGroupCompare.add(compareFileSizesDatesMetaDataRadioButton);
         compareFileSizesDatesMetaDataRadioButton.setMaximumSize(null);
         compareFileSizesDatesMetaDataRadioButton.setMinimumSize(null);
         compareFileSizesDatesMetaDataRadioButton.setPreferredSize(null);
-        jPanel101.add(compareFileSizesDatesMetaDataRadioButton);
+        jPanels[101].add(compareFileSizesDatesMetaDataRadioButton);
 
         compareFileSizesDatesMetaDataLabel.setIcon(new ImageIcon(getClass().getResource("/icons/group.png"))); // NOI18N
         compareFileSizesDatesMetaDataLabel.setText("Compare file sizes, modification dates and file meta data (attribute, permissions, ownerships)");
-        jPanel101.add(compareFileSizesDatesMetaDataLabel);
+        jPanels[101].add(compareFileSizesDatesMetaDataLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        compareaJpanel.add(jPanel101, gridBagConstraints);
+        compareaJpanel.add(jPanels[101], gridBagConstraints);
 
-        jPanel102.setMaximumSize(null);
-        jPanel102.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[102].setMaximumSize(null);
+        jPanels[102].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         buttonGroupCompare.add(compareFileContentsRadioButton);
         compareFileContentsRadioButton.setMaximumSize(null);
         compareFileContentsRadioButton.setMinimumSize(null);
         compareFileContentsRadioButton.setPreferredSize(null);
-        jPanel102.add(compareFileContentsRadioButton);
+        jPanels[102].add(compareFileContentsRadioButton);
 
         compareFileContentsLabel.setIcon(new ImageIcon(getClass().getResource("/icons/icon_file.png"))); // NOI18N
         compareFileContentsLabel.setText("Compare file contents (slowest)");
-        jPanel102.add(compareFileContentsLabel);
+        jPanels[102].add(compareFileContentsLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        compareaJpanel.add(jPanel102, gridBagConstraints);
+        compareaJpanel.add(jPanels[102], gridBagConstraints);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.weighty = 1.0;
-        compareaJpanel.add(jPanel31, gridBagConstraints);
+        compareaJpanel.add(jPanels[31], gridBagConstraints);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -752,92 +704,92 @@ public abstract class JobDialogObjects extends JDialog {
         copyOptionsJPanel.setBorder(BorderFactory.createTitledBorder("Copy these files and dirs"));
         copyOptionsJPanel.setLayout(new BoxLayout(copyOptionsJPanel, BoxLayout.Y_AXIS));
 
-        jPanel8.setMaximumSize(null);
-        jPanel8.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[8].setMaximumSize(null);
+        jPanels[8].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         dirCopyAllCheckBox.setMaximumSize(null);
         dirCopyAllCheckBox.setMinimumSize(null);
         dirCopyAllCheckBox.setPreferredSize(null);
         dirCopyAllCheckBox.addActionListener(this::dirCopyAllCheckBoxdirEventActionPerformed);
-        jPanel8.add(dirCopyAllCheckBox);
+        jPanels[8].add(dirCopyAllCheckBox);
 
         dirCopyAllLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyAll.png"))); // NOI18N
         dirCopyAllLabel.setText("Forced copy all files");
-        jPanel8.add(dirCopyAllLabel);
+        jPanels[8].add(dirCopyAllLabel);
 
-        copyOptionsJPanel.add(jPanel8);
+        copyOptionsJPanel.add(jPanels[8]);
 
-        jPanel9.setMaximumSize(null);
-        jPanel9.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[9].setMaximumSize(null);
+        jPanels[9].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         dirCopyNewCheckBox.setMaximumSize(null);
         dirCopyNewCheckBox.setMinimumSize(null);
         dirCopyNewCheckBox.setPreferredSize(null);
         dirCopyNewCheckBox.addActionListener(this::dirCopyNewCheckBoxdirEventActionPerformed);
-        jPanel9.add(dirCopyNewCheckBox);
+        jPanels[9].add(dirCopyNewCheckBox);
 
         dirCopyNewLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyNew.png"))); // NOI18N
         dirCopyNewLabel.setText("New");
         dirCopyNewLabel.setMaximumSize(null);
         dirCopyNewLabel.setMinimumSize(null);
         dirCopyNewLabel.setPreferredSize(null);
-        jPanel9.add(dirCopyNewLabel);
+        jPanels[9].add(dirCopyNewLabel);
 
-        copyOptionsJPanel.add(jPanel9);
+        copyOptionsJPanel.add(jPanels[9]);
 
-        jPanel10.setMaximumSize(null);
-        jPanel10.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[10].setMaximumSize(null);
+        jPanels[10].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         dirCopyLargerCheckBox.setMaximumSize(null);
         dirCopyLargerCheckBox.setMinimumSize(null);
         dirCopyLargerCheckBox.setPreferredSize(null);
         dirCopyLargerCheckBox.addActionListener(this::dirCopyLargerCheckBoxdirEventActionPerformed);
-        jPanel10.add(dirCopyLargerCheckBox);
+        jPanels[10].add(dirCopyLargerCheckBox);
 
         dirCopyLargerLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyLarger.png"))); // NOI18N
         dirCopyLargerLabel.setText("Larger");
         dirCopyLargerLabel.setMaximumSize(null);
         dirCopyLargerLabel.setMinimumSize(null);
         dirCopyLargerLabel.setPreferredSize(null);
-        jPanel10.add(dirCopyLargerLabel);
+        jPanels[10].add(dirCopyLargerLabel);
 
-        copyOptionsJPanel.add(jPanel10);
+        copyOptionsJPanel.add(jPanels[10]);
 
-        jPanel11.setMaximumSize(null);
-        jPanel11.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[11].setMaximumSize(null);
+        jPanels[11].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         dirCopyModifiedCheckBox.setMaximumSize(null);
         dirCopyModifiedCheckBox.setMinimumSize(null);
         dirCopyModifiedCheckBox.setPreferredSize(null);
         dirCopyModifiedCheckBox.addActionListener(this::dirCopyModifiedCheckBoxdirEventActionPerformed);
-        jPanel11.add(dirCopyModifiedCheckBox);
+        jPanels[11].add(dirCopyModifiedCheckBox);
 
         dirCopyModifiedLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyModified.png"))); // NOI18N
         dirCopyModifiedLabel.setText("Modified");
         dirCopyModifiedLabel.setMaximumSize(new Dimension(16, 16));
         dirCopyModifiedLabel.setMinimumSize(null);
         dirCopyModifiedLabel.setPreferredSize(null);
-        jPanel11.add(dirCopyModifiedLabel);
+        jPanels[11].add(dirCopyModifiedLabel);
 
-        copyOptionsJPanel.add(jPanel11);
+        copyOptionsJPanel.add(jPanels[11]);
 
-        jPanel12.setMaximumSize(null);
-        jPanel12.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[12].setMaximumSize(null);
+        jPanels[12].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         dirCopyLargerModifiedCheckBox.setMaximumSize(null);
         dirCopyLargerModifiedCheckBox.setMinimumSize(null);
         dirCopyLargerModifiedCheckBox.setPreferredSize(null);
         dirCopyLargerModifiedCheckBox.addActionListener(this::dirCopyLargerModifiedCheckBoxdirEventActionPerformed);
-        jPanel12.add(dirCopyLargerModifiedCheckBox);
+        jPanels[12].add(dirCopyLargerModifiedCheckBox);
 
         dirCopyLargerModifiedLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyLargerModified.png"))); // NOI18N
         dirCopyLargerModifiedLabel.setText("Both larger and modified");
         dirCopyLargerModifiedLabel.setMaximumSize(null);
         dirCopyLargerModifiedLabel.setMinimumSize(null);
         dirCopyLargerModifiedLabel.setPreferredSize(null);
-        jPanel12.add(dirCopyLargerModifiedLabel);
+        jPanels[12].add(dirCopyLargerModifiedLabel);
 
-        copyOptionsJPanel.add(jPanel12);
+        copyOptionsJPanel.add(jPanels[12]);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -881,67 +833,67 @@ public abstract class JobDialogObjects extends JDialog {
         monodirectionalSyncConflictPanel.setBorder(BorderFactory.createTitledBorder("Monodirectional sync conflict resolution mode"));
         monodirectionalSyncConflictPanel.setLayout(new GridBagLayout());
 
-        jPanel96.setMaximumSize(null);
-        jPanel96.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[96].setMaximumSize(null);
+        jPanels[96].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         buttonGroupMonodirectionalConflict.add(monodirectionalConflictCopySourceRadioButton);
         monodirectionalConflictCopySourceRadioButton.setMaximumSize(null);
         monodirectionalConflictCopySourceRadioButton.setMinimumSize(null);
         monodirectionalConflictCopySourceRadioButton.setPreferredSize(null);
-        jPanel96.add(monodirectionalConflictCopySourceRadioButton);
+        jPanels[96].add(monodirectionalConflictCopySourceRadioButton);
 
         monodirectionalConflictCopySourceLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyModified.png"))); // NOI18N
         monodirectionalConflictCopySourceLabel.setText("Overwrite the file in destination with the file from source");
-        jPanel96.add(monodirectionalConflictCopySourceLabel);
+        jPanels[96].add(monodirectionalConflictCopySourceLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        monodirectionalSyncConflictPanel.add(jPanel96, gridBagConstraints);
+        monodirectionalSyncConflictPanel.add(jPanels[96], gridBagConstraints);
 
-        jPanel99.setMaximumSize(null);
-        jPanel99.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[99].setMaximumSize(null);
+        jPanels[99].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         buttonGroupMonodirectionalConflict.add(monodirectionalConflictWarnUserRadioButton);
         monodirectionalConflictWarnUserRadioButton.setMaximumSize(null);
         monodirectionalConflictWarnUserRadioButton.setMinimumSize(null);
         monodirectionalConflictWarnUserRadioButton.setPreferredSize(null);
-        jPanel99.add(monodirectionalConflictWarnUserRadioButton);
+        jPanels[99].add(monodirectionalConflictWarnUserRadioButton);
 
         monodirectionalConflictWarnUserLabel.setIcon(new ImageIcon(getClass().getResource("/icons/icon_warning.png"))); // NOI18N
         monodirectionalConflictWarnUserLabel.setText("Do nothing. Just warn me!");
-        jPanel99.add(monodirectionalConflictWarnUserLabel);
+        jPanels[99].add(monodirectionalConflictWarnUserLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        monodirectionalSyncConflictPanel.add(jPanel99, gridBagConstraints);
+        monodirectionalSyncConflictPanel.add(jPanels[99], gridBagConstraints);
 
-        jPanel100.setMaximumSize(null);
-        jPanel100.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[100].setMaximumSize(null);
+        jPanels[100].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         buttonGroupMonodirectionalConflict.add(monodirectionalConflictSkipRadioButton);
         monodirectionalConflictSkipRadioButton.setMaximumSize(null);
         monodirectionalConflictSkipRadioButton.setMinimumSize(null);
         monodirectionalConflictSkipRadioButton.setPreferredSize(null);
-        jPanel100.add(monodirectionalConflictSkipRadioButton);
+        jPanels[100].add(monodirectionalConflictSkipRadioButton);
 
         monodirectionalConflictSkipLabel.setIcon(new ImageIcon(getClass().getResource("/icons/excludeFile.png"))); // NOI18N
         monodirectionalConflictSkipLabel.setText("Do nothing. Just skip silently!");
-        jPanel100.add(monodirectionalConflictSkipLabel);
+        jPanels[100].add(monodirectionalConflictSkipLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        monodirectionalSyncConflictPanel.add(jPanel100, gridBagConstraints);
+        monodirectionalSyncConflictPanel.add(jPanels[100], gridBagConstraints);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.weighty = 1.0;
-        monodirectionalSyncConflictPanel.add(jPanel22, gridBagConstraints);
+        monodirectionalSyncConflictPanel.add(jPanels[22], gridBagConstraints);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -953,101 +905,101 @@ public abstract class JobDialogObjects extends JDialog {
         bidirectionalSyncConflictPanel.setBorder(BorderFactory.createTitledBorder("Bidirectional sync conflict resolution mode"));
         bidirectionalSyncConflictPanel.setLayout(new GridBagLayout());
 
-        jPanel38.setMaximumSize(null);
-        jPanel38.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[38].setMaximumSize(null);
+        jPanels[38].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         buttonGroupBidirectionalConflict.add(bidirectionalConflictCopyModifiedRadioButton);
         bidirectionalConflictCopyModifiedRadioButton.setMaximumSize(null);
         bidirectionalConflictCopyModifiedRadioButton.setMinimumSize(null);
         bidirectionalConflictCopyModifiedRadioButton.setPreferredSize(null);
-        jPanel38.add(bidirectionalConflictCopyModifiedRadioButton);
+        jPanels[38].add(bidirectionalConflictCopyModifiedRadioButton);
 
         bidirectionalConflictCopyModifiedLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyModified.png"))); // NOI18N
         bidirectionalConflictCopyModifiedLabel.setText("Copy the latest modified file to both dirs");
-        jPanel38.add(bidirectionalConflictCopyModifiedLabel);
+        jPanels[38].add(bidirectionalConflictCopyModifiedLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        bidirectionalSyncConflictPanel.add(jPanel38, gridBagConstraints);
+        bidirectionalSyncConflictPanel.add(jPanels[38], gridBagConstraints);
 
-        jPanel39.setMaximumSize(null);
-        jPanel39.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[39].setMaximumSize(null);
+        jPanels[39].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         buttonGroupBidirectionalConflict.add(bidirectionalConflictCopyLargerRadioButton);
         bidirectionalConflictCopyLargerRadioButton.setMaximumSize(null);
         bidirectionalConflictCopyLargerRadioButton.setMinimumSize(null);
         bidirectionalConflictCopyLargerRadioButton.setPreferredSize(null);
-        jPanel39.add(bidirectionalConflictCopyLargerRadioButton);
+        jPanels[39].add(bidirectionalConflictCopyLargerRadioButton);
 
         bidirectionalConflictCopyLargerLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyLarger.png"))); // NOI18N
         bidirectionalConflictCopyLargerLabel.setText("Copy the largest file to both dirs");
-        jPanel39.add(bidirectionalConflictCopyLargerLabel);
+        jPanels[39].add(bidirectionalConflictCopyLargerLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        bidirectionalSyncConflictPanel.add(jPanel39, gridBagConstraints);
+        bidirectionalSyncConflictPanel.add(jPanels[39], gridBagConstraints);
 
-        jPanel48.setMaximumSize(null);
-        jPanel48.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[48].setMaximumSize(null);
+        jPanels[48].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         buttonGroupBidirectionalConflict.add(bidirectionalConflictRenameCopyRadioButton);
         bidirectionalConflictRenameCopyRadioButton.setMaximumSize(null);
         bidirectionalConflictRenameCopyRadioButton.setMinimumSize(null);
         bidirectionalConflictRenameCopyRadioButton.setPreferredSize(null);
-        jPanel48.add(bidirectionalConflictRenameCopyRadioButton);
+        jPanels[48].add(bidirectionalConflictRenameCopyRadioButton);
 
         bidirectionalConflictRenameCopyLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyAll.png"))); // NOI18N
         bidirectionalConflictRenameCopyLabel.setText("Rename & copy both files to both dirs");
-        jPanel48.add(bidirectionalConflictRenameCopyLabel);
+        jPanels[48].add(bidirectionalConflictRenameCopyLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        bidirectionalSyncConflictPanel.add(jPanel48, gridBagConstraints);
+        bidirectionalSyncConflictPanel.add(jPanels[48], gridBagConstraints);
 
-        jPanel40.setMaximumSize(null);
-        jPanel40.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[40].setMaximumSize(null);
+        jPanels[40].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         buttonGroupBidirectionalConflict.add(bidirectionalConflictWarnUserRadioButton);
         bidirectionalConflictWarnUserRadioButton.setMaximumSize(null);
         bidirectionalConflictWarnUserRadioButton.setMinimumSize(null);
         bidirectionalConflictWarnUserRadioButton.setPreferredSize(null);
-        jPanel40.add(bidirectionalConflictWarnUserRadioButton);
+        jPanels[40].add(bidirectionalConflictWarnUserRadioButton);
 
         bidirectionalConflictWarnUserLabel.setIcon(new ImageIcon(getClass().getResource("/icons/icon_warning.png"))); // NOI18N
         bidirectionalConflictWarnUserLabel.setText("Do nothing. Just warn me!");
-        jPanel40.add(bidirectionalConflictWarnUserLabel);
+        jPanels[40].add(bidirectionalConflictWarnUserLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        bidirectionalSyncConflictPanel.add(jPanel40, gridBagConstraints);
+        bidirectionalSyncConflictPanel.add(jPanels[40], gridBagConstraints);
 
-        jPanel95.setMaximumSize(null);
-        jPanel95.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[95].setMaximumSize(null);
+        jPanels[95].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         buttonGroupBidirectionalConflict.add(bidirectionalConflictSkipRadioButton);
         bidirectionalConflictSkipRadioButton.setMaximumSize(null);
         bidirectionalConflictSkipRadioButton.setMinimumSize(null);
         bidirectionalConflictSkipRadioButton.setPreferredSize(null);
-        jPanel95.add(bidirectionalConflictSkipRadioButton);
+        jPanels[95].add(bidirectionalConflictSkipRadioButton);
 
         bidirectionalConflictSkipLabel.setIcon(new ImageIcon(getClass().getResource("/icons/excludeFile.png"))); // NOI18N
         bidirectionalConflictSkipLabel.setText("Do nothing. Just skip silently!");
-        jPanel95.add(bidirectionalConflictSkipLabel);
+        jPanels[95].add(bidirectionalConflictSkipLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        bidirectionalSyncConflictPanel.add(jPanel95, gridBagConstraints);
-        bidirectionalSyncConflictPanel.add(jPanel21, new GridBagConstraints());
+        bidirectionalSyncConflictPanel.add(jPanels[95], gridBagConstraints);
+        bidirectionalSyncConflictPanel.add(jPanels[21], new GridBagConstraints());
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -1177,7 +1129,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.insets = new Insets(0, 0, 4, 0);
-        viewJPanel3.add(jPanel16, gridBagConstraints);
+        viewJPanel3.add(jPanels[16], gridBagConstraints);
 
         filtersExpandAllButton.setFont(new Font("Tahoma", 0, 10)); // NOI18N
         filtersExpandAllButton.setIcon(new ImageIcon(getClass().getResource("/icons/expandAll.png"))); // NOI18N
@@ -1225,111 +1177,111 @@ public abstract class JobDialogObjects extends JDialog {
         dirDeleteOptionsPanel.setBorder(BorderFactory.createTitledBorder("Deletion"));
         dirDeleteOptionsPanel.setLayout(new GridBagLayout());
 
-        jPanel5.setMaximumSize(null);
-        jPanel5.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[5].setMaximumSize(null);
+        jPanels[5].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         dirDeleteFilesCheckBox.setMaximumSize(null);
         dirDeleteFilesCheckBox.setMinimumSize(null);
         dirDeleteFilesCheckBox.setPreferredSize(null);
-        jPanel5.add(dirDeleteFilesCheckBox);
+        jPanels[5].add(dirDeleteFilesCheckBox);
 
         dirDeleteFilesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/deleteFile.png"))); // NOI18N
         dirDeleteFilesLabel.setText("Delete orphan files in the destination (files that do not exist in the source)");
-        jPanel5.add(dirDeleteFilesLabel);
+        jPanels[5].add(dirDeleteFilesLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        dirDeleteOptionsPanel.add(jPanel5, gridBagConstraints);
+        dirDeleteOptionsPanel.add(jPanels[5], gridBagConstraints);
 
-        jPanel13.setMaximumSize(null);
-        jPanel13.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[13].setMaximumSize(null);
+        jPanels[13].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         dirDeleteDirsCheckBox.setMaximumSize(null);
         dirDeleteDirsCheckBox.setMinimumSize(null);
         dirDeleteDirsCheckBox.setPreferredSize(null);
-        jPanel13.add(dirDeleteDirsCheckBox);
+        jPanels[13].add(dirDeleteDirsCheckBox);
 
         dirDeleteDirsLabel.setIcon(new ImageIcon(getClass().getResource("/icons/deleteDir.png"))); // NOI18N
         dirDeleteDirsLabel.setText("Delete orphan dirs in the destination (dirs that do not exist in the source)");
-        jPanel13.add(dirDeleteDirsLabel);
+        jPanels[13].add(dirDeleteDirsLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        dirDeleteOptionsPanel.add(jPanel13, gridBagConstraints);
+        dirDeleteOptionsPanel.add(jPanels[13], gridBagConstraints);
 
-        jPanel7.setMaximumSize(null);
-        jPanel7.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[7].setMaximumSize(null);
+        jPanels[7].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         deleteExcludedFilesACheckBox.setMaximumSize(null);
         deleteExcludedFilesACheckBox.setMinimumSize(null);
         deleteExcludedFilesACheckBox.setPreferredSize(null);
-        jPanel7.add(deleteExcludedFilesACheckBox);
+        jPanels[7].add(deleteExcludedFilesACheckBox);
 
         dirDeleteExcludedFilesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/deleteFile.png"))); // NOI18N
         dirDeleteExcludedFilesLabel.setText("Force deleting excluded files from Dir A");
-        jPanel7.add(dirDeleteExcludedFilesLabel);
+        jPanels[7].add(dirDeleteExcludedFilesLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        dirDeleteOptionsPanel.add(jPanel7, gridBagConstraints);
+        dirDeleteOptionsPanel.add(jPanels[7], gridBagConstraints);
 
-        jPanel44.setMaximumSize(null);
-        jPanel44.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[44].setMaximumSize(null);
+        jPanels[44].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         deleteExcludedDirsACheckBox.setMaximumSize(null);
         deleteExcludedDirsACheckBox.setMinimumSize(null);
         deleteExcludedDirsACheckBox.setPreferredSize(null);
-        jPanel44.add(deleteExcludedDirsACheckBox);
+        jPanels[44].add(deleteExcludedDirsACheckBox);
 
         dirDeleteExcludedDirsLabel.setIcon(new ImageIcon(getClass().getResource("/icons/deleteDir.png"))); // NOI18N
         dirDeleteExcludedDirsLabel.setText("Force deleting excluded directories from Dir A");
-        jPanel44.add(dirDeleteExcludedDirsLabel);
+        jPanels[44].add(dirDeleteExcludedDirsLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        dirDeleteOptionsPanel.add(jPanel44, gridBagConstraints);
+        dirDeleteOptionsPanel.add(jPanels[44], gridBagConstraints);
 
-        jPanel18.setMaximumSize(null);
-        jPanel18.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[18].setMaximumSize(null);
+        jPanels[18].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         deleteExcludedFilesBCheckBox.setMaximumSize(null);
         deleteExcludedFilesBCheckBox.setMinimumSize(null);
         deleteExcludedFilesBCheckBox.setPreferredSize(null);
-        jPanel18.add(deleteExcludedFilesBCheckBox);
+        jPanels[18].add(deleteExcludedFilesBCheckBox);
 
         dirDeleteExcludedFilesLabel1.setIcon(new ImageIcon(getClass().getResource("/icons/deleteFile.png"))); // NOI18N
         dirDeleteExcludedFilesLabel1.setText("Force deleting excluded files from Dir B");
-        jPanel18.add(dirDeleteExcludedFilesLabel1);
+        jPanels[18].add(dirDeleteExcludedFilesLabel1);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        dirDeleteOptionsPanel.add(jPanel18, gridBagConstraints);
+        dirDeleteOptionsPanel.add(jPanels[18], gridBagConstraints);
 
-        jPanel78.setMaximumSize(null);
-        jPanel78.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[78].setMaximumSize(null);
+        jPanels[78].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         deleteExcludedDirsBCheckBox.setMaximumSize(null);
         deleteExcludedDirsBCheckBox.setMinimumSize(null);
         deleteExcludedDirsBCheckBox.setPreferredSize(null);
-        jPanel78.add(deleteExcludedDirsBCheckBox);
+        jPanels[78].add(deleteExcludedDirsBCheckBox);
 
         dirDeleteExcludedDirsLabel1.setIcon(new ImageIcon(getClass().getResource("/icons/deleteDir.png"))); // NOI18N
         dirDeleteExcludedDirsLabel1.setText("Force deleting excluded directories from Dir B");
-        jPanel78.add(dirDeleteExcludedDirsLabel1);
+        jPanels[78].add(dirDeleteExcludedDirsLabel1);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        dirDeleteOptionsPanel.add(jPanel78, gridBagConstraints);
+        dirDeleteOptionsPanel.add(jPanels[78], gridBagConstraints);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -1402,27 +1354,27 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.insets = new Insets(0, 2, 0, 0);
         dirBackupPanel.add(dirBackupLabel2, gridBagConstraints);
 
-        jPanel30.setMaximumSize(null);
-        jPanel30.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[30].setMaximumSize(null);
+        jPanels[30].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         dirBackupDirInlineCheckBox.setToolTipText("");
         dirBackupDirInlineCheckBox.setHorizontalAlignment(SwingConstants.LEFT);
         dirBackupDirInlineCheckBox.setMaximumSize(null);
         dirBackupDirInlineCheckBox.setMinimumSize(null);
         dirBackupDirInlineCheckBox.setPreferredSize(null);
-        jPanel30.add(dirBackupDirInlineCheckBox);
+        jPanels[30].add(dirBackupDirInlineCheckBox);
 
         dirBackupDirInlineLabel.setText("Keep the backup-dir in the destination directory.");
-        jPanel30.add(dirBackupDirInlineLabel);
+        jPanels[30].add(dirBackupDirInlineLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        dirBackupPanel.add(jPanel30, gridBagConstraints);
+        dirBackupPanel.add(jPanels[30], gridBagConstraints);
 
-        jPanel2.setLayout(new GridBagLayout());
+        jPanels[2].setLayout(new GridBagLayout());
 
         dirBackupDirLabel.setText("Backup dir:");
         gridBagConstraints = new GridBagConstraints();
@@ -1430,7 +1382,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.ipadx = 1;
         gridBagConstraints.anchor = GridBagConstraints.EAST;
-        jPanel2.add(dirBackupDirLabel, gridBagConstraints);
+        jPanels[2].add(dirBackupDirLabel, gridBagConstraints);
 
         dirBackupDirField.setEditable(false);
         dirBackupDirField.setMaximumSize(null);
@@ -1442,7 +1394,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.01;
-        jPanel2.add(dirBackupDirField, gridBagConstraints);
+        jPanels[2].add(dirBackupDirField, gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1450,7 +1402,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        dirBackupPanel.add(jPanel2, gridBagConstraints);
+        dirBackupPanel.add(jPanels[2], gridBagConstraints);
 
         dirBackupDirChangeButton.setFont(new Font("Tahoma", 0, 10)); // NOI18N
         dirBackupDirChangeButton.setIcon(new ImageIcon(getClass().getResource("/icons/browse.png"))); // NOI18N
@@ -1567,25 +1519,25 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.anchor = GridBagConstraints.EAST;
         dirLogFilePanel.add(dirLogBrowseButton, gridBagConstraints);
 
-        jPanel73.setMaximumSize(null);
-        jPanel73.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[73].setMaximumSize(null);
+        jPanels[73].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         dirEnableLoggingCheckBox.setHorizontalAlignment(SwingConstants.LEFT);
         dirEnableLoggingCheckBox.setMaximumSize(null);
         dirEnableLoggingCheckBox.setMinimumSize(null);
         dirEnableLoggingCheckBox.setPreferredSize(null);
         dirEnableLoggingCheckBox.addActionListener(this::dirEnableLoggingCheckBoxdirEventActionPerformed);
-        jPanel73.add(dirEnableLoggingCheckBox);
+        jPanels[73].add(dirEnableLoggingCheckBox);
 
         dirEnableLoggingJLabel.setText("Enable logging.");
-        jPanel73.add(dirEnableLoggingJLabel);
+        jPanels[73].add(dirEnableLoggingJLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        dirLogFilePanel.add(jPanel73, gridBagConstraints);
+        dirLogFilePanel.add(jPanels[73], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1686,7 +1638,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.insets = new Insets(0, 0, 4, 0);
-        viewJPanel4.add(jPanel17, gridBagConstraints);
+        viewJPanel4.add(jPanels[17], gridBagConstraints);
 
         scheduleExpandAllButton.setFont(new Font("Tahoma", 0, 10)); // NOI18N
         scheduleExpandAllButton.setIcon(new ImageIcon(getClass().getResource("/icons/expandAll.png"))); // NOI18N
@@ -1753,21 +1705,21 @@ public abstract class JobDialogObjects extends JDialog {
         dirTimestampWriteBackPanel.add(dirTimestampDiffFieldPanel, gridBagConstraints);
         dirTimestampDiffFieldPanel.getAccessibleContext().setAccessibleDescription("<html>This ensures that timestamps that differ due to filesystem inaccuracy are handled as the same.<br><br>PROBLEM: If this value is chosen too big some files that are actually different might be falsely considered to be identical.</html>");
 
-        jPanel28.setLayout(new GridBagLayout());
+        jPanels[28].setLayout(new GridBagLayout());
 
         dirTimestampWriteBackLabel.setIcon(new ImageIcon(getClass().getResource("/icons/writeTimestampBack.png"))); // NOI18N
         dirTimestampWriteBackLabel.setText("<html>Write timestamps back to <b><u>source</u></b> <span style=\"color: red;\">(Caution! Use wisely!)</span>.</html>");
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        jPanel28.add(dirTimestampWriteBackLabel, gridBagConstraints);
+        jPanels[28].add(dirTimestampWriteBackLabel, gridBagConstraints);
 
         dirTimestampWriteBackCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         dirTimestampWriteBackCheckBox.setVerticalTextPosition(SwingConstants.TOP);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        jPanel28.add(dirTimestampWriteBackCheckBox, gridBagConstraints);
+        jPanels[28].add(dirTimestampWriteBackCheckBox, gridBagConstraints);
         dirTimestampWriteBackCheckBox.getAccessibleContext().setAccessibleDescription("<html>After a file has been copied the destination timestamp is written back to the source file; this ensures that the timestamps are identical.<br><br>PROBLEM: This is not possible if the source is read-only.</html>");
 
         gridBagConstraints = new GridBagConstraints();
@@ -1776,7 +1728,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
-        dirTimestampWriteBackPanel.add(jPanel28, gridBagConstraints);
+        dirTimestampWriteBackPanel.add(jPanels[28], gridBagConstraints);
 
         dirTimestampDiffLabel1.setIcon(new ImageIcon(getClass().getResource("/icons/timestampDiff.png"))); // NOI18N
         dirTimestampDiffLabel1.setText("Timestamp granularity (seconds):");
@@ -1786,21 +1738,21 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.anchor = GridBagConstraints.WEST;
         dirTimestampWriteBackPanel.add(dirTimestampDiffLabel1, gridBagConstraints);
 
-        jPanel81.setLayout(new GridBagLayout());
+        jPanels[81].setLayout(new GridBagLayout());
 
         dirTimestampWriteBackLabel1.setIcon(new ImageIcon(getClass().getResource("/icons/timestampDiffDir.png"))); // NOI18N
         dirTimestampWriteBackLabel1.setText("Preserve timestamps of the directories.");
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        jPanel81.add(dirTimestampWriteBackLabel1, gridBagConstraints);
+        jPanels[81].add(dirTimestampWriteBackLabel1, gridBagConstraints);
 
         dirTimestampSyncCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         dirTimestampSyncCheckBox.setVerticalTextPosition(SwingConstants.TOP);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        jPanel81.add(dirTimestampSyncCheckBox, gridBagConstraints);
+        jPanels[81].add(dirTimestampSyncCheckBox, gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1808,23 +1760,23 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
-        dirTimestampWriteBackPanel.add(jPanel81, gridBagConstraints);
+        dirTimestampWriteBackPanel.add(jPanels[81], gridBagConstraints);
 
-        jPanel84.setLayout(new GridBagLayout());
+        jPanels[84].setLayout(new GridBagLayout());
 
         ignoreDaylightSavingTimeJLabel.setIcon(new ImageIcon(getClass().getResource("/icons/timestamp.png"))); // NOI18N
         ignoreDaylightSavingTimeJLabel.setText("Ignore daylight saving granularity.");
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        jPanel84.add(ignoreDaylightSavingTimeJLabel, gridBagConstraints);
+        jPanels[84].add(ignoreDaylightSavingTimeJLabel, gridBagConstraints);
 
         ignoreDaylightSavingTimeCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         ignoreDaylightSavingTimeCheckBox.setVerticalTextPosition(SwingConstants.TOP);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        jPanel84.add(ignoreDaylightSavingTimeCheckBox, gridBagConstraints);
+        jPanels[84].add(ignoreDaylightSavingTimeCheckBox, gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1832,7 +1784,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
-        dirTimestampWriteBackPanel.add(jPanel84, gridBagConstraints);
+        dirTimestampWriteBackPanel.add(jPanels[84], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1846,70 +1798,70 @@ public abstract class JobDialogObjects extends JDialog {
         dirSymbolicLinkPane.setBorder(BorderFactory.createTitledBorder("Symbolic links"));
         dirSymbolicLinkPane.setLayout(new GridBagLayout());
 
-        jPanel27.setMaximumSize(null);
-        jPanel27.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[27].setMaximumSize(null);
+        jPanels[27].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         buttonGroupSymLinks.add(skipSymLinkRadioButton);
         skipSymLinkRadioButton.setMaximumSize(null);
         skipSymLinkRadioButton.setMinimumSize(null);
         skipSymLinkRadioButton.setPreferredSize(null);
-        jPanel27.add(skipSymLinkRadioButton);
+        jPanels[27].add(skipSymLinkRadioButton);
 
         skipSymLinkLabel.setIcon(new ImageIcon(getClass().getResource("/icons/skipLinks.png"))); // NOI18N
         skipSymLinkLabel.setText("Skip sym links");
-        jPanel27.add(skipSymLinkLabel);
+        jPanels[27].add(skipSymLinkLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.anchor = GridBagConstraints.LINE_START;
-        dirSymbolicLinkPane.add(jPanel27, gridBagConstraints);
+        dirSymbolicLinkPane.add(jPanels[27], gridBagConstraints);
 
-        jPanel23.setMaximumSize(null);
-        jPanel23.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[23].setMaximumSize(null);
+        jPanels[23].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         buttonGroupSymLinks.add(copySymLinkRadioButton);
         copySymLinkRadioButton.setMaximumSize(null);
         copySymLinkRadioButton.setMinimumSize(null);
         copySymLinkRadioButton.setPreferredSize(null);
-        jPanel23.add(copySymLinkRadioButton);
+        jPanels[23].add(copySymLinkRadioButton);
 
         copySymLinkLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyLinks.png"))); // NOI18N
         copySymLinkLabel.setText("Copy sym links (create symbolic links)");
-        jPanel23.add(copySymLinkLabel);
+        jPanels[23].add(copySymLinkLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = GridBagConstraints.LINE_START;
-        dirSymbolicLinkPane.add(jPanel23, gridBagConstraints);
+        dirSymbolicLinkPane.add(jPanels[23], gridBagConstraints);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        dirSymbolicLinkPane.add(jPanel4, gridBagConstraints);
+        dirSymbolicLinkPane.add(jPanels[4], gridBagConstraints);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = GridBagConstraints.VERTICAL;
         gridBagConstraints.weighty = 1.0;
-        dirSymbolicLinkPane.add(jPanel1, gridBagConstraints);
+        dirSymbolicLinkPane.add(jPanels[1], gridBagConstraints);
 
-        jPanel32.setMaximumSize(null);
-        jPanel32.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[32].setMaximumSize(null);
+        jPanels[32].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         buttonGroupSymLinks.add(followSymLinkRadioButton);
         followSymLinkRadioButton.setMaximumSize(null);
         followSymLinkRadioButton.setMinimumSize(null);
         followSymLinkRadioButton.setPreferredSize(null);
-        jPanel32.add(followSymLinkRadioButton);
+        jPanels[32].add(followSymLinkRadioButton);
 
         followSymLinkLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyLinks.png"))); // NOI18N
         followSymLinkLabel.setText("Follow sym links (copy linked files/dirs)");
-        jPanel32.add(followSymLinkLabel);
+        jPanels[32].add(followSymLinkLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = GridBagConstraints.LINE_START;
-        dirSymbolicLinkPane.add(jPanel32, gridBagConstraints);
+        dirSymbolicLinkPane.add(jPanels[32], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1927,25 +1879,25 @@ public abstract class JobDialogObjects extends JDialog {
         verifyJPanel.setBorder(BorderFactory.createTitledBorder("Verify"));
         verifyJPanel.setLayout(new GridBagLayout());
 
-        jPanel6.setMaximumSize(null);
-        jPanel6.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[6].setMaximumSize(null);
+        jPanels[6].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         dirVerifyCheckBox.setActionCommand("Verify files");
         dirVerifyCheckBox.setMaximumSize(null);
         dirVerifyCheckBox.setMinimumSize(null);
         dirVerifyCheckBox.setPreferredSize(null);
-        jPanel6.add(dirVerifyCheckBox);
+        jPanels[6].add(dirVerifyCheckBox);
 
         dirVerifyLabel.setIcon(new ImageIcon(getClass().getResource("/icons/verify.png"))); // NOI18N
         dirVerifyLabel.setText("Verify the content of the synchronized files");
-        jPanel6.add(dirVerifyLabel);
+        jPanels[6].add(dirVerifyLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        verifyJPanel.add(jPanel6, gridBagConstraints);
+        verifyJPanel.add(jPanels[6], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -1980,37 +1932,37 @@ public abstract class JobDialogObjects extends JDialog {
         attributeJPanel.setBorder(BorderFactory.createTitledBorder("File Attributes"));
         attributeJPanel.setLayout(new GridBagLayout());
 
-        jPanel24.setMaximumSize(null);
-        jPanel24.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[24].setMaximumSize(null);
+        jPanels[24].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         preserveDOSAttributesCheckBox.setActionCommand("Verify files");
         preserveDOSAttributesCheckBox.setMaximumSize(null);
         preserveDOSAttributesCheckBox.setMinimumSize(null);
         preserveDOSAttributesCheckBox.setPreferredSize(null);
-        jPanel24.add(preserveDOSAttributesCheckBox);
+        jPanels[24].add(preserveDOSAttributesCheckBox);
 
         preserveDOSAttributesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/file.png"))); // NOI18N
         preserveDOSAttributesLabel.setText("Preserve DOS attributes (MS Windows/DOS only)");
-        jPanel24.add(preserveDOSAttributesLabel);
+        jPanels[24].add(preserveDOSAttributesLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
         gridBagConstraints.weightx = 1.0;
-        attributeJPanel.add(jPanel24, gridBagConstraints);
+        attributeJPanel.add(jPanels[24], gridBagConstraints);
 
-        jPanel25.setMaximumSize(null);
-        jPanel25.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[25].setMaximumSize(null);
+        jPanels[25].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         preserveFilePermissionsCheckBox.setActionCommand("Verify files");
         preserveFilePermissionsCheckBox.setMaximumSize(null);
         preserveFilePermissionsCheckBox.setMinimumSize(null);
         preserveFilePermissionsCheckBox.setPreferredSize(null);
-        jPanel25.add(preserveFilePermissionsCheckBox);
+        jPanels[25].add(preserveFilePermissionsCheckBox);
 
         preserveFilePermissionsLabel.setIcon(new ImageIcon(getClass().getResource("/icons/permissions.png"))); // NOI18N
         preserveFilePermissionsLabel.setText("Preserve file permissions (POSIX only)");
-        jPanel25.add(preserveFilePermissionsLabel);
+        jPanels[25].add(preserveFilePermissionsLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -2018,20 +1970,20 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
         gridBagConstraints.weightx = 1.0;
-        attributeJPanel.add(jPanel25, gridBagConstraints);
+        attributeJPanel.add(jPanels[25], gridBagConstraints);
 
-        jPanel26.setMaximumSize(null);
-        jPanel26.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[26].setMaximumSize(null);
+        jPanels[26].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         preserveFileOwnershipCheckBox.setActionCommand("Verify files");
         preserveFileOwnershipCheckBox.setMaximumSize(null);
         preserveFileOwnershipCheckBox.setMinimumSize(null);
         preserveFileOwnershipCheckBox.setPreferredSize(null);
-        jPanel26.add(preserveFileOwnershipCheckBox);
+        jPanels[26].add(preserveFileOwnershipCheckBox);
 
         preserveFileOwnershipLabel.setIcon(new ImageIcon(getClass().getResource("/icons/group.png"))); // NOI18N
         preserveFileOwnershipLabel.setText("Preserve file ownership (POSIX only)");
-        jPanel26.add(preserveFileOwnershipLabel);
+        jPanels[26].add(preserveFileOwnershipLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -2039,20 +1991,20 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
         gridBagConstraints.weightx = 1.0;
-        attributeJPanel.add(jPanel26, gridBagConstraints);
+        attributeJPanel.add(jPanels[26], gridBagConstraints);
 
-        jPanel29.setMaximumSize(null);
-        jPanel29.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        jPanels[29].setMaximumSize(null);
+        jPanels[29].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         overrideReadOnlyCheckBox.setActionCommand("Verify files");
         overrideReadOnlyCheckBox.setMaximumSize(null);
         overrideReadOnlyCheckBox.setMinimumSize(null);
         overrideReadOnlyCheckBox.setPreferredSize(null);
-        jPanel29.add(overrideReadOnlyCheckBox);
+        jPanels[29].add(overrideReadOnlyCheckBox);
 
         overrideReadOnlyLabel.setIcon(new ImageIcon(getClass().getResource("/icons/link.png"))); // NOI18N
         overrideReadOnlyLabel.setText("Attempt to override read-only attribute in destination when copying/deleting.");
-        jPanel29.add(overrideReadOnlyLabel);
+        jPanels[29].add(overrideReadOnlyLabel);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -2060,7 +2012,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
         gridBagConstraints.weightx = 1.0;
-        attributeJPanel.add(jPanel29, gridBagConstraints);
+        attributeJPanel.add(jPanels[29], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -2108,14 +2060,14 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.insets = new Insets(0, 10, 0, 0);
         realTimeSyncPanel.add(dirTimestampDiffFieldPanel1, gridBagConstraints);
 
-        jPanel85.setLayout(new GridBagLayout());
+        jPanels[85].setLayout(new GridBagLayout());
 
         ignoreDaylightSavingTimeJLabel1.setIcon(new ImageIcon(getClass().getResource("/icons/start.png"))); // NOI18N
         ignoreDaylightSavingTimeJLabel1.setText("Enable realtime synchronization");
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        jPanel85.add(ignoreDaylightSavingTimeJLabel1, gridBagConstraints);
+        jPanels[85].add(ignoreDaylightSavingTimeJLabel1, gridBagConstraints);
 
         realtimeSyncCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         realtimeSyncCheckBox.setVerticalTextPosition(SwingConstants.TOP);
@@ -2123,7 +2075,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        jPanel85.add(realtimeSyncCheckBox, gridBagConstraints);
+        jPanels[85].add(realtimeSyncCheckBox, gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -2131,23 +2083,23 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
-        realTimeSyncPanel.add(jPanel85, gridBagConstraints);
+        realTimeSyncPanel.add(jPanels[85], gridBagConstraints);
 
-        jPanel82.setLayout(new GridBagLayout());
+        jPanels[82].setLayout(new GridBagLayout());
 
         dirTimestampWriteBackLabel3.setIcon(new ImageIcon(getClass().getResource("/icons/icon_sync.png"))); // NOI18N
         dirTimestampWriteBackLabel3.setText("Synchronize on start");
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        jPanel82.add(dirTimestampWriteBackLabel3, gridBagConstraints);
+        jPanels[82].add(dirTimestampWriteBackLabel3, gridBagConstraints);
 
         realtimeSyncOnStartCheckBox.setToolTipText("<html>The timestamp of the destination file would be written back to the source file.<br>The next time you synchronize this file with the \"Modified\" option it will not be copied again because both files have the same timestamp.<br /> This is useful when synchronizing to slow media (like zip drives).</html>");
         realtimeSyncOnStartCheckBox.setVerticalTextPosition(SwingConstants.TOP);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        jPanel82.add(realtimeSyncOnStartCheckBox, gridBagConstraints);
+        jPanels[82].add(realtimeSyncOnStartCheckBox, gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -2155,7 +2107,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
-        realTimeSyncPanel.add(jPanel82, gridBagConstraints);
+        realTimeSyncPanel.add(jPanels[82], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
