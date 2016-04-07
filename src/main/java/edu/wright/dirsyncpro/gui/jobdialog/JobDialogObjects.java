@@ -184,9 +184,24 @@ public abstract class JobDialogObjects extends JDialog {
         GridBagConstraints gridBagConstraints;
 
         JPanel jPanels[] = new JPanel[200];
+        JPanel infoPanels[] = new JPanel[11];
+        JPanel spacers[] = new JPanel[30];
+        JTextPane jTextPanes[] = new JTextPane[15];
 
         for (int i = 0; i < jPanels.length; i++) {
             jPanels[i] = new JPanel();
+        }
+
+        for (int i = 0; i < infoPanels.length; i++) {
+            infoPanels[i] = new JPanel();
+        }
+
+        for (int i = 0; i < spacers.length; i++) {
+            spacers[i] = new JPanel();
+        }
+
+        for (int i = 0; i < jTextPanes.length; i++) {
+            jTextPanes[i] = new JTextPane();
         }
 
         ButtonGroup buttonGroupSymLinks = new ButtonGroup();
@@ -196,126 +211,117 @@ public abstract class JobDialogObjects extends JDialog {
         JPanel basicTab = new JPanel();
         JPanel pathsPanel = new JPanel();
 
-        JPanel spacer2 = new JPanel();
-        JPanel informationPanel = new JPanel();
-        JTextPane jTextPane1 = new JTextPane();
+
+
         HTMLEditorKit editorKit = new HTMLEditorKit();
         StyleSheet styles = new StyleSheet();
         Font font = UIManager.getFont("Label.font");
         String bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
-        jTextPane1.setEditorKit(editorKit);
+        jTextPanes[1].setEditorKit(editorKit);
         JPanel syncModeJPanel = new JPanel();
-        JLabel label9 = new JLabel();
+        JLabel label = new JLabel();
         JPanel compareTab = new JPanel();
-        JPanel spacer10 = new JPanel();
-        JPanel informationPanel10 = new JPanel();
-        JTextPane jTextPane11 = new JTextPane();
+
+
+
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
         bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
-        jTextPane11.setEditorKit(editorKit);
+        jTextPanes[11].setEditorKit(editorKit);
         JPanel compareaJpanel = new JPanel();
 
-        JPanel spacer27 = new JPanel();
         JPanel copyTab = new JPanel();
         JPanel copyOptionsJPanel = new JPanel();
 
-        JPanel spacer12 = new JPanel();
-        JPanel informationPanel1 = new JPanel();
-        JTextPane jTextPane2 = new JTextPane();
+
+
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
         bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
-        jTextPane2.setEditorKit(editorKit);
+        jTextPanes[2].setEditorKit(editorKit);
         JPanel conflictResolutionTab = new JPanel();
         JPanel monodirectionalSyncConflictPanel = new JPanel();
 
-        JPanel spacer26 = new JPanel();
         JPanel bidirectionalSyncConflictPanel = new JPanel();
 
-        JPanel spacer25 = new JPanel();
-        JPanel spacer17 = new JPanel();
-        JPanel informationPanel2 = new JPanel();
-        JTextPane jTextPane3 = new JTextPane();
+
+
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
         bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
-        jTextPane3.setEditorKit(editorKit);
+        jTextPanes[3].setEditorKit(editorKit);
         JPanel filtersTab = new JPanel();
         JScrollPane jScrollPane3 = new JScrollPane();
-        JPanel informationPanel3 = new JPanel();
-        JTextPane jTextPane4 = new JTextPane();
+
+
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
         bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
-        jTextPane4.setEditorKit(editorKit);
+        jTextPanes[4].setEditorKit(editorKit);
         JPanel viewJPanel3 = new JPanel();
 
         JPanel deletionTab = new JPanel();
         JPanel dirDeleteOptionsPanel = new JPanel();
 
-        JPanel spacer7 = new JPanel();
-        JPanel spacer6 = new JPanel();
-        JPanel informationPanel4 = new JPanel();
-        JTextPane jTextPane5 = new JTextPane();
+
+
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
         bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
-        jTextPane5.setEditorKit(editorKit);
+        jTextPanes[5].setEditorKit(editorKit);
         JPanel backupTab = new JPanel();
         JPanel dirBackupPanel = new JPanel();
 
-        JPanel spacer4 = new JPanel();
-        JPanel informationPanel5 = new JPanel();
-        JTextPane jTextPane6 = new JTextPane();
+
+
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
         bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
-        jTextPane6.setEditorKit(editorKit);
+        jTextPanes[6].setEditorKit(editorKit);
         JPanel logTab = new JPanel();
-        JPanel spacer5 = new JPanel();
-        JPanel informationPanel8 = new JPanel();
-        JTextPane jTextPane9 = new JTextPane();
+
+
+
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
         bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
-        jTextPane9.setEditorKit(editorKit);
+        jTextPanes[9].setEditorKit(editorKit);
         JPanel dirLogFilePanel = new JPanel();
 
         JPanel scheduleTab = new JPanel();
         JScrollPane jScrollPane4 = new JScrollPane();
-        JPanel informationPanel9 = new JPanel();
-        JTextPane jTextPane10 = new JTextPane();
+
+
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
         bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
-        jTextPane4.setEditorKit(editorKit);
+        jTextPanes[4].setEditorKit(editorKit);
         JPanel viewJPanel4 = new JPanel();
 
         JPanel advancedTab = new JPanel();
@@ -329,18 +335,17 @@ public abstract class JobDialogObjects extends JDialog {
         JLabel ignoreDaylightSavingTimeJLabel = new JLabel();
         JPanel dirSymbolicLinkPane = new JPanel();
 
-        JPanel spacer8 = new JPanel();
         JPanel verifyJPanel = new JPanel();
 
-        JPanel informationPanel6 = new JPanel();
-        JTextPane jTextPane7 = new JTextPane();
+
+
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
         bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
-        jTextPane7.setEditorKit(editorKit);
+        jTextPanes[7].setEditorKit(editorKit);
         JPanel attributeJPanel = new JPanel();
 
         JPanel realTimeSyncPanel = new JPanel();
@@ -351,17 +356,16 @@ public abstract class JobDialogObjects extends JDialog {
         JLabel dirTimestampWriteBackLabel3 = new JLabel();
         JPanel actionsTab = new JPanel();
         JPanel settingsActionsPanel = new JPanel();
-        JPanel spacer16 = new JPanel();
-        JPanel spacer14 = new JPanel();
-        JPanel informationPanel7 = new JPanel();
-        JTextPane jTextPane8 = new JTextPane();
+
+
+
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
         bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
-        jTextPane8.setEditorKit(editorKit);
+        jTextPanes[8].setEditorKit(editorKit);
         JPanel settingsButtonsPanel2 = new JPanel();
 
         setTitle("Job Options");
@@ -542,40 +546,40 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        basicTab.add(spacer2, gridBagConstraints);
+        basicTab.add(spacers[2], gridBagConstraints);
 
-        informationPanel.setBorder(BorderFactory.createTitledBorder("Information"));
-        informationPanel.setPreferredSize(new Dimension(298, 180));
-        informationPanel.setLayout(new GridBagLayout());
+        infoPanels[0].setBorder(BorderFactory.createTitledBorder("Information"));
+        infoPanels[0].setPreferredSize(new Dimension(298, 180));
+        infoPanels[0].setLayout(new GridBagLayout());
 
-        jTextPane1.setBackground(UIManager.getDefaults().getColor("Label.background"));
-        jTextPane1.setContentType("text/html"); // NOI18N
-        jTextPane1.setText("<html>\n  <head>\n\n  </head>\n  <body>\n    <p style=\"margin-top: 0\">\n    \nSet up the directories and the sync mode: <u>Mirror A -&gt; B (incremental)</u> and <u>Mirror B -&gt; A (incremental)</u> are mono-directional (one way). \nOnly new and modified files from the source are copied to the destination; redundant files in the destination will be deleted. The directories are exactly the same after the sync. \n<u>Synchronize A &lt;-&gt; B (incremental)</u> is bi-directional (two-ways). Only new and modified files from both dirs are copied to each other. Both directories are exactly the same after the \nsync. <u>Backup A -&gt; B</u> and <u>Restore B -&gt; A</u> will copy all files from A to B (or vice versa). <u>Contribute A -&gt; B</u> and <u>Contribute B -&gt; A</u> will \ncopy only the new files from A to B (or vice versa). Choose <u>Synchronize A -&gt; B (custom)</u>, <u>Synchronize B -&gt; A (custom)</u> or <u>Synchronize A &lt;-&gt; B (custom)</u> to \nsetup the sync behavior as you wish (advanced). <span style=\"color: blue;\">Some tabs get available only in a 'custom' mode.</span>\n    </p>\n  </body>\n</html>\n");
-        jTextPane1.setFocusCycleRoot(false);
-        jTextPane1.setMinimumSize(new Dimension(101, 25));
+        jTextPanes[1].setBackground(UIManager.getDefaults().getColor("Label.background"));
+        jTextPanes[1].setContentType("text/html"); // NOI18N
+        jTextPanes[1].setText("<html>\n  <head>\n\n  </head>\n  <body>\n    <p style=\"margin-top: 0\">\n    \nSet up the directories and the sync mode: <u>Mirror A -&gt; B (incremental)</u> and <u>Mirror B -&gt; A (incremental)</u> are mono-directional (one way). \nOnly new and modified files from the source are copied to the destination; redundant files in the destination will be deleted. The directories are exactly the same after the sync. \n<u>Synchronize A &lt;-&gt; B (incremental)</u> is bi-directional (two-ways). Only new and modified files from both dirs are copied to each other. Both directories are exactly the same after the \nsync. <u>Backup A -&gt; B</u> and <u>Restore B -&gt; A</u> will copy all files from A to B (or vice versa). <u>Contribute A -&gt; B</u> and <u>Contribute B -&gt; A</u> will \ncopy only the new files from A to B (or vice versa). Choose <u>Synchronize A -&gt; B (custom)</u>, <u>Synchronize B -&gt; A (custom)</u> or <u>Synchronize A &lt;-&gt; B (custom)</u> to \nsetup the sync behavior as you wish (advanced). <span style=\"color: blue;\">Some tabs get available only in a 'custom' mode.</span>\n    </p>\n  </body>\n</html>\n");
+        jTextPanes[1].setFocusCycleRoot(false);
+        jTextPanes[1].setMinimumSize(new Dimension(101, 25));
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        informationPanel.add(jTextPane1, gridBagConstraints);
+        infoPanels[0].add(jTextPanes[1], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        basicTab.add(informationPanel, gridBagConstraints);
+        basicTab.add(infoPanels[0], gridBagConstraints);
 
         syncModeJPanel.setBorder(BorderFactory.createTitledBorder("Sync using this mode"));
         syncModeJPanel.setLayout(new GridBagLayout());
 
-        label9.setIcon(new ImageIcon(getClass().getResource("/icons/DirSyncPro.png"))); // NOI18N
-        label9.setText("Sync Mode:");
+        label.setIcon(new ImageIcon(getClass().getResource("/icons/DirSyncPro.png"))); // NOI18N
+        label.setText("Sync Mode:");
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
         gridBagConstraints.insets = new Insets(0, 5, 0, 0);
-        syncModeJPanel.add(label9, gridBagConstraints);
+        syncModeJPanel.add(label, gridBagConstraints);
 
         syncModeComboBox.setMaximumRowCount(Const.SyncMode.values().length);
         syncModeComboBox.addItemListener(this::syncModeComboBoxItemStateChanged);
@@ -599,28 +603,28 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.weighty = 1.0;
-        compareTab.add(spacer10, gridBagConstraints);
+        compareTab.add(spacers[10], gridBagConstraints);
 
-        informationPanel10.setBorder(BorderFactory.createTitledBorder("Information"));
-        informationPanel10.setPreferredSize(new Dimension(298, 180));
-        informationPanel10.setLayout(new GridBagLayout());
+        infoPanels[10].setBorder(BorderFactory.createTitledBorder("Information"));
+        infoPanels[10].setPreferredSize(new Dimension(298, 180));
+        infoPanels[10].setLayout(new GridBagLayout());
 
-        jTextPane11.setBackground(UIManager.getDefaults().getColor("Label.background"));
-        jTextPane11.setContentType("text/html"); // NOI18N
-        jTextPane11.setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nYou may define here how the comparison is actually carried out. When it is based on <u>file sizes and modification dates</u>, only the file sizes and modification dates are compared to conclude if a file is changed. \nThis is adequate for most cases because mostly the file sizes and/or modification dates change when files are modified. If the comparison is based on <u>file sizes, modifcation dates and file meta data</u>, \nthe changes in meta data (besides file sizes and modification dates) will also cause the file to be marked as 'modified'. If the file sizes are the same, and <u>file contents</u> is selected, DirSync Pro \nwill compare the contents of the files byte-by-byte to verify if the files are different. Please notice that comapring file contents could make the synchronization extremely slow.\n    </p>\r\n  </body>\r\n</html>\r\n");
-        jTextPane11.setFocusable(false);
+        jTextPanes[11].setBackground(UIManager.getDefaults().getColor("Label.background"));
+        jTextPanes[11].setContentType("text/html"); // NOI18N
+        jTextPanes[11].setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nYou may define here how the comparison is actually carried out. When it is based on <u>file sizes and modification dates</u>, only the file sizes and modification dates are compared to conclude if a file is changed. \nThis is adequate for most cases because mostly the file sizes and/or modification dates change when files are modified. If the comparison is based on <u>file sizes, modifcation dates and file meta data</u>, \nthe changes in meta data (besides file sizes and modification dates) will also cause the file to be marked as 'modified'. If the file sizes are the same, and <u>file contents</u> is selected, DirSync Pro \nwill compare the contents of the files byte-by-byte to verify if the files are different. Please notice that comapring file contents could make the synchronization extremely slow.\n    </p>\r\n  </body>\r\n</html>\r\n");
+        jTextPanes[11].setFocusable(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        informationPanel10.add(jTextPane11, gridBagConstraints);
+        infoPanels[10].add(jTextPanes[11], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        compareTab.add(informationPanel10, gridBagConstraints);
+        compareTab.add(infoPanels[10], gridBagConstraints);
 
         compareaJpanel.setBorder(BorderFactory.createTitledBorder("Compare"));
         compareaJpanel.setLayout(new GridBagLayout());
@@ -690,7 +694,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.weightx = 1.0;
-        compareaJpanel.add(spacer27, gridBagConstraints);
+        compareaJpanel.add(spacers[27], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
@@ -802,28 +806,28 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.weighty = 1.0;
-        copyTab.add(spacer12, gridBagConstraints);
+        copyTab.add(spacers[12], gridBagConstraints);
 
-        informationPanel1.setBorder(BorderFactory.createTitledBorder("Information"));
-        informationPanel1.setPreferredSize(new Dimension(298, 180));
-        informationPanel1.setLayout(new GridBagLayout());
+        infoPanels[1].setBorder(BorderFactory.createTitledBorder("Information"));
+        infoPanels[1].setPreferredSize(new Dimension(298, 180));
+        infoPanels[1].setLayout(new GridBagLayout());
 
-        jTextPane2.setBackground(UIManager.getDefaults().getColor("Label.background"));
-        jTextPane2.setContentType("text/html"); // NOI18N
-        jTextPane2.setText("<html>\n  <head>\n\n  </head>\n  <body>\n    <p style=\"margin-top: 0\">\n    \nYou may define these copy options only if the Sync Mode under the tab Basics is set to 'custom'. Options: <u>Forced copy all files</u> will cause a forced full copy of all files. <u>New</u>, <u>Larger</u>, <u>Modified</u> cause to copy only the new, larger and/or modified files, respectively. <u>Both larger and Modified</u> causes to copy the files which not only are larger but also modified.\n    </p>\n  </body>\n</html>");
-        jTextPane2.setFocusable(false);
+        jTextPanes[2].setBackground(UIManager.getDefaults().getColor("Label.background"));
+        jTextPanes[2].setContentType("text/html"); // NOI18N
+        jTextPanes[2].setText("<html>\n  <head>\n\n  </head>\n  <body>\n    <p style=\"margin-top: 0\">\n    \nYou may define these copy options only if the Sync Mode under the tab Basics is set to 'custom'. Options: <u>Forced copy all files</u> will cause a forced full copy of all files. <u>New</u>, <u>Larger</u>, <u>Modified</u> cause to copy only the new, larger and/or modified files, respectively. <u>Both larger and Modified</u> causes to copy the files which not only are larger but also modified.\n    </p>\n  </body>\n</html>");
+        jTextPanes[2].setFocusable(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        informationPanel1.add(jTextPane2, gridBagConstraints);
+        infoPanels[1].add(jTextPanes[2], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        copyTab.add(informationPanel1, gridBagConstraints);
+        copyTab.add(infoPanels[1], gridBagConstraints);
 
         jobTabbedPane.addTab("Copy", copyTab);
 
@@ -898,7 +902,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.weightx = 1.0;
-        monodirectionalSyncConflictPanel.add(spacer26, gridBagConstraints);
+        monodirectionalSyncConflictPanel.add(spacers[26], gridBagConstraints);
 
         conflictResolutionJTabbedPane.addTab("Monodirectional", monodirectionalSyncConflictPanel);
 
@@ -1004,7 +1008,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.weightx = 1.0;
-        bidirectionalSyncConflictPanel.add(spacer25, gridBagConstraints);
+        bidirectionalSyncConflictPanel.add(spacers[25], gridBagConstraints);
 
         conflictResolutionJTabbedPane.addTab("Bidirectional", bidirectionalSyncConflictPanel);
 
@@ -1015,28 +1019,28 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.weighty = 1.0;
-        conflictResolutionTab.add(spacer17, gridBagConstraints);
+        conflictResolutionTab.add(spacers[17], gridBagConstraints);
 
-        informationPanel2.setBorder(BorderFactory.createTitledBorder("Information"));
-        informationPanel2.setPreferredSize(new Dimension(298, 180));
-        informationPanel2.setLayout(new GridBagLayout());
+        infoPanels[2].setBorder(BorderFactory.createTitledBorder("Information"));
+        infoPanels[2].setPreferredSize(new Dimension(298, 180));
+        infoPanels[2].setLayout(new GridBagLayout());
 
-        jTextPane3.setBackground(UIManager.getDefaults().getColor("Label.background"));
-        jTextPane3.setContentType("text/html"); // NOI18N
-        jTextPane3.setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nYou may set the conflict resolution mode only if the Sync Mode under the tab Basic is set to a 'custom' mode. Options for bidirectional sync:\n<u>Copy the latest modified/largest file to both dirs</u>: if a file is modified in both dir individually, copy the latest modified/largest to both dirs.\n<u>Rename & copy both files to both dirs</u>: if a file is modified in both dir individually, rename them first and then copy them both to both dirs. When renaming, extensions '.DirA' and '.DirB' are added to the files form DirA and DirB respectively.\n<u>Do nothing. Just warn me!</u>: ignore if a file is modified in both dir individually. Shows a warning.\n<u>Do nothing. Just skip them silently!</u>: ignore silently if a file is modified in both dir individually.\nOptions for monodirectional sync:\n<u>Overwrite the file in destination with the file from source</u>: If the file in destination is modified individually, copy the file from source and overwrite the file in destination.\n<u>Do nothing. Just warn me!</u>: ignore if a file is modified in Dir B and show a warning.\n<u>Do nothing. Skip the file silently!</u>: ignore silently if a file is modified in Dir B individually.\n    </p>\r\n  </body>\r\n</html>\r\n");
-        jTextPane3.setFocusable(false);
+        jTextPanes[3].setBackground(UIManager.getDefaults().getColor("Label.background"));
+        jTextPanes[3].setContentType("text/html"); // NOI18N
+        jTextPanes[3].setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nYou may set the conflict resolution mode only if the Sync Mode under the tab Basic is set to a 'custom' mode. Options for bidirectional sync:\n<u>Copy the latest modified/largest file to both dirs</u>: if a file is modified in both dir individually, copy the latest modified/largest to both dirs.\n<u>Rename & copy both files to both dirs</u>: if a file is modified in both dir individually, rename them first and then copy them both to both dirs. When renaming, extensions '.DirA' and '.DirB' are added to the files form DirA and DirB respectively.\n<u>Do nothing. Just warn me!</u>: ignore if a file is modified in both dir individually. Shows a warning.\n<u>Do nothing. Just skip them silently!</u>: ignore silently if a file is modified in both dir individually.\nOptions for monodirectional sync:\n<u>Overwrite the file in destination with the file from source</u>: If the file in destination is modified individually, copy the file from source and overwrite the file in destination.\n<u>Do nothing. Just warn me!</u>: ignore if a file is modified in Dir B and show a warning.\n<u>Do nothing. Skip the file silently!</u>: ignore silently if a file is modified in Dir B individually.\n    </p>\r\n  </body>\r\n</html>\r\n");
+        jTextPanes[3].setFocusable(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        informationPanel2.add(jTextPane3, gridBagConstraints);
+        infoPanels[2].add(jTextPanes[3], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        conflictResolutionTab.add(informationPanel2, gridBagConstraints);
+        conflictResolutionTab.add(infoPanels[2], gridBagConstraints);
 
         jobTabbedPane.addTab("Conflict resolution", conflictResolutionTab);
 
@@ -1058,26 +1062,26 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.weighty = 1.0;
         filtersTab.add(jScrollPane3, gridBagConstraints);
 
-        informationPanel3.setBorder(BorderFactory.createTitledBorder("Information"));
-        informationPanel3.setPreferredSize(new Dimension(298, 180));
-        informationPanel3.setLayout(new GridBagLayout());
+        infoPanels[3].setBorder(BorderFactory.createTitledBorder("Information"));
+        infoPanels[3].setPreferredSize(new Dimension(298, 180));
+        infoPanels[3].setLayout(new GridBagLayout());
 
-        jTextPane4.setBackground(UIManager.getDefaults().getColor("Label.background"));
-        jTextPane4.setContentType("text/html"); // NOI18N
-        jTextPane4.setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nYou may (re)define here filters for inclusion and exclusions of files and directories if the Sync Mode under the tab Basics is set to 'custom'. 'Edit' and 'Remove' buttons get available only if a filter is selected. Filter tree nodes get grayed out if they do not contain any filter.\n    </p>\r\n  </body>\r\n</html>\r\n");
-        jTextPane4.setFocusable(false);
+        jTextPanes[4].setBackground(UIManager.getDefaults().getColor("Label.background"));
+        jTextPanes[4].setContentType("text/html"); // NOI18N
+        jTextPanes[4].setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nYou may (re)define here filters for inclusion and exclusions of files and directories if the Sync Mode under the tab Basics is set to 'custom'. 'Edit' and 'Remove' buttons get available only if a filter is selected. Filter tree nodes get grayed out if they do not contain any filter.\n    </p>\r\n  </body>\r\n</html>\r\n");
+        jTextPanes[4].setFocusable(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        informationPanel3.add(jTextPane4, gridBagConstraints);
+        infoPanels[3].add(jTextPanes[4], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        filtersTab.add(informationPanel3, gridBagConstraints);
+        filtersTab.add(infoPanels[3], gridBagConstraints);
 
         viewJPanel3.setMinimumSize(new Dimension(100, 29));
         viewJPanel3.setLayout(new GridBagLayout());
@@ -1286,7 +1290,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.weightx = 1.0;
-        dirDeleteOptionsPanel.add(spacer7, gridBagConstraints);
+        dirDeleteOptionsPanel.add(spacers[7], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1298,28 +1302,28 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.weighty = 1.0;
-        deletionTab.add(spacer6, gridBagConstraints);
+        deletionTab.add(spacers[6], gridBagConstraints);
 
-        informationPanel4.setBorder(BorderFactory.createTitledBorder("Information"));
-        informationPanel4.setPreferredSize(new Dimension(298, 180));
-        informationPanel4.setLayout(new GridBagLayout());
+        infoPanels[4].setBorder(BorderFactory.createTitledBorder("Information"));
+        infoPanels[4].setPreferredSize(new Dimension(298, 180));
+        infoPanels[4].setLayout(new GridBagLayout());
 
-        jTextPane5.setBackground(UIManager.getDefaults().getColor("Label.background"));
-        jTextPane5.setContentType("text/html"); // NOI18N
-        jTextPane5.setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nYou may set deletion options only if the Sync Mode under the tab Basics is set to 'custom'. Options: <u>Orphan files from destination</u> and <u>Orphan dirs from destination</u> will cause the files/dirs in the destination to be deleted if the corresponding file in the source does not exist.\n<u>Force deleting excluded files from Dir A/Dir B</u> and <u>Force deleting excluded directories from Dir A/Dir B</u> will cause the files/dirs in Dir A/Dir B to be deleted \nif they match any exclusion pattern. This could be helpful while cleaning stuff, for example to deleting all temporary files matching *.tmp.\n    </p>\r\n  </body>\r\n</html>\r\n");
-        jTextPane5.setFocusable(false);
+        jTextPanes[5].setBackground(UIManager.getDefaults().getColor("Label.background"));
+        jTextPanes[5].setContentType("text/html"); // NOI18N
+        jTextPanes[5].setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nYou may set deletion options only if the Sync Mode under the tab Basics is set to 'custom'. Options: <u>Orphan files from destination</u> and <u>Orphan dirs from destination</u> will cause the files/dirs in the destination to be deleted if the corresponding file in the source does not exist.\n<u>Force deleting excluded files from Dir A/Dir B</u> and <u>Force deleting excluded directories from Dir A/Dir B</u> will cause the files/dirs in Dir A/Dir B to be deleted \nif they match any exclusion pattern. This could be helpful while cleaning stuff, for example to deleting all temporary files matching *.tmp.\n    </p>\r\n  </body>\r\n</html>\r\n");
+        jTextPanes[5].setFocusable(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        informationPanel4.add(jTextPane5, gridBagConstraints);
+        infoPanels[4].add(jTextPanes[5], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        deletionTab.add(informationPanel4, gridBagConstraints);
+        deletionTab.add(infoPanels[4], gridBagConstraints);
 
         jobTabbedPane.addTab("Deletion", deletionTab);
 
@@ -1426,28 +1430,28 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        backupTab.add(spacer4, gridBagConstraints);
+        backupTab.add(spacers[4], gridBagConstraints);
 
-        informationPanel5.setBorder(BorderFactory.createTitledBorder("Information"));
-        informationPanel5.setPreferredSize(new Dimension(298, 180));
-        informationPanel5.setLayout(new GridBagLayout());
+        infoPanels[5].setBorder(BorderFactory.createTitledBorder("Information"));
+        infoPanels[5].setPreferredSize(new Dimension(298, 180));
+        infoPanels[5].setLayout(new GridBagLayout());
 
-        jTextPane6.setBackground(UIManager.getDefaults().getColor("Label.background"));
-        jTextPane6.setContentType("text/html"); // NOI18N
-        jTextPane6.setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nDefine here the number of backups of a file which should be made if the file is being deleted or overwritten. You may use these options only if the Sync Mode under the tab Basics is set to 'custom'. When creating a backup, the file name is extended with a rank number. You may let the backups be created in the destination directory or you may define a custom directory. The backups are always placed in a directory named '.DirSyncProBackup' within the backup-directory. You may set/edit backup options only if the Sync Mode under the tab Basics is not set to 'Bi-directional'. The number of backups is set to 0 by default (no backups). You may create 50 backups at most.\n    </p>\r\n  </body>\r\n</html>\r\n");
-        jTextPane6.setFocusable(false);
+        jTextPanes[6].setBackground(UIManager.getDefaults().getColor("Label.background"));
+        jTextPanes[6].setContentType("text/html"); // NOI18N
+        jTextPanes[6].setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nDefine here the number of backups of a file which should be made if the file is being deleted or overwritten. You may use these options only if the Sync Mode under the tab Basics is set to 'custom'. When creating a backup, the file name is extended with a rank number. You may let the backups be created in the destination directory or you may define a custom directory. The backups are always placed in a directory named '.DirSyncProBackup' within the backup-directory. You may set/edit backup options only if the Sync Mode under the tab Basics is not set to 'Bi-directional'. The number of backups is set to 0 by default (no backups). You may create 50 backups at most.\n    </p>\r\n  </body>\r\n</html>\r\n");
+        jTextPanes[6].setFocusable(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        informationPanel5.add(jTextPane6, gridBagConstraints);
+        infoPanels[5].add(jTextPanes[6], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        backupTab.add(informationPanel5, gridBagConstraints);
+        backupTab.add(infoPanels[5], gridBagConstraints);
 
         jobTabbedPane.addTab("Backup", backupTab);
 
@@ -1457,28 +1461,28 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        logTab.add(spacer5, gridBagConstraints);
+        logTab.add(spacers[5], gridBagConstraints);
 
-        informationPanel8.setBorder(BorderFactory.createTitledBorder("Information"));
-        informationPanel8.setPreferredSize(new Dimension(298, 180));
-        informationPanel8.setLayout(new GridBagLayout());
+        infoPanels[8].setBorder(BorderFactory.createTitledBorder("Information"));
+        infoPanels[8].setPreferredSize(new Dimension(298, 180));
+        infoPanels[8].setLayout(new GridBagLayout());
 
-        jTextPane9.setBackground(UIManager.getDefaults().getColor("Label.background"));
-        jTextPane9.setContentType("text/html"); // NOI18N
-        jTextPane9.setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nYou may enable or disable logging for each job individually. If enabled, all the messages will also be written to the log file 'JOB_NAME.log'. \nYou may define here a custom log file as well. If no custom log file is defined, the log files are saved in the directory which is defined in the DirSync Pro options \n(Menu/Tools/Options). You may include some wild cards into your log filename (please read the help for more details). \nThe log entries are appended to a log file if it already exists.\n    </p>\r\n  </body>\r\n</html>\r\n");
-        jTextPane9.setFocusable(false);
+        jTextPanes[9].setBackground(UIManager.getDefaults().getColor("Label.background"));
+        jTextPanes[9].setContentType("text/html"); // NOI18N
+        jTextPanes[9].setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nYou may enable or disable logging for each job individually. If enabled, all the messages will also be written to the log file 'JOB_NAME.log'. \nYou may define here a custom log file as well. If no custom log file is defined, the log files are saved in the directory which is defined in the DirSync Pro options \n(Menu/Tools/Options). You may include some wild cards into your log filename (please read the help for more details). \nThe log entries are appended to a log file if it already exists.\n    </p>\r\n  </body>\r\n</html>\r\n");
+        jTextPanes[9].setFocusable(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        informationPanel8.add(jTextPane9, gridBagConstraints);
+        infoPanels[8].add(jTextPanes[9], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        logTab.add(informationPanel8, gridBagConstraints);
+        logTab.add(infoPanels[8], gridBagConstraints);
 
         dirLogFilePanel.setBorder(BorderFactory.createTitledBorder("Log file"));
         dirLogFilePanel.setLayout(new GridBagLayout());
@@ -1567,26 +1571,26 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.weighty = 1.0;
         scheduleTab.add(jScrollPane4, gridBagConstraints);
 
-        informationPanel9.setBorder(BorderFactory.createTitledBorder("Information"));
-        informationPanel9.setPreferredSize(new Dimension(298, 180));
-        informationPanel9.setLayout(new GridBagLayout());
+        infoPanels[9].setBorder(BorderFactory.createTitledBorder("Information"));
+        infoPanels[9].setPreferredSize(new Dimension(298, 180));
+        infoPanels[9].setLayout(new GridBagLayout());
 
-        jTextPane10.setBackground(UIManager.getDefaults().getColor("Label.background"));
-        jTextPane10.setContentType("text/html"); // NOI18N
-        jTextPane10.setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nYou may define here schedules for this task. Use 'New' to add a new schedule. 'Edit' and 'Remove' buttons get available only if a scheduled task is selected. \nSchedule tree nodes get grayed out if they do not contain any schedule. If you add a schedule type which already exist, it will be overwritten.<br\\>\nIf a schedule task of type Once has already run or if a recurrent schedule task does not have a valid next event date due to its constraints, the schedule \ngets suffixed with '(Expired)' in the schedule tree'.\n    </p>\r\n  </body>\r\n</html>\r\n");
-        jTextPane10.setFocusable(false);
+        jTextPanes[10].setBackground(UIManager.getDefaults().getColor("Label.background"));
+        jTextPanes[10].setContentType("text/html"); // NOI18N
+        jTextPanes[10].setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nYou may define here schedules for this task. Use 'New' to add a new schedule. 'Edit' and 'Remove' buttons get available only if a scheduled task is selected. \nSchedule tree nodes get grayed out if they do not contain any schedule. If you add a schedule type which already exist, it will be overwritten.<br\\>\nIf a schedule task of type Once has already run or if a recurrent schedule task does not have a valid next event date due to its constraints, the schedule \ngets suffixed with '(Expired)' in the schedule tree'.\n    </p>\r\n  </body>\r\n</html>\r\n");
+        jTextPanes[10].setFocusable(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        informationPanel9.add(jTextPane10, gridBagConstraints);
+        infoPanels[9].add(jTextPanes[10], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        scheduleTab.add(informationPanel9, gridBagConstraints);
+        scheduleTab.add(infoPanels[9], gridBagConstraints);
 
         viewJPanel4.setMinimumSize(new Dimension(100, 29));
         viewJPanel4.setLayout(new GridBagLayout());
@@ -1874,7 +1878,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.weighty = 1.0;
-        advancedTab.add(spacer8, gridBagConstraints);
+        advancedTab.add(spacers[8], gridBagConstraints);
 
         verifyJPanel.setBorder(BorderFactory.createTitledBorder("Verify"));
         verifyJPanel.setLayout(new GridBagLayout());
@@ -1907,19 +1911,19 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.weightx = 0.1;
         advancedTab.add(verifyJPanel, gridBagConstraints);
 
-        informationPanel6.setBorder(BorderFactory.createTitledBorder("Information"));
-        informationPanel6.setPreferredSize(new Dimension(298, 180));
-        informationPanel6.setLayout(new GridBagLayout());
+        infoPanels[6].setBorder(BorderFactory.createTitledBorder("Information"));
+        infoPanels[6].setPreferredSize(new Dimension(298, 180));
+        infoPanels[6].setLayout(new GridBagLayout());
 
-        jTextPane7.setBackground(UIManager.getDefaults().getColor("Label.background"));
-        jTextPane7.setContentType("text/html"); // NOI18N
-        jTextPane7.setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\n<u>Timestamp granularity</u> defines the tolerance  in seconds when comparing modification times of files. \nNormally the granularity should be 0 but in some cases the file system lacks precision to set the exact modification time, e.g. when using a network drive or copying files cross platforms. \n<u>Ignore daylight saving granularity</u> could be useful when synchronizing between FAT and other file systems. This option causes that two files with modification time difference \nof <i>exactly 1 hour</i> are treated as equal. Some file systems update the timestamp of a parent directory when changing the content of it. \nYou may define here to <u>preserve the timestamps of the directories</u>. <u>Write timestamp back to source</u> could be useful e.g. when using slower file systems. If you choose \n<u>Skip sym links</u> they are just ignored. <u>Copy sym links</u> will create sym links in the destination and <u>Follow sym link</u> will copy linked files/dirs to destination.\n <u>Preserve DOS attributes</u> will copy 'Read only', 'Hidden',  'System' and 'Archive' flags for MS Windows/DOS and 'group information' and 'file permissions' for POSIX systems from\n the source the directory. <u>Attempt to override read-only</u> will try to overwrite/delete the destination file (if needed) even if it is marked as read-only.\nYou may choose to <u>verify</u> the content of the copied files byte by byte. This could be convenient on less trusted media. <u>Realtime Sync</u> watches the source directory continuously; \nSynchronization starts after <u>Delay</u> seconds passed since latest change is detected. <u>Sync on start</u> option performs initial synchronization before starting to monitor realtime changes.\n    </p>\r\n  </body>\r\n</html>\r\n");
-        jTextPane7.setFocusable(false);
+        jTextPanes[7].setBackground(UIManager.getDefaults().getColor("Label.background"));
+        jTextPanes[7].setContentType("text/html"); // NOI18N
+        jTextPanes[7].setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\n<u>Timestamp granularity</u> defines the tolerance  in seconds when comparing modification times of files. \nNormally the granularity should be 0 but in some cases the file system lacks precision to set the exact modification time, e.g. when using a network drive or copying files cross platforms. \n<u>Ignore daylight saving granularity</u> could be useful when synchronizing between FAT and other file systems. This option causes that two files with modification time difference \nof <i>exactly 1 hour</i> are treated as equal. Some file systems update the timestamp of a parent directory when changing the content of it. \nYou may define here to <u>preserve the timestamps of the directories</u>. <u>Write timestamp back to source</u> could be useful e.g. when using slower file systems. If you choose \n<u>Skip sym links</u> they are just ignored. <u>Copy sym links</u> will create sym links in the destination and <u>Follow sym link</u> will copy linked files/dirs to destination.\n <u>Preserve DOS attributes</u> will copy 'Read only', 'Hidden',  'System' and 'Archive' flags for MS Windows/DOS and 'group information' and 'file permissions' for POSIX systems from\n the source the directory. <u>Attempt to override read-only</u> will try to overwrite/delete the destination file (if needed) even if it is marked as read-only.\nYou may choose to <u>verify</u> the content of the copied files byte by byte. This could be convenient on less trusted media. <u>Realtime Sync</u> watches the source directory continuously; \nSynchronization starts after <u>Delay</u> seconds passed since latest change is detected. <u>Sync on start</u> option performs initial synchronization before starting to monitor realtime changes.\n    </p>\r\n  </body>\r\n</html>\r\n");
+        jTextPanes[7].setFocusable(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        informationPanel6.add(jTextPane7, gridBagConstraints);
+        infoPanels[6].add(jTextPanes[7], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1927,7 +1931,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        advancedTab.add(informationPanel6, gridBagConstraints);
+        advancedTab.add(infoPanels[6], gridBagConstraints);
 
         attributeJPanel.setBorder(BorderFactory.createTitledBorder("File Attributes"));
         attributeJPanel.setLayout(new GridBagLayout());
@@ -2175,7 +2179,7 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridheight = 3;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        settingsActionsPanel.add(spacer16, gridBagConstraints);
+        settingsActionsPanel.add(spacers[16], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -2187,28 +2191,28 @@ public abstract class JobDialogObjects extends JDialog {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.weighty = 1.0;
-        actionsTab.add(spacer14, gridBagConstraints);
+        actionsTab.add(spacers[14], gridBagConstraints);
 
-        informationPanel7.setBorder(BorderFactory.createTitledBorder("Information"));
-        informationPanel7.setPreferredSize(new Dimension(298, 180));
-        informationPanel7.setLayout(new GridBagLayout());
+        infoPanels[7].setBorder(BorderFactory.createTitledBorder("Information"));
+        infoPanels[7].setPreferredSize(new Dimension(298, 180));
+        infoPanels[7].setLayout(new GridBagLayout());
 
-        jTextPane8.setBackground(UIManager.getDefaults().getColor("Label.background"));
-        jTextPane8.setContentType("text/html"); // NOI18N
-        jTextPane8.setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nYou may copy the job settings, except the paths, to all existing or enabled jobs. You may also reset the job settings (except the paths) to initial default settings for a job.\n    </p>\r\n  </body>\r\n</html>\r\n");
-        jTextPane8.setFocusable(false);
+        jTextPanes[8].setBackground(UIManager.getDefaults().getColor("Label.background"));
+        jTextPanes[8].setContentType("text/html"); // NOI18N
+        jTextPanes[8].setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n    <p style=\"margin-top: 0\">\r\nYou may copy the job settings, except the paths, to all existing or enabled jobs. You may also reset the job settings (except the paths) to initial default settings for a job.\n    </p>\r\n  </body>\r\n</html>\r\n");
+        jTextPanes[8].setFocusable(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        informationPanel7.add(jTextPane8, gridBagConstraints);
+        infoPanels[7].add(jTextPanes[8], gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        actionsTab.add(informationPanel7, gridBagConstraints);
+        actionsTab.add(infoPanels[7], gridBagConstraints);
 
         jobTabbedPane.addTab("Actions", actionsTab);
 
