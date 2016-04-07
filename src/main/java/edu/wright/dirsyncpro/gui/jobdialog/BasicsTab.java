@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import javax.swing.BorderFactory;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -32,7 +33,7 @@ import javax.swing.text.html.StyleSheet;
  */
 public final class BasicsTab extends JPanel {
 
-    private JComboBox syncModeComboBox = new JComboBox();
+    private JComboBox<Const.SyncMode> syncModeComboBox = new JComboBox<>();
     private JLabel dirDstLabel = new JLabel();
     private JButton swapButton = new JButton();
     private JLabel dirWithSubfoldersLabel = new JLabel();
@@ -46,28 +47,6 @@ public final class BasicsTab extends JPanel {
     private JButton dirSrcChangeButton1 = new JButton();
     private JTextField dirSrcField = new JTextField();
     private JobDialogObjects jobDialog;
-
-    public JComboBox getSyncModeComboBox() {
-        return syncModeComboBox;
-    }
-
-    public JTextField getDirNameField() {
-        return dirNameField;
-    }
-
-    public JTextField getDirDstField() {
-        return dirDstField;
-    }
-
-    public JTextField getDirSrcField() {
-        return dirSrcField;
-    }
-
-    public JCheckBox getDirWithSubfoldersCheckBox() {
-        return dirWithSubfoldersCheckBox;
-    }
-
-
 
     public BasicsTab(JobDialogObjects jobDialog) {
         this.jobDialog = jobDialog;
@@ -311,9 +290,29 @@ public final class BasicsTab extends JPanel {
         gridBagConstraints.weightx = 0.03;
         add(syncModeJPanel, gridBagConstraints);
 
-        syncModeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(Const.SyncMode.values()));
+        syncModeComboBox.setModel(new DefaultComboBoxModel<>(Const.SyncMode.values()));
         SyncModeComboboxCellRenderer smcbr = new SyncModeComboboxCellRenderer();
         syncModeComboBox.setRenderer(smcbr);
+    }
+
+    public JComboBox<Const.SyncMode> getSyncModeComboBox() {
+        return syncModeComboBox;
+    }
+
+    public JTextField getDirNameField() {
+        return dirNameField;
+    }
+
+    public JTextField getDirDstField() {
+        return dirDstField;
+    }
+
+    public JTextField getDirSrcField() {
+        return dirSrcField;
+    }
+
+    public JCheckBox getDirWithSubfoldersCheckBox() {
+        return dirWithSubfoldersCheckBox;
     }
 
     private void dirDstChangeButtonbrowseDstActionPerformed(ActionEvent evt) {
