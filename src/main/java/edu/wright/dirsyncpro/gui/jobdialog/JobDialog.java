@@ -51,6 +51,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -88,14 +89,11 @@ public class JobDialog extends JobDialogObjects {
 
     public JobDialog(JFrame frame) {
         super(frame);
-        syncModeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(Const.SyncMode.values()));
-        SyncModeComboboxCellRenderer smcbr = new SyncModeComboboxCellRenderer();
-        syncModeComboBox.setRenderer(smcbr);
     }
 
     @Override
     protected void syncModeComboBoxClicked() {
-        job.setSyncMode((Const.SyncMode) syncModeComboBox.getSelectedItem());
+        job.setSyncMode((Const.SyncMode) basicsTab.getSyncModeComboBox().getSelectedItem());
         initJobDialog(job);
     }
 
@@ -144,12 +142,12 @@ public class JobDialog extends JobDialogObjects {
 
     public void initJobDialog(Job job) {
         this.job = job;
-        dirNameField.setText(job.getName());
-        dirSrcField.setText(job.getDirA());
-        dirDstField.setText(job.getDirB());
+        basicsTab.getDirNameField().setText(job.getName());
+        basicsTab.getDirSrcField().setText(job.getDirA());
+        basicsTab.getDirDstField().setText(job.getDirB());
 
-        if (job.getSyncMode() != syncModeComboBox.getSelectedItem()) {
-            syncModeComboBox.setSelectedItem(job.getSyncMode());
+        if (job.getSyncMode() != basicsTab.getSyncModeComboBox().getSelectedItem()) {
+            basicsTab.getSyncModeComboBox().setSelectedItem(job.getSyncMode());
         }
 
         dirLogField.setText(job.getLog().getPath());
@@ -159,7 +157,7 @@ public class JobDialog extends JobDialogObjects {
         dirLogLabel.setEnabled(enabled);
         dirLogBrowseButton.setEnabled(enabled);
 
-        dirWithSubfoldersCheckBox.setSelected(job.isRecursive());
+        basicsTab.getDirWithSubfoldersCheckBox().setSelected(job.isRecursive());
         dirVerifyCheckBox.setSelected(job.isVerify());
 
         realtimeSyncCheckBox.setSelected(job.isSyncRealtime());
@@ -246,7 +244,7 @@ public class JobDialog extends JobDialogObjects {
 
         // if custom, make copies of the filters to edit locally and save on 'apply'
         // init otherwise
-        initFilters(((SyncMode) syncModeComboBox.getSelectedItem()).isCustom(), job);
+        initFilters(((SyncMode) basicsTab.getSyncModeComboBox().getSelectedItem()).isCustom(), job);
         schedules = new ArrayList<>(job.getSchedules());
 
         updateFiltersTree();
@@ -443,10 +441,10 @@ public class JobDialog extends JobDialogObjects {
     protected void applyJobSettings() {
         Job job = DirSyncPro.getGui().getSelectedJob();
 
-        job.setName(dirNameField.getText());
-        job.setSrc(dirSrcField.getText());
-        job.setDst(dirDstField.getText());
-        job.setSyncMode((Const.SyncMode) syncModeComboBox.getSelectedItem());
+        job.setName(basicsTab.getDirNameField().getText());
+        job.setSrc(basicsTab.getDirSrcField().getText());
+        job.setDst(basicsTab.getDirDstField().getText());
+        job.setSyncMode((Const.SyncMode) basicsTab.getSyncModeComboBox().getSelectedItem());
 
         if (!dirEnableLoggingCheckBox.isSelected()) {
             job.getLog().disable();
@@ -458,7 +456,7 @@ public class JobDialog extends JobDialogObjects {
             }
         }
 
-        job.setRecursive(dirWithSubfoldersCheckBox.isSelected());
+        job.setRecursive(basicsTab.getDirWithSubfoldersCheckBox().isSelected());
         job.setVerify(dirVerifyCheckBox.isSelected());
 
         job.setSyncRealtime(realtimeSyncCheckBox.isSelected());
@@ -598,7 +596,7 @@ public class JobDialog extends JobDialogObjects {
 
     public void arrangeJobDialogTabs() {
 
-        if (syncModeComboBox.getSelectedItem() == Const.SyncMode.ABMirror || syncModeComboBox.getSelectedItem() == Const.SyncMode.BAMirror) {
+        if (basicsTab.getSyncModeComboBox().getSelectedItem() == Const.SyncMode.ABMirror || basicsTab.getSyncModeComboBox().getSelectedItem() == Const.SyncMode.BAMirror) {
             enableCopyOptions(false, false);
             enableDeleteOptions(false, false);
 
@@ -614,7 +612,7 @@ public class JobDialog extends JobDialogObjects {
             enableScheduleOptions(true, false);
             enableAdvancedOptions(true, false);
             enableCompareOptions(false, false);
-        } else if (syncModeComboBox.getSelectedItem() == Const.SyncMode.ABFull || syncModeComboBox.getSelectedItem() == Const.SyncMode.BAFull) {
+        } else if (basicsTab.getSyncModeComboBox().getSelectedItem() == Const.SyncMode.ABFull || basicsTab.getSyncModeComboBox().getSelectedItem() == Const.SyncMode.BAFull) {
             enableCopyOptions(false, false);
             enableDeleteOptions(false, false);
 
@@ -628,7 +626,7 @@ public class JobDialog extends JobDialogObjects {
             enableScheduleOptions(true, false);
             enableAdvancedOptions(true, false);
             enableCompareOptions(false, false);
-        } else if (syncModeComboBox.getSelectedItem() == Const.SyncMode.ABContribute || syncModeComboBox.getSelectedItem() == Const.SyncMode.BAContribute) {
+        } else if (basicsTab.getSyncModeComboBox().getSelectedItem() == Const.SyncMode.ABContribute || basicsTab.getSyncModeComboBox().getSelectedItem() == Const.SyncMode.BAContribute) {
             enableCopyOptions(false, false);
             enableDeleteOptions(false, false);
 
@@ -642,7 +640,7 @@ public class JobDialog extends JobDialogObjects {
             enableScheduleOptions(true, false);
             enableAdvancedOptions(true, false);
             enableCompareOptions(false, false);
-        } else if (syncModeComboBox.getSelectedItem() == Const.SyncMode.BIMirror) {
+        } else if (basicsTab.getSyncModeComboBox().getSelectedItem() == Const.SyncMode.BIMirror) {
             enableCopyOptions(false, false);
             enableDeleteOptions(false, false);
 
@@ -658,7 +656,7 @@ public class JobDialog extends JobDialogObjects {
             enableScheduleOptions(true, false);
             enableAdvancedOptions(true, false);
             enableCompareOptions(false, false);
-        } else if (syncModeComboBox.getSelectedItem() == Const.SyncMode.BICustom) {
+        } else if (basicsTab.getSyncModeComboBox().getSelectedItem() == Const.SyncMode.BICustom) {
             enableCopyOptions(false, false);
             enableDeleteOptions(false, false);
 
@@ -672,7 +670,7 @@ public class JobDialog extends JobDialogObjects {
             enableScheduleOptions(true, false);
             enableAdvancedOptions(true, false);
             enableCompareOptions(false, false);
-        } else if (syncModeComboBox.getSelectedItem() == Const.SyncMode.ABCustom || syncModeComboBox.getSelectedItem() == Const.SyncMode.BACustom) {
+        } else if (basicsTab.getSyncModeComboBox().getSelectedItem() == Const.SyncMode.ABCustom || basicsTab.getSyncModeComboBox().getSelectedItem() == Const.SyncMode.BACustom) {
             enableCopyOptions(true, false);
             enableConflictOptions(true, false);
             enableConflictOptionsMonoSubtab(true, true);
@@ -761,7 +759,7 @@ public class JobDialog extends JobDialogObjects {
                 if (!filename.endsWith(File.separator)) {
                     filename += File.separator;
                 }
-                filename += dirNameField.getText() + ".log";
+                filename += basicsTab.getDirNameField().getText() + ".log";
             }
 
             dirLogField.setText(filename);

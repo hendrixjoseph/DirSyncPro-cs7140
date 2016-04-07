@@ -34,7 +34,6 @@ import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.ScheduleTreeModel;
 import edu.wright.dirsyncpro.gui.jobdialog.scheduletree.ScheduleTreeNodeEditor;
 import edu.wright.dirsyncpro.gui.swing.MyJTabbedPane;
 import edu.wright.dirsyncpro.gui.verifier.LongIntVerifier;
-import edu.wright.dirsyncpro.gui.verifier.PathVerifier;
 import edu.wright.dirsyncpro.gui.verifier.WildCardVerifier;
 import edu.wright.dirsyncpro.tools.GuiTools;
 import java.awt.*;
@@ -51,7 +50,6 @@ import javax.swing.text.html.StyleSheet;
 @SuppressWarnings("serial")
 public abstract class JobDialogObjects extends JDialog {
 
-    protected JButton dirSrcChangeButton1 = new JButton();
     protected JButton addFilterButton = new JButton();
     protected JButton addScheduleButton = new JButton();
     protected JLabel bidirectionalConflictCopyLargerLabel = new JLabel();
@@ -107,19 +105,11 @@ public abstract class JobDialogObjects extends JDialog {
     protected JLabel dirDeleteExcludedFilesLabel1 = new JLabel();
     protected JCheckBox dirDeleteFilesCheckBox = new JCheckBox();
     protected JLabel dirDeleteFilesLabel = new JLabel();
-    protected JButton dirDstChangeButton = new JButton();
-    protected JTextField dirDstField = new JTextField();
-    protected JLabel dirDstLabel = new JLabel();
     protected JCheckBox dirEnableLoggingCheckBox = new JCheckBox();
     protected JLabel dirEnableLoggingJLabel = new JLabel();
     protected JButton dirLogBrowseButton = new JButton();
     protected JTextField dirLogField = new JTextField();
     protected JLabel dirLogLabel = new JLabel();
-    protected JTextField dirNameField = new JTextField();
-    protected JLabel dirNameLabel = new JLabel();
-    protected JButton dirSrcChangeButton = new JButton();
-    protected JTextField dirSrcField = new JTextField();
-    protected JLabel dirSrcLabel = new JLabel();
     protected JTextField dirTimestampDiffField = new JTextField();
     protected JLabel dirTimestampDiffLabel1 = new JLabel();
     protected JLabel dirTimestampDiffLabel2 = new JLabel();
@@ -128,8 +118,6 @@ public abstract class JobDialogObjects extends JDialog {
     protected JCheckBox dirTimestampWriteBackCheckBox = new JCheckBox();
     protected JCheckBox dirVerifyCheckBox = new JCheckBox();
     protected JLabel dirVerifyLabel = new JLabel();
-    protected JCheckBox dirWithSubfoldersCheckBox = new JCheckBox();
-    protected JLabel dirWithSubfoldersLabel = new JLabel();
     protected JButton editFilterButton = new JButton();
     protected JButton editScheduleButton = new JButton();
     protected JButton filtersCollapseAllButton = new JButton();
@@ -167,8 +155,8 @@ public abstract class JobDialogObjects extends JDialog {
     protected JTree scheduleTree = new JTree();
     protected JLabel skipSymLinkLabel = new JLabel();
     protected JRadioButton skipSymLinkRadioButton = new JRadioButton();
-    protected JButton swapButton = new JButton();
-    protected JComboBox syncModeComboBox = new JComboBox();
+
+    protected BasicsTab basicsTab = new BasicsTab(this);
 
     public JobDialogObjects(JFrame frame) {
         super(frame);
@@ -208,9 +196,6 @@ public abstract class JobDialogObjects extends JDialog {
         ButtonGroup buttonGroupBidirectionalConflict = new ButtonGroup();
         ButtonGroup buttonGroupMonodirectionalConflict = new ButtonGroup();
         ButtonGroup buttonGroupCompare = new ButtonGroup();
-        JPanel basicTab = new JPanel();
-        JPanel pathsPanel = new JPanel();
-
 
 
         HTMLEditorKit editorKit = new HTMLEditorKit();
@@ -219,13 +204,7 @@ public abstract class JobDialogObjects extends JDialog {
         String bodyRule = "body { font-family: " + font.getFamily() + "; " + "font-size: " + font.getSize() + "pt; }";
         styles.addRule(bodyRule);
         editorKit.setStyleSheet(styles);
-        jTextPanes[1].setEditorKit(editorKit);
-        JPanel syncModeJPanel = new JPanel();
-        JLabel label = new JLabel();
         JPanel compareTab = new JPanel();
-
-
-
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -237,9 +216,6 @@ public abstract class JobDialogObjects extends JDialog {
 
         JPanel copyTab = new JPanel();
         JPanel copyOptionsJPanel = new JPanel();
-
-
-
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -249,11 +225,7 @@ public abstract class JobDialogObjects extends JDialog {
         jTextPanes[2].setEditorKit(editorKit);
         JPanel conflictResolutionTab = new JPanel();
         JPanel monodirectionalSyncConflictPanel = new JPanel();
-
         JPanel bidirectionalSyncConflictPanel = new JPanel();
-
-
-
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -263,7 +235,6 @@ public abstract class JobDialogObjects extends JDialog {
         jTextPanes[3].setEditorKit(editorKit);
         JPanel filtersTab = new JPanel();
         JScrollPane jScrollPane3 = new JScrollPane();
-
 
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
@@ -277,8 +248,6 @@ public abstract class JobDialogObjects extends JDialog {
         JPanel deletionTab = new JPanel();
         JPanel dirDeleteOptionsPanel = new JPanel();
 
-
-
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -289,8 +258,6 @@ public abstract class JobDialogObjects extends JDialog {
         JPanel backupTab = new JPanel();
         JPanel dirBackupPanel = new JPanel();
 
-
-
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -299,8 +266,6 @@ public abstract class JobDialogObjects extends JDialog {
         editorKit.setStyleSheet(styles);
         jTextPanes[6].setEditorKit(editorKit);
         JPanel logTab = new JPanel();
-
-
 
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
@@ -314,7 +279,6 @@ public abstract class JobDialogObjects extends JDialog {
         JPanel scheduleTab = new JPanel();
         JScrollPane jScrollPane4 = new JScrollPane();
 
-
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -323,21 +287,16 @@ public abstract class JobDialogObjects extends JDialog {
         editorKit.setStyleSheet(styles);
         jTextPanes[4].setEditorKit(editorKit);
         JPanel viewJPanel4 = new JPanel();
-
         JPanel advancedTab = new JPanel();
         JPanel dirTimestampWriteBackPanel = new JPanel();
         JPanel dirTimestampDiffFieldPanel = new JPanel();
-
         JLabel dirTimestampWriteBackLabel = new JLabel();
-
         JLabel dirTimestampWriteBackLabel1 = new JLabel();
 
         JLabel ignoreDaylightSavingTimeJLabel = new JLabel();
         JPanel dirSymbolicLinkPane = new JPanel();
 
         JPanel verifyJPanel = new JPanel();
-
-
 
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
@@ -357,8 +316,6 @@ public abstract class JobDialogObjects extends JDialog {
         JPanel actionsTab = new JPanel();
         JPanel settingsActionsPanel = new JPanel();
 
-
-
         editorKit = new HTMLEditorKit();
         styles = new StyleSheet();
         font = UIManager.getFont("Label.font");
@@ -377,225 +334,7 @@ public abstract class JobDialogObjects extends JDialog {
         jobTabbedPane.setMaximumSize(null);
         jobTabbedPane.setMinimumSize(new Dimension(0, 0));
 
-        basicTab.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        basicTab.setLayout(new GridBagLayout());
-
-        pathsPanel.setBorder(BorderFactory.createTitledBorder("Label & Paths"));
-        pathsPanel.setEnabled(false);
-        pathsPanel.setLayout(new GridBagLayout());
-
-        dirSrcLabel.setIcon(new ImageIcon(getClass().getResource("/icons/dirGreen.png"))); // NOI18N
-        dirSrcLabel.setText("Dir A");
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 1;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        pathsPanel.add(dirSrcLabel, gridBagConstraints);
-
-        dirNameLabel.setIcon(new ImageIcon(getClass().getResource("/icons/name.png"))); // NOI18N
-        dirNameLabel.setText("Label");
-        dirNameLabel.setMaximumSize(null);
-        dirNameLabel.setMinimumSize(null);
-        dirNameLabel.setPreferredSize(null);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 1;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        pathsPanel.add(dirNameLabel, gridBagConstraints);
-
-        dirNameField.setToolTipText("The label for this synchronization.");
-        dirNameField.setMaximumSize(null);
-        dirNameField.setMinimumSize(null);
-        dirNameField.setPreferredSize(null);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = GridBagConstraints.WEST;
-        gridBagConstraints.weightx = 0.01;
-        gridBagConstraints.insets = new Insets(4, 0, 4, 0);
-        pathsPanel.add(dirNameField, gridBagConstraints);
-
-        dirDstField.setToolTipText("<html>The destination directory. You can use the following wildcards:<br>\"<b>&lt;date</b>&gt;\" for the current date (or \"<b>&lt;DD</b>&gt;\" for day, \"<b>&lt;MM</b>&gt;\" for month, and \"<b>&lt;YYYY</b>&gt;\" for year) and<br>\"<b>&lt;time</b>&gt;\" for the current time (or \"<b>&lt;hh</b>&gt;\" for hour, \"<b>&lt;mm</b>&gt;\" for minute, and \"<b>&lt;ss</b>&gt;\" for second).</html>");
-        dirDstField.setInputVerifier(new PathVerifier(this, dirDstField));
-        dirDstField.setMaximumSize(null);
-        dirDstField.setMinimumSize(null);
-        dirDstField.setPreferredSize(null);
-        setFileDragNDrop(dirDstField);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = GridBagConstraints.WEST;
-        gridBagConstraints.weightx = 0.01;
-        pathsPanel.add(dirDstField, gridBagConstraints);
-
-        dirDstChangeButton.setFont(new Font("Tahoma", 0, 10)); // NOI18N
-        dirDstChangeButton.setIcon(new ImageIcon(getClass().getResource("/icons/browse.png"))); // NOI18N
-        dirDstChangeButton.setToolTipText("Browse for the destination directory.");
-        dirDstChangeButton.setIconTextGap(2);
-        dirDstChangeButton.setMargin(new Insets(2, 2, 2, 2));
-        dirDstChangeButton.addActionListener(this::dirDstChangeButtonbrowseDstActionPerformed);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        pathsPanel.add(dirDstChangeButton, gridBagConstraints);
-
-        dirSrcChangeButton.setFont(new Font("Tahoma", 0, 10)); // NOI18N
-        dirSrcChangeButton.setIcon(new ImageIcon(getClass().getResource("/icons/browse.png"))); // NOI18N
-        dirSrcChangeButton.setToolTipText("Browse for the source directory.");
-        dirSrcChangeButton.setIconTextGap(2);
-        dirSrcChangeButton.setMargin(new Insets(2, 2, 2, 2));
-        dirSrcChangeButton.addActionListener(this::dirSrcChangeButtonbrowseSrcActionPerformed);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        pathsPanel.add(dirSrcChangeButton, gridBagConstraints);
-
-        dirSrcField.setToolTipText("<html>The source directory. You can use the following wildcards:<br />\"<b>&lt;username&gt;</b>\" for the name of the current user, and <br />\"<b>&lt;userhome&gt;</b>\" for the home directory of the current user.</html>");
-        dirSrcField.setInputVerifier(new PathVerifier(this, dirSrcField));
-        dirSrcField.setMaximumSize(null);
-        dirSrcField.setMinimumSize(null);
-        dirSrcField.setPreferredSize(null);
-        setFileDragNDrop(dirSrcField);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = GridBagConstraints.WEST;
-        gridBagConstraints.weightx = 0.01;
-        pathsPanel.add(dirSrcField, gridBagConstraints);
-
-        dirDstLabel.setIcon(new ImageIcon(getClass().getResource("/icons/dirOrange.png"))); // NOI18N
-        dirDstLabel.setText("Dir B");
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 1;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        pathsPanel.add(dirDstLabel, gridBagConstraints);
-
-        jPanels[15].setMaximumSize(null);
-        jPanels[15].setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-
-        dirWithSubfoldersCheckBox.setHorizontalAlignment(SwingConstants.LEFT);
-        dirWithSubfoldersCheckBox.setMaximumSize(null);
-        dirWithSubfoldersCheckBox.setMinimumSize(null);
-        dirWithSubfoldersCheckBox.setPreferredSize(null);
-        jPanels[15].add(dirWithSubfoldersCheckBox);
-
-        dirWithSubfoldersLabel.setIcon(new ImageIcon(getClass().getResource("/icons/withSubdirs.png"))); // NOI18N
-        dirWithSubfoldersLabel.setText("Include subfolders");
-        jPanels[15].add(dirWithSubfoldersLabel);
-
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        gridBagConstraints.insets = new Insets(0, 0, 0, 8);
-        pathsPanel.add(jPanels[15], gridBagConstraints);
-
-        jPanels[3].setLayout(new GridBagLayout());
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        pathsPanel.add(jPanels[3], gridBagConstraints);
-
-        swapButton.setText("Swap");
-        swapButton.setAlignmentX(0.5F);
-        swapButton.addActionListener(this::swapButtonActionPerformed);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        pathsPanel.add(swapButton, gridBagConstraints);
-
-        dirSrcChangeButton1.setFont(new Font("Tahoma", 0, 10)); // NOI18N
-        dirSrcChangeButton1.setIcon(new ImageIcon(getClass().getResource("/icons/GDrive.png")));
-        // NOI18N
-        dirSrcChangeButton1.setToolTipText("Browse for the source directory.");
-        dirSrcChangeButton1.setIconTextGap(2);
-        dirSrcChangeButton1.setMargin(new Insets(2, 2, 2, 2));
-        dirSrcChangeButton1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-//                 dirSrcChangeButton1browseSrcActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        pathsPanel.add(dirSrcChangeButton1, gridBagConstraints);
-        dirSrcChangeButton1.getAccessibleContext().setAccessibleDescription("");
-
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weightx = 1.0;
-        basicTab.add(pathsPanel, gridBagConstraints);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.weighty = 1.0;
-        basicTab.add(spacers[2], gridBagConstraints);
-
-        infoPanels[0].setBorder(BorderFactory.createTitledBorder("Information"));
-        infoPanels[0].setPreferredSize(new Dimension(298, 180));
-        infoPanels[0].setLayout(new GridBagLayout());
-
-        jTextPanes[1].setBackground(UIManager.getDefaults().getColor("Label.background"));
-        jTextPanes[1].setContentType("text/html"); // NOI18N
-        jTextPanes[1].setText("<html>\n  <head>\n\n  </head>\n  <body>\n    <p style=\"margin-top: 0\">\n    \nSet up the directories and the sync mode: <u>Mirror A -&gt; B (incremental)</u> and <u>Mirror B -&gt; A (incremental)</u> are mono-directional (one way). \nOnly new and modified files from the source are copied to the destination; redundant files in the destination will be deleted. The directories are exactly the same after the sync. \n<u>Synchronize A &lt;-&gt; B (incremental)</u> is bi-directional (two-ways). Only new and modified files from both dirs are copied to each other. Both directories are exactly the same after the \nsync. <u>Backup A -&gt; B</u> and <u>Restore B -&gt; A</u> will copy all files from A to B (or vice versa). <u>Contribute A -&gt; B</u> and <u>Contribute B -&gt; A</u> will \ncopy only the new files from A to B (or vice versa). Choose <u>Synchronize A -&gt; B (custom)</u>, <u>Synchronize B -&gt; A (custom)</u> or <u>Synchronize A &lt;-&gt; B (custom)</u> to \nsetup the sync behavior as you wish (advanced). <span style=\"color: blue;\">Some tabs get available only in a 'custom' mode.</span>\n    </p>\n  </body>\n</html>\n");
-        jTextPanes[1].setFocusCycleRoot(false);
-        jTextPanes[1].setMinimumSize(new Dimension(101, 25));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.fill = GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        infoPanels[0].add(jTextPanes[1], gridBagConstraints);
-
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weightx = 1.0;
-        basicTab.add(infoPanels[0], gridBagConstraints);
-
-        syncModeJPanel.setBorder(BorderFactory.createTitledBorder("Sync using this mode"));
-        syncModeJPanel.setLayout(new GridBagLayout());
-
-        label.setIcon(new ImageIcon(getClass().getResource("/icons/DirSyncPro.png"))); // NOI18N
-        label.setText("Sync Mode:");
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = GridBagConstraints.WEST;
-        gridBagConstraints.insets = new Insets(0, 5, 0, 0);
-        syncModeJPanel.add(label, gridBagConstraints);
-
-        syncModeComboBox.setMaximumRowCount(Const.SyncMode.values().length);
-        syncModeComboBox.addItemListener(this::syncModeComboBoxItemStateChanged);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weightx = 1.0;
-        syncModeJPanel.add(syncModeComboBox, gridBagConstraints);
-
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weightx = 0.03;
-        basicTab.add(syncModeJPanel, gridBagConstraints);
-
-        jobTabbedPane.addTab("Basics", basicTab);
+        jobTabbedPane.addTab("Basics", basicsTab);
 
         compareTab.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         compareTab.setLayout(new GridBagLayout());
@@ -2255,9 +1994,7 @@ public abstract class JobDialogObjects extends JDialog {
         browseLog();
     }
 
-    private void dirDstChangeButtonbrowseDstActionPerformed(ActionEvent evt) {
-        GuiTools.browseFolder(this, dirDstField);
-    }
+
 
     private void dirCopyLargerCheckBoxdirEventActionPerformed(ActionEvent evt) {
         verifyCopyOptionsInGUI();
@@ -2269,10 +2006,6 @@ public abstract class JobDialogObjects extends JDialog {
 
     private void dirCopyLargerModifiedCheckBoxdirEventActionPerformed(ActionEvent evt) {
         verifyCopyOptionsInGUI();
-    }
-
-    private void dirSrcChangeButtonbrowseSrcActionPerformed(ActionEvent evt) {
-        GuiTools.browseFolder(this, dirSrcField);
     }
 
     private void dirBackupDirChangeButtonbrowseSrcActionPerformed(ActionEvent evt) {
@@ -2355,20 +2088,8 @@ public abstract class JobDialogObjects extends JDialog {
         GuiTools.collapseAll(scheduleTree);
     }
 
-    private void swapButtonActionPerformed(ActionEvent evt) {
-        String s = dirSrcField.getText();
-        dirSrcField.setText(dirDstField.getText());
-        dirDstField.setText(s);
-    }
-
     private void realtimeSyncCheckBoxActionPerformed(ActionEvent evt) {
         adjustRealtimeSyncOptions();
-    }
-
-    private void syncModeComboBoxItemStateChanged(ItemEvent evt) {
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            syncModeComboBoxClicked();
-        }
     }
 
     abstract protected void adjustRealtimeSyncOptions();
