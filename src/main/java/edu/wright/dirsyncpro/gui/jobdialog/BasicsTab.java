@@ -92,7 +92,7 @@ public final class BasicsTab extends JPanel {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weighty = 1.0;
-        add(jPanels[3], gridBagConstraints);
+        add(jPanels[2], gridBagConstraints);
 
         pathsPanel.setBorder(BorderFactory.createTitledBorder("Label & Paths"));
         pathsPanel.setEnabled(false);
