@@ -88,7 +88,8 @@ public class Schedule implements Comparable<Schedule> {
     }
 
     /**
-     * Calculates and sets the next upcoming event date. method to be overriden by extended classes.
+     * Calculates and sets the next upcoming event date. method to be overriden
+     * by extended classes.
      */
     public void calculateNextEvent() {
     }

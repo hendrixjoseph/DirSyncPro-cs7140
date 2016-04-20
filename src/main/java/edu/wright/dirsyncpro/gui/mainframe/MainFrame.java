@@ -682,8 +682,8 @@ public class MainFrame extends MainFrameObjects {
         if (!manual.exists()) {
             DirSyncPro.displayError(
                     "Unable to open the help file (" + manual.getAbsolutePath()
-                            + ")\nThe help file resides normally in the program folder.\n\nYou may always download "
-                            + Const.manualFilename + " from " + Const.HOMEPAGE
+                    + ")\nThe help file resides normally in the program folder.\n\nYou may always download "
+                    + Const.manualFilename + " from " + Const.HOMEPAGE
             );
         } else {
             DesktopTools.launchFile(manual.getAbsolutePath());

@@ -69,7 +69,8 @@ public class RealtimeListener {
     }
 
     /**
-     * Register the given directory, and all its sub-directories, with the WatchService.
+     * Register the given directory, and all its sub-directories, with the
+     * WatchService.
      */
     private void registerAll(final Path start) throws IOException {
         // register directory and sub-directories
@@ -101,7 +102,7 @@ public class RealtimeListener {
     }
 
     public void startInternal() {
-        for (; ; ) {
+        for (;;) {
             // wait for key to be signalled
             WatchKey key;
             try {

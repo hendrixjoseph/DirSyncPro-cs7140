@@ -29,6 +29,7 @@ public class Filter implements Comparable<Filter>, Cloneable {
     protected Type type;
     protected Action action;
     protected Job job;
+
     public Filter(Job j, Action a) {
         job = j;
         action = a;

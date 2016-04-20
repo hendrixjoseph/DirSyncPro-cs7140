@@ -49,9 +49,11 @@ public class NativeCopier extends J7Copier {
             approximator = ProgressApproximator.getApproximator();
             approximator.startApprox(srcPath, true);
         } else //... else set progress to 0 percent
+        {
             if (DirSyncPro.isGuiMode()) {
                 DirSyncPro.getGui().registerProgressBars(-1, -1, -1, "", false, 0, 100, "", false);
             }
+        }
 
         fsProv.copy(srcPath, dstPath, StandardCopyOption.REPLACE_EXISTING);
 
@@ -61,9 +63,11 @@ public class NativeCopier extends J7Copier {
             //file transfer complete, update approximation ...
             approximator.endApprox();
         } else //... or set progress to 100 percent
+        {
             if (DirSyncPro.isGuiMode()) {
                 DirSyncPro.getGui().registerProgressBars(-1, -1, -1, "", false, 100, 100, "", false);
             }
+        }
 
     }
 

@@ -82,22 +82,22 @@ public class GuiTools {
     }
 
     private static void browseFileAndFolder(JDialog parent, JTextField jtf, int mode) {
-            JFileChooser fileChooser = new JFileChooser();
-            fileChooser.setFileSelectionMode(mode);
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(mode);
 
-            if (!jtf.getText().isEmpty()) {
-                fileChooser.setCurrentDirectory(new File(jtf.getText()));
-            }
+        if (!jtf.getText().isEmpty()) {
+            fileChooser.setCurrentDirectory(new File(jtf.getText()));
+        }
 
-            if (mode == JFileChooser.DIRECTORIES_ONLY) {
-                fileChooser.setApproveButtonText("Select");
-                fileChooser.setApproveButtonMnemonic('s');
-                fileChooser.setApproveButtonToolTipText("Select directory");
-            }
+        if (mode == JFileChooser.DIRECTORIES_ONLY) {
+            fileChooser.setApproveButtonText("Select");
+            fileChooser.setApproveButtonMnemonic('s');
+            fileChooser.setApproveButtonToolTipText("Select directory");
+        }
 
-            if (fileChooser.showOpenDialog(parent) == javax.swing.JFileChooser.APPROVE_OPTION) {
-                jtf.setText(fileChooser.getSelectedFile().getPath());
-            }
+        if (fileChooser.showOpenDialog(parent) == javax.swing.JFileChooser.APPROVE_OPTION) {
+            jtf.setText(fileChooser.getSelectedFile().getPath());
+        }
     }
 
     public static EditorKit getDefaultEditorKit() {

@@ -104,7 +104,8 @@ public final class BasicsTab extends JPanel {
         dirDstField = generateField(destfieldTooltip, 1, 2);
         addButton("/icons/browse.png", "Browse for the destination directory.", 2, 2, this::performDestinationDirectoryButtonAction);
         addButton("/icons/browse.png", "Browse for the source directory.", 2, 1, this::performSourceDirectoryButtonAction);
-        addButton("/icons/GDrive.png", "Browse Google Drive", 3, 1, this::performGoogleDriveButtonAction);
+        addButton("/icons/GDrive.png", "Use Google Drive as Dir A", 3, 1, this::setGoogleDriveAsDirA);
+        addButton("/icons/GDrive.png", "Use Google Drive as Dir B", 3, 2, this::setGoogleDriveAsDirB);
         dirSrcField = generateField(sourcefieldTooltip, 1, 1);
         addLabel("/icons/dirOrange.png", "Dir B", 0, 2);
 
@@ -117,8 +118,7 @@ public final class BasicsTab extends JPanel {
         dirWithSubfoldersCheckBox.setPreferredSize(null);
         jPanels[0].add(dirWithSubfoldersCheckBox);
 
-
-        jPanels[0].add(generateLabel("/icons/withSubdirs.png","Include subfolders"));
+        jPanels[0].add(generateLabel("/icons/withSubdirs.png", "Include subfolders"));
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -166,7 +166,7 @@ public final class BasicsTab extends JPanel {
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
         gridBagConstraints.insets = new Insets(0, 5, 0, 0);
-        syncModeJPanel.add(generateLabel("/icons/DirSyncPro.png","Sync Mode:"), gridBagConstraints);
+        syncModeJPanel.add(generateLabel("/icons/DirSyncPro.png", "Sync Mode:"), gridBagConstraints);
 
         syncModeComboBox.setMaximumRowCount(Const.SyncMode.values().length);
         syncModeComboBox.addItemListener(this::syncModeComboBoxItemStateChanged);
@@ -202,7 +202,7 @@ public final class BasicsTab extends JPanel {
         gridBagConstraints.ipadx = 1;
         gridBagConstraints.anchor = GridBagConstraints.EAST;
 
-        pathsPanel.add(generateLabel(icon,text), gridBagConstraints);
+        pathsPanel.add(generateLabel(icon, text), gridBagConstraints);
     }
 
     private void addButton(String icon, String tooltip, int gridx, int gridy, ActionListener listener) {
@@ -268,8 +268,21 @@ public final class BasicsTab extends JPanel {
         GuiTools.browseFolder(jobDialog, dirDstField);
     }
 
-    private void performGoogleDriveButtonAction(ActionEvent evt) {
+    private void setGoogleDriveAsDirA(ActionEvent evt) {
+        setGoogleDrive(dirSrcField, dirDstField);
+    }
 
+    private void setGoogleDriveAsDirB(ActionEvent evt) {
+        dirDstField.setText("Google Drive");
+        setGoogleDrive(dirDstField, dirSrcField);
+    }
+
+    private void setGoogleDrive(JTextField thisField, JTextField notThisField) {
+        thisField.setText("Google Drive");
+
+        if (notThisField.getText().equals("Google Drive")) {
+            notThisField.setText("");
+        }
     }
 
     private void syncModeComboBoxItemStateChanged(ItemEvent evt) {

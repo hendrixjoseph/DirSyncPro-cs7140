@@ -70,16 +70,16 @@ public class SettingsDialog extends SettingsDialogObjects {
 
     @Override
     protected void browseSettingsLogPath() {
-            JFileChooser fileChooser = new JFileChooser();
-            fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 
-            if (!logsPathField.getText().isEmpty()) {
-                fileChooser.setCurrentDirectory(new File(logsPathField.getText()));
-            }
+        if (!logsPathField.getText().isEmpty()) {
+            fileChooser.setCurrentDirectory(new File(logsPathField.getText()));
+        }
 
-            if (fileChooser.showOpenDialog(null) == javax.swing.JFileChooser.APPROVE_OPTION) {
-                logsPathField.setText(fileChooser.getSelectedFile().getPath());
-            }
+        if (fileChooser.showOpenDialog(null) == javax.swing.JFileChooser.APPROVE_OPTION) {
+            logsPathField.setText(fileChooser.getSelectedFile().getPath());
+        }
     }
 
     @Override

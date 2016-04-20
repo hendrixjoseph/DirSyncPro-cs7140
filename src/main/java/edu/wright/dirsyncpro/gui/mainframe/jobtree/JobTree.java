@@ -31,6 +31,7 @@ public class JobTree extends DefaultMutableTreeNode {
     public Type type;
     public Object value;
     public JobTree parent;
+
     public JobTree(Type t, Object v, JobTree p) {
         type = t;
         value = v;

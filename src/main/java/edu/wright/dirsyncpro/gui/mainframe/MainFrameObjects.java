@@ -35,151 +35,150 @@ import edu.wright.dirsyncpro.gui.mainframe.scheduletable.ScheduleTableModel;
 import edu.wright.dirsyncpro.gui.mainframe.syncqtable.SyncQTableCellRenderer;
 import edu.wright.dirsyncpro.gui.mainframe.syncqtable.SyncQTableModel;
 import edu.wright.dirsyncpro.tools.GuiTools;
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 /**
  * The DirSyncPro Main GUI.
  *
  * @author F. Gerbig, O. Givi (info@dirsyncpro.org)
  */
-public abstract class MainFrameObjects extends javax.swing.JFrame {
+public abstract class MainFrameObjects extends JFrame {
 
     // Variables declaration - do not modify
-    protected javax.swing.JButton analyzeButton;
-    protected javax.swing.JMenuItem analyzeMenuItem;
-    protected javax.swing.JMenuItem appendMenuItem;
-    protected javax.swing.JMenuItem cmdMenuItem;
-    protected javax.swing.JProgressBar currentProgress;
-    protected javax.swing.JLabel jLabel;
-    protected javax.swing.JLabel jLabel11;
-    protected javax.swing.JLabel jLabel13;
-    protected javax.swing.JLabel jLabel14;
-    protected javax.swing.JLabel jLabel15;
-    protected javax.swing.JLabel jLabel21;
-    protected javax.swing.JLabel jLabel22;
-    protected javax.swing.JLabel jLabel23;
-    protected javax.swing.JLabel jLabel25;
-    protected javax.swing.JLabel jLabel34;
-    protected javax.swing.JLabel jLabel35;
-    protected javax.swing.JLabel jLabel46;
-    protected javax.swing.JLabel jLabel70;
-    protected javax.swing.JLabel jLabel71;
-    protected javax.swing.JLabel jLabel72;
-    protected javax.swing.JLabel jLabel73;
-    protected javax.swing.JLabel jLabel77;
-    protected javax.swing.JButton jobAddButton;
-    protected javax.swing.JButton jobCollapseAllButton;
-    protected javax.swing.JButton jobCopyButton;
-    protected javax.swing.JButton jobDisableAllButton;
-    protected javax.swing.JButton jobDownButton;
-    protected javax.swing.JButton jobEditButton;
-    protected javax.swing.JButton jobEnableAllButton;
-    protected javax.swing.JButton jobExpandOneLevelButton;
-    protected javax.swing.JButton jobRemoveButton;
-    protected javax.swing.JButton jobUpButton;
-    protected javax.swing.JTree jobsTree;
-    protected javax.swing.JButton messagesCleanButton;
-    protected javax.swing.JTable messagesTable;
-    protected javax.swing.JScrollPane messagesTableScrollPane;
-    protected javax.swing.JCheckBox messagesViewFilterErrorsCheckBox;
-    protected javax.swing.JLabel messagesViewFilterErrorsLabel;
-    protected javax.swing.JCheckBox messagesViewFilterFileOperationsCheckBox;
-    protected javax.swing.JLabel messagesViewFilterFileOperationsLabel;
-    protected javax.swing.JCheckBox messagesViewFilterInfosCheckBox;
-    protected javax.swing.JLabel messagesViewFilterInfosLabel;
-    protected javax.swing.JButton messagesViewFilterOKButton;
-    protected javax.swing.JButton messagesViewFilterResetButton;
-    protected javax.swing.JCheckBox messagesViewFilterWarningsCheckBox;
-    protected javax.swing.JLabel messagesViewFilterWarningsLabel;
-    protected javax.swing.JButton newButton;
-    protected javax.swing.JMenuItem newMenuItem;
-    protected javax.swing.JButton openButton;
-    protected javax.swing.JMenuItem openMenuItem;
-    protected javax.swing.JMenu openRecentMenu;
-    protected javax.swing.JMenuItem optionsMenuItem;
-    protected javax.swing.JToggleButton pauseButton;
-    protected javax.swing.JButton saveAsButton;
-    protected javax.swing.JMenuItem saveAsMenuItem;
-    protected javax.swing.JButton saveButton;
-    protected javax.swing.JMenuItem saveEnabledAsMenuItem;
-    protected javax.swing.JMenuItem saveMenuItem;
-    protected javax.swing.JLabel scheduleEngineStatusField;
-    protected javax.swing.JButton scheduleStartButton;
-    protected javax.swing.JButton scheduleStopButton;
-    protected javax.swing.JTable scheduleTable;
-    protected javax.swing.JButton shutDownButton;
-    protected javax.swing.JMenuItem startScheduledTasksMenuItem;
-    protected javax.swing.JMenuItem stopScheduledTasksMenuItem;
-    protected javax.swing.JMenuItem swapSrcDstMenuItem;
-    protected javax.swing.JLabel syncQBytesAllwaysFilesDirs;
-    protected javax.swing.JLabel syncQBytesDeletedFilesDirs;
-    protected javax.swing.JLabel syncQBytesFilesDirsToBeSynced;
-    protected javax.swing.JLabel syncQBytesLargerAndModifiedFilesDirs;
-    protected javax.swing.JLabel syncQBytesLargerFilesDirs;
-    protected javax.swing.JLabel syncQBytesModifieldFilesDirs;
-    protected javax.swing.JLabel syncQBytesNewFilesDirs;
-    protected javax.swing.JLabel syncQNumberOfAllwaysDirs;
-    protected javax.swing.JLabel syncQNumberOfAllwaysFiles;
-    protected javax.swing.JLabel syncQNumberOfAllwaysFilesDirs;
-    protected javax.swing.JLabel syncQNumberOfConflictFiles;
-    protected javax.swing.JLabel syncQNumberOfConflictFilesDirs;
-    protected javax.swing.JLabel syncQNumberOfDeletedDirs;
-    protected javax.swing.JLabel syncQNumberOfDeletedFiles;
-    protected javax.swing.JLabel syncQNumberOfDeletedFilesDirs;
-    protected javax.swing.JLabel syncQNumberOfDirsToBeSynced;
-    protected javax.swing.JLabel syncQNumberOfFilesDirsToBeSynced;
-    protected javax.swing.JLabel syncQNumberOfFilesToBeSynced;
-    protected javax.swing.JLabel syncQNumberOfLargerAndModifiedFiles;
-    protected javax.swing.JLabel syncQNumberOfLargerAndModifiedFilesDirs;
-    protected javax.swing.JLabel syncQNumberOfLargerFiles;
-    protected javax.swing.JLabel syncQNumberOfLargerFilesDirs;
-    protected javax.swing.JLabel syncQNumberOfModifieldDirs;
-    protected javax.swing.JLabel syncQNumberOfModifieldFiles;
-    protected javax.swing.JLabel syncQNumberOfModifieldFilesDirs;
-    protected javax.swing.JLabel syncQNumberOfNewDirs;
-    protected javax.swing.JLabel syncQNumberOfNewFiles;
-    protected javax.swing.JLabel syncQNumberOfNewFilesDirs;
-    protected javax.swing.JCheckBox syncQSyncFilterConflictFilesCheckBox;
-    protected javax.swing.JLabel syncQSyncFilterConflictFilesLabel;
-    protected javax.swing.JCheckBox syncQSyncFilterDeletedDirsCheckBox;
-    protected javax.swing.JLabel syncQSyncFilterDeletedDirsLabel;
-    protected javax.swing.JCheckBox syncQSyncFilterDeletedFilesCheckBox;
-    protected javax.swing.JLabel syncQSyncFilterDeletedFilesLabel;
-    protected javax.swing.JCheckBox syncQSyncFilterLargerAndModifiedFilesCheckBox;
-    protected javax.swing.JLabel syncQSyncFilterLargerAndModifiedFilesLabel;
-    protected javax.swing.JCheckBox syncQSyncFilterLargerFilesCheckBox;
-    protected javax.swing.JLabel syncQSyncFilterLargerFilesLabel;
-    protected javax.swing.JCheckBox syncQSyncFilterModifiedFilesCheckBox;
-    protected javax.swing.JLabel syncQSyncFilterModifiedFilesLabel;
-    protected javax.swing.JCheckBox syncQSyncFilterNewFilesCheckBox;
-    protected javax.swing.JLabel syncQSyncFilterNewFilesLabel;
-    protected javax.swing.JButton syncQSyncFilterOKButton;
-    protected javax.swing.JButton syncQSyncFilterResetButton;
-    protected javax.swing.JTable syncQTable;
-    protected javax.swing.JLabel syncQTotalNumberOfAnalyzedDirs;
-    protected javax.swing.JLabel syncQTotalNumberOfAnalyzedFiles;
-    protected javax.swing.JLabel syncQTotalNumberOfFilesDirs;
-    protected javax.swing.JCheckBox syncQViewFilterConflictFilesCheckBox;
-    protected javax.swing.JLabel syncQViewFilterConflictFilesLabel;
-    protected javax.swing.JCheckBox syncQViewFilterDeletedDirsCheckBox;
-    protected javax.swing.JLabel syncQViewFilterDeletedDirsLabel;
-    protected javax.swing.JCheckBox syncQViewFilterDeletedFilesCheckBox;
-    protected javax.swing.JLabel syncQViewFilterDeletedFilesLabel;
-    protected javax.swing.JCheckBox syncQViewFilterLargerAndModifiedFilesCheckBox;
-    protected javax.swing.JLabel syncQViewFilterLargerAndModifiedFilesLabel;
-    protected javax.swing.JCheckBox syncQViewFilterLargerFilesCheckBox;
-    protected javax.swing.JLabel syncQViewFilterLargerFilesLabel;
-    protected javax.swing.JCheckBox syncQViewFilterModifiedFilesCheckBox;
-    protected javax.swing.JLabel syncQViewFilterModifiedFilesLabel;
-    protected javax.swing.JCheckBox syncQViewFilterNewFilesCheckBox;
-    protected javax.swing.JLabel syncQViewFilterNewFilesLabel;
-    protected javax.swing.JButton syncQViewFilterOKButton;
-    protected javax.swing.JButton syncQViewFilterResetButton;
-    protected javax.swing.JButton synchronizeButton;
-    protected javax.swing.JMenuItem synchronizeMenuItem;
-    protected javax.swing.JTabbedPane tabbedPane;
-    protected javax.swing.JProgressBar totalProgress;
-    private javax.swing.JButton googleDriveButton = new javax.swing.JButton();
+    protected JButton analyzeButton;
+    protected JMenuItem analyzeMenuItem;
+    protected JMenuItem appendMenuItem;
+    protected JMenuItem cmdMenuItem;
+    protected JProgressBar currentProgress;
+    protected JLabel jLabel;
+    protected JLabel jLabel11;
+    protected JLabel jLabel13;
+    protected JLabel jLabel14;
+    protected JLabel jLabel15;
+    protected JLabel jLabel21;
+    protected JLabel jLabel22;
+    protected JLabel jLabel23;
+    protected JLabel jLabel25;
+    protected JLabel jLabel34;
+    protected JLabel jLabel35;
+    protected JLabel jLabel46;
+    protected JLabel jLabel70;
+    protected JLabel jLabel71;
+    protected JLabel jLabel72;
+    protected JLabel jLabel73;
+    protected JLabel jLabel77;
+    protected JButton jobAddButton;
+    protected JButton jobCollapseAllButton;
+    protected JButton jobCopyButton;
+    protected JButton jobDisableAllButton;
+    protected JButton jobDownButton;
+    protected JButton jobEditButton;
+    protected JButton jobEnableAllButton;
+    protected JButton jobExpandOneLevelButton;
+    protected JButton jobRemoveButton;
+    protected JButton jobUpButton;
+    protected JTree jobsTree;
+    protected JButton messagesCleanButton;
+    protected JTable messagesTable;
+    protected JScrollPane messagesTableScrollPane;
+    protected JCheckBox messagesViewFilterErrorsCheckBox;
+    protected JLabel messagesViewFilterErrorsLabel;
+    protected JCheckBox messagesViewFilterFileOperationsCheckBox;
+    protected JLabel messagesViewFilterFileOperationsLabel;
+    protected JCheckBox messagesViewFilterInfosCheckBox;
+    protected JLabel messagesViewFilterInfosLabel;
+    protected JButton messagesViewFilterOKButton;
+    protected JButton messagesViewFilterResetButton;
+    protected JCheckBox messagesViewFilterWarningsCheckBox;
+    protected JLabel messagesViewFilterWarningsLabel;
+    protected JButton newButton;
+    protected JMenuItem newMenuItem;
+    protected JButton openButton;
+    protected JMenuItem openMenuItem;
+    protected JMenu openRecentMenu;
+    protected JMenuItem optionsMenuItem;
+    protected JToggleButton pauseButton;
+    protected JButton saveAsButton;
+    protected JMenuItem saveAsMenuItem;
+    protected JButton saveButton;
+    protected JMenuItem saveEnabledAsMenuItem;
+    protected JMenuItem saveMenuItem;
+    protected JLabel scheduleEngineStatusField;
+    protected JButton scheduleStartButton;
+    protected JButton scheduleStopButton;
+    protected JTable scheduleTable;
+    protected JButton shutDownButton;
+    protected JMenuItem startScheduledTasksMenuItem;
+    protected JMenuItem stopScheduledTasksMenuItem;
+    protected JMenuItem swapSrcDstMenuItem;
+    protected JLabel syncQBytesAllwaysFilesDirs;
+    protected JLabel syncQBytesDeletedFilesDirs;
+    protected JLabel syncQBytesFilesDirsToBeSynced;
+    protected JLabel syncQBytesLargerAndModifiedFilesDirs;
+    protected JLabel syncQBytesLargerFilesDirs;
+    protected JLabel syncQBytesModifieldFilesDirs;
+    protected JLabel syncQBytesNewFilesDirs;
+    protected JLabel syncQNumberOfAllwaysDirs;
+    protected JLabel syncQNumberOfAllwaysFiles;
+    protected JLabel syncQNumberOfAllwaysFilesDirs;
+    protected JLabel syncQNumberOfConflictFiles;
+    protected JLabel syncQNumberOfConflictFilesDirs;
+    protected JLabel syncQNumberOfDeletedDirs;
+    protected JLabel syncQNumberOfDeletedFiles;
+    protected JLabel syncQNumberOfDeletedFilesDirs;
+    protected JLabel syncQNumberOfDirsToBeSynced;
+    protected JLabel syncQNumberOfFilesDirsToBeSynced;
+    protected JLabel syncQNumberOfFilesToBeSynced;
+    protected JLabel syncQNumberOfLargerAndModifiedFiles;
+    protected JLabel syncQNumberOfLargerAndModifiedFilesDirs;
+    protected JLabel syncQNumberOfLargerFiles;
+    protected JLabel syncQNumberOfLargerFilesDirs;
+    protected JLabel syncQNumberOfModifieldDirs;
+    protected JLabel syncQNumberOfModifieldFiles;
+    protected JLabel syncQNumberOfModifieldFilesDirs;
+    protected JLabel syncQNumberOfNewDirs;
+    protected JLabel syncQNumberOfNewFiles;
+    protected JLabel syncQNumberOfNewFilesDirs;
+    protected JCheckBox syncQSyncFilterConflictFilesCheckBox;
+    protected JLabel syncQSyncFilterConflictFilesLabel;
+    protected JCheckBox syncQSyncFilterDeletedDirsCheckBox;
+    protected JLabel syncQSyncFilterDeletedDirsLabel;
+    protected JCheckBox syncQSyncFilterDeletedFilesCheckBox;
+    protected JLabel syncQSyncFilterDeletedFilesLabel;
+    protected JCheckBox syncQSyncFilterLargerAndModifiedFilesCheckBox;
+    protected JLabel syncQSyncFilterLargerAndModifiedFilesLabel;
+    protected JCheckBox syncQSyncFilterLargerFilesCheckBox;
+    protected JLabel syncQSyncFilterLargerFilesLabel;
+    protected JCheckBox syncQSyncFilterModifiedFilesCheckBox;
+    protected JLabel syncQSyncFilterModifiedFilesLabel;
+    protected JCheckBox syncQSyncFilterNewFilesCheckBox;
+    protected JLabel syncQSyncFilterNewFilesLabel;
+    protected JButton syncQSyncFilterOKButton;
+    protected JButton syncQSyncFilterResetButton;
+    protected JTable syncQTable;
+    protected JLabel syncQTotalNumberOfAnalyzedDirs;
+    protected JLabel syncQTotalNumberOfAnalyzedFiles;
+    protected JLabel syncQTotalNumberOfFilesDirs;
+    protected JCheckBox syncQViewFilterConflictFilesCheckBox;
+    protected JLabel syncQViewFilterConflictFilesLabel;
+    protected JCheckBox syncQViewFilterDeletedDirsCheckBox;
+    protected JLabel syncQViewFilterDeletedDirsLabel;
+    protected JCheckBox syncQViewFilterDeletedFilesCheckBox;
+    protected JLabel syncQViewFilterDeletedFilesLabel;
+    protected JCheckBox syncQViewFilterLargerAndModifiedFilesCheckBox;
+    protected JLabel syncQViewFilterLargerAndModifiedFilesLabel;
+    protected JCheckBox syncQViewFilterLargerFilesCheckBox;
+    protected JLabel syncQViewFilterLargerFilesLabel;
+    protected JCheckBox syncQViewFilterModifiedFilesCheckBox;
+    protected JLabel syncQViewFilterModifiedFilesLabel;
+    protected JCheckBox syncQViewFilterNewFilesCheckBox;
+    protected JLabel syncQViewFilterNewFilesLabel;
+    protected JButton syncQViewFilterOKButton;
+    protected JButton syncQViewFilterResetButton;
+    protected JButton synchronizeButton;
+    protected JMenuItem synchronizeMenuItem;
+    protected JTabbedPane tabbedPane;
+    protected JProgressBar totalProgress;
 
     public MainFrameObjects() {
         super();
@@ -197,214 +196,214 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        javax.swing.JToolBar toolBar = new javax.swing.JToolBar();
-        newButton = new javax.swing.JButton();
-        openButton = new javax.swing.JButton();
-        saveButton = new javax.swing.JButton();
-        saveAsButton = new javax.swing.JButton();
-        javax.swing.JSeparator jSeparator2 = new javax.swing.JSeparator();
-        analyzeButton = new javax.swing.JButton();
-        synchronizeButton = new javax.swing.JButton();
-        pauseButton = new javax.swing.JToggleButton();
-        javax.swing.JButton stopButton = new javax.swing.JButton();
-        shutDownButton = new javax.swing.JButton();
-        javax.swing.JSeparator jSeparator3 = new javax.swing.JSeparator();
-        scheduleStartButton = new javax.swing.JButton();
-        scheduleStopButton = new javax.swing.JButton();
-        javax.swing.JSeparator jSeparator6 = new javax.swing.JSeparator();
-        javax.swing.JButton aboutButton = new javax.swing.JButton();
-        javax.swing.JButton contentsButton = new javax.swing.JButton();
-        javax.swing.JButton donateButton = new javax.swing.JButton();
+        JToolBar toolBar = new JToolBar();
+        newButton = new JButton();
+        openButton = new JButton();
+        saveButton = new JButton();
+        saveAsButton = new JButton();
+        JSeparator jSeparator2 = new JSeparator();
+        analyzeButton = new JButton();
+        synchronizeButton = new JButton();
+        pauseButton = new JToggleButton();
+        JButton stopButton = new JButton();
+        shutDownButton = new JButton();
+        JSeparator jSeparator3 = new JSeparator();
+        scheduleStartButton = new JButton();
+        scheduleStopButton = new JButton();
+        JSeparator jSeparator6 = new JSeparator();
+        JButton aboutButton = new JButton();
+        JButton contentsButton = new JButton();
+        JButton donateButton = new JButton();
 
-        javax.swing.JPanel mainPanel = new javax.swing.JPanel();
-        tabbedPane = new javax.swing.JTabbedPane();
-        javax.swing.JPanel jobsJPanel = new javax.swing.JPanel();
-        javax.swing.JPanel viewJPanel2 = new javax.swing.JPanel();
-        jobEnableAllButton = new javax.swing.JButton();
-        jobDisableAllButton = new javax.swing.JButton();
-        jobDownButton = new javax.swing.JButton();
-        jobUpButton = new javax.swing.JButton();
-        jobAddButton = new javax.swing.JButton();
-        jobEditButton = new javax.swing.JButton();
-        jobCopyButton = new javax.swing.JButton();
-        jobRemoveButton = new javax.swing.JButton();
-        javax.swing.JPanel jPanel1 = new javax.swing.JPanel();
-        jobExpandOneLevelButton = new javax.swing.JButton();
-        jobCollapseAllButton = new javax.swing.JButton();
-        javax.swing.JScrollPane jScrollPane5 = new javax.swing.JScrollPane();
-        jobsTree = new javax.swing.JTree();
-        javax.swing.JPanel syncQPanel = new javax.swing.JPanel();
-        javax.swing.JTabbedPane jTabbedPane1 = new javax.swing.JTabbedPane();
-        javax.swing.JPanel summaryJPanel = new javax.swing.JPanel();
-        jLabel = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        syncQNumberOfFilesToBeSynced = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        syncQNumberOfNewFiles = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        syncQNumberOfModifieldFiles = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        syncQNumberOfLargerFiles = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        syncQNumberOfLargerAndModifiedFiles = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        syncQNumberOfDeletedFiles = new javax.swing.JLabel();
-        javax.swing.JPanel spacer6 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        syncQNumberOfAllwaysFiles = new javax.swing.JLabel();
-        jLabel70 = new javax.swing.JLabel();
-        syncQNumberOfDirsToBeSynced = new javax.swing.JLabel();
-        syncQNumberOfAllwaysDirs = new javax.swing.JLabel();
-        syncQNumberOfNewDirs = new javax.swing.JLabel();
-        syncQNumberOfModifieldDirs = new javax.swing.JLabel();
-        syncQNumberOfDeletedDirs = new javax.swing.JLabel();
-        jLabel71 = new javax.swing.JLabel();
-        syncQTotalNumberOfFilesDirs = new javax.swing.JLabel();
-        syncQNumberOfFilesDirsToBeSynced = new javax.swing.JLabel();
-        syncQNumberOfAllwaysFilesDirs = new javax.swing.JLabel();
-        syncQNumberOfNewFilesDirs = new javax.swing.JLabel();
-        syncQNumberOfModifieldFilesDirs = new javax.swing.JLabel();
-        syncQNumberOfLargerFilesDirs = new javax.swing.JLabel();
-        syncQNumberOfLargerAndModifiedFilesDirs = new javax.swing.JLabel();
-        syncQNumberOfDeletedFilesDirs = new javax.swing.JLabel();
-        syncQTotalNumberOfAnalyzedFiles = new javax.swing.JLabel();
-        syncQTotalNumberOfAnalyzedDirs = new javax.swing.JLabel();
-        jLabel72 = new javax.swing.JLabel();
-        syncQNumberOfConflictFiles = new javax.swing.JLabel();
-        syncQNumberOfConflictFilesDirs = new javax.swing.JLabel();
-        jLabel73 = new javax.swing.JLabel();
-        syncQBytesFilesDirsToBeSynced = new javax.swing.JLabel();
-        syncQBytesAllwaysFilesDirs = new javax.swing.JLabel();
-        syncQBytesNewFilesDirs = new javax.swing.JLabel();
-        syncQBytesModifieldFilesDirs = new javax.swing.JLabel();
-        syncQBytesLargerFilesDirs = new javax.swing.JLabel();
-        syncQBytesLargerAndModifiedFilesDirs = new javax.swing.JLabel();
-        syncQBytesDeletedFilesDirs = new javax.swing.JLabel();
-        javax.swing.JPanel viewJPanel = new javax.swing.JPanel();
-        javax.swing.JPanel jPanel58 = new javax.swing.JPanel();
-        javax.swing.JPanel jPanel53 = new javax.swing.JPanel();
-        syncQViewFilterNewFilesCheckBox = new javax.swing.JCheckBox();
-        syncQViewFilterNewFilesLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel55 = new javax.swing.JPanel();
-        syncQViewFilterLargerFilesCheckBox = new javax.swing.JCheckBox();
-        syncQViewFilterLargerFilesLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel57 = new javax.swing.JPanel();
-        syncQViewFilterDeletedFilesCheckBox = new javax.swing.JCheckBox();
-        syncQViewFilterDeletedFilesLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel54 = new javax.swing.JPanel();
-        syncQViewFilterModifiedFilesCheckBox = new javax.swing.JCheckBox();
-        syncQViewFilterModifiedFilesLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel56 = new javax.swing.JPanel();
-        syncQViewFilterLargerAndModifiedFilesCheckBox = new javax.swing.JCheckBox();
-        syncQViewFilterLargerAndModifiedFilesLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel71 = new javax.swing.JPanel();
-        syncQViewFilterDeletedDirsCheckBox = new javax.swing.JCheckBox();
-        syncQViewFilterDeletedDirsLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel68 = new javax.swing.JPanel();
-        syncQViewFilterConflictFilesCheckBox = new javax.swing.JCheckBox();
-        syncQViewFilterConflictFilesLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel50 = new javax.swing.JPanel();
-        syncQViewFilterResetButton = new javax.swing.JButton();
-        syncQViewFilterOKButton = new javax.swing.JButton();
-        jLabel34 = new javax.swing.JLabel();
-        javax.swing.JPanel syncJPanel = new javax.swing.JPanel();
-        javax.swing.JPanel jPanel59 = new javax.swing.JPanel();
-        javax.swing.JPanel jPanel60 = new javax.swing.JPanel();
-        syncQSyncFilterNewFilesCheckBox = new javax.swing.JCheckBox();
-        syncQSyncFilterNewFilesLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel61 = new javax.swing.JPanel();
-        syncQSyncFilterLargerFilesCheckBox = new javax.swing.JCheckBox();
-        syncQSyncFilterLargerFilesLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel64 = new javax.swing.JPanel();
-        syncQSyncFilterDeletedFilesCheckBox = new javax.swing.JCheckBox();
-        syncQSyncFilterDeletedFilesLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel62 = new javax.swing.JPanel();
-        syncQSyncFilterModifiedFilesCheckBox = new javax.swing.JCheckBox();
-        syncQSyncFilterModifiedFilesLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel63 = new javax.swing.JPanel();
-        syncQSyncFilterLargerAndModifiedFilesCheckBox = new javax.swing.JCheckBox();
-        syncQSyncFilterLargerAndModifiedFilesLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel72 = new javax.swing.JPanel();
-        syncQSyncFilterDeletedDirsCheckBox = new javax.swing.JCheckBox();
-        syncQSyncFilterDeletedDirsLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel73 = new javax.swing.JPanel();
-        syncQSyncFilterConflictFilesCheckBox = new javax.swing.JCheckBox();
-        syncQSyncFilterConflictFilesLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel52 = new javax.swing.JPanel();
-        syncQSyncFilterResetButton = new javax.swing.JButton();
-        syncQSyncFilterOKButton = new javax.swing.JButton();
-        jLabel35 = new javax.swing.JLabel();
-        javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
-        syncQTable = new javax.swing.JTable();
-        javax.swing.JPanel scheduleQJPanel = new javax.swing.JPanel();
-        javax.swing.JPanel scheduleStatusJPanel = new javax.swing.JPanel();
-        scheduleEngineStatusField = new javax.swing.JLabel();
-        javax.swing.JPanel spacer3 = new javax.swing.JPanel();
-        javax.swing.JPanel spacer7 = new javax.swing.JPanel();
-        jLabel77 = new javax.swing.JLabel();
-        javax.swing.JScrollPane jScrollPane6 = new javax.swing.JScrollPane();
-        scheduleTable = new javax.swing.JTable();
-        javax.swing.JPanel messagesQJPanel = new javax.swing.JPanel();
-        javax.swing.JPanel viewJPanel1 = new javax.swing.JPanel();
-        javax.swing.JPanel jPanel65 = new javax.swing.JPanel();
-        javax.swing.JPanel jPanel66 = new javax.swing.JPanel();
-        messagesViewFilterInfosCheckBox = new javax.swing.JCheckBox();
-        messagesViewFilterInfosLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel67 = new javax.swing.JPanel();
-        messagesViewFilterErrorsCheckBox = new javax.swing.JCheckBox();
-        messagesViewFilterErrorsLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel69 = new javax.swing.JPanel();
-        messagesViewFilterWarningsCheckBox = new javax.swing.JCheckBox();
-        messagesViewFilterWarningsLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel70 = new javax.swing.JPanel();
-        messagesViewFilterFileOperationsCheckBox = new javax.swing.JCheckBox();
-        messagesViewFilterFileOperationsLabel = new javax.swing.JLabel();
-        javax.swing.JPanel jPanel51 = new javax.swing.JPanel();
-        messagesViewFilterResetButton = new javax.swing.JButton();
-        messagesViewFilterOKButton = new javax.swing.JButton();
-        messagesCleanButton = new javax.swing.JButton();
-        jLabel46 = new javax.swing.JLabel();
-        messagesTableScrollPane = new javax.swing.JScrollPane();
-        messagesTable = new javax.swing.JTable();
-        javax.swing.JPanel progressPanel = new javax.swing.JPanel();
-        javax.swing.JLabel currentProgressLabel = new javax.swing.JLabel();
-        currentProgress = new javax.swing.JProgressBar();
-        javax.swing.JLabel totalProgressLabel = new javax.swing.JLabel();
-        totalProgress = new javax.swing.JProgressBar();
-        javax.swing.JMenuBar menuBar = new javax.swing.JMenuBar();
-        javax.swing.JMenu fileMenu = new javax.swing.JMenu();
-        newMenuItem = new javax.swing.JMenuItem();
-        openMenuItem = new javax.swing.JMenuItem();
-        openRecentMenu = new javax.swing.JMenu();
-        appendMenuItem = new javax.swing.JMenuItem();
-        javax.swing.JPopupMenu.Separator jSeparator7 = new javax.swing.JPopupMenu.Separator();
-        saveMenuItem = new javax.swing.JMenuItem();
-        saveAsMenuItem = new javax.swing.JMenuItem();
-        saveEnabledAsMenuItem = new javax.swing.JMenuItem();
-        javax.swing.JSeparator jSeparator4 = new javax.swing.JSeparator();
-        javax.swing.JMenuItem quitMenuItem = new javax.swing.JMenuItem();
-        javax.swing.JMenu runMenu = new javax.swing.JMenu();
-        analyzeMenuItem = new javax.swing.JMenuItem();
-        synchronizeMenuItem = new javax.swing.JMenuItem();
-        javax.swing.JMenuItem pauseMenuItem = new javax.swing.JMenuItem();
-        javax.swing.JMenuItem stopMenuItem = new javax.swing.JMenuItem();
-        javax.swing.JMenuItem shutDownMenuItem = new javax.swing.JMenuItem();
-        javax.swing.JSeparator jSeparator5 = new javax.swing.JSeparator();
-        startScheduledTasksMenuItem = new javax.swing.JMenuItem();
-        stopScheduledTasksMenuItem = new javax.swing.JMenuItem();
-        javax.swing.JMenu toolsMenu = new javax.swing.JMenu();
-        swapSrcDstMenuItem = new javax.swing.JMenuItem();
-        cmdMenuItem = new javax.swing.JMenuItem();
-        optionsMenuItem = new javax.swing.JMenuItem();
-        javax.swing.JMenu helpMenu = new javax.swing.JMenu();
-        javax.swing.JMenuItem contentsMenuItem = new javax.swing.JMenuItem();
-        javax.swing.JMenuItem donateMenuItem = new javax.swing.JMenuItem();
-        javax.swing.JSeparator jSeparator1 = new javax.swing.JSeparator();
-        javax.swing.JMenuItem updateMenuItem = new javax.swing.JMenuItem();
-        javax.swing.JMenuItem aboutMenuItem = new javax.swing.JMenuItem();
+        JPanel mainPanel = new JPanel();
+        tabbedPane = new JTabbedPane();
+        JPanel jobsJPanel = new JPanel();
+        JPanel viewJPanel2 = new JPanel();
+        jobEnableAllButton = new JButton();
+        jobDisableAllButton = new JButton();
+        jobDownButton = new JButton();
+        jobUpButton = new JButton();
+        jobAddButton = new JButton();
+        jobEditButton = new JButton();
+        jobCopyButton = new JButton();
+        jobRemoveButton = new JButton();
+        JPanel jPanel1 = new JPanel();
+        jobExpandOneLevelButton = new JButton();
+        jobCollapseAllButton = new JButton();
+        JScrollPane jScrollPane5 = new JScrollPane();
+        jobsTree = new JTree();
+        JPanel syncQPanel = new JPanel();
+        JTabbedPane jTabbedPane1 = new JTabbedPane();
+        JPanel summaryJPanel = new JPanel();
+        jLabel = new JLabel();
+        jLabel11 = new JLabel();
+        syncQNumberOfFilesToBeSynced = new JLabel();
+        jLabel22 = new JLabel();
+        syncQNumberOfNewFiles = new JLabel();
+        jLabel15 = new JLabel();
+        syncQNumberOfModifieldFiles = new JLabel();
+        jLabel21 = new JLabel();
+        syncQNumberOfLargerFiles = new JLabel();
+        jLabel14 = new JLabel();
+        syncQNumberOfLargerAndModifiedFiles = new JLabel();
+        jLabel23 = new JLabel();
+        syncQNumberOfDeletedFiles = new JLabel();
+        JPanel spacer6 = new JPanel();
+        jLabel13 = new JLabel();
+        jLabel25 = new JLabel();
+        syncQNumberOfAllwaysFiles = new JLabel();
+        jLabel70 = new JLabel();
+        syncQNumberOfDirsToBeSynced = new JLabel();
+        syncQNumberOfAllwaysDirs = new JLabel();
+        syncQNumberOfNewDirs = new JLabel();
+        syncQNumberOfModifieldDirs = new JLabel();
+        syncQNumberOfDeletedDirs = new JLabel();
+        jLabel71 = new JLabel();
+        syncQTotalNumberOfFilesDirs = new JLabel();
+        syncQNumberOfFilesDirsToBeSynced = new JLabel();
+        syncQNumberOfAllwaysFilesDirs = new JLabel();
+        syncQNumberOfNewFilesDirs = new JLabel();
+        syncQNumberOfModifieldFilesDirs = new JLabel();
+        syncQNumberOfLargerFilesDirs = new JLabel();
+        syncQNumberOfLargerAndModifiedFilesDirs = new JLabel();
+        syncQNumberOfDeletedFilesDirs = new JLabel();
+        syncQTotalNumberOfAnalyzedFiles = new JLabel();
+        syncQTotalNumberOfAnalyzedDirs = new JLabel();
+        jLabel72 = new JLabel();
+        syncQNumberOfConflictFiles = new JLabel();
+        syncQNumberOfConflictFilesDirs = new JLabel();
+        jLabel73 = new JLabel();
+        syncQBytesFilesDirsToBeSynced = new JLabel();
+        syncQBytesAllwaysFilesDirs = new JLabel();
+        syncQBytesNewFilesDirs = new JLabel();
+        syncQBytesModifieldFilesDirs = new JLabel();
+        syncQBytesLargerFilesDirs = new JLabel();
+        syncQBytesLargerAndModifiedFilesDirs = new JLabel();
+        syncQBytesDeletedFilesDirs = new JLabel();
+        JPanel viewJPanel = new JPanel();
+        JPanel jPanel58 = new JPanel();
+        JPanel jPanel53 = new JPanel();
+        syncQViewFilterNewFilesCheckBox = new JCheckBox();
+        syncQViewFilterNewFilesLabel = new JLabel();
+        JPanel jPanel55 = new JPanel();
+        syncQViewFilterLargerFilesCheckBox = new JCheckBox();
+        syncQViewFilterLargerFilesLabel = new JLabel();
+        JPanel jPanel57 = new JPanel();
+        syncQViewFilterDeletedFilesCheckBox = new JCheckBox();
+        syncQViewFilterDeletedFilesLabel = new JLabel();
+        JPanel jPanel54 = new JPanel();
+        syncQViewFilterModifiedFilesCheckBox = new JCheckBox();
+        syncQViewFilterModifiedFilesLabel = new JLabel();
+        JPanel jPanel56 = new JPanel();
+        syncQViewFilterLargerAndModifiedFilesCheckBox = new JCheckBox();
+        syncQViewFilterLargerAndModifiedFilesLabel = new JLabel();
+        JPanel jPanel71 = new JPanel();
+        syncQViewFilterDeletedDirsCheckBox = new JCheckBox();
+        syncQViewFilterDeletedDirsLabel = new JLabel();
+        JPanel jPanel68 = new JPanel();
+        syncQViewFilterConflictFilesCheckBox = new JCheckBox();
+        syncQViewFilterConflictFilesLabel = new JLabel();
+        JPanel jPanel50 = new JPanel();
+        syncQViewFilterResetButton = new JButton();
+        syncQViewFilterOKButton = new JButton();
+        jLabel34 = new JLabel();
+        JPanel syncJPanel = new JPanel();
+        JPanel jPanel59 = new JPanel();
+        JPanel jPanel60 = new JPanel();
+        syncQSyncFilterNewFilesCheckBox = new JCheckBox();
+        syncQSyncFilterNewFilesLabel = new JLabel();
+        JPanel jPanel61 = new JPanel();
+        syncQSyncFilterLargerFilesCheckBox = new JCheckBox();
+        syncQSyncFilterLargerFilesLabel = new JLabel();
+        JPanel jPanel64 = new JPanel();
+        syncQSyncFilterDeletedFilesCheckBox = new JCheckBox();
+        syncQSyncFilterDeletedFilesLabel = new JLabel();
+        JPanel jPanel62 = new JPanel();
+        syncQSyncFilterModifiedFilesCheckBox = new JCheckBox();
+        syncQSyncFilterModifiedFilesLabel = new JLabel();
+        JPanel jPanel63 = new JPanel();
+        syncQSyncFilterLargerAndModifiedFilesCheckBox = new JCheckBox();
+        syncQSyncFilterLargerAndModifiedFilesLabel = new JLabel();
+        JPanel jPanel72 = new JPanel();
+        syncQSyncFilterDeletedDirsCheckBox = new JCheckBox();
+        syncQSyncFilterDeletedDirsLabel = new JLabel();
+        JPanel jPanel73 = new JPanel();
+        syncQSyncFilterConflictFilesCheckBox = new JCheckBox();
+        syncQSyncFilterConflictFilesLabel = new JLabel();
+        JPanel jPanel52 = new JPanel();
+        syncQSyncFilterResetButton = new JButton();
+        syncQSyncFilterOKButton = new JButton();
+        jLabel35 = new JLabel();
+        JScrollPane jScrollPane1 = new JScrollPane();
+        syncQTable = new JTable();
+        JPanel scheduleQJPanel = new JPanel();
+        JPanel scheduleStatusJPanel = new JPanel();
+        scheduleEngineStatusField = new JLabel();
+        JPanel spacer3 = new JPanel();
+        JPanel spacer7 = new JPanel();
+        jLabel77 = new JLabel();
+        JScrollPane jScrollPane6 = new JScrollPane();
+        scheduleTable = new JTable();
+        JPanel messagesQJPanel = new JPanel();
+        JPanel viewJPanel1 = new JPanel();
+        JPanel jPanel65 = new JPanel();
+        JPanel jPanel66 = new JPanel();
+        messagesViewFilterInfosCheckBox = new JCheckBox();
+        messagesViewFilterInfosLabel = new JLabel();
+        JPanel jPanel67 = new JPanel();
+        messagesViewFilterErrorsCheckBox = new JCheckBox();
+        messagesViewFilterErrorsLabel = new JLabel();
+        JPanel jPanel69 = new JPanel();
+        messagesViewFilterWarningsCheckBox = new JCheckBox();
+        messagesViewFilterWarningsLabel = new JLabel();
+        JPanel jPanel70 = new JPanel();
+        messagesViewFilterFileOperationsCheckBox = new JCheckBox();
+        messagesViewFilterFileOperationsLabel = new JLabel();
+        JPanel jPanel51 = new JPanel();
+        messagesViewFilterResetButton = new JButton();
+        messagesViewFilterOKButton = new JButton();
+        messagesCleanButton = new JButton();
+        jLabel46 = new JLabel();
+        messagesTableScrollPane = new JScrollPane();
+        messagesTable = new JTable();
+        JPanel progressPanel = new JPanel();
+        JLabel currentProgressLabel = new JLabel();
+        currentProgress = new JProgressBar();
+        JLabel totalProgressLabel = new JLabel();
+        totalProgress = new JProgressBar();
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu();
+        newMenuItem = new JMenuItem();
+        openMenuItem = new JMenuItem();
+        openRecentMenu = new JMenu();
+        appendMenuItem = new JMenuItem();
+        JPopupMenu.Separator jSeparator7 = new JPopupMenu.Separator();
+        saveMenuItem = new JMenuItem();
+        saveAsMenuItem = new JMenuItem();
+        saveEnabledAsMenuItem = new JMenuItem();
+        JSeparator jSeparator4 = new JSeparator();
+        JMenuItem quitMenuItem = new JMenuItem();
+        JMenu runMenu = new JMenu();
+        analyzeMenuItem = new JMenuItem();
+        synchronizeMenuItem = new JMenuItem();
+        JMenuItem pauseMenuItem = new JMenuItem();
+        JMenuItem stopMenuItem = new JMenuItem();
+        JMenuItem shutDownMenuItem = new JMenuItem();
+        JSeparator jSeparator5 = new JSeparator();
+        startScheduledTasksMenuItem = new JMenuItem();
+        stopScheduledTasksMenuItem = new JMenuItem();
+        JMenu toolsMenu = new JMenu();
+        swapSrcDstMenuItem = new JMenuItem();
+        cmdMenuItem = new JMenuItem();
+        optionsMenuItem = new JMenuItem();
+        JMenu helpMenu = new JMenu();
+        JMenuItem contentsMenuItem = new JMenuItem();
+        JMenuItem donateMenuItem = new JMenuItem();
+        JSeparator jSeparator1 = new JSeparator();
+        JMenuItem updateMenuItem = new JMenuItem();
+        JMenuItem aboutMenuItem = new JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("DirSync Pro");
         setIconImage(new ImageIcon(getClass().getResource("/icons/DirSyncPro64x64.png")).getImage());
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -422,7 +421,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         toolBar.setFloatable(false);
 
-        newButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonFileNew.png"))); // NOI18N
+        newButton.setIcon(new ImageIcon(getClass().getResource("/icons/buttonFileNew.png"))); // NOI18N
         newButton.setToolTipText("New Job set");
         newButton.setBorderPainted(false);
         newButton.setMaximumSize(new java.awt.Dimension(30, 30));
@@ -432,7 +431,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         newButton.addActionListener(this::newButtonnewConfigActionPerformed);
         toolBar.add(newButton);
 
-        openButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonFileOpen.png"))); // NOI18N
+        openButton.setIcon(new ImageIcon(getClass().getResource("/icons/buttonFileOpen.png"))); // NOI18N
         openButton.setToolTipText("Open Job set");
         openButton.setBorderPainted(false);
         openButton.setMaximumSize(new java.awt.Dimension(30, 30));
@@ -442,7 +441,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         openButton.addActionListener(this::openButtonopenConfigActionPerformed);
         toolBar.add(openButton);
 
-        saveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonFileSave.png"))); // NOI18N
+        saveButton.setIcon(new ImageIcon(getClass().getResource("/icons/buttonFileSave.png"))); // NOI18N
         saveButton.setToolTipText("Save Job set");
         saveButton.setBorderPainted(false);
         saveButton.setMaximumSize(new java.awt.Dimension(30, 30));
@@ -452,26 +451,26 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         saveButton.addActionListener(this::saveButtonsaveConfigActionPerformed);
         toolBar.add(saveButton);
 
-        saveAsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonFileSaveAs.png"))); // NOI18N
+        saveAsButton.setIcon(new ImageIcon(getClass().getResource("/icons/buttonFileSaveAs.png"))); // NOI18N
         saveAsButton.setToolTipText("Save Job set As");
         saveAsButton.setBorderPainted(false);
         saveAsButton.setFocusable(false);
-        saveAsButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        saveAsButton.setHorizontalTextPosition(SwingConstants.CENTER);
         saveAsButton.setMaximumSize(new java.awt.Dimension(30, 30));
         saveAsButton.setMinimumSize(new java.awt.Dimension(30, 30));
         saveAsButton.setOpaque(false);
         saveAsButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        saveAsButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        saveAsButton.setVerticalTextPosition(SwingConstants.BOTTOM);
         saveAsButton.addActionListener(this::saveAsButtonsaveConfigActionPerformed);
         toolBar.add(saveAsButton);
 
         jSeparator2.setBackground(new java.awt.Color(204, 204, 204));
         jSeparator2.setForeground(new java.awt.Color(204, 204, 204));
-        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator2.setOrientation(SwingConstants.VERTICAL);
         jSeparator2.setMaximumSize(new java.awt.Dimension(16, 16));
         toolBar.add(jSeparator2);
 
-        analyzeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonPreview.png"))); // NOI18N
+        analyzeButton.setIcon(new ImageIcon(getClass().getResource("/icons/buttonPreview.png"))); // NOI18N
         analyzeButton.setToolTipText("Analyze");
         analyzeButton.setBorderPainted(false);
         analyzeButton.setMaximumSize(new java.awt.Dimension(30, 30));
@@ -481,7 +480,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         analyzeButton.addActionListener(this::analyzeButtonpreviewStartActionPerformed);
         toolBar.add(analyzeButton);
 
-        synchronizeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonStart.png"))); // NOI18N
+        synchronizeButton.setIcon(new ImageIcon(getClass().getResource("/icons/buttonStart.png"))); // NOI18N
         synchronizeButton.setToolTipText("Synchronize");
         synchronizeButton.setBorderPainted(false);
         synchronizeButton.setMaximumSize(new java.awt.Dimension(30, 30));
@@ -491,7 +490,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         synchronizeButton.addActionListener(this::synchronizeButtonsynchronizationStartActionPerformed);
         toolBar.add(synchronizeButton);
 
-        pauseButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonPause.png"))); // NOI18N
+        pauseButton.setIcon(new ImageIcon(getClass().getResource("/icons/buttonPause.png"))); // NOI18N
         pauseButton.setToolTipText("Pause");
         pauseButton.setBorderPainted(false);
         pauseButton.setMaximumSize(new java.awt.Dimension(30, 30));
@@ -500,7 +499,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         pauseButton.addActionListener(this::pauseButtonsynchronizationPauseActionPerformed);
         toolBar.add(pauseButton);
 
-        stopButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonStop.png"))); // NOI18N
+        stopButton.setIcon(new ImageIcon(getClass().getResource("/icons/buttonStop.png"))); // NOI18N
         stopButton.setToolTipText("Stop");
         stopButton.setBorderPainted(false);
         stopButton.setMaximumSize(new java.awt.Dimension(30, 30));
@@ -510,56 +509,56 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         stopButton.addActionListener(this::stopButtonsynchronizationStopActionPerformed);
         toolBar.add(stopButton);
 
-        shutDownButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonExit.png"))); // NOI18N
+        shutDownButton.setIcon(new ImageIcon(getClass().getResource("/icons/buttonExit.png"))); // NOI18N
         shutDownButton.setToolTipText("Shut down the system after the sync.");
         shutDownButton.setBorderPainted(false);
         shutDownButton.setFocusable(false);
-        shutDownButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        shutDownButton.setHorizontalTextPosition(SwingConstants.CENTER);
         shutDownButton.setMaximumSize(new java.awt.Dimension(30, 30));
         shutDownButton.setMinimumSize(new java.awt.Dimension(30, 30));
         shutDownButton.setOpaque(false);
         shutDownButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        shutDownButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        shutDownButton.setVerticalTextPosition(SwingConstants.BOTTOM);
         shutDownButton.addActionListener(this::shutDownButtonsynchronizationStopActionPerformed);
         toolBar.add(shutDownButton);
 
         jSeparator3.setBackground(new java.awt.Color(204, 204, 204));
         jSeparator3.setForeground(new java.awt.Color(204, 204, 204));
-        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator3.setOrientation(SwingConstants.VERTICAL);
         jSeparator3.setMaximumSize(new java.awt.Dimension(16, 16));
         toolBar.add(jSeparator3);
 
-        scheduleStartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonStartSchedule.png"))); // NOI18N
+        scheduleStartButton.setIcon(new ImageIcon(getClass().getResource("/icons/buttonStartSchedule.png"))); // NOI18N
         scheduleStartButton.setToolTipText("Start Schedule Engine");
         scheduleStartButton.setBorderPainted(false);
-        scheduleStartButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        scheduleStartButton.setHorizontalTextPosition(SwingConstants.CENTER);
         scheduleStartButton.setMaximumSize(new java.awt.Dimension(30, 30));
         scheduleStartButton.setMinimumSize(new java.awt.Dimension(30, 30));
         scheduleStartButton.setOpaque(false);
         scheduleStartButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        scheduleStartButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        scheduleStartButton.setVerticalTextPosition(SwingConstants.BOTTOM);
         scheduleStartButton.addActionListener(this::scheduleStartButtonsynchronizationStartActionPerformed);
         toolBar.add(scheduleStartButton);
 
-        scheduleStopButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonStopSchedule.png"))); // NOI18N
+        scheduleStopButton.setIcon(new ImageIcon(getClass().getResource("/icons/buttonStopSchedule.png"))); // NOI18N
         scheduleStopButton.setToolTipText("Stop Schedule Engine");
         scheduleStopButton.setBorderPainted(false);
-        scheduleStopButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        scheduleStopButton.setHorizontalTextPosition(SwingConstants.CENTER);
         scheduleStopButton.setMaximumSize(new java.awt.Dimension(30, 30));
         scheduleStopButton.setMinimumSize(new java.awt.Dimension(30, 30));
         scheduleStopButton.setOpaque(false);
         scheduleStopButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        scheduleStopButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        scheduleStopButton.setVerticalTextPosition(SwingConstants.BOTTOM);
         scheduleStopButton.addActionListener(this::scheduleStopButtonsynchronizationStartActionPerformed);
         toolBar.add(scheduleStopButton);
 
         jSeparator6.setBackground(new java.awt.Color(204, 204, 204));
         jSeparator6.setForeground(new java.awt.Color(204, 204, 204));
-        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator6.setOrientation(SwingConstants.VERTICAL);
         jSeparator6.setMaximumSize(new java.awt.Dimension(16, 16));
         toolBar.add(jSeparator6);
 
-        aboutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonAbout.png"))); // NOI18N
+        aboutButton.setIcon(new ImageIcon(getClass().getResource("/icons/buttonAbout.png"))); // NOI18N
         aboutButton.setToolTipText("About");
         aboutButton.setBorderPainted(false);
         aboutButton.setMaximumSize(new java.awt.Dimension(30, 30));
@@ -569,7 +568,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         aboutButton.addActionListener(this::aboutButtonaboutActionPerformed);
         toolBar.add(aboutButton);
 
-        contentsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttonContents.png"))); // NOI18N
+        contentsButton.setIcon(new ImageIcon(getClass().getResource("/icons/buttonContents.png"))); // NOI18N
         contentsButton.setToolTipText("Help contents");
         contentsButton.setBorderPainted(false);
         contentsButton.setMaximumSize(new java.awt.Dimension(30, 30));
@@ -579,47 +578,33 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         contentsButton.addActionListener(this::contentsButtoncontentsActionPerformed);
         toolBar.add(contentsButton);
 
-        donateButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/donate22x22.png"))); // NOI18N
+        donateButton.setIcon(new ImageIcon(getClass().getResource("/icons/donate22x22.png"))); // NOI18N
         donateButton.setToolTipText("<html>If this program is good for your purpose please consider a donation, <br />any amount you would like, as a gesture to encourage us developing this program.<br />Click this button to go to the SourceForge donation page.<br /><br />Thank you!</html>");
         donateButton.setBorderPainted(false);
-        donateButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        donateButton.setHorizontalTextPosition(SwingConstants.CENTER);
         donateButton.setMaximumSize(new java.awt.Dimension(30, 30));
         donateButton.setMinimumSize(new java.awt.Dimension(30, 30));
         donateButton.setOpaque(false);
         donateButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        donateButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        donateButton.setVerticalTextPosition(SwingConstants.BOTTOM);
         donateButton.addActionListener(this::donateButtoncontentsActionPerformed);
         toolBar.add(donateButton);
 
-        googleDriveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/GDrive.png")));
-        googleDriveButton.setBorderPainted(false);
-        googleDriveButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        googleDriveButton.setMaximumSize(new java.awt.Dimension(30, 30));
-        googleDriveButton.setMinimumSize(new java.awt.Dimension(30, 30));
-        googleDriveButton.setPreferredSize(new java.awt.Dimension(30, 30));
-        googleDriveButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        googleDriveButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GoogleDriveActionPerformed(evt);
-            }
-        });
-        toolBar.add(googleDriveButton);
-
         getContentPane().add(toolBar, java.awt.BorderLayout.NORTH);
 
-        mainPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         mainPanel.setLayout(new java.awt.GridBagLayout());
 
-        tabbedPane.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
+        tabbedPane.setTabPlacement(JTabbedPane.BOTTOM);
 
-        jobsJPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        jobsJPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jobsJPanel.setLayout(new java.awt.GridBagLayout());
 
         viewJPanel2.setMinimumSize(new java.awt.Dimension(100, 29));
         viewJPanel2.setLayout(new java.awt.GridBagLayout());
 
         jobEnableAllButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jobEnableAllButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/checkbox_checked.png"))); // NOI18N
+        jobEnableAllButton.setIcon(new ImageIcon(getClass().getResource("/icons/checkbox_checked.png"))); // NOI18N
         jobEnableAllButton.setText("all");
         jobEnableAllButton.setToolTipText("Enables all Jobs.");
         jobEnableAllButton.setActionCommand("Enable all");
@@ -636,7 +621,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         viewJPanel2.add(jobEnableAllButton, gridBagConstraints);
 
         jobDisableAllButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jobDisableAllButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/checkbox_unchecked.png"))); // NOI18N
+        jobDisableAllButton.setIcon(new ImageIcon(getClass().getResource("/icons/checkbox_unchecked.png"))); // NOI18N
         jobDisableAllButton.setText("none");
         jobDisableAllButton.setToolTipText("Disables all Jobs.");
         jobDisableAllButton.setActionCommand("Disable all");
@@ -653,7 +638,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         viewJPanel2.add(jobDisableAllButton, gridBagConstraints);
 
         jobDownButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jobDownButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirDown.png"))); // NOI18N
+        jobDownButton.setIcon(new ImageIcon(getClass().getResource("/icons/dirDown.png"))); // NOI18N
         jobDownButton.setText("Down");
         jobDownButton.setToolTipText("Move the selected Job down.");
         jobDownButton.setIconTextGap(2);
@@ -669,7 +654,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         viewJPanel2.add(jobDownButton, gridBagConstraints);
 
         jobUpButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jobUpButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirUp.png"))); // NOI18N
+        jobUpButton.setIcon(new ImageIcon(getClass().getResource("/icons/dirUp.png"))); // NOI18N
         jobUpButton.setText("Up");
         jobUpButton.setToolTipText("Move the selected Job up.");
         jobUpButton.setIconTextGap(2);
@@ -682,7 +667,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         viewJPanel2.add(jobUpButton, gridBagConstraints);
 
         jobAddButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jobAddButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirNew.png"))); // NOI18N
+        jobAddButton.setIcon(new ImageIcon(getClass().getResource("/icons/dirNew.png"))); // NOI18N
         jobAddButton.setText("New");
         jobAddButton.setToolTipText("Add a new Job.");
         jobAddButton.setIconTextGap(2);
@@ -698,7 +683,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         viewJPanel2.add(jobAddButton, gridBagConstraints);
 
         jobEditButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jobEditButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/edit.png"))); // NOI18N
+        jobEditButton.setIcon(new ImageIcon(getClass().getResource("/icons/edit.png"))); // NOI18N
         jobEditButton.setText("Edit");
         jobEditButton.setToolTipText("Edit the selected Job");
         jobEditButton.setIconTextGap(2);
@@ -711,7 +696,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         viewJPanel2.add(jobEditButton, gridBagConstraints);
 
         jobCopyButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jobCopyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirCopy.png"))); // NOI18N
+        jobCopyButton.setIcon(new ImageIcon(getClass().getResource("/icons/dirCopy.png"))); // NOI18N
         jobCopyButton.setText("Copy");
         jobCopyButton.setToolTipText("Duplicate the selected Job.");
         jobCopyButton.setIconTextGap(2);
@@ -727,7 +712,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         viewJPanel2.add(jobCopyButton, gridBagConstraints);
 
         jobRemoveButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jobRemoveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dirRemove.png"))); // NOI18N
+        jobRemoveButton.setIcon(new ImageIcon(getClass().getResource("/icons/dirRemove.png"))); // NOI18N
         jobRemoveButton.setText("Remove");
         jobRemoveButton.setToolTipText("Remove the selected Job.");
         jobRemoveButton.setIconTextGap(2);
@@ -750,7 +735,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         viewJPanel2.add(jPanel1, gridBagConstraints);
 
         jobExpandOneLevelButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jobExpandOneLevelButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/expandAll.png"))); // NOI18N
+        jobExpandOneLevelButton.setIcon(new ImageIcon(getClass().getResource("/icons/expandAll.png"))); // NOI18N
         jobExpandOneLevelButton.setText("Expand");
         jobExpandOneLevelButton.setToolTipText("Expand all Jobs in the job tree.");
         jobExpandOneLevelButton.setActionCommand("Enable all");
@@ -767,7 +752,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         viewJPanel2.add(jobExpandOneLevelButton, gridBagConstraints);
 
         jobCollapseAllButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jobCollapseAllButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/collapseAll.png"))); // NOI18N
+        jobCollapseAllButton.setIcon(new ImageIcon(getClass().getResource("/icons/collapseAll.png"))); // NOI18N
         jobCollapseAllButton.setText("Collapse");
         jobCollapseAllButton.setToolTipText("Collapse all Jobs in the job tree.");
         jobCollapseAllButton.setActionCommand("Disable all");
@@ -819,7 +804,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         tabbedPane.addTab("Jobs", jobsJPanel);
 
-        syncQPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        syncQPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         syncQPanel.setLayout(new java.awt.GridBagLayout());
 
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1181,7 +1166,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterNewFilesCheckBox.setToolTipText("Synchronize all files and dirs.");
         jPanel53.add(syncQViewFilterNewFilesCheckBox);
 
-        syncQViewFilterNewFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyNew.png"))); // NOI18N
+        syncQViewFilterNewFilesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyNew.png"))); // NOI18N
         syncQViewFilterNewFilesLabel.setText("New files/dirs");
         jPanel53.add(syncQViewFilterNewFilesLabel);
 
@@ -1200,7 +1185,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterLargerFilesCheckBox.setPreferredSize(null);
         jPanel55.add(syncQViewFilterLargerFilesCheckBox);
 
-        syncQViewFilterLargerFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyLarger.png"))); // NOI18N
+        syncQViewFilterLargerFilesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyLarger.png"))); // NOI18N
         syncQViewFilterLargerFilesLabel.setText("Larger files");
         jPanel55.add(syncQViewFilterLargerFilesLabel);
 
@@ -1219,7 +1204,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterDeletedFilesCheckBox.setPreferredSize(null);
         jPanel57.add(syncQViewFilterDeletedFilesCheckBox);
 
-        syncQViewFilterDeletedFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/deleteFile.png"))); // NOI18N
+        syncQViewFilterDeletedFilesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/deleteFile.png"))); // NOI18N
         syncQViewFilterDeletedFilesLabel.setText("Files to be deleted");
         jPanel57.add(syncQViewFilterDeletedFilesLabel);
 
@@ -1238,7 +1223,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterModifiedFilesCheckBox.setPreferredSize(null);
         jPanel54.add(syncQViewFilterModifiedFilesCheckBox);
 
-        syncQViewFilterModifiedFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyModified.png"))); // NOI18N
+        syncQViewFilterModifiedFilesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyModified.png"))); // NOI18N
         syncQViewFilterModifiedFilesLabel.setText("Modified files");
         jPanel54.add(syncQViewFilterModifiedFilesLabel);
 
@@ -1257,7 +1242,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterLargerAndModifiedFilesCheckBox.setPreferredSize(null);
         jPanel56.add(syncQViewFilterLargerAndModifiedFilesCheckBox);
 
-        syncQViewFilterLargerAndModifiedFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyLargerModified.png"))); // NOI18N
+        syncQViewFilterLargerAndModifiedFilesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyLargerModified.png"))); // NOI18N
         syncQViewFilterLargerAndModifiedFilesLabel.setText("Larger & Modified files");
         jPanel56.add(syncQViewFilterLargerAndModifiedFilesLabel);
 
@@ -1276,7 +1261,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterDeletedDirsCheckBox.setPreferredSize(null);
         jPanel71.add(syncQViewFilterDeletedDirsCheckBox);
 
-        syncQViewFilterDeletedDirsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/deleteDir.png"))); // NOI18N
+        syncQViewFilterDeletedDirsLabel.setIcon(new ImageIcon(getClass().getResource("/icons/deleteDir.png"))); // NOI18N
         syncQViewFilterDeletedDirsLabel.setText("Dirs to be deleted");
         jPanel71.add(syncQViewFilterDeletedDirsLabel);
 
@@ -1295,7 +1280,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterConflictFilesCheckBox.setPreferredSize(null);
         jPanel68.add(syncQViewFilterConflictFilesCheckBox);
 
-        syncQViewFilterConflictFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/conflict_icon.png"))); // NOI18N
+        syncQViewFilterConflictFilesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/conflict_icon.png"))); // NOI18N
         syncQViewFilterConflictFilesLabel.setText("Conflicts");
         jPanel68.add(syncQViewFilterConflictFilesLabel);
 
@@ -1313,9 +1298,9 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         gridBagConstraints.weightx = 1.0;
         viewJPanel.add(jPanel58, gridBagConstraints);
 
-        jPanel50.setLayout(new javax.swing.BoxLayout(jPanel50, javax.swing.BoxLayout.LINE_AXIS));
+        jPanel50.setLayout(new BoxLayout(jPanel50, BoxLayout.LINE_AXIS));
 
-        syncQViewFilterResetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/apply.png"))); // NOI18N
+        syncQViewFilterResetButton.setIcon(new ImageIcon(getClass().getResource("/icons/apply.png"))); // NOI18N
         syncQViewFilterResetButton.setText("Reset");
         syncQViewFilterResetButton.setToolTipText("Reset the default options to their defaults.");
         syncQViewFilterResetButton.setAlignmentX(0.5F);
@@ -1323,7 +1308,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQViewFilterResetButton.addActionListener(this::syncQViewFilterResetButtonActionPerformed);
         jPanel50.add(syncQViewFilterResetButton);
 
-        syncQViewFilterOKButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ok.png"))); // NOI18N
+        syncQViewFilterOKButton.setIcon(new ImageIcon(getClass().getResource("/icons/ok.png"))); // NOI18N
         syncQViewFilterOKButton.setText("OK");
         syncQViewFilterOKButton.setToolTipText("Reset the default options to their defaults.");
         syncQViewFilterOKButton.setAlignmentX(0.5F);
@@ -1358,7 +1343,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterNewFilesCheckBox.setToolTipText("Synchronize all files and dirs.");
         jPanel60.add(syncQSyncFilterNewFilesCheckBox);
 
-        syncQSyncFilterNewFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyNew.png"))); // NOI18N
+        syncQSyncFilterNewFilesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyNew.png"))); // NOI18N
         syncQSyncFilterNewFilesLabel.setText("New files/dirs");
         jPanel60.add(syncQSyncFilterNewFilesLabel);
 
@@ -1375,7 +1360,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterLargerFilesCheckBox.setPreferredSize(null);
         jPanel61.add(syncQSyncFilterLargerFilesCheckBox);
 
-        syncQSyncFilterLargerFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyLarger.png"))); // NOI18N
+        syncQSyncFilterLargerFilesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyLarger.png"))); // NOI18N
         syncQSyncFilterLargerFilesLabel.setText("Larger files");
         jPanel61.add(syncQSyncFilterLargerFilesLabel);
 
@@ -1394,7 +1379,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterDeletedFilesCheckBox.setPreferredSize(null);
         jPanel64.add(syncQSyncFilterDeletedFilesCheckBox);
 
-        syncQSyncFilterDeletedFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/deleteFile.png"))); // NOI18N
+        syncQSyncFilterDeletedFilesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/deleteFile.png"))); // NOI18N
         syncQSyncFilterDeletedFilesLabel.setText("Files to be deleted");
         jPanel64.add(syncQSyncFilterDeletedFilesLabel);
 
@@ -1413,7 +1398,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterModifiedFilesCheckBox.setPreferredSize(null);
         jPanel62.add(syncQSyncFilterModifiedFilesCheckBox);
 
-        syncQSyncFilterModifiedFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyModified.png"))); // NOI18N
+        syncQSyncFilterModifiedFilesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyModified.png"))); // NOI18N
         syncQSyncFilterModifiedFilesLabel.setText("Modified files");
         jPanel62.add(syncQSyncFilterModifiedFilesLabel);
 
@@ -1432,7 +1417,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterLargerAndModifiedFilesCheckBox.setPreferredSize(null);
         jPanel63.add(syncQSyncFilterLargerAndModifiedFilesCheckBox);
 
-        syncQSyncFilterLargerAndModifiedFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyLargerModified.png"))); // NOI18N
+        syncQSyncFilterLargerAndModifiedFilesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyLargerModified.png"))); // NOI18N
         syncQSyncFilterLargerAndModifiedFilesLabel.setText("Larger & Modified files");
         jPanel63.add(syncQSyncFilterLargerAndModifiedFilesLabel);
 
@@ -1451,7 +1436,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterDeletedDirsCheckBox.setPreferredSize(null);
         jPanel72.add(syncQSyncFilterDeletedDirsCheckBox);
 
-        syncQSyncFilterDeletedDirsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/deleteDir.png"))); // NOI18N
+        syncQSyncFilterDeletedDirsLabel.setIcon(new ImageIcon(getClass().getResource("/icons/deleteDir.png"))); // NOI18N
         syncQSyncFilterDeletedDirsLabel.setText("Dirs to be deleted");
         jPanel72.add(syncQSyncFilterDeletedDirsLabel);
 
@@ -1470,7 +1455,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterConflictFilesCheckBox.setPreferredSize(null);
         jPanel73.add(syncQSyncFilterConflictFilesCheckBox);
 
-        syncQSyncFilterConflictFilesLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/conflict_icon.png"))); // NOI18N
+        syncQSyncFilterConflictFilesLabel.setIcon(new ImageIcon(getClass().getResource("/icons/conflict_icon.png"))); // NOI18N
         syncQSyncFilterConflictFilesLabel.setText("Conflicts");
         jPanel73.add(syncQSyncFilterConflictFilesLabel);
 
@@ -1488,9 +1473,9 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         gridBagConstraints.weightx = 1.0;
         syncJPanel.add(jPanel59, gridBagConstraints);
 
-        jPanel52.setLayout(new javax.swing.BoxLayout(jPanel52, javax.swing.BoxLayout.LINE_AXIS));
+        jPanel52.setLayout(new BoxLayout(jPanel52, BoxLayout.LINE_AXIS));
 
-        syncQSyncFilterResetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/apply.png"))); // NOI18N
+        syncQSyncFilterResetButton.setIcon(new ImageIcon(getClass().getResource("/icons/apply.png"))); // NOI18N
         syncQSyncFilterResetButton.setText("Reset");
         syncQSyncFilterResetButton.setToolTipText("Reset the default options to their defaults.");
         syncQSyncFilterResetButton.setAlignmentX(0.5F);
@@ -1498,7 +1483,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         syncQSyncFilterResetButton.addActionListener(this::syncQSyncFilterResetButtonActionPerformed);
         jPanel52.add(syncQSyncFilterResetButton);
 
-        syncQSyncFilterOKButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ok.png"))); // NOI18N
+        syncQSyncFilterOKButton.setIcon(new ImageIcon(getClass().getResource("/icons/ok.png"))); // NOI18N
         syncQSyncFilterOKButton.setText("OK");
         syncQSyncFilterOKButton.setToolTipText("Reset the default options to their defaults.");
         syncQSyncFilterOKButton.setAlignmentX(0.5F);
@@ -1530,7 +1515,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         syncQTable.setModel(new SyncQTableModel());
         syncQTable.setDefaultRenderer(String.class, new SyncQTableCellRenderer());
-        syncQTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        syncQTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         syncQTable.setIntercellSpacing(new java.awt.Dimension(3, 1));
         syncQTable.getTableHeader().setReorderingAllowed(false);
         syncQTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1550,7 +1535,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(syncQTable);
-        syncQTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        syncQTable.getColumnModel().getSelectionModel().setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         if (syncQTable.getColumnModel().getColumnCount() > 0) {
             syncQTable.getColumnModel().getColumn(0).setMinWidth(100);
             syncQTable.getColumnModel().getColumn(0).setPreferredWidth(100);
@@ -1588,7 +1573,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         tabbedPane.addTab("Sync Queue", syncQPanel);
 
-        scheduleQJPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        scheduleQJPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         scheduleQJPanel.setLayout(new java.awt.GridBagLayout());
 
         scheduleStatusJPanel.setLayout(new java.awt.GridBagLayout());
@@ -1627,13 +1612,13 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         scheduleTable.setModel(new ScheduleTableModel());
         scheduleTable.setDefaultRenderer(String.class, new ScheduleTableCellRenderer());
-        scheduleTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
+        scheduleTable.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
         scheduleTable.setIntercellSpacing(new java.awt.Dimension(3, 1));
         scheduleTable.setRowSelectionAllowed(false);
         scheduleTable.getTableHeader().setResizingAllowed(false);
         scheduleTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane6.setViewportView(scheduleTable);
-        scheduleTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        scheduleTable.getColumnModel().getSelectionModel().setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         if (scheduleTable.getColumnModel().getColumnCount() > 0) {
             scheduleTable.getColumnModel().getColumn(0).setResizable(false);
             scheduleTable.getColumnModel().getColumn(0).setMinWidth(70);
@@ -1661,7 +1646,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         tabbedPane.addTab("Schedules", scheduleQJPanel);
 
-        messagesQJPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        messagesQJPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         messagesQJPanel.setLayout(new java.awt.GridBagLayout());
 
         viewJPanel1.setLayout(new java.awt.GridBagLayout());
@@ -1673,7 +1658,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterInfosCheckBox.setToolTipText("Synchronize all files and dirs.");
         jPanel66.add(messagesViewFilterInfosCheckBox);
 
-        messagesViewFilterInfosLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_info.png"))); // NOI18N
+        messagesViewFilterInfosLabel.setIcon(new ImageIcon(getClass().getResource("/icons/icon_info.png"))); // NOI18N
         messagesViewFilterInfosLabel.setText("Info's");
         jPanel66.add(messagesViewFilterInfosLabel);
 
@@ -1690,7 +1675,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterErrorsCheckBox.setPreferredSize(null);
         jPanel67.add(messagesViewFilterErrorsCheckBox);
 
-        messagesViewFilterErrorsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_error.png"))); // NOI18N
+        messagesViewFilterErrorsLabel.setIcon(new ImageIcon(getClass().getResource("/icons/icon_error.png"))); // NOI18N
         messagesViewFilterErrorsLabel.setText("Errors");
         jPanel67.add(messagesViewFilterErrorsLabel);
 
@@ -1708,7 +1693,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterWarningsCheckBox.setPreferredSize(null);
         jPanel69.add(messagesViewFilterWarningsCheckBox);
 
-        messagesViewFilterWarningsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_warning.png"))); // NOI18N
+        messagesViewFilterWarningsLabel.setIcon(new ImageIcon(getClass().getResource("/icons/icon_warning.png"))); // NOI18N
         messagesViewFilterWarningsLabel.setText("Warnings");
         jPanel69.add(messagesViewFilterWarningsLabel);
 
@@ -1726,7 +1711,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterFileOperationsCheckBox.setPreferredSize(null);
         jPanel70.add(messagesViewFilterFileOperationsCheckBox);
 
-        messagesViewFilterFileOperationsLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/copyLinks.png"))); // NOI18N
+        messagesViewFilterFileOperationsLabel.setIcon(new ImageIcon(getClass().getResource("/icons/copyLinks.png"))); // NOI18N
         messagesViewFilterFileOperationsLabel.setText("File operations");
         jPanel70.add(messagesViewFilterFileOperationsLabel);
 
@@ -1743,9 +1728,9 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         gridBagConstraints.weightx = 1.0;
         viewJPanel1.add(jPanel65, gridBagConstraints);
 
-        jPanel51.setLayout(new javax.swing.BoxLayout(jPanel51, javax.swing.BoxLayout.LINE_AXIS));
+        jPanel51.setLayout(new BoxLayout(jPanel51, BoxLayout.LINE_AXIS));
 
-        messagesViewFilterResetButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/apply.png"))); // NOI18N
+        messagesViewFilterResetButton.setIcon(new ImageIcon(getClass().getResource("/icons/apply.png"))); // NOI18N
         messagesViewFilterResetButton.setText("Reset");
         messagesViewFilterResetButton.setToolTipText("Reset the message filter options.");
         messagesViewFilterResetButton.setAlignmentX(0.5F);
@@ -1753,7 +1738,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterResetButton.addActionListener(this::messagesViewFilterResetButtonActionPerformed);
         jPanel51.add(messagesViewFilterResetButton);
 
-        messagesViewFilterOKButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ok.png"))); // NOI18N
+        messagesViewFilterOKButton.setIcon(new ImageIcon(getClass().getResource("/icons/ok.png"))); // NOI18N
         messagesViewFilterOKButton.setText("OK");
         messagesViewFilterOKButton.setToolTipText("Filter the messages according to the message filter options.");
         messagesViewFilterOKButton.setAlignmentX(0.5F);
@@ -1761,7 +1746,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         messagesViewFilterOKButton.addActionListener(this::messagesViewFilterOKButtonActionPerformed);
         jPanel51.add(messagesViewFilterOKButton);
 
-        messagesCleanButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cancel.png"))); // NOI18N
+        messagesCleanButton.setIcon(new ImageIcon(getClass().getResource("/icons/cancel.png"))); // NOI18N
         messagesCleanButton.setText("Clean");
         messagesCleanButton.setToolTipText("Delete all messages.");
         messagesCleanButton.setAlignmentX(0.5F);
@@ -1791,12 +1776,12 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         messagesTable.setModel(new MessagesTableModel());
         messagesTable.setDefaultRenderer(String.class, new MessagesTableCellRenderer());
-        messagesTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
+        messagesTable.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
         messagesTable.setIntercellSpacing(new java.awt.Dimension(3, 1));
         messagesTable.getTableHeader().setResizingAllowed(false);
         messagesTable.getTableHeader().setReorderingAllowed(false);
         messagesTableScrollPane.setViewportView(messagesTable);
-        messagesTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        messagesTable.getColumnModel().getSelectionModel().setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         if (messagesTable.getColumnModel().getColumnCount() > 0) {
             messagesTable.getColumnModel().getColumn(0).setResizable(false);
             messagesTable.getColumnModel().getColumn(0).setMinWidth(150);
@@ -1823,10 +1808,10 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         mainPanel.add(tabbedPane, gridBagConstraints);
         tabbedPane.getAccessibleContext().setAccessibleName("");
 
-        progressPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Progress"));
+        progressPanel.setBorder(BorderFactory.createTitledBorder("Progress"));
         progressPanel.setLayout(new java.awt.GridBagLayout());
 
-        currentProgressLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_file.png"))); // NOI18N
+        currentProgressLabel.setIcon(new ImageIcon(getClass().getResource("/icons/icon_file.png"))); // NOI18N
         currentProgressLabel.setText("Current:");
         currentProgressLabel.setFocusable(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1846,7 +1831,7 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
         gridBagConstraints.weightx = 1.0;
         progressPanel.add(currentProgress, gridBagConstraints);
 
-        totalProgressLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/DirSyncPro16x16.gif"))); // NOI18N
+        totalProgressLabel.setIcon(new ImageIcon(getClass().getResource("/icons/DirSyncPro16x16.gif"))); // NOI18N
         totalProgressLabel.setText("Total:");
         totalProgressLabel.setFocusable(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1877,48 +1862,48 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         fileMenu.setText("File");
 
-        newMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
-        newMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileNew.png"))); // NOI18N
+        newMenuItem.setAccelerator(KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        newMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/fileNew.png"))); // NOI18N
         newMenuItem.setText("New");
         newMenuItem.addActionListener(this::newMenuItemnewConfigActionPerformed);
         fileMenu.add(newMenuItem);
 
-        openMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
-        openMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileOpen.png"))); // NOI18N
+        openMenuItem.setAccelerator(KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
+        openMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/fileOpen.png"))); // NOI18N
         openMenuItem.setText("Open");
         openMenuItem.addActionListener(this::openMenuItemopenConfigActionPerformed);
         fileMenu.add(openMenuItem);
 
-        openRecentMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileOpen.png"))); // NOI18N
+        openRecentMenu.setIcon(new ImageIcon(getClass().getResource("/icons/fileOpen.png"))); // NOI18N
         openRecentMenu.setText("Open Recent");
         fileMenu.add(openRecentMenu);
 
-        appendMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileOpen.png"))); // NOI18N
+        appendMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/fileOpen.png"))); // NOI18N
         appendMenuItem.setText("Append");
         appendMenuItem.addActionListener(this::appendMenuItemopenConfigActionPerformed);
         fileMenu.add(appendMenuItem);
         fileMenu.add(jSeparator7);
 
-        saveMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        saveMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileSave.png"))); // NOI18N
+        saveMenuItem.setAccelerator(KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        saveMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/fileSave.png"))); // NOI18N
         saveMenuItem.setText("Save");
         saveMenuItem.addActionListener(this::saveMenuItemsaveConfigActionPerformed);
         fileMenu.add(saveMenuItem);
 
-        saveAsMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        saveAsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileSaveAs.png"))); // NOI18N
+        saveAsMenuItem.setAccelerator(KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        saveAsMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/fileSaveAs.png"))); // NOI18N
         saveAsMenuItem.setText("Save As");
         saveAsMenuItem.addActionListener(this::saveAsMenuItemsaveConfigActionPerformed);
         fileMenu.add(saveAsMenuItem);
 
-        saveEnabledAsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/fileSaveAs.png"))); // NOI18N
+        saveEnabledAsMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/fileSaveAs.png"))); // NOI18N
         saveEnabledAsMenuItem.setText("Save enabled jobs As");
         saveEnabledAsMenuItem.addActionListener(this::saveEnabledAsMenuItemsaveConfigActionPerformed);
         fileMenu.add(saveEnabledAsMenuItem);
         fileMenu.add(jSeparator4);
 
-        quitMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
-        quitMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/quit.png"))); // NOI18N
+        quitMenuItem.setAccelerator(KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+        quitMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/quit.png"))); // NOI18N
         quitMenuItem.setText("Quit");
         quitMenuItem.addActionListener(this::quitMenuItemquitActionPerformed);
         fileMenu.add(quitMenuItem);
@@ -1927,38 +1912,38 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         runMenu.setText("Run");
 
-        analyzeMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/preview.png"))); // NOI18N
+        analyzeMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/preview.png"))); // NOI18N
         analyzeMenuItem.setText("Analyze");
         analyzeMenuItem.addActionListener(this::analyzeMenuItempreviewStartActionPerformed);
         runMenu.add(analyzeMenuItem);
 
-        synchronizeMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/start.png"))); // NOI18N
+        synchronizeMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/start.png"))); // NOI18N
         synchronizeMenuItem.setText("Synchronize");
         synchronizeMenuItem.addActionListener(this::synchronizeMenuItemsynchronizationStartActionPerformed);
         runMenu.add(synchronizeMenuItem);
 
-        pauseMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/pause.png"))); // NOI18N
+        pauseMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/pause.png"))); // NOI18N
         pauseMenuItem.setText("Pause");
         pauseMenuItem.addActionListener(this::pauseMenuItemsynchronizationStopActionPerformed);
         runMenu.add(pauseMenuItem);
 
-        stopMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/stop.png"))); // NOI18N
+        stopMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/stop.png"))); // NOI18N
         stopMenuItem.setText("Stop");
         stopMenuItem.addActionListener(this::stopMenuItemsynchronizationStopActionPerformed);
         runMenu.add(stopMenuItem);
 
-        shutDownMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/exit16x16.png"))); // NOI18N
+        shutDownMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/exit16x16.png"))); // NOI18N
         shutDownMenuItem.setText("Shut down after sync");
         shutDownMenuItem.addActionListener(this::shutDownMenuItemsynchronizationStopActionPerformed);
         runMenu.add(shutDownMenuItem);
         runMenu.add(jSeparator5);
 
-        startScheduledTasksMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/startSchedule.png"))); // NOI18N
+        startScheduledTasksMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/startSchedule.png"))); // NOI18N
         startScheduledTasksMenuItem.setText("Start Schedule Engine");
         startScheduledTasksMenuItem.addActionListener(this::startScheduledTasksMenuItemsynchronizationStartActionPerformed);
         runMenu.add(startScheduledTasksMenuItem);
 
-        stopScheduledTasksMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/stopSchedule.png"))); // NOI18N
+        stopScheduledTasksMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/stopSchedule.png"))); // NOI18N
         stopScheduledTasksMenuItem.setText("Stop Schedule Engine");
         stopScheduledTasksMenuItem.addActionListener(this::stopScheduledTasksMenuItemsynchronizationStartActionPerformed);
         runMenu.add(stopScheduledTasksMenuItem);
@@ -1967,17 +1952,17 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         toolsMenu.setText("Tools");
 
-        swapSrcDstMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/swapSrcDst.png"))); // NOI18N
+        swapSrcDstMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/swapSrcDst.png"))); // NOI18N
         swapSrcDstMenuItem.setText("Swap all source and destination directories");
         swapSrcDstMenuItem.addActionListener(this::swapSrcDstMenuItemtoolsSwapSrcDstActionPerformed);
         toolsMenu.add(swapSrcDstMenuItem);
 
-        cmdMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/terminal.png"))); // NOI18N
+        cmdMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/terminal.png"))); // NOI18N
         cmdMenuItem.setText("Generate command line");
         cmdMenuItem.addActionListener(this::cmdMenuItemOptionsActionPerformed);
         toolsMenu.add(cmdMenuItem);
 
-        optionsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_config.png"))); // NOI18N
+        optionsMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/icon_config.png"))); // NOI18N
         optionsMenuItem.setText("Options");
         optionsMenuItem.addActionListener(this::optionsMenuItemOptionsActionPerformed);
         toolsMenu.add(optionsMenuItem);
@@ -1986,26 +1971,26 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
 
         helpMenu.setText("Help");
 
-        contentsMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
-        contentsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/contents.png"))); // NOI18N
+        contentsMenuItem.setAccelerator(KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        contentsMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/contents.png"))); // NOI18N
         contentsMenuItem.setText("Help contents");
         contentsMenuItem.addActionListener(this::contentsMenuItemcontentsActionPerformed);
         helpMenu.add(contentsMenuItem);
 
-        donateMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/donate16x16.png"))); // NOI18N
+        donateMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/donate16x16.png"))); // NOI18N
         donateMenuItem.setText("Make a donation!");
         donateMenuItem.setToolTipText("<html>If this program is good for your purpose please consider a donation <br />as less as you would like as a gesture to encourage us developing this program.<br />Click this menu item to go to the SourceForge donation page.<br /><br />Thank you!</html>");
         donateMenuItem.addActionListener(this::donateMenuItemcontentsActionPerformed);
         helpMenu.add(donateMenuItem);
         helpMenu.add(jSeparator1);
 
-        updateMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/update16x16.png"))); // NOI18N
+        updateMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/update16x16.png"))); // NOI18N
         updateMenuItem.setText("Check for updates");
         updateMenuItem.addActionListener(this::updateMenuItemaboutActionPerformed);
         helpMenu.add(updateMenuItem);
 
-        aboutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        aboutMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/about.png"))); // NOI18N
+        aboutMenuItem.setAccelerator(KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        aboutMenuItem.setIcon(new ImageIcon(getClass().getResource("/icons/about.png"))); // NOI18N
         aboutMenuItem.setText("About");
         aboutMenuItem.addActionListener(this::aboutMenuItemaboutActionPerformed);
         helpMenu.add(aboutMenuItem);
@@ -2336,8 +2321,4 @@ public abstract class MainFrameObjects extends javax.swing.JFrame {
     abstract protected void toolsSwapSrcDst();
 
     abstract protected void upwardeJob();
-
-    private void GoogleDriveActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
 }

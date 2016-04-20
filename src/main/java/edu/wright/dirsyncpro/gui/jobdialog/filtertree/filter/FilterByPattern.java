@@ -29,6 +29,7 @@ public class FilterByPattern extends Filter {
     private String pattern = "";
     private FilterPatternType patternType;
     private boolean regExp;
+
     public FilterByPattern(Job j, Action a) {
         super(j, a);
         type = Filter.Type.ByPattern;
@@ -61,8 +62,10 @@ public class FilterByPattern extends Filter {
     }
 
     /**
-     * Compares a String to the 'pattern' depending on the operating system (If the OS is MS Windows the comparison i
-     * done case insensitive). This comparison is used to match file and directory patterns to files and directories.
+     * Compares a String to the 'pattern' depending on the operating system (If
+     * the OS is MS Windows the comparison i done case insensitive). This
+     * comparison is used to match file and directory patterns to files and
+     * directories.
      *
      * @param a The string to compare.
      *

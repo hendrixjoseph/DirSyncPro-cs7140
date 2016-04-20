@@ -59,6 +59,7 @@ public abstract class SettingsDialogObjects extends javax.swing.JDialog {
     protected javax.swing.JTextField shutDownCommandField;
     protected javax.swing.JCheckBox singleClickSystemTrayCheckBox;
     protected javax.swing.JCheckBox startScheduleEngineCheckBox;
+
     public SettingsDialogObjects(JFrame frame) {
         super(frame);
         GuiTools.setSystemLookAndFeel(DirSyncPro.isSystemLookAndFeel());

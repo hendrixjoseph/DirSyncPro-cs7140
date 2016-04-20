@@ -247,8 +247,8 @@ public class XmlWriter {
     }
 
     /**
-     * Encodes the string using XML entities. The five standard XML entities are replaced and additionally backslashes
-     * and linefeeds are encoded.
+     * Encodes the string using XML entities. The five standard XML entities are
+     * replaced and additionally backslashes and linefeeds are encoded.
      *
      * @param s The string to encode.
      *

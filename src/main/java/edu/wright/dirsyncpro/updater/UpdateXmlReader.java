@@ -32,7 +32,8 @@ import java.net.URL;
 import java.net.URLConnection;
 
 /**
- * Reads a XML update url. The data can be retrieved via the various getter methods.
+ * Reads a XML update url. The data can be retrieved via the various getter
+ * methods.
  *
  * @author O. Givi (info@dirsyncpro.org)
  */
@@ -52,7 +53,8 @@ public class UpdateXmlReader extends DefaultHandler {
     private boolean contacted = false;
 
     /**
-     * Reads data from the given Update XML url. The data can be retreived via the various getter methods.
+     * Reads data from the given Update XML url. The data can be retreived via
+     * the various getter methods.
      *
      * @param url The url of the update XML to read the data from.
      *
@@ -89,16 +91,19 @@ public class UpdateXmlReader extends DefaultHandler {
     /**
      * SAX method called for every XML element start.
      *
-     * @param namespaceURI The namespace of this XML element (if the parser is namespace aware).
-     * @param localname    The localname of this XML element (if the parser is namespace aware).
-     * @param qName        The name of this XML element (if the parser is NOT namespace aware).
-     * @param atts         The XML elements attributes.
+     * @param namespaceURI The namespace of this XML element (if the parser is
+     * namespace aware).
+     * @param localname The localname of this XML element (if the parser is
+     * namespace aware).
+     * @param qName The name of this XML element (if the parser is NOT namespace
+     * aware).
+     * @param atts The XML elements attributes.
      *
      * @throws SAXException
      */
     @Override
     public void startElement(String namespaceURI, String localname,
-                             String qName, Attributes atts) throws SAXException {
+            String qName, Attributes atts) throws SAXException {
 
         if (qName.equals(TAGRoot)) {
 

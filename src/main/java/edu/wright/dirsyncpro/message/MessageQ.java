@@ -82,7 +82,7 @@ public class MessageQ {
 
     /**
      * @param ik the IconKey to set the value for
-     * @param b  boolean value to set
+     * @param b boolean value to set
      */
     public void setMessagesQViewFilterMode(IconKey ik, boolean b) {
         viewFilterMode.put(ik, b);

@@ -197,7 +197,6 @@ public abstract class JobDialogObjects extends JDialog {
         ButtonGroup buttonGroupMonodirectionalConflict = new ButtonGroup();
         ButtonGroup buttonGroupCompare = new ButtonGroup();
 
-
         HTMLEditorKit editorKit = new HTMLEditorKit();
         StyleSheet styles = new StyleSheet();
         Font font = UIManager.getFont("Label.font");
@@ -1993,8 +1992,6 @@ public abstract class JobDialogObjects extends JDialog {
     private void dirLogBrowseButtonbrowseSrcActionPerformed(ActionEvent evt) {
         browseLog();
     }
-
-
 
     private void dirCopyLargerCheckBoxdirEventActionPerformed(ActionEvent evt) {
         verifyCopyOptionsInGUI();

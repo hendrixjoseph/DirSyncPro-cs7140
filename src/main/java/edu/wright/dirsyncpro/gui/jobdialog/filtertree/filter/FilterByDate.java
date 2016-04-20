@@ -34,10 +34,12 @@ public class FilterByDate extends Filter {
     private FilterDateType filterDateType;
     private int timeUnitValue;
     private FilterTimeUnitType unitType;
+
     public FilterByDate(Job j, Action a) {
         super(j, a);
         type = Filter.Type.ByDate;
     }
+
     public FilterByDate(Job j, Action a, Date d, FilterDateType fdt) {
         this(j, a);
         date = d;
@@ -46,6 +48,7 @@ public class FilterByDate extends Filter {
         this.timeUnitValue = 0;
         this.unitType = FilterTimeUnitType.Hours; //dummy
     }
+
     public FilterByDate(Job j, Action a, Integer unitValue, FilterTimeUnitType unitType, FilterDateType dateType) {
         this(j, a);
         this.timeUnitValue = unitValue;

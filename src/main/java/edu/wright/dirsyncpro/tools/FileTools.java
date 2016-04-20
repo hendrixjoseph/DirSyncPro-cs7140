@@ -65,14 +65,15 @@ public class FileTools {
     }
 
     /**
-     * Compares the date of the given file against the given date. File date is only accurate to the second; therefore
-     * file dates are divided by 60000 and truncated (converting milliseconds to minutes).
+     * Compares the date of the given file against the given date. File date is
+     * only accurate to the second; therefore file dates are divided by 60000
+     * and truncated (converting milliseconds to minutes).
      *
      * @param file The source file.
      * @param date The given date.
      *
-     * @return int {@code 1} if the file is newer than the date, {@code 0} if the file is modified on date, {@code -1}
-     * if the date is newer.
+     * @return int {@code 1} if the file is newer than the date, {@code 0} if
+     * the file is modified on date, {@code -1} if the date is newer.
      */
     public static int cmpFileDatesInMinutes(File file, Date date) {
         long fileLastModified;
@@ -95,8 +96,9 @@ public class FileTools {
      * @param src The source file.
      * @param dst The destination file.
      *
-     * @return int {@code 1} there are differences in file attributes between the files {@code 0} both files have the
-     * same attributes {@code -1} second file does not exist.
+     * @return int {@code 1} there are differences in file attributes between
+     * the files {@code 0} both files have the same attributes {@code -1} second
+     * file does not exist.
      */
     public static int cmpFileAttributes(File src, File dst) {
         if (!dst.exists()) {
@@ -153,13 +155,14 @@ public class FileTools {
     /**
      * Copies the source file to the given destination with the same filename.
      *
-     * @param srcFile            The file to copy.
-     * @param dstFile            The destination (where to copy the source file).
-     * @param dst                The path to Dir B.
-     * @param howManyBackups     The number of backups to keep.
-     * @param backupDir          the directory in which the backups are made
-     * @param verify             whether to verify the copied file
-     * @param writeTimeStampBack whether to write the timestamp of the dest file back to the source file
+     * @param srcFile The file to copy.
+     * @param dstFile The destination (where to copy the source file).
+     * @param dst The path to Dir B.
+     * @param howManyBackups The number of backups to keep.
+     * @param backupDir the directory in which the backups are made
+     * @param verify whether to verify the copied file
+     * @param writeTimeStampBack whether to write the timestamp of the dest file
+     * back to the source file
      *
      * @throws IOException
      * @throws FileNotFoundException
@@ -278,7 +281,8 @@ public class FileTools {
     }
 
     /**
-     * Sets the modification time of the parent of dstFile according to the parent of srcFile
+     * Sets the modification time of the parent of dstFile according to the
+     * parent of srcFile
      *
      * @param srcFile of which the parent modification time is copied.
      * @param dstFile to which the parent modification time is copied.
@@ -335,12 +339,13 @@ public class FileTools {
     /**
      * Deletes a directory with contained files and subdirectories.
      *
-     * @param f              The directory to delete.
-     * @param dst            The path to the destination directory.
+     * @param f The directory to delete.
+     * @param dst The path to the destination directory.
      * @param howManyBackups The number of backups to keep.
-     * @param backupDir      the directory in which the backups are made
+     * @param backupDir the directory in which the backups are made
      *
-     * @return {@code true} if the deletion could be completed, {@code false} if an error occoured.
+     * @return {@code true} if the deletion could be completed, {@code false} if
+     * an error occoured.
      *
      * @throws FileNotFoundException
      * @throws FileNotFoundException
@@ -364,7 +369,8 @@ public class FileTools {
     }
 
     /**
-     * Returns only the filename portion of a full filename (consisting of path, filename, and extension).
+     * Returns only the filename portion of a full filename (consisting of path,
+     * filename, and extension).
      *
      * @param filename The full filename.
      *
@@ -382,7 +388,8 @@ public class FileTools {
     }
 
     /**
-     * Returns only the extension portion of a full filename (consisting of path, filename, and extension).
+     * Returns only the extension portion of a full filename (consisting of
+     * path, filename, and extension).
      *
      * @param filename The full filename.
      *
@@ -441,10 +448,10 @@ public class FileTools {
     /**
      * Specifies the backup file for a given file to backup.
      *
-     * @param file        The file to backup.
-     * @param dst         The path to Dir B.
+     * @param file The file to backup.
+     * @param dst The path to Dir B.
      * @param backupCount The number of this backup.
-     * @param backupDir   the directory in which the backups are made
+     * @param backupDir the directory in which the backups are made
      *
      * @return The backup file.
      *
@@ -474,9 +481,9 @@ public class FileTools {
 
     /**
      * @param file
-     * @param dst            The path to Dir B.
+     * @param dst The path to Dir B.
      * @param howManyBackups The number of backups to keep.
-     * @param backupDir      the directory in which the backups are made
+     * @param backupDir the directory in which the backups are made
      *
      * @throws FileNotFoundException
      * @throws FileNotFoundException
@@ -496,10 +503,11 @@ public class FileTools {
     }
 
     /**
-     * Rotates existing backups (increases their number until it reaches the maximum number of backups).
+     * Rotates existing backups (increases their number until it reaches the
+     * maximum number of backups).
      *
-     * @param file      The file to backup.
-     * @param dst       The path to Dir B.
+     * @param file The file to backup.
+     * @param dst The path to Dir B.
      * @param backupDir the directory in which the backups are made
      *
      * @throws IOException
@@ -519,12 +527,13 @@ public class FileTools {
     }
 
     /**
-     * Deletes old backups (backups with a number greater than the maximum number of backups).
+     * Deletes old backups (backups with a number greater than the maximum
+     * number of backups).
      *
-     * @param file           The file to backup.
-     * @param dst            The path to Dir B.
+     * @param file The file to backup.
+     * @param dst The path to Dir B.
      * @param howManyBackups The number of backups to keep.
-     * @param backupDir      the directory in which the backups are made
+     * @param backupDir the directory in which the backups are made
      *
      * @throws IOException
      */

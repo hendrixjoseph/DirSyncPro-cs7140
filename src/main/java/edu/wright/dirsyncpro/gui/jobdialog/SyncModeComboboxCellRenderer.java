@@ -42,8 +42,9 @@ class SyncModeComboboxCellRenderer extends JLabel implements ListCellRenderer {
     }
 
     /**
-     * @see javax.swing.ListCellRenderer#getListCellRendererComponent(javax.swing.JList, java.lang.Object, int, boolean,
-     * boolean)
+     * @see
+     * javax.swing.ListCellRenderer#getListCellRendererComponent(javax.swing.JList,
+     * java.lang.Object, int, boolean, boolean)
      */
     @Override
     public java.awt.Component getListCellRendererComponent(

@@ -26,6 +26,7 @@ public class FilterByFileSize extends Filter {
 
     private long value = 0;
     private FilterFileSizeType fileSizeType;
+
     public FilterByFileSize(Job j, Action a) {
         super(j, a);
         type = Filter.Type.ByFileSize;

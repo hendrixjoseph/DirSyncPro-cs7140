@@ -94,6 +94,7 @@ public class Sync {
     private boolean alreadyAnalyzed = false;
     private SyncQ syncQ;
     private ScheduleEngine scheduleEngine;
+
     /**
      * Initializes a new synchronization.
      */
@@ -185,7 +186,8 @@ public class Sync {
     }
 
     /**
-     * Swaps the source and destination directories in all directory definitions.
+     * Swaps the source and destination directories in all directory
+     * definitions.
      */
     public void swapSrcDst() {
         String temp;
@@ -718,15 +720,15 @@ public class Sync {
             if (DirSyncPro.isGuiMode()) {
                 DirSyncPro.displayError(
                         "Out of memory Error!\n\n"
-                                + "Java (JRE) may have been started with low memroy.\n"
-                                + "Please restart DirSync Pro using the DirSyncPro.exe executable (MS \n"
-                                + "Windows) or by using -Xmx512M flag (java -Xmx512M -jar dirsyncpro.jar)\n"
-                                + "to allocate more memroy for DirSync Pro.\n\n"
-                                + "If this problem keeps happening, please try to reproduce the error and to\n"
-                                + "find out which specific action triggers it; then send a description of\n"
-                                + "this error and the debug information to: " + Const.EMAIL
-                                + "\n\nThanks in advance!\n\n"
-                                + "DirSync Pro will quit now!");
+                        + "Java (JRE) may have been started with low memroy.\n"
+                        + "Please restart DirSync Pro using the DirSyncPro.exe executable (MS \n"
+                        + "Windows) or by using -Xmx512M flag (java -Xmx512M -jar dirsyncpro.jar)\n"
+                        + "to allocate more memroy for DirSync Pro.\n\n"
+                        + "If this problem keeps happening, please try to reproduce the error and to\n"
+                        + "find out which specific action triggers it; then send a description of\n"
+                        + "this error and the debug information to: " + Const.EMAIL
+                        + "\n\nThanks in advance!\n\n"
+                        + "DirSync Pro will quit now!");
             }
         }
         e.printStackTrace(System.err);
@@ -758,10 +760,10 @@ public class Sync {
             if (DirSyncPro.isGuiMode()) {
                 DirSyncPro.displayError(
                         "A fatal error occured:\n" + e + ".\n\n"
-                                + "The program will write debug information to the global log file (if enabled) and exit.\n\n"
-                                + "Please try to reproduce the error and to find out which specific action triggers it;\n"
-                                + "then send a description of this error and the debug information to:\n" + Const.EMAIL
-                                + "\n\nThanks in advance!");
+                        + "The program will write debug information to the global log file (if enabled) and exit.\n\n"
+                        + "Please try to reproduce the error and to find out which specific action triggers it;\n"
+                        + "then send a description of this error and the debug information to:\n" + Const.EMAIL
+                        + "\n\nThanks in advance!");
             }
         }
         e.printStackTrace(System.err);
@@ -789,7 +791,8 @@ public class Sync {
     }
 
     /**
-     * Checks if DirSyncPro is stopping, i.e. if {@code syncState} is set to {@code STOPPING}.
+     * Checks if DirSyncPro is stopping, i.e. if {@code syncState} is set to
+     * {@code STOPPING}.
      *
      * @return {@code true} if DirSyncPro is stopping.
      */
@@ -875,7 +878,8 @@ public class Sync {
     }
 
     /**
-     * Copy the options of the given job definitions to ALL job definitions (including itself).
+     * Copy the options of the given job definitions to ALL job definitions
+     * (including itself).
      *
      * @param jobWithOptions The directory definition with the options to copy.
      */
@@ -886,7 +890,8 @@ public class Sync {
     }
 
     /**
-     * Copy the options of the given job definitions to all ENABLED job definitions (including itself).
+     * Copy the options of the given job definitions to all ENABLED job
+     * definitions (including itself).
      *
      * @param jobWithOptions The directory definition with the options to copy.
      */

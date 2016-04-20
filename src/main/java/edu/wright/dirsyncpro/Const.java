@@ -66,7 +66,8 @@ public class Const {
     public static final String SYNC_FILE_EXTENSION = "dsc";
     public static final String LOG_FILE_EXTENSION = "log";
     /**
-     * The DirA &amp; DirB file extension for conflicting modified/larger files in bidirectional sync.
+     * The DirA &amp; DirB file extension for conflicting modified/larger files
+     * in bidirectional sync.
      */
     public static final String DIR_A_RENAME_FILE_EXTENSION = "DirA";
     public static final String DIR_B_RENAME_FILE_EXTENSION = "DirB";
@@ -127,8 +128,9 @@ public class Const {
      */
     public static final String BACKUP_FOLDER_NAME = ".DirSyncProBackup";
     /**
-     * The maximum number of backup versions of a single file to keep. Be careful to increase this above 98, because the
-     * backup filename only has a two digit version.
+     * The maximum number of backup versions of a single file to keep. Be
+     * careful to increase this above 98, because the backup filename only has a
+     * two digit version.
      */
     public static final int BACKUP_MAX_NUMBER = 50;
     public static final int OPEN_RECENT_NUMBER_OF_DOCS = 8;
@@ -183,6 +185,7 @@ public class Const {
     //Don't let anyone instantiate this class.
     private Const() {
     }
+
     public enum Properties {
         SystemLookAndFeel("dirsyncpro.gui.systemlookandfeel", "true"),
         LicenseAccepted("dirsyncpro.licenseaccepted", ""),
@@ -220,9 +223,11 @@ public class Const {
             return prDefault;
         }
     }
+
     public enum WeekDays {
         Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
     }
+
     public enum Months {
         January, February, March, April, May, June, July, August, September, October, November, December
     }
@@ -245,6 +250,7 @@ public class Const {
         private String name;
         private String literal;
         private Icon icon;
+
         SyncMode(String name, String iconFile) {
             this.name = name;
             this.icon = new ImageIcon(Const.class.getResource(iconFile));
@@ -321,6 +327,7 @@ public class Const {
             return name;
         }
     }
+
     public enum SymLinkMode {
         SkipSymLinks("Skip symbolic links"),
         CopySymLinks("Copy Symbolic links"),
@@ -453,6 +460,7 @@ public class Const {
     public enum LogLevel {
         Minimal, Moderate, Excessive
     }
+
     public enum FileType {
         DSC("dsc", "DirSync Pro config file"),
         SH("sh", "bash script"),

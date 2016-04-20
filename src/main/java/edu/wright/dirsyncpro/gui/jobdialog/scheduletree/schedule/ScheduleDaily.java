@@ -89,6 +89,7 @@ public class ScheduleDaily extends Schedule {
 
     /**
      * returns a string presenting this schedule
+     *
      * @return
      */
     @Override

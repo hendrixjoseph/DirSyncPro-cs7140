@@ -116,6 +116,7 @@ abstract class Xml {
     static final String ATTR_FILTER_PATTERN_PATTERN_STR = "pattern";
     static final String ATTR_FILTER_PATTERN_PATTERN_TYPE = "patternType";
     static final String ATTR_FILTER_PATTERN_REGEXP = "regularExpression";
+
     //Don't let anyone instantiate this class.
     private Xml() {
     }

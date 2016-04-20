@@ -224,9 +224,10 @@ public class SyncQ {
     }
 
     /**
-     * changes the status of all Sync Pairs with the same stat and updates the stats in SyncQ
+     * changes the status of all Sync Pairs with the same stat and updates the
+     * stats in SyncQ
      *
-     * @param sp    the Sync Pair as template to change
+     * @param sp the Sync Pair as template to change
      * @param spsTo the new status
      */
     public void changeAll(SyncPair sp, SyncPairStatus spsTo) {
@@ -333,7 +334,7 @@ public class SyncQ {
     /**
      * changes the status of a Sync Pair and updates the stats in SyncQ
      *
-     * @param sp    the Sync Pair to change
+     * @param sp the Sync Pair to change
      * @param spsTo the new status
      */
     public void change(SyncPair sp, SyncPairStatus spsTo) {
@@ -487,7 +488,7 @@ public class SyncQ {
 
     /**
      * @param cm the CopyMode to set the value for
-     * @param b  boolean value to set
+     * @param b boolean value to set
      */
     public void setSyncQViewFilterMode(CopyMode cm, boolean b) {
         viewFilterMode.put(cm, b);
@@ -504,7 +505,7 @@ public class SyncQ {
 
     /**
      * @param cm the CopyMode to set the value for
-     * @param b  boolean value to set
+     * @param b boolean value to set
      */
     public void setSyncQSyncFilterMode(CopyMode cm, boolean b) {
         syncFilterMode.put(cm, b);

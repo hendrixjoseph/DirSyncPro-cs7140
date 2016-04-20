@@ -41,5 +41,4 @@ public abstract class ShutDownDialogObjects extends javax.swing.JDialog {
         GuiTools.setSystemLookAndFeel(DirSyncPro.isSystemLookAndFeel());
     }
 
-
 }

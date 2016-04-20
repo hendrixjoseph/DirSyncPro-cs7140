@@ -38,11 +38,9 @@ import java.util.List;
 public abstract class JobObject {
 
     protected boolean enabled;
-    // sync mode
     protected Const.SyncMode syncMode;
     // Conflict mode for the bidirectional sync
     protected Const.SyncConflictResolutionMode syncConflictResolutionMode;
-    // Compare mode
     protected Const.CompareMode syncCompareMode;
     /*
          * Mirror implicates: copyAll=false, copyNew=true, copyLarger=false, copyModified=true, copyLargerModified=false, deleteFiles=true, deleteDirs=true, filterSet={}, compareMode=CompareFileSizesDates;
@@ -169,7 +167,8 @@ public abstract class JobObject {
     /**
      * Returns if only files are copied that are larger <b>and </b> modified.
      *
-     * @return {@code true} if only are copied that are larger <b>and </b> modified, else {@code false}.
+     * @return {@code true} if only are copied that are larger <b>and </b>
+     * modified, else {@code false}.
      */
     public boolean isCopyLargerModified() {
         return copyLargerModified;
@@ -178,7 +177,8 @@ public abstract class JobObject {
     /**
      * Sets whether only files are copied that are larger <b>and </b> modified.
      *
-     * @param copyLargerModified {@code true} if only files are copied that are larger <b>and </b> modified.
+     * @param copyLargerModified {@code true} if only files are copied that are
+     * larger <b>and </b> modified.
      */
     public void setCopyLargerModified(boolean copyLargerModified) {
         this.copyLargerModified = copyLargerModified;
@@ -187,7 +187,8 @@ public abstract class JobObject {
     /**
      * Returns if only modified files are copied.
      *
-     * @return {@code true} if only modified files are copied, else {@code false}.
+     * @return {@code true} if only modified files are copied, else
+     * {@code false}.
      */
     public boolean isCopyModified() {
         return copyModified;
@@ -203,7 +204,8 @@ public abstract class JobObject {
     }
 
     /**
-     * Returns if only new files (files not existing in the destination directory) are copied.
+     * Returns if only new files (files not existing in the destination
+     * directory) are copied.
      *
      * @return {@code true} if only new files are copied, else {@code false}.
      */
@@ -212,7 +214,8 @@ public abstract class JobObject {
     }
 
     /**
-     * Sets whether only new files (files not existing in the destination directory) are copied.
+     * Sets whether only new files (files not existing in the destination
+     * directory) are copied.
      *
      * @param copyNew {@code true} if only new files are copied.
      */
@@ -221,39 +224,44 @@ public abstract class JobObject {
     }
 
     /**
-     * Returns if directories deleted in the source directory are deleted in the destination directory.
+     * Returns if directories deleted in the source directory are deleted in the
+     * destination directory.
      *
-     * @return {@code true} if directories deleted in the source directory are deleted in the destination directory,
-     * else {@code false}.
+     * @return {@code true} if directories deleted in the source directory are
+     * deleted in the destination directory, else {@code false}.
      */
     public boolean isDelDirs() {
         return deleteDirs;
     }
 
     /**
-     * Sets whether directories deleted in the source directory are deleted in the destination directory.
+     * Sets whether directories deleted in the source directory are deleted in
+     * the destination directory.
      *
-     * @param delDirs {@code true} if directories deleted in the source directory are deleted in the destination
-     *                directory.
+     * @param delDirs {@code true} if directories deleted in the source
+     * directory are deleted in the destination directory.
      */
     public void setDelDirs(boolean delDirs) {
         this.deleteDirs = delDirs;
     }
 
     /**
-     * Returns if files deleted in the source directory are deleted in the destination directory.
+     * Returns if files deleted in the source directory are deleted in the
+     * destination directory.
      *
-     * @return {@code true} if files deleted in the source directory are deleted in the destination directory, else
-     * {@code false}.
+     * @return {@code true} if files deleted in the source directory are deleted
+     * in the destination directory, else {@code false}.
      */
     public boolean isDelFiles() {
         return deleteFiles;
     }
 
     /**
-     * Sets whether files deleted in the source directory are deleted in the destination directory.
+     * Sets whether files deleted in the source directory are deleted in the
+     * destination directory.
      *
-     * @param delFiles {@code true} if files deleted in the source directory are deleted in the destination directory.
+     * @param delFiles {@code true} if files deleted in the source directory are
+     * deleted in the destination directory.
      */
     public void setDelFiles(boolean delFiles) {
         this.deleteFiles = delFiles;
@@ -280,16 +288,19 @@ public abstract class JobObject {
     /**
      * Determines whether this directory is enabled.
      *
-     * @return {@code true} if the component is enabled, {@code false} otherwise.
+     * @return {@code true} if the component is enabled, {@code false}
+     * otherwise.
      */
     public boolean isEnabled() {
         return enabled;
     }
 
     /**
-     * Enables or disables this directory, depending on the value of the parameter enabled.
+     * Enables or disables this directory, depending on the value of the
+     * parameter enabled.
      *
-     * @param enabled If {@code true}, this component is enabled; otherwise this component is disabled.
+     * @param enabled If {@code true}, this component is enabled; otherwise this
+     * component is disabled.
      */
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
@@ -307,7 +318,8 @@ public abstract class JobObject {
     /**
      * Sets whether copied files should be verified.
      *
-     * @param b Whether copied files should be verified. Set to {@code true} to enable verify.
+     * @param b Whether copied files should be verified. Set to {@code true} to
+     * enable verify.
      */
     public void setVerify(boolean b) {
         verify = b;
@@ -325,8 +337,8 @@ public abstract class JobObject {
     /**
      * Sets whether the dirsyncpro is done with subfolders.
      *
-     * @param recursive Whether the dirsyncpro is done with subfolders. {@code true} if the synchroize is done with
-     *                  subfolders.
+     * @param recursive Whether the dirsyncpro is done with subfolders.
+     * {@code true} if the synchroize is done with subfolders.
      */
     public void setRecursive(boolean recursive) {
         this.recursive = recursive;

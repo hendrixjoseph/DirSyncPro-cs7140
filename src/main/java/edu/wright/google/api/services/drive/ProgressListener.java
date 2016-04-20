@@ -1,4 +1,4 @@
-package edu.wright.google.api.services.samples.drive;
+package edu.wright.google.api.services.drive;
 
 /**
  *

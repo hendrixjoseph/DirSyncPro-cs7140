@@ -56,9 +56,10 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 
 /**
- * Represents a directory (source and destination) to be synchronized. Contains the source and destination path to sync,
- * whether the sync will be done recursive, which file extensions to fileInclude and fileExclude, if and where to log
- * what's being done and how the synchronization should be done.
+ * Represents a directory (source and destination) to be synchronized. Contains
+ * the source and destination path to sync, whether the sync will be done
+ * recursive, which file extensions to fileInclude and fileExclude, if and where
+ * to log what's being done and how the synchronization should be done.
  *
  * @author E. Gerber, F. Gerbig, O. Givi (info@dirsyncpro.org)
  */
@@ -83,7 +84,8 @@ public class Job extends JobObject implements Cloneable {
     }
 
     /**
-     * Changes the path of the given file from the sorce path to the destination path.
+     * Changes the path of the given file from the sorce path to the destination
+     * path.
      *
      * @param srcFile The file in the source directory.
      * @param srcPath The source path.
@@ -276,6 +278,7 @@ public class Job extends JobObject implements Cloneable {
                 return null;
             }
         } else // !deletionAnalysis
+        {
             if (excluded) {
                 // !deletionAnalysis && excluded
                 //This file is being excluded (during copy analysis). Delete it if excluded files/dirs are intended to be deleted.
@@ -469,6 +472,7 @@ public class Job extends JobObject implements Cloneable {
                 //default
                 return null;
             }
+        }
         //dummy
         return null;
     }
@@ -534,15 +538,17 @@ public class Job extends JobObject implements Cloneable {
         }
     }
 
-    public void analyze() throws IncompleteConfigurationException {
-        DirSyncPro.getSync().sleepOnPause();
-        if (DirSyncPro.getSync().isStopping()) {
-            return;
-        }
+    private void syncFromGoogleDrive() throws IncompleteConfigurationException {
+        File dirB = retrieveDirB();
+    }
 
-        getLog().printMinimal("*** Analyzing job: " + name, IconKey.Info);
-        printJobOptions();
+    private void syncToGoogleDrive() throws IncompleteConfigurationException {
+        File dirA = retrieveDirA();
+        
+        
+    }
 
+    private File retrieveDirA() throws IncompleteConfigurationException {
         // check if src directory exists
         if (dirA.isEmpty()) {
             getLog().printMinimal(" Directory A is not specified!", IconKey.Error);
@@ -557,6 +563,11 @@ public class Job extends JobObject implements Cloneable {
             getLog().printMinimal(" Directory A: '" + fA.getAbsolutePath() + "' isn't a directory!", IconKey.Error);
             throw new IncompleteConfigurationException();
         }
+
+        return fA;
+    }
+
+    private File retrieveDirB() throws IncompleteConfigurationException {
         // check if dst directory exists
         if (dirB.isEmpty()) {
             getLog().printMinimal(" Directory B is not specified!", IconKey.Error);
@@ -572,13 +583,40 @@ public class Job extends JobObject implements Cloneable {
             getLog().printMinimal(" Directory B: '" + fB.getAbsolutePath() + "' isn't a directory!", IconKey.Error);
             throw new IncompleteConfigurationException();
         }
-        if (syncMode == SyncMode.ABMirror || syncMode == SyncMode.ABFull || syncMode == SyncMode.ABContribute || syncMode == SyncMode.ABCustom) {
-            generateSyncQ(fA.toPath(), fB.toPath(), true);
-        } else if (syncMode == SyncMode.BAMirror || syncMode == SyncMode.BAFull || syncMode == SyncMode.BAContribute || syncMode == SyncMode.BACustom) {
-            generateSyncQ(fA.toPath(), fB.toPath(), false);
-        } else if (syncMode.isBI()) {
-            generateSyncQ(fA.toPath(), fB.toPath(), true);
-            generateSyncQ(fA.toPath(), fB.toPath(), false);
+
+        return fB;
+    }
+
+    public void analyze() throws IncompleteConfigurationException {
+        DirSyncPro.getSync().sleepOnPause();
+
+        if (DirSyncPro.getSync().isStopping()) {
+            return;
+        }
+
+        getLog().printMinimal("*** Analyzing job: " + name, IconKey.Info);
+
+        printJobOptions();
+
+        if ("Google Drive".equals(dirA) && "Google Drive".equals(dirB)) {
+            getLog().printMinimal(" Can't sync Google Drive to Google Drive!", IconKey.Error);
+            throw new IncompleteConfigurationException("Can't sync Google Drive to Google Drive!");
+        } else if ("Google Drive".equals(dirA)) {
+            syncFromGoogleDrive();
+        } else if ("Google Drive".equals(dirB)) {
+            syncToGoogleDrive();
+        } else {
+            File fA = retrieveDirA();
+            File fB = retrieveDirB();
+
+            if (syncMode == SyncMode.ABMirror || syncMode == SyncMode.ABFull || syncMode == SyncMode.ABContribute || syncMode == SyncMode.ABCustom) {
+                generateSyncQ(fA.toPath(), fB.toPath(), true);
+            } else if (syncMode == SyncMode.BAMirror || syncMode == SyncMode.BAFull || syncMode == SyncMode.BAContribute || syncMode == SyncMode.BACustom) {
+                generateSyncQ(fA.toPath(), fB.toPath(), false);
+            } else if (syncMode.isBI()) {
+                generateSyncQ(fA.toPath(), fB.toPath(), true);
+                generateSyncQ(fA.toPath(), fB.toPath(), false);
+            }
         }
     }
 
@@ -674,7 +712,8 @@ public class Job extends JobObject implements Cloneable {
      *
      * @return a clone of this instance.
      *
-     * @throws CloneNotSupportedException if the object's class does not support the {@code Cloneable} interface.
+     * @throws CloneNotSupportedException if the object's class does not support
+     * the {@code Cloneable} interface.
      * @see java.lang.Cloneable
      */
     @Override

@@ -42,6 +42,7 @@ import java.util.Properties;
 import javax.swing.SwingWorker;
 import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
+
 /**
  * The main class of DirSyncPro.
  *
@@ -78,7 +79,7 @@ public class DirSyncPro {
 
         List<String> options = new ArrayList<>(Arrays.asList(args));
 
-        for (Iterator<String> iter = options.iterator(); iter.hasNext(); ) {
+        for (Iterator<String> iter = options.iterator(); iter.hasNext();) {
             // all arguments
             String option = iter.next().toLowerCase();
 
@@ -276,7 +277,8 @@ public class DirSyncPro {
     /**
      * Returns whether the progam is in GUI mode.
      *
-     * @return boolean {@code true} if the program is in GUI mode, {@code false} else.
+     * @return boolean {@code true} if the program is in GUI mode, {@code false}
+     * else.
      */
     public static boolean isGuiMode() {
         return !((option_noGui) || (gui == null));
@@ -378,7 +380,8 @@ public class DirSyncPro {
     /**
      * Set the quit option.
      *
-     * @param option_quit If set to {@code true} the program will quit after the current operation.
+     * @param option_quit If set to {@code true} the program will quit after the
+     * current operation.
      */
     public static void setOption_quit(boolean option_quit) {
         DirSyncPro.option_quit = option_quit;
@@ -528,7 +531,7 @@ public class DirSyncPro {
                 path = System.getProperty("user.home") + File.separator + Const.dspHomeDir;
                 if (FileTools.directoryIsWritable(path)) {
                     //log.printExcessive("'" + Const.dspHomeDir + "' in the user home directory is wriable to store the property file.", Const.IconKey.Info);
-                    File f  = new File(path);
+                    File f = new File(path);
                     if (!f.exists()) {
                         f.mkdirs();
                     }
@@ -548,8 +551,8 @@ public class DirSyncPro {
                         //log.printMinimal("You may set another paths in the options window.", Const.IconKey.Warning);
                         displayWarning(
                                 "Folder regarding 'dirsyncpro.home' parameter (if defined), program folder, user home\n"
-                                        + "directory and current directory are not writable to store the DirSync Pro property file.\n"
-                                        + "Program options could not be saved. You may set another paths in the options window.");
+                                + "directory and current directory are not writable to store the DirSync Pro property file.\n"
+                                + "Program options could not be saved. You may set another paths in the options window.");
                     }
                 }
             }
@@ -571,7 +574,8 @@ public class DirSyncPro {
     /**
      * get the path to the folder where the configs are saved
      *
-     * @param withFileSeprator boolean whether to return the path with a file seprator postfix
+     * @param withFileSeprator boolean whether to return the path with a file
+     * seprator postfix
      *
      * @return the path
      */
@@ -604,7 +608,8 @@ public class DirSyncPro {
     /**
      * get the path to the folder where the logs are saved
      *
-     * @param withFileSeprator boolean whether to return the path with a file seprator postfix
+     * @param withFileSeprator boolean whether to return the path with a file
+     * seprator postfix
      *
      * @return the path.
      */

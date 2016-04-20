@@ -163,6 +163,7 @@ public class ConfigConverter {
 
         private String from;
         private String to;
+
         Deprecated(String from, String to) {
             this.from = from;
             this.to = to;
