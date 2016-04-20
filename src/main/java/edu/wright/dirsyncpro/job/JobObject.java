@@ -101,6 +101,14 @@ public abstract class JobObject {
         return dirB;
     }
 
+    public Path getPathA() {
+        return pathA;
+    }
+
+    public Path getPathB() {
+        return pathB;
+    }
+
     /**
      * Returns the name of the dirsyncpro action.
      *
