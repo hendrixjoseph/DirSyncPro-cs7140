@@ -17,17 +17,21 @@ import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.api.client.util.store.DataStoreFactory;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.drive.Drive;
+import com.google.api.services.drive.Drive.Files;
 import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
+import com.google.api.services.drive.model.FileList;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.security.GeneralSecurityException;
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DriveSync {
 
@@ -40,15 +44,13 @@ public class DriveSync {
             = new java.io.File(System.getProperty("user.home"), ".store/drive_sample");
 
     /**
-     * Global instance of the {@link DataStoreFactory}. The best practice is to
-     * make it a single globally shared instance across your application.
-     */
-    private static FileDataStoreFactory dataStoreFactory;
-
-    /**
      * Global instance of the HTTP transport.
      */
-    private static HttpTransport httpTransport;
+    private static HttpTransport HTTP_TRANSPORT;
+
+    private static final List<String> SCOPES
+            = Arrays.asList(DriveScopes.DRIVE_METADATA_READONLY);
+    private static FileDataStoreFactory DATA_STORE_FACTORY;
 
     /**
      * Global instance of the JSON factory.
@@ -58,43 +60,47 @@ public class DriveSync {
     /**
      * Global Drive API client.
      */
-    private static Drive drive;
+    private static Drive DRIVE;
 
     static {
         try {
-            httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-            dataStoreFactory = new FileDataStoreFactory(DATA_STORE_DIR);
-            // authorization
-            Credential credential = authorize();
-            // set up the global Drive instance
-            drive = new Drive.Builder(httpTransport, JSON_FACTORY, credential).setApplicationName(
-                    APPLICATION_NAME).build();
+            HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+            DATA_STORE_FACTORY = new FileDataStoreFactory(DATA_STORE_DIR);
+            DRIVE = getDriveService();
         } catch (GeneralSecurityException | IOException e) {
             System.err.println(e.getMessage());
         }
     }
 
+    private static Drive getDriveService() throws IOException {
+        Credential credential = authorize();
+        return new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential)
+                .setApplicationName(APPLICATION_NAME)
+                .build();
+    }
+
     /**
      * Authorizes the installed application to access user's protected data.
      */
-    private static Credential authorize() throws IOException {
-        // load client secrets
-        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
-                new InputStreamReader(DriveSync.class.getResourceAsStream("/client_secret.json")));
-        if (clientSecrets.getDetails().getClientId().startsWith("Enter")
-                || clientSecrets.getDetails().getClientSecret().startsWith("Enter ")) {
-            System.out.println(
-                    "Enter Client ID and Secret from https://code.google.com/apis/console/?api=drive "
-                    + "into drive-cmdline-sample/src/main/resources/client_secrets.json");
-            System.exit(1);
-        }
-        // set up authorization code flow
-        GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
-                httpTransport, JSON_FACTORY, clientSecrets,
-                Collections.singleton(DriveScopes.DRIVE_FILE)).setDataStoreFactory(dataStoreFactory)
+    public static Credential authorize() throws IOException {
+        // Load client secrets.
+        InputStream in
+                = DriveSync.class.getResourceAsStream("/client_secret.json");
+        GoogleClientSecrets clientSecrets
+                = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
+
+        // Build flow and trigger user authorization request.
+        GoogleAuthorizationCodeFlow flow
+                = new GoogleAuthorizationCodeFlow.Builder(
+                        HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, SCOPES)
+                .setDataStoreFactory(DATA_STORE_FACTORY)
+                .setAccessType("offline")
                 .build();
-        // authorize
-        return new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
+        Credential credential = new AuthorizationCodeInstalledApp(
+                flow, new LocalServerReceiver()).authorize("user");
+        System.out.println(
+                "Credentials saved to " + DATA_STORE_DIR.getAbsolutePath());
+        return credential;
     }
 
     public static File uploadFile(java.io.File file) throws IOException {
@@ -103,11 +109,38 @@ public class DriveSync {
 
         FileContent mediaContent = new FileContent("image/jpeg", file);
 
-        Drive.Files.Insert insert = drive.files().insert(fileMetadata, mediaContent);
+        Drive.Files.Insert insert = DRIVE.files().insert(fileMetadata, mediaContent);
         MediaHttpUploader uploader = insert.getMediaHttpUploader();
         uploader.setDirectUploadEnabled(false);
         uploader.setProgressListener(new ProgressListener());
         return insert.execute();
+    }
+
+    public static void downloadFiles(String downloadPath) throws IOException {
+        List<File> result = new ArrayList<>();
+        Files.List request = DRIVE.files().list();
+
+        do {
+            try {
+                FileList files = request.execute();
+
+                result.addAll(files.getItems());
+                request.setPageToken(files.getNextPageToken());
+            } catch (IOException e) {
+                System.out.println("An error occurred: " + e);
+                request.setPageToken(null);
+            }
+        } while (request.getPageToken() != null
+                && request.getPageToken().length() > 0);
+
+        if (result.isEmpty()) {
+            System.out.println("No files found.");
+        } else {
+            System.out.println(result.size() + " files found");
+            for (File file : result) {
+                downloadFile(downloadPath, file);
+            }
+        }
     }
 
     /**
@@ -122,8 +155,10 @@ public class DriveSync {
         }
         OutputStream out = new FileOutputStream(new java.io.File(parentDir, file.getTitle()));
 
+//        DRIVE.files().get(file.getId()).executeMediaAndDownloadTo(out);
+
         MediaHttpDownloader downloader
-                = new MediaHttpDownloader(httpTransport, drive.getRequestFactory().getInitializer());
+                = new MediaHttpDownloader(HTTP_TRANSPORT, DRIVE.getRequestFactory().getInitializer());
         downloader.setDirectDownloadEnabled(false);
         downloader.setProgressListener(new ProgressListener());
         downloader.download(new GenericUrl(file.getDownloadUrl()), out);

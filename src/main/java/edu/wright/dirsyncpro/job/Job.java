@@ -41,6 +41,7 @@ import edu.wright.dirsyncpro.tools.FileTools;
 import edu.wright.dirsyncpro.tools.Log;
 import edu.wright.dirsyncpro.tools.TextFormatTool;
 import edu.wright.dirsyncpro.tools.WildcardTools;
+import edu.wright.google.api.services.drive.DriveSync;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -229,6 +230,12 @@ public class Job extends JobObject implements Cloneable {
 
     private void syncFromGoogleDrive() throws IncompleteConfigurationException {
         File dirB = retrieveDirB();
+
+        try {
+            DriveSync.downloadFiles(dirB.getAbsolutePath());
+        } catch (IOException exc) {
+            getLog().printMinimal("Unable to analyze: " + this.name + " (" + exc.getMessage() + ")", IconKey.Error);
+        }
     }
 
     private void syncToGoogleDrive() throws IncompleteConfigurationException {
