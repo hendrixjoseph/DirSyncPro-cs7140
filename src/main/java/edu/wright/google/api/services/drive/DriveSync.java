@@ -82,7 +82,7 @@ public class DriveSync {
     /**
      * Authorizes the installed application to access user's protected data.
      */
-    public static Credential authorize() throws IOException {
+    private static Credential authorize() throws IOException {
         // Load client secrets.
         InputStream in
                 = DriveSync.class.getResourceAsStream("/client_secret.json");
@@ -156,7 +156,6 @@ public class DriveSync {
         OutputStream out = new FileOutputStream(new java.io.File(parentDir, file.getTitle()));
 
 //        DRIVE.files().get(file.getId()).executeMediaAndDownloadTo(out);
-
         MediaHttpDownloader downloader
                 = new MediaHttpDownloader(HTTP_TRANSPORT, DRIVE.getRequestFactory().getInitializer());
         downloader.setDirectDownloadEnabled(false);

@@ -23,4 +23,10 @@ public class DriveSyncTest {
         System.out.println("upload");
         DriveSync.uploadFile(UPLOAD_FILE);
     }
+
+    @Test
+    public void testDownload() throws IOException {
+        System.out.println("download");
+        DriveSync.downloadFiles(DIR_FOR_DOWNLOADS);
+    }
 }
