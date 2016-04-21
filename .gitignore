@@ -3,3 +3,4 @@ target/
 /*.iml
 /dirsyncpro.properties
 /nbproject/
+/*.dsc
