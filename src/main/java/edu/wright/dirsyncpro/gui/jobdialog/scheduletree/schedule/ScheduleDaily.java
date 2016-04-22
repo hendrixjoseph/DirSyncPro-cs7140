@@ -81,7 +81,7 @@ public class ScheduleDaily extends Schedule {
                     candidNextEvent = timeFrameFrom;
                 }
             } else {
-                candidNextEvent = DateTool.nextDate(nextEvent, Calendar.DAY_OF_MONTH, interval);
+                candidNextEvent = DateTool.add(nextEvent, Calendar.DAY_OF_MONTH, interval);
             }
             setNextEvent(candidNextEvent);
         }

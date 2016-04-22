@@ -121,11 +121,4 @@ public class DateTool {
         cal.add(field, amount);
         return cal.getTime();
     }
-
-    public static Date nextDate(Date date, int field, int value) {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        cal.add(field, value);
-        return cal.getTime();
-    }
 }

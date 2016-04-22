@@ -62,7 +62,7 @@ public class ScheduleMinutely extends Schedule {
                     candidNextEvent = timeFrameFrom;
                 }
             } else {
-                candidNextEvent = DateTool.nextDate(nextEvent, Calendar.MINUTE, interval);
+                candidNextEvent = DateTool.add(nextEvent, Calendar.MINUTE, interval);
             }
             setNextEvent(candidNextEvent);
         }

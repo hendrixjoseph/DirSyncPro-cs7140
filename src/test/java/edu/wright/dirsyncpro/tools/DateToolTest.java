@@ -5,6 +5,7 @@
  */
 package edu.wright.dirsyncpro.tools;
 
+import java.util.Calendar;
 import java.util.Date;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -92,25 +93,12 @@ public class DateToolTest {
     @Test
     public void testAdd() {
         System.out.println("add");
-        Date time = null;
-        int field = 0;
-        int amount = 0;
-        Date expResult = null;
-        Date result = DateTool.add(time, field, amount);
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+        Date before = Calendar.getInstance().getTime();
+        int field = Calendar.DATE;
+        int amount = 5;
+        Date result = DateTool.add(before, field, amount);
+        assert result.after(before);
+        result = DateTool.add(result, field, -amount);
+        assert result.equals(before) : "result: " + result + "\tbefore: " + before;
     }
-
-    @Test
-    public void testNextDate() {
-        System.out.println("nextDate");
-        Date date = null;
-        int field = 0;
-        int value = 0;
-        Date expResult = null;
-        Date result = DateTool.nextDate(date, field, value);
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
-    }
-
 }

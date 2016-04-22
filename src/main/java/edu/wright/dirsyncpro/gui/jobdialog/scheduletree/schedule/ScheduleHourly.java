@@ -62,7 +62,7 @@ public class ScheduleHourly extends Schedule {
                     candidNextEvent = timeFrameFrom;
                 }
             } else {
-                candidNextEvent = DateTool.nextDate(nextEvent, Calendar.HOUR_OF_DAY, interval);
+                candidNextEvent = DateTool.add(nextEvent, Calendar.HOUR_OF_DAY, interval);
             }
             setNextEvent(candidNextEvent);
         }

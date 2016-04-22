@@ -212,7 +212,7 @@ public class ScheduleWeekly extends Schedule {
                 }
             } else {
                 // we already had a nextEvent, move to the next day
-                candidNextEvent = DateTool.nextDate(nextEvent, Calendar.DAY_OF_MONTH, 1);
+                candidNextEvent = DateTool.add(nextEvent, Calendar.DAY_OF_MONTH, 1);
             }
             Calendar cal = Calendar.getInstance();
             cal.setTime(candidNextEvent);
