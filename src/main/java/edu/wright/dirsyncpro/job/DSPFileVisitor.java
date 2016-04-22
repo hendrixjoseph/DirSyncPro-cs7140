@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.wright.dirsyncpro.job;
 
 import edu.wright.dirsyncpro.Const;
@@ -28,6 +23,32 @@ import java.nio.file.attribute.BasicFileAttributes;
  * @author Joe
  */
 class DSPFileVisitor extends SimpleFileVisitor<Path> {
+
+    /**
+     * Changes the path of the given file from the source path to the
+     * destination path.
+     *
+     * @param srcFile The file in the source directory.
+     * @param srcPath The source path.
+     * @param dstPath The destination path.
+     *
+     * @return File The file with the destination path.
+     */
+    private static Path replacePath(Path srcFile, Path srcPath, Path dstPath) {
+
+        // get actual path
+        String path = srcFile.toAbsolutePath().toString();
+        // delete source path from actual path
+        String cut = path.substring(srcPath.toAbsolutePath().toString().length(), path.length());
+
+        if (!cut.startsWith(File.separator)) {
+            cut = File.separator + cut;
+        }
+        // add destination path with remaining actual path
+        String newPath = dstPath.toAbsolutePath().toString() + cut;
+
+        return new File(newPath).toPath();
+    }
 
     private FilterSet filters;
     private boolean ab;
@@ -107,8 +128,7 @@ class DSPFileVisitor extends SimpleFileVisitor<Path> {
                 return null;
             }
         } else // !deletionAnalysis
-        {
-            if (excluded) {
+         if (excluded) {
                 // !deletionAnalysis && excluded
                 //This file is being excluded (during copy analysis). Delete it if excluded files/dirs are intended to be deleted.
                 boolean isDeleteExcluded = job.getSyncMode() != Const.SyncMode.BIMirror && job.getFilterSet().hasExcludeFilters();
@@ -301,35 +321,8 @@ class DSPFileVisitor extends SimpleFileVisitor<Path> {
                 //default
                 return null;
             }
-        }
         //dummy
         return null;
-    }
-
-    /**
-     * Changes the path of the given file from the source path to the
-     * destination path.
-     *
-     * @param srcFile The file in the source directory.
-     * @param srcPath The source path.
-     * @param dstPath The destination path.
-     *
-     * @return File The file with the destination path.
-     */
-    private static Path replacePath(Path srcFile, Path srcPath, Path dstPath) {
-
-        // get actual path
-        String path = srcFile.toAbsolutePath().toString();
-        // delete source path from actual path
-        String cut = path.substring(srcPath.toAbsolutePath().toString().length(), path.length());
-
-        if (!cut.startsWith(File.separator)) {
-            cut = File.separator + cut;
-        }
-        // add destination path with remaining actual path
-        String newPath = dstPath.toAbsolutePath().toString() + cut;
-
-        return new File(newPath).toPath();
     }
 
     private void analyzeFilePair(Path p, boolean ab, boolean deletionAnalysis, boolean excluded) {
