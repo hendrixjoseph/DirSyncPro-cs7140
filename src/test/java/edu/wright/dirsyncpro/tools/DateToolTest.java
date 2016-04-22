@@ -11,7 +11,7 @@ import org.junit.Test;
  */
 public class DateToolTest {
 
-    private Date testDate = DateTool.add(new Date(), Calendar.HOUR, 16);
+    private Date testDate = DateTool.add(new Date(), Calendar.HOUR, -8);
     private Date now = new Date();
 
     @Test
