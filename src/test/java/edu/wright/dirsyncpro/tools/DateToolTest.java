@@ -7,12 +7,7 @@ package edu.wright.dirsyncpro.tools;
 
 import java.util.Calendar;
 import java.util.Date;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -20,21 +15,8 @@ import static org.junit.Assert.*;
  */
 public class DateToolTest {
 
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
+    private Date testDate = DateTool.add(new Date(), Calendar.HOUR, 16);
+    private Date now = new Date();
 
     @Test
     public void testCmpDates() {
@@ -43,62 +25,78 @@ public class DateToolTest {
         long fBD = 0L;
         int gran = 0;
         boolean idlsgran = false;
-        int expResult = 0;
-        int result = DateTool.cmpDates(fAD, fBD, gran, idlsgran);
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+        assert DateTool.cmpDates(testDate.getTime(), testDate.getTime(), gran, idlsgran) == 0;
     }
 
     @Test
-    public void testGetNextCompleteHour_0args() {
+    public void testGetNextCompleteHour() {
         System.out.println("getNextCompleteHour");
-        Date expResult = null;
         Date result = DateTool.getNextCompleteHour();
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+        assert result.after(now) : "result: " + result + "\tbefore: " + now;
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(result);
+        assert cal.get(Calendar.MINUTE) == 0;
+        assert cal.get(Calendar.SECOND) == 0;
     }
 
     @Test
     public void testGetNextDayAtThisTime() {
         System.out.println("getNextDayAtThisTime");
-        Date time = null;
-        Date expResult = null;
-        Date result = DateTool.getNextDayAtThisTime(time);
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+        Date result = DateTool.getNextDayAtThisTime(testDate);
+
+        Calendar resultCal = Calendar.getInstance();
+        resultCal.setTime(result);
+
+        Calendar testCal = Calendar.getInstance();
+        testCal.setTime(testDate);
+
+        assert resultCal.get(Calendar.HOUR) == testCal.get(Calendar.HOUR);
+        assert resultCal.get(Calendar.MINUTE) == testCal.get(Calendar.MINUTE);
+        assert resultCal.get(Calendar.SECOND) == testCal.get(Calendar.SECOND);
     }
 
     @Test
     public void testGetNextDateAtThisTimeAndNumber() {
         System.out.println("getNextDateAtThisTimeAndNumber");
-        Date time = null;
-        int day = 0;
-        Date date = null;
-        Date expResult = null;
-        Date result = DateTool.getNextDateAtThisTimeAndNumber(time, day, date);
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+        int day = 15;
+        Date result = DateTool.getNextDateAtThisTimeAndNumber(testDate, day, new Date());
+        assert result.after(testDate);
+
+        Calendar resultCal = Calendar.getInstance();
+        resultCal.setTime(result);
+
+        Calendar testCal = Calendar.getInstance();
+        testCal.setTime(testDate);
+
+        assert resultCal.get(Calendar.HOUR) == testCal.get(Calendar.HOUR);
+        assert resultCal.get(Calendar.MINUTE) == testCal.get(Calendar.MINUTE);
+        assert resultCal.get(Calendar.SECOND) == testCal.get(Calendar.SECOND);
+        assert resultCal.get(Calendar.DAY_OF_MONTH) == day;
+
     }
 
     @Test
     public void testGetNextCompleteHour_Date() {
         System.out.println("getNextCompleteHour");
-        Date time = null;
-        Date expResult = null;
-        Date result = DateTool.getNextCompleteHour(time);
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+        Date result = DateTool.getNextCompleteHour(testDate);
+        assert result.after(testDate);
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(result);
+        assert cal.get(Calendar.MINUTE) == 0;
+        assert cal.get(Calendar.SECOND) == 0;
     }
 
     @Test
     public void testAdd() {
         System.out.println("add");
-        Date before = new Date();
+
         int field = Calendar.DATE;
         int amount = 5;
-        Date result = DateTool.add(before, field, amount);
-        assert result.after(before);
+        Date result = DateTool.add(testDate, field, amount);
+        assert result.after(testDate) : "result: " + result + "\tbefore: " + testDate;
         result = DateTool.add(result, field, -amount);
-        assert result.equals(before) : "result: " + result + "\tbefore: " + before;
+        assert result.equals(testDate) : "result: " + result + "\tbefore: " + testDate;
     }
 }
