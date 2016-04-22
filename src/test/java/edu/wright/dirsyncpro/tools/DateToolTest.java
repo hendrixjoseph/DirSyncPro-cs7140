@@ -93,7 +93,7 @@ public class DateToolTest {
     @Test
     public void testAdd() {
         System.out.println("add");
-        Date before = Calendar.getInstance().getTime();
+        Date before = new Date();
         int field = Calendar.DATE;
         int amount = 5;
         Date result = DateTool.add(before, field, amount);
